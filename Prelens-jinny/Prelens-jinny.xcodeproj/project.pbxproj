@@ -12,12 +12,19 @@
 		767FF657204D18C900EA7DE9 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRLoginViewController.swift */; };
 		767FF658204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */; };
 		767FF659204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */; };
+
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */; };
 		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
 		BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */; };
+
+		767FF65D204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */; };
+		767FF65E204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */; };
+		767FF65F204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */; };
+		767FF660204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */; };
+
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A68204CEE5D0052A285 /* ViewController.swift */; };
 		BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6A204CEE5D0052A285 /* Main.storyboard */; };
@@ -43,12 +50,17 @@
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		767FF654204D18C900EA7DE9 /* PRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
 		767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
+
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
+
+		767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
+		767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
+
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A68204CEE5D0052A285 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,10 +130,25 @@
 		767FF653204D189E00EA7DE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+
 				BC3F1AE2204D38AF0006A6F5 /* Login */,
 				BC3F1AE1204D388C0006A6F5 /* Tabbar */,
+
+				767FF65A204D3EB000EA7DE9 /* Profile */,
+				767FF654204D18C900EA7DE9 /* PRLoginViewController.swift */,
+				767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */,
+
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		767FF65A204D3EB000EA7DE9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */,
+				767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		BC3F1AD0204D02590006A6F5 /* Model */ = {
@@ -333,7 +360,11 @@
 			files = (
 				767FF658204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
+
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
+
+				767FF65F204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */,
+
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */,
 			);
@@ -343,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767FF660204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */,
 				767FF659204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +512,7 @@
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */,
 				767FF656204D18C900EA7DE9 /* PRLoginViewController.swift in Sources */,
+				767FF65D204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
 			);
@@ -490,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				767FF657204D18C900EA7DE9 /* PRLoginViewController.swift in Sources */,
+				767FF65E204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
