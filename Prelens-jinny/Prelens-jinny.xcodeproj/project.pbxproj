@@ -11,6 +11,10 @@
 		767FF657204D18C900EA7DE9 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRLoginViewController.swift */; };
 		767FF658204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */; };
 		767FF659204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */; };
+		767FF65D204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */; };
+		767FF65E204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */; };
+		767FF65F204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */; };
+		767FF660204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A68204CEE5D0052A285 /* ViewController.swift */; };
 		BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6A204CEE5D0052A285 /* Main.storyboard */; };
@@ -32,6 +36,8 @@
 /* Begin PBXFileReference section */
 		767FF654204D18C900EA7DE9 /* PRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
 		767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
+		767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
+		767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A68204CEE5D0052A285 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,10 +93,20 @@
 		767FF653204D189E00EA7DE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				767FF65A204D3EB000EA7DE9 /* Profile */,
 				767FF654204D18C900EA7DE9 /* PRLoginViewController.swift */,
 				767FF655204D18C900EA7DE9 /* PRLoginViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		767FF65A204D3EB000EA7DE9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				767FF65B204D3ED600EA7DE9 /* PRProfileViewController.swift */,
+				767FF65C204D3ED600EA7DE9 /* PRProfileViewController.xib */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		BC3F1AD0204D02590006A6F5 /* Model */ = {
@@ -229,6 +245,7 @@
 			files = (
 				767FF658204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
+				767FF65F204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */,
 			);
@@ -238,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767FF660204D3ED600EA7DE9 /* PRProfileViewController.xib in Resources */,
 				767FF659204D18C900EA7DE9 /* PRLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +269,7 @@
 			files = (
 				BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */,
 				767FF656204D18C900EA7DE9 /* PRLoginViewController.swift in Sources */,
+				767FF65D204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				767FF657204D18C900EA7DE9 /* PRLoginViewController.swift in Sources */,
+				767FF65E204D3ED600EA7DE9 /* PRProfileViewController.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

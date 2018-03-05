@@ -78,7 +78,7 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="t3Z-HY-PH8">
-                                    <rect key="frame" x="94.5" y="191" width="186" height="20"/>
+                                    <rect key="frame" x="90.5" y="191" width="194.5" height="20"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checked_icon" translatesAutoresizingMaskIntoConstraints="NO" id="8C1-tT-lGm">
                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -87,8 +87,8 @@
                                                 <constraint firstAttribute="width" constant="20" id="sW6-g1-iRa"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFg-bV-hmP">
-                                            <rect key="frame" x="30" y="0.0" width="156" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFg-bV-hmP">
+                                            <rect key="frame" x="30" y="0.0" width="164.5" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
