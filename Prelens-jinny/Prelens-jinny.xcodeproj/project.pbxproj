@@ -56,6 +56,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC3F1AD0204D02590006A6F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BC770A5A204CEE5D0052A285 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +84,7 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
+				BC3F1AD0204D02590006A6F5 /* Model */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
 				BC770A68204CEE5D0052A285 /* ViewController.swift */,
 				BC770A6A204CEE5D0052A285 /* Main.storyboard */,
