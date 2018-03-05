@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
+		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
+		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
+		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
+		BC3F1ADC204D1C1A0006A6F5 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */; };
+		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
+		BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A68204CEE5D0052A285 /* ViewController.swift */; };
 		BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6A204CEE5D0052A285 /* Main.storyboard */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */; };
+		CB6385249FFB0A0AA9621554 /* Pods_Prelens_jinnyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
+		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
+		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
+		BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A68204CEE5D0052A285 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +53,9 @@
 		BC770A77204CEE5D0052A285 /* Prelens-jinnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelens-jinnyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prelens_jinnyTests.swift; sourceTree = "<group>"; };
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.release.xcconfig"; sourceTree = "<group>"; };
+		C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.debug.xcconfig"; sourceTree = "<group>"; };
+		DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +71,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6385249FFB0A0AA9621554 /* Pods_Prelens_jinnyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41E1775A7640208EFCC65BDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */,
+				564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		767FF650204D02ED00EA7DE9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +97,7 @@
 		767FF651204D02FA00EA7DE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -84,12 +116,49 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BC3F1AD1204D17380006A6F5 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F1AD2204D18D80006A6F5 /* PRBaseView */,
+				BC3F1AD9204D19BB0006A6F5 /* PRButtonTabbar */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		BC3F1AD2204D18D80006A6F5 /* PRBaseView */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */,
+			);
+			name = PRBaseView;
+			sourceTree = "<group>";
+		};
+		BC3F1AD9204D19BB0006A6F5 /* PRButtonTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */,
+				BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */,
+			);
+			name = PRButtonTabbar;
+			sourceTree = "<group>";
+		};
+		BC3F1ADA204D1BFB0006A6F5 /* Extension+Constant */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */,
+				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
+			);
+			name = "Extension+Constant";
+			sourceTree = "<group>";
+		};
 		BC770A5A204CEE5D0052A285 = {
 			isa = PBXGroup;
 			children = (
 				BC770A65204CEE5D0052A285 /* Prelens-jinny */,
 				BC770A7A204CEE5D0052A285 /* Prelens-jinnyTests */,
 				BC770A64204CEE5D0052A285 /* Products */,
+				C2031F63C23FE59B8717BCA4 /* Pods */,
+				41E1775A7640208EFCC65BDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +174,8 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
+				BC3F1ADA204D1BFB0006A6F5 /* Extension+Constant */,
+				BC3F1AD1204D17380006A6F5 /* CustomView */,
 				767FF652204D030500EA7DE9 /* Networking */,
 				767FF651204D02FA00EA7DE9 /* View */,
 				767FF650204D02ED00EA7DE9 /* ViewModel */,
@@ -128,6 +199,17 @@
 			path = "Prelens-jinnyTests";
 			sourceTree = "<group>";
 		};
+		C2031F63C23FE59B8717BCA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */,
+				BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */,
+				6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */,
+				DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC770A80204CEE5D0052A285 /* Build configuration list for PBXNativeTarget "Prelens-jinny" */;
 			buildPhases = (
+				D63CB5A45ED37DFED26B1FEF /* [CP] Check Pods Manifest.lock */,
 				BC770A5F204CEE5D0052A285 /* Sources */,
 				BC770A60204CEE5D0052A285 /* Frameworks */,
 				BC770A61204CEE5D0052A285 /* Resources */,
+				EC8069F93B495D536F6A3A87 /* [CP] Embed Pods Frameworks */,
+				9F174E9888A3CAE4E009E496 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC770A83204CEE5D0052A285 /* Build configuration list for PBXNativeTarget "Prelens-jinnyTests" */;
 			buildPhases = (
+				A95133AE4515E4D16BCCDB3C /* [CP] Check Pods Manifest.lock */,
 				BC770A73204CEE5D0052A285 /* Sources */,
 				BC770A74204CEE5D0052A285 /* Frameworks */,
 				BC770A75204CEE5D0052A285 /* Resources */,
+				A6B9BBDFCBFC977AC16C0751 /* [CP] Embed Pods Frameworks */,
+				4BA189EEE904BA180065EEA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
+				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */,
 			);
@@ -226,13 +315,138 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4BA189EEE904BA180065EEA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F174E9888A3CAE4E009E496 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6B9BBDFCBFC977AC16C0751 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A95133AE4515E4D16BCCDB3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prelens-jinnyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D63CB5A45ED37DFED26B1FEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prelens-jinny-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC8069F93B495D536F6A3A87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC770A5F204CEE5D0052A285 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3F1ADC204D1C1A0006A6F5 /* UIView+extension.swift in Sources */,
+				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
+				BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */,
+				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
+				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +597,7 @@
 		};
 		BC770A81204CEE5D0052A285 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -397,6 +612,7 @@
 		};
 		BC770A82204CEE5D0052A285 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -411,6 +627,7 @@
 		};
 		BC770A84204CEE5D0052A285 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -427,6 +644,7 @@
 		};
 		BC770A85204CEE5D0052A285 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
