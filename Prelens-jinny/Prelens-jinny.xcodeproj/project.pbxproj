@@ -56,6 +56,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		767FF650204D02ED00EA7DE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		767FF651204D02FA00EA7DE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		767FF652204D030500EA7DE9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		BC3F1AD0204D02590006A6F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +105,9 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
+				767FF652204D030500EA7DE9 /* Networking */,
+				767FF651204D02FA00EA7DE9 /* View */,
+				767FF650204D02ED00EA7DE9 /* ViewModel */,
 				BC3F1AD0204D02590006A6F5 /* Model */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
 				BC770A68204CEE5D0052A285 /* ViewController.swift */,
