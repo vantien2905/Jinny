@@ -12,7 +12,7 @@ class PRLoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tapHideKeyboard()
         // Do any additional setup after loading the view.
     }
 
