@@ -42,28 +42,28 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sammy_wong@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg9-Hv-ihT">
                                     <rect key="frame" x="0.0" y="180.5" width="375" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AY-9T-ue2">
-                                    <rect key="frame" x="37.5" y="291.5" width="300" height="40"/>
+                                    <rect key="frame" x="37.5" y="291.5" width="300" height="45"/>
                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="bHB-fn-MBP"/>
+                                        <constraint firstAttribute="height" constant="45" id="bHB-fn-MBP"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <state key="normal" title="Edit Profile">
                                         <color key="titleColor" red="0.0" green="0.70752501489999997" blue="0.68913733960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-t0-uCG">
-                                    <rect key="frame" x="37.5" y="351.5" width="300" height="40"/>
+                                    <rect key="frame" x="37.5" y="356.5" width="300" height="45"/>
                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="PJS-Ao-blp"/>
+                                        <constraint firstAttribute="height" constant="45" id="PJS-Ao-blp"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <state key="normal" title="Settings">
                                         <color key="titleColor" red="0.0" green="0.70752501489999997" blue="0.68913733960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
@@ -81,7 +81,6 @@
                                 <constraint firstItem="ILd-t0-uCG" firstAttribute="trailing" secondItem="6AY-9T-ue2" secondAttribute="trailing" id="cAu-Ip-fuY"/>
                                 <constraint firstItem="iv6-gb-9RN" firstAttribute="top" secondItem="s1i-qG-oHJ" secondAttribute="top" constant="20" id="crg-ra-tnZ"/>
                                 <constraint firstItem="gg9-Hv-ihT" firstAttribute="leading" secondItem="s1i-qG-oHJ" secondAttribute="leading" id="eFq-54-1FM"/>
-                                <constraint firstAttribute="width" constant="375" id="hhu-fu-HUh"/>
                                 <constraint firstItem="6AY-9T-ue2" firstAttribute="centerX" secondItem="s1i-qG-oHJ" secondAttribute="centerX" id="j6p-SW-b2f"/>
                                 <constraint firstAttribute="trailing" secondItem="gg9-Hv-ihT" secondAttribute="trailing" id="mDG-Qs-JmR"/>
                                 <constraint firstItem="6AY-9T-ue2" firstAttribute="top" secondItem="gg9-Hv-ihT" secondAttribute="bottom" constant="90" id="q5L-gW-WyT"/>

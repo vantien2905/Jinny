@@ -33,40 +33,40 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-df-RKT">
-                                    <rect key="frame" x="37.5" y="195" width="300" height="40"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-df-RKT">
+                                    <rect key="frame" x="37.5" y="200" width="300" height="45"/>
                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="Aff-Y7-6NM"/>
+                                        <constraint firstAttribute="height" constant="45" id="Aff-Y7-6NM"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7NF-zs-IaG">
-                                    <rect key="frame" x="37" y="112.5" width="300.5" height="40"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7NF-zs-IaG">
+                                    <rect key="frame" x="37" y="112.5" width="300.5" height="45"/>
                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="6ra-wn-xi4"/>
+                                        <constraint firstAttribute="height" constant="45" id="6ra-wn-xi4"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-X8-i0f">
-                                    <rect key="frame" x="37.5" y="172.5" width="300" height="20.5"/>
+                                    <rect key="frame" x="37.5" y="177.5" width="300" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i48-q7-13Y">
-                                    <rect key="frame" x="37" y="255" width="300.5" height="20.5"/>
+                                    <rect key="frame" x="37" y="265" width="300.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-i8-OdJ">
-                                    <rect key="frame" x="93" y="348" width="189.5" height="20"/>
+                                    <rect key="frame" x="93" y="363" width="189.5" height="20"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checked_icon" translatesAutoresizingMaskIntoConstraints="NO" id="atr-WW-ZaN">
                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -84,11 +84,12 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPR-jn-LwH">
-                                    <rect key="frame" x="37" y="388" width="301" height="40"/>
+                                    <rect key="frame" x="37" y="403" width="301" height="45"/>
                                     <color key="backgroundColor" red="0.0" green="0.70752501489999997" blue="0.68913733960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="lnA-Ni-wlH"/>
+                                        <constraint firstAttribute="height" constant="45" id="lnA-Ni-wlH"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <state key="normal" title="Sign up">
                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
@@ -119,20 +120,20 @@
                                 <constraint firstItem="EPR-jn-LwH" firstAttribute="leading" secondItem="w51-Pe-pIE" secondAttribute="leading" id="xOn-wx-ucV"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jhu-A7-Ked">
-                            <rect key="frame" x="37.5" y="277.5" width="300" height="40"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jhu-A7-Ked">
+                            <rect key="frame" x="37.5" y="287.5" width="300" height="45"/>
                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="hcQ-qO-ALL"/>
+                                <constraint firstAttribute="height" constant="45" id="hcQ-qO-ALL"/>
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visible_password" translatesAutoresizingMaskIntoConstraints="NO" id="4Fo-kP-bdh">
-                            <rect key="frame" x="297" y="277" width="40" height="41"/>
+                            <rect key="frame" x="292" y="287" width="45" height="45.5"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="2ab-zt-21a"/>
+                                <constraint firstAttribute="width" constant="45" id="2ab-zt-21a"/>
                             </constraints>
                         </imageView>
                     </subviews>

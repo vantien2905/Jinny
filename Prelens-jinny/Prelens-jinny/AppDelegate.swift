@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func goToLogin() {
-        let vc  = UINavigationController(rootViewController:PRProfileViewController())
+        let vc  = UINavigationController(rootViewController:RedeemViewController())
         window?.rootViewController = vc
-        vc.navigationBar.isHidden = true
+        //vc.navigationBar.isHidden = true
         
     }
     func applicationWillResignActive(_ application: UIApplication) {
