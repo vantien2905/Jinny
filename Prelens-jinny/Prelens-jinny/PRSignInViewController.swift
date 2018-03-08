@@ -1,5 +1,5 @@
 //
-//  PRProfileViewController.swift
+//  PRSignInViewController.swift
 //  Prelens-jinny
 //
 //  Created by vinova on 3/7/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PRProfileViewController: UIViewController {
+class PRSignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
