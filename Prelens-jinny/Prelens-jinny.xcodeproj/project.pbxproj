@@ -19,6 +19,14 @@
 		765027EA2050E76B00618C84 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027E72050E76B00618C84 /* RedeemViewController.swift */; };
 		765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027E82050E76B00618C84 /* RedeemViewController.xib */; };
 		765027EC2050E76B00618C84 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027E82050E76B00618C84 /* RedeemViewController.xib */; };
+		765027F02051114300618C84 /* PRAddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027EE2051114300618C84 /* PRAddManualViewController.swift */; };
+		765027F12051114300618C84 /* PRAddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027EE2051114300618C84 /* PRAddManualViewController.swift */; };
+		765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027EF2051114300618C84 /* PRAddManualViewController.xib */; };
+		765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027EF2051114300618C84 /* PRAddManualViewController.xib */; };
+		765027FA2051175400618C84 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027F82051175400618C84 /* PRAddSuccessViewController.swift */; };
+		765027FB2051175400618C84 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027F82051175400618C84 /* PRAddSuccessViewController.swift */; };
+		765027FC2051175400618C84 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027F92051175400618C84 /* PRAddSuccessViewController.xib */; };
+		765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027F92051175400618C84 /* PRAddSuccessViewController.xib */; };
 		767FF656204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */; };
 		767FF657204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
@@ -77,6 +85,10 @@
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
 		765027E72050E76B00618C84 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
 		765027E82050E76B00618C84 /* RedeemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemViewController.xib; sourceTree = "<group>"; };
+		765027EE2051114300618C84 /* PRAddManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAddManualViewController.swift; sourceTree = "<group>"; };
+		765027EF2051114300618C84 /* PRAddManualViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRAddManualViewController.xib; sourceTree = "<group>"; };
+		765027F82051175400618C84 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
+		765027F92051175400618C84 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
 		767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSignUpViewController.swift; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
@@ -194,6 +206,49 @@
 			name = Redeem;
 			sourceTree = "<group>";
 		};
+		765027ED205110EE00618C84 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				765027F42051129B00618C84 /* AddMemberShip */,
+			);
+			name = Membership;
+			sourceTree = "<group>";
+		};
+		765027F42051129B00618C84 /* AddMemberShip */ = {
+			isa = PBXGroup;
+			children = (
+				765027F72051172400618C84 /* AddSuccess */,
+				765027F62051146200618C84 /* ScanCode */,
+				765027F52051145100618C84 /* AddManual */,
+			);
+			name = AddMemberShip;
+			sourceTree = "<group>";
+		};
+		765027F52051145100618C84 /* AddManual */ = {
+			isa = PBXGroup;
+			children = (
+				765027EE2051114300618C84 /* PRAddManualViewController.swift */,
+				765027EF2051114300618C84 /* PRAddManualViewController.xib */,
+			);
+			name = AddManual;
+			sourceTree = "<group>";
+		};
+		765027F62051146200618C84 /* ScanCode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ScanCode;
+			sourceTree = "<group>";
+		};
+		765027F72051172400618C84 /* AddSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				765027F82051175400618C84 /* PRAddSuccessViewController.swift */,
+				765027F92051175400618C84 /* PRAddSuccessViewController.xib */,
+			);
+			name = AddSuccess;
+			sourceTree = "<group>";
+		};
 		767FF650204D02ED00EA7DE9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +276,7 @@
 		767FF653204D189E00EA7DE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				765027ED205110EE00618C84 /* Membership */,
 				765027E62050E72900618C84 /* Redeem */,
 				BC3F1AE2204D38AF0006A6F5 /* Login */,
 				BC3F1AE1204D388C0006A6F5 /* Tabbar */,
@@ -278,11 +334,8 @@
 				BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */,
 				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
 				7642039E204E45DA00ECDD42 /* UIViewController+extension.swift */,
-
 				BCFC256E204E9F26001988BB /* QRCode.swift */,
-
 				769A742A205023B700414DFE /* NSObject+extension.swift */,
-
 			);
 			name = "Extension+Constant";
 			sourceTree = "<group>";
@@ -454,12 +507,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765027FC2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				760D556A2050172C003FD3CF /* PRSignUpViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
+				765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				769A74312050281E00414DFE /* PRLoginManagerVC.xib in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */,
@@ -474,7 +529,9 @@
 			files = (
 				765027EC2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				769A74292050201600414DFE /* PRSignInViewController.xib in Resources */,
+				765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
 				769A74322050281E00414DFE /* PRLoginManagerVC.xib in Resources */,
+				765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				765027E22050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
@@ -613,12 +670,11 @@
 				BC4BF1A3204FCF0F006DCBA2 /* KeychainManager.swift in Sources */,
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+extension.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
+				765027FA2051175400618C84 /* PRAddSuccessViewController.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */,
-
 				BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */,
-
 				769A74262050201600414DFE /* PRSignInViewController.swift in Sources */,
-
+				765027F02051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */,
 				769A742F2050281E00414DFE /* PRLoginManagerVC.swift in Sources */,
 				765027E92050E76B00618C84 /* RedeemViewController.swift in Sources */,
@@ -639,11 +695,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765027FB2051175400618C84 /* PRAddSuccessViewController.swift in Sources */,
 				765027EA2050E76B00618C84 /* RedeemViewController.swift in Sources */,
 				769A74302050281E00414DFE /* PRLoginManagerVC.swift in Sources */,
 				769A74272050201600414DFE /* PRSignInViewController.swift in Sources */,
 				76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+extension.swift in Sources */,
+				765027F12051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				767FF657204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,

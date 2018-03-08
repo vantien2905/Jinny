@@ -28,23 +28,22 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkS-3E-3Aq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="191.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="153.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sl-2r-Jtk">
-                                            <rect key="frame" x="19" y="13" width="337.5" height="76.5"/>
-                                            <string key="text">San(3)Tou(10)ka Day - $3++ Ramen for everyone! axsfdfdfgg San(3)Tou(10)ka Day - $3++ Ramen for everyone! axsfdfdfgg San(3)Tou(10)ka Day - $3+</string>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San(3)Tou(10)ka Day - $3++ Ramen for everyone! " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sl-2r-Jtk">
+                                            <rect key="frame" x="19" y="13" width="337.5" height="38.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santouka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAc-58-L6U">
-                                            <rect key="frame" x="19" y="109.5" width="338" height="17"/>
+                                            <rect key="frame" x="19" y="71.5" width="338" height="17"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WXZ-oR-OTB">
-                                            <rect key="frame" x="19" y="146.5" width="337.5" height="17"/>
+                                            <rect key="frame" x="19" y="108.5" width="337.5" height="17"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expired date:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19t-t1-8hD">
                                                     <rect key="frame" x="0.0" y="0.0" width="87.5" height="17"/>
@@ -72,14 +71,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjT-RD-Rh7">
-                                    <rect key="frame" x="19" y="191.5" width="337.5" height="1"/>
+                                    <rect key="frame" x="19" y="153.5" width="337.5" height="1"/>
                                     <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="IYS-lY-AKv"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7A-1J-ESp">
-                                    <rect key="frame" x="0.0" y="192.5" width="375" height="474.5"/>
+                                    <rect key="frame" x="0.0" y="154.5" width="375" height="512.5"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QR_code" translatesAutoresizingMaskIntoConstraints="NO" id="IrE-72-x7g">
                                             <rect key="frame" x="97.5" y="60" width="180" height="180"/>
