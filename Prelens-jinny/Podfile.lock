@@ -5,6 +5,7 @@ PODS:
   - Alamofire (4.7.0)
   - IQKeyboardManagerSwift (5.0.7)
   - JTAppleCalendar (7.1.5)
+  - KeychainSwift (10.0.0)
   - ObjectMapper (3.1.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
   - JTAppleCalendar
+  - KeychainSwift
   - ObjectMapper
   - RxCocoa
   - RxSwift
@@ -32,6 +34,7 @@ SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
+  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
@@ -39,6 +42,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: fee9f172065bcf94c486e17e65abfad67d6df807
+PODFILE CHECKSUM: e4688055d0340358a6e8b5d27dbdbbd841f182d0
 
-COCOAPODS: 1.4.0.rc.1
+COCOAPODS: 1.4.0
