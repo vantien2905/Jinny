@@ -27,6 +27,10 @@
 		765027FB2051175400618C84 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027F82051175400618C84 /* PRAddSuccessViewController.swift */; };
 		765027FC2051175400618C84 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027F92051175400618C84 /* PRAddSuccessViewController.xib */; };
 		765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027F92051175400618C84 /* PRAddSuccessViewController.xib */; };
+		765028012051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
+		765028022051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
+		765028032051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
+		765028042051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
 		767FF656204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */; };
 		767FF657204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
@@ -89,6 +93,8 @@
 		765027EF2051114300618C84 /* PRAddManualViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRAddManualViewController.xib; sourceTree = "<group>"; };
 		765027F82051175400618C84 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
 		765027F92051175400618C84 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
+		765027FF2051265300618C84 /* PRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSettingViewController.swift; sourceTree = "<group>"; };
+		765028002051265300618C84 /* PRSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSettingViewController.xib; sourceTree = "<group>"; };
 		767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSignUpViewController.swift; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
@@ -249,6 +255,15 @@
 			name = AddSuccess;
 			sourceTree = "<group>";
 		};
+		765027FE2051263200618C84 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				765027FF2051265300618C84 /* PRSettingViewController.swift */,
+				765028002051265300618C84 /* PRSettingViewController.xib */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		767FF650204D02ED00EA7DE9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +291,7 @@
 		767FF653204D189E00EA7DE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				765027FE2051263200618C84 /* Setting */,
 				765027ED205110EE00618C84 /* Membership */,
 				765027E62050E72900618C84 /* Redeem */,
 				BC3F1AE2204D38AF0006A6F5 /* Login */,
@@ -512,6 +528,7 @@
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
+				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
 				760D556A2050172C003FD3CF /* PRSignUpViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */,
@@ -534,6 +551,7 @@
 				765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
+				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
 				765027E22050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +690,7 @@
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				765027FA2051175400618C84 /* PRAddSuccessViewController.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */,
+				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */,
 				769A74262050201600414DFE /* PRSignInViewController.swift in Sources */,
 				765027F02051114300618C84 /* PRAddManualViewController.swift in Sources */,
@@ -704,6 +723,7 @@
 				765027F12051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
+				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
 				767FF657204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,

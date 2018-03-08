@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func goToLogin() {
-        let vc  = UINavigationController(rootViewController:PRAddSuccessViewController())
+        let vc  = UINavigationController(rootViewController:PRSettingViewController())
         window?.rootViewController = vc
         //vc.navigationBar.isHidden = true
         
