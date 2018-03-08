@@ -45,12 +45,15 @@
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */; };
 		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
 		BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */; };
+		BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF1A0204FC70E006DCBA2 /* Networking.swift */; };
+		BC4BF1A3204FCF0F006DCBA2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A68204CEE5D0052A285 /* ViewController.swift */; };
 		BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6A204CEE5D0052A285 /* Main.storyboard */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */; };
+		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
 		CB6385249FFB0A0AA9621554 /* Pods_Prelens_jinnyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,8 @@
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
+		BC4BF1A0204FC70E006DCBA2 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A68204CEE5D0052A285 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		BC770A77204CEE5D0052A285 /* Prelens-jinnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelens-jinnyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prelens_jinnyTests.swift; sourceTree = "<group>"; };
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.release.xcconfig"; sourceTree = "<group>"; };
 		C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.debug.xcconfig"; sourceTree = "<group>"; };
 		DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 		767FF652204D030500EA7DE9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				BC4BF1A0204FC70E006DCBA2 /* Networking.swift */,
+				BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -270,7 +278,11 @@
 				BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */,
 				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
 				7642039E204E45DA00ECDD42 /* UIViewController+extension.swift */,
+
+				BCFC256E204E9F26001988BB /* QRCode.swift */,
+
 				769A742A205023B700414DFE /* NSObject+extension.swift */,
+
 			);
 			name = "Extension+Constant";
 			sourceTree = "<group>";
@@ -319,9 +331,9 @@
 			children = (
 				BC3F1ADA204D1BFB0006A6F5 /* Extension+Constant */,
 				BC3F1AD1204D17380006A6F5 /* CustomView */,
-				767FF652204D030500EA7DE9 /* Networking */,
 				767FF651204D02FA00EA7DE9 /* View */,
 				767FF650204D02ED00EA7DE9 /* ViewModel */,
+				767FF652204D030500EA7DE9 /* Networking */,
 				BC3F1AD0204D02590006A6F5 /* Model */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
 				BC770A68204CEE5D0052A285 /* ViewController.swift */,
@@ -564,6 +576,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -577,6 +590,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -596,14 +610,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4BF1A3204FCF0F006DCBA2 /* KeychainManager.swift in Sources */,
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+extension.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */,
+
+				BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */,
+
 				769A74262050201600414DFE /* PRSignInViewController.swift in Sources */,
+
 				BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */,
 				769A742F2050281E00414DFE /* PRLoginManagerVC.swift in Sources */,
 				765027E92050E76B00618C84 /* RedeemViewController.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
+				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+extension.swift in Sources */,
