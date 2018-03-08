@@ -39,12 +39,4 @@ class KeychainManager {
         return keychain.get(KeychainItem.token.rawValue)
     }
     
-    func checkValid() -> Bool {
-        guard let validTime = getValidTime() else {
-            return false
-        }
-        let validTimeSecond     = validTime / 1000 //miliseconds to seconds
-        let currentTimestamp    = NSDate().timeIntervalSince1970
-        return validTimeSecond + bufferExpirationTime < currentTimestamp
-    }
 }
