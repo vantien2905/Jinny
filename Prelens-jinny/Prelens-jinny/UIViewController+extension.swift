@@ -8,7 +8,17 @@
 
 import UIKit
 
-
+public extension UIViewController {
+    class func initControllerFromNib() -> UIViewController {
+        let isNib: Bool = Bundle.main.path(forResource: self.className, ofType: "nib") != nil
+        guard isNib else {
+            assert(!isNib, "invalid nib file")
+            return UIViewController()
+        }
+        
+        return self.init(nibName: self.className, bundle: nil)
+    }
+}
 extension UIViewController {
     func getViewController<T: UIViewController>(controller: T) -> T {
         let nibName = String(describing: type(of: self))

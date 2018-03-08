@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PRLoginViewController: UIViewController {
+class PRSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
