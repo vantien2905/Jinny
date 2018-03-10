@@ -65,7 +65,7 @@ class PRBaseNavigationViewController: UIViewController {
     
     func setUpLayout(){
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.mainAppColor
+        //self.navigationController?.navigationBar.barTintColor = UIColor.mainAppColor
         self.navigationController?.navigationBar.isTranslucent = false
         UIApplication.shared.statusBarStyle = .lightContent
         //---

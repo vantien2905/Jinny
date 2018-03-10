@@ -1,8 +1,8 @@
 //
-//  APIBaseService.swift
+//  BaseService.swift
 //  Prelens-jinny
 //
-//  Created by Lamp on 10/3/18.
+//  Created by Lamp on 8/3/18.
 //  Copyright © 2018 Lamp. All rights reserved.
 //
 
@@ -157,7 +157,7 @@ extension APIBaseService {
                         }
                         
                     case .failure(let error): break
-                        //     failed(error.localizedDescription)
+                   //     failed(error.localizedDescription)
                     }
             }
             
@@ -199,6 +199,25 @@ extension APIBaseService {
 }
 
 //Todo: Embbed the RXSwift into the response type, the response result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

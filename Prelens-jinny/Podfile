@@ -15,6 +15,9 @@ target 'Prelens-jinny' do
   pod 'UIScrollView-InfiniteScroll'
   pod 'IQKeyboardManagerSwift'
   pod 'KeychainSwift'
+  pod 'PKHUD'
+  pod 'AlamofireObjectMapper'
+
   target 'Prelens-jinnyTests' do
     inherit! :search_paths
     # Pods for testing
