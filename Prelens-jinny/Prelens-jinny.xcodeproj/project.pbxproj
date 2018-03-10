@@ -44,6 +44,10 @@
 		769A742B205023B700414DFE /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+extension.swift */; };
 		769A742C205023B700414DFE /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+extension.swift */; };
 		76C7E03C2053D2EA009F119D /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */; };
+		76C7E0412053D864009F119D /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */; };
+		76C7E0422053D864009F119D /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */; };
+		76C7E0432053D864009F119D /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */; };
+		76C7E0442053D864009F119D /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E29B142052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E8970F20529F4C00C4016A /* PRLoginManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E8970C20529F4C00C4016A /* PRLoginManagerVC.xib */; };
@@ -105,6 +109,8 @@
 		769A74252050201600414DFE /* PRSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extension.swift"; sourceTree = "<group>"; };
 		76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
+		76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76E8970C20529F4C00C4016A /* PRLoginManagerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRLoginManagerVC.xib; sourceTree = "<group>"; };
 		76E8971120529F9000C4016A /* PRLoginManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoginManagerVC.swift; sourceTree = "<group>"; };
@@ -332,6 +338,15 @@
 			name = CustomFont;
 			sourceTree = "<group>";
 		};
+		76C7E03E2053D7D3009F119D /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */,
+				76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */,
+			);
+			name = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		76E29B0E2052650F0039CA45 /* MenuBarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +412,7 @@
 		BC3F1AE2204D38AF0006A6F5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				76C7E03E2053D7D3009F119D /* ForgotPassword */,
 				765027E42050E2FC00618C84 /* SignIn */,
 				765027E32050E2EB00618C84 /* SignUp */,
 				76E8970C20529F4C00C4016A /* PRLoginManagerVC.xib */,
@@ -558,6 +574,7 @@
 				76E8970F20529F4C00C4016A /* PRLoginManagerVC.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
+				76C7E0432053D864009F119D /* PRForgotPasswordViewController.xib in Resources */,
 				765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
@@ -578,6 +595,7 @@
 				765027EC2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				769A74292050201600414DFE /* PRSignInViewController.xib in Resources */,
 				765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
+				76C7E0442053D864009F119D /* PRForgotPasswordViewController.xib in Resources */,
 				76C7E03C2053D2EA009F119D /* OstrichSans-Heavy.otf in Resources */,
 				765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
@@ -737,6 +755,7 @@
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				767FF656204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
+				76C7E0412053D864009F119D /* PRForgotPasswordViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
@@ -752,6 +771,7 @@
 				769A74272050201600414DFE /* PRSignInViewController.swift in Sources */,
 				76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				76E8971320529F9000C4016A /* PRLoginManagerVC.swift in Sources */,
+				76C7E0422053D864009F119D /* PRForgotPasswordViewController.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+extension.swift in Sources */,
 				765027F12051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */,
