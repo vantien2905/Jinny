@@ -9,7 +9,7 @@
 import UIKit
 
 class PRSignUpViewController: UIViewController {
-
+    var parentNavigationController      : UINavigationController?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tapHideKeyboard()

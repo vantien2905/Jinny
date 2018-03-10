@@ -9,7 +9,7 @@
 import UIKit
 
 class PRSignInViewController: UIViewController {
-
+    var parentNavigationController      : UINavigationController?
     override func viewDidLoad() {
         super.viewDidLoad()
 

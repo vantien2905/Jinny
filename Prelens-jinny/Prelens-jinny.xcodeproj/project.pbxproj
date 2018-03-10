@@ -43,10 +43,13 @@
 		769A74292050201600414DFE /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A74252050201600414DFE /* PRSignInViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+extension.swift */; };
 		769A742C205023B700414DFE /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+extension.swift */; };
-		769A742F2050281E00414DFE /* PRLoginManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742D2050281E00414DFE /* PRLoginManagerVC.swift */; };
-		769A74302050281E00414DFE /* PRLoginManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742D2050281E00414DFE /* PRLoginManagerVC.swift */; };
-		769A74312050281E00414DFE /* PRLoginManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A742E2050281E00414DFE /* PRLoginManagerVC.xib */; };
-		769A74322050281E00414DFE /* PRLoginManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A742E2050281E00414DFE /* PRLoginManagerVC.xib */; };
+		76C7E03C2053D2EA009F119D /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */; };
+		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
+		76E29B142052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
+		76E8970F20529F4C00C4016A /* PRLoginManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E8970C20529F4C00C4016A /* PRLoginManagerVC.xib */; };
+		76E8971020529F4C00C4016A /* PRLoginManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E8970C20529F4C00C4016A /* PRLoginManagerVC.xib */; };
+		76E8971220529F9000C4016A /* PRLoginManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8971120529F9000C4016A /* PRLoginManagerVC.swift */; };
+		76E8971320529F9000C4016A /* PRLoginManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8971120529F9000C4016A /* PRLoginManagerVC.swift */; };
 		76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
@@ -101,8 +104,10 @@
 		769A74242050201600414DFE /* PRSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSignInViewController.swift; sourceTree = "<group>"; };
 		769A74252050201600414DFE /* PRSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extension.swift"; sourceTree = "<group>"; };
-		769A742D2050281E00414DFE /* PRLoginManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoginManagerVC.swift; sourceTree = "<group>"; };
-		769A742E2050281E00414DFE /* PRLoginManagerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRLoginManagerVC.xib; sourceTree = "<group>"; };
+		76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
+		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		76E8970C20529F4C00C4016A /* PRLoginManagerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRLoginManagerVC.xib; sourceTree = "<group>"; };
+		76E8971120529F9000C4016A /* PRLoginManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoginManagerVC.swift; sourceTree = "<group>"; };
 		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
 		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
@@ -156,6 +161,13 @@
 				564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		763B0C5320537AD800D00ED6 /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LoginViewModel;
 			sourceTree = "<group>";
 		};
 		765027DA2050D85D00618C84 /* EditProfile */ = {
@@ -267,6 +279,7 @@
 		767FF650204D02ED00EA7DE9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				763B0C5320537AD800D00ED6 /* LoginViewModel */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -311,6 +324,22 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		76C7E0392053D2D4009F119D /* CustomFont */ = {
+			isa = PBXGroup;
+			children = (
+				76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */,
+			);
+			name = CustomFont;
+			sourceTree = "<group>";
+		};
+		76E29B0E2052650F0039CA45 /* MenuBarView */ = {
+			isa = PBXGroup;
+			children = (
+				76E29B122052654A0039CA45 /* MenuView.swift */,
+			);
+			name = MenuBarView;
+			sourceTree = "<group>";
+		};
 		BC3F1AD0204D02590006A6F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +350,7 @@
 		BC3F1AD1204D17380006A6F5 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				76E29B0E2052650F0039CA45 /* MenuBarView */,
 				BC3F1AD2204D18D80006A6F5 /* PRBaseView */,
 				BC3F1AD9204D19BB0006A6F5 /* PRButtonTabbar */,
 			);
@@ -369,8 +399,8 @@
 			children = (
 				765027E42050E2FC00618C84 /* SignIn */,
 				765027E32050E2EB00618C84 /* SignUp */,
-				769A742D2050281E00414DFE /* PRLoginManagerVC.swift */,
-				769A742E2050281E00414DFE /* PRLoginManagerVC.xib */,
+				76E8970C20529F4C00C4016A /* PRLoginManagerVC.xib */,
+				76E8971120529F9000C4016A /* PRLoginManagerVC.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -398,6 +428,7 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
+				76C7E0392053D2D4009F119D /* CustomFont */,
 				BC3F1ADA204D1BFB0006A6F5 /* Extension+Constant */,
 				BC3F1AD1204D17380006A6F5 /* CustomView */,
 				767FF651204D02FA00EA7DE9 /* View */,
@@ -524,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765027FC2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
+				76E8970F20529F4C00C4016A /* PRLoginManagerVC.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */,
@@ -532,7 +564,6 @@
 				760D556A2050172C003FD3CF /* PRSignUpViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */,
-				769A74312050281E00414DFE /* PRLoginManagerVC.xib in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */,
 				769A74282050201600414DFE /* PRSignInViewController.xib in Resources */,
@@ -547,9 +578,10 @@
 				765027EC2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				769A74292050201600414DFE /* PRSignInViewController.xib in Resources */,
 				765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
-				769A74322050281E00414DFE /* PRLoginManagerVC.xib in Resources */,
+				76C7E03C2053D2EA009F119D /* OstrichSans-Heavy.otf in Resources */,
 				765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
+				76E8971020529F4C00C4016A /* PRLoginManagerVC.xib in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
 				765027E22050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
@@ -693,15 +725,16 @@
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */,
 				769A74262050201600414DFE /* PRSignInViewController.swift in Sources */,
+				76E8971220529F9000C4016A /* PRLoginManagerVC.swift in Sources */,
 				765027F02051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */,
-				769A742F2050281E00414DFE /* PRLoginManagerVC.swift in Sources */,
 				765027E92050E76B00618C84 /* RedeemViewController.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+extension.swift in Sources */,
+				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				767FF656204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
@@ -716,9 +749,9 @@
 			files = (
 				765027FB2051175400618C84 /* PRAddSuccessViewController.swift in Sources */,
 				765027EA2050E76B00618C84 /* RedeemViewController.swift in Sources */,
-				769A74302050281E00414DFE /* PRLoginManagerVC.swift in Sources */,
 				769A74272050201600414DFE /* PRSignInViewController.swift in Sources */,
 				76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */,
+				76E8971320529F9000C4016A /* PRLoginManagerVC.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+extension.swift in Sources */,
 				765027F12051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */,
@@ -726,6 +759,7 @@
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
 				767FF657204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
+				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
