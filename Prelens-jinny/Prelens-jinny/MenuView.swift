@@ -29,7 +29,7 @@ class MenuView: UIView{
         view.backgroundColor = UIColor.black
         return view
     }()
-    
+
     var listItem = [AnyObject]() {
         didSet {
             collectionView.reloadData()
@@ -42,12 +42,7 @@ class MenuView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        addSubview(collectionView)
-        collectionView.anchor(self.topAnchor, left: self.leftAnchor,bottom: self.bottomAnchor,right: self.rightAnchor, topConstant: 0, leftConstant: 0 ,bottomConstant:0 ,rightConstant:0)
+        setupCollectionView()
         setupScrollBar()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -55,13 +50,19 @@ class MenuView: UIView{
         fatalError("init(coder:) has not been implement")
     }
     
+    func setupCollectionView(){
+        collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        addSubview(collectionView)
+        collectionView.anchor(self.topAnchor, left: self.leftAnchor,bottom: self.bottomAnchor,right: self.rightAnchor, topConstant: 0, leftConstant: 0 ,bottomConstant:0 ,rightConstant:0)
+    }
+    
     func setupScrollBar(){
         vScrollBar.translatesAutoresizingMaskIntoConstraints = false
         addSubview(vScrollBar)
-        
         horizontalBarLeftAnchorConstraint = vScrollBar.leftAnchor.constraint(equalTo: self.leftAnchor)
         horizontalBarLeftAnchorConstraint?.isActive = true
-        
         vScrollBar.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         vScrollBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/2).isActive = true
         vScrollBar.heightAnchor.constraint(equalToConstant: 4).isActive = true
@@ -104,7 +105,6 @@ class MenuView: UIView{
     
     func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem])
     {
-        //backgroundColor = menuColorBackground
         self.listItem = listItem
     }
 }
@@ -132,6 +132,45 @@ UICollectionViewDelegateFlowLayout {
     }
 }
 
+class MenuItemCollectionViewCell: UICollectionViewCell {
+    let lbTitle: UILabel = {
+        let lb = UILabel()
+        lb.text = "SIGN UP"
+        lb.textColor = UIColor.gray
+        lb.font =  UIFont.boldSystemFont(ofSize: 20)
+        lb.textAlignment = .center
+        
+        return lb
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setUpView()
+    }
+    override var isSelected: Bool {
+        didSet{
+            lbTitle.textColor = isSelected ? UIColor.black : UIColor.gray
+        }
+    }
+    
+    func setUpView() {
+        addSubview(lbTitle)
+        lbTitle.centerXToSuperview()
+        lbTitle.centerYToSuperview()
+    }
+    
+    func setData(item: AnyObject?, normalColor: UIColor, selectedColor: UIColor) {
+        if let _item = item as? MenuItem {
+            lbTitle.text = _item.title
+            lbTitle.textColor = _item.isSelected == true ? selectedColor : normalColor
+        }
+    }
+}
 
 class MenuItem {
     var title: String = ""
