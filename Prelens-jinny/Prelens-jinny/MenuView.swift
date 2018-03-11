@@ -137,7 +137,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         let lb = UILabel()
         lb.text = "SIGN UP"
         lb.textColor = UIColor.gray
-        lb.font =  UIFont.boldSystemFont(ofSize: 20)
+        lb.font =  UIFont(name: "OstrichSans-Heavy", size: 30)
         lb.textAlignment = .center
         
         return lb

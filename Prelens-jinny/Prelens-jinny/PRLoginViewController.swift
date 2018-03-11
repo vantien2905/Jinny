@@ -12,6 +12,7 @@ class PRLoginViewController: UIViewController {
 
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var currentIndex = 0 
     
@@ -37,6 +38,10 @@ class PRLoginViewController: UIViewController {
         ]
         controllers = [ vcSignUp, vcSignIn ]
         self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu)
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         setupView()
     }
 
@@ -62,6 +67,16 @@ class PRLoginViewController: UIViewController {
         cvMenuController.delegate = self
         cvMenuController.isPagingEnabled = true
     }
+    
+    @objc func keyboardWillShow(notification:NSNotification){
+        //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
+        scrollView.contentSize.height = 600
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification){
+        scrollView.contentSize.height = 667
+    }
+    
 }
 extension PRLoginViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

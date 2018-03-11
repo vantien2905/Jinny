@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
 		760D556A2050172C003FD3CF /* PRSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760D55692050172C003FD3CF /* PRSignUpViewController.xib */; };
+		762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
+		762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
+		762E97EA2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
+		762E97EB2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
+		762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EC2054E12F001AA449 /* segoeuib.ttf */; };
+		762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EC2054E12F001AA449 /* segoeuib.ttf */; };
+		762E97F32054E189001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EF2054E187001AA449 /* segoeui.ttf */; };
+		762E97F42054E189001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EF2054E187001AA449 /* segoeui.ttf */; };
+		762E97F52054E189001AA449 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F02054E187001AA449 /* segoeuil.ttf */; };
+		762E97F62054E189001AA449 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F02054E187001AA449 /* segoeuil.ttf */; };
+		762E97F72054E189001AA449 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F12054E188001AA449 /* segoeuii.ttf */; };
+		762E97F82054E189001AA449 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F12054E188001AA449 /* segoeuii.ttf */; };
+		762E97F92054E189001AA449 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F22054E188001AA449 /* segoeuisl.ttf */; };
+		762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F22054E188001AA449 /* segoeuisl.ttf */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+extension.swift */; };
 		764203A0204E45DA00ECDD42 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+extension.swift */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
@@ -43,7 +57,6 @@
 		769A74292050201600414DFE /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A74252050201600414DFE /* PRSignInViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+extension.swift */; };
 		769A742C205023B700414DFE /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+extension.swift */; };
-		76C7E03C2053D2EA009F119D /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */; };
 		76C7E0412053D864009F119D /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */; };
 		76C7E0422053D864009F119D /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */; };
 		76C7E0432053D864009F119D /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */; };
@@ -98,6 +111,13 @@
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		760D55692050172C003FD3CF /* PRSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignUpViewController.xib; sourceTree = "<group>"; };
+		762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
+		762E97E92054E128001AA449 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
+		762E97EC2054E12F001AA449 /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuib.ttf; sourceTree = "<group>"; };
+		762E97EF2054E187001AA449 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeui.ttf; path = ../../../../fonts/segoeui.ttf; sourceTree = "<group>"; };
+		762E97F02054E187001AA449 /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuil.ttf; sourceTree = "<group>"; };
+		762E97F12054E188001AA449 /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuii.ttf; sourceTree = "<group>"; };
+		762E97F22054E188001AA449 /* segoeuisl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuisl.ttf; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
@@ -115,7 +135,6 @@
 		769A74242050201600414DFE /* PRSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSignInViewController.swift; sourceTree = "<group>"; };
 		769A74252050201600414DFE /* PRSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extension.swift"; sourceTree = "<group>"; };
-		76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
 		76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -181,6 +200,20 @@
 				564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		762E97E52054DE81001AA449 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */,
+				762E97E92054E128001AA449 /* segoeui.ttf */,
+				762E97F12054E188001AA449 /* segoeuii.ttf */,
+				762E97F02054E187001AA449 /* segoeuil.ttf */,
+				762E97F22054E188001AA449 /* segoeuisl.ttf */,
+				762E97EC2054E12F001AA449 /* segoeuib.ttf */,
+				762E97EF2054E187001AA449 /* segoeui.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		763B0C5320537AD800D00ED6 /* LoginViewModel */ = {
@@ -349,14 +382,6 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
-		76C7E0392053D2D4009F119D /* CustomFont */ = {
-			isa = PBXGroup;
-			children = (
-				76C7E03A2053D2EA009F119D /* OstrichSans-Heavy.otf */,
-			);
-			name = CustomFont;
-			sourceTree = "<group>";
-		};
 		76C7E03E2053D7D3009F119D /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,7 +488,7 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
-				76C7E0392053D2D4009F119D /* CustomFont */,
+				762E97E52054DE81001AA449 /* Fonts */,
 				BC3F1ADA204D1BFB0006A6F5 /* Extension+Constant */,
 				BC3F1AD1204D17380006A6F5 /* CustomView */,
 				767FF651204D02FA00EA7DE9 /* View */,
@@ -602,18 +627,25 @@
 				765027FC2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
+				762E97F72054E189001AA449 /* segoeuii.ttf in Resources */,
+				762E97F32054E189001AA449 /* segoeui.ttf in Resources */,
 				76F3CD8C205407A0008A749C /* PRLoginViewController.xib in Resources */,
 				76C7E0432053D864009F119D /* PRForgotPasswordViewController.xib in Resources */,
 				765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
+				762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
 				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
 				760D556A2050172C003FD3CF /* PRSignUpViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
+				762E97EA2054E129001AA449 /* segoeui.ttf in Resources */,
 				765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */,
+				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
+				762E97F52054E189001AA449 /* segoeuil.ttf in Resources */,
 				769A74282050201600414DFE /* PRSignInViewController.xib in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
+				762E97F92054E189001AA449 /* segoeuisl.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,13 +655,19 @@
 			files = (
 				765027EC2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				769A74292050201600414DFE /* PRSignInViewController.xib in Resources */,
+				762E97F82054E189001AA449 /* segoeuii.ttf in Resources */,
+				762E97F42054E189001AA449 /* segoeui.ttf in Resources */,
 				765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
+				762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
+				762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */,
 				76C7E0442053D864009F119D /* PRForgotPasswordViewController.xib in Resources */,
 				76F3CD8D205407A0008A749C /* PRLoginViewController.xib in Resources */,
-				76C7E03C2053D2EA009F119D /* OstrichSans-Heavy.otf in Resources */,
 				765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
+				762E97EB2054E129001AA449 /* segoeui.ttf in Resources */,
+				762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
+				762E97F62054E189001AA449 /* segoeuil.ttf in Resources */,
 				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
 				765027E22050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 			);
