@@ -20,8 +20,6 @@
 		762E97F82054E189001AA449 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F12054E188001AA449 /* segoeuii.ttf */; };
 		762E97F92054E189001AA449 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F22054E188001AA449 /* segoeuisl.ttf */; };
 		762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F22054E188001AA449 /* segoeuisl.ttf */; };
-		763C3CE220563AD200AF6990 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C3CE120563AD200AF6990 /* LoginModel.swift */; };
-		763C3CE320563AD200AF6990 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C3CE120563AD200AF6990 /* LoginModel.swift */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
@@ -101,7 +99,6 @@
 		762E97F02054E187001AA449 /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuil.ttf; sourceTree = "<group>"; };
 		762E97F12054E188001AA449 /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuii.ttf; sourceTree = "<group>"; };
 		762E97F22054E188001AA449 /* segoeuisl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuisl.ttf; sourceTree = "<group>"; };
-		763C3CE120563AD200AF6990 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginModel.swift; path = "Prelens-jinny/Views/LoginModel.swift"; sourceTree = SOURCE_ROOT; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
@@ -185,6 +182,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		76469D0020563CFA00E2950E /* LocalPersistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalPersistence;
+			sourceTree = "<group>";
+		};
+		76469D0120563D4400E2950E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		76469D0220563D5500E2950E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		76469D0320563D7600E2950E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		BC770A5A204CEE5D0052A285 = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +233,9 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
+				76469D0220563D5500E2950E /* ViewModels */,
+				76469D0120563D4400E2950E /* Models */,
 				BCBC960C20562EB1004C1985 /* Resource */,
-				BCBC960A20562DDB004C1985 /* ViewModels */,
-				BCBC960920562DD4004C1985 /* Models */,
 				BCBC958D20562254004C1985 /* Services */,
 				BCBC95AC205626A0004C1985 /* Views */,
 				BCBC958920562206004C1985 /* Components */,
@@ -269,7 +294,7 @@
 		BCBC958D20562254004C1985 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BCBC95B3205628FC004C1985 /* LocalPersistence */,
+				76469D0020563CFA00E2950E /* LocalPersistence */,
 				BCBC95B020562839004C1985 /* Networking */,
 			);
 			path = Services;
@@ -372,7 +397,7 @@
 		BCBC95AC205626A0004C1985 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BCBC960B20562E7D004C1985 /* Storyboards */,
+				76469D0320563D7600E2950E /* Storyboards */,
 				BCBC959720562411004C1985 /* CustomView */,
 				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				BCBC95AB2056267F004C1985 /* Controllers */,
@@ -407,13 +432,6 @@
 				BC4BF3802055449400004611 /* PRUserAPIService.swift */,
 			);
 			path = APIServices;
-			sourceTree = "<group>";
-		};
-		BCBC95B3205628FC004C1985 /* LocalPersistence */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LocalPersistence;
 			sourceTree = "<group>";
 		};
 		BCBC95E020562BB8004C1985 /* Login */ = {
@@ -470,28 +488,6 @@
 				BCBC960620562D26004C1985 /* RedeemViewController.xib */,
 			);
 			path = Redeem;
-			sourceTree = "<group>";
-		};
-		BCBC960920562DD4004C1985 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				763C3CE120563AD200AF6990 /* LoginModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		BCBC960A20562DDB004C1985 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		BCBC960B20562E7D004C1985 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		BCBC960C20562EB1004C1985 /* Resource */ = {
@@ -836,7 +832,6 @@
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BC4BF3812055449400004611 /* PRUserAPIService.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
-				763C3CE220563AD200AF6990 /* LoginModel.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
@@ -852,7 +847,6 @@
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
-				763C3CE320563AD200AF6990 /* LoginModel.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
