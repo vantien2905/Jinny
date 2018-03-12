@@ -7,10 +7,13 @@
 //
 
 import UIKit
+
 protocol MenuBarDelegate: class {
     func itemMenuSelected(index: Int)
 }
+
 class MenuView: UIView{
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -21,13 +24,12 @@ class MenuView: UIView{
         return cv
     }()
     
-    let vHorizotal: UIView = {
+    let vScrollBar: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black
-        
         return view
     }()
-    
+
     var listItem = [AnyObject]() {
         didSet {
             collectionView.reloadData()
@@ -40,44 +42,69 @@ class MenuView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupCollectionView()
+        setupScrollBar()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implement")
+    }
+    
+    func setupCollectionView(){
         collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         collectionView.delegate = self
         collectionView.dataSource = self
         addSubview(collectionView)
-        
         collectionView.anchor(self.topAnchor, left: self.leftAnchor,bottom: self.bottomAnchor,right: self.rightAnchor, topConstant: 0, leftConstant: 0 ,bottomConstant:0 ,rightConstant:0)
-        backgroundColor = UIColor.white
-        
-        let selectedIndexPath = NSIndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedIndexPath as IndexPath, animated: false, scrollPosition: .centeredHorizontally)
-        setupHorizontalBar()
-        
-    }
-    required init?(coder aDecoder: NSCoder) {
-        
-        fatalError("init(coder:) has not been implement")
     }
     
-    func setupHorizontalBar(){
-        let horizontalBarView = UIView()
-        let width = collectionView.frame.width
-        print(width)
-        horizontalBarView.backgroundColor = UIColor.black
-        horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(horizontalBarView)
-        
-        horizontalBarLeftAnchorConstraint = horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20 )
+    func setupScrollBar(){
+        vScrollBar.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(vScrollBar)
+        horizontalBarLeftAnchorConstraint = vScrollBar.leftAnchor.constraint(equalTo: self.leftAnchor)
         horizontalBarLeftAnchorConstraint?.isActive = true
-        
-        horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        horizontalBarView.widthAnchor.constraint(equalToConstant: 335/2).isActive = true
-        horizontalBarView.heightAnchor.constraint(equalToConstant: 5).isActive = true
+        vScrollBar.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        vScrollBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/2).isActive = true
+        vScrollBar.heightAnchor.constraint(equalToConstant: 4).isActive = true
     }
     
-    func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem], isFull: Bool = false)
+    func scrollToIndex(index: Int) {
+        
+        //get cell selected
+        let indexPath = IndexPath(item: index, section: 0)
+        guard let cellScroll = collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell else { return }
+        
+        UIView.animate(withDuration: 0.5) {
+            //-- scroll view horizontal
+            self.vScrollBar.frame = CGRect(x: self.vScrollBar.frame.minX, y: self.vScrollBar.frame.minY, width: cellScroll.frame.width, height: self.vScrollBar.frame.height)
+            self.vScrollBar.center.x = cellScroll.center.x
+            
+            //-- scroll collction view
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            
+            //-- set color nomal for all item in screen
+            //-- indexPathsForVisibleItems get indexPath all item in screen
+            let listIndexPathVisible = self.collectionView.indexPathsForVisibleItems
+            for indexPath in listIndexPathVisible {
+                if let cell = self.collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell {
+                    cell.lbTitle.textColor = UIColor.lightGray
+                }
+            }
+            
+            //-- set color selected for current cell
+            cellScroll.lbTitle.textColor = UIColor.black
+            
+            //--
+            guard let listCategory = self.listItem as? [MenuItem] else { return }
+            for i in 0...listCategory.count - 1 {
+                listCategory[i].isSelected = false
+            }
+            listCategory[index].isSelected = true
+        }
+    }
+    
+    func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem])
     {
-        backgroundColor = menuColorBackground
         self.listItem = listItem
     }
 }
@@ -85,7 +112,7 @@ class MenuView: UIView{
 extension MenuView:UICollectionViewDataSource,UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return listItem.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,12 +128,7 @@ UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.itemMenuSelected(index: indexPath.item)
-        let widthCell = collectionView.frame.width / 2
-        let x = (CGFloat(indexPath.item) * widthCell)
-        horizontalBarLeftAnchorConstraint?.constant = x
-        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1 , initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            self.layoutIfNeeded()
-        }, completion: nil)
+        scrollToIndex(index: indexPath.item)
     }
 }
 
@@ -115,16 +137,10 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         let lb = UILabel()
         lb.text = "SIGN UP"
         lb.textColor = UIColor.gray
-        lb.font =  UIFont.boldSystemFont(ofSize: 20)
+        lb.font =  UIFont(name: "OstrichSans-Heavy", size: 30)
         lb.textAlignment = .center
         
         return lb
-    }()
-    
-    let horizontalBarView:UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        return view
     }()
     
     override init(frame: CGRect) {
@@ -139,8 +155,6 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet{
             lbTitle.textColor = isSelected ? UIColor.black : UIColor.gray
-            //horizontalBarView.backgroundColor = isSelected ? UIColor.black : UIColor.white
-            
         }
     }
     
@@ -148,9 +162,6 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         addSubview(lbTitle)
         lbTitle.centerXToSuperview()
         lbTitle.centerYToSuperview()
-        addSubview(horizontalBarView)
-        horizontalBarView.anchor(lbTitle.bottomAnchor, left: self.leftAnchor, topConstant: 8, leftConstant: 0, widthConstant: self.frame.width, heightConstant: 3)
-        
     }
     
     func setData(item: AnyObject?, normalColor: UIColor, selectedColor: UIColor) {
@@ -160,6 +171,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         }
     }
 }
+
 class MenuItem {
     var title: String = ""
     var isSelected: Bool = false
