@@ -47,7 +47,6 @@
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
 		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
-		BC4BF3812055449400004611 /* PRUserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF3802055449400004611 /* PRUserAPIService.swift */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
@@ -75,6 +74,8 @@
 		BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220772053E92600EEC31A /* SingleResponse.swift */; };
 		BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */; };
 		BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2207A2053E92600EEC31A /* APIBaseService.swift */; };
+		BCE3495720563F6600B8C440 /* TestingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495620563F6600B8C440 /* TestingService.swift */; };
+		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
 		CB6385249FFB0A0AA9621554 /* Pods_Prelens_jinnyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */; };
 /* End PBXBuildFile section */
@@ -115,7 +116,6 @@
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BC4BF3802055449400004611 /* PRUserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUserAPIService.swift; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +147,8 @@
 		BCD220772053E92600EEC31A /* SingleResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleResponse.swift; sourceTree = "<group>"; };
 		BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRBaseNavigationViewController.swift; sourceTree = "<group>"; };
 		BCD2207A2053E92600EEC31A /* APIBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBaseService.swift; sourceTree = "<group>"; };
+		BCE3495620563F6600B8C440 /* TestingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingService.swift; sourceTree = "<group>"; };
+		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.release.xcconfig"; sourceTree = "<group>"; };
 		C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		76469D0120563D4400E2950E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BCE3495820565A5000B8C440 /* PRUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,12 +236,12 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
+				BCBC958920562206004C1985 /* Components */,
+				BCBC958D20562254004C1985 /* Services */,
 				76469D0220563D5500E2950E /* ViewModels */,
 				76469D0120563D4400E2950E /* Models */,
-				BCBC960C20562EB1004C1985 /* Resource */,
-				BCBC958D20562254004C1985 /* Services */,
 				BCBC95AC205626A0004C1985 /* Views */,
-				BCBC958920562206004C1985 /* Components */,
+				BCBC960C20562EB1004C1985 /* Resource */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
 				BCBC9619205631ED004C1985 /* Main.storyboard */,
 				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
@@ -260,7 +263,6 @@
 		BCBC9588205621BB004C1985 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
 				BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */,
 				7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */,
 				BCD220712053E92600EEC31A /* UIImage+Extension.swift */,
@@ -273,6 +275,7 @@
 		BCBC958920562206004C1985 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
 				BCBC9588205621BB004C1985 /* Extension */,
 			);
 			path = Components;
@@ -397,9 +400,9 @@
 		BCBC95AC205626A0004C1985 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				76469D0320563D7600E2950E /* Storyboards */,
 				BCBC959720562411004C1985 /* CustomView */,
-				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				BCBC95AB2056267F004C1985 /* Controllers */,
 			);
 			path = Views;
@@ -429,7 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
-				BC4BF3802055449400004611 /* PRUserAPIService.swift */,
+				BCE3495620563F6600B8C440 /* TestingService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */,
+				BCE3495920565A5000B8C440 /* PRUser.swift in Sources */,
 				BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
@@ -821,6 +825,7 @@
 				BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
+				BCE3495720563F6600B8C440 /* TestingService.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
@@ -830,7 +835,6 @@
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
-				BC4BF3812055449400004611 /* PRUserAPIService.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,

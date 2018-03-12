@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let baseURL = "..."
+public var baseURL = "..."
 
 struct APIEndpoint {
     
