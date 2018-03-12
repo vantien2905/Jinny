@@ -10,15 +10,23 @@ import UIKit
 
 class PRSignInViewController: UIViewController {
     var parentNavigationController      : UINavigationController?
+    
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func forgotPassBtnTapped(_ sender: Any) {
+        let vc = PRForgotPasswordViewController.initControllerFromNib()
+        self.push(controller: vc , animated: true)
     }
     
 

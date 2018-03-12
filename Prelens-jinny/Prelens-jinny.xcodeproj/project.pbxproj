@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
+		760DBC7E2056B23900F4ECD0 /* StarredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DBC7C2056B23900F4ECD0 /* StarredCell.swift */; };
+		760DBC7F2056B23900F4ECD0 /* StarredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DBC7C2056B23900F4ECD0 /* StarredCell.swift */; };
+		760DBC802056B23900F4ECD0 /* StarredCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760DBC7D2056B23900F4ECD0 /* StarredCell.xib */; };
+		760DBC812056B23900F4ECD0 /* StarredCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760DBC7D2056B23900F4ECD0 /* StarredCell.xib */; };
 		762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
 		762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
 		762E97EA2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
@@ -108,6 +112,8 @@
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		760DBC7C2056B23900F4ECD0 /* StarredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredCell.swift; sourceTree = "<group>"; };
+		760DBC7D2056B23900F4ECD0 /* StarredCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredCell.xib; sourceTree = "<group>"; };
 		762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
 		762E97E92054E128001AA449 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
 		762E97EC2054E12F001AA449 /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuib.ttf; sourceTree = "<group>"; };
@@ -205,6 +211,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		760DBC7A2056B1F900F4ECD0 /* ListMembership */ = {
+			isa = PBXGroup;
+			children = (
+				760DBC7B2056B1F900F4ECD0 /* StarredCell */,
+			);
+			path = ListMembership;
+			sourceTree = "<group>";
+		};
+		760DBC7B2056B1F900F4ECD0 /* StarredCell */ = {
+			isa = PBXGroup;
+			children = (
+				760DBC7C2056B23900F4ECD0 /* StarredCell.swift */,
+				760DBC7D2056B23900F4ECD0 /* StarredCell.xib */,
+			);
+			path = StarredCell;
+			sourceTree = "<group>";
+		};
 		76469D0020563CFA00E2950E /* LocalPersistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +255,13 @@
 			children = (
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		76469D19205678DD00E2950E /* PopupMessageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PopupMessageView;
 			sourceTree = "<group>";
 		};
 		BC770A5A204CEE5D0052A285 = {
@@ -350,6 +380,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				76469D19205678DD00E2950E /* PopupMessageView */,
 				BCBC960020562CE9004C1985 /* Tabbar */,
 				BCBC95982056245C004C1985 /* PRBarButton */,
 				BCBC9595205623BE004C1985 /* BaseView */,
@@ -532,6 +563,7 @@
 		BCBC960D20563012004C1985 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
+				760DBC7A2056B1F900F4ECD0 /* ListMembership */,
 				BCBC960E20563012004C1985 /* AddMembership */,
 			);
 			path = Membership;
@@ -686,6 +718,7 @@
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
 				76469D13205656FB00E2950E /* seguisb.ttf in Resources */,
+				760DBC802056B23900F4ECD0 /* StarredCell.xib in Resources */,
 				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
 				76469D11205656FB00E2950E /* seguibli.ttf in Resources */,
 				762E97F52054E189001AA449 /* segoeuil.ttf in Resources */,
@@ -712,6 +745,7 @@
 				762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				76469D12205656FB00E2950E /* seguibli.ttf in Resources */,
+				760DBC812056B23900F4ECD0 /* StarredCell.xib in Resources */,
 				762E97F62054E189001AA449 /* segoeuil.ttf in Resources */,
 				76469D18205656FB00E2950E /* seguibl.ttf in Resources */,
 				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
@@ -879,6 +913,7 @@
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
+				760DBC7E2056B23900F4ECD0 /* StarredCell.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
@@ -895,6 +930,7 @@
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
+				760DBC7F2056B23900F4ECD0 /* StarredCell.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 			);

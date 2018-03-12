@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StarredCell" customModule="Prelens_jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="141" height="138"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="141" height="138"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGN-1Z-kxI">
+                        <rect key="frame" x="0.0" y="0.0" width="141" height="138"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Daw-nC-ICh">
+                                <rect key="frame" x="23.5" y="23" width="94" height="92"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starred_highlight" translatesAutoresizingMaskIntoConstraints="NO" id="s8W-NI-kf0">
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="XEj-cz-Aga"/>
+                                    <constraint firstAttribute="height" constant="20" id="bcb-ev-J3s"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s8W-NI-kf0" firstAttribute="leading" secondItem="BGN-1Z-kxI" secondAttribute="leading" id="GZ9-qS-7Pg"/>
+                            <constraint firstItem="Daw-nC-ICh" firstAttribute="centerX" secondItem="BGN-1Z-kxI" secondAttribute="centerX" id="TIM-l6-nbC"/>
+                            <constraint firstItem="Daw-nC-ICh" firstAttribute="width" secondItem="BGN-1Z-kxI" secondAttribute="width" multiplier="2/3" id="bLU-jp-tqx"/>
+                            <constraint firstItem="s8W-NI-kf0" firstAttribute="top" secondItem="BGN-1Z-kxI" secondAttribute="top" id="eTV-Bv-IK8"/>
+                            <constraint firstItem="Daw-nC-ICh" firstAttribute="height" secondItem="BGN-1Z-kxI" secondAttribute="height" multiplier="2/3" id="yWG-03-tFJ"/>
+                            <constraint firstItem="Daw-nC-ICh" firstAttribute="centerY" secondItem="BGN-1Z-kxI" secondAttribute="centerY" id="yh8-XD-Slj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BGN-1Z-kxI" secondAttribute="bottom" id="5oC-jA-ttQ"/>
+                <constraint firstItem="BGN-1Z-kxI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ACh-EA-aoF"/>
+                <constraint firstItem="BGN-1Z-kxI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eve-dH-vUb"/>
+                <constraint firstAttribute="trailing" secondItem="BGN-1Z-kxI" secondAttribute="trailing" id="wXg-Uu-Q7O"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="141" height="138"/>
+            <point key="canvasLocation" x="84.5" y="174"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="starred_highlight" width="16" height="15"/>
+    </resources>
+</document>
