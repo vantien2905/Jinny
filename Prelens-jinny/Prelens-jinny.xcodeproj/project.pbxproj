@@ -62,9 +62,9 @@
 		BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */; };
 		BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF1A0204FC70E006DCBA2 /* Networking.swift */; };
 		BC4BF1A3204FCF0F006DCBA2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */; };
+		BC4BF37E205541D700004611 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF37D205541D700004611 /* PRUser.swift */; };
+		BC4BF3812055449400004611 /* PRUserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF3802055449400004611 /* PRUserAPIService.swift */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
-		BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A68204CEE5D0052A285 /* ViewController.swift */; };
-		BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6A204CEE5D0052A285 /* Main.storyboard */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */; };
@@ -125,10 +125,10 @@
 		BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
 		BC4BF1A0204FC70E006DCBA2 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		BC4BF37D205541D700004611 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
+		BC4BF3802055449400004611 /* PRUserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUserAPIService.swift; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC770A68204CEE5D0052A285 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BC770A6B204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC770A72204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -301,6 +301,7 @@
 		767FF651204D02FA00EA7DE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				767FF653204D189E00EA7DE9 /* Controllers */,
 			);
 			name = View;
@@ -309,11 +310,9 @@
 		767FF652204D030500EA7DE9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
 				BCD220732053E92600EEC31A /* APIEndpoint.swift */,
+				BC4BF37F2055445900004611 /* APIService */,
 				BCD220742053E92600EEC31A /* APIResponse */,
-				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
-				BCD220712053E92600EEC31A /* UIImage+Extension.swift */,
 				BC4BF1A0204FC70E006DCBA2 /* Networking.swift */,
 				BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */,
 			);
@@ -362,6 +361,7 @@
 		BC3F1AD0204D02590006A6F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC4BF37D205541D700004611 /* PRUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -399,6 +399,7 @@
 				BC3F1ADB204D1C1A0006A6F5 /* UIView+extension.swift */,
 				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
 				7642039E204E45DA00ECDD42 /* UIViewController+extension.swift */,
+				BCD220712053E92600EEC31A /* UIImage+Extension.swift */,
 				BCFC256E204E9F26001988BB /* QRCode.swift */,
 				769A742A205023B700414DFE /* NSObject+extension.swift */,
 			);
@@ -422,6 +423,15 @@
 				76E8971120529F9000C4016A /* PRLoginManagerVC.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		BC4BF37F2055445900004611 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
+				BC4BF3802055449400004611 /* PRUserAPIService.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 		BC770A5A204CEE5D0052A285 = {
@@ -455,8 +465,6 @@
 				767FF652204D030500EA7DE9 /* Networking */,
 				BC3F1AD0204D02590006A6F5 /* Model */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
-				BC770A68204CEE5D0052A285 /* ViewController.swift */,
-				BC770A6A204CEE5D0052A285 /* Main.storyboard */,
 				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
 				BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */,
 				BC770A72204CEE5D0052A285 /* Info.plist */,
@@ -594,7 +602,6 @@
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
-				BC770A6C204CEE5D0052A285 /* Main.storyboard in Resources */,
 				769A74282050201600414DFE /* PRSignInViewController.xib in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 			);
@@ -768,14 +775,15 @@
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
-				BC770A69204CEE5D0052A285 /* ViewController.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				767FF656204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,
+				BC4BF37E205541D700004611 /* PRUser.swift in Sources */,
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
+				BC4BF3812055449400004611 /* PRUserAPIService.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
@@ -815,14 +823,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BC770A6A204CEE5D0052A285 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BC770A6B204CEE5D0052A285 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

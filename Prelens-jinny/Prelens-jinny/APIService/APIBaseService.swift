@@ -61,7 +61,7 @@ extension APIBaseService {
                 resp.onCompleted()
                 self.processResult(result: response.result)
             }
-            return DisposeBag() as! Disposable
+            return Disposables.create()
         }
     }
     
@@ -114,7 +114,7 @@ extension APIBaseService {
     //                }
     //        }
     //    }
-    
+
     func upload<T: BaseResponse>(_ requestInfo : RequestInfo, responseType: T.Type) -> Observable<T> {
         return Observable.create { resp in
             Alamofire.upload(
@@ -140,7 +140,9 @@ extension APIBaseService {
                                     let withName = _metadata["withName"] as? String,
                                     let fileName = _metadata["fileName"] as? String {
                                     
-                                    multipartFormData.append(data, withName: withName, fileName: fileName, mimeType: "image/png")
+                                    multipartFormData.append(data, withName: withName,
+                                                             fileName: fileName,
+                                                             mimeType: "image/png")
                                 }
                             }
                         }
@@ -151,17 +153,14 @@ extension APIBaseService {
                 headers: requestInfo.headers) { (result) in
                     switch result {
                     case .success(let upload, _, _):
-                        
                         upload.responseObject { (response: DataResponse<T>) in
-                            //  self.processResult(result: response.result, succeed: succeed, failed: failed)
+                            self.processResult(result: response.result)
                         }
                         
                     case .failure(let error): break
-                        //     failed(error.localizedDescription)
                     }
             }
-            
-            return DisposeBag() as! Disposable
+            return Disposables.create()
         }
     }
     
