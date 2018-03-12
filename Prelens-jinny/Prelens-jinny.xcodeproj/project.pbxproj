@@ -8,15 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
-		760D556A2050172C003FD3CF /* PRSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760D55692050172C003FD3CF /* PRSignUpViewController.xib */; };
 		762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
 		762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
 		762E97EA2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
 		762E97EB2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
 		762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EC2054E12F001AA449 /* segoeuib.ttf */; };
 		762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EC2054E12F001AA449 /* segoeuib.ttf */; };
-		762E97F32054E189001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EF2054E187001AA449 /* segoeui.ttf */; };
-		762E97F42054E189001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EF2054E187001AA449 /* segoeui.ttf */; };
 		762E97F52054E189001AA449 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F02054E187001AA449 /* segoeuil.ttf */; };
 		762E97F62054E189001AA449 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F02054E187001AA449 /* segoeuil.ttf */; };
 		762E97F72054E189001AA449 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F12054E188001AA449 /* segoeuii.ttf */; };
@@ -29,61 +26,48 @@
 		765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
 		765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
 		765027E22050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
-		765027E92050E76B00618C84 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027E72050E76B00618C84 /* RedeemViewController.swift */; };
-		765027EA2050E76B00618C84 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027E72050E76B00618C84 /* RedeemViewController.swift */; };
-		765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027E82050E76B00618C84 /* RedeemViewController.xib */; };
-		765027EC2050E76B00618C84 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027E82050E76B00618C84 /* RedeemViewController.xib */; };
-		765027F02051114300618C84 /* PRAddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027EE2051114300618C84 /* PRAddManualViewController.swift */; };
-		765027F12051114300618C84 /* PRAddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027EE2051114300618C84 /* PRAddManualViewController.swift */; };
-		765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027EF2051114300618C84 /* PRAddManualViewController.xib */; };
-		765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027EF2051114300618C84 /* PRAddManualViewController.xib */; };
-		765027FA2051175400618C84 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027F82051175400618C84 /* PRAddSuccessViewController.swift */; };
-		765027FB2051175400618C84 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027F82051175400618C84 /* PRAddSuccessViewController.swift */; };
-		765027FC2051175400618C84 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027F92051175400618C84 /* PRAddSuccessViewController.xib */; };
-		765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027F92051175400618C84 /* PRAddSuccessViewController.xib */; };
 		765028012051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
 		765028022051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
 		765028032051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
 		765028042051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
-		767FF656204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */; };
-		767FF657204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
 		767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
-		769A74262050201600414DFE /* PRSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A74242050201600414DFE /* PRSignInViewController.swift */; };
-		769A74272050201600414DFE /* PRSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A74242050201600414DFE /* PRSignInViewController.swift */; };
-		769A74282050201600414DFE /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A74252050201600414DFE /* PRSignInViewController.xib */; };
-		769A74292050201600414DFE /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A74252050201600414DFE /* PRSignInViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
 		769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
-		76C7E0412053D864009F119D /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */; };
-		76C7E0422053D864009F119D /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */; };
-		76C7E0432053D864009F119D /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */; };
-		76C7E0442053D864009F119D /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E29B142052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
 		76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
-		76F3CD8A205407A0008A749C /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3CD88205407A0008A749C /* PRLoginViewController.swift */; };
-		76F3CD8B205407A0008A749C /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3CD88205407A0008A749C /* PRLoginViewController.swift */; };
-		76F3CD8C205407A0008A749C /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F3CD89205407A0008A749C /* PRLoginViewController.xib */; };
-		76F3CD8D205407A0008A749C /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F3CD89205407A0008A749C /* PRLoginViewController.xib */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
 		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
-		BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */; };
-		BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF1A0204FC70E006DCBA2 /* Networking.swift */; };
-		BC4BF1A3204FCF0F006DCBA2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */; };
 		BC4BF3812055449400004611 /* PRUserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF3802055449400004611 /* PRUserAPIService.swift */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */; };
+		BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */; };
+		BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E320562BB8004C1985 /* PRForgotPasswordViewController.xib */; };
+		BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E520562BB8004C1985 /* PRSignUpViewController.xib */; };
+		BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95E620562BB8004C1985 /* PRSignUpViewController.swift */; };
+		BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95E820562BB8004C1985 /* PRSignInViewController.swift */; };
+		BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */; };
+		BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */; };
+		BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */; };
+		BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */; };
+		BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC960520562D26004C1985 /* RedeemViewController.swift */; };
+		BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC960620562D26004C1985 /* RedeemViewController.xib */; };
+		BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */; };
+		BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */; };
+		BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961320563012004C1985 /* PRAddManualViewController.swift */; };
+		BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961420563012004C1985 /* PRAddManualViewController.xib */; };
+		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
 		BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220732053E92600EEC31A /* APIEndpoint.swift */; };
 		BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220752053E92600EEC31A /* BaseResponse.swift */; };
@@ -109,46 +93,28 @@
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		760D55692050172C003FD3CF /* PRSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignUpViewController.xib; sourceTree = "<group>"; };
 		762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
 		762E97E92054E128001AA449 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
 		762E97EC2054E12F001AA449 /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuib.ttf; sourceTree = "<group>"; };
-		762E97EF2054E187001AA449 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeui.ttf; path = ../../../../fonts/segoeui.ttf; sourceTree = "<group>"; };
 		762E97F02054E187001AA449 /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuil.ttf; sourceTree = "<group>"; };
 		762E97F12054E188001AA449 /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuii.ttf; sourceTree = "<group>"; };
 		762E97F22054E188001AA449 /* segoeuisl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuisl.ttf; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
-		765027E72050E76B00618C84 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
-		765027E82050E76B00618C84 /* RedeemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemViewController.xib; sourceTree = "<group>"; };
-		765027EE2051114300618C84 /* PRAddManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAddManualViewController.swift; sourceTree = "<group>"; };
-		765027EF2051114300618C84 /* PRAddManualViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRAddManualViewController.xib; sourceTree = "<group>"; };
-		765027F82051175400618C84 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
-		765027F92051175400618C84 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
 		765027FF2051265300618C84 /* PRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSettingViewController.swift; sourceTree = "<group>"; };
 		765028002051265300618C84 /* PRSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSettingViewController.xib; sourceTree = "<group>"; };
-		767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSignUpViewController.swift; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
-		769A74242050201600414DFE /* PRSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSignInViewController.swift; sourceTree = "<group>"; };
-		769A74252050201600414DFE /* PRSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
-		76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
 		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
-		76F3CD88205407A0008A749C /* PRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
-		76F3CD89205407A0008A749C /* PRLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
-		BC4BF1A0204FC70E006DCBA2 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		BC4BF3802055449400004611 /* PRUserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUserAPIService.swift; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +124,22 @@
 		BC770A77204CEE5D0052A285 /* Prelens-jinnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelens-jinnyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prelens_jinnyTests.swift; sourceTree = "<group>"; };
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		BCBC95E320562BB8004C1985 /* PRForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		BCBC95E520562BB8004C1985 /* PRSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignUpViewController.xib; sourceTree = "<group>"; };
+		BCBC95E620562BB8004C1985 /* PRSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRSignUpViewController.swift; sourceTree = "<group>"; };
+		BCBC95E820562BB8004C1985 /* PRSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRSignInViewController.swift; sourceTree = "<group>"; };
+		BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
+		BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
+		BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
+		BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
+		BCBC960520562D26004C1985 /* RedeemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
+		BCBC960620562D26004C1985 /* RedeemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedeemViewController.xib; sourceTree = "<group>"; };
+		BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
+		BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
+		BCBC961320563012004C1985 /* PRAddManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddManualViewController.swift; sourceTree = "<group>"; };
+		BCBC961420563012004C1985 /* PRAddManualViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddManualViewController.xib; sourceTree = "<group>"; };
+		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCD220732053E92600EEC31A /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		BCD220752053E92600EEC31A /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -200,278 +182,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		762E97E52054DE81001AA449 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */,
-				762E97E92054E128001AA449 /* segoeui.ttf */,
-				762E97F12054E188001AA449 /* segoeuii.ttf */,
-				762E97F02054E187001AA449 /* segoeuil.ttf */,
-				762E97F22054E188001AA449 /* segoeuisl.ttf */,
-				762E97EC2054E12F001AA449 /* segoeuib.ttf */,
-				762E97EF2054E187001AA449 /* segoeui.ttf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
-		763B0C5320537AD800D00ED6 /* LoginViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = LoginViewModel;
-			sourceTree = "<group>";
-		};
-		765027DA2050D85D00618C84 /* EditProfile */ = {
-			isa = PBXGroup;
-			children = (
-				767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */,
-				767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */,
-			);
-			name = EditProfile;
-			sourceTree = "<group>";
-		};
-		765027DC2050D88900618C84 /* ChangePassword */ = {
-			isa = PBXGroup;
-			children = (
-				765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */,
-				765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */,
-			);
-			name = ChangePassword;
-			sourceTree = "<group>";
-		};
-		765027E32050E2EB00618C84 /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				760D55692050172C003FD3CF /* PRSignUpViewController.xib */,
-				767FF654204D18C900EA7DE9 /* PRSignUpViewController.swift */,
-			);
-			name = SignUp;
-			sourceTree = "<group>";
-		};
-		765027E42050E2FC00618C84 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				769A74242050201600414DFE /* PRSignInViewController.swift */,
-				769A74252050201600414DFE /* PRSignInViewController.xib */,
-			);
-			name = SignIn;
-			sourceTree = "<group>";
-		};
-		765027E52050E32700618C84 /* ViewProfile */ = {
-			isa = PBXGroup;
-			children = (
-				76E98F5620502FF600555BA1 /* PRProfileViewController.swift */,
-				76E98F5720502FF600555BA1 /* PRProfileViewController.xib */,
-			);
-			name = ViewProfile;
-			sourceTree = "<group>";
-		};
-		765027E62050E72900618C84 /* Redeem */ = {
-			isa = PBXGroup;
-			children = (
-				765027E72050E76B00618C84 /* RedeemViewController.swift */,
-				765027E82050E76B00618C84 /* RedeemViewController.xib */,
-			);
-			name = Redeem;
-			sourceTree = "<group>";
-		};
-		765027ED205110EE00618C84 /* Membership */ = {
-			isa = PBXGroup;
-			children = (
-				765027F42051129B00618C84 /* AddMemberShip */,
-			);
-			name = Membership;
-			sourceTree = "<group>";
-		};
-		765027F42051129B00618C84 /* AddMemberShip */ = {
-			isa = PBXGroup;
-			children = (
-				765027F72051172400618C84 /* AddSuccess */,
-				765027F62051146200618C84 /* ScanCode */,
-				765027F52051145100618C84 /* AddManual */,
-			);
-			name = AddMemberShip;
-			sourceTree = "<group>";
-		};
-		765027F52051145100618C84 /* AddManual */ = {
-			isa = PBXGroup;
-			children = (
-				765027EE2051114300618C84 /* PRAddManualViewController.swift */,
-				765027EF2051114300618C84 /* PRAddManualViewController.xib */,
-			);
-			name = AddManual;
-			sourceTree = "<group>";
-		};
-		765027F62051146200618C84 /* ScanCode */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ScanCode;
-			sourceTree = "<group>";
-		};
-		765027F72051172400618C84 /* AddSuccess */ = {
-			isa = PBXGroup;
-			children = (
-				765027F82051175400618C84 /* PRAddSuccessViewController.swift */,
-				765027F92051175400618C84 /* PRAddSuccessViewController.xib */,
-			);
-			name = AddSuccess;
-			sourceTree = "<group>";
-		};
-		765027FE2051263200618C84 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				765027FF2051265300618C84 /* PRSettingViewController.swift */,
-				765028002051265300618C84 /* PRSettingViewController.xib */,
-			);
-			name = Setting;
-			sourceTree = "<group>";
-		};
-		767FF650204D02ED00EA7DE9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				763B0C5320537AD800D00ED6 /* LoginViewModel */,
-			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		767FF651204D02FA00EA7DE9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
-				767FF653204D189E00EA7DE9 /* Controllers */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		767FF652204D030500EA7DE9 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				BCD220732053E92600EEC31A /* APIEndpoint.swift */,
-				BC4BF37F2055445900004611 /* APIService */,
-				BCD220742053E92600EEC31A /* APIResponse */,
-				BC4BF1A0204FC70E006DCBA2 /* Networking.swift */,
-				BC4BF1A2204FCF0F006DCBA2 /* KeychainManager.swift */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
-		767FF653204D189E00EA7DE9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				765027FE2051263200618C84 /* Setting */,
-				765027ED205110EE00618C84 /* Membership */,
-				765027E62050E72900618C84 /* Redeem */,
-				BC3F1AE2204D38AF0006A6F5 /* Login */,
-				BC3F1AE1204D388C0006A6F5 /* Tabbar */,
-				767FF65A204D3EB000EA7DE9 /* Profile */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		767FF65A204D3EB000EA7DE9 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				765027E52050E32700618C84 /* ViewProfile */,
-				765027DC2050D88900618C84 /* ChangePassword */,
-				765027DA2050D85D00618C84 /* EditProfile */,
-			);
-			name = Profile;
-			sourceTree = "<group>";
-		};
-		76C7E03E2053D7D3009F119D /* ForgotPassword */ = {
-			isa = PBXGroup;
-			children = (
-				76C7E03F2053D864009F119D /* PRForgotPasswordViewController.swift */,
-				76C7E0402053D864009F119D /* PRForgotPasswordViewController.xib */,
-			);
-			name = ForgotPassword;
-			sourceTree = "<group>";
-		};
-		76E29B0E2052650F0039CA45 /* MenuBarView */ = {
-			isa = PBXGroup;
-			children = (
-				76E29B122052654A0039CA45 /* MenuView.swift */,
-			);
-			name = MenuBarView;
-			sourceTree = "<group>";
-		};
-		BC3F1AD0204D02590006A6F5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		BC3F1AD1204D17380006A6F5 /* CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				76E29B0E2052650F0039CA45 /* MenuBarView */,
-				BC3F1AD2204D18D80006A6F5 /* PRBaseView */,
-				BC3F1AD9204D19BB0006A6F5 /* PRButtonTabbar */,
-			);
-			name = CustomView;
-			sourceTree = "<group>";
-		};
-		BC3F1AD2204D18D80006A6F5 /* PRBaseView */ = {
-			isa = PBXGroup;
-			children = (
-				BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */,
-			);
-			name = PRBaseView;
-			sourceTree = "<group>";
-		};
-		BC3F1AD9204D19BB0006A6F5 /* PRButtonTabbar */ = {
-			isa = PBXGroup;
-			children = (
-				BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */,
-				BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */,
-			);
-			name = PRButtonTabbar;
-			sourceTree = "<group>";
-		};
-		BC3F1ADA204D1BFB0006A6F5 /* Extension+Constant */ = {
-			isa = PBXGroup;
-			children = (
-				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
-				BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */,
-				7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */,
-				BCD220712053E92600EEC31A /* UIImage+Extension.swift */,
-				BCFC256E204E9F26001988BB /* QRCode.swift */,
-				769A742A205023B700414DFE /* NSObject+Extension.swift */,
-			);
-			name = "Extension+Constant";
-			sourceTree = "<group>";
-		};
-		BC3F1AE1204D388C0006A6F5 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				BC3F1ADF204D2E880006A6F5 /* PRTabbarMainViewController.swift */,
-			);
-			name = Tabbar;
-			sourceTree = "<group>";
-		};
-		BC3F1AE2204D38AF0006A6F5 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				76C7E03E2053D7D3009F119D /* ForgotPassword */,
-				765027E42050E2FC00618C84 /* SignIn */,
-				765027E32050E2EB00618C84 /* SignUp */,
-				76F3CD88205407A0008A749C /* PRLoginViewController.swift */,
-				76F3CD89205407A0008A749C /* PRLoginViewController.xib */,
-			);
-			name = Login;
-			sourceTree = "<group>";
-		};
-		BC4BF37F2055445900004611 /* APIService */ = {
-			isa = PBXGroup;
-			children = (
-				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
-				BC4BF3802055449400004611 /* PRUserAPIService.swift */,
-			);
-			path = APIService;
-			sourceTree = "<group>";
-		};
 		BC770A5A204CEE5D0052A285 = {
 			isa = PBXGroup;
 			children = (
@@ -495,15 +205,14 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
-				BCBC958720562108004C1985 /* Extension */,
-				762E97E52054DE81001AA449 /* Fonts */,
-				BC3F1ADA204D1BFB0006A6F5 /* Extension+Constant */,
-				BC3F1AD1204D17380006A6F5 /* CustomView */,
-				767FF651204D02FA00EA7DE9 /* View */,
-				767FF650204D02ED00EA7DE9 /* ViewModel */,
-				767FF652204D030500EA7DE9 /* Networking */,
-				BC3F1AD0204D02590006A6F5 /* Model */,
+				BCBC960C20562EB1004C1985 /* Resource */,
+				BCBC960A20562DDB004C1985 /* ViewModels */,
+				BCBC960920562DD4004C1985 /* Models */,
+				BCBC958D20562254004C1985 /* Services */,
+				BCBC95AC205626A0004C1985 /* Views */,
+				BCBC958920562206004C1985 /* Components */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
+				BCBC9619205631ED004C1985 /* Main.storyboard */,
 				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
 				BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */,
 				BC770A72204CEE5D0052A285 /* Info.plist */,
@@ -520,14 +229,165 @@
 			path = "Prelens-jinnyTests";
 			sourceTree = "<group>";
 		};
-		BCBC958720562108004C1985 /* Extension */ = {
+		BCBC9588205621BB004C1985 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
+				BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */,
+				7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */,
+				BCD220712053E92600EEC31A /* UIImage+Extension.swift */,
+				BCFC256E204E9F26001988BB /* QRCode.swift */,
+				769A742A205023B700414DFE /* NSObject+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		BCD220742053E92600EEC31A /* APIResponse */ = {
+		BCBC958920562206004C1985 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC9588205621BB004C1985 /* Extension */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BCBC958A20562234004C1985 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */,
+				762E97EC2054E12F001AA449 /* segoeuib.ttf */,
+				762E97E92054E128001AA449 /* segoeui.ttf */,
+				762E97F12054E188001AA449 /* segoeuii.ttf */,
+				762E97F02054E187001AA449 /* segoeuil.ttf */,
+				762E97F22054E188001AA449 /* segoeuisl.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BCBC958D20562254004C1985 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC95B3205628FC004C1985 /* LocalPersistence */,
+				BCBC95B020562839004C1985 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BCBC95942056239E004C1985 /* MenuBarView */ = {
+			isa = PBXGroup;
+			children = (
+				76E29B122052654A0039CA45 /* MenuView.swift */,
+			);
+			path = MenuBarView;
+			sourceTree = "<group>";
+		};
+		BCBC9595205623BE004C1985 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		BCBC959720562411004C1985 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC960020562CE9004C1985 /* Tabbar */,
+				BCBC95982056245C004C1985 /* PRBarButton */,
+				BCBC9595205623BE004C1985 /* BaseView */,
+				BCBC95942056239E004C1985 /* MenuBarView */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		BCBC95982056245C004C1985 /* PRBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */,
+				BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */,
+			);
+			path = PRBarButton;
+			sourceTree = "<group>";
+		};
+		BCBC959920562488004C1985 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				765027FF2051265300618C84 /* PRSettingViewController.swift */,
+				765028002051265300618C84 /* PRSettingViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		BCBC95A6205625EB004C1985 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC95A920562621004C1985 /* ChangePassword */,
+				BCBC95A720562613004C1985 /* EditProfile */,
+				BCBC95AA2056262D004C1985 /* ViewProfile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BCBC95A720562613004C1985 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */,
+				767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		BCBC95A920562621004C1985 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */,
+				765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		BCBC95AA2056262D004C1985 /* ViewProfile */ = {
+			isa = PBXGroup;
+			children = (
+				76E98F5620502FF600555BA1 /* PRProfileViewController.swift */,
+				76E98F5720502FF600555BA1 /* PRProfileViewController.xib */,
+			);
+			path = ViewProfile;
+			sourceTree = "<group>";
+		};
+		BCBC95AB2056267F004C1985 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC960D20563012004C1985 /* Membership */,
+				BCBC960420562D26004C1985 /* Redeem */,
+				BCBC95E020562BB8004C1985 /* Login */,
+				BCBC959920562488004C1985 /* Setting */,
+				BCBC95A6205625EB004C1985 /* Profile */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BCBC95AC205626A0004C1985 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC960B20562E7D004C1985 /* Storyboards */,
+				BCBC959720562411004C1985 /* CustomView */,
+				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
+				BCBC95AB2056267F004C1985 /* Controllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCBC95B020562839004C1985 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC95B12056287A004C1985 /* APIResponse */,
+				BCBC95B22056287A004C1985 /* APIServices */,
+				BCD220732053E92600EEC31A /* APIEndpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BCBC95B12056287A004C1985 /* APIResponse */ = {
 			isa = PBXGroup;
 			children = (
 				BCD220752053E92600EEC31A /* BaseResponse.swift */,
@@ -535,6 +395,142 @@
 				BCD220772053E92600EEC31A /* SingleResponse.swift */,
 			);
 			path = APIResponse;
+			sourceTree = "<group>";
+		};
+		BCBC95B22056287A004C1985 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
+				BC4BF3802055449400004611 /* PRUserAPIService.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		BCBC95B3205628FC004C1985 /* LocalPersistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalPersistence;
+			sourceTree = "<group>";
+		};
+		BCBC95E020562BB8004C1985 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC95E120562BB8004C1985 /* ForgotPassword */,
+				BCBC95E420562BB8004C1985 /* SignUp */,
+				BCBC95E720562BB8004C1985 /* SignIn */,
+				BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */,
+				BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BCBC95E120562BB8004C1985 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */,
+				BCBC95E320562BB8004C1985 /* PRForgotPasswordViewController.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		BCBC95E420562BB8004C1985 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC95E520562BB8004C1985 /* PRSignUpViewController.xib */,
+				BCBC95E620562BB8004C1985 /* PRSignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		BCBC95E720562BB8004C1985 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC95E820562BB8004C1985 /* PRSignInViewController.swift */,
+				BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		BCBC960020562CE9004C1985 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		BCBC960420562D26004C1985 /* Redeem */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC960520562D26004C1985 /* RedeemViewController.swift */,
+				BCBC960620562D26004C1985 /* RedeemViewController.xib */,
+			);
+			path = Redeem;
+			sourceTree = "<group>";
+		};
+		BCBC960920562DD4004C1985 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCBC960A20562DDB004C1985 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BCBC960B20562E7D004C1985 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BCBC960C20562EB1004C1985 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC958A20562234004C1985 /* Fonts */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BCBC960D20563012004C1985 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC960E20563012004C1985 /* AddMembership */,
+			);
+			path = Membership;
+			sourceTree = "<group>";
+		};
+		BCBC960E20563012004C1985 /* AddMembership */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC960F20563012004C1985 /* AddSuccess */,
+				BCBC961220563012004C1985 /* AddManual */,
+			);
+			path = AddMembership;
+			sourceTree = "<group>";
+		};
+		BCBC960F20563012004C1985 /* AddSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */,
+				BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */,
+			);
+			path = AddSuccess;
+			sourceTree = "<group>";
+		};
+		BCBC961220563012004C1985 /* AddManual */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC961320563012004C1985 /* PRAddManualViewController.swift */,
+				BCBC961420563012004C1985 /* PRAddManualViewController.xib */,
+			);
+			path = AddManual;
 			sourceTree = "<group>";
 		};
 		C2031F63C23FE59B8717BCA4 /* Pods */ = {
@@ -637,25 +633,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				765027FC2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
+				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
+				BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
+				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
+				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
+				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
 				762E97F72054E189001AA449 /* segoeuii.ttf in Resources */,
-				762E97F32054E189001AA449 /* segoeui.ttf in Resources */,
-				76F3CD8C205407A0008A749C /* PRLoginViewController.xib in Resources */,
-				76C7E0432053D864009F119D /* PRForgotPasswordViewController.xib in Resources */,
-				765027EB2050E76B00618C84 /* RedeemViewController.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
+				BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */,
 				762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
 				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
-				760D556A2050172C003FD3CF /* PRSignUpViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				762E97EA2054E129001AA449 /* segoeui.ttf in Resources */,
-				765027F22051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
+				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
 				762E97F52054E189001AA449 /* segoeuil.ttf in Resources */,
-				769A74282050201600414DFE /* PRSignInViewController.xib in Resources */,
+				BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 				762E97F92054E189001AA449 /* segoeuisl.ttf in Resources */,
 			);
@@ -665,16 +661,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				765027EC2050E76B00618C84 /* RedeemViewController.xib in Resources */,
-				769A74292050201600414DFE /* PRSignInViewController.xib in Resources */,
 				762E97F82054E189001AA449 /* segoeuii.ttf in Resources */,
-				762E97F42054E189001AA449 /* segoeui.ttf in Resources */,
-				765027FD2051175400618C84 /* PRAddSuccessViewController.xib in Resources */,
 				762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
 				762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */,
-				76C7E0442053D864009F119D /* PRForgotPasswordViewController.xib in Resources */,
-				76F3CD8D205407A0008A749C /* PRLoginViewController.xib in Resources */,
-				765027F32051114300618C84 /* PRAddManualViewController.xib in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				762E97EB2054E129001AA449 /* segoeui.ttf in Resources */,
 				762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */,
@@ -818,34 +807,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC4BF1A3204FCF0F006DCBA2 /* KeychainManager.swift in Sources */,
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */,
+				BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
-				765027FA2051175400618C84 /* PRAddSuccessViewController.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
-				BC4BF1A1204FC70E006DCBA2 /* Networking.swift in Sources */,
-				769A74262050201600414DFE /* PRSignInViewController.swift in Sources */,
-				765027F02051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
+				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */,
-				BC3F1AE0204D2E880006A6F5 /* PRTabbarMainViewController.swift in Sources */,
-				765027E92050E76B00618C84 /* RedeemViewController.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
-				76F3CD8A205407A0008A749C /* PRLoginViewController.swift in Sources */,
+				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
 				BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
+				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
+				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
+				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
+				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
 				BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
-				767FF656204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BC4BF3812055449400004611 /* PRUserAPIService.swift in Sources */,
+				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
-				76C7E0412053D864009F119D /* PRForgotPasswordViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
@@ -856,18 +843,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F3CD8B205407A0008A749C /* PRLoginViewController.swift in Sources */,
-				765027FB2051175400618C84 /* PRAddSuccessViewController.swift in Sources */,
-				765027EA2050E76B00618C84 /* RedeemViewController.swift in Sources */,
-				769A74272050201600414DFE /* PRSignInViewController.swift in Sources */,
 				76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */,
-				76C7E0422053D864009F119D /* PRForgotPasswordViewController.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
-				765027F12051114300618C84 /* PRAddManualViewController.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
-				767FF657204D18C900EA7DE9 /* PRSignUpViewController.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
