@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PRSignInViewController: UIViewController {
     var parentNavigationController      : UINavigationController?
+    var vm: SigninViewModel             = SigninViewModel()
     
-    @IBOutlet weak var tfEmail: UITextField!
-    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var tfEmail          : UITextField!
+    @IBOutlet weak var tfPassword       : UITextField!
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        bindViewModel()
         // Do any additional setup after loading the view.
     }
 
@@ -23,21 +30,18 @@ class PRSignInViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func bindViewModel() {
+        _ = tfEmail.rx.text.map{ $0 ?? ""}.bind(to: vm.email)
+        _ = tfPassword.rx.text.map{ $0 ?? ""}.bind(to: vm.password)
+        vm.isValid.subscribe(onNext: { [weak self] isValid in
+            print(isValid)
+        }).disposed(by: disposeBag)
+    }
+    
     @IBAction func forgotPassBtnTapped(_ sender: Any) {
         let vc = PRForgotPasswordViewController.initControllerFromNib()
         self.push(controller: vc , animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
