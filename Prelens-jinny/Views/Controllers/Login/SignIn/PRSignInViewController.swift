@@ -41,9 +41,7 @@ class PRSignInViewController: UIViewController {
     
     @IBAction func forgotPassBtnTapped(_ sender: Any) {
         let vc = PRForgotPasswordViewController.initControllerFromNib()
-        let popUp = PopUpView()
-        popUp.showPopUp(message: "heheheeheheheh")
-//          self.push(controller: vc , animated: true)
+        self.push(controller: vc , animated: true)
     }
 
 }
