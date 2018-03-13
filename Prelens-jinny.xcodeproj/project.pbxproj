@@ -291,6 +291,7 @@
 			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
+
 		B7AC7FD72057A7A900C0BFCA /* PopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +301,16 @@
 			path = PopUpView;
 			sourceTree = "<group>";
 		};
+
+		765087812057703900199FBB /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				765087852057716100199FBB /* SigninViewModel.swift */,
+			);
+			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+
 		BC770A5A204CEE5D0052A285 = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +495,7 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				BCBC960D20563012004C1985 /* Membership */,
 				BCBC960420562D26004C1985 /* Redeem */,
 				BCBC95E020562BB8004C1985 /* Login */,
@@ -497,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
+				76469D0320563D7600E2950E /* Storyboards */,
 				BCBC959720562411004C1985 /* CustomView */,
 				BCBC95AB2056267F004C1985 /* Controllers */,
 			);

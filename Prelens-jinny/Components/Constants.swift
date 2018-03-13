@@ -9,12 +9,15 @@
 import UIKit
 
 struct PRColor {
+    
+    static let mainAppColor         = UIColor(red: 227/255, green: 18/255, blue: 11/255, alpha: 1)
+    
     static let brandColor           = UIColor(red: 100/255, green: 189/255, blue: 203/255, alpha: 1)
     static let extensionColor       = UIColor(red: 202/255, green: 186/255, blue: 99/255, alpha: 1)
     static let backgroundColor      = UIColor(red: 242/255, green: 242/255, blue: 243/255, alpha: 1)
     static let reminderColor        = UIColor(red: 222/255, green: 243/255, blue: 68/255, alpha: 1)
     static let pendingReviewColor   = UIColor(red: 27/255, green: 123/255, blue: 52/255, alpha: 1)
-    static let textAppGuide      = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1)
+    static let textAppGuide         = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1)
     
     static let taskInProgressColor  = UIColor(red: 31/255, green: 181/255, blue: 143/255, alpha: 1)
     static let taskOverdueColor     = UIColor(red: 242/255, green: 76/255, blue: 76/255, alpha: 1)
