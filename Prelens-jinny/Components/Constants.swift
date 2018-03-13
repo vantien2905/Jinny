@@ -30,7 +30,7 @@ struct PRColor {
     static let strokeTextField      =  UIColor(red: 99/255, green: 189/255, blue: 202/255, alpha: 1)
     static let filterAssignee       = UIColor(red: 44/255, green: 141/255, blue: 156/255, alpha: 1)
     static let manageReviewerColor  = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
-  
+    
     //--- notification
     static let sttReminder          = UIColor(red: 222/255, green: 116/255, blue: 69/255, alpha: 1)
     static let sttUpdates           = UIColor(red: 22/255, green: 167/255, blue: 157/255, alpha: 1)
@@ -38,7 +38,7 @@ struct PRColor {
     static let badgeNotification    = UIColor(red: 99/255, green: 189/255, blue: 202/255, alpha: 1)
     static let switchSetting        = UIColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1)
     static let notificationLine     = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-
+    
     static let lineColor            = UIColor.black.withAlphaComponent(0.1)
     static let blackColor           = UIColor.black
     static let whiteColor           = UIColor.white
@@ -46,3 +46,17 @@ struct PRColor {
     
     static let backgroundPopUp      = UIColor.black.withAlphaComponent(0.6)
 }
+
+struct PRPhoto {
+    static let tabbarMembershipOff  = UIImage(named: "membership_off")
+    static let tabbarMembershipOn   = UIImage(named: "membership_on")
+    static let tabbarPromotionsOff  = UIImage(named: "voucher_off")
+    static let tabbarPromotionsOn   = UIImage(named: "voucher_on")
+    static let tabbarMore           = UIImage(named: "more")
+}
+
+
+
+
+
+

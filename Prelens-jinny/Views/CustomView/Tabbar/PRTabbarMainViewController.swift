@@ -16,48 +16,33 @@ protocol TabbarMainViewControllerDelegate: class {
 
 class PRTabbarMainViewController: UITabBarController {
     
-  //  weak var delagateBtnDrawer: TabbarMainViewControllerDelegate?
+    //  weak var delagateBtnDrawer: TabbarMainViewControllerDelegate?
     
-    //MARK: Declare 3 viewcontroller in Tabbar
-    var vcProfile: UIViewController!
-    var vcVocher: UIViewController!
-    var vcNews: UIViewController!
-    
+    var membershipVC: PRMemberShipVC?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      //  delegate = self as! UITabBarControllerDelegate
-    
+        //  delegate = self as! UITabBarControllerDelegate
         setUpTabbar()
-        
     }
     
     func setUpTabbar() {
-        //we setup the delegate, the photo for the tapped or untapped of the tabbar item
-        //...
-        vcVocher = UIViewController()
-        vcVocher.tabBarItem = setBarItem(selectedImage: nil, normalImage: nil)
+        membershipVC = PRMemberShipVC()
+        let nvMembership = UINavigationController(rootViewController: membershipVC!)
         
-        vcProfile = UIViewController()
-        vcProfile.tabBarItem = setBarItem(selectedImage: nil, normalImage: nil)
-        
-        vcNews = UIViewController()
-        vcNews.tabBarItem = setBarItem(selectedImage: nil, normalImage: nil)
-        //...
-        let tabbarListVC: [UIViewController] = [vcProfile, vcVocher, vcNews]
+        let tabbarListVC: [UIViewController] = [nvMembership]
+        viewControllers = tabbarListVC
         
         //IphoneX configuration
-//        for controller in tabbarListVC {
-//            if DeviceTypeHelper.getDeviceType() != NCSDeviceType.small {
-//                if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
-//                    controller.tabBarItem.imageInsets = tabIconInsetsX
-//                } else {
-//                    controller.tabBarItem.imageInsets = tabIconInsets
-//                }
-//            }
-//        }
-        
-        addViewControllerToTabbar(listViewController: tabbarListVC)
+        //        for controller in tabbarListVC {
+        //            if DeviceTypeHelper.getDeviceType() != NCSDeviceType.small {
+        //                if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
+        //                    controller.tabBarItem.imageInsets = tabIconInsetsX
+        //                } else {
+        //                    controller.tabBarItem.imageInsets = tabIconInsets
+        //                }
+        //            }
+        //        }
     }
     
     //Config item when it was tapped on
@@ -67,8 +52,8 @@ class PRTabbarMainViewController: UITabBarController {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-   //     delagateBtnDrawer?.tabbarSelected(index: tabBarController.selectedIndex)
-    //  tabLeft.setIndexSelected(index: tabBarController.selectedIndex)
+        //     delagateBtnDrawer?.tabbarSelected(index: tabBarController.selectedIndex)
+        //  tabLeft.setIndexSelected(index: tabBarController.selectedIndex)
         
         //MARK: Delegate Action here when item was tapped
     }
@@ -84,38 +69,3 @@ class PRTabbarMainViewController: UITabBarController {
         self.viewControllers = listNavigationController
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
