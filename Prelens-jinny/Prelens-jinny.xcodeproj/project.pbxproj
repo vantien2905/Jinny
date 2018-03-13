@@ -44,6 +44,10 @@
 		765028022051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
 		765028032051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
 		765028042051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
+		765087862057716100199FBB /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SigninViewModel.swift */; };
+		765087872057716100199FBB /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SigninViewModel.swift */; };
+		76508789205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
+		7650878A205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
 		767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
@@ -141,6 +145,8 @@
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
 		765027FF2051265300618C84 /* PRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSettingViewController.swift; sourceTree = "<group>"; };
 		765028002051265300618C84 /* PRSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSettingViewController.xib; sourceTree = "<group>"; };
+		765087852057716100199FBB /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		76508788205772D200199FBB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 		76469D0220563D5500E2950E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				765087812057703900199FBB /* LoginViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -282,6 +289,14 @@
 			children = (
 			);
 			path = PopupMessageView;
+			sourceTree = "<group>";
+		};
+		765087812057703900199FBB /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				765087852057716100199FBB /* SigninViewModel.swift */,
+			);
+			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
 		BC770A5A204CEE5D0052A285 = {
@@ -338,6 +353,7 @@
 				BCD220712053E92600EEC31A /* UIImage+Extension.swift */,
 				BCFC256E204E9F26001988BB /* QRCode.swift */,
 				769A742A205023B700414DFE /* NSObject+Extension.swift */,
+				76508788205772D200199FBB /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -930,7 +946,11 @@
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
+
 				BCF087DB2057759700199FC6 /* PROthersCell.swift in Sources */,
+
+				76508789205772D200199FBB /* String+Extension.swift in Sources */,
+
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
@@ -950,6 +970,7 @@
 				BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
+				765087862057716100199FBB /* SigninViewModel.swift in Sources */,
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
@@ -968,11 +989,16 @@
 				BCF087D6205772CB00199FC6 /* PRStarredCell.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
+				7650878A205772D200199FBB /* String+Extension.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
 				BCF087E32057764500199FC6 /* PRMemberShipVC.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
+
 				BCF087DC2057759700199FC6 /* PROthersCell.swift in Sources */,
+
+				765087872057716100199FBB /* SigninViewModel.swift in Sources */,
+
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 				BC4F95DB20566B6D005D281B /* APISignInService.swift in Sources */,
 			);
