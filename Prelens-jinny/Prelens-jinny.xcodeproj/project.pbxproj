@@ -284,13 +284,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		76469D19205678DD00E2950E /* PopupMessageView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PopupMessageView;
-			sourceTree = "<group>";
-		};
 		765087812057703900199FBB /* LoginViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,7 +408,6 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				76469D19205678DD00E2950E /* PopupMessageView */,
 				BCBC960020562CE9004C1985 /* Tabbar */,
 				BCBC95982056245C004C1985 /* PRBarButton */,
 				BCBC9595205623BE004C1985 /* BaseView */,
@@ -482,6 +474,7 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				BCBC960D20563012004C1985 /* Membership */,
 				BCBC960420562D26004C1985 /* Redeem */,
 				BCBC95E020562BB8004C1985 /* Login */,
@@ -494,7 +487,6 @@
 		BCBC95AC205626A0004C1985 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				76469D0320563D7600E2950E /* Storyboards */,
 				BCBC959720562411004C1985 /* CustomView */,
 				BCBC95AB2056267F004C1985 /* Controllers */,
@@ -946,11 +938,8 @@
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
-
 				BCF087DB2057759700199FC6 /* PROthersCell.swift in Sources */,
-
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
-
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
@@ -994,11 +983,8 @@
 				BCF087E32057764500199FC6 /* PRMemberShipVC.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
-
 				BCF087DC2057759700199FC6 /* PROthersCell.swift in Sources */,
-
 				765087872057716100199FBB /* SigninViewModel.swift in Sources */,
-
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 				BC4F95DB20566B6D005D281B /* APISignInService.swift in Sources */,
 			);

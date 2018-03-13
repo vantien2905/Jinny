@@ -13,7 +13,7 @@ class PRBaseNavigationViewController: UIViewController {
     let btnLeft: UIButton = {
         let btn = UIButton()
         btn.frame = CGRect(x: 0, y: 0, width: 20, height: 40)
-        btn.setImage(#imageLiteral(resourceName: "back_arrow_white"), for: .normal)
+        btn.setImage(#imageLiteral(resourceName: "back_black"), for: .normal)
         btn.imageView?.contentMode = .scaleToFill
         btn.titleLabel?.font = UIFont(name: "Lato-Bold", size: 17.5)
         btn.contentHorizontalAlignment = .left
@@ -61,11 +61,25 @@ class PRBaseNavigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
+
+    }
+    
+    func setTitle(title: String, textColor: UIColor = UIColor.white ) {
+        let lb = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - self.view.bounds.width/4)/2, y: 0,
+                                       width: self.view.bounds.width, height: 44))
+        lb.font = UIFont(name: "OstrichSans-Heavy", size: 30)
+        lb.text = title
+        lb.textAlignment = .center
+        lb.numberOfLines = 2
+        lb.textColor = textColor
+        lb.sizeToFit()
+        
+        self.navigationItem.titleView = lb
     }
     
     func setUpLayout(){
         self.navigationController?.isNavigationBarHidden = false
-        //self.navigationController?.navigationBar.barTintColor = UIColor.mainAppColor
+        self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         self.navigationController?.navigationBar.isTranslucent = false
         UIApplication.shared.statusBarStyle = .lightContent
         //---
