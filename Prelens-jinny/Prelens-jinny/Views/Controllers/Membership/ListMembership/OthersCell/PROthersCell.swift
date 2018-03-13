@@ -1,14 +1,14 @@
 //
-//  StarredCell.swift
+//  PROthersCell.swift
 //  Prelens-jinny
 //
-//  Created by vinova on 3/12/18.
+//  Created by Lamp on 13/3/18.
 //  Copyright © 2018 Lamp. All rights reserved.
 //
 
 import UIKit
 
-class StarredCell: UICollectionViewCell {
+class PROthersCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

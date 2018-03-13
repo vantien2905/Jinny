@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 class APISignInService: APIBaseService {
-    
     func signIn(email: String, password: String) -> Observable<SingleResponse<PRUser>> {
         let _fullPath = "http://jinny.vinova.sg/api/v1/sessions/sign_in"
         let params = [
@@ -22,4 +21,5 @@ class APISignInService: APIBaseService {
         return execute(requestInfo, responseType: SingleResponse<PRUser>.self)
     }
 }
+
 

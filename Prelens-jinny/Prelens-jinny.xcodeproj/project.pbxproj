@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
-		760DBC7E2056B23900F4ECD0 /* StarredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DBC7C2056B23900F4ECD0 /* StarredCell.swift */; };
-		760DBC7F2056B23900F4ECD0 /* StarredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DBC7C2056B23900F4ECD0 /* StarredCell.swift */; };
-		760DBC802056B23900F4ECD0 /* StarredCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760DBC7D2056B23900F4ECD0 /* StarredCell.xib */; };
-		760DBC812056B23900F4ECD0 /* StarredCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760DBC7D2056B23900F4ECD0 /* StarredCell.xib */; };
 		762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
 		762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
 		762E97EA2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
@@ -97,6 +93,18 @@
 		BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2207A2053E92600EEC31A /* APIBaseService.swift */; };
 		BCE3495720563F6600B8C440 /* TestingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495620563F6600B8C440 /* TestingService.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
+		BCF087D5205772CB00199FC6 /* PRStarredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF087D3205772CB00199FC6 /* PRStarredCell.swift */; };
+		BCF087D6205772CB00199FC6 /* PRStarredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF087D3205772CB00199FC6 /* PRStarredCell.swift */; };
+		BCF087D7205772CB00199FC6 /* PRStarredCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF087D4205772CB00199FC6 /* PRStarredCell.xib */; };
+		BCF087D8205772CB00199FC6 /* PRStarredCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF087D4205772CB00199FC6 /* PRStarredCell.xib */; };
+		BCF087DB2057759700199FC6 /* PROthersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF087D92057759700199FC6 /* PROthersCell.swift */; };
+		BCF087DC2057759700199FC6 /* PROthersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF087D92057759700199FC6 /* PROthersCell.swift */; };
+		BCF087DD2057759700199FC6 /* PROthersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF087DA2057759700199FC6 /* PROthersCell.xib */; };
+		BCF087DE2057759700199FC6 /* PROthersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF087DA2057759700199FC6 /* PROthersCell.xib */; };
+		BCF087E22057764500199FC6 /* PRMemberShipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF087E02057764500199FC6 /* PRMemberShipVC.swift */; };
+		BCF087E32057764500199FC6 /* PRMemberShipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF087E02057764500199FC6 /* PRMemberShipVC.swift */; };
+		BCF087E42057764500199FC6 /* PRMemberShipVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF087E12057764500199FC6 /* PRMemberShipVC.xib */; };
+		BCF087E52057764500199FC6 /* PRMemberShipVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF087E12057764500199FC6 /* PRMemberShipVC.xib */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
 		CB6385249FFB0A0AA9621554 /* Pods_Prelens_jinnyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */; };
 /* End PBXBuildFile section */
@@ -115,8 +123,6 @@
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		760DBC7C2056B23900F4ECD0 /* StarredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredCell.swift; sourceTree = "<group>"; };
-		760DBC7D2056B23900F4ECD0 /* StarredCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredCell.xib; sourceTree = "<group>"; };
 		762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
 		762E97E92054E128001AA449 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
 		762E97EC2054E12F001AA449 /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuib.ttf; sourceTree = "<group>"; };
@@ -181,6 +187,12 @@
 		BCD2207A2053E92600EEC31A /* APIBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBaseService.swift; sourceTree = "<group>"; };
 		BCE3495620563F6600B8C440 /* TestingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingService.swift; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
+		BCF087D3205772CB00199FC6 /* PRStarredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRStarredCell.swift; sourceTree = "<group>"; };
+		BCF087D4205772CB00199FC6 /* PRStarredCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRStarredCell.xib; sourceTree = "<group>"; };
+		BCF087D92057759700199FC6 /* PROthersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROthersCell.swift; sourceTree = "<group>"; };
+		BCF087DA2057759700199FC6 /* PROthersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PROthersCell.xib; sourceTree = "<group>"; };
+		BCF087E02057764500199FC6 /* PRMemberShipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRMemberShipVC.swift; sourceTree = "<group>"; };
+		BCF087E12057764500199FC6 /* PRMemberShipVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRMemberShipVC.xib; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.release.xcconfig"; sourceTree = "<group>"; };
 		C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,7 +231,10 @@
 		760DBC7A2056B1F900F4ECD0 /* ListMembership */ = {
 			isa = PBXGroup;
 			children = (
+				BCF087E02057764500199FC6 /* PRMemberShipVC.swift */,
+				BCF087E12057764500199FC6 /* PRMemberShipVC.xib */,
 				760DBC7B2056B1F900F4ECD0 /* StarredCell */,
+				BCF087DF2057759D00199FC6 /* OthersCell */,
 			);
 			path = ListMembership;
 			sourceTree = "<group>";
@@ -227,8 +242,8 @@
 		760DBC7B2056B1F900F4ECD0 /* StarredCell */ = {
 			isa = PBXGroup;
 			children = (
-				760DBC7C2056B23900F4ECD0 /* StarredCell.swift */,
-				760DBC7D2056B23900F4ECD0 /* StarredCell.xib */,
+				BCF087D3205772CB00199FC6 /* PRStarredCell.swift */,
+				BCF087D4205772CB00199FC6 /* PRStarredCell.xib */,
 			);
 			path = StarredCell;
 			sourceTree = "<group>";
@@ -300,7 +315,6 @@
 				BCBC960C20562EB1004C1985 /* Resource */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
 				BCBC9619205631ED004C1985 /* Main.storyboard */,
-				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
 				BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */,
 				BC770A72204CEE5D0052A285 /* Info.plist */,
 			);
@@ -562,6 +576,7 @@
 		BCBC960C20562EB1004C1985 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
 				BCBC958A20562234004C1985 /* Fonts */,
 			);
 			path = Resource;
@@ -601,6 +616,15 @@
 				BCBC961420563012004C1985 /* PRAddManualViewController.xib */,
 			);
 			path = AddManual;
+			sourceTree = "<group>";
+		};
+		BCF087DF2057759D00199FC6 /* OthersCell */ = {
+			isa = PBXGroup;
+			children = (
+				BCF087D92057759700199FC6 /* PROthersCell.swift */,
+				BCF087DA2057759700199FC6 /* PROthersCell.xib */,
+			);
+			path = OthersCell;
 			sourceTree = "<group>";
 		};
 		C2031F63C23FE59B8717BCA4 /* Pods */ = {
@@ -707,7 +731,9 @@
 				76469D0F205656FB00E2950E /* seguili.ttf in Resources */,
 				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
 				76469D0B205656FB00E2950E /* seguisli.ttf in Resources */,
+				BCF087DD2057759700199FC6 /* PROthersCell.xib in Resources */,
 				BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */,
+				BCF087E42057764500199FC6 /* PRMemberShipVC.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
 				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
@@ -723,9 +749,9 @@
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				762E97EA2054E129001AA449 /* segoeui.ttf in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
+				BCF087D7205772CB00199FC6 /* PRStarredCell.xib in Resources */,
 				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
 				76469D13205656FB00E2950E /* seguisb.ttf in Resources */,
-				760DBC802056B23900F4ECD0 /* StarredCell.xib in Resources */,
 				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
 				76469D11205656FB00E2950E /* seguibli.ttf in Resources */,
 				762E97F52054E189001AA449 /* segoeuil.ttf in Resources */,
@@ -748,14 +774,16 @@
 				76469D0E205656FB00E2950E /* segoeuiz.ttf in Resources */,
 				762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
+				BCF087D8205772CB00199FC6 /* PRStarredCell.xib in Resources */,
 				762E97EB2054E129001AA449 /* segoeui.ttf in Resources */,
+				BCF087DE2057759700199FC6 /* PROthersCell.xib in Resources */,
 				762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				76469D12205656FB00E2950E /* seguibli.ttf in Resources */,
-				760DBC812056B23900F4ECD0 /* StarredCell.xib in Resources */,
 				762E97F62054E189001AA449 /* segoeuil.ttf in Resources */,
 				76469D18205656FB00E2950E /* seguibl.ttf in Resources */,
 				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
+				BCF087E52057764500199FC6 /* PRMemberShipVC.xib in Resources */,
 				765027E22050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,15 +924,18 @@
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */,
 				BCE3495920565A5000B8C440 /* PRUser.swift in Sources */,
 				BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */,
+				BCF087D5205772CB00199FC6 /* PRStarredCell.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
+				BCF087DB2057759700199FC6 /* PROthersCell.swift in Sources */,
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
+				BCF087E22057764500199FC6 /* PRMemberShipVC.swift in Sources */,
 				BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
@@ -922,7 +953,6 @@
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
-				760DBC7E2056B23900F4ECD0 /* StarredCell.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
@@ -935,12 +965,14 @@
 			files = (
 				76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
+				BCF087D6205772CB00199FC6 /* PRStarredCell.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
+				BCF087E32057764500199FC6 /* PRMemberShipVC.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
-				760DBC7F2056B23900F4ECD0 /* StarredCell.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
+				BCF087DC2057759700199FC6 /* PROthersCell.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 				BC4F95DB20566B6D005D281B /* APISignInService.swift in Sources */,
 			);

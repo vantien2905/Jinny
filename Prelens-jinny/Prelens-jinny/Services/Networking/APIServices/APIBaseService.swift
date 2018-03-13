@@ -20,7 +20,7 @@ struct RequestInfo {
     var method   : HTTPMethod
 }
 
-class APIBaseService: API {
+class APIBaseService {
     var header: HTTPHeaders {
         let headers = [
             "Http-Auth-Token"   : "", //this will be assigned from user model
@@ -44,7 +44,7 @@ extension APIBaseService {
                                             parameters: requestInfo.params, headers: requestInfo.headers)
             request.responseJSON(completionHandler: { (response) in
                 let _json = JSON(response.result.value)
-                resp.onNext(Mapper<T>().map(JSONObject: _json.dictionaryObject)!)
+                resp.onNext(Mapper<T>().map(JSONObject: _json.dictionaryObject)!) //todo here
             })
             return Disposables.create()
         }
