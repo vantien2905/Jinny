@@ -15,12 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       // handleFlow()
-        goToMainApp()
+        handleFlow()
         return true
     }
     
     func handleFlow() {
+        UITabBar.appearance().tintColor = UIColor.red
         if KeychainManager.shared.getToken() != nil {
             KeychainManager.shared.deleteToken()
             goToMainApp()
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func goToMainApp() {
         window?.rootViewController = PRTabbarMainViewController()
-        UITabBar.appearance().tintColor = UIColor.red
+        
         //        apiNotification.asObservable().subscribe(onNext: { [weak self] unreadNotification in
         //            guard let _unreadNotification = unreadNotification else { return }
         //            self?.handleUnread(notification: _unreadNotification)

@@ -25,7 +25,7 @@ class SigninViewModel {
         }
     }
     
-    var apiSignIn                   : APISignInService = APISignInService()
+    var apiSignIn                   : APIAuthenticationService = APIAuthenticationService()
     
     init() {
         self.email = Variable<String?>(nil)

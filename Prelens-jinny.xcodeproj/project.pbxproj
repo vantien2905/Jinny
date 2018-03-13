@@ -66,14 +66,16 @@
 		B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */; };
 		B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */; };
 		B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */; };
+		BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
+		BC36E975205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
 		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
 		BC46C00E2056D9B5004C1922 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC46C00D2056D9B5004C1922 /* API.swift */; };
-		BC4F95DA20566B6D005D281B /* APISignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APISignInService.swift */; };
-		BC4F95DB20566B6D005D281B /* APISignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APISignInService.swift */; };
+		BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */; };
+		BC4F95DB20566B6D005D281B /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
@@ -156,13 +158,14 @@
 		B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		BC36E973205846B1006A90A0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC46C00D2056D9B5004C1922 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		BC4F95D920566B6D005D281B /* APISignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISignInService.swift; sourceTree = "<group>"; };
+		BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthenticationService.swift; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -255,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				765087852057716100199FBB /* SigninViewModel.swift */,
+				BC36E973205846B1006A90A0 /* SignUpViewModel.swift */,
 			);
 			path = LoginViewModel;
 			sourceTree = "<group>";
@@ -525,7 +529,7 @@
 			children = (
 				BC46C00D2056D9B5004C1922 /* API.swift */,
 				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
-				BC4F95D920566B6D005D281B /* APISignInService.swift */,
+				BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */,
 				BCE3495620563F6600B8C440 /* TestingService.swift */,
 			);
 			path = APIServices;
@@ -943,7 +947,7 @@
 				BCE3495720563F6600B8C440 /* TestingService.swift in Sources */,
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
-				BC4F95DA20566B6D005D281B /* APISignInService.swift in Sources */,
+				BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				BCB04FEC2057E6CC008F929F /* PRMembershipCell.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
@@ -956,6 +960,7 @@
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */,
 				765087862057716100199FBB /* SigninViewModel.swift in Sources */,
+				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
@@ -971,6 +976,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */,
+				BC36E975205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				76A3F0D02057C5ED007BC21A /* Observable+Operators.swift in Sources */,
@@ -981,7 +987,7 @@
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
 				765087872057716100199FBB /* SigninViewModel.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
-				BC4F95DB20566B6D005D281B /* APISignInService.swift in Sources */,
+				BC4F95DB20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,15 +62,4 @@ class PRTabbarMainViewController: UITabBarController {
         
         //MARK: Delegate Action here when item was tapped
     }
-    
-    //Adding the tabbar Viewcontroller into list
-    func addViewControllerToTabbar(listViewController: [UIViewController]) {
-        var listNavigationController = [UINavigationController]()
-        for vc in listViewController {
-            let nc = UINavigationController(rootViewController: vc)
-            listNavigationController.append(nc)
-        }
-        //---
-        self.viewControllers = listNavigationController
-    }
 }
