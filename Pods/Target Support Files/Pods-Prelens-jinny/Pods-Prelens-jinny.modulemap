@@ -1,0 +1,6 @@
+framework module Pods_Prelens_jinny {
+  umbrella header "Pods-Prelens-jinny-umbrella.h"
+
+  export *
+  module * { export * }
+}
