@@ -20,10 +20,10 @@ struct RequestInfo {
     var method   : HTTPMethod
 }
 
-class APIBaseService {
-    class var header: HTTPHeaders {
+class APIBaseService: API {
+    var header: HTTPHeaders {
         let headers = [
-            "Http-Auth-Token"   : "PRAppData.shared.token", //this will be assigned from user model
+            "Http-Auth-Token"   : "", //this will be assigned from user model
             "Accept"            : "application/json",
             "App-Version"       : "appBuildNumberHere",
             "App-Device"        : "iOS"
@@ -37,30 +37,15 @@ class APIBaseService {
 }
 
 extension APIBaseService {
-    //    func execute<T: BaseResponse>(_ requestInfo: RequestInfo, responseType: T.Type,
-    //                                  succeed: @escaping (String?, Any) -> (),
-    //                                  failed : @escaping (String?) -> ()) {
-    //
-    //        let request = Alamofire.request(requestInfo.fullPath, method: requestInfo.method,
-    //                                        parameters: requestInfo.params, headers: requestInfo.headers)
-    //        //response object need to be added into rxswift
-    //        request.responseObject { (response: DataResponse<T>) in
-    //
-    //            self.processResult(result: response.result,
-    //                               succeed: succeed, failed: failed)
-    //        }
-    //    }
-    
-    
+
     func execute<T: BaseResponse>(_ requestInfo: RequestInfo, responseType: T.Type) -> Observable<T> {
         return Observable.create { (resp)in
             let request = Alamofire.request(requestInfo.fullPath, method: requestInfo.method,
                                             parameters: requestInfo.params, headers: requestInfo.headers)
-            request.responseObject { (response: DataResponse<T>) in
-                resp.onNext(Mapper<T>().map(JSONObject: response)!)
-                resp.onCompleted()
-                self.processResult(result: response.result)
-            }
+            request.responseJSON(completionHandler: { (response) in
+                let _json = JSON(response.result.value)
+                resp.onNext(Mapper<T>().map(JSONObject: _json.dictionaryObject)!)
+            })
             return Disposables.create()
         }
     }
@@ -164,26 +149,6 @@ extension APIBaseService {
         }
     }
     
-    //    private func processResult<T: BaseResponse>(result: Result<T>,
-    //                                                succeed: @escaping (String?, Any) -> (),
-    //                                                failed : @escaping (String?) -> ()) {
-    //        switch result {
-    //        case .success(let data):
-    //            if data.forbidden {
-    //             //   RouterService.shared.gotoAuthentication(animated: true)
-    //                return
-    //            }
-    //
-    //            if !data.isSuccess {
-    //                failed(data.message)
-    //                return
-    //            }
-    //            succeed(data.message, data.getData)
-    //
-    //        case .failure(let error):
-    //            failed(error.localizedDescription)
-    //        }
-    //    }
     
     private func processResult<T: BaseResponse>(result: Result<T>) {
         switch result {
@@ -196,8 +161,5 @@ extension APIBaseService {
         }
     }
 }
-
-//Todo: Embbed the RXSwift into the response type, the response result
-
 
 

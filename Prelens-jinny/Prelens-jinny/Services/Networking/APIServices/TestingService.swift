@@ -19,7 +19,5 @@ class TestingService: APIBaseService {
         return execute(request, responseType: SingleResponse<PRUser>.self)
     }
     
-    
 }
-
 

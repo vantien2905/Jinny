@@ -61,6 +61,13 @@
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
 		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
+		BC46C00E2056D9B5004C1922 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC46C00D2056D9B5004C1922 /* API.swift */; };
+		BC4F95DA20566B6D005D281B /* APISignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APISignInService.swift */; };
+		BC4F95DB20566B6D005D281B /* APISignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APISignInService.swift */; };
+		BC4F95DF20566D44005D281B /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95DD20566D44005D281B /* TestVC.swift */; };
+		BC4F95E020566D44005D281B /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95DD20566D44005D281B /* TestVC.swift */; };
+		BC4F95E120566D44005D281B /* TestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4F95DE20566D44005D281B /* TestVC.xib */; };
+		BC4F95E220566D44005D281B /* TestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4F95DE20566D44005D281B /* TestVC.xib */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
@@ -137,6 +144,10 @@
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BC46C00D2056D9B5004C1922 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		BC4F95D920566B6D005D281B /* APISignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISignInService.swift; sourceTree = "<group>"; };
+		BC4F95DD20566D44005D281B /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		BC4F95DE20566D44005D281B /* TestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestVC.xib; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -234,6 +245,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		BC4F95DC20566D29005D281B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				BC4F95DD20566D44005D281B /* TestVC.swift */,
+				BC4F95DE20566D44005D281B /* TestVC.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		BC770A5A204CEE5D0052A285 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +283,7 @@
 				76469D0120563D4400E2950E /* Models */,
 				BCBC95AC205626A0004C1985 /* Views */,
 				BCBC960C20562EB1004C1985 /* Resource */,
+				BC4F95DC20566D29005D281B /* Test */,
 				BC770A66204CEE5D0052A285 /* AppDelegate.swift */,
 				BCBC9619205631ED004C1985 /* Main.storyboard */,
 				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
@@ -459,7 +480,9 @@
 		BCBC95B22056287A004C1985 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				BC46C00D2056D9B5004C1922 /* API.swift */,
 				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
+				BC4F95D920566B6D005D281B /* APISignInService.swift */,
 				BCE3495620563F6600B8C440 /* TestingService.swift */,
 			);
 			path = APIServices;
@@ -674,6 +697,7 @@
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
+				BC4F95E120566D44005D281B /* TestVC.xib in Resources */,
 				762E97F72054E189001AA449 /* segoeuii.ttf in Resources */,
 				76469D15205656FB00E2950E /* seguisbi.ttf in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
@@ -701,6 +725,7 @@
 			files = (
 				762E97F82054E189001AA449 /* segoeuii.ttf in Resources */,
 				76469D14205656FB00E2950E /* seguisb.ttf in Resources */,
+				BC4F95E220566D44005D281B /* TestVC.xib in Resources */,
 				76469D0C205656FB00E2950E /* seguisli.ttf in Resources */,
 				76469D16205656FB00E2950E /* seguisbi.ttf in Resources */,
 				76469D10205656FB00E2950E /* seguili.ttf in Resources */,
@@ -852,6 +877,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4F95DF20566D44005D281B /* TestVC.swift in Sources */,
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */,
 				BCE3495920565A5000B8C440 /* PRUser.swift in Sources */,
 				BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */,
@@ -869,9 +895,11 @@
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				BCE3495720563F6600B8C440 /* TestingService.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
+				BC4F95DA20566B6D005D281B /* APISignInService.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
+				BC46C00E2056D9B5004C1922 /* API.swift in Sources */,
 				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
 				BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
@@ -889,6 +917,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4F95E020566D44005D281B /* TestVC.swift in Sources */,
 				76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
@@ -897,6 +926,7 @@
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
+				BC4F95DB20566B6D005D281B /* APISignInService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

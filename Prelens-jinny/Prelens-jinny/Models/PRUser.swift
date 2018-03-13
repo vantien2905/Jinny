@@ -9,10 +9,13 @@
 import ObjectMapper
 
 class PRUser: NSObject, Mappable {
-    var name: String?
-    var idUser: Int?
-    
-    
+
+    var email: String?
+    var fullName: String?
+    var dob: Date?
+    var gender: String?
+    var token: String?
+   
     override init() {
         super.init()
     }
@@ -22,7 +25,16 @@ class PRUser: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        self.name <- map["name"]
-        self.idUser <- map["idUser"]
+        self.gender <- map["gender"]
+        self.email <- map["email"]
+        self.fullName <- map["full_name"]
+        self.token <- map["token"]
+        self.dob <- map["dob"]
+    }
+    
+    func getToken() -> String {
+        let apiToken = token ?? ""
+        return apiToken
     }
 }
+

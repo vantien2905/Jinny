@@ -14,7 +14,7 @@ class SingleResponse<T: Mappable>: BaseResponse {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        data <- map["data"]
+        data <- map["result"]
     }
     
     override var getData: Any {

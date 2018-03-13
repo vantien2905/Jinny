@@ -8,7 +8,7 @@
 
 import Foundation
 
-public var baseURL = "..."
+public var baseURL = "http://jinny.vinova.sg/api"
 
 struct APIEndpoint {
     
