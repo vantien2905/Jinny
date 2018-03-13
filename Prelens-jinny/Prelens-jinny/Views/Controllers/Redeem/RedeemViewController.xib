@@ -10,6 +10,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="segoeui.ttf">
+            <string>SegoeUI</string>
+        </array>
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RedeemViewController" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
@@ -28,36 +36,30 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkS-3E-3Aq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="153.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San(3)Tou(10)ka Day - $3++ Ramen for everyone! " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sl-2r-Jtk">
-                                            <rect key="frame" x="19" y="13" width="337.5" height="38.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santouka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAc-58-L6U">
-                                            <rect key="frame" x="19" y="71.5" width="338" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <rect key="frame" x="19" y="13" width="337.5" height="43"/>
+                                            <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WXZ-oR-OTB">
-                                            <rect key="frame" x="19" y="108.5" width="337.5" height="17"/>
+                                            <rect key="frame" x="19" y="76" width="337.5" height="20"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expired date:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19t-t1-8hD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="88" id="Ryc-Me-CL0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10th March 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTV-n2-UO8">
-                                                    <rect key="frame" x="92.5" y="0.0" width="245" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="92.5" y="0.0" width="245" height="20"/>
+                                                    <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -66,19 +68,18 @@
                                     <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="WXZ-oR-OTB" secondAttribute="bottom" constant="28" id="BlB-Ci-cHM"/>
-                                        <constraint firstItem="xAc-58-L6U" firstAttribute="top" secondItem="1sl-2r-Jtk" secondAttribute="bottom" constant="20" id="Rdx-bz-BBf"/>
-                                        <constraint firstItem="WXZ-oR-OTB" firstAttribute="top" secondItem="xAc-58-L6U" secondAttribute="bottom" constant="20" id="xfM-Ww-Y96"/>
+                                        <constraint firstItem="WXZ-oR-OTB" firstAttribute="top" secondItem="1sl-2r-Jtk" secondAttribute="bottom" constant="20" id="sHc-l3-BTJ"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjT-RD-Rh7">
-                                    <rect key="frame" x="19" y="153.5" width="337.5" height="1"/>
+                                    <rect key="frame" x="19" y="124" width="337.5" height="1"/>
                                     <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="IYS-lY-AKv"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7A-1J-ESp">
-                                    <rect key="frame" x="0.0" y="154.5" width="375" height="512.5"/>
+                                    <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QR_code" translatesAutoresizingMaskIntoConstraints="NO" id="IrE-72-x7g">
                                             <rect key="frame" x="97.5" y="60" width="180" height="180"/>
@@ -87,14 +88,14 @@
                                                 <constraint firstAttribute="height" constant="180" id="zAX-gN-GXy"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-Hd-Ww9">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-Hd-Ww9">
                                             <rect key="frame" x="19" y="290" width="337" height="45"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="dtt-f9-Sme"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                            <state key="normal" title="Click to redeem ">
+                                            <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="14"/>
+                                            <state key="normal" title="Click to redeem">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
@@ -114,11 +115,9 @@
                                 <constraint firstItem="1sl-2r-Jtk" firstAttribute="top" secondItem="Ebn-ve-tEi" secondAttribute="top" constant="13" id="Dym-i9-u1b"/>
                                 <constraint firstAttribute="trailing" secondItem="h7A-1J-ESp" secondAttribute="trailing" id="F6F-0k-QM0"/>
                                 <constraint firstItem="vjT-RD-Rh7" firstAttribute="centerX" secondItem="Ebn-ve-tEi" secondAttribute="centerX" id="GLz-10-dI1"/>
-                                <constraint firstItem="xAc-58-L6U" firstAttribute="trailing" secondItem="vjT-RD-Rh7" secondAttribute="trailing" id="Miv-Fc-N0j"/>
                                 <constraint firstItem="h7A-1J-ESp" firstAttribute="top" secondItem="vjT-RD-Rh7" secondAttribute="bottom" id="OZ9-4Y-sYO"/>
                                 <constraint firstItem="WXZ-oR-OTB" firstAttribute="leading" secondItem="vjT-RD-Rh7" secondAttribute="leading" id="Scw-p8-cFI"/>
                                 <constraint firstItem="pkS-3E-3Aq" firstAttribute="leading" secondItem="Ebn-ve-tEi" secondAttribute="leading" id="UNo-GA-bLf"/>
-                                <constraint firstItem="xAc-58-L6U" firstAttribute="leading" secondItem="vjT-RD-Rh7" secondAttribute="leading" id="V1e-nb-eH1"/>
                                 <constraint firstItem="vjT-RD-Rh7" firstAttribute="top" secondItem="pkS-3E-3Aq" secondAttribute="bottom" id="b5d-iC-47M"/>
                                 <constraint firstItem="gfp-Hd-Ww9" firstAttribute="leading" secondItem="vjT-RD-Rh7" secondAttribute="leading" id="cDy-qj-XXu"/>
                                 <constraint firstAttribute="trailing" secondItem="pkS-3E-3Aq" secondAttribute="trailing" id="dUf-Wj-1hE"/>

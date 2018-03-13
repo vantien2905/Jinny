@@ -21,6 +21,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSignInViewController" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
+                <outlet property="tfEmail" destination="SCv-UA-Whd" id="l0v-MY-kiP"/>
+                <outlet property="tfPassword" destination="P34-7D-nVX" id="wZv-Zj-IJ2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -91,6 +93,9 @@
                             <state key="normal" title="Forgot Password?" image="next_red">
                                 <color key="titleColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="forgotPassBtnTapped:" destination="-1" eventType="touchUpInside" id="s39-yb-ITJ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

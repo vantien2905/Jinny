@@ -12,7 +12,8 @@ class PRForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
         // Do any additional setup after loading the view.
     }
 
