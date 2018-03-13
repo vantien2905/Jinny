@@ -15,10 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        //goToLogin()
-        
-        handleFlow()
+       // handleFlow()
+        goToMainApp()
         return true
     }
     
@@ -34,14 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func goToLogin() {
         let vc  = UINavigationController(rootViewController:PRLoginViewController())
         window?.rootViewController = vc
-        //vc.navigationBar.isHidden = true
     }
     
     func goToMainApp() {
-        
-        //        let vc  = PRMemberShipVC()
-        //        self.window!.rootViewController = vc
         window?.rootViewController = PRTabbarMainViewController()
+        UITabBar.appearance().tintColor = UIColor.red
         //        apiNotification.asObservable().subscribe(onNext: { [weak self] unreadNotification in
         //            guard let _unreadNotification = unreadNotification else { return }
         //            self?.handleUnread(notification: _unreadNotification)
@@ -69,7 +64,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
 }
 

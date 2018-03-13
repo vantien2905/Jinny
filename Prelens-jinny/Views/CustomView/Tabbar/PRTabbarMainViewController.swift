@@ -19,6 +19,8 @@ class PRTabbarMainViewController: UITabBarController {
     //  weak var delagateBtnDrawer: TabbarMainViewControllerDelegate?
     
     var membershipVC: PRMemberShipVC?
+    let promotionVC = UIViewController()
+    let moreVC = UIViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,9 +31,18 @@ class PRTabbarMainViewController: UITabBarController {
     func setUpTabbar() {
         membershipVC = PRMemberShipVC()
         let nvMembership = UINavigationController(rootViewController: membershipVC!)
+      
+        nvMembership.tabBarItem = UITabBarItem(title: "Memberships", image: PRPhoto.tabbarMembershipOff, selectedImage: nil)
+      
+        let nvPromotions = UINavigationController(rootViewController: promotionVC)
+        nvPromotions.tabBarItem = UITabBarItem(title: "Promotions", image: PRPhoto.tabbarPromotionsOff, selectedImage: nil)
         
-        let tabbarListVC: [UIViewController] = [nvMembership]
+        let nvMore = UINavigationController(rootViewController: moreVC)
+        nvMore.tabBarItem = UITabBarItem(title: "More...", image: PRPhoto.tabbarMore, selectedImage: nil)
+        
+        let tabbarListVC: [UIViewController] = [nvMembership, nvPromotions, nvMore]
         viewControllers = tabbarListVC
+        
         
         //IphoneX configuration
         //        for controller in tabbarListVC {
@@ -44,13 +55,7 @@ class PRTabbarMainViewController: UITabBarController {
         //            }
         //        }
     }
-    
-    //Config item when it was tapped on
-    func setBarItem(selectedImage: UIImage?, normalImage: UIImage?) -> UITabBarItem {
-        let item = UITabBarItem(title: nil, image: normalImage, selectedImage: selectedImage)
-        return item
-    }
-    
+ 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         //     delagateBtnDrawer?.tabbarSelected(index: tabBarController.selectedIndex)
         //  tabLeft.setIndexSelected(index: tabBarController.selectedIndex)
