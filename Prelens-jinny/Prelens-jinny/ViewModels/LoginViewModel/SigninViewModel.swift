@@ -57,13 +57,12 @@ class SigninViewModel {
             .subscribe(onNext: {  [weak self] _userLogin in
                 guard let strongSelf = self else { return }
                 
-                if let token = _userLogin.token, let userEmail = _userLogin.email {
+                if let token = _userLogin.token {
                     
 //                    Networking.shared.currentToken = token
                       KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
+                      KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
                       KeychainManager.shared.setToken(token)
-//                    KeychainManager.shared.setValidTime(expirationTime)
-//                    KeychainManager.shared.saveString(value: "\(userId*)", forkey: .userId)
                     
                     //strongSelf.getUserInfo(userId: userId)
                 }

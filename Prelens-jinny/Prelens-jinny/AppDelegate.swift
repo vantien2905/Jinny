@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func handleFlow() {
         if KeychainManager.shared.getToken() != nil {
-            //KeychainManager.shared.deleteToken()
+            KeychainManager.shared.deleteToken()
             goToMainApp()
         } else {
             goToLogin()

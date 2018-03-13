@@ -12,8 +12,7 @@ import KeychainSwift
 enum KeychainItem: String {
     case token          = "Token"
     case timeValid      = "TimeValid"
-    case tenantName     = "TenantName"
-    case tenantId       = "tenantId"
+    case email          = "Email"
     case displayName    = "DisplayName"
     case avatarUrl      = "AvatarUrl"
     case loginId        = "LoginId"
