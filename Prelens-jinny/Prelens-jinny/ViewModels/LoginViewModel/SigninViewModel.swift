@@ -13,24 +13,41 @@ class SigninViewModel {
     
     private var disposeBag = DisposeBag()
     
-    public var email:Variable<String?>
-    public var password:Variable<String?>
-    public var isValidInput: Variable<Bool>
+    public var email                : Variable<String?>
+    public var password             : Variable<String?>
+    public var isValidInput         : Variable<Bool>
+    private var userLogin           = Variable<PRUser?>(nil)
+    public var btnSignInTapped      : PublishSubject<Void>
     
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
     }
+    var apiSignIn           : APISignInService = APISignInService()
     
     init() {
         self.email = Variable<String?>(nil)
         self.password = Variable<String?>(nil)
         self.isValidInput = Variable<Bool>(false)
-
+        self.btnSignInTapped = PublishSubject<Void>()
+        
         let isValid = self.checkValid(emailText: email.asObservable(), passwordText: password.asObservable())
         
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
             self.isValidInput.value = value
+        }).disposed(by: disposeBag)
+        
+        self.btnSignInTapped.subscribe(onNext: { [weak self]  in
+            guard let strongSelf = self else { return }
+            guard let pass = strongSelf.password.value else {
+//                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
+                return
+            }
+            if pass.isValidPassword() {
+                strongSelf.callAPISignin()
+            } else {
+//                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
+            }
         }).disposed(by: disposeBag)
     }
     
@@ -39,7 +56,14 @@ class SigninViewModel {
             guard let _email = email, let _password = password else {
                 return false
             }
-            return  ( !_email.isValidEmpty() && !_password.isValidEmpty() )
+            return  ( !_email.isValidEmpty() && !_password.isValidEmpty())
         }
+    }
+    
+    func callAPISignin() {
+        apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
+           print(user.element?.data)
+            
+        })
     }
 }

@@ -16,6 +16,8 @@ class PRSignInViewController: UIViewController {
     
     @IBOutlet weak var tfEmail          : UITextField!
     @IBOutlet weak var tfPassword       : UITextField!
+    @IBOutlet weak var btnSignIn        : UIButton!
+    
     
     let disposeBag = DisposeBag()
     
@@ -37,7 +39,14 @@ class PRSignInViewController: UIViewController {
         vm.isValid.subscribe(onNext: { [weak self] isValid in
             print(isValid)
         }).disposed(by: disposeBag)
+        
+        btnSignIn.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .bind(to: vm.btnSignInTapped)
+            .disposed(by: disposeBag)
     }
+    
+   
     
     @IBAction func forgotPassBtnTapped(_ sender: Any) {
         let vc = PRForgotPasswordViewController.initControllerFromNib()
