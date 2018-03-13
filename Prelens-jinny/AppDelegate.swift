@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        goToLogin()
-   
+        //goToLogin()
+        handleFlow()
         return true
     }
     func goToLogin() {
@@ -25,7 +25,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         //vc.navigationBar.isHidden = true
     }
+    func handleFlow() {
+        if KeychainManager.shared.getToken() != nil {
+            KeychainManager.shared.deleteToken()
+            goToMainApp()
+        } else {
+            goToLogin()
+        }
+    }
     
+    func goToMainApp() {
+        let vc  = PRMemberShipVC()
+        self.window!.rootViewController = vc
+        
+//        apiNotification.asObservable().subscribe(onNext: { [weak self] unreadNotification in
+//            guard let _unreadNotification = unreadNotification else { return }
+//            self?.handleUnread(notification: _unreadNotification)
+//        }).disposed(by: disposeBag)
+    }
  
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -18,19 +18,21 @@ class SigninViewModel {
     public var isValidInput         : Variable<Bool>
     private var userLogin           = Variable<PRUser?>(nil)
     public var btnSignInTapped      : PublishSubject<Void>
+    public var isLoginSuccess       : PublishSubject<Bool>
     
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
     }
-    var apiSignIn           : APISignInService = APISignInService()
+    
+    var apiSignIn                   : APISignInService = APISignInService()
     
     init() {
         self.email = Variable<String?>(nil)
         self.password = Variable<String?>(nil)
         self.isValidInput = Variable<Bool>(false)
         self.btnSignInTapped = PublishSubject<Void>()
-        
+        self.isLoginSuccess = PublishSubject<Bool>()
         let isValid = self.checkValid(emailText: email.asObservable(), passwordText: password.asObservable())
         
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
@@ -49,6 +51,32 @@ class SigninViewModel {
 //                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
+        
+        userLogin.asObservable()
+            .ignoreNil()
+            .subscribe(onNext: {  [weak self] _userLogin in
+                guard let strongSelf = self else { return }
+                
+                if let token = _userLogin.token {
+                    
+//                    Networking.shared.currentToken = token
+                      KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
+                      KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
+                      KeychainManager.shared.setToken(token)
+                    
+                    //strongSelf.getUserInfo(userId: userId)
+                }
+                strongSelf.isLoginSuccess.onCompleted()
+                }, onError: { error in
+                    print(error)
+                    //TODO: Show Error Popup
+//                    if let err = error as? ApiError {
+//                        //PopUpHelper.shared.showError(title: "", message: err.description)
+//                    }
+            }, onCompleted: {
+                print("Completion")
+            }).disposed(by: disposeBag)
+        
     }
     
     func checkValid(emailText: Observable<String?>, passwordText: Observable<String?>) -> Observable<Bool> {
@@ -62,8 +90,7 @@ class SigninViewModel {
     
     func callAPISignin() {
         apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
-           print(user.element?.data)
-            
+           self.userLogin.value = user.element?.data
         })
     }
 }

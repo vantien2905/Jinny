@@ -8,8 +8,12 @@
 
 import Foundation
 
-public var baseURL = "http://jinny.vinova.sg/api"
+public let baseURL = "http://jinny.vinova.sg"
 
 struct APIEndpoint {
-    
+    struct Authentication {
+        static let signIn           = "/api/v1/sessions/sign_in"
+        static let signUp           = "/api/v1/users/sign_up"
+        static let forgotPassword   = ""
+    }
 }

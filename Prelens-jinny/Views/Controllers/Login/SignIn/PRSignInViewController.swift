@@ -18,8 +18,7 @@ class PRSignInViewController: UIViewController {
     @IBOutlet weak var tfPassword       : UITextField!
     @IBOutlet weak var btnSignIn        : UIButton!
     
-    
-    let disposeBag = DisposeBag()
+    let disposeBag                      = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +43,20 @@ class PRSignInViewController: UIViewController {
             .throttle(2, scheduler: MainScheduler.instance)
             .bind(to: vm.btnSignInTapped)
             .disposed(by: disposeBag)
+        
+        vm.isLoginSuccess.subscribe (onCompleted: {
+            DispatchQueue.main.async {
+                //if isGotoPassword {
+                //    isGotoPassword = false
+                //    self.dismiss(animated: true, completion: nil)
+                //} else {
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                    appDelegate.goToMainApp()
+                //}
+            }
+        }).disposed(by: disposeBag)
     }
-    
-   
-    
+
     @IBAction func forgotPassBtnTapped(_ sender: Any) {
         let vc = PRForgotPasswordViewController.initControllerFromNib()
         self.push(controller: vc , animated: true)

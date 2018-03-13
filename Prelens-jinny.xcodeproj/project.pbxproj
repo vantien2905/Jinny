@@ -54,12 +54,15 @@
 		767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
 		769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
+		76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */; };
+		76A3F0D02057C5ED007BC21A /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E29B142052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
 		76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
+		B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765ECB52057D89E0095B443 /* KeychainManager.swift */; };
 		B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */; };
 		B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */; };
 		B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */; };
@@ -153,9 +156,11 @@
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
 		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
+		B765ECB52057D89E0095B443 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -260,13 +265,6 @@
 			path = StarredCell;
 			sourceTree = "<group>";
 		};
-		76469D0020563CFA00E2950E /* LocalPersistence */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LocalPersistence;
-			sourceTree = "<group>";
-		};
 		76469D0120563D4400E2950E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +289,14 @@
 			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
-
+		B765ECB42057D81C0095B443 /* LocalPersistence */ = {
+			isa = PBXGroup;
+			children = (
+				B765ECB52057D89E0095B443 /* KeychainManager.swift */,
+			);
+			path = LocalPersistence;
+			sourceTree = "<group>";
+		};
 		B7AC7FD72057A7A900C0BFCA /* PopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,16 +306,6 @@
 			path = PopUpView;
 			sourceTree = "<group>";
 		};
-
-		765087812057703900199FBB /* LoginViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				765087852057716100199FBB /* SigninViewModel.swift */,
-			);
-			path = LoginViewModel;
-			sourceTree = "<group>";
-		};
-
 		BC770A5A204CEE5D0052A285 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +362,7 @@
 				769A742A205023B700414DFE /* NSObject+Extension.swift */,
 				76508788205772D200199FBB /* String+Extension.swift */,
 				B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */,
+				76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -403,7 +399,7 @@
 		BCBC958D20562254004C1985 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				76469D0020563CFA00E2950E /* LocalPersistence */,
+				B765ECB42057D81C0095B443 /* LocalPersistence */,
 				BCBC95B020562839004C1985 /* Networking */,
 			);
 			path = Services;
@@ -495,7 +491,6 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
 				BCBC960D20563012004C1985 /* Membership */,
 				BCBC960420562D26004C1985 /* Redeem */,
 				BCBC95E020562BB8004C1985 /* Login */,
@@ -509,7 +504,6 @@
 			isa = PBXGroup;
 			children = (
 				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
-				76469D0320563D7600E2950E /* Storyboards */,
 				BCBC959720562411004C1985 /* CustomView */,
 				BCBC95AB2056267F004C1985 /* Controllers */,
 			);
@@ -973,6 +967,7 @@
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				BCE3495720563F6600B8C440 /* TestingService.swift in Sources */,
+				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BC4F95DA20566B6D005D281B /* APISignInService.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
@@ -987,6 +982,7 @@
 				765087862057716100199FBB /* SigninViewModel.swift in Sources */,
 				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
+				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
@@ -1002,6 +998,7 @@
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				BCF087D6205772CB00199FC6 /* PRStarredCell.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
+				76A3F0D02057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				7650878A205772D200199FBB /* String+Extension.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
