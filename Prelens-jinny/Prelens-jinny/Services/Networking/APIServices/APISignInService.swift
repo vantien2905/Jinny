@@ -11,7 +11,7 @@ import RxSwift
 
 class APISignInService: APIBaseService {
     func signIn(email: String, password: String) -> Observable<SingleResponse<PRUser>> {
-        let _fullPath = "http://jinny.vinova.sg/api/v1/sessions/sign_in"
+        let _fullPath = baseURL.appending(APIEndpoint.Authentication.signIn)
         let params = [
             "email": email,
             "password": password

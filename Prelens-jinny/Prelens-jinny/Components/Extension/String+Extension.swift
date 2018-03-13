@@ -7,6 +7,16 @@
 //
 
 import Foundation
+postfix operator &
+
+postfix func & <T>(element: T?) -> String {
+    return (element == nil) ? "" : "\(element!)"
+}
+
+postfix func & <T>(element: T) -> String {
+    return "\(element)"
+}
+
 extension String {
     func isValidEmpty() -> Bool {
         if self.cutWhiteSpace().isEmpty {

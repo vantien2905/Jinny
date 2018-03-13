@@ -38,10 +38,6 @@ class PRLoginViewController: UIViewController {
         ]
         controllers = [ vcSignUp, vcSignIn ]
         self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu)
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
         setupView()
     }
 
