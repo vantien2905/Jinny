@@ -333,17 +333,8 @@
 				BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */,
 				BCB04FE72057E6CC008F929F /* PRMembershipCell.swift */,
 				BCB04FE92057E6CC008F929F /* PRMembershipCell.xib */,
-				BCB04FE82057E6CC008F929F /* OthersCell */,
 			);
-			name = ListMembership;
-			path = "../../../../../../untitled folder/Membership/ListMembership";
-			sourceTree = "<group>";
-		};
-		BCB04FE82057E6CC008F929F /* OthersCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OthersCell;
+			path = ListMembership;
 			sourceTree = "<group>";
 		};
 		BCBC9588205621BB004C1985 /* Extension */ = {
