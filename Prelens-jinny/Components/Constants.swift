@@ -55,6 +55,10 @@ struct PRPhoto {
     static let tabbarMore           = UIImage(named: "more")
 }
 
+struct PRFont {
+    static let sideBarMenuFont = UIFont(name: "SegoeUI-Semibold", size: 15)
+}
+
 
 
 

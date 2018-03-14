@@ -80,6 +80,10 @@
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */; };
+		BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */; };
+		BC78F4922058D3FC003904E0 /* PRSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */; };
+		BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */; };
+		BC78F4942058D3FC003904E0 /* PRSideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */; };
 		BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */; };
 		BCB04FEC2057E6CC008F929F /* PRMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB04FE72057E6CC008F929F /* PRMembershipCell.swift */; };
 		BCB04FED2057E6CC008F929F /* PRMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE92057E6CC008F929F /* PRMembershipCell.xib */; };
@@ -174,6 +178,8 @@
 		BC770A77204CEE5D0052A285 /* Prelens-jinnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelens-jinnyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prelens_jinnyTests.swift; sourceTree = "<group>"; };
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSideMenuVC.swift; sourceTree = "<group>"; };
+		BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSideMenuVC.xib; sourceTree = "<group>"; };
 		BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRMemberShipVC.xib; sourceTree = "<group>"; };
 		BCB04FE72057E6CC008F929F /* PRMembershipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRMembershipCell.swift; sourceTree = "<group>"; };
 		BCB04FE92057E6CC008F929F /* PRMembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRMembershipCell.xib; sourceTree = "<group>"; };
@@ -324,6 +330,15 @@
 				BC770A7D204CEE5D0052A285 /* Info.plist */,
 			);
 			path = "Prelens-jinnyTests";
+			sourceTree = "<group>";
+		};
+		BC78F4952058D406003904E0 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */,
+				BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		BCB04FE52057E6CC008F929F /* ListMembership */ = {
@@ -481,6 +496,7 @@
 				BCBC95E020562BB8004C1985 /* Login */,
 				BCBC959920562488004C1985 /* Setting */,
 				BCBC95A6205625EB004C1985 /* Profile */,
+				BC78F4952058D406003904E0 /* SideMenu */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -750,6 +766,7 @@
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BCB04FED2057E6CC008F929F /* PRMembershipCell.xib in Resources */,
 				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
+				BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
 				76469D13205656FB00E2950E /* seguisb.ttf in Resources */,
 				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
 				76469D11205656FB00E2950E /* seguibli.ttf in Resources */,
@@ -768,6 +785,7 @@
 				76469D14205656FB00E2950E /* seguisb.ttf in Resources */,
 				76469D0C205656FB00E2950E /* seguisli.ttf in Resources */,
 				76469D16205656FB00E2950E /* seguisbi.ttf in Resources */,
+				BC78F4942058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
 				76469D10205656FB00E2950E /* seguili.ttf in Resources */,
 				762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
 				76469D0E205656FB00E2950E /* segoeuiz.ttf in Resources */,
@@ -941,6 +959,7 @@
 				BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				BCB04FEC2057E6CC008F929F /* PRMembershipCell.swift in Sources */,
+				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
 				BC46C00E2056D9B5004C1922 /* API.swift in Sources */,
@@ -970,6 +989,7 @@
 				BC36E975205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
+				BC78F4922058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				76A3F0D02057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				7650878A205772D200199FBB /* String+Extension.swift in Sources */,
