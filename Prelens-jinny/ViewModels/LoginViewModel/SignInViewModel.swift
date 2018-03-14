@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-class SignInViewModel {
+final class SignInViewModel {
     
     private var disposeBag = DisposeBag()
     
@@ -19,7 +19,7 @@ class SignInViewModel {
     private var userLogin           = Variable<PRUser?>(nil)
     public var btnSignInTapped      : PublishSubject<Void>
     public var isLoginSuccess       : PublishSubject<Bool>
-    
+     var popupView                  :PopUpView = PopUpView()
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
@@ -42,13 +42,14 @@ class SignInViewModel {
         self.btnSignInTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
             guard let pass = strongSelf.password.value else {
+               
 //                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
                 return
             }
             if pass.isValidPassword() {
                 strongSelf.callAPISignIn()
             } else {
-//                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
+                self?.popupView.showPopUp(message: ContantMessages.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
         
@@ -94,7 +95,7 @@ class SignInViewModel {
                 print("Sign in success!")
                 self.userLogin.value = user.element?.data
             } else {
-                print(user.element?.message ?? "")
+                self.popupView.showPopUp(message: user.element?.message ?? "")
             }
         })
     }

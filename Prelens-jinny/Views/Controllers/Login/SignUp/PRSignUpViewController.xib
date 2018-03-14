@@ -21,7 +21,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSignUpViewController" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
-                <outlet property="btnCheckBox" destination="45f-hV-yeM" id="3mm-KB-sRl"/>
+                <outlet property="btnCheckConditions" destination="45f-hV-yeM" id="hOX-x3-vmt"/>
+                <outlet property="btnShowHidePassword" destination="ccm-fJ-RNH" id="qoP-MH-qT9"/>
                 <outlet property="btnSignUp" destination="jZY-J5-bdZ" id="iMB-R3-SJA"/>
                 <outlet property="tfEmail" destination="5Gf-sl-B9y" id="8Am-A3-mVv"/>
                 <outlet property="tfPassword" destination="SLb-2i-VA7" id="XOE-5y-vQD"/>
@@ -89,10 +90,16 @@
                                 <constraint firstAttribute="width" constant="45" id="nuF-7t-0mc"/>
                             </constraints>
                             <state key="normal" image="hidden"/>
+                            <connections>
+                                <action selector="btnShowHidePasswordTapped:" destination="-1" eventType="touchUpInside" id="n5B-wP-843"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45f-hV-yeM">
                             <rect key="frame" x="101" y="215" width="12" height="22"/>
                             <state key="normal" image="check_box"/>
+                            <connections>
+                                <action selector="btnCheckConditionsTapped:" destination="-1" eventType="touchUpInside" id="69y-5d-Qxv"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

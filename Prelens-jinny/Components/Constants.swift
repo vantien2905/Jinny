@@ -59,6 +59,11 @@ struct PRFont {
     static let sideBarMenuFont = UIFont(name: "SegoeUI-Semibold", size: 15)
 }
 
+struct ContantMessages {
+    struct Login {
+        static let errorContentPassword =  "Password is too short (minimum is 6 characters)"
+    }
+}
 
 
 
