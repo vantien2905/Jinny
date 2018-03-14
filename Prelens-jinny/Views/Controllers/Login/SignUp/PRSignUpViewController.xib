@@ -19,8 +19,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRLoginViewController" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSignUpViewController" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
+                <outlet property="btnCheckConditions" destination="45f-hV-yeM" id="hOX-x3-vmt"/>
+                <outlet property="btnShowHidePassword" destination="ccm-fJ-RNH" id="qoP-MH-qT9"/>
+                <outlet property="btnSignUp" destination="jZY-J5-bdZ" id="iMB-R3-SJA"/>
+                <outlet property="tfEmail" destination="5Gf-sl-B9y" id="8Am-A3-mVv"/>
+                <outlet property="tfPassword" destination="SLb-2i-VA7" id="XOE-5y-vQD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,6 +58,12 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdE-Lz-WfN">
+                            <rect key="frame" x="121.5" y="217" width="132" height="19"/>
+                            <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="14"/>
+                            <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLb-2i-VA7">
                             <rect key="frame" x="37" y="157" width="300.5" height="45"/>
                             <constraints>
@@ -62,24 +73,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AgD-IK-zqY">
-                            <rect key="frame" x="110.5" y="221.5" width="155" height="15"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_box" translatesAutoresizingMaskIntoConstraints="NO" id="iM2-4g-ntZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="15" id="aRf-qF-ZDt"/>
-                                        <constraint firstAttribute="width" constant="15" id="vki-i3-cHg"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdE-Lz-WfN">
-                                    <rect key="frame" x="23" y="0.0" width="132" height="15"/>
-                                    <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="14"/>
-                                    <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZY-J5-bdZ">
                             <rect key="frame" x="37.5" y="266.5" width="300" height="45"/>
                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,6 +90,16 @@
                                 <constraint firstAttribute="width" constant="45" id="nuF-7t-0mc"/>
                             </constraints>
                             <state key="normal" image="hidden"/>
+                            <connections>
+                                <action selector="btnShowHidePasswordTapped:" destination="-1" eventType="touchUpInside" id="n5B-wP-843"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45f-hV-yeM">
+                            <rect key="frame" x="101" y="215" width="12" height="22"/>
+                            <state key="normal" image="check_box"/>
+                            <connections>
+                                <action selector="btnCheckConditionsTapped:" destination="-1" eventType="touchUpInside" id="69y-5d-Qxv"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,20 +107,22 @@
                         <constraint firstItem="ccm-fJ-RNH" firstAttribute="trailing" secondItem="SLb-2i-VA7" secondAttribute="trailing" id="1wB-kB-tSZ"/>
                         <constraint firstItem="5Gf-sl-B9y" firstAttribute="leading" secondItem="YJR-w8-Yr9" secondAttribute="leading" id="31d-HZ-o2J"/>
                         <constraint firstItem="SLb-2i-VA7" firstAttribute="trailing" secondItem="slm-8m-Gai" secondAttribute="trailing" id="3uy-P9-JK1"/>
-                        <constraint firstItem="AgD-IK-zqY" firstAttribute="centerX" secondItem="gxz-tw-HRW" secondAttribute="centerX" id="73w-se-mp9"/>
+                        <constraint firstItem="jZY-J5-bdZ" firstAttribute="top" secondItem="gdE-Lz-WfN" secondAttribute="bottom" constant="30.5" id="7Jl-kX-zWN"/>
+                        <constraint firstItem="gdE-Lz-WfN" firstAttribute="leading" secondItem="45f-hV-yeM" secondAttribute="trailing" constant="8.5" id="80y-Fy-3iw"/>
                         <constraint firstItem="jZY-J5-bdZ" firstAttribute="leading" secondItem="YJR-w8-Yr9" secondAttribute="leading" id="9Kl-dQ-ZMr"/>
                         <constraint firstItem="jZY-J5-bdZ" firstAttribute="trailing" secondItem="YJR-w8-Yr9" secondAttribute="trailing" id="Byk-og-qlX"/>
+                        <constraint firstItem="gdE-Lz-WfN" firstAttribute="top" secondItem="SLb-2i-VA7" secondAttribute="bottom" constant="15" id="Fmb-E9-znv"/>
                         <constraint firstItem="ccm-fJ-RNH" firstAttribute="top" secondItem="SLb-2i-VA7" secondAttribute="top" id="KFH-BU-bEz"/>
-                        <constraint firstItem="jZY-J5-bdZ" firstAttribute="top" secondItem="gdE-Lz-WfN" secondAttribute="bottom" constant="30" id="KvV-aW-eiQ"/>
                         <constraint firstItem="5Gf-sl-B9y" firstAttribute="trailing" secondItem="YJR-w8-Yr9" secondAttribute="trailing" id="Nb8-SY-OJz"/>
+                        <constraint firstItem="45f-hV-yeM" firstAttribute="centerY" secondItem="gdE-Lz-WfN" secondAttribute="centerY" id="Nj8-j5-307"/>
                         <constraint firstItem="SLb-2i-VA7" firstAttribute="leading" secondItem="slm-8m-Gai" secondAttribute="leading" id="PpJ-qc-Z7B"/>
                         <constraint firstItem="YJR-w8-Yr9" firstAttribute="top" secondItem="gxz-tw-HRW" secondAttribute="top" constant="50" id="aV1-6V-o35"/>
                         <constraint firstItem="ccm-fJ-RNH" firstAttribute="bottom" secondItem="SLb-2i-VA7" secondAttribute="bottom" id="etb-vt-rqs"/>
                         <constraint firstItem="slm-8m-Gai" firstAttribute="trailing" secondItem="YJR-w8-Yr9" secondAttribute="trailing" id="fid-Zt-iHI"/>
+                        <constraint firstItem="gdE-Lz-WfN" firstAttribute="centerX" secondItem="SLb-2i-VA7" secondAttribute="centerX" id="nrM-H5-2dg"/>
                         <constraint firstItem="SLb-2i-VA7" firstAttribute="top" secondItem="slm-8m-Gai" secondAttribute="bottom" constant="2" id="paT-gT-HL3"/>
                         <constraint firstItem="YJR-w8-Yr9" firstAttribute="width" secondItem="gxz-tw-HRW" secondAttribute="width" multiplier="0.8" id="pe7-fa-ih0"/>
                         <constraint firstItem="YJR-w8-Yr9" firstAttribute="centerX" secondItem="gxz-tw-HRW" secondAttribute="centerX" id="qIx-tC-fkn"/>
-                        <constraint firstItem="AgD-IK-zqY" firstAttribute="top" secondItem="SLb-2i-VA7" secondAttribute="bottom" constant="20" id="qxC-hb-Ix1"/>
                         <constraint firstItem="slm-8m-Gai" firstAttribute="top" secondItem="5Gf-sl-B9y" secondAttribute="bottom" constant="20" id="unF-DI-otw"/>
                         <constraint firstItem="slm-8m-Gai" firstAttribute="leading" secondItem="YJR-w8-Yr9" secondAttribute="leading" id="vZX-Sw-08z"/>
                         <constraint firstItem="5Gf-sl-B9y" firstAttribute="top" secondItem="YJR-w8-Yr9" secondAttribute="bottom" constant="2" id="y7D-oM-Bmo"/>

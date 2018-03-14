@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-class SigninViewModel {
+final class SignInViewModel {
     
     private var disposeBag = DisposeBag()
     
@@ -19,7 +19,7 @@ class SigninViewModel {
     private var userLogin           = Variable<PRUser?>(nil)
     public var btnSignInTapped      : PublishSubject<Void>
     public var isLoginSuccess       : PublishSubject<Bool>
-    
+     var popupView                  :PopUpView = PopUpView()
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
@@ -42,13 +42,14 @@ class SigninViewModel {
         self.btnSignInTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
             guard let pass = strongSelf.password.value else {
+               
 //                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
                 return
             }
             if pass.isValidPassword() {
-                strongSelf.callAPISignin()
+                strongSelf.callAPISignIn()
             } else {
-//                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
+                self?.popupView.showPopUp(message: ContantMessages.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
         
@@ -59,7 +60,7 @@ class SigninViewModel {
                 
                 if let token = _userLogin.token {
                     
-//                    Networking.shared.currentToken = token
+                     // Networking.shared.currentToken = token
                       KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
                       KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
                       KeychainManager.shared.setToken(token)
@@ -88,9 +89,14 @@ class SigninViewModel {
         }
     }
     
-    func callAPISignin() {
-        apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
-           self.userLogin.value = user.element?.data
+    func callAPISignIn() {
+       _ = apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
+            if user.element?.isSuccess == true {
+                print("Sign in success!")
+                self.userLogin.value = user.element?.data
+            } else {
+                self.popupView.showPopUp(message: user.element?.message ?? "")
+            }
         })
     }
 }

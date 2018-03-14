@@ -10,7 +10,7 @@ import ObjectMapper
 
 class BaseResponse: Mappable {
     
-    var status  : Int?
+    var status  : String?
     var message : String?
     var code    : Int?
     
@@ -18,12 +18,12 @@ class BaseResponse: Mappable {
     
     func mapping(map: Map) {
         status  <- map["status"]
-        message <- map["message"]
+        message <- map["error_message"]
         code    <- map["code"]
     }
     
     var isSuccess: Bool {
-        return (status == 1 ? true : false)
+        return (status == "OK" ? true : false)
     }
     
     var forbidden: Bool {

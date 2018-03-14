@@ -18,8 +18,8 @@
 		765028022051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
 		765028032051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
 		765028042051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
-		765087862057716100199FBB /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SigninViewModel.swift */; };
-		765087872057716100199FBB /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SigninViewModel.swift */; };
+		765087862057716100199FBB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SignInViewModel.swift */; };
+		765087872057716100199FBB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SignInViewModel.swift */; };
 		76508789205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
 		7650878A205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
@@ -86,6 +86,10 @@
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */; };
+		BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */; };
+		BC78F4922058D3FC003904E0 /* PRSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */; };
+		BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */; };
+		BC78F4942058D3FC003904E0 /* PRSideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */; };
 		BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */; };
 		BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */; };
 		BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */; };
@@ -135,7 +139,7 @@
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
 		765027FF2051265300618C84 /* PRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSettingViewController.swift; sourceTree = "<group>"; };
 		765028002051265300618C84 /* PRSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSettingViewController.xib; sourceTree = "<group>"; };
-		765087852057716100199FBB /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		765087852057716100199FBB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		76508788205772D200199FBB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		BC770A77204CEE5D0052A285 /* Prelens-jinnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelens-jinnyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prelens_jinnyTests.swift; sourceTree = "<group>"; };
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSideMenuVC.swift; sourceTree = "<group>"; };
+		BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSideMenuVC.xib; sourceTree = "<group>"; };
 		BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRMemberShipVC.xib; sourceTree = "<group>"; };
 		BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRMemberShipVC.swift; sourceTree = "<group>"; };
 		BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -276,7 +282,7 @@
 		765087812057703900199FBB /* LoginViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				765087852057716100199FBB /* SigninViewModel.swift */,
+				765087852057716100199FBB /* SignInViewModel.swift */,
 				BC36E973205846B1006A90A0 /* SignUpViewModel.swift */,
 			);
 			path = LoginViewModel;
@@ -429,6 +435,15 @@
 			path = "Prelens-jinnyTests";
 			sourceTree = "<group>";
 		};
+		BC78F4952058D406003904E0 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */,
+				BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		BCB04FE52057E6CC008F929F /* ListMembership */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +578,7 @@
 				BCBC95E020562BB8004C1985 /* Login */,
 				BCBC959920562488004C1985 /* Setting */,
 				BCBC95A6205625EB004C1985 /* Profile */,
+				BC78F4952058D406003904E0 /* SideMenu */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -844,6 +860,10 @@
 				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
 				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
+				BCB04FED2057E6CC008F929F /* PRMembershipCell.xib in Resources */,
+				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
+				BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
+				76469D13205656FB00E2950E /* seguisb.ttf in Resources */,
 				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
 				B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */,
 				B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */,
@@ -857,6 +877,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762E97F82054E189001AA449 /* segoeuii.ttf in Resources */,
+				76469D14205656FB00E2950E /* seguisb.ttf in Resources */,
+				76469D0C205656FB00E2950E /* seguisli.ttf in Resources */,
+				76469D16205656FB00E2950E /* seguisbi.ttf in Resources */,
+				BC78F4942058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
+				76469D10205656FB00E2950E /* seguili.ttf in Resources */,
+				762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
+				76469D0E205656FB00E2950E /* segoeuiz.ttf in Resources */,
+				762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
@@ -1026,6 +1055,8 @@
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
+				BCB04FEC2057E6CC008F929F /* PRMembershipCell.swift in Sources */,
+				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
@@ -1037,7 +1068,7 @@
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */,
-				765087862057716100199FBB /* SigninViewModel.swift in Sources */,
+				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
@@ -1056,13 +1087,14 @@
 				BC36E975205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				769A742C205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
+				BC78F4922058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				76A3F0D02057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				7650878A205772D200199FBB /* String+Extension.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
 				767FF65E204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				76E29B142052654A0039CA45 /* MenuView.swift in Sources */,
-				765087872057716100199FBB /* SigninViewModel.swift in Sources */,
+				765087872057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
 				BC4F95DB20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 			);
