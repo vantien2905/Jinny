@@ -12,7 +12,7 @@ import RxCocoa
 
 class PRSignInViewController: UIViewController {
     var parentNavigationController      : UINavigationController?
-    var vm: SigninViewModel             = SigninViewModel()
+    var vm: SignInViewModel             = SignInViewModel()
     
     @IBOutlet weak var tfEmail          : UITextField!
     @IBOutlet weak var tfPassword       : UITextField!

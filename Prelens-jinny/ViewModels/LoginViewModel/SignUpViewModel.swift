@@ -15,16 +15,16 @@ class SignUpViewModel {
     public var email                : Variable<String?>
     public var password             : Variable<String?>
     public var isValidInput         : Variable<Bool>
-    private var userSignUp           = Variable<PRUser?>(nil)
+    private var userSignUp          = Variable<PRUser?>(nil)
     public var btnSignUpTapped      : PublishSubject<Void>
     public var isLoginSuccess       : PublishSubject<Bool>
-    
+    var popupView                   :PopUpView = PopUpView()
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
     }
     
-    var apiSignUp    : APIAuthenticationService?
+    var apiSignUp                   : APIAuthenticationService?
     
     init() {
         
@@ -44,8 +44,7 @@ class SignUpViewModel {
         self.btnSignUpTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
             guard let pass = strongSelf.password.value else {
-                //                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
-                return
+               return
             }
             if pass.isValidPassword() {
                 strongSelf.callAPISignUp()
@@ -53,7 +52,6 @@ class SignUpViewModel {
                 //                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
-        
     }
     
     func checkValid(emailText: Observable<String?>, passwordText: Observable<String?>) -> Observable<Bool> {
@@ -66,12 +64,13 @@ class SignUpViewModel {
     }
     
     func callAPISignUp() {
-        apiSignUp?.signUp(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
-            self.userSignUp.value = user.element?.data
-            print(user.element?.data?.email)
+        _ = apiSignUp?.signUp(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
+            if user.element?.isSuccess == true {
+                self.userSignUp.value = user.element?.data
+                print("Sign up success!")
+            } else {
+                print(user.element?.message ?? "")
+            }
         })
     }
-    
-    
-    
 }

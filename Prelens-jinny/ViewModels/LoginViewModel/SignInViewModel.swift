@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-class SigninViewModel {
+class SignInViewModel {
     
     private var disposeBag = DisposeBag()
     
@@ -46,7 +46,7 @@ class SigninViewModel {
                 return
             }
             if pass.isValidPassword() {
-                strongSelf.callAPISignin()
+                strongSelf.callAPISignIn()
             } else {
 //                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
             }
@@ -59,7 +59,7 @@ class SigninViewModel {
                 
                 if let token = _userLogin.token {
                     
-//                    Networking.shared.currentToken = token
+                     // Networking.shared.currentToken = token
                       KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
                       KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
                       KeychainManager.shared.setToken(token)
@@ -88,9 +88,14 @@ class SigninViewModel {
         }
     }
     
-    func callAPISignin() {
-        apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
-           self.userLogin.value = user.element?.data
+    func callAPISignIn() {
+       _ = apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
+            if user.element?.isSuccess == true {
+                print("Sign in success!")
+                self.userLogin.value = user.element?.data
+            } else {
+                print(user.element?.message ?? "")
+            }
         })
     }
 }

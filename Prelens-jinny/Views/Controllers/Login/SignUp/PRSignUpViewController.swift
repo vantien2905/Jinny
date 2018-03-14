@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PRSignUpViewController: UIViewController {
+    @IBOutlet weak var btnCheckBox: UIButton!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var btnSignUp: UIButton!
+    
     var parentNavigationController      : UINavigationController?
+    
+    var vm: SignUpViewModel             = SignUpViewModel()
+    let disposeBag                      = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tapHideKeyboard()
+        bindViewModel()
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +32,15 @@ class PRSignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func bindViewModel() {
+        _ = tfEmail.rx.text.map{ $0 ?? ""}.bind(to: vm.email)
+        _ = tfPassword.rx.text.map{ $0 ?? ""}.bind(to: vm.password)
+        vm.isValid.subscribe(onNext: { [weak self] isValid in
+            print(isValid)
+        }).disposed(by: disposeBag)
+        btnSignUp.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .bind(to: vm.btnSignUpTapped)
+            .disposed(by: disposeBag)
     }
-    */
-
 }
