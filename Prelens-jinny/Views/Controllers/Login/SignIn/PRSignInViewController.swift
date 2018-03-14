@@ -48,6 +48,19 @@ class PRSignInViewController: UIViewController {
             //TODO
         }).disposed(by: disposeBag)
         
+        btnShowHidePassword.rx.tap
+            .subscribe(onNext: {
+                if(self.passIsSecurity == true) {
+                    self.tfPassword.isSecureTextEntry = true
+                    self.btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
+                    self.passIsSecurity = false
+                    } else {
+                    self.tfPassword.isSecureTextEntry = false
+                    self.btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
+                    self.passIsSecurity = true
+            }
+        }).disposed(by: disposeBag)
+        
         btnSignIn.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .bind(to: vm.btnSignInTapped)
@@ -71,7 +84,8 @@ class PRSignInViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
     }
-    @IBAction func btnShowHidePasswordTapped(_ sender: Any){
+    
+    @objc func toggleSecurityText(_ sender: Any){
         if(passIsSecurity == true) {
             tfPassword.isSecureTextEntry = true
             btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
@@ -82,6 +96,17 @@ class PRSignInViewController: UIViewController {
             passIsSecurity = true
         }
     }
+//    @IBAction func btnShowHidePasswordTapped(_ sender: Any){
+////        if(passIsSecurity == true) {
+////            tfPassword.isSecureTextEntry = true
+////            btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
+////            passIsSecurity = false
+////        } else {
+////            tfPassword.isSecureTextEntry = false
+////            btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
+////            passIsSecurity = true
+////        }
+//    }
     
     @IBAction func forgotPassBtnTapped(_ sender: Any) {
         let vc = PRForgotPasswordViewController.initControllerFromNib()
