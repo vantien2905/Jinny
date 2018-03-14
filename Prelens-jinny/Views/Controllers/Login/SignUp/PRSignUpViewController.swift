@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class PRSignUpViewController: UIViewController {
+    
     @IBOutlet weak var tfPassword           : UITextField!
     @IBOutlet weak var tfEmail              : UITextField!
     @IBOutlet weak var btnSignUp            : UIButton!
@@ -31,6 +32,9 @@ class PRSignUpViewController: UIViewController {
         setupView()
         bindViewModel()
         // Do any additional setup after loading the view.
+//        enumerateFonts()
+        
+     
     }
 
     override func didReceiveMemoryWarning() {

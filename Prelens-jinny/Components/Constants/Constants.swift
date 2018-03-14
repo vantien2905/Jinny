@@ -11,10 +11,11 @@ import UIKit
 struct PRColor {
     
     static let mainAppColor         = UIColor(red: 227/255, green: 18/255, blue: 11/255, alpha: 1)
+    static let borderColor          = UIColor(red: 172/255, green: 172/255, blue: 172/255, alpha: 1)
     
     static let brandColor           = UIColor(red: 100/255, green: 189/255, blue: 203/255, alpha: 1)
     static let extensionColor       = UIColor(red: 202/255, green: 186/255, blue: 99/255, alpha: 1)
-    static let backgroundColor      = UIColor(red: 242/255, green: 242/255, blue: 243/255, alpha: 1)
+    static let backgroundColor      = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
     static let reminderColor        = UIColor(red: 222/255, green: 243/255, blue: 68/255, alpha: 1)
     static let pendingReviewColor   = UIColor(red: 27/255, green: 123/255, blue: 52/255, alpha: 1)
     static let textAppGuide         = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1)
@@ -47,12 +48,22 @@ struct PRColor {
     static let backgroundPopUp      = UIColor.black.withAlphaComponent(0.6)
 }
 
-struct PRPhoto {
-    static let tabbarMembershipOff  = UIImage(named: "membership_off")
-    static let tabbarMembershipOn   = UIImage(named: "membership_on")
-    static let tabbarPromotionsOff  = UIImage(named: "voucher_off")
-    static let tabbarPromotionsOn   = UIImage(named: "voucher_on")
-    static let tabbarMore           = UIImage(named: "more")
+struct PRImage {
+    static let tabbarMembershipOff  = UIImage(named: "membership_off")!
+    static let tabbarMembershipOn   = UIImage(named: "membership_on")!
+    static let tabbarPromotionsOff  = UIImage(named: "voucher_off")!
+    static let tabbarPromotionsOn   = UIImage(named: "voucher_on")!
+    static let tabbarMore           = UIImage(named: "more")!
+    static let imgBack              = UIImage(named: "back_black")!
+    static let imgStar              = UIImage(named: "star_action_off")!
+}
+
+struct Cell {
+    static let searchMemberShip = "SearchMembershipCell"
+    static let memberShip = "MembershipCell"
+    static let starredheader = "StarredHeaderCell"
+    static let otherHeader  = "OtherHeaderCell"
+    static let membershipFooter = "MembershipFooterCell"
 }
 
 struct PRFont {

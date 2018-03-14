@@ -27,7 +27,9 @@ class PRSignInViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         setupView()
         bindViewModel()
-        // Do any additional setup after loading the view.
+        tfEmail.text = "lamp@vinova.sg"
+        tfPassword.text = "123456"
+        // Do any additional setup after loading the view.AEWFG
     }
 
     override func didReceiveMemoryWarning() {

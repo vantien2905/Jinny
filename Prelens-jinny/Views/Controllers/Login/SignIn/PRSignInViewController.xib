@@ -43,8 +43,8 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogL-ad-Zpa">
-                            <rect key="frame" x="37" y="136" width="300" height="19"/>
-                            <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="14"/>
+                            <rect key="frame" x="37" y="136" width="300" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -58,7 +58,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P34-7D-nVX">
-                            <rect key="frame" x="37" y="157" width="300.5" height="45"/>
+                            <rect key="frame" x="37" y="155" width="300.5" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="fAx-wl-lUO"/>
                             </constraints>
@@ -67,7 +67,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vh-U0-Ls9">
-                            <rect key="frame" x="37.5" y="267" width="300" height="45"/>
+                            <rect key="frame" x="37.5" y="265" width="300" height="45"/>
                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="mBF-gn-7BK"/>
@@ -78,14 +78,14 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="035-Jr-kZw">
-                            <rect key="frame" x="292.5" y="157" width="45" height="45"/>
+                            <rect key="frame" x="292.5" y="155" width="45" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="ty7-Ej-jdg"/>
                             </constraints>
                             <state key="normal" image="hidden"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-7y-DMI">
-                            <rect key="frame" x="128" y="222" width="120" height="15"/>
+                            <rect key="frame" x="128" y="220" width="120" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="CGX-py-iAo"/>
                                 <constraint firstAttribute="width" constant="120" id="TIC-hm-o2p"/>
