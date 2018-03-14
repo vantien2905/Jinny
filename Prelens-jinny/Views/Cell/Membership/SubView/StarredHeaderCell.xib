@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StarredHeaderCell" customModule="Prelens_jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxf-w2-vis">
+                        <rect key="frame" x="0.0" y="0.0" width="49" height="50"/>
+                        <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starred_label" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-at-Rz4">
+                        <rect key="frame" x="60.5" y="19" width="12.5" height="12.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12.5" id="1Sg-e0-gwI"/>
+                            <constraint firstAttribute="width" constant="12.5" id="nGp-Oo-Py8"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3sE-at-Rz4" firstAttribute="leading" secondItem="yxf-w2-vis" secondAttribute="trailing" constant="11.5" id="1i7-EZ-Xpg"/>
+                <constraint firstItem="3sE-at-Rz4" firstAttribute="centerY" secondItem="yxf-w2-vis" secondAttribute="centerY" id="Tuh-A3-2Zn"/>
+                <constraint firstItem="yxf-w2-vis" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a88-8H-jFH"/>
+                <constraint firstAttribute="bottom" secondItem="yxf-w2-vis" secondAttribute="bottom" id="aC6-eU-SWy"/>
+                <constraint firstItem="yxf-w2-vis" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="d4L-HX-Upl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="275" height="50"/>
+            <point key="canvasLocation" x="-78.5" y="54"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="starred_label" width="12" height="12"/>
+    </resources>
+</document>

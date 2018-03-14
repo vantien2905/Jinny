@@ -10,10 +10,16 @@ import UIKit
 
 class PRSignUpViewController: UIViewController {
     var parentNavigationController      : UINavigationController?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tapHideKeyboard()
         // Do any additional setup after loading the view.
+//        enumerateFonts()
+        
+     
     }
 
     override func didReceiveMemoryWarning() {

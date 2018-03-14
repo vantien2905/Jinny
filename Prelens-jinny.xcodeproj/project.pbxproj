@@ -8,34 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
-		762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
-		762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */; };
-		762E97EA2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
-		762E97EB2054E129001AA449 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97E92054E128001AA449 /* segoeui.ttf */; };
-		762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EC2054E12F001AA449 /* segoeuib.ttf */; };
-		762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97EC2054E12F001AA449 /* segoeuib.ttf */; };
-		762E97F52054E189001AA449 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F02054E187001AA449 /* segoeuil.ttf */; };
-		762E97F62054E189001AA449 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F02054E187001AA449 /* segoeuil.ttf */; };
-		762E97F72054E189001AA449 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F12054E188001AA449 /* segoeuii.ttf */; };
-		762E97F82054E189001AA449 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F12054E188001AA449 /* segoeuii.ttf */; };
-		762E97F92054E189001AA449 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F22054E188001AA449 /* segoeuisl.ttf */; };
-		762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762E97F22054E188001AA449 /* segoeuisl.ttf */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
-		76469D0B205656FB00E2950E /* seguisli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D04205656F800E2950E /* seguisli.ttf */; };
-		76469D0C205656FB00E2950E /* seguisli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D04205656F800E2950E /* seguisli.ttf */; };
-		76469D0D205656FB00E2950E /* segoeuiz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D05205656F800E2950E /* segoeuiz.ttf */; };
-		76469D0E205656FB00E2950E /* segoeuiz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D05205656F800E2950E /* segoeuiz.ttf */; };
-		76469D0F205656FB00E2950E /* seguili.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D06205656F900E2950E /* seguili.ttf */; };
-		76469D10205656FB00E2950E /* seguili.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D06205656F900E2950E /* seguili.ttf */; };
-		76469D11205656FB00E2950E /* seguibli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D07205656F900E2950E /* seguibli.ttf */; };
-		76469D12205656FB00E2950E /* seguibli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D07205656F900E2950E /* seguibli.ttf */; };
-		76469D13205656FB00E2950E /* seguisb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D08205656F900E2950E /* seguisb.ttf */; };
-		76469D14205656FB00E2950E /* seguisb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D08205656F900E2950E /* seguisb.ttf */; };
-		76469D15205656FB00E2950E /* seguisbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D09205656FA00E2950E /* seguisbi.ttf */; };
-		76469D16205656FB00E2950E /* seguisbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D09205656FA00E2950E /* seguisbi.ttf */; };
-		76469D17205656FB00E2950E /* seguibl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D0A205656FB00E2950E /* seguibl.ttf */; };
-		76469D18205656FB00E2950E /* seguibl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76469D0A205656FB00E2950E /* seguibl.ttf */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
 		765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
 		765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
@@ -62,17 +36,49 @@
 		76E98F5920502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
 		76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
+		B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626A205907AC00C7004D /* StarredHeaderCell.swift */; };
+		B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626B205907AC00C7004D /* StarredHeaderCell.xib */; };
+		B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626E2059096700C7004D /* OtherHeaderCell.swift */; };
+		B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626F2059096700C7004D /* OtherHeaderCell.xib */; };
+		B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738627220590CE700C7004D /* MembershipFooterCell.swift */; };
+		B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738627320590CE700C7004D /* MembershipFooterCell.xib */; };
+		B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7386277205913CD00C7004D /* MembershipDetailVC.swift */; };
+		B738627A205913CD00C7004D /* MembershipDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailVC.xib */; };
 		B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765ECB52057D89E0095B443 /* KeychainManager.swift */; };
 		B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */; };
 		B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */; };
 		B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */; };
+		B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B1BC6C2058CBA20042B3D4 /* Constants.swift */; };
+		B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B1BC6E2058CBB40042B3D4 /* Enum.swift */; };
+		B7B1BC732058CFF60042B3D4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B1BC722058CFF60042B3D4 /* BaseViewController.swift */; };
+		B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B1BC762058D45A0042B3D4 /* SearchMembershipCell.swift */; };
+		B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC772058D45B0042B3D4 /* SearchMembershipCell.xib */; };
+		B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B1BC7B2058D6F40042B3D4 /* MembershipCell.swift */; };
+		B7B1BC7E2058D6F40042B3D4 /* MembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC7C2058D6F40042B3D4 /* MembershipCell.xib */; };
+		B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC822058D7FA0042B3D4 /* segoeuii.ttf */; };
+		B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC832058D7FA0042B3D4 /* seguili.ttf */; };
+		B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC842058D7FA0042B3D4 /* OstrichSans-Bold.otf */; };
+		B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC852058D7FA0042B3D4 /* segoeuil.ttf */; };
+		B7B1BC982058D7FA0042B3D4 /* OstrichSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC862058D7FA0042B3D4 /* OstrichSans-Light.otf */; };
+		B7B1BC992058D7FA0042B3D4 /* segoeuiz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC872058D7FA0042B3D4 /* segoeuiz.ttf */; };
+		B7B1BC9A2058D7FA0042B3D4 /* seguisli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC882058D7FA0042B3D4 /* seguisli.ttf */; };
+		B7B1BC9B2058D7FA0042B3D4 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC892058D7FA0042B3D4 /* segoeuisl.ttf */; };
+		B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC8A2058D7FA0042B3D4 /* OstrichSans-Heavy.otf */; };
+		B7B1BC9D2058D7FA0042B3D4 /* ostrich-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC8B2058D7FA0042B3D4 /* ostrich-regular.ttf */; };
+		B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC8C2058D7FA0042B3D4 /* OstrichSans-Medium.otf */; };
+		B7B1BC9F2058D7FA0042B3D4 /* seguisb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC8D2058D7FA0042B3D4 /* seguisb.ttf */; };
+		B7B1BCA02058D7FA0042B3D4 /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC8E2058D7FA0042B3D4 /* OstrichSans-Black.otf */; };
+		B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC8F2058D7FA0042B3D4 /* segoeuib.ttf */; };
+		B7B1BCA22058D7FA0042B3D4 /* seguibl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC902058D7FA0042B3D4 /* seguibl.ttf */; };
+		B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC912058D7FA0042B3D4 /* seguibli.ttf */; };
+		B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */; };
+		B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */; };
 		BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
 		BC36E975205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
-		BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADD204D1CA20006A6F5 /* Constants.swift */; };
 		BC46C00E2056D9B5004C1922 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC46C00D2056D9B5004C1922 /* API.swift */; };
 		BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */; };
 		BC4F95DB20566B6D005D281B /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */; };
@@ -81,8 +87,6 @@
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */; };
 		BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */; };
-		BCB04FEC2057E6CC008F929F /* PRMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB04FE72057E6CC008F929F /* PRMembershipCell.swift */; };
-		BCB04FED2057E6CC008F929F /* PRMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE92057E6CC008F929F /* PRMembershipCell.xib */; };
 		BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */; };
 		BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */; };
 		BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E320562BB8004C1985 /* PRForgotPasswordViewController.xib */; };
@@ -105,7 +109,6 @@
 		BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220752053E92600EEC31A /* BaseResponse.swift */; };
 		BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220762053E92600EEC31A /* ArrayResponse.swift */; };
 		BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220772053E92600EEC31A /* SingleResponse.swift */; };
-		BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */; };
 		BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2207A2053E92600EEC31A /* APIBaseService.swift */; };
 		BCE3495720563F6600B8C440 /* TestingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495620563F6600B8C440 /* TestingService.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
@@ -127,20 +130,7 @@
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
-		762E97E92054E128001AA449 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
-		762E97EC2054E12F001AA449 /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuib.ttf; sourceTree = "<group>"; };
-		762E97F02054E187001AA449 /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuil.ttf; sourceTree = "<group>"; };
-		762E97F12054E188001AA449 /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuii.ttf; sourceTree = "<group>"; };
-		762E97F22054E188001AA449 /* segoeuisl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuisl.ttf; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		76469D04205656F800E2950E /* seguisli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisli.ttf; sourceTree = "<group>"; };
-		76469D05205656F800E2950E /* segoeuiz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuiz.ttf; sourceTree = "<group>"; };
-		76469D06205656F900E2950E /* seguili.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguili.ttf; sourceTree = "<group>"; };
-		76469D07205656F900E2950E /* seguibli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibli.ttf; sourceTree = "<group>"; };
-		76469D08205656F900E2950E /* seguisb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisb.ttf; sourceTree = "<group>"; };
-		76469D09205656FA00E2950E /* seguisbi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisbi.ttf; sourceTree = "<group>"; };
-		76469D0A205656FB00E2950E /* seguibl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibl.ttf; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
 		765027FF2051265300618C84 /* PRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSettingViewController.swift; sourceTree = "<group>"; };
@@ -154,16 +144,48 @@
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
 		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
+		B738626A205907AC00C7004D /* StarredHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredHeaderCell.swift; sourceTree = "<group>"; };
+		B738626B205907AC00C7004D /* StarredHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredHeaderCell.xib; sourceTree = "<group>"; };
+		B738626E2059096700C7004D /* OtherHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHeaderCell.swift; sourceTree = "<group>"; };
+		B738626F2059096700C7004D /* OtherHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherHeaderCell.xib; sourceTree = "<group>"; };
+		B738627220590CE700C7004D /* MembershipFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipFooterCell.swift; sourceTree = "<group>"; };
+		B738627320590CE700C7004D /* MembershipFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipFooterCell.xib; sourceTree = "<group>"; };
+		B7386277205913CD00C7004D /* MembershipDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailVC.swift; sourceTree = "<group>"; };
+		B7386278205913CD00C7004D /* MembershipDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailVC.xib; sourceTree = "<group>"; };
 		B765ECB52057D89E0095B443 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		B7B1BC6C2058CBA20042B3D4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B7B1BC6E2058CBB40042B3D4 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		B7B1BC722058CFF60042B3D4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B7B1BC762058D45A0042B3D4 /* SearchMembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMembershipCell.swift; sourceTree = "<group>"; };
+		B7B1BC772058D45B0042B3D4 /* SearchMembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchMembershipCell.xib; sourceTree = "<group>"; };
+		B7B1BC7B2058D6F40042B3D4 /* MembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipCell.swift; sourceTree = "<group>"; };
+		B7B1BC7C2058D6F40042B3D4 /* MembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipCell.xib; sourceTree = "<group>"; };
+		B7B1BC822058D7FA0042B3D4 /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuii.ttf; sourceTree = "<group>"; };
+		B7B1BC832058D7FA0042B3D4 /* seguili.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguili.ttf; sourceTree = "<group>"; };
+		B7B1BC842058D7FA0042B3D4 /* OstrichSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Bold.otf"; sourceTree = "<group>"; };
+		B7B1BC852058D7FA0042B3D4 /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuil.ttf; sourceTree = "<group>"; };
+		B7B1BC862058D7FA0042B3D4 /* OstrichSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Light.otf"; sourceTree = "<group>"; };
+		B7B1BC872058D7FA0042B3D4 /* segoeuiz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuiz.ttf; sourceTree = "<group>"; };
+		B7B1BC882058D7FA0042B3D4 /* seguisli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisli.ttf; sourceTree = "<group>"; };
+		B7B1BC892058D7FA0042B3D4 /* segoeuisl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuisl.ttf; sourceTree = "<group>"; };
+		B7B1BC8A2058D7FA0042B3D4 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
+		B7B1BC8B2058D7FA0042B3D4 /* ostrich-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ostrich-regular.ttf"; sourceTree = "<group>"; };
+		B7B1BC8C2058D7FA0042B3D4 /* OstrichSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Medium.otf"; sourceTree = "<group>"; };
+		B7B1BC8D2058D7FA0042B3D4 /* seguisb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisb.ttf; sourceTree = "<group>"; };
+		B7B1BC8E2058D7FA0042B3D4 /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
+		B7B1BC8F2058D7FA0042B3D4 /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuib.ttf; sourceTree = "<group>"; };
+		B7B1BC902058D7FA0042B3D4 /* seguibl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibl.ttf; sourceTree = "<group>"; };
+		B7B1BC912058D7FA0042B3D4 /* seguibli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibli.ttf; sourceTree = "<group>"; };
+		B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisbi.ttf; sourceTree = "<group>"; };
+		B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
 		BC36E973205846B1006A90A0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		BC3F1ADD204D1CA20006A6F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC46C00D2056D9B5004C1922 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthenticationService.swift; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,8 +197,6 @@
 		BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prelens_jinnyTests.swift; sourceTree = "<group>"; };
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRMemberShipVC.xib; sourceTree = "<group>"; };
-		BCB04FE72057E6CC008F929F /* PRMembershipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRMembershipCell.swift; sourceTree = "<group>"; };
-		BCB04FE92057E6CC008F929F /* PRMembershipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRMembershipCell.xib; sourceTree = "<group>"; };
 		BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRMemberShipVC.swift; sourceTree = "<group>"; };
 		BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		BCBC95E320562BB8004C1985 /* PRForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRForgotPasswordViewController.xib; sourceTree = "<group>"; };
@@ -199,7 +219,6 @@
 		BCD220752053E92600EEC31A /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		BCD220762053E92600EEC31A /* ArrayResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayResponse.swift; sourceTree = "<group>"; };
 		BCD220772053E92600EEC31A /* SingleResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleResponse.swift; sourceTree = "<group>"; };
-		BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRBaseNavigationViewController.swift; sourceTree = "<group>"; };
 		BCD2207A2053E92600EEC31A /* APIBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBaseService.swift; sourceTree = "<group>"; };
 		BCE3495620563F6600B8C440 /* TestingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingService.swift; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
@@ -263,6 +282,28 @@
 			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
+		B73862612058FF1600C7004D /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				B738626A205907AC00C7004D /* StarredHeaderCell.swift */,
+				B738626B205907AC00C7004D /* StarredHeaderCell.xib */,
+				B738626E2059096700C7004D /* OtherHeaderCell.swift */,
+				B738626F2059096700C7004D /* OtherHeaderCell.xib */,
+				B738627220590CE700C7004D /* MembershipFooterCell.swift */,
+				B738627320590CE700C7004D /* MembershipFooterCell.xib */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		B73862762059139000C7004D /* MembershipDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B7386277205913CD00C7004D /* MembershipDetailVC.swift */,
+				B7386278205913CD00C7004D /* MembershipDetailVC.xib */,
+			);
+			path = MembershipDetail;
+			sourceTree = "<group>";
+		};
 		B765ECB42057D81C0095B443 /* LocalPersistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +319,68 @@
 				B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */,
 			);
 			path = PopUpView;
+			sourceTree = "<group>";
+		};
+		B7B1BC6B2058CB590042B3D4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1BC6C2058CBA20042B3D4 /* Constants.swift */,
+				B7B1BC6E2058CBB40042B3D4 /* Enum.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B7B1BC712058CFD60042B3D4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1BC722058CFF60042B3D4 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B7B1BC742058D37D0042B3D4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1BC752058D38B0042B3D4 /* Membership */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B7B1BC752058D38B0042B3D4 /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				B73862612058FF1600C7004D /* SubView */,
+				B7B1BC762058D45A0042B3D4 /* SearchMembershipCell.swift */,
+				B7B1BC772058D45B0042B3D4 /* SearchMembershipCell.xib */,
+				B7B1BC7B2058D6F40042B3D4 /* MembershipCell.swift */,
+				B7B1BC7C2058D6F40042B3D4 /* MembershipCell.xib */,
+			);
+			path = Membership;
+			sourceTree = "<group>";
+		};
+		B7B1BC812058D7FA0042B3D4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1BC822058D7FA0042B3D4 /* segoeuii.ttf */,
+				B7B1BC832058D7FA0042B3D4 /* seguili.ttf */,
+				B7B1BC842058D7FA0042B3D4 /* OstrichSans-Bold.otf */,
+				B7B1BC852058D7FA0042B3D4 /* segoeuil.ttf */,
+				B7B1BC862058D7FA0042B3D4 /* OstrichSans-Light.otf */,
+				B7B1BC872058D7FA0042B3D4 /* segoeuiz.ttf */,
+				B7B1BC882058D7FA0042B3D4 /* seguisli.ttf */,
+				B7B1BC892058D7FA0042B3D4 /* segoeuisl.ttf */,
+				B7B1BC8A2058D7FA0042B3D4 /* OstrichSans-Heavy.otf */,
+				B7B1BC8B2058D7FA0042B3D4 /* ostrich-regular.ttf */,
+				B7B1BC8C2058D7FA0042B3D4 /* OstrichSans-Medium.otf */,
+				B7B1BC8D2058D7FA0042B3D4 /* seguisb.ttf */,
+				B7B1BC8E2058D7FA0042B3D4 /* OstrichSans-Black.otf */,
+				B7B1BC8F2058D7FA0042B3D4 /* segoeuib.ttf */,
+				B7B1BC902058D7FA0042B3D4 /* seguibl.ttf */,
+				B7B1BC912058D7FA0042B3D4 /* seguibli.ttf */,
+				B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */,
+				B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		BC770A5A204CEE5D0052A285 = {
@@ -331,8 +434,6 @@
 			children = (
 				BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */,
 				BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */,
-				BCB04FE72057E6CC008F929F /* PRMembershipCell.swift */,
-				BCB04FE92057E6CC008F929F /* PRMembershipCell.xib */,
 			);
 			path = ListMembership;
 			sourceTree = "<group>";
@@ -355,30 +456,10 @@
 		BCBC958920562206004C1985 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BC3F1ADD204D1CA20006A6F5 /* Constants.swift */,
+				B7B1BC6B2058CB590042B3D4 /* Constants */,
 				BCBC9588205621BB004C1985 /* Extension */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		BCBC958A20562234004C1985 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				762E97E62054DEEE001AA449 /* OstrichSans-Heavy.otf */,
-				762E97EC2054E12F001AA449 /* segoeuib.ttf */,
-				762E97E92054E128001AA449 /* segoeui.ttf */,
-				762E97F12054E188001AA449 /* segoeuii.ttf */,
-				762E97F02054E187001AA449 /* segoeuil.ttf */,
-				762E97F22054E188001AA449 /* segoeuisl.ttf */,
-				76469D05205656F800E2950E /* segoeuiz.ttf */,
-				76469D0A205656FB00E2950E /* seguibl.ttf */,
-				76469D07205656F900E2950E /* seguibli.ttf */,
-				76469D06205656F900E2950E /* seguili.ttf */,
-				76469D08205656F900E2950E /* seguisb.ttf */,
-				76469D09205656FA00E2950E /* seguisbi.ttf */,
-				76469D04205656F800E2950E /* seguisli.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		BCBC958D20562254004C1985 /* Services */ = {
@@ -476,6 +557,7 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B7B1BC712058CFD60042B3D4 /* Base */,
 				BCBC960D20563012004C1985 /* Membership */,
 				BCBC960420562D26004C1985 /* Redeem */,
 				BCBC95E020562BB8004C1985 /* Login */,
@@ -488,7 +570,7 @@
 		BCBC95AC205626A0004C1985 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BCD220792053E92600EEC31A /* PRBaseNavigationViewController.swift */,
+				B7B1BC742058D37D0042B3D4 /* Cell */,
 				BCBC959720562411004C1985 /* CustomView */,
 				BCBC95AB2056267F004C1985 /* Controllers */,
 			);
@@ -585,8 +667,8 @@
 		BCBC960C20562EB1004C1985 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B7B1BC812058D7FA0042B3D4 /* Fonts */,
 				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
-				BCBC958A20562234004C1985 /* Fonts */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -594,6 +676,7 @@
 		BCBC960D20563012004C1985 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
+				B73862762059139000C7004D /* MembershipDetail */,
 				BCB04FE52057E6CC008F929F /* ListMembership */,
 				BCBC960E20563012004C1985 /* AddMembership */,
 			);
@@ -727,36 +810,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76469D0D205656FB00E2950E /* segoeuiz.ttf in Resources */,
-				76469D0F205656FB00E2950E /* seguili.ttf in Resources */,
+				B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */,
+				B7B1BC9A2058D7FA0042B3D4 /* seguisli.ttf in Resources */,
+				B7B1BC9F2058D7FA0042B3D4 /* seguisb.ttf in Resources */,
+				B7B1BC9B2058D7FA0042B3D4 /* segoeuisl.ttf in Resources */,
 				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
-				76469D0B205656FB00E2950E /* seguisli.ttf in Resources */,
+				B7B1BCA22058D7FA0042B3D4 /* seguibl.ttf in Resources */,
 				BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */,
+				B738627A205913CD00C7004D /* MembershipDetailVC.xib in Resources */,
+				B7B1BCA02058D7FA0042B3D4 /* OstrichSans-Black.otf in Resources */,
+				B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
+				B7B1BC992058D7FA0042B3D4 /* segoeuiz.ttf in Resources */,
 				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
+				B7B1BC982058D7FA0042B3D4 /* OstrichSans-Light.otf in Resources */,
+				B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */,
+				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
+				B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */,
+				B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */,
+				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
+				B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
-				762E97F72054E189001AA449 /* segoeuii.ttf in Resources */,
-				76469D15205656FB00E2950E /* seguisbi.ttf in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */,
-				76469D17205656FB00E2950E /* seguibl.ttf in Resources */,
-				762E97E72054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
+				B7B1BC7E2058D6F40042B3D4 /* MembershipCell.xib in Resources */,
+				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
 				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
-				762E97EA2054E129001AA449 /* segoeui.ttf in Resources */,
 				BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */,
+				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
+				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
+				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
-				BCB04FED2057E6CC008F929F /* PRMembershipCell.xib in Resources */,
-				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
-				76469D13205656FB00E2950E /* seguisb.ttf in Resources */,
 				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
-				76469D11205656FB00E2950E /* seguibli.ttf in Resources */,
-				762E97F52054E189001AA449 /* segoeuil.ttf in Resources */,
+				B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */,
+				B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */,
 				BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */,
+				B7B1BC9D2058D7FA0042B3D4 /* ostrich-regular.ttf in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
-				762E97F92054E189001AA449 /* segoeuisl.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,21 +857,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				762E97F82054E189001AA449 /* segoeuii.ttf in Resources */,
-				76469D14205656FB00E2950E /* seguisb.ttf in Resources */,
-				76469D0C205656FB00E2950E /* seguisli.ttf in Resources */,
-				76469D16205656FB00E2950E /* seguisbi.ttf in Resources */,
-				76469D10205656FB00E2950E /* seguili.ttf in Resources */,
-				762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
-				76469D0E205656FB00E2950E /* segoeuiz.ttf in Resources */,
-				762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
-				762E97EB2054E129001AA449 /* segoeui.ttf in Resources */,
-				762E97EE2054E12F001AA449 /* segoeuib.ttf in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
-				76469D12205656FB00E2950E /* seguibli.ttf in Resources */,
-				762E97F62054E189001AA449 /* segoeuil.ttf in Resources */,
-				76469D18205656FB00E2950E /* seguibl.ttf in Resources */,
 				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
 				765027E22050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 			);
@@ -924,15 +1004,21 @@
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
+				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */,
+				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
+				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
+				B7B1BC732058CFF60042B3D4 /* BaseViewController.swift in Sources */,
+				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
 				BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */,
+				B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				BCE3495720563F6600B8C440 /* TestingService.swift in Sources */,
@@ -940,24 +1026,24 @@
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
-				BCB04FEC2057E6CC008F929F /* PRMembershipCell.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
+				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
 				BC46C00E2056D9B5004C1922 /* API.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
 				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
 				BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */,
+				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */,
 				765087862057716100199FBB /* SigninViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
-				BCD220842053E92700EEC31A /* PRBaseNavigationViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
+				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
-				BC3F1ADE204D1CA20006A6F5 /* Constants.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
