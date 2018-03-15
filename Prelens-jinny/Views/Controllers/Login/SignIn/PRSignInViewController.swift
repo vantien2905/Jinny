@@ -40,6 +40,7 @@ class PRSignInViewController: UIViewController {
     private func setupView(){
         passIsSecurity = true
         tfPassword.isSecureTextEntry = true
+        btnSignIn.layer.cornerRadius = 2.5
         btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
     }
     
