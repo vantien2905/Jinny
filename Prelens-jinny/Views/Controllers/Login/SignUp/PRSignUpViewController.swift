@@ -44,9 +44,10 @@ class PRSignUpViewController: UIViewController {
     private func setupView(){
         passIsSecurity = true
         conditionsIsChecked = false
-    btnCheckConditions.setImage(UIImage(named:"check_box"), for: .normal)
         tfPassword.isSecureTextEntry = true
-    btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
+        btnSignUp.layer.cornerRadius = 2.5
+        btnCheckConditions.setImage(UIImage(named:"check_box"), for: .normal)
+        btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
     }
     
     func bindViewModel() {
@@ -95,6 +96,7 @@ class PRSignUpViewController: UIViewController {
         btnSignUp.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: {
+                self.tfEmail.endEditing(true)
                 self.tfPassword.endEditing(true)
             }).disposed(by: disposeBag)
     }

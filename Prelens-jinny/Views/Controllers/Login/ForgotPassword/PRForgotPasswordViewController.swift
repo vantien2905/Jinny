@@ -32,6 +32,7 @@ class PRForgotPasswordViewController: PRBaseViewController {
     }
     
     private func setupView(){
+        btnSubmit.layer.cornerRadius = 2.5
         super.setTitle(title: "FORGOT PASSWORD", textColor: .black, backgroundColor: .white)
         super.addBackButton()
     }

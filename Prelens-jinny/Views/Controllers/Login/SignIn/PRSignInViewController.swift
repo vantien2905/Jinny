@@ -41,6 +41,7 @@ class PRSignInViewController: UIViewController {
     private func setupView(){
         passIsSecurity = true
         tfPassword.isSecureTextEntry = true
+        btnSignIn.layer.cornerRadius = 2.5
         btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
     }
     
@@ -72,6 +73,13 @@ class PRSignInViewController: UIViewController {
         btnSignIn.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: {
+                self.tfPassword.endEditing(true)
+            }).disposed(by: disposeBag)
+        
+        btnSignIn.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                self.tfEmail.endEditing(true)
                 self.tfPassword.endEditing(true)
             }).disposed(by: disposeBag)
         
