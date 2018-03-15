@@ -30,14 +30,11 @@ class PRLoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        vMenu.scrollToIndex(index: currentIndex)
-        let indexPath = IndexPath(item: currentIndex, section: 0)
-        cvMenuController.scrollToItem(at: indexPath, at: .left, animated: true)
+        setupView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configCollectionView()
         let listItemMenu = [
             MenuItem(title: "SIGN UP", isSelected: true),
@@ -45,7 +42,6 @@ class PRLoginViewController: UIViewController {
         ]
         controllers = [ vcSignUp, vcSignIn ]
         self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu)
-        setupView()
     }
 
     override func didReceiveMemoryWarning() {
