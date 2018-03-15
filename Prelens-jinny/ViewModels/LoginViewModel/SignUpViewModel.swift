@@ -36,7 +36,7 @@ final class SignUpViewModel {
         self.btnSignUpTapped = PublishSubject<Void>()
         self.isLoginSuccess = PublishSubject<Bool>()
         
-        _ = isChecked.asObservable().subscribe(onNext: { [weak self] value in
+        _ = isChecked.asObservable().subscribe(onNext: { value in
             print(value)
             //TODO
         })
@@ -78,7 +78,8 @@ final class SignUpViewModel {
     }
     
     func callAPISignUp() {
-        _ = apiSignUp?.signUp(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
+        guard let email = self.email.value, let pass = self.password.value else { return }
+        _ = apiSignUp?.signUp(email: email, password: pass).asObservable().subscribe({ user in
             if user.element?.isSuccess == true {
                 self.userSignUp.value = user.element?.data
                 self.popupView.showPopUp(message: "Sign up success!")

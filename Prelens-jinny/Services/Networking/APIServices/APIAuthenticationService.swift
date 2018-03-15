@@ -31,6 +31,15 @@ class APIAuthenticationService: APIBaseService {
         
         return execute(requestInfo, responseType: SingleResponse<PRUser>.self)
     }
+    
+    func forgotPassword(email: String) -> Observable<SingleResponse<PRForgotPassword>> {
+        let _fullPath = baseURL.appending(APIEndpoint.Authentication.forgotPassword)
+        let params = [
+            "email": email
+        ]
+        let requestInfo = RequestInfo(headers: header, fullPath: _fullPath, params: params, method: .post)
+        return execute(requestInfo, responseType: SingleResponse<PRForgotPassword>.self)
+    }
 }
 
 

@@ -59,21 +59,15 @@ final class SignInViewModel {
                 guard let strongSelf = self else { return }
                 
                 if let token = _userLogin.token {
-                    
-                     // Networking.shared.currentToken = token
                       KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
                       KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
                       KeychainManager.shared.setToken(token)
-                    
-                    //strongSelf.getUserInfo(userId: userId)
                 }
+                
                 strongSelf.isLoginSuccess.onCompleted()
                 }, onError: { error in
                     print(error)
-                    //TODO: Show Error Popup
-//                    if let err = error as? ApiError {
-//                        //PopUpHelper.shared.showError(title: "", message: err.description)
-//                    }
+
             }, onCompleted: {
                 print("Completion")
             }).disposed(by: disposeBag)

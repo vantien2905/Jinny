@@ -14,6 +14,6 @@ struct APIEndpoint {
     struct Authentication {
         static let signIn           = "/api/v1/sessions/sign_in"
         static let signUp           = "/api/v1/users/sign_up"
-        static let forgotPassword   = ""
+        static let forgotPassword   = "/api/v1/users/forgot_password"
     }
 }

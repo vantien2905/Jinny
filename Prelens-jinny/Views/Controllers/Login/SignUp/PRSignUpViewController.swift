@@ -55,7 +55,7 @@ class PRSignUpViewController: UIViewController {
         _ = isChecked.asObservable().bind(to: vm.isChecked)
         vm.email.asObservable().bind(to: tfEmail.rx.text).disposed(by: disposeBag)
         vm.password.asObservable().bind(to: tfPassword.rx.text).disposed(by: disposeBag)
-        vm.isValid.subscribe(onNext: { [weak self] isValid in
+        vm.isValid.subscribe(onNext: { isValid in
            //TODO
         }).disposed(by: disposeBag)
         
