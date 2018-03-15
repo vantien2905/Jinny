@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PRForgotPasswordViewController: UIViewController {
-
+    @IBOutlet weak var tfEmail              : UITextField!
+    @IBOutlet weak var btnSubmit            : UIButton!
+    
+    let disposeBag                          = DisposeBag()
+    var vm                                  = ForgotPasswordViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         // Do any additional setup after loading the view.
@@ -22,15 +29,14 @@ class PRForgotPasswordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func bindViewModel() {
+    
+        _ = tfEmail.rx.text.map{ $0 ?? ""}.bind(to: vm.email)
+        
+        btnSubmit.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .bind(to: vm.btnSubmitTapped)
+            .disposed(by: disposeBag)
     }
-    */
 
 }

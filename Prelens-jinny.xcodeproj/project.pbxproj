@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
+		7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
+		7610ADEA20597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
@@ -134,6 +136,7 @@
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
@@ -284,6 +287,7 @@
 			children = (
 				765087852057716100199FBB /* SignInViewModel.swift */,
 				BC36E973205846B1006A90A0 /* SignUpViewModel.swift */,
+				7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */,
 			);
 			path = LoginViewModel;
 			sourceTree = "<group>";
@@ -860,10 +864,7 @@
 				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
 				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
-				BCB04FED2057E6CC008F929F /* PRMembershipCell.xib in Resources */,
-				762E97ED2054E12F001AA449 /* segoeuib.ttf in Resources */,
 				BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
-				76469D13205656FB00E2950E /* seguisb.ttf in Resources */,
 				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
 				B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */,
 				B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */,
@@ -877,15 +878,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				762E97F82054E189001AA449 /* segoeuii.ttf in Resources */,
-				76469D14205656FB00E2950E /* seguisb.ttf in Resources */,
-				76469D0C205656FB00E2950E /* seguisli.ttf in Resources */,
-				76469D16205656FB00E2950E /* seguisbi.ttf in Resources */,
 				BC78F4942058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
-				76469D10205656FB00E2950E /* seguili.ttf in Resources */,
-				762E97E82054DEEE001AA449 /* OstrichSans-Heavy.otf in Resources */,
-				76469D0E205656FB00E2950E /* segoeuiz.ttf in Resources */,
-				762E97FA2054E189001AA449 /* segoeuisl.ttf in Resources */,
 				76E98F5B20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				767FF660204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				765028042051265300618C84 /* PRSettingViewController.xib in Resources */,
@@ -1032,6 +1025,7 @@
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
+				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
@@ -1055,7 +1049,6 @@
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
-				BCB04FEC2057E6CC008F929F /* PRMembershipCell.swift in Sources */,
 				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
@@ -1089,6 +1082,7 @@
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				BC78F4922058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				76A3F0D02057C5ED007BC21A /* Observable+Operators.swift in Sources */,
+				7610ADEA20597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				7650878A205772D200199FBB /* String+Extension.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,
