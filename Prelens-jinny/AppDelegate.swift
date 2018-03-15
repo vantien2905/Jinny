@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 //        enumerateFonts()
-        handleFlow()
+//        handleFlow()
+        let vc  = UINavigationController(rootViewController:PRNewBaseVC())
+        window?.rootViewController = vc
         return true
     }
     
