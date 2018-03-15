@@ -16,4 +16,8 @@ struct APIEndpoint {
         static let signUp           = "/api/v1/users/sign_up"
         static let forgotPassword   = ""
     }
+    
+    struct Membership {
+        static let getListAllMembership = "/api/v1/memberships"
+    }
 }

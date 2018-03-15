@@ -21,12 +21,15 @@ struct RequestInfo {
 }
 
 class APIBaseService {
+    
     var header: HTTPHeaders {
+        var token: String = ""
+        if let _token = KeychainManager.shared.getToken() {
+            token = _token
+        }
         let headers = [
-            "Http-Auth-Token"   : "", //this will be assigned from user model
-            "Accept"            : "application/json",
-            "App-Version"       : "appBuildNumberHere",
-            "App-Device"        : "iOS"
+            "Jinny-Http-Token"   : token, //this will be assigned from user model
+            "Accept"            : "application/json"
         ]
         return headers
     }
@@ -50,6 +53,18 @@ extension APIBaseService {
         }
     }
     
+//    func excuteArray<T: BaseResponse>(_ requestInfo: RequestInfo, responseType: T.Type) -> Observable<[T]> {
+//        return Observable.create { (resp)in
+//            let request = Alamofire.request(requestInfo.fullPath, method: requestInfo.method,
+//                                            parameters: requestInfo.params, headers: requestInfo.headers)
+//            request.responseJSON(completionHandler: { (response) in
+//                let _json = JSON(response.result.value)
+//                resp.onNext(Mapper<T>().mapArray(JSONfile: <#T##String#>)(JSONObject: _json.dictionaryObject)!) //todo here
+//            })
+//            return Disposables.create()
+//        }
+//    }
+//
     
     //    func upload<T: BaseResponse>(_ requestInfo : RequestInfo, responseType: T.Type,
     //                                 succeed: @escaping (String?, Any) -> (),
