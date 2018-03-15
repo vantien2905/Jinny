@@ -14,10 +14,11 @@ class PRNewBaseVC: UIViewController {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var vNavigation: UIView!
+    @IBOutlet weak var lcsNavigationHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var btnLeft: UIButton!
     @IBOutlet weak var btnRight: UIButton!
     
-
     @IBOutlet weak var vTabbar: PRTabbarCustom!
     
     override func viewDidLoad() {
@@ -26,8 +27,10 @@ class PRNewBaseVC: UIViewController {
     }
     
     func setUpView() {
+        lcsNavigationHeight.constant = (60/667)*(UIScreen.main.bounds.height)
         
         lbTitle.text = "JINNY"
+        
         self.navigationController?.navigationBar.isHidden = true
         vNavigation.backgroundColor = PRColor.mainAppColor
         btnLeft.isHidden = true
@@ -44,7 +47,6 @@ class PRNewBaseVC: UIViewController {
     func setRightButton(image: UIImage) {
         btnRight.imageView?.image = image
     }
-    
     
 }
 //MARK: Button Action

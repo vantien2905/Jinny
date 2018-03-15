@@ -19,16 +19,10 @@ class PRBaseViewController: UIViewController {
         self.view.backgroundColor = PRColor.backgroundColor
     }
     
-    func setTitle(title: String, textColor: UIColor = UIColor.white ) {
-        let lb = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - self.view.bounds.width/4)/2, y: 0,
-                                       width: self.view.bounds.width, height: 44))
-        lb.font = UIFont(name: "OstrichSans-Heavy", size: 22.5)
-        lb.text = title
-        lb.textAlignment = .center
-        lb.numberOfLines = 2
-        lb.textColor = textColor
-        lb.sizeToFit()
-        self.navigationItem.titleView = lb
+    override func viewDidAppear(_ animated: Bool) {
+        let img = UIImage()
+        self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
     }
     
     func setTitle(title: String, textColor: UIColor = UIColor.white, backgroundColor: UIColor = PRColor.mainAppColor ) {

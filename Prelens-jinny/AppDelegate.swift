@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleFlow() {
         UITabBar.appearance().tintColor = UIColor.red
         if KeychainManager.shared.getToken() != nil {
+//            KeychainManager.shared.deleteToken()
             goToMainApp()
         } else {
             goToLogin()

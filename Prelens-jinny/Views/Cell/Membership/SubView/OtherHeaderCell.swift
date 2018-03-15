@@ -9,10 +9,15 @@
 import UIKit
 
 class OtherHeaderCell: UICollectionViewCell {
+    
+    @IBOutlet weak var lbSortBy: UILabel!
+    @IBOutlet weak var lbLatest: UILabel!
+    @IBOutlet weak var lbOther: UILabel!
+    @IBOutlet weak var vSort: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        vSort.backgroundColor = PRColor.backgroundColor
     }
 
 }

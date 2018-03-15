@@ -62,6 +62,7 @@ struct PRImage {
 
 struct Cell {
     static let searchMemberShip = "SearchMembershipCell"
+    static let emptyMembership = "EmptyMembershipCell"
     static let memberShip = "MembershipCell"
     static let starredheader = "StarredHeaderCell"
     static let otherHeader  = "OtherHeaderCell"
@@ -75,6 +76,7 @@ struct PRFont {
 struct ContantMessages {
     struct Login {
         static let errorContentPassword =  "Password is too short (minimum is 6 characters)"
+        static let successResetPassword =  "You will receive an email with instructions on how to reset your password in a few minutes"
     }
 }
 
