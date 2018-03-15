@@ -10,7 +10,8 @@ import Foundation
 import RxSwift
 
 class APIAuthenticationService: APIBaseService {
-    func signIn(email: String, password: String) -> Observable<SingleResponse<PRUser>> {
+    
+     func signIn(email: String, password: String) -> Observable<SingleResponse<PRUser>> {
         let _fullPath = baseURL.appending(APIEndpoint.Authentication.signIn)
         let params = [
             "email": email,
@@ -19,6 +20,8 @@ class APIAuthenticationService: APIBaseService {
         let requestInfo = RequestInfo(headers: header, fullPath: _fullPath, params: params, method: .post)
         
         return execute(requestInfo, responseType: SingleResponse<PRUser>.self)
+        
+       
     }
     
     func signUp(email: String, password: String) -> Observable<SingleResponse<PRUser>> {

@@ -60,6 +60,7 @@ struct PRImage {
 
 struct Cell {
     static let searchMemberShip = "SearchMembershipCell"
+    static let emptyMembership = "EmptyMembershipCell"
     static let memberShip = "MembershipCell"
     static let starredheader = "StarredHeaderCell"
     static let otherHeader  = "OtherHeaderCell"

@@ -48,7 +48,16 @@
 		B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738627320590CE700C7004D /* MembershipFooterCell.xib */; };
 		B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7386277205913CD00C7004D /* MembershipDetailVC.swift */; };
 		B738627A205913CD00C7004D /* MembershipDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailVC.xib */; };
+		B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */; };
+		B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */; };
 		B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765ECB52057D89E0095B443 /* KeychainManager.swift */; };
+		B788664D205A043800096F27 /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788664C205A043800096F27 /* Membership.swift */; };
+		B788664F205A13E900096F27 /* APIMembershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788664E205A13E900096F27 /* APIMembershipService.swift */; };
+		B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886651205A154700096F27 /* MembershipViewModel.swift */; };
+		B7886655205A1BDB00096F27 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886654205A1BDB00096F27 /* Member.swift */; };
+		B7886657205A1C1600096F27 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886656205A1C1600096F27 /* Merchant.swift */; };
+		B7886659205A1C3800096F27 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886658205A1C3800096F27 /* Logo.swift */; };
+		B788665B205A1C5800096F27 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788665A205A1C5800096F27 /* Url.swift */; };
 		B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */; };
 		B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */; };
 		B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */; };
@@ -162,7 +171,16 @@
 		B738627320590CE700C7004D /* MembershipFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipFooterCell.xib; sourceTree = "<group>"; };
 		B7386277205913CD00C7004D /* MembershipDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailVC.swift; sourceTree = "<group>"; };
 		B7386278205913CD00C7004D /* MembershipDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailVC.xib; sourceTree = "<group>"; };
+		B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMembershipCell.swift; sourceTree = "<group>"; };
+		B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyMembershipCell.xib; sourceTree = "<group>"; };
 		B765ECB52057D89E0095B443 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		B788664C205A043800096F27 /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
+		B788664E205A13E900096F27 /* APIMembershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMembershipService.swift; sourceTree = "<group>"; };
+		B7886651205A154700096F27 /* MembershipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewModel.swift; sourceTree = "<group>"; };
+		B7886654205A1BDB00096F27 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		B7886656205A1C1600096F27 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
+		B7886658205A1C3800096F27 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		B788665A205A1C5800096F27 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -272,7 +290,9 @@
 		76469D0120563D4400E2950E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B7886653205A1BBC00096F27 /* MembershipHelper */,
 				BCE3495820565A5000B8C440 /* PRUser.swift */,
+				B788664C205A043800096F27 /* Membership.swift */,
 				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
 			);
 			path = Models;
@@ -281,6 +301,7 @@
 		76469D0220563D5500E2950E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B7886650205A151100096F27 /* MembershipViewModel */,
 				765087812057703900199FBB /* LoginViewModel */,
 			);
 			path = ViewModels;
@@ -326,6 +347,25 @@
 			path = LocalPersistence;
 			sourceTree = "<group>";
 		};
+		B7886650205A151100096F27 /* MembershipViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B7886651205A154700096F27 /* MembershipViewModel.swift */,
+			);
+			path = MembershipViewModel;
+			sourceTree = "<group>";
+		};
+		B7886653205A1BBC00096F27 /* MembershipHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B7886654205A1BDB00096F27 /* Member.swift */,
+				B7886656205A1C1600096F27 /* Merchant.swift */,
+				B7886658205A1C3800096F27 /* Logo.swift */,
+				B788665A205A1C5800096F27 /* Url.swift */,
+			);
+			path = MembershipHelper;
+			sourceTree = "<group>";
+		};
 		B7AC7FD72057A7A900C0BFCA /* PopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +408,8 @@
 				B7B1BC772058D45B0042B3D4 /* SearchMembershipCell.xib */,
 				B7B1BC7B2058D6F40042B3D4 /* MembershipCell.swift */,
 				B7B1BC7C2058D6F40042B3D4 /* MembershipCell.xib */,
+				B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */,
+				B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */,
 			);
 			path = Membership;
 			sourceTree = "<group>";
@@ -628,6 +670,7 @@
 				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
 				BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */,
 				BCE3495620563F6600B8C440 /* TestingService.swift */,
+				B788664E205A13E900096F27 /* APIMembershipService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -863,6 +906,7 @@
 				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
 				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
+				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
 				BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
 				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
@@ -1032,6 +1076,7 @@
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
+				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
@@ -1041,22 +1086,28 @@
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
 				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
 				B7B1BC732058CFF60042B3D4 /* BaseViewController.swift in Sources */,
+				B788664F205A13E900096F27 /* APIMembershipService.swift in Sources */,
 				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
+				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
+				B788665B205A1C5800096F27 /* Url.swift in Sources */,
 				BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */,
 				B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
+				B7886659205A1C3800096F27 /* Logo.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				BCE3495720563F6600B8C440 /* TestingService.swift in Sources */,
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
+				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
+				B7886657205A1C1600096F27 /* Merchant.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
 				BC46C00E2056D9B5004C1922 /* API.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
@@ -1068,6 +1119,7 @@
 				BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */,
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
+				B788664D205A043800096F27 /* Membership.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,

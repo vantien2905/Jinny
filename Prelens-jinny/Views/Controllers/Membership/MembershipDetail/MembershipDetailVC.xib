@@ -45,7 +45,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIS-h5-xPP">
-                            <rect key="frame" x="125" y="220.5" width="124.5" height="30"/>
+                            <rect key="frame" x="123.5" y="220.5" width="127.5" height="26.5"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="22.5"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -72,27 +72,27 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related promotions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsX-Zh-e0w">
-                    <rect key="frame" x="22.5" y="302.5" width="134.5" height="20"/>
+                    <rect key="frame" x="22.5" y="302.5" width="132" height="17.5"/>
                     <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Xd-lM-rLf">
-                    <rect key="frame" x="22.5" y="332.5" width="330" height="163"/>
+                    <rect key="frame" x="22.5" y="330" width="330" height="163"/>
                     <color key="backgroundColor" red="0.17254901959999999" green="0.55294117649999996" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="163" id="sNy-wc-r77"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEP-Ya-E6q">
-                    <rect key="frame" x="22.5" y="521" width="330" height="1"/>
+                    <rect key="frame" x="22.5" y="518.5" width="330" height="1"/>
                     <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="EYw-eX-7EA"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjC-Xk-lWY">
-                    <rect key="frame" x="104.5" y="543.5" width="166" height="17.5"/>
+                    <rect key="frame" x="105" y="541" width="165" height="17.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="uNd-AX-tfD">
                             <rect key="frame" x="0.0" y="0.0" width="16.5" height="17.5"/>
@@ -101,7 +101,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove membership" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yms-lm-2RF">
-                            <rect key="frame" x="21.5" y="0.0" width="144.5" height="18.5"/>
+                            <rect key="frame" x="21.5" y="0.0" width="143.5" height="18.5"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                             <color key="textColor" red="0.8901960784313725" green="0.070588235294117646" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
