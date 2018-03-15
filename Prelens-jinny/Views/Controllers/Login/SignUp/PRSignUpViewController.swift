@@ -24,6 +24,7 @@ class PRSignUpViewController: UIViewController {
     var vm: SignUpViewModel                 = SignUpViewModel()
     var passIsSecurity                      :Bool?
     var conditionsIsChecked                 :Bool?
+    var isChecked                           = Variable<Bool>(false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +52,41 @@ class PRSignUpViewController: UIViewController {
     func bindViewModel() {
         _ = tfEmail.rx.text.map{ $0 ?? ""}.bind(to: vm.email)
         _ = tfPassword.rx.text.map{ $0 ?? ""}.bind(to: vm.password)
-        
+        _ = isChecked.asObservable().bind(to: vm.isChecked)
         vm.email.asObservable().bind(to: tfEmail.rx.text).disposed(by: disposeBag)
         vm.password.asObservable().bind(to: tfPassword.rx.text).disposed(by: disposeBag)
-        vm.isValid.subscribe(onNext: { [weak self] isValid in
+        vm.isValid.subscribe(onNext: { isValid in
            //TODO
         }).disposed(by: disposeBag)
+        
+        btnShowHidePassword.rx.tap
+            .subscribe(onNext: {
+                if(self.passIsSecurity == true) {
+                    self.tfPassword.isSecureTextEntry = false
+                    self.btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
+                    self.passIsSecurity = false
+                } else {
+                    self.tfPassword.isSecureTextEntry = true
+                    self.btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
+                    self.passIsSecurity = true
+                }
+            }).disposed(by: disposeBag)
+        
+        btnCheckConditions.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext : {
+                if(self.conditionsIsChecked == true) {
+                    self.btnCheckConditions.setImage(UIImage(named:"check_box"), for: .normal)
+                    self.conditionsIsChecked = false
+                    
+                } else {
+                    self.btnCheckConditions.setImage(UIImage(named:"check_box_on"), for: .normal)
+                    self.conditionsIsChecked = true
+                }
+                self.isChecked.value = self.conditionsIsChecked!
+                _ = self.isChecked.asObservable().bind(to: self.vm.isChecked)
+            }).disposed(by: disposeBag)
+        
         btnSignUp.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .bind(to: vm.btnSignUpTapped)
@@ -67,27 +97,5 @@ class PRSignUpViewController: UIViewController {
             .subscribe(onNext: {
                 self.tfPassword.endEditing(true)
             }).disposed(by: disposeBag)
-    }
-    
-    @IBAction func btnCheckConditionsTapped(_ sender: Any) {
-        if(conditionsIsChecked == true) {
-            btnCheckConditions.setImage(UIImage(named:"check_box_on"), for: .normal)
-                conditionsIsChecked = false
-        } else {
-        btnCheckConditions.setImage(UIImage(named:"check_box"), for: .normal)
-            conditionsIsChecked = true
-        }
-    }
-    
-    @IBAction func btnShowHidePasswordTapped(_ sender: Any) {
-        if(passIsSecurity == true) {
-            tfPassword.isSecureTextEntry = true
-            btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
-            passIsSecurity = false
-        } else {
-            tfPassword.isSecureTextEntry = false
-            btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
-            passIsSecurity = true
-        }
     }
 }

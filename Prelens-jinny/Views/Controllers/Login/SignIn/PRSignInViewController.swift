@@ -29,6 +29,7 @@ class PRSignInViewController: UIViewController {
         bindViewModel()
         tfEmail.text = "felix@vinova.sg"
         tfPassword.text = "123456"
+        bindViewModel()
         // Do any additional setup after loading the view.AEWFG
     }
 
@@ -46,8 +47,21 @@ class PRSignInViewController: UIViewController {
     func bindViewModel() {
         _ = tfEmail.rx.text.map{ $0 ?? ""}.bind(to: vm.email)
         _ = tfPassword.rx.text.map{ $0 ?? ""}.bind(to: vm.password)
-        vm.isValid.subscribe(onNext: { [weak self] isValid in
+        vm.isValid.subscribe(onNext: { isValid in
             //TODO
+        }).disposed(by: disposeBag)
+        
+        btnShowHidePassword.rx.tap
+            .subscribe(onNext: {
+                if(self.passIsSecurity == true) {
+                    self.tfPassword.isSecureTextEntry = false
+                    self.btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
+                    self.passIsSecurity = false
+                    } else {
+                    self.tfPassword.isSecureTextEntry = true
+                    self.btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
+                    self.passIsSecurity = true
+            }
         }).disposed(by: disposeBag)
         
         btnSignIn.rx.tap
@@ -73,18 +87,7 @@ class PRSignInViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
     }
-    @IBAction func btnShowHidePasswordTapped(_ sender: Any){
-        if(passIsSecurity == true) {
-            tfPassword.isSecureTextEntry = true
-            btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
-            passIsSecurity = false
-        } else {
-            tfPassword.isSecureTextEntry = false
-            btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
-            passIsSecurity = true
-        }
-    }
-    
+
     @IBAction func forgotPassBtnTapped(_ sender: Any) {
         let vc = PRForgotPasswordViewController.initControllerFromNib()
         self.push(controller: vc , animated: true)

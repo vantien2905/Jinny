@@ -83,9 +83,6 @@
                                 <constraint firstAttribute="width" constant="45" id="ty7-Ej-jdg"/>
                             </constraints>
                             <state key="normal" image="hidden"/>
-                            <connections>
-                                <action selector="btnShowHidePasswordTapped:" destination="-1" eventType="touchUpInside" id="fwa-FN-2OM"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-7y-DMI">
                             <rect key="frame" x="128" y="220" width="120" height="15"/>

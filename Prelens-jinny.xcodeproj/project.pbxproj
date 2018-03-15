@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
+		7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
+		7610ADEA20597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
+		7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C097205A167100F384B4 /* PRForgotPassword.swift */; };
+		7640C099205A167100F384B4 /* PRForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C097205A167100F384B4 /* PRForgotPassword.swift */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
@@ -143,6 +147,8 @@
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		7640C097205A167100F384B4 /* PRForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPassword.swift; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 				B7886653205A1BBC00096F27 /* MembershipHelper */,
 				BCE3495820565A5000B8C440 /* PRUser.swift */,
 				B788664C205A043800096F27 /* Membership.swift */,
+				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +312,7 @@
 			children = (
 				765087852057716100199FBB /* SignInViewModel.swift */,
 				BC36E973205846B1006A90A0 /* SignUpViewModel.swift */,
+				7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */,
 			);
 			path = LoginViewModel;
 			sourceTree = "<group>";
@@ -1065,6 +1073,7 @@
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
+				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
 				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
@@ -1075,6 +1084,7 @@
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
+				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
 				B7B1BC732058CFF60042B3D4 /* BaseViewController.swift in Sources */,
 				B788664F205A13E900096F27 /* APIMembershipService.swift in Sources */,
 				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
@@ -1129,6 +1139,8 @@
 				764203A0204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				BC78F4922058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				76A3F0D02057C5ED007BC21A /* Observable+Operators.swift in Sources */,
+				7610ADEA20597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
+				7640C099205A167100F384B4 /* PRForgotPassword.swift in Sources */,
 				765027E02050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 				7650878A205772D200199FBB /* String+Extension.swift in Sources */,
 				765028022051265300618C84 /* PRSettingViewController.swift in Sources */,

@@ -17,25 +17,29 @@ final class SignUpViewModel {
     public var isValidInput         : Variable<Bool>
     private var userSignUp          = Variable<PRUser?>(nil)
     public var btnSignUpTapped      : PublishSubject<Void>
-    public var isCheckedCondition   : PublishSubject<Bool>
+    public var isChecked            : Variable<Bool>
     public var isLoginSuccess       : PublishSubject<Bool>
     var popupView                   :PopUpView = PopUpView()
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
     }
-    
     var apiSignUp                   : APIAuthenticationService?
     
     init() {
         apiSignUp = APIAuthenticationService()
-    
+        
         self.email = Variable<String?>(nil)
         self.password = Variable<String?>(nil)
         self.isValidInput = Variable<Bool>(false)
-        self.isCheckedCondition = PublishSubject<Bool>()
+        self.isChecked = Variable<Bool>(false)
         self.btnSignUpTapped = PublishSubject<Void>()
         self.isLoginSuccess = PublishSubject<Bool>()
+        
+        _ = isChecked.asObservable().subscribe(onNext: { value in
+            print(value)
+            //TODO
+        })
         
         let isValid = self.checkValid(emailText: email.asObservable(), passwordText: password.asObservable())
         
@@ -50,8 +54,15 @@ final class SignUpViewModel {
                return
             }
             if pass.isValidPassword() {
-                strongSelf.callAPISignUp()
-            } else {
+                if self?.isValidInput.value == false {
+                    self?.popupView.showPopUp(message: "Please enter your email & password")
+                } else if self?.isChecked.value == false {
+                    self?.popupView.showPopUp(message: "Please indicate that you have agree to the Terms and Conditions")
+                } else {
+                    strongSelf.callAPISignUp()
+                }
+            }
+            else {
                 self?.popupView.showPopUp(message: ContantMessages.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
@@ -67,7 +78,8 @@ final class SignUpViewModel {
     }
     
     func callAPISignUp() {
-        _ = apiSignUp?.signUp(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
+        guard let email = self.email.value, let pass = self.password.value else { return }
+        _ = apiSignUp?.signUp(email: email, password: pass).asObservable().subscribe({ user in
             if user.element?.isSuccess == true {
                 self.userSignUp.value = user.element?.data
                 self.popupView.showPopUp(message: "Sign up success!")

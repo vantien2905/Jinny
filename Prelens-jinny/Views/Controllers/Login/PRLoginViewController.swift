@@ -28,6 +28,13 @@ class PRLoginViewController: UIViewController {
         return view
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        vMenu.scrollToIndex(index: currentIndex)
+        let indexPath = IndexPath(item: currentIndex, section: 0)
+        cvMenuController.scrollToItem(at: indexPath, at: .left, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
