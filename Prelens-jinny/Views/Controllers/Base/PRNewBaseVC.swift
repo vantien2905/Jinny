@@ -21,14 +21,19 @@ class PRNewBaseVC: UIViewController {
     
     @IBOutlet weak var vTabbar: PRTabbarCustom!
     
+    @IBOutlet weak var lcsSideMenu: NSLayoutConstraint!
+    @IBOutlet weak var vsSideMenu: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        vTabbar.buttonTappedDelegate = self
+        
     }
     
     func setUpView() {
         lcsNavigationHeight.constant = (60/667)*(UIScreen.main.bounds.height)
-        
+        vTabbar.vMore.setTitle(title: "More")
         lbTitle.text = "JINNY"
         
         self.navigationController?.navigationBar.isHidden = true
@@ -50,7 +55,20 @@ class PRNewBaseVC: UIViewController {
     
 }
 //MARK: Button Action
-extension PRNewBaseVC {
+extension PRNewBaseVC: PRTabbarCustomDelegate {
+    func btnTapped(tag: Int) {
+        switch tag {
+        case 2:
+            print("11!")
+            
+            lcsSideMenu.constant = 0
+            UIView.animate(withDuration: 1, animations: self.view.layoutIfNeeded, completion: nil)
+            
+        default:
+            print("wqe")
+        }
+    }
+    
     @IBAction func btnLeftAction() {
         self.pop()
     }
@@ -58,6 +76,8 @@ extension PRNewBaseVC {
     @IBAction func btnRightAction() {
         
     }
+    
+    
 }
 
 
