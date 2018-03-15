@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PRLoginViewController: UIViewController {
+class PRLoginViewController: PRBaseViewController {
 
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!
@@ -31,6 +31,7 @@ class PRLoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupView()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
@@ -50,10 +51,10 @@ class PRLoginViewController: UIViewController {
     }
     
     private func setupView(){
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         configMenuView()
-        
     }
+    
     private func configMenuView(){
         self.vContainMenu.addSubview(vMenu)
         vMenu.delegate = self
@@ -65,15 +66,6 @@ class PRLoginViewController: UIViewController {
         cvMenuController.dataSource = self
         cvMenuController.delegate = self
         cvMenuController.isPagingEnabled = true
-    }
-    
-    @objc func keyboardWillShow(notification:NSNotification){
-        //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
-        scrollView.contentSize.height = 600
-    }
-    
-    @objc func keyboardWillHide(notification:NSNotification){
-        scrollView.contentSize.height = 667
     }
     
 }

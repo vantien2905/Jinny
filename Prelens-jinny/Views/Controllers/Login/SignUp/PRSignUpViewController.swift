@@ -31,10 +31,6 @@ class PRSignUpViewController: UIViewController {
         self.tapHideKeyboard()
         setupView()
         bindViewModel()
-        // Do any additional setup after loading the view.
-//        enumerateFonts()
-        
-     
     }
 
     override func didReceiveMemoryWarning() {

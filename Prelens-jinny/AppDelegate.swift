@@ -27,17 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        enumerateFonts()
-//        handleFlow()
-        let vc  = UINavigationController(rootViewController:PRNewBaseVC())
-        window?.rootViewController = vc
+        handleFlow()
         return true
     }
     
     func handleFlow() {
         UITabBar.appearance().tintColor = UIColor.red
         if KeychainManager.shared.getToken() != nil {
-//            KeychainManager.shared.deleteToken()
+            //KeychainManager.shared.deleteToken()
             goToMainApp()
         } else {
             goToLogin()
