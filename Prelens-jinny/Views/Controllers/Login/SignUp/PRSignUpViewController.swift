@@ -96,6 +96,7 @@ class PRSignUpViewController: UIViewController {
         btnSignUp.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: {
+                self.tfEmail.endEditing(true)
                 self.tfPassword.endEditing(true)
             }).disposed(by: disposeBag)
     }

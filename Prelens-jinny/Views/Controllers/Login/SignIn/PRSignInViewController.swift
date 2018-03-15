@@ -76,6 +76,13 @@ class PRSignInViewController: UIViewController {
                 self.tfPassword.endEditing(true)
             }).disposed(by: disposeBag)
         
+        btnSignIn.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                self.tfEmail.endEditing(true)
+                self.tfPassword.endEditing(true)
+            }).disposed(by: disposeBag)
+        
         vm.isLoginSuccess.subscribe (onCompleted: {
             DispatchQueue.main.async {
                 //if isGotoPassword {
