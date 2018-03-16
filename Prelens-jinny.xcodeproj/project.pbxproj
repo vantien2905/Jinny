@@ -119,6 +119,8 @@
 		D991185E205B82D900F701ED /* MembershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991185D205B82D900F701ED /* MembershipService.swift */; };
 		D9911860205BAB8900F701ED /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991185F205BAB8900F701ED /* ResponseError.swift */; };
 		D9911862205BB0A600F701ED /* PopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9911861205BB0A600F701ED /* PopUpHelper.swift */; };
+		D9911866205BC39400F701ED /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9911864205BC39400F701ED /* Fabric.framework */; };
+		D9911867205BC39400F701ED /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9911865205BC39400F701ED /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +244,8 @@
 		D991185D205B82D900F701ED /* MembershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipService.swift; sourceTree = "<group>"; };
 		D991185F205BAB8900F701ED /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		D9911861205BB0A600F701ED /* PopUpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpHelper.swift; sourceTree = "<group>"; };
+		D9911864205BC39400F701ED /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		D9911865205BC39400F701ED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */,
+				D9911867205BC39400F701ED /* Crashlytics.framework in Frameworks */,
+				D9911866205BC39400F701ED /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +266,8 @@
 		41E1775A7640208EFCC65BDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9911865205BC39400F701ED /* Crashlytics.framework */,
+				D9911864205BC39400F701ED /* Fabric.framework */,
 				31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */,
 				564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */,
 			);
@@ -806,6 +814,7 @@
 				EC8069F93B495D536F6A3A87 /* [CP] Embed Pods Frameworks */,
 				9F174E9888A3CAE4E009E496 /* [CP] Copy Pods Resources */,
 				B75C4179205A705900E4A77F /* ShellScript */,
+				D9911863205BC36600F701ED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -951,6 +960,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D9911863205BC36600F701ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0d3bccabbaed333bc9bde7468e94e18109778ee7 c8914428269aea20ddb8a47fc185386bf24f8920b045b41c18b9a739c39a7eb8";
 		};
 		EC8069F93B495D536F6A3A87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1200,6 +1222,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GU9U74T6LC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
@@ -1219,6 +1245,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GU9U74T6LC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
