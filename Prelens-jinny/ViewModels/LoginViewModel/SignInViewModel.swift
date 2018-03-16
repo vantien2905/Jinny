@@ -84,13 +84,8 @@ final class SignInViewModel {
     }
     
     func callAPISignIn() {
-//       _ = apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
-//            if user.element?.isSuccess == true {
-//                print("Sign in success!")
-//                self.userLogin.value = user.element?.data
-//            } else {
-//                self.popupView.showPopUp(message: user.element?.message ?? "")
-//            }
-//        })
+        Provider.shared.authenticationService.login(email: self.email.value!, password: self.password.value!).subscribe(onNext: { [weak self] (user) in
+            self?.userLogin.value = user
+        }).disposed(by: disposeBag)
     }
 }

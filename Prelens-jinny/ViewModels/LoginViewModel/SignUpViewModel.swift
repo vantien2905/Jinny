@@ -24,11 +24,8 @@ final class SignUpViewModel {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
     }
-//    var apiSignUp                   : APIAuthenticationService?
     
     init() {
-//        apiSignUp = APIAuthenticationService()
-        
         self.email = Variable<String?>(nil)
         self.password = Variable<String?>(nil)
         self.isValidInput = Variable<Bool>(false)
@@ -79,15 +76,15 @@ final class SignUpViewModel {
     
     func callAPISignUp() {
         guard let email = self.email.value, let pass = self.password.value else { return }
-//        _ = apiSignUp?.signUp(email: email, password: pass).asObservable().subscribe({ user in
-//            if user.element?.isSuccess == true {
-//                self.userSignUp.value = user.element?.data
-//                self.popupView.showPopUp(message: "Sign up success!")
-//                self.resetUI()
-//            } else {
-//                self.popupView.showPopUp(message: user.element?.message ?? "")
-//            }
-//        })
+        Provider.shared.authenticationService.signUp(email: email, password: pass)
+            .subscribe(onNext: { [weak self] (user) in
+                guard let strongSelf = self else { return }
+                strongSelf.userSignUp.value = user
+                strongSelf.popupView.showPopUp(message: "Sign up success!")
+                strongSelf.resetUI()
+            }, onError: { (error) in
+                print(error)
+            }).disposed(by: disposeBag)
     }
     
     func resetUI() {

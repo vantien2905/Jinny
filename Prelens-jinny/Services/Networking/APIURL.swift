@@ -11,5 +11,7 @@ struct APIURL {
 }
 
 struct APILogin {
-    static let login = "sessions/sign_in"
+    static let login                 = "sessions/sign_in"
+    static let signUp                = "users/sign_up"
+    static let forgotPassword        = "users/forgot_password"
 }

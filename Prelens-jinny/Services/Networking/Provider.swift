@@ -20,7 +20,7 @@ class Provider {
     var network: NetworkProtocol {
         return Network(session: session)
     }
-    var loginService: LoginServiceProtocol {
-        return LoginService(network: network)
+    var authenticationService: AuthenticationServiceProtocol {
+        return AuthenticationService(network: network)
     }
 }

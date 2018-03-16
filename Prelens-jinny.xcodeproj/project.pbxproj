@@ -111,7 +111,8 @@
 		D9911857205B7AC100F701ED /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9911851205B7AC100F701ED /* APIURL.swift */; };
 		D9911858205B7AC100F701ED /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9911852205B7AC100F701ED /* Network.swift */; };
 		D9911859205B7AC100F701ED /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9911853205B7AC100F701ED /* ApiError.swift */; };
-		D991185C205B7B1800F701ED /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991185B205B7B1800F701ED /* LoginService.swift */; };
+		D991185C205B7B1800F701ED /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991185B205B7B1800F701ED /* AuthenticationService.swift */; };
+		D991185E205B82D900F701ED /* MembershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991185D205B82D900F701ED /* MembershipService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,7 +228,8 @@
 		D9911851205B7AC100F701ED /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		D9911852205B7AC100F701ED /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D9911853205B7AC100F701ED /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		D991185B205B7B1800F701ED /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		D991185B205B7B1800F701ED /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		D991185D205B82D900F701ED /* MembershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipService.swift; sourceTree = "<group>"; };
 		DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -507,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				B765ECB42057D81C0095B443 /* LocalPersistence */,
+				D991185A205B7AFE00F701ED /* APIServices */,
 				BCBC95B020562839004C1985 /* Networking */,
 			);
 			path = Services;
@@ -623,7 +626,6 @@
 		BCBC95B020562839004C1985 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D991185A205B7AFE00F701ED /* APIServices */,
 				D9911853205B7AC100F701ED /* ApiError.swift */,
 				D9911851205B7AC100F701ED /* APIURL.swift */,
 				D9911852205B7AC100F701ED /* Network.swift */,
@@ -750,7 +752,8 @@
 		D991185A205B7AFE00F701ED /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				D991185B205B7B1800F701ED /* LoginService.swift */,
+				D991185B205B7B1800F701ED /* AuthenticationService.swift */,
+				D991185D205B82D900F701ED /* MembershipService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -958,7 +961,7 @@
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
-				D991185C205B7B1800F701ED /* LoginService.swift in Sources */,
+				D991185C205B7B1800F701ED /* AuthenticationService.swift in Sources */,
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
@@ -996,6 +999,7 @@
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
 				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
 				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
+				D991185E205B82D900F701ED /* MembershipService.swift in Sources */,
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
