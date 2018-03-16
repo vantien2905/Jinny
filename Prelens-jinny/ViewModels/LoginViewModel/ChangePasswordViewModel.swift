@@ -27,7 +27,6 @@ final class ChangePasswordViewModel {
     public var newPassword          : Variable<String?>
     public var isValidInput         : Variable<Bool>
     public var btnChangeTapped      : PublishSubject<Void>
-    var popupView                   :PopUpView = PopUpView()
     
     init() {
         self.currentPassword        = Variable<String?>(nil)
@@ -47,7 +46,7 @@ final class ChangePasswordViewModel {
             if curPassword.isValidPassword() && newPassword.isValidPassword() {
                 self?.callAPIChangePassword()
             } else {
-                self?.popupView.showPopUp(message: ContantMessages.Login.errorContentPassword)
+                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
             }
          }).disposed(by: disposeBag)
     }
@@ -66,7 +65,7 @@ final class ChangePasswordViewModel {
         Provider.shared.authenticationService.changePassword(currentPassword: _currentPassword, new_password: _newPassword)
             .subscribe(onNext: { [weak self] (user) in
                 guard let strongSelf = self else { return }
-                strongSelf.popupView.showPopUp(message: ContantMessages.User.successChangePassword)
+                PopUpHelper.shared.showMessage(message: ContantMessages.User.successChangePassword)
                 strongSelf.currentPassword.value = ""
                 strongSelf.newPassword.value = ""
             }, onError: { (error) in

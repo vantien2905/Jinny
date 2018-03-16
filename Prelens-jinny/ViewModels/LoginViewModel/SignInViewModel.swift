@@ -19,7 +19,6 @@ final class SignInViewModel {
     private var userLogin = Variable<PRUser?>(nil)
     public var btnSignInTapped: PublishSubject<Void>
     public var isLoginSuccess:PublishSubject<Bool>
-     var popupView: PopUpView = PopUpView()
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
@@ -41,15 +40,12 @@ final class SignInViewModel {
         
         self.btnSignInTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
-            guard let pass = strongSelf.password.value else {
-               
-//                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
-                return
-            }
+            guard let pass = strongSelf.password.value else { return }
+            
             if pass.isValidPassword() {
                 strongSelf.callAPISignIn()
             } else {
-                self?.popupView.showPopUp(message: ContantMessages.Login.errorContentPassword)
+                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
         

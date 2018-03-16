@@ -16,7 +16,6 @@ final class ForgotPasswordViewModel {
     public var email: Variable<String?>
     //public var isValidInput         : Variable<Bool>
     public var btnSubmitTapped: PublishSubject<Void>
-    var popupView: PopUpView = PopUpView()
     
     init() {
         self.email = Variable<String?>(nil)
@@ -29,7 +28,7 @@ final class ForgotPasswordViewModel {
             if email.isValidEmpty() == false {
                 self?.callAPIForgotPassword()
             } else {
-                self?.popupView.showPopUp(message: "Please enter your email")
+                PopUpHelper.shared.showMessage(message: "Please enter your email")
             }
         }).disposed(by: disposeBag)
     }
@@ -39,7 +38,7 @@ final class ForgotPasswordViewModel {
         Provider.shared.authenticationService.forgotPassword(email: email)
         .subscribe(onNext: { [weak self] (user) in
             guard let strongSelf = self else { return }
-            strongSelf.popupView.showPopUp(message: ContantMessages.Login.successResetPassword)
+            PopUpHelper.shared.showMessage(message: ContantMessages.Login.successResetPassword)
         }, onError: { (error) in
             print(error)
         }).disposed(by: disposeBag)
