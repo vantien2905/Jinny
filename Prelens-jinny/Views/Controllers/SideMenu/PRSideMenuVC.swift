@@ -45,7 +45,7 @@ class PRSideMenuVC: UIViewController {
     }
     
     func setUpView() {
-        vAccount.backgroundColor = PRColor.mainAppColor
+        vAccount.backgroundColor = .yellow
         
         lbAccount.font = PRFont.sideBarMenuFont
         lbSetting.font = PRFont.sideBarMenuFont
