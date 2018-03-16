@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class PRMemberShipVC: PRBaseViewController {
+class PRMemberShipVC: BaseViewController {
     
     @IBOutlet weak var cvMembership: UICollectionView!
     

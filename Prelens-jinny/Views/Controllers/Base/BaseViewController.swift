@@ -11,7 +11,11 @@ import UIKit
 import Action
 import Foundation
 
-class PRBaseViewController: UIViewController {
+protocol BaseViewControllerDelegate {
+    func starBookmarkTapped()
+}
+
+class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +23,7 @@ class PRBaseViewController: UIViewController {
         self.view.backgroundColor = PRColor.backgroundColor
     }
     
+    var delegate: BaseViewControllerDelegate?
     override func viewDidAppear(_ animated: Bool) {
         let img = UIImage()
         self.navigationController?.navigationBar.shadowImage = img
@@ -81,8 +86,12 @@ class PRBaseViewController: UIViewController {
         }
     }
     
-    func addStarButton() {
-        self.addButtonToNavigation(image: PRImage.imgStar, style: .right, action: #selector(btnStarTapped))
+    func addStarButtonOff() {
+        self.addButtonToNavigation(image: PRImage.imgStarOff, style: .right, action: #selector(btnStarTapped))
+    }
+    
+    func addStarButtonOn() {
+        self.addButtonToNavigation(image: PRImage.imgStarOn, style: .right, action: #selector(btnStarTapped))
     }
     
     func addBackButton() {
@@ -90,7 +99,7 @@ class PRBaseViewController: UIViewController {
     }
     
     @objc func btnStarTapped() {
-        print("btn Star Tapped")
+        delegate?.starBookmarkTapped()
     }
     
     @objc func btnBackTapped() {

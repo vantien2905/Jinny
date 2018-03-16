@@ -9,7 +9,7 @@
 import ObjectMapper
 
 class Merchant: NSObject, Mappable {
-    var id: String?
+    var id: Int = 0
     var name: String?
     var descriptions: String?
     var logo: Logo?
@@ -28,6 +28,7 @@ class Merchant: NSObject, Mappable {
         self.name <- map["name"]
         self.descriptions <- map["description"]
         self.createdAt <- map["created_at"]
+        self.logo <- map["logo"]
         
     }
     

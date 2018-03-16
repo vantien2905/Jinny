@@ -28,4 +28,13 @@ class APIMembershipService: APIBaseService {
         return execute(requestInfo, responseType: SingleResponse<Member>.self)
     }
     
+    func addBookMarkMembership(id: Int) -> Observable<SingleResponse<Membership>> {
+        var _fullPath = baseURL.appending(APIEndpoint.Membership.addBookmarkMembership)
+        _fullPath = String(format: _fullPath, "\(id)")
+        
+        let requestInfo = RequestInfo(headers: header, fullPath: _fullPath, params: [:], method: .post)
+        
+        return execute(requestInfo, responseType: SingleResponse<Membership>.self)
+    }
+    
 }

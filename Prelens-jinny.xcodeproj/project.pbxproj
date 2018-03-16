@@ -306,9 +306,8 @@
 		76469D0120563D4400E2950E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B7886653205A1BBC00096F27 /* MembershipHelper */,
+				B7795902205B75B2005404FC /* Membership */,
 				BCE3495820565A5000B8C440 /* PRUser.swift */,
-				B788664C205A043800096F27 /* Membership.swift */,
 				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
 			);
 			path = Models;
@@ -361,6 +360,15 @@
 				B765ECB52057D89E0095B443 /* KeychainManager.swift */,
 			);
 			path = LocalPersistence;
+			sourceTree = "<group>";
+		};
+		B7795902205B75B2005404FC /* Membership */ = {
+			isa = PBXGroup;
+			children = (
+				B7886653205A1BBC00096F27 /* MembershipHelper */,
+				B788664C205A043800096F27 /* Membership.swift */,
+			);
+			path = Membership;
 			sourceTree = "<group>";
 		};
 		B7886650205A151100096F27 /* MembershipViewModel */ = {

@@ -29,7 +29,6 @@ class MembershipViewModel {
     init() {
         apiService.getListAllMembership().asObservable().subscribe(onNext: { (member) in
             self.outputs.listMembership.value = member.data
-
         }).disposed(by: disposeBag)
     }
 }
