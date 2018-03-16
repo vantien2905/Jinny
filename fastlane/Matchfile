@@ -1,0 +1,10 @@
+readonly false
+verbose false
+platform "ios"
+
+username 		ENV["APPLE_USER_NAME"]
+app_identifier 	ENV["APP_ID"]
+git_url 		ENV["GIT_CERT_URL"]
+git_branch 		ENV["GIT_CERT_BRANCH"]
+team_id 		ENV["APPLE_TEAM_ID"]
+type			ENV["CERT_TYPE"]
