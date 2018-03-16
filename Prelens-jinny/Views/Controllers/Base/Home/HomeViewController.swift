@@ -45,7 +45,6 @@ class HomeViewController: UIViewController {
         
         vNavigation.backgroundColor = PRColor.mainAppColor
         lcsNavigationHeight.constant = (60/667)*(UIScreen.main.bounds.height)
-        lbTitle.text = "JINNY"
         
         vTabbar.vMemberships.setTitle(title: "Memberships")
         vTabbar.vPromotions.setTitle(title: "Promotions")
