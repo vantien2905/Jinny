@@ -34,7 +34,6 @@ final class SignUpViewModel {
         self.isLoginSuccess = PublishSubject<Bool>()
         
         _ = isChecked.asObservable().subscribe(onNext: { value in
-            print(value)
             //TODO
         })
         

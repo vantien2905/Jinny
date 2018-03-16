@@ -57,20 +57,18 @@ class PRSignUpViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         btnShowHidePassword.rx.tap
-            .subscribe(onNext: {
-                if(self.passIsSecurity == true) {
-                    self.tfPassword.isSecureTextEntry = false
-                    self.btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
-                    self.passIsSecurity = false
+            .subscribe(onNext: { [weak self] in
+                guard let strongSelf = self, let _passIsSecurity = strongSelf.passIsSecurity else { return }
+                if(_passIsSecurity == true) {
+                    strongSelf.btnShowHidePassword.setImage(UIImage(named:"visible"), for: .normal)
                 } else {
-                    self.tfPassword.isSecureTextEntry = true
-                    self.btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
-                    self.passIsSecurity = true
+                    strongSelf.btnShowHidePassword.setImage(UIImage(named:"hidden"), for: .normal)
                 }
+                strongSelf.tfPassword.isSecureTextEntry = !(_passIsSecurity)
+                strongSelf.passIsSecurity = !(_passIsSecurity)
             }).disposed(by: disposeBag)
         
         btnCheckConditions.rx.tap
-            .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext : {
                 if(self.conditionsIsChecked == true) {
                     self.btnCheckConditions.setImage(UIImage(named:"check_box"), for: .normal)
