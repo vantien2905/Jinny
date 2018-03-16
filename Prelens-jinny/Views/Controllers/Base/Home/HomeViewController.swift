@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PRNewBaseVC: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var vContainer: UIView!
     
@@ -92,7 +92,7 @@ class PRNewBaseVC: UIViewController {
 }
 
 //MARK: Button Action
-extension PRNewBaseVC: PRTabbarCustomDelegate {
+extension HomeViewController: PRTabbarCustomDelegate {
     func btnTapped(tag: Int) {
         switch tag {
         case 0:

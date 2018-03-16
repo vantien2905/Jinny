@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleFlow() {
         UITabBar.appearance().tintColor = UIColor.red
         if KeychainManager.shared.getToken() != nil {
-            KeychainManager.shared.deleteToken()
             goToMainApp()
         } else {
             goToLogin()
@@ -48,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func goToMainApp() {
 //        window?.rootViewController = PRTabbarMainViewController()
-        let vc  = UINavigationController(rootViewController:PRNewBaseVC())
+        let vc  = UINavigationController(rootViewController:HomeViewController())
         window?.rootViewController = vc
         
         //        apiNotification.asObservable().subscribe(onNext: { [weak self] unreadNotification in

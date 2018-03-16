@@ -80,8 +80,8 @@
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
 		BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */; };
-		BC6E9DB9205A4AB100C5DF01 /* PRNewBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */; };
-		BC6E9DBB205A4AB100C5DF01 /* PRNewBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DB8205A4AB100C5DF01 /* PRNewBaseVC.xib */; };
+		BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */; };
+		BC6E9DBB205A4AB100C5DF01 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */; };
 		BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */; };
 		BC6E9DC1205A529800C5DF01 /* PRTabbarCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
@@ -198,8 +198,8 @@
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseViewXib.swift; sourceTree = "<group>"; };
-		BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRNewBaseVC.swift; sourceTree = "<group>"; };
-		BC6E9DB8205A4AB100C5DF01 /* PRNewBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRNewBaseVC.xib; sourceTree = "<group>"; };
+		BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarCustom.swift; sourceTree = "<group>"; };
 		BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRTabbarCustom.xib; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,8 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B1BC722058CFF60042B3D4 /* BaseViewController.swift */,
-				BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */,
-				BC6E9DB8205A4AB100C5DF01 /* PRNewBaseVC.xib */,
+				BC6F3368205BC6DB00CDAD85 /* Home */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -452,6 +451,15 @@
 				BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */,
 			);
 			path = PRTabbarCustom;
+			sourceTree = "<group>";
+		};
+		BC6F3368205BC6DB00CDAD85 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */,
+				BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		BC770A5A204CEE5D0052A285 = {
@@ -884,7 +892,7 @@
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */,
 				B7B1BC7E2058D6F40042B3D4 /* MembershipCell.xib in Resources */,
-				BC6E9DBB205A4AB100C5DF01 /* PRNewBaseVC.xib in Resources */,
+				BC6E9DBB205A4AB100C5DF01 /* HomeViewController.xib in Resources */,
 				BC6E9DC1205A529800C5DF01 /* PRTabbarCustom.xib in Resources */,
 				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
 				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
@@ -1069,7 +1077,7 @@
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
-				BC6E9DB9205A4AB100C5DF01 /* PRNewBaseVC.swift in Sources */,
+				BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
