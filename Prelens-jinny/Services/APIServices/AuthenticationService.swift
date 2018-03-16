@@ -28,7 +28,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
             "password": password
         ]
         
-        return network.rx_Object(url: APILogin.login, method: .post, parameters: parameters as [String : AnyObject])
+        return network.rx_Object(url: APIEndpoint.Authentication.login, method: .post, parameters: parameters as [String : AnyObject])
     }
     
     func signUp(email: String, password: String) -> Observable<PRUser?> {
@@ -37,7 +37,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
             "password": password
         ]
         
-        return network.rx_Object(url: APILogin.signUp, method: .post, parameters: parameters as [String : AnyObject])
+        return network.rx_Object(url: APIEndpoint.Authentication.signUp, method: .post, parameters: parameters as [String : AnyObject])
     }
     
     func forgotPassword(email: String) -> Observable<PRForgotPassword?> {
@@ -45,7 +45,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
             "email": email
         ]
         
-        return network.rx_Object(url: APILogin.forgotPassword, method: .post, parameters: parameters as [String : AnyObject])
+        return network.rx_Object(url: APIEndpoint.Authentication.forgotPassword, method: .post, parameters: parameters as [String : AnyObject])
     }
     
 }

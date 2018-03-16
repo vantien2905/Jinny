@@ -6,4 +6,21 @@
 //  Copyright © 2018 Lamp. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import Alamofire
+
+protocol MembershipServiceProtocol {
+    func getListAllMembership() -> Observable<Membership?>
+}
+
+class MembershipService: MembershipServiceProtocol {
+    private let network: NetworkProtocol
+    
+    init(network: NetworkProtocol) {
+        self.network = network
+    }
+    
+    func getListAllMembership() -> Observable<Membership?> {
+        return network.rx_Object(url: APIEndpoint.Membership.getListAllMembership, method: .get, parameters: [:])
+    }
+}

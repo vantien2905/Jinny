@@ -10,8 +10,14 @@ struct APIURL {
     static let baseURL = "http://jinny.vinova.sg/api/v1/"
 }
 
-struct APILogin {
-    static let login                 = "sessions/sign_in"
-    static let signUp                = "users/sign_up"
-    static let forgotPassword        = "users/forgot_password"
+struct APIEndpoint {
+    struct Authentication {
+        static let login                 = "sessions/sign_in"
+        static let signUp                = "users/sign_up"
+        static let forgotPassword        = "users/forgot_password"
+    }
+    
+    struct Membership {
+        static let getListAllMembership = "memberships"
+    }
 }
