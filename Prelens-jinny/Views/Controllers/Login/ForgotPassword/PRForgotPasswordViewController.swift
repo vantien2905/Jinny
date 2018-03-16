@@ -40,9 +40,16 @@ class PRForgotPasswordViewController: PRBaseViewController {
     func bindViewModel() {
         _ = tfEmail.rx.text.map{ $0 ?? ""}.bind(to: vm.email)
         vm.email.asObservable().bind(to: tfEmail.rx.text).disposed(by: disposeBag)
+        
         btnSubmit.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .bind(to: vm.btnSubmitTapped)
             .disposed(by: disposeBag)
+        
+        btnSubmit.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                self.tfEmail.endEditing(true)
+            }).disposed(by: disposeBag)
     }
 }

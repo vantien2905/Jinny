@@ -26,7 +26,6 @@ class PRSignInViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         setupView()
-        bindViewModel()
         tfEmail.text = "felix@vinova.sg"
         tfPassword.text = "123456"
         bindViewModel()
