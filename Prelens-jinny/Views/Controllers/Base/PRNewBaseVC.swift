@@ -127,11 +127,4 @@ extension PRNewBaseVC: PRTabbarCustomDelegate {
     }
 }
 
-extension PRNewBaseVC: NavigationDelegate {
-    func pushTo(data: String) {
-        print(data)
-    }
-    
-    
-}
 
