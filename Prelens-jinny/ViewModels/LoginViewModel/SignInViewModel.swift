@@ -13,19 +13,19 @@ final class SignInViewModel {
     
     private var disposeBag = DisposeBag()
     
-    public var email                : Variable<String?>
-    public var password             : Variable<String?>
-    public var isValidInput         : Variable<Bool>
-    private var userLogin           = Variable<PRUser?>(nil)
-    public var btnSignInTapped      : PublishSubject<Void>
-    public var isLoginSuccess       : PublishSubject<Bool>
-     var popupView                  :PopUpView = PopUpView()
+    public var email: Variable<String?>
+    public var password: Variable<String?>
+    public var isValidInput: Variable<Bool>
+    private var userLogin = Variable<PRUser?>(nil)
+    public var btnSignInTapped: PublishSubject<Void>
+    public var isLoginSuccess:PublishSubject<Bool>
+     var popupView: PopUpView = PopUpView()
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
     }
     
-    var apiSignIn                   : APIAuthenticationService = APIAuthenticationService()
+//    var apiSignIn                   : APIAuthenticationService = APIAuthenticationService()
     
     init() {
         self.email = Variable<String?>(nil)
@@ -84,13 +84,13 @@ final class SignInViewModel {
     }
     
     func callAPISignIn() {
-       _ = apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
-            if user.element?.isSuccess == true {
-                print("Sign in success!")
-                self.userLogin.value = user.element?.data
-            } else {
-                self.popupView.showPopUp(message: user.element?.message ?? "")
-            }
-        })
+//       _ = apiSignIn.signIn(email: self.email.value!, password:self.password.value!).asObservable().subscribe({ user in
+//            if user.element?.isSuccess == true {
+//                print("Sign in success!")
+//                self.userLogin.value = user.element?.data
+//            } else {
+//                self.popupView.showPopUp(message: user.element?.message ?? "")
+//            }
+//        })
     }
 }
