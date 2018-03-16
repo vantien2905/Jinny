@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class PRChangePassWordViewController: UIViewController {
+class PRChangePassWordViewController: PRBaseViewController {
 
+    @IBOutlet weak var tfCurrentPassword: UITextField!
+    @IBOutlet weak var tfNewPassword: UITextField!
+    @IBOutlet weak var btnChange: UIButton!
+    
+    var viewModel: ChangePasswordViewModel = ChangePasswordViewModel()
+    
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
+        bindViewModel()
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +32,31 @@ class PRChangePassWordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setupView(){
+        tfNewPassword.isSecureTextEntry = true
+        tfCurrentPassword.isSecureTextEntry = true
+        btnChange.layer.cornerRadius = 2.5
+        super.setTitle(title: "CHANGE PASSWORD", textColor: .black, backgroundColor: .white)
+        super.addBackButton()
     }
-    */
-
+    
+    func bindViewModel() {
+        _ = tfCurrentPassword.rx.text.map{ $0 ?? ""}.bind(to: viewModel.currentPassword)
+        _ = tfNewPassword.rx.text.map{ $0 ?? ""}.bind(to: viewModel.newPassword)
+        
+        viewModel.currentPassword.asObservable().bind(to: tfCurrentPassword.rx.text).disposed(by: disposeBag)
+        viewModel.newPassword.asObservable().bind(to: tfNewPassword.rx.text).disposed(by: disposeBag)
+        
+        btnChange.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .bind(to: viewModel.btnChangeTapped)
+            .disposed(by: disposeBag)
+        
+        btnChange.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                self.tfCurrentPassword.endEditing(true)
+                self.tfNewPassword.endEditing(true)
+            }).disposed(by: disposeBag)
+    }
 }

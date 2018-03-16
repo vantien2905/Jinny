@@ -78,6 +78,10 @@ struct ContantMessages {
         static let errorContentPassword =  "Password is too short (minimum is 6 characters)"
         static let successResetPassword =  "You will receive an email with instructions on how to reset your password in a few minutes"
     }
+    
+    struct User {
+        static let successChangePassword = "Your password has been changed successfully"
+    }
 }
 
 
