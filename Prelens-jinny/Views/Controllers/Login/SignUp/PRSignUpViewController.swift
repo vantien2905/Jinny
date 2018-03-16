@@ -49,7 +49,7 @@ class PRSignUpViewController: UIViewController {
     func bindViewModel() {
         _ = tfEmail.rx.text.map{ $0 ?? ""}.bind(to: vm.email)
         _ = tfPassword.rx.text.map{ $0 ?? ""}.bind(to: vm.password)
-        _ = isChecked.asObservable().bind(to: vm.isChecked)
+        //_ = isChecked.asObservable().bind(to: vm.isChecked)
         vm.email.asObservable().bind(to: tfEmail.rx.text).disposed(by: disposeBag)
         vm.password.asObservable().bind(to: tfPassword.rx.text).disposed(by: disposeBag)
         vm.isValid.subscribe(onNext: { isValid in

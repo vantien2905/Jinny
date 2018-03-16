@@ -57,7 +57,8 @@ struct PRImage {
     static let tabbarPromotionsOn   = UIImage(named: "voucher_on")!
     static let tabbarMore           = UIImage(named: "more")!
     static let imgBack              = UIImage(named: "back_black")!
-    static let imgStar              = UIImage(named: "star_action_off")!
+    static let imgStarOff              = UIImage(named: "star_action_off")!
+    static let imgStarOn              = UIImage(named: "star_action_on")!
 }
 
 struct Cell {
@@ -77,6 +78,10 @@ struct ContantMessages {
     struct Login {
         static let errorContentPassword =  "Password is too short (minimum is 6 characters)"
         static let successResetPassword =  "You will receive an email with instructions on how to reset your password in a few minutes"
+    }
+    
+    struct User {
+        static let successChangePassword = "Your password has been changed successfully"
     }
 }
 

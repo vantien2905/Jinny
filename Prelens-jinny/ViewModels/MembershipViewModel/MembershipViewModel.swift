@@ -23,13 +23,11 @@ class MembershipViewModel {
     
     var inputs = MembershipViewModelInput()
     var outputs = MembershipViewModelOutput()
-    var apiService = APIMembershipService()
     
     
     init() {
-        apiService.getListAllMembership().asObservable().subscribe(onNext: { (member) in
-            self.outputs.listMembership.value = member.data
-
+        Provider.shared.memberShipService.getListAllMembership().subscribe(onNext: { [weak self] (member) in
+            self?.outputs.listMembership.value = member
         }).disposed(by: disposeBag)
     }
 }

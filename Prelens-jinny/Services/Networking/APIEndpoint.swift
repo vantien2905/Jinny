@@ -16,8 +16,12 @@ struct APIEndpoint {
         static let signUp           = "/api/v1/users/sign_up"
         static let forgotPassword   = "/api/v1/users/forgot_password"
     }
-    
+    struct User {
+        static let changePassword   = "/api/v1/users/change_password"
+    }
     struct Membership {
         static let getListAllMembership = "/api/v1/memberships"
+        static let getMembershipDetail = "/api/v1/memberships/"
+        static let addBookmarkMembership = "/api/v1/memberships/%@/toggle_bookmark"
     }
 }

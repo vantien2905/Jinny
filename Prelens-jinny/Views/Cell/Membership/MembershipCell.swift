@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MembershipCell: UICollectionViewCell {
     @IBOutlet weak var vContent: UIView!
     @IBOutlet weak var imgMemberShip: UIImageView!
     @IBOutlet weak var imgStar: UIImageView!
     
-    var membership: Member? {
+    var membership = Member() {
         didSet {
             self.setData()
         }
@@ -32,7 +33,13 @@ class MembershipCell: UICollectionViewCell {
     }
     
     func setData() {
-        
+        if let _merchant = membership.merchant,
+        let _logo = _merchant.logo,
+        let _url = _logo.url,
+            let _urlLogo = _url.thumb {
+            let url = URL(string: _urlLogo)
+            imgMemberShip.sd_setImage(with: url, placeholderImage: nil)
+        }
     }
 
 }
