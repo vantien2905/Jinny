@@ -111,7 +111,7 @@ desc "=> fastlane deploy_fabric --env [dev | prod]"
 lane :deploy_fabric do
   puts "Debug #{IPA_PATH}"
   crashlytics(
-    crashlytics_path: "#{IPA_PATH}",
+    ipa_path: "#{IPA_PATH}",
   )
 
   msg = "#{IPA_INFO} has been deployed to Fabric"
