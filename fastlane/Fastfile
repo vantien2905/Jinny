@@ -1,0 +1,177 @@
+
+import "./BaseFastfile"
+
+default_platform :ios
+platform :ios do
+
+desc "Init APNs for Staging server with Development mode"
+desc "=> fastlane init_apns_stag_dev --env dev"
+lane :init_apns_stag_dev do
+  pem(development: false)
+end
+
+desc "Init APNs for Staging server with Release mode"
+desc "=> fastlane init_apns_stag_release --env prod ]"
+lane :init_apns_stag_release do
+  pem(development: true)
+end
+
+desc "Init APNs for Production server with Development mode"
+desc "=> fastlane init_apns_prod_dev --env dev"
+lane :init_apns_prod_dev do
+  pem(development: false)
+end
+
+desc "Init APNs for Production server with Release mode"
+desc "=> fastlane init_apns_pro_release --env prod"
+lane :init_apns_pro_release do
+  pem(development: true)
+end
+
+desc "Sync certificates for Development"
+desc "=> fastlane sync_cert_dev --env dev"
+lane :sync_cert_dev do
+  match(type: "development")
+  match(type: "enterprise")
+end
+
+desc "Sync certificates for Production"
+desc "=> fastlane sync_cert_prod --env prod"
+lane :sync_cert_prod do
+  match(type: "development")
+  match(type: "appstore")
+end
+
+desc "Build & deploy BETA"
+desc "=> fastlane beta --env dev"
+lane :beta do | options |
+  build(release: false)
+  deploy(provider: options[:provider])
+  commit_build_number
+end
+
+desc "Build & deploy RELEASE"
+desc "=> fastlane beta --env prod"
+lane :release do | options |
+  build(release: true)
+  deploy_appstore
+  commit_build_number
+end
+
+desc "Build job"
+desc "=> fastlane build --env [dev | prod]"
+lane :build do | options |
+  preprocess(options)
+
+  newBuildNumber = lane_context[SharedValues::BUILD_NUMBER]
+  set_build_number(newBuildNumber)
+
+  gym(
+    silent:           true,
+    clean:            options[:release],
+    output_directory: "build",
+    output_name:      "#{ENV["APP_NAME"]}.ipa",
+    export_method:    ENV["EXPORT_METHOD"],
+    workspace:        ENV["WORKSPACE"],
+    scheme:           ENV["SCHEME"],
+    configuration:    ENV["CONFIGURATION"]
+  )
+end
+
+desc "Deploy job"
+desc "=> fastlane deploy provider:[Diawi | Fabric | TestFlight]"
+lane :deploy do | options |
+  provider = options[:provider] ||= ENV["PROVIDER"]
+  case provider
+  when "Diawi"
+    deploy_diawi
+  when "Fabric"
+    deploy_fabric
+  when "TestFlight"
+    deploy_appstore
+  else
+    UI.user_error!("Not correct deploy_type: - using [Diawi | Fabric | TestFlight]")
+  end
+end
+
+desc "Deploy to Diawi"
+desc "=> fastlane deploy_diawi --env [dev | prod]"
+lane :deploy_diawi do
+  diawi(
+    file: "#{IPA_PATH}"
+  )
+
+  diawiLink = lane_context[SharedValues::UPLOADED_FILE_LINK_TO_DIAWI]
+  msg = "Get #{IPA_INFO} beta from: #{diawiLink}"
+  noti_slack({message: msg})
+end
+
+desc "Deploy to Fabric"
+desc "=> fastlane deploy_fabric --env [dev | prod]"
+lane :deploy_fabric do
+  crashlytics(
+    crashlytics_path: "#{IPA_PATH}",
+  )
+
+  msg = "#{IPA_INFO} has been deployed to Fabric"
+  noti_slack({message: msg})
+end
+
+desc "Deploy to TestFlight"
+desc "=> fastlane deploy_appstore --env prod"
+lane :deploy_appstore do
+  pilot(
+    ipa: "#{IPA_PATH}",
+    username: ENV["APPLE_USER_NAME"],
+    wait_processing_interval: 10
+  )
+
+  msg = "{IPA_INFO} has been deployed to TestFlight by account: #{ENV["APPLE_USER_NAME"]}"
+  noti_slack({message: msg})
+end
+
+#################### PRIVATE LANES ####################
+
+private_lane :preprocess do | options |
+  if "#{ENV['ENV']}" == "PRODUCTION"
+    clear_derived_data
+  end
+
+  sh("git reset --hard HEAD")
+
+  if options[:git_branch]
+    GIT_BRANCH = options[:git_branch]
+    sh("git checkout #{GIT_BRANCH}")
+  end
+
+  sh("git pull origin #{GIT_BRANCH}")
+  sh("pod install")
+
+  if ENV["XCODE_VERSION"]
+    xcversion(version: ENV["XCODE_VERSION"])
+  end
+
+  slack(
+   message: "#{ENV["APP_NAME"]} incoming from branch #{GIT_BRANCH}",
+   default_payloads: []
+  )
+end
+
+private_lane :commit_build_number do | options |
+  plistPath = options[:plist_path]
+  branch = options[:branch]
+
+  sh("git add ../#{ENV["APP_PLIST"]}")
+  sh("git commit -m 'Update new build number'")
+  sh("git push origin #{GIT_BRANCH}")
+end
+
+private_lane :noti_slack do | options |
+  msg = options[:message]
+  slack(
+    message: msg,
+    default_payloads: [:git_branch, :last_git_commit_message]
+  )  
+end
+
+end
