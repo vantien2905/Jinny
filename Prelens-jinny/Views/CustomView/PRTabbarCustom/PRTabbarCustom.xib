@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRTabbarCustom" customModule="Prelens_jinny" customModuleProvider="target">
+            <connections>
+                <outlet property="vMemberships" destination="DFy-rO-aFV" id="GxL-6H-lSm"/>
+                <outlet property="vMore" destination="Rdy-Lw-Kvz" id="vxJ-83-Qjf"/>
+                <outlet property="vPromotions" destination="o7G-Ih-IWA" id="Kqw-CY-bD1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7G-Ih-IWA" customClass="PRButtonTabbar" customModule="Prelens_jinny" customModuleProvider="target">
+                    <rect key="frame" x="157" y="0.0" width="60" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="rQZ-B1-lU5"/>
+                        <constraint firstAttribute="width" constant="60" id="w8e-FK-e3b"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFy-rO-aFV" customClass="PRButtonTabbar" customModule="Prelens_jinny" customModuleProvider="target">
+                    <rect key="frame" x="22" y="0.0" width="60" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="WeS-0h-G9m"/>
+                        <constraint firstAttribute="width" constant="60" id="ujo-DT-ODa"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-Lw-Kvz" customClass="PRButtonTabbar" customModule="Prelens_jinny" customModuleProvider="target">
+                    <rect key="frame" x="293" y="0.0" width="60" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="3UL-fz-289"/>
+                        <constraint firstAttribute="height" constant="50" id="lKs-qB-eUx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Rdy-Lw-Kvz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="H9s-BP-0H6"/>
+                <constraint firstItem="o7G-Ih-IWA" firstAttribute="top" secondItem="DFy-rO-aFV" secondAttribute="top" id="Ki3-Tz-tBh"/>
+                <constraint firstItem="Rdy-Lw-Kvz" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RST-h5-EB7"/>
+                <constraint firstItem="o7G-Ih-IWA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="RTl-xK-t0K"/>
+                <constraint firstItem="DFy-rO-aFV" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="UpQ-18-yCL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rdy-Lw-Kvz" secondAttribute="trailing" constant="22" id="V6p-oT-U2O"/>
+                <constraint firstItem="DFy-rO-aFV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="afj-AZ-K5C"/>
+                <constraint firstItem="o7G-Ih-IWA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gpD-NL-Fnd"/>
+                <constraint firstItem="DFy-rO-aFV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sJc-R4-4TB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+</document>

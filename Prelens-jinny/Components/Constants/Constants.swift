@@ -48,6 +48,8 @@ struct PRColor {
     static let backgroundPopUp      = UIColor.black.withAlphaComponent(0.6)
 }
 
+
+
 struct PRImage {
     static let tabbarMembershipOff  = UIImage(named: "membership_off")!
     static let tabbarMembershipOn   = UIImage(named: "membership_on")!
