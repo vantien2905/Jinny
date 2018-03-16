@@ -16,12 +16,9 @@ final class ForgotPasswordViewModel {
     public var email: Variable<String?>
     //public var isValidInput         : Variable<Bool>
     public var btnSubmitTapped: PublishSubject<Void>
-//    var apiForgotPassword           : APIAuthenticationService?
     var popupView: PopUpView = PopUpView()
     
     init() {
-//        apiForgotPassword = APIAuthenticationService()
-        
         self.email = Variable<String?>(nil)
         self.btnSubmitTapped = PublishSubject<Void>()
         

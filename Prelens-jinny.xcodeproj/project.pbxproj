@@ -12,6 +12,7 @@
 		7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C097205A167100F384B4 /* PRForgotPassword.swift */; };
 		7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
+		764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
 		765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
 		765028012051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
@@ -125,6 +126,7 @@
 		7640C097205A167100F384B4 /* PRForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPassword.swift; sourceTree = "<group>"; };
 		7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialRegion.swift; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
 		765027FF2051265300618C84 /* PRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSettingViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				B7795902205B75B2005404FC /* Membership */,
 				BCE3495820565A5000B8C440 /* PRUser.swift */,
 				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
+				764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -992,6 +995,7 @@
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				D991185C205B7B1800F701ED /* AuthenticationService.swift in Sources */,
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
+				764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
