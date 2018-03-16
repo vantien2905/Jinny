@@ -19,7 +19,7 @@ final class SignUpViewModel {
     public var btnSignUpTapped      : PublishSubject<Void>
     public var isChecked            : Variable<Bool>
     public var isLoginSuccess       : PublishSubject<Bool>
-    var popupView                   :PopUpView = PopUpView()
+    
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
@@ -52,15 +52,15 @@ final class SignUpViewModel {
             }
             if pass.isValidPassword() {
                 if self?.isValidInput.value == false {
-                    self?.popupView.showPopUp(message: "Please enter your email & password")
+                    PopUpHelper.shared.showMessage(message: "Please enter your email & password")
                 } else if self?.isChecked.value == false {
-                    self?.popupView.showPopUp(message: "Please indicate that you have agree to the Terms and Conditions")
+                    PopUpHelper.shared.showMessage(message: "Please indicate that you have agree to the Terms and Conditions")
                 } else {
                     strongSelf.callAPISignUp()
                 }
             }
             else {
-                self?.popupView.showPopUp(message: ContantMessages.Login.errorContentPassword)
+                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
     }
@@ -80,7 +80,7 @@ final class SignUpViewModel {
             .subscribe(onNext: { [weak self] (user) in
                 guard let strongSelf = self else { return }
                 strongSelf.userSignUp.value = user
-                strongSelf.popupView.showPopUp(message: "Sign up success!")
+                PopUpHelper.shared.showMessage(message: "Sign up success!")
                 strongSelf.resetUI()
             }, onError: { (error) in
                 print(error)

@@ -21,9 +21,6 @@ class PRForgotPasswordViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         bindViewModel()
-        //self.navigationController?.isNavigationBarHidden = false
-        //self.navigationController?.navigationBar.barTintColor = UIColor.white
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +29,7 @@ class PRForgotPasswordViewController: BaseViewController {
     }
     
     private func setupView(){
+        tapHideKeyboard()
         btnSubmit.layer.cornerRadius = 2.5
         super.setTitle(title: "FORGOT PASSWORD", textColor: .black, backgroundColor: .white)
         super.addBackButton()

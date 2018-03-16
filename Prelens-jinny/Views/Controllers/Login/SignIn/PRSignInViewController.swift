@@ -38,6 +38,7 @@ class PRSignInViewController: UIViewController {
     }
     
     private func setupView(){
+        tapHideKeyboard()
         passIsSecurity = true
         tfPassword.isSecureTextEntry = true
         btnSignIn.layer.cornerRadius = 2.5

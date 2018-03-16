@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRNewBaseVC" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
                 <outlet property="btnLeft" destination="fGk-uo-ozt" id="KWK-Gg-GfH"/>
                 <outlet property="btnRight" destination="ugT-mb-A15" id="ahI-UP-PKr"/>
@@ -23,11 +23,11 @@
                 <outlet property="lcsNavigationHeight" destination="Aux-Mn-OVQ" id="mQ5-lB-k9R"/>
                 <outlet property="lcsSideMenu" destination="XYK-pQ-btd" id="r3o-HB-2Yy"/>
                 <outlet property="vCloseTap" destination="d3u-Th-kyH" id="tdN-wA-z5x"/>
-                <outlet property="vDetail" destination="Tft-m1-gGq" id="XJc-dq-ej4"/>
+                <outlet property="vContainer" destination="Tft-m1-gGq" id="XXv-O8-idQ"/>
                 <outlet property="vNavigation" destination="V7h-4K-6kT" id="7Vd-0I-nWk"/>
+                <outlet property="vSideMenu" destination="bOu-iF-q59" id="TVv-zT-EJ8"/>
                 <outlet property="vTabbar" destination="nko-nP-oIm" id="qhA-u6-feo"/>
                 <outlet property="view" destination="I4n-Am-CTh" id="Hia-ee-Q9X"/>
-                <outlet property="vsSideMenu" destination="bOu-iF-q59" id="po8-84-qMY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -109,7 +109,7 @@
                 </view>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOu-iF-q59">
                     <rect key="frame" x="133" y="0.0" width="242" height="667"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.89019607840000003" green="0.070588235289999995" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="242" id="Mr9-zY-eS9"/>
                     </constraints>
@@ -122,7 +122,7 @@
                 <constraint firstItem="nko-nP-oIm" firstAttribute="bottom" secondItem="Esz-5D-x9Q" secondAttribute="bottom" id="8HI-Ih-BZm"/>
                 <constraint firstItem="d3u-Th-kyH" firstAttribute="leading" secondItem="Esz-5D-x9Q" secondAttribute="leading" id="9Y1-Gt-mvS"/>
                 <constraint firstItem="Esz-5D-x9Q" firstAttribute="trailing" secondItem="V7h-4K-6kT" secondAttribute="trailing" id="Cqs-Gy-5uu"/>
-                <constraint firstItem="bOu-iF-q59" firstAttribute="bottom" secondItem="Esz-5D-x9Q" secondAttribute="bottom" id="M2X-8Y-sNM"/>
+                <constraint firstItem="bOu-iF-q59" firstAttribute="bottom" secondItem="I4n-Am-CTh" secondAttribute="bottom" id="M2X-8Y-sNM"/>
                 <constraint firstItem="V7h-4K-6kT" firstAttribute="top" secondItem="I4n-Am-CTh" secondAttribute="top" id="SXh-OW-Azo"/>
                 <constraint firstItem="Tft-m1-gGq" firstAttribute="leading" secondItem="Esz-5D-x9Q" secondAttribute="leading" id="TeN-Qe-qem"/>
                 <constraint firstItem="bOu-iF-q59" firstAttribute="trailing" secondItem="Esz-5D-x9Q" secondAttribute="trailing" constant="242" id="XYK-pQ-btd"/>
