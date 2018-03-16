@@ -32,6 +32,8 @@
 		B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738627320590CE700C7004D /* MembershipFooterCell.xib */; };
 		B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7386277205913CD00C7004D /* MembershipDetailVC.swift */; };
 		B738627A205913CD00C7004D /* MembershipDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailVC.xib */; };
+		B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */; };
+		B74E486C205BAD06006ABB4D /* MembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */; };
 		B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */; };
 		B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */; };
 		B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */; };
@@ -144,6 +146,8 @@
 		B738627320590CE700C7004D /* MembershipFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipFooterCell.xib; sourceTree = "<group>"; };
 		B7386277205913CD00C7004D /* MembershipDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailVC.swift; sourceTree = "<group>"; };
 		B7386278205913CD00C7004D /* MembershipDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailVC.xib; sourceTree = "<group>"; };
+		B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailCell.swift; sourceTree = "<group>"; };
+		B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailCell.xib; sourceTree = "<group>"; };
 		B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMembershipCell.swift; sourceTree = "<group>"; };
 		B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyMembershipCell.xib; sourceTree = "<group>"; };
 		B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailViewModel.swift; sourceTree = "<group>"; };
@@ -307,6 +311,15 @@
 			path = MembershipDetail;
 			sourceTree = "<group>";
 		};
+		B74E4868205BACD4006ABB4D /* MembershipDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */,
+				B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */,
+			);
+			path = MembershipDetailCell;
+			sourceTree = "<group>";
+		};
 		B765ECB42057D81C0095B443 /* LocalPersistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +396,7 @@
 		B7B1BC752058D38B0042B3D4 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
+				B74E4868205BACD4006ABB4D /* MembershipDetailCell */,
 				B73862612058FF1600C7004D /* SubView */,
 				B7B1BC762058D45A0042B3D4 /* SearchMembershipCell.swift */,
 				B7B1BC772058D45B0042B3D4 /* SearchMembershipCell.xib */,
@@ -874,6 +888,7 @@
 				B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */,
 				B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */,
 				BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */,
+				B74E486C205BAD06006ABB4D /* MembershipDetailCell.xib in Resources */,
 				B7B1BC9D2058D7FA0042B3D4 /* ostrich-regular.ttf in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 			);
@@ -895,39 +910,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6B9BBDFCBFC977AC16C0751 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A95133AE4515E4D16BCCDB3C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Prelens-jinnyTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B75C4179205A705900E4A77F /* ShellScript */ = {
@@ -1066,6 +1048,7 @@
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
+				B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */,
 				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,

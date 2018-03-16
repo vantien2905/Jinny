@@ -17,9 +17,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MembershipDetailVC" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
+                <outlet property="cvPromotion" destination="pNW-ut-Ic3" id="2wg-jA-VkO"/>
                 <outlet property="imgBarCode" destination="yZS-ZB-klj" id="SPx-r9-GGa"/>
                 <outlet property="imgLogo" destination="EFX-nh-KBi" id="frg-pr-uAX"/>
-                <outlet property="imgRelated" destination="1Xd-lM-rLf" id="om9-54-JBa"/>
                 <outlet property="lbNumberCode" destination="iIS-h5-xPP" id="xHf-OX-Xpa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -81,18 +81,24 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Xd-lM-rLf">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-ut-Ic3">
                     <rect key="frame" x="22.5" y="332.5" width="330" height="163"/>
-                    <color key="backgroundColor" red="0.17254901959999999" green="0.55294117649999996" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="163" id="sNy-wc-r77"/>
+                        <constraint firstAttribute="height" constant="163" id="OpC-98-HJL"/>
                     </constraints>
-                </imageView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gfl-Xf-iVR">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEP-Ya-E6q">
                     <rect key="frame" x="22.5" y="521" width="330" height="1"/>
                     <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="EYw-eX-7EA"/>
+                        <constraint firstAttribute="height" constant="1" id="JYg-ac-qmJ"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjC-Xk-lWY">
@@ -127,18 +133,18 @@
             <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Ufe-9a-cMN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="09r-LG-b1q"/>
-                <constraint firstItem="1Xd-lM-rLf" firstAttribute="top" secondItem="TsX-Zh-e0w" secondAttribute="bottom" constant="10" id="0BS-2E-UFm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ufe-9a-cMN" secondAttribute="trailing" id="6f3-Gr-LUZ"/>
-                <constraint firstItem="WjC-Xk-lWY" firstAttribute="top" secondItem="tEP-Ya-E6q" secondAttribute="bottom" constant="21.5" id="EEi-9K-twK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Xd-lM-rLf" secondAttribute="trailing" constant="22.5" id="Shs-kI-ios"/>
-                <constraint firstItem="WjC-Xk-lWY" firstAttribute="centerX" secondItem="tEP-Ya-E6q" secondAttribute="centerX" id="SkP-Ic-DOc"/>
+                <constraint firstItem="WjC-Xk-lWY" firstAttribute="centerX" secondItem="tEP-Ya-E6q" secondAttribute="centerX" id="CnN-gj-CCb"/>
+                <constraint firstItem="pNW-ut-Ic3" firstAttribute="top" secondItem="TsX-Zh-e0w" secondAttribute="bottom" constant="10" id="ENC-q1-oC4"/>
+                <constraint firstItem="pNW-ut-Ic3" firstAttribute="leading" secondItem="TsX-Zh-e0w" secondAttribute="leading" id="JTd-QE-dJJ"/>
+                <constraint firstItem="tEP-Ya-E6q" firstAttribute="trailing" secondItem="pNW-ut-Ic3" secondAttribute="trailing" id="RQp-4g-e5l"/>
+                <constraint firstItem="tEP-Ya-E6q" firstAttribute="top" secondItem="pNW-ut-Ic3" secondAttribute="bottom" constant="25.5" id="Tcc-Iw-CE0"/>
                 <constraint firstItem="Ufe-9a-cMN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xmj-ly-kbO"/>
-                <constraint firstItem="1Xd-lM-rLf" firstAttribute="leading" secondItem="TsX-Zh-e0w" secondAttribute="leading" id="fI2-HQ-JcX"/>
+                <constraint firstItem="WjC-Xk-lWY" firstAttribute="top" secondItem="tEP-Ya-E6q" secondAttribute="bottom" constant="21.5" id="ler-FR-yva"/>
                 <constraint firstItem="TsX-Zh-e0w" firstAttribute="top" secondItem="Ufe-9a-cMN" secondAttribute="bottom" constant="22.5" id="nGq-qZ-0A6"/>
-                <constraint firstItem="tEP-Ya-E6q" firstAttribute="trailing" secondItem="1Xd-lM-rLf" secondAttribute="trailing" id="nSB-lT-xuN"/>
-                <constraint firstItem="tEP-Ya-E6q" firstAttribute="top" secondItem="1Xd-lM-rLf" secondAttribute="bottom" constant="25.5" id="qOM-hf-RQ3"/>
+                <constraint firstItem="tEP-Ya-E6q" firstAttribute="leading" secondItem="pNW-ut-Ic3" secondAttribute="leading" id="ovL-Iq-eGv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pNW-ut-Ic3" secondAttribute="trailing" constant="22.5" id="pZi-gn-tbV"/>
                 <constraint firstItem="TsX-Zh-e0w" firstAttribute="leading" secondItem="Ufe-9a-cMN" secondAttribute="leading" constant="22.5" id="rR6-Om-EN8"/>
-                <constraint firstItem="tEP-Ya-E6q" firstAttribute="leading" secondItem="1Xd-lM-rLf" secondAttribute="leading" id="tjg-vf-tCV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="54.5" y="54.5"/>

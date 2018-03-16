@@ -196,11 +196,16 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            let vc = MembershipDetailVC.configureViewController(id: self.listMember.startedMemberships[indexPath.item].id)
-            self.push(controller: vc, animated: true)
+            if listMember.startedMemberships.count != 0 {
+                let vc = MembershipDetailVC.configureViewController(id: self.listMember.startedMemberships[indexPath.item].id)
+                self.push(controller: vc, animated: true)
+            }
+            
         } else {
-            let vc = MembershipDetailVC.configureViewController(id: self.listMember.otherMemberships[indexPath.item].id)
-            self.push(controller: vc, animated: true)
+            if listMember.otherMemberships.count != 0 {
+                let vc = MembershipDetailVC.configureViewController(id: self.listMember.otherMemberships[indexPath.item].id)
+                self.push(controller: vc, animated: true)
+            }
         }
         
     }
