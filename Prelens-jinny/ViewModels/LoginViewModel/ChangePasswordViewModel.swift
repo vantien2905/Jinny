@@ -27,11 +27,11 @@ final class ChangePasswordViewModel {
     public var newPassword          : Variable<String?>
     public var isValidInput         : Variable<Bool>
     public var btnChangeTapped      : PublishSubject<Void>
-    var apiChangePassword           : APIUserService?
+//    var apiChangePassword           : APIUserService?
     var popupView                   :PopUpView = PopUpView()
     
     init() {
-        apiChangePassword           = APIUserService()
+//        apiChangePassword           = APIUserService()
         self.currentPassword        = Variable<String?>(nil)
         self.newPassword            = Variable<String?>(nil)
         self.btnChangeTapped        = PublishSubject<Void>()
@@ -65,14 +65,14 @@ final class ChangePasswordViewModel {
     
     func callAPIChangePassword() {
         guard let _currentPassword = self.currentPassword.value, let _newPassword = self.newPassword.value else { return }
-        _ = apiChangePassword?.changePassword(curPassword: _currentPassword, newPassword: _newPassword).asObservable().subscribe({ user in
-            if user.element?.isSuccess == true {
-                self.popupView.showPopUp(message: ContantMessages.User.successChangePassword)
-                self.currentPassword.value = ""
-                self.newPassword.value = ""
-            } else {
-                self.popupView.showPopUp(message: user.element?.message ?? "")
-            }
-        })
+        Provider.shared.authenticationService.changePassword(currentPassword: _currentPassword, new_password: _newPassword)
+            .subscribe(onNext: { [weak self] (user) in
+                guard let strongSelf = self else { return }
+                strongSelf.popupView.showPopUp(message: ContantMessages.User.successChangePassword)
+                strongSelf.currentPassword.value = ""
+                strongSelf.newPassword.value = ""
+            }, onError: { (error) in
+                print(error)
+            }).disposed(by: disposeBag)
     }
 }

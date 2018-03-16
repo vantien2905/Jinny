@@ -17,10 +17,6 @@ target 'Prelens-jinny' do
   pod 'KeychainSwift'
   pod 'PKHUD'
   pod 'AlamofireObjectMapper'
-
-  target 'Prelens-jinnyTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'RxAlamofire'
 
 end

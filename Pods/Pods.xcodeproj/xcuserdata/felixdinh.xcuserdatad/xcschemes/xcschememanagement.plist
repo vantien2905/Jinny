@@ -67,7 +67,7 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>Pods-Prelens-jinnyTests.xcscheme</key>
+		<key>RxAlamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

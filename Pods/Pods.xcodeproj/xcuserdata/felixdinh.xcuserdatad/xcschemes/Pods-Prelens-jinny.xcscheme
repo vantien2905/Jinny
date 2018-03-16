@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B4469E84C00CF34455AC31DDEB67380"
+               BlueprintIdentifier = "95D0C0CC266573BAC010036587C026AD"
                BuildableName = "Pods_Prelens_jinny.framework"
                BlueprintName = "Pods-Prelens-jinny"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B4469E84C00CF34455AC31DDEB67380"
+            BlueprintIdentifier = "95D0C0CC266573BAC010036587C026AD"
             BuildableName = "Pods_Prelens_jinny.framework"
             BlueprintName = "Pods-Prelens-jinny"
             ReferencedContainer = "container:Pods.xcodeproj">

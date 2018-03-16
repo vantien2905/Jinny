@@ -10,10 +10,11 @@ import ObjectMapper
 
 class Member: NSObject, Mappable {
     
-    var id: String?
+    var id: Int = 1
     var merchant: Merchant?
     var code: String?
     var addedDate: String?
+    var hasBookmark: Bool = false
     
     override init() {
         super.init()
@@ -28,5 +29,6 @@ class Member: NSObject, Mappable {
         self.merchant <- map["merchant"]
         self.code <- map["code"]
         self.addedDate <- map["added_date"]
+        self.hasBookmark <- map["has_bookmark"]
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PRLoginViewController: PRBaseViewController {
+class PRLoginViewController: BaseViewController {
 
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!

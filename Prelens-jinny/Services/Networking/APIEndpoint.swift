@@ -21,5 +21,7 @@ struct APIEndpoint {
     }
     struct Membership {
         static let getListAllMembership = "/api/v1/memberships"
+        static let getMembershipDetail = "/api/v1/memberships/"
+        static let addBookmarkMembership = "/api/v1/memberships/%@/toggle_bookmark"
     }
 }

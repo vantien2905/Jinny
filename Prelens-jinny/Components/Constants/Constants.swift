@@ -57,7 +57,8 @@ struct PRImage {
     static let tabbarPromotionsOn   = UIImage(named: "voucher_on")!
     static let tabbarMore           = UIImage(named: "more")!
     static let imgBack              = UIImage(named: "back_black")!
-    static let imgStar              = UIImage(named: "star_action_off")!
+    static let imgStarOff              = UIImage(named: "star_action_off")!
+    static let imgStarOn              = UIImage(named: "star_action_on")!
 }
 
 struct Cell {

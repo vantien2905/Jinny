@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PRForgotPasswordViewController: PRBaseViewController {
+class PRForgotPasswordViewController: BaseViewController {
     @IBOutlet weak var tfEmail              : UITextField!
     @IBOutlet weak var btnSubmit            : UIButton!
     

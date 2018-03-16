@@ -11,6 +11,11 @@ PODS:
   - KeychainSwift (10.0.0)
   - ObjectMapper (3.1.0)
   - PKHUD (5.0.0)
+  - RxAlamofire (4.1.0):
+    - RxAlamofire/Core (= 4.1.0)
+  - RxAlamofire/Core (4.1.0):
+    - Alamofire (~> 4.5)
+    - RxSwift (~> 4.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
@@ -29,6 +34,7 @@ DEPENDENCIES:
   - KeychainSwift
   - ObjectMapper
   - PKHUD
+  - RxAlamofire
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SDWebImage
@@ -44,12 +50,13 @@ SPEC CHECKSUMS:
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: 2a3d3d276dff5621e888beed4df2fe581ccdb292
+PODFILE CHECKSUM: f03d2d79e9703b86243e784764409deadc3863bc
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.4.0.rc.1
