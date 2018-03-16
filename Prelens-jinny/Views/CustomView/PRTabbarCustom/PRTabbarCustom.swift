@@ -34,6 +34,10 @@ class PRTabbarCustom: PRBaseViewXib {
         vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
         vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
         vMore.setIcon(image: PRImage.tabbarMore)
+        
+        vMemberships.tabbarButtonDelegate = self
+        vPromotions.tabbarButtonDelegate = self
+        vMore.tabbarButtonDelegate = self
     }
     
     func setIndexSelected(index: Int) {
