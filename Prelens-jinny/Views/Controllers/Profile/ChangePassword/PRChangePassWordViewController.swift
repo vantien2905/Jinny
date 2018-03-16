@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PRChangePassWordViewController: UIViewController {
+class PRChangePassWordViewController: BaseViewController {
 
     @IBOutlet weak var tfCurrentPassword: UITextField!
     @IBOutlet weak var tfNewPassword: UITextField!
@@ -36,8 +36,8 @@ class PRChangePassWordViewController: UIViewController {
         tfNewPassword.isSecureTextEntry = true
         tfCurrentPassword.isSecureTextEntry = true
         btnChange.layer.cornerRadius = 2.5
-//        super.setTitle(title: "CHANGE PASSWORD", textColor: .black, backgroundColor: .white)
-//        super.addBackButton()
+        super.setTitle(title: "CHANGE PASSWORD", textColor: .black, backgroundColor: .white)
+        super.addBackButton()
     }
     
     func bindViewModel() {

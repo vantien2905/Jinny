@@ -37,19 +37,15 @@ final class ForgotPasswordViewModel {
         }).disposed(by: disposeBag)
     }
     
-    
     func callAPIForgotPassword() {
         guard let email = self.email.value else { return }
-//         _ = apiForgotPassword?.forgotPassword(email: email).asObservable().subscribe({ message in
-//            if message.element?.isSuccess ==  true {
-//                self.popupView.showPopUp(message: ContantMessages.Login.successResetPassword)
-//                self.email.value = ""
-//            } else {
-//                let errorMessage = message.element?.message ?? ""
-//                self.popupView.showPopUp(message: errorMessage)
-//            }
-//        })
+        Provider.shared.authenticationService.forgotPassword(email: email)
+        .subscribe(onNext: { [weak self] (user) in
+            guard let strongSelf = self else { return }
+            strongSelf.popupView.showPopUp(message: ContantMessages.Login.successResetPassword)
+        }, onError: { (error) in
+            print(error)
+        }).disposed(by: disposeBag)
     }
-    
-   
+
 }
