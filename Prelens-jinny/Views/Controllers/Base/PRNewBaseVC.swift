@@ -10,7 +10,7 @@ import UIKit
 
 class PRNewBaseVC: UIViewController {
     
-    @IBOutlet weak var vDetail: UIView!
+    @IBOutlet weak var vContainer: UIView!
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var vNavigation: UIView!
@@ -22,7 +22,7 @@ class PRNewBaseVC: UIViewController {
     @IBOutlet weak var vTabbar: PRTabbarCustom!
     
     @IBOutlet weak var lcsSideMenu: NSLayoutConstraint!
-    @IBOutlet weak var vsSideMenu: UIView!
+    @IBOutlet weak var vSideMenu: UIView!
     @IBOutlet weak var vCloseTap: UIView!
     
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
@@ -32,17 +32,17 @@ class PRNewBaseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        vTabbar.buttonTappedDelegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vTabbar.buttonTappedDelegate = self
-        
         setUpView()
         addSubView()
     }
     
     func setUpView() {
+        
         vNavigation.backgroundColor = PRColor.mainAppColor
         lcsNavigationHeight.constant = (60/667)*(UIScreen.main.bounds.height)
         lbTitle.text = "JINNY"
@@ -51,9 +51,10 @@ class PRNewBaseVC: UIViewController {
         vTabbar.vPromotions.setTitle(title: "Promotions")
         vTabbar.vMore.setTitle(title: "More")
         
-        vNavigation.backgroundColor = PRColor.mainAppColor
         btnLeft.isHidden = true
+        vCloseTap.isHidden = true
         
+        //Setup the tapped Button in first time
         vTabbar.setIndexSelected(index: 0)
     }
     
@@ -72,12 +73,14 @@ class PRNewBaseVC: UIViewController {
     func addSubView() {
         //Membership
         self.addChildViewController(membershipVC)
-        membershipVC.view.frame = vDetail.bounds
-        self.vDetail.addSubview(membershipVC.view)
+        membershipVC.view.frame = vContainer.bounds
+        self.vContainer.addSubview(membershipVC.view)
         
         //SideMenu
-        sideMenuVC.view.frame = vsSideMenu.bounds
-        self.vsSideMenu.addSubview(sideMenuVC.view)
+        self.addChildViewController(sideMenuVC)
+        sideMenuVC.view.frame = vSideMenu.bounds
+        self.vSideMenu.addSubview(sideMenuVC.view)
+        sideMenuVC.view.fillSuperview()
     }
     
     @IBAction func handleTap(_ sender: Any) {
@@ -86,7 +89,6 @@ class PRNewBaseVC: UIViewController {
         sideMenuTrigger = !sideMenuTrigger
         vCloseTap.isHidden = true
     }
-    
 }
 
 //MARK: Button Action

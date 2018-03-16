@@ -59,7 +59,8 @@ class PRSideMenuVC: UIViewController {
 //MARK: Button Action
 extension PRSideMenuVC {
     @IBAction func editProfileTapped() {
-        
+        let vc = MembershipDetailVC.initControllerFromNib()
+        push(controller: vc)
     }
     
     @IBAction func settingTapped() {
@@ -75,7 +76,9 @@ extension PRSideMenuVC {
     }
     
     @IBAction func logoutTapped() {
-        
+        KeychainManager.shared.deleteAllSavedData()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.goToLogin()
     }
 }
 

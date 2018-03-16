@@ -47,7 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func goToMainApp() {
-        window?.rootViewController = PRTabbarMainViewController()
+//        window?.rootViewController = PRTabbarMainViewController()
+        let vc  = UINavigationController(rootViewController:PRNewBaseVC())
+        window?.rootViewController = vc
         
         //        apiNotification.asObservable().subscribe(onNext: { [weak self] unreadNotification in
         //            guard let _unreadNotification = unreadNotification else { return }

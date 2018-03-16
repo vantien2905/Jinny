@@ -23,26 +23,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7G-Ih-IWA" customClass="PRButtonTabbar" customModule="Prelens_jinny" customModuleProvider="target">
-                    <rect key="frame" x="157" y="0.0" width="60" height="50"/>
+                    <rect key="frame" x="149.5" y="0.0" width="75" height="50"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="rQZ-B1-lU5"/>
-                        <constraint firstAttribute="width" constant="60" id="w8e-FK-e3b"/>
+                        <constraint firstAttribute="width" constant="75" id="w8e-FK-e3b"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFy-rO-aFV" customClass="PRButtonTabbar" customModule="Prelens_jinny" customModuleProvider="target">
-                    <rect key="frame" x="22" y="0.0" width="60" height="50"/>
+                    <rect key="frame" x="22" y="0.0" width="75" height="50"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="WeS-0h-G9m"/>
-                        <constraint firstAttribute="width" constant="60" id="ujo-DT-ODa"/>
+                        <constraint firstAttribute="width" constant="75" id="ujo-DT-ODa"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-Lw-Kvz" customClass="PRButtonTabbar" customModule="Prelens_jinny" customModuleProvider="target">
-                    <rect key="frame" x="293" y="0.0" width="60" height="50"/>
+                    <rect key="frame" x="278" y="0.0" width="75" height="50"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="3UL-fz-289"/>
+                        <constraint firstAttribute="width" constant="75" id="3UL-fz-289"/>
                         <constraint firstAttribute="height" constant="50" id="lKs-qB-eUx"/>
                     </constraints>
                 </view>
