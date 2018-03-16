@@ -15,9 +15,10 @@ class MembershipDetailVC: BaseViewController {
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var imgBarCode: UIImageView!
     @IBOutlet weak var lbNumberCode: UILabel!
-    @IBOutlet weak var imgRelated: UIImageView!
+    @IBOutlet weak var cvPromotion: UICollectionView!
     let disposeBag = DisposeBag()
-    let viewModel = MembershipDetailViewModel()
+    
+    var viewModel: MembershipDetailViewModelProtocol!
     
     var membershipDetail = Member() {
         didSet {
@@ -25,28 +26,39 @@ class MembershipDetailVC: BaseViewController {
         }
     }
     
+    var listPromotion: Variable<[UIImage]> = Variable<[UIImage]>( [PRImage.imgStarOn, PRImage.imgStarOn, PRImage.imgStarOn, PRImage.imgStarOn, PRImage.imgStarOn])
+    
     var isStarTapped = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         imgLogo.contentMode = .scaleAspectFill
         imgBarCode.contentMode = .scaleAspectFill
-        imgRelated.contentMode = .scaleAspectFill
         imgBarCode.layer.masksToBounds = true
-        imgRelated.layer.masksToBounds = true
         imgLogo.layer.masksToBounds = true
+        
+        configureCollectionView()
         setNavigation()
         bindData()
         setData()
         self.delegate = self
     }
     
-    class func configureViewController(id: Int?) -> UIViewController {
+    func configureCollectionView() {
+        cvPromotion.register(UINib(nibName: Cell.membershipDetail, bundle: nil), forCellWithReuseIdentifier: Cell.membershipDetail)
+        cvPromotion.showsHorizontalScrollIndicator = true
+        cvPromotion.isPagingEnabled = true
+        cvPromotion.delegate = self
+        cvPromotion.dataSource = self
+    }
+    
+    class func configureViewController(id: Int) -> UIViewController {
         let vc = MembershipDetailVC.initControllerFromNib() as! MembershipDetailVC
-        if let _id = id {
-            vc.viewModel.inputs.idMembership.value = _id
-            
+
+        var viewModel: MembershipDetailViewModelProtocol {
+            return MembershipDetailViewModel(idMember: id)
         }
+        vc.viewModel = viewModel
         return vc
     }
     
@@ -57,7 +69,12 @@ class MembershipDetailVC: BaseViewController {
     }
     
     func bindData() {
-        viewModel.outputs.membership.asObservable().subscribe(onNext: { (member) in
+        
+//        listPromotion.asObservable().bind(to: cvPromotion.rx.items) {table, _, image in
+//            let cell = table.de
+//        }
+        
+        viewModel.membership.asObservable().subscribe(onNext: { (member) in
             if let _member = member {
                 self.membershipDetail = _member
             }
@@ -80,10 +97,6 @@ class MembershipDetailVC: BaseViewController {
                     let url = URL(string: _urlMedium)
                     imgBarCode.sd_setImage(with: url, placeholderImage: nil)
                 }
-                if let _urlOrigin = _url.original {
-                    let url = URL(string: _urlOrigin)
-                    imgRelated.sd_setImage(with: url, placeholderImage: nil)
-                }
             }
         }
         
@@ -100,6 +113,22 @@ extension MembershipDetailVC: BaseViewControllerDelegate {
     func starBookmarkTapped() {
         isStarTapped = !isStarTapped
         isStarTapped ? addStarButtonOn() : addStarButtonOff()
-        viewModel.inputs.isBookmark.value = true
+//        viewModel.inputs.isBookmark.value = true
+    }
+}
+
+extension MembershipDetailVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.membershipDetail, for: indexPath) as! MembershipDetailCell
+        cell.imgPromotion.image = listPromotion.value[indexPath.item]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
 }

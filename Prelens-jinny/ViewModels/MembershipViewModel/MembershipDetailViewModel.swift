@@ -7,36 +7,36 @@
 //
 
 import RxSwift
+import RxCocoa
 
-class MembershipDetailViewModel {
+protocol MembershipDetailViewModelProtocol {
+    var idMembership: Variable<Int> { get }
+    var isBookmark: Variable<Bool>  { get }
+    var membership: Variable<Member?> { get }
+    var isBookmarkSucess: Variable<Bool> { get }
+}
+
+class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
+    var idMembership: Variable<Int> = Variable<Int>(0)
+    var isBookmark: Variable<Bool> = Variable<Bool> (false)
+    var membership: Variable<Member?> = Variable<Member?>(nil)
+    var isBookmarkSucess: Variable<Bool> = Variable<Bool> (false)
     
     let disposeBag = DisposeBag()
-    class MembershipDetailViewModelInput {
-        var idMembership: Variable<Int> = Variable<Int>(0)
-        var isBookmark: Variable<Bool> = Variable<Bool> (false)
-    }
-    
-    class MembershipDetailViewModelOutput {
-        var membership: Variable<Member?> = Variable<Member?>(nil)
-        var isBookmarkSucess: Variable<Bool> = Variable<Bool> (false)
-    }
-    
-    var inputs = MembershipDetailViewModelInput()
-    var outputs = MembershipDetailViewModelOutput()
-    
-    init() {
-//        inputs.idMembership.asObservable().subscribe(onNext: { id in
-//            self.apiService.getMembershipDetail(id: id).asObservable().subscribe(onNext: { (detail) in
-//                self.outputs.membership.value = detail.data
-//            }).disposed(by: self.disposeBag)
-//        }).disposed(by: disposeBag)
-//        
-//        inputs.isBookmark.asObservable().subscribe(onNext: { (_) in
-//            self.apiService.addBookMarkMembership(id: self.inputs.idMembership.value).asObservable().subscribe(onNext: { (result) in
-//                
-//            }).disposed(by: self.disposeBag)
-//        }).disposed(by: disposeBag)
+
+    init(idMember: Int) {
+        self.idMembership.value = idMember
+        
+        idMembership.asObservable().subscribe(onNext: { [weak self] idMember in
+            self?.getDetailMembership(idMember: idMember)
+        }).disposed(by: disposeBag)
+        
         
     }
-
+    
+    func getDetailMembership(idMember: Int) {
+        Provider.shared.memberShipService.getDetailMembership(idMember: idMember).subscribe(onNext: { [weak self] (membership) in
+            self?.membership.value = membership
+            }).disposed(by: disposeBag)
+    }
 }
