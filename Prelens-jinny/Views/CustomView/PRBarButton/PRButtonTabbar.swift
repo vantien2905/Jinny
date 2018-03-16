@@ -27,7 +27,7 @@ class PRButtonTabbar: PRBaseViewXib {
     
     weak var tabbarButtonDelegate: PRTabbarButtonDelegate?
     
-    func setTitle(count: Int) {
+    func setNotificationCounter(count: Int) {
         if count == 0 {
             self.lbCounter.isHidden = true
         } else {
@@ -36,13 +36,17 @@ class PRButtonTabbar: PRBaseViewXib {
         }
     }
     
+    func setTitle(title: String) {
+        lbTitle.text = title
+    }
+    
     func setIcon(image: UIImage) {
         self.imvIcon.contentMode = .scaleAspectFit
         self.imvIcon.image = image
     }
     
     func setTitleAndIcon(count: Int, image: UIImage) {
-        setTitle(count: count)
+        setNotificationCounter(count: count)
         setIcon(image: image)
     }
 }
