@@ -52,7 +52,6 @@
 		B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */; };
 		B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765ECB52057D89E0095B443 /* KeychainManager.swift */; };
 		B788664D205A043800096F27 /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788664C205A043800096F27 /* Membership.swift */; };
-		B788664F205A13E900096F27 /* APIMembershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788664E205A13E900096F27 /* APIMembershipService.swift */; };
 		B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886651205A154700096F27 /* MembershipViewModel.swift */; };
 		B7886655205A1BDB00096F27 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886654205A1BDB00096F27 /* Member.swift */; };
 		B7886657205A1C1600096F27 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886656205A1C1600096F27 /* Merchant.swift */; };
@@ -92,9 +91,6 @@
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
-		BC46C00E2056D9B5004C1922 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC46C00D2056D9B5004C1922 /* API.swift */; };
-		BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */; };
-		BC4F95DB20566B6D005D281B /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */; };
 		BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */; };
 		BC6E9DB9205A4AB100C5DF01 /* PRNewBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */; };
 		BC6E9DBA205A4AB100C5DF01 /* PRNewBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */; };
@@ -131,12 +127,6 @@
 		BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961420563012004C1985 /* PRAddManualViewController.xib */; };
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
-		BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220732053E92600EEC31A /* APIEndpoint.swift */; };
-		BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220752053E92600EEC31A /* BaseResponse.swift */; };
-		BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220762053E92600EEC31A /* ArrayResponse.swift */; };
-		BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220772053E92600EEC31A /* SingleResponse.swift */; };
-		BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2207A2053E92600EEC31A /* APIBaseService.swift */; };
-		BCE3495720563F6600B8C440 /* TestingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495620563F6600B8C440 /* TestingService.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
 		CB6385249FFB0A0AA9621554 /* Pods_Prelens_jinnyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */; };
@@ -184,7 +174,6 @@
 		B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyMembershipCell.xib; sourceTree = "<group>"; };
 		B765ECB52057D89E0095B443 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		B788664C205A043800096F27 /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
-		B788664E205A13E900096F27 /* APIMembershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMembershipService.swift; sourceTree = "<group>"; };
 		B7886651205A154700096F27 /* MembershipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewModel.swift; sourceTree = "<group>"; };
 		B7886654205A1BDB00096F27 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		B7886656205A1C1600096F27 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
@@ -223,8 +212,6 @@
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		BC46C00D2056D9B5004C1922 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthenticationService.swift; sourceTree = "<group>"; };
 		BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseViewXib.swift; sourceTree = "<group>"; };
 		BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRNewBaseVC.swift; sourceTree = "<group>"; };
 		BC6E9DB8205A4AB100C5DF01 /* PRNewBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRNewBaseVC.xib; sourceTree = "<group>"; };
@@ -259,12 +246,6 @@
 		BCBC961420563012004C1985 /* PRAddManualViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddManualViewController.xib; sourceTree = "<group>"; };
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		BCD220732053E92600EEC31A /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
-		BCD220752053E92600EEC31A /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
-		BCD220762053E92600EEC31A /* ArrayResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayResponse.swift; sourceTree = "<group>"; };
-		BCD220772053E92600EEC31A /* SingleResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleResponse.swift; sourceTree = "<group>"; };
-		BCD2207A2053E92600EEC31A /* APIBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBaseService.swift; sourceTree = "<group>"; };
-		BCE3495620563F6600B8C440 /* TestingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingService.swift; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.release.xcconfig"; sourceTree = "<group>"; };
@@ -673,33 +654,8 @@
 		BCBC95B020562839004C1985 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BCBC95B12056287A004C1985 /* APIResponse */,
-				BCBC95B22056287A004C1985 /* APIServices */,
-				BCD220732053E92600EEC31A /* APIEndpoint.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		BCBC95B12056287A004C1985 /* APIResponse */ = {
-			isa = PBXGroup;
-			children = (
-				BCD220752053E92600EEC31A /* BaseResponse.swift */,
-				BCD220762053E92600EEC31A /* ArrayResponse.swift */,
-				BCD220772053E92600EEC31A /* SingleResponse.swift */,
-			);
-			path = APIResponse;
-			sourceTree = "<group>";
-		};
-		BCBC95B22056287A004C1985 /* APIServices */ = {
-			isa = PBXGroup;
-			children = (
-				BC46C00D2056D9B5004C1922 /* API.swift */,
-				BCD2207A2053E92600EEC31A /* APIBaseService.swift */,
-				BC4F95D920566B6D005D281B /* APIAuthenticationService.swift */,
-				BCE3495620563F6600B8C440 /* TestingService.swift */,
-				B788664E205A13E900096F27 /* APIMembershipService.swift */,
-			);
-			path = APIServices;
 			sourceTree = "<group>";
 		};
 		BCBC95E020562BB8004C1985 /* Login */ = {
@@ -1107,35 +1063,28 @@
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
-				BCD2207F2053E92700EEC31A /* APIEndpoint.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
-				BCD220802053E92700EEC31A /* BaseResponse.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
-				BCD220822053E92700EEC31A /* SingleResponse.swift in Sources */,
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
 				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
 				B7B1BC732058CFF60042B3D4 /* BaseViewController.swift in Sources */,
-				B788664F205A13E900096F27 /* APIMembershipService.swift in Sources */,
 				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
 				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
 				B788665B205A1C5800096F27 /* Url.swift in Sources */,
-				BCD220852053E92700EEC31A /* APIBaseService.swift in Sources */,
 				B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */,
 				BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				B7886659205A1C3800096F27 /* Logo.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
-				BCE3495720563F6600B8C440 /* TestingService.swift in Sources */,
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
-				BC4F95DA20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
@@ -1143,11 +1092,9 @@
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
 				B7886657205A1C1600096F27 /* Merchant.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
-				BC46C00E2056D9B5004C1922 /* API.swift in Sources */,
 				BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
 				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
-				BCD220812053E92700EEC31A /* ArrayResponse.swift in Sources */,
 				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
@@ -1186,7 +1133,6 @@
 				BC6E9DC0205A529800C5DF01 /* PRTabbarCustom.swift in Sources */,
 				765087872057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC770A7C204CEE5D0052A285 /* Prelens_jinnyTests.swift in Sources */,
-				BC4F95DB20566B6D005D281B /* APIAuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
