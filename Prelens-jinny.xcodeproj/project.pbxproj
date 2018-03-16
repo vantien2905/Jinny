@@ -50,6 +50,7 @@
 		B738627A205913CD00C7004D /* MembershipDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailVC.xib */; };
 		B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */; };
 		B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */; };
+		B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */; };
 		B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765ECB52057D89E0095B443 /* KeychainManager.swift */; };
 		B788664D205A043800096F27 /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788664C205A043800096F27 /* Membership.swift */; };
 		B788664F205A13E900096F27 /* APIMembershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788664E205A13E900096F27 /* APIMembershipService.swift */; };
@@ -173,6 +174,7 @@
 		B7386278205913CD00C7004D /* MembershipDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailVC.xib; sourceTree = "<group>"; };
 		B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMembershipCell.swift; sourceTree = "<group>"; };
 		B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyMembershipCell.xib; sourceTree = "<group>"; };
+		B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailViewModel.swift; sourceTree = "<group>"; };
 		B765ECB52057D89E0095B443 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		B788664C205A043800096F27 /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		B788664E205A13E900096F27 /* APIMembershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMembershipService.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				B7886651205A154700096F27 /* MembershipViewModel.swift */,
+				B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */,
 			);
 			path = MembershipViewModel;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				BC770A61204CEE5D0052A285 /* Resources */,
 				EC8069F93B495D536F6A3A87 /* [CP] Embed Pods Frameworks */,
 				9F174E9888A3CAE4E009E496 /* [CP] Copy Pods Resources */,
+				B75C4179205A705900E4A77F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1000,6 +1004,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B75C4179205A705900E4A77F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\necho \"swiftlint\"\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		D63CB5A45ED37DFED26B1FEF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1120,6 +1137,7 @@
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
+				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,

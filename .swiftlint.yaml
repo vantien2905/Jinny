@@ -1,0 +1,15 @@
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - trailing_whitespace
+  - force_cast
+  # - shorthand_operator
+  # - identifier_name
+  # - cyclomatic_complexity
+  # - function_body_length
+  # - colon
+  # - multiple_closures_with_trailing_closure
+
+opt_in_rules: 
+  
+excluded:
+  - Pods

@@ -10,7 +10,7 @@ import ObjectMapper
 
 class Member: NSObject, Mappable {
     
-    var id: String?
+    var id: Int = 1
     var merchant: Merchant?
     var code: String?
     var addedDate: String?

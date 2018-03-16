@@ -19,4 +19,13 @@ class APIMembershipService: APIBaseService {
         return execute(requestInfo, responseType: SingleResponse<Membership>.self)
     }
     
+    func getMembershipDetail(id: Int) -> Observable<SingleResponse<Member>> {
+        let _fullPath = baseURL.appending(APIEndpoint.Membership.getMembershipDetail) + "\(id)"
+//        let params = ["id": id]
+        
+        let requestInfo = RequestInfo(headers: header, fullPath: _fullPath, params: [:], method: .get)
+        
+        return execute(requestInfo, responseType: SingleResponse<Member>.self)
+    }
+    
 }
