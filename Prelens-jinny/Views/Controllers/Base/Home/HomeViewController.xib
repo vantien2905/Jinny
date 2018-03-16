@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRNewBaseVC" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
                 <outlet property="btnLeft" destination="fGk-uo-ozt" id="KWK-Gg-GfH"/>
                 <outlet property="btnRight" destination="ugT-mb-A15" id="ahI-UP-PKr"/>
