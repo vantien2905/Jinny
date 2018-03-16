@@ -84,7 +84,8 @@ final class SignInViewModel {
     }
     
     func callAPISignIn() {
-        Provider.shared.authenticationService.login(email: self.email.value!, password: self.password.value!).subscribe(onNext: { [weak self] (user) in
+        guard let _email = self.email.value, let _password = self.password.value else {return}
+        Provider.shared.authenticationService.login(email: _email, password: _password).subscribe(onNext: { [weak self] (user) in
             self?.userLogin.value = user
         }).disposed(by: disposeBag)
     }

@@ -12,6 +12,8 @@ class PRSideMenuVC: UIViewController {
 
     //MARK: Properties
     
+    @IBOutlet weak var vAccount: UIView!
+    
     @IBOutlet weak var lbAccount: UILabel!
     @IBOutlet weak var lbEmail: UILabel!
     
@@ -33,7 +35,7 @@ class PRSideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +45,8 @@ class PRSideMenuVC: UIViewController {
     }
     
     func setUpView() {
+        vAccount.backgroundColor = PRColor.mainAppColor
+        
         lbAccount.font = PRFont.sideBarMenuFont
         lbSetting.font = PRFont.sideBarMenuFont
         lbTermsAndConditions.font = PRFont.sideBarMenuFont

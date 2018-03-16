@@ -27,11 +27,9 @@ final class ChangePasswordViewModel {
     public var newPassword          : Variable<String?>
     public var isValidInput         : Variable<Bool>
     public var btnChangeTapped      : PublishSubject<Void>
-//    var apiChangePassword           : APIUserService?
     var popupView                   :PopUpView = PopUpView()
     
     init() {
-//        apiChangePassword           = APIUserService()
         self.currentPassword        = Variable<String?>(nil)
         self.newPassword            = Variable<String?>(nil)
         self.btnChangeTapped        = PublishSubject<Void>()

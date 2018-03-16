@@ -15,7 +15,7 @@ public extension UIViewController {
             assert(!isNib, "invalid nib file")
             return UIViewController()
         }
-        
+
         return self.init(nibName: self.className, bundle: nil)
     }
 }
