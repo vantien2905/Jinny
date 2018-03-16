@@ -11,6 +11,7 @@ import Alamofire
 
 protocol MembershipServiceProtocol {
     func getListAllMembership() -> Observable<Membership?>
+    func getDetailMembership(idMember: Int) -> Observable<Member?>
 }
 
 class MembershipService: MembershipServiceProtocol {
@@ -22,5 +23,10 @@ class MembershipService: MembershipServiceProtocol {
     
     func getListAllMembership() -> Observable<Membership?> {
         return network.rx_Object(url: APIEndpoint.Membership.getListAllMembership, method: .get, parameters: [:])
+    }
+    
+    func getDetailMembership(idMember: Int) -> Observable<Member?> {
+        let url = APIEndpoint.Membership.getDetailMembership + "\(idMember)"
+        return network.rx_Object(url: url, method: .get, parameters: [:])
     }
 }

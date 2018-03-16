@@ -19,7 +19,6 @@ final class SignInViewModel {
     private var userLogin = Variable<PRUser?>(nil)
     public var btnSignInTapped: PublishSubject<Void>
     public var isLoginSuccess:PublishSubject<Bool>
-     var popupView: PopUpView = PopUpView()
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()){ email,password in email!.count > 0 && password!.count > 0
         }
@@ -41,15 +40,12 @@ final class SignInViewModel {
         
         self.btnSignInTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
-            guard let pass = strongSelf.password.value else {
-               
-//                PopUpHelper.shared.showError(title: ConstantMessage.Login.errorTitlePassword, message: ConstantMessage.Login.errorContentPassword)
-                return
-            }
+            guard let pass = strongSelf.password.value else { return }
+            
             if pass.isValidPassword() {
                 strongSelf.callAPISignIn()
             } else {
-                self?.popupView.showPopUp(message: ContantMessages.Login.errorContentPassword)
+                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
             }
         }).disposed(by: disposeBag)
         
@@ -84,7 +80,8 @@ final class SignInViewModel {
     }
     
     func callAPISignIn() {
-        Provider.shared.authenticationService.login(email: self.email.value!, password: self.password.value!).subscribe(onNext: { [weak self] (user) in
+        guard let _email = self.email.value, let _password = self.password.value else {return}
+        Provider.shared.authenticationService.login(email: _email, password: _password).subscribe(onNext: { [weak self] (user) in
             self?.userLogin.value = user
         }).disposed(by: disposeBag)
     }
