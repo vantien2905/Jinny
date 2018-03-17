@@ -33,6 +33,7 @@ class MenuView: UIView{
     var listItem = [AnyObject]() {
         didSet {
             collectionView.reloadData()
+            setupScrollBar(item: CGFloat(listItem.count))
         }
     }
     
@@ -43,7 +44,6 @@ class MenuView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCollectionView()
-        setupScrollBar()
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -58,13 +58,13 @@ class MenuView: UIView{
         collectionView.anchor(self.topAnchor, left: self.leftAnchor,bottom: self.bottomAnchor,right: self.rightAnchor, topConstant: 0, leftConstant: 0 ,bottomConstant:0 ,rightConstant:0)
     }
     
-    func setupScrollBar(){
+    func setupScrollBar(item: CGFloat){
         vScrollBar.translatesAutoresizingMaskIntoConstraints = false
         addSubview(vScrollBar)
         horizontalBarLeftAnchorConstraint = vScrollBar.leftAnchor.constraint(equalTo: self.leftAnchor)
         horizontalBarLeftAnchorConstraint?.isActive = true
         vScrollBar.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        vScrollBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/2).isActive = true
+        vScrollBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/item).isActive = true
         vScrollBar.heightAnchor.constraint(equalToConstant: 4).isActive = true
     }
     
@@ -106,6 +106,7 @@ class MenuView: UIView{
     func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem])
     {
         self.listItem = listItem
+        
     }
 }
 
@@ -123,7 +124,7 @@ UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width/CGFloat(listItem.count), height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -137,7 +138,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         let lb = UILabel()
         lb.text = "SIGN UP"
         lb.textColor = UIColor.gray
-        lb.font =  UIFont(name: "OstrichSans-Heavy", size: 30)
+        lb.font =  UIFont(name: "OstrichSans-Black", size: 17.5)
         lb.textAlignment = .center
         
         return lb
