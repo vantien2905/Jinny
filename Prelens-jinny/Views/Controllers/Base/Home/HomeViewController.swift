@@ -33,12 +33,14 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         vTabbar.buttonTappedDelegate = self
+        
+        setUpView()
+        addSubView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
-        addSubView()
+   
     }
     
     func setUpView() {
@@ -55,6 +57,8 @@ class HomeViewController: UIViewController {
         
         //Setup the tapped Button in first time
         vTabbar.setIndexSelected(index: 0)
+        
+        
     }
     
     func setTitle(title: String) {
@@ -68,6 +72,7 @@ class HomeViewController: UIViewController {
     func setRightButton(image: UIImage) {
         btnRight.imageView?.image = image
     }
+    
     
     func addSubView() {
         //Membership

@@ -28,17 +28,20 @@ class PRMemberShipVC: BaseViewController {
         setTitle(title: "Jinny")
         confireCollectionView()
         cvMembership.showsHorizontalScrollIndicator = false
-        bindData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
+        bindData()
+        viewModel.getListMembership()
     }
-    
+
     func bindData() {
         viewModel.outputs.listMembership.asObservable().subscribe(onNext: { member in
             if let _member = member {
                 self.listMember = _member
+                self.cvMembership.reloadData()
             }
             
         }).disposed(by: disposeBag)
@@ -57,7 +60,7 @@ class PRMemberShipVC: BaseViewController {
         cvMembership.delegate = self
         cvMembership.dataSource = self
         cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 0, right: 15)
-       
+        
     }
     
 }
@@ -76,7 +79,7 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
                 return cell
             } else {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.memberShip, for: indexPath) as! MembershipCell
-
+                
                 cell.membership = listMember.startedMemberships[indexPath.item]
                 return cell
             }
@@ -152,7 +155,7 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         } else {
             return CGSize(width: collectionView.frame.width, height: 50)
         }
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -161,9 +164,9 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         } else {
             return CGSize(width: 0, height: 0)
         }
-
+        
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var reusableView : UICollectionReusableView? = nil
@@ -180,7 +183,7 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
                     headerView.vSort.isHidden = true
                     headerView.lbOther.text = "Other memberships"
                 } else {
-                   headerView.vSort.isHidden = false
+                    headerView.vSort.isHidden = false
                     headerView.lbOther.text = "Other"
                 }
                 reusableView = headerView
