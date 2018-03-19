@@ -20,6 +20,7 @@
                 <outlet property="btnLeft" destination="fGk-uo-ozt" id="KWK-Gg-GfH"/>
                 <outlet property="btnRight" destination="ugT-mb-A15" id="ahI-UP-PKr"/>
                 <outlet property="lbTitle" destination="l2z-L0-Tlz" id="Yyf-9t-EOp"/>
+                <outlet property="lcsHeightSideMenu" destination="Mr9-zY-eS9" id="FW3-Uo-cI9"/>
                 <outlet property="lcsNavigationHeight" destination="Aux-Mn-OVQ" id="mQ5-lB-k9R"/>
                 <outlet property="lcsSideMenu" destination="XYK-pQ-btd" id="r3o-HB-2Yy"/>
                 <outlet property="vCloseTap" destination="d3u-Th-kyH" id="tdN-wA-z5x"/>

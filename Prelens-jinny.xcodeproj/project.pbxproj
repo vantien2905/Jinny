@@ -527,7 +527,6 @@
 			isa = PBXGroup;
 			children = (
 				B7B1BC722058CFF60042B3D4 /* BaseViewController.swift */,
-				BC6F3368205BC6DB00CDAD85 /* Home */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -820,8 +819,9 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				76DC88E7205F5A4600AD87F3 /* Promotion */,
 				B7B1BC712058CFD60042B3D4 /* Base */,
+				BC6F3368205BC6DB00CDAD85 /* Home */,
+				76DC88E7205F5A4600AD87F3 /* Promotion */,
 				BCBC960D20563012004C1985 /* Membership */,
 				BCBC960420562D26004C1985 /* Redeem */,
 				BCBC95E020562BB8004C1985 /* Login */,
