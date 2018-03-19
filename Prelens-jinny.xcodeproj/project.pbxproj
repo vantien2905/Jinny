@@ -35,6 +35,10 @@
 		76DC8900205F6B5600AD87F3 /* PromotionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88FE205F6B5600AD87F3 /* PromotionHeaderCell.xib */; };
 		76DC8904205F70C500AD87F3 /* PromotionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */; };
 		76DC8905205F70C500AD87F3 /* PromotionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8903205F70C500AD87F3 /* PromotionDetailViewController.xib */; };
+		76DC890D205F768400AD87F3 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC890B205F768400AD87F3 /* PromotionCell.swift */; };
+		76DC890E205F768400AD87F3 /* PromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC890C205F768400AD87F3 /* PromotionCell.xib */; };
+		76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */; };
+		76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
@@ -175,6 +179,10 @@
 		76DC88FE205F6B5600AD87F3 /* PromotionHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionHeaderCell.xib; sourceTree = "<group>"; };
 		76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewController.swift; sourceTree = "<group>"; };
 		76DC8903205F70C500AD87F3 /* PromotionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionDetailViewController.xib; sourceTree = "<group>"; };
+		76DC890B205F768400AD87F3 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
+		76DC890C205F768400AD87F3 /* PromotionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionCell.xib; sourceTree = "<group>"; };
+		76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPromotionCell.swift; sourceTree = "<group>"; };
+		76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPromotionCell.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
 		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
@@ -390,6 +398,9 @@
 		76DC88FB205F6AC100AD87F3 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
+				76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */,
+				76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */,
+				76DC8906205F763F00AD87F3 /* AllPromotionCell */,
 				76DC88FC205F6AC100AD87F3 /* HeaderCell */,
 			);
 			path = Promotion;
@@ -414,6 +425,15 @@
 				BC9A6153205F78430071EF4F /* FooterCell */,
 			);
 			path = PromotionDetail;
+			sourceTree = "<group>";
+		};
+		76DC8906205F763F00AD87F3 /* AllPromotionCell */ = {
+			isa = PBXGroup;
+			children = (
+				76DC890B205F768400AD87F3 /* PromotionCell.swift */,
+				76DC890C205F768400AD87F3 /* PromotionCell.xib */,
+			);
+			path = AllPromotionCell;
 			sourceTree = "<group>";
 		};
 		B73862612058FF1600C7004D /* SubView */ = {
@@ -1042,6 +1062,7 @@
 				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
 				76DC88F2205F602000AD87F3 /* AllPromotionViewController.xib in Resources */,
 				B7B1BC982058D7FA0042B3D4 /* OstrichSans-Light.otf in Resources */,
+				76DC890E205F768400AD87F3 /* PromotionCell.xib in Resources */,
 				76DC8905205F70C500AD87F3 /* PromotionDetailViewController.xib in Resources */,
 				B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */,
 				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
@@ -1078,6 +1099,7 @@
 				76DC88F6205F603A00AD87F3 /* StarredPromotionViewController.xib in Resources */,
 				76DC8900205F6B5600AD87F3 /* PromotionHeaderCell.xib in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
+				76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1223,6 +1245,7 @@
 				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
 				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
+				76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */,
 				76DC88FF205F6B5600AD87F3 /* PromotionHeaderCell.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
 				B7F32C64205BCEFF00090A0C /* CardViewController.swift in Sources */,
@@ -1260,6 +1283,7 @@
 				BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */,
 				BC9A6151205F77F00071EF4F /* PromotionDetailFooterCell.swift in Sources */,
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
+				76DC890D205F768400AD87F3 /* PromotionCell.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
 				B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */,

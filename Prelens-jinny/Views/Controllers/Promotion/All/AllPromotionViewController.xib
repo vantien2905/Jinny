@@ -31,14 +31,27 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ao-7m-HlL">
+                    <rect key="frame" x="305.5" y="606" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Cki-2v-LOl"/>
+                        <constraint firstAttribute="width" constant="50" id="a5F-Ct-7wd"/>
+                    </constraints>
+                    <state key="normal" image="add_new"/>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OGO-RE-ggV" secondAttribute="trailing" id="2CK-D9-l78"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1Ao-7m-HlL" secondAttribute="bottom" constant="11" id="5eU-DP-Mc0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OGO-RE-ggV" secondAttribute="bottom" id="FhZ-gw-Nzm"/>
                 <constraint firstItem="OGO-RE-ggV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tw2-EJ-03t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Ao-7m-HlL" secondAttribute="trailing" constant="19.5" id="xwa-V9-VAy"/>
                 <constraint firstItem="OGO-RE-ggV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zCv-ak-daZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="add_new" width="57" height="57"/>
+    </resources>
 </document>
