@@ -36,12 +36,12 @@ class HomeViewController: UIViewController {
         vTabbar.buttonTappedDelegate = self
         
         setUpView()
-       addSubView()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addSubView()
     }
     
     func setUpView() {
@@ -57,7 +57,7 @@ class HomeViewController: UIViewController {
         
         //Setup the tapped Button in first time
         vTabbar.setIndexSelected(index: 0)
- 
+        
     }
     
     func setTitle(title: String) {
@@ -72,22 +72,17 @@ class HomeViewController: UIViewController {
         btnRight.imageView?.image = image
     }
     
-    
     func addSubView() {
         //Membership
         self.addChildViewController(membershipVC)
         membershipVC.view.frame = vContainer.bounds
         self.vContainer.addSubview(membershipVC.view)
         
-
-        
         //SideMenu
         self.addChildViewController(sideMenuVC)
         sideMenuVC.view.frame = vSideMenu.bounds
         self.vSideMenu.addSubview(sideMenuVC.view)
         sideMenuVC.view.fillSuperview()
-        
-//        switchScreen(from: promotionVC, to: membershipVC)
     }
     
     func switchScreen(from VC1: UIViewController, to VC2: UIViewController) {
@@ -113,17 +108,19 @@ extension HomeViewController: PRTabbarCustomDelegate {
             
         case 1:
             
-            //Promotion
-            self.addChildViewController(promotionVC)
-            promotionVC.view.frame = vContainer.bounds
-            promotionVC.view.backgroundColor = .yellow
-            self.vContainer.addSubview(membershipVC.view)
+            if self.childViewControllers.contains(promotionVC) {
+            } else {
+                //Adding Promotion child view controller
+                self.addChildViewController(promotionVC)
+                promotionVC.view.frame = vContainer.bounds
+                promotionVC.view.backgroundColor = .yellow
+                self.vContainer.addSubview(membershipVC.view)
+            }
             
             switchScreen(from: membershipVC, to: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             
         case 2:
-            print("more")
             if sideMenuTrigger {
                 lcsSideMenu.constant = 0
                 UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded, completion: { (_) in
@@ -133,7 +130,7 @@ extension HomeViewController: PRTabbarCustomDelegate {
                     self.vCloseTap.alpha = 0.3
                 })
             }
-   
+            
         default:
             break
         }
