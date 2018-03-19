@@ -34,16 +34,14 @@ class AchivedPromotionViewController: UIViewController {
 }
 extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        if indexPath.section == 0 {
-            let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
-
+        switch indexPath.section {
+        case 0:
+             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
             return cell
-        } else if indexPath.section == 1 {
+        case 1:
             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath)
-
             return cell
-        } else {
+        default:
             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
             return cell
         }
@@ -54,23 +52,23 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section  == 1 {
-            return 1
-        } else {
+        switch section {
+        case 2:
             return 5
+        default:
+            return 1
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             return CGSize(width: collectionView.frame.width - 30, height: 70 )
-        } else if indexPath.section == 1 {
+        case 1:
             return CGSize(width: collectionView.frame.width - 30, height: 40 )
-        } else {
+        default:
             return CGSize(width: (collectionView.frame.width - 30), height:
-                (collectionView.frame.height / 2  ))
+                (collectionView.frame.height / 2))
         }
     }
 
@@ -83,6 +81,9 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        if indexPath.section == 2 {
+            let vc = PromotionDetailViewController.initControllerFromNib()
+            self.push(controller: vc, animated: true)
+        }
     }
 }

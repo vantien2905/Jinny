@@ -24,23 +24,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="353" height="61"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no vouchers yet, wait for promotion to come :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWc-9z-jhz">
-                        <rect key="frame" x="0.0" y="0.0" width="353" height="61"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no vouchers yet, wait for promotion to come :)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWc-9z-jhz">
+                        <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
                         <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="12.5"/>
                         <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfM-q9-d3f">
+                        <rect key="frame" x="0.0" y="60" width="353" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="f5Y-Te-o5E"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="hWc-9z-jhz" secondAttribute="bottom" id="3PQ-Eg-uTr"/>
-                <constraint firstItem="hWc-9z-jhz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AJ7-gB-oLk"/>
-                <constraint firstAttribute="trailing" secondItem="hWc-9z-jhz" secondAttribute="trailing" id="qs6-ns-aU0"/>
-                <constraint firstItem="hWc-9z-jhz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wtp-St-K04"/>
+                <constraint firstAttribute="trailing" secondItem="BfM-q9-d3f" secondAttribute="trailing" id="6kF-2F-WI3"/>
+                <constraint firstAttribute="bottom" secondItem="BfM-q9-d3f" secondAttribute="bottom" id="D9o-xi-HGA"/>
+                <constraint firstAttribute="trailing" secondItem="hWc-9z-jhz" secondAttribute="trailing" id="KDe-Oe-cmE"/>
+                <constraint firstItem="hWc-9z-jhz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fnd-ka-KS4"/>
+                <constraint firstItem="BfM-q9-d3f" firstAttribute="top" secondItem="hWc-9z-jhz" secondAttribute="bottom" constant="14" id="mKe-b7-WRp"/>
+                <constraint firstItem="hWc-9z-jhz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mwh-Uh-LiG"/>
+                <constraint firstItem="BfM-q9-d3f" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tEd-k5-OUN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="353" height="61"/>
-            <point key="canvasLocation" x="129.5" y="109.5"/>
+            <connections>
+                <outlet property="vLine" destination="BfM-q9-d3f" id="eur-4l-Bei"/>
+            </connections>
+            <point key="canvasLocation" x="-125.5" y="45.5"/>
         </collectionViewCell>
     </objects>
 </document>
