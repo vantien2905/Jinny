@@ -1,57 +1,54 @@
 //
-//  PRLoginViewController.swift
+//  PromotionViewController.swift
 //  Prelens-jinny
 //
-//  Created by vinova on 3/10/18.
+//  Created by vinova on 3/19/18.
 //  Copyright © 2018 Lamp. All rights reserved.
 //
 
 import UIKit
 
-class PRLoginViewController: BaseViewController {
-
+class PromotionViewController: UIViewController {
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    var currentIndex = 0 
-    
-    var controllers = [UIViewController]()
-    var parentNavigationController  : UINavigationController?
-    
-    let vcSignIn = PRSignInViewController.initControllerFromNib() as! PRSignInViewController
-    let vcSignUp = PRSignUpViewController.initControllerFromNib() as! PRSignUpViewController
-    let cellId = "CellId"
-    
     let vMenu:MenuView = {
         let view = MenuView()
         return view
     }()
     
+    var currentIndex = 0
+    var controllers = [UIViewController]()
+    
+     let vcAllPromotion = AllPromotionViewController.initControllerFromNib() as! AllPromotionViewController
+    let vcStarredPromotion = StarredPromotionViewController.initControllerFromNib() as! StarredPromotionViewController
+    let vcAchivedPromotion = AchivedPromotionViewController.initControllerFromNib() as! AchivedPromotionViewController
+    let cellId = "CellId"
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupView()
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
+
         let listItemMenu = [
-            MenuItem(title: "SIGN UP", isSelected: true),
-            MenuItem(title: "SIGN IN", isSelected: false)
+            MenuItem(title: "All", isSelected: true),
+            MenuItem(title: "Stared", isSelected: false),
+            MenuItem(title: "Archived", isSelected: false)
         ]
-        controllers = [ vcSignUp, vcSignIn ]
-        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu,textFont: nil)
+        controllers = [ vcAllPromotion, vcStarredPromotion, vcAchivedPromotion ]
+        
+        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu, textFont: UIFont(name: "SegoeUI-Semibold", size: 15.0)!)
+        
+        // Do any additional setup after loading the view.
     }
 
-   override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     private func setupView(){
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         configMenuView()
     }
     
@@ -60,16 +57,15 @@ class PRLoginViewController: BaseViewController {
         vMenu.delegate = self
         vMenu.fillSuperview()
     }
-    
     func configCollectionView(){
         cvMenuController.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         cvMenuController.dataSource = self
         cvMenuController.delegate = self
         cvMenuController.isPagingEnabled = true
     }
-    
 }
-extension PRLoginViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+extension PromotionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return controllers.count
     }
@@ -106,9 +102,11 @@ extension PRLoginViewController: UICollectionViewDataSource, UICollectionViewDel
         return 0
     }
 }
-extension PRLoginViewController: MenuBarDelegate {
+
+extension PromotionViewController: MenuBarDelegate {
     func itemMenuSelected(index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
         cvMenuController.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }
+

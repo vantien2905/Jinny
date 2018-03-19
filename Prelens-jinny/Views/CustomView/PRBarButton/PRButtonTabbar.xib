@@ -42,7 +42,7 @@
                     <rect key="frame" x="25" y="7" width="40" height="28"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="wW2-Ke-rG6"/>
-                        <constraint firstAttribute="height" constant="28" id="xwI-Eg-IIv"/>
+                        <constraint firstAttribute="height" priority="999" constant="28" id="xwI-Eg-IIv"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-S7-c2f">

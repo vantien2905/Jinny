@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionDetailViewController" customModule="Prelens_jinny" customModuleProvider="target">
+            <connections>
+                <outlet property="btnRedeem" destination="mm6-Ez-iyl" id="IWP-cl-GfH"/>
+                <outlet property="cvVoucherDetail" destination="NM5-oy-tNz" id="NKl-UY-xQ0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NM5-oy-tNz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xXw-nL-lGs">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zk-Yk-4as">
+                    <rect key="frame" x="0.0" y="609" width="375" height="58"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mm6-Ez-iyl">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                            <color key="backgroundColor" red="0.8901960784313725" green="0.074509803921568626" blue="0.047553502019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
+                            <state key="normal" title="Redeem">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="mm6-Ez-iyl" secondAttribute="bottom" id="3dD-bi-h2x"/>
+                        <constraint firstItem="mm6-Ez-iyl" firstAttribute="leading" secondItem="3Zk-Yk-4as" secondAttribute="leading" id="4J3-bv-XfK"/>
+                        <constraint firstItem="mm6-Ez-iyl" firstAttribute="top" secondItem="3Zk-Yk-4as" secondAttribute="top" id="BJi-Ry-qBU"/>
+                        <constraint firstAttribute="trailing" secondItem="mm6-Ez-iyl" secondAttribute="trailing" id="afX-TC-W7O"/>
+                        <constraint firstAttribute="height" constant="58" identifier="redeem detail voucher" id="fvX-1v-eBD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3Zk-Yk-4as" firstAttribute="top" secondItem="NM5-oy-tNz" secondAttribute="bottom" id="3vV-9x-qfO"/>
+                <constraint firstItem="NM5-oy-tNz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6ff-MV-vq8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Zk-Yk-4as" secondAttribute="trailing" id="UgI-LW-5Rq"/>
+                <constraint firstItem="3Zk-Yk-4as" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eZZ-dn-tLy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NM5-oy-tNz" secondAttribute="trailing" id="fbs-nc-UzY"/>
+                <constraint firstItem="NM5-oy-tNz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mYv-Jq-rSy"/>
+                <constraint firstItem="3Zk-Yk-4as" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="pgj-Yi-Qr8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="35.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

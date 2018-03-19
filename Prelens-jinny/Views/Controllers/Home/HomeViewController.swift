@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var vTabbar: PRTabbarCustom!
     
+    @IBOutlet weak var lcsHeightSideMenu: NSLayoutConstraint!
     @IBOutlet weak var lcsSideMenu: NSLayoutConstraint!
     @IBOutlet weak var vSideMenu: UIView!
     @IBOutlet weak var vCloseTap: UIView!
@@ -28,25 +29,26 @@ class HomeViewController: UIViewController {
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
     var sideMenuTrigger: Bool = true
     
+
     let membershipVC = MemberShipViewController.initControllerFromNib()
+
+    let promotionVC  = PromotionViewController.initControllerFromNib()
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         vTabbar.buttonTappedDelegate = self
-        
-        setUpView()
-        addSubView()
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        addSubView()
+        setUpView()
     }
     
     func setUpView() {
-        
         vNavigation.backgroundColor = PRColor.mainAppColor
-        lcsNavigationHeight.constant = (60/667)*(UIScreen.main.bounds.height)
+        lcsNavigationHeight.constant = 64 //(60/667)*(UIScreen.main.bounds.height)
         
         vTabbar.vMemberships.setTitle(title: "Memberships")
         vTabbar.vPromotions.setTitle(title: "Promotions")
@@ -58,7 +60,9 @@ class HomeViewController: UIViewController {
         //Setup the tapped Button in first time
         vTabbar.setIndexSelected(index: 0)
         
-        
+        //Setup the size of SideMenu
+        lcsSideMenu.constant = UIScreen.main.bounds.width * 2/3
+        lcsHeightSideMenu.constant = UIScreen.main.bounds.width * 2/3
     }
     
     func setTitle(title: String) {
@@ -73,7 +77,6 @@ class HomeViewController: UIViewController {
         btnRight.imageView?.image = image
     }
     
-    
     func addSubView() {
         //Membership
         self.addChildViewController(membershipVC)
@@ -87,8 +90,13 @@ class HomeViewController: UIViewController {
         sideMenuVC.view.fillSuperview()
     }
     
+    func switchScreen(from VC1: UIViewController, to VC2: UIViewController) {
+        self.transition(from: VC1, to: VC2, duration: 0, options: UIViewAnimationOptions.allowAnimatedContent,
+                        animations: self.view.layoutIfNeeded, completion: nil)
+    }
+    
     @IBAction func handleTap(_ sender: Any) {
-        lcsSideMenu.constant = 248
+        lcsSideMenu.constant = UIScreen.main.bounds.width * 2/3
         UIView.animate(withDuration: 0.2, animations: self.view.layoutIfNeeded, completion: nil)
         sideMenuTrigger = !sideMenuTrigger
         vCloseTap.isHidden = true
@@ -100,15 +108,23 @@ extension HomeViewController: PRTabbarCustomDelegate {
     func btnTapped(tag: Int) {
         switch tag {
         case 0:
-            print("0")
+            switchScreen(from: promotionVC, to: membershipVC)
             vTabbar.setIndexSelected(index: 0)
             
         case 1:
-            print("1")
+            if self.childViewControllers.contains(promotionVC) {
+            } else {
+                //Adding Promotion child view controller
+                self.addChildViewController(promotionVC)
+                promotionVC.view.frame = vContainer.bounds
+                promotionVC.view.backgroundColor = .yellow
+                self.vContainer.addSubview(membershipVC.view)
+            }
+            
+            switchScreen(from: membershipVC, to: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             
         case 2:
-            print("more")
             if sideMenuTrigger {
                 lcsSideMenu.constant = 0
                 UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded, completion: { (_) in
@@ -118,7 +134,7 @@ extension HomeViewController: PRTabbarCustomDelegate {
                     self.vCloseTap.alpha = 0.3
                 })
             }
-   
+            
         default:
             break
         }

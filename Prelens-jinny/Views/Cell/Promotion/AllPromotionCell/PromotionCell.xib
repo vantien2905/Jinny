@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionCell" customModule="Prelens_jinny" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromotionCell" customModule="Prelens_jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-k0-rnM">
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voucher_image" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-4z-JcZ">
+                                <rect key="frame" x="0.0" y="0.0" width="341" height="193"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-hk-gn6">
+                                <rect key="frame" x="0.0" y="256" width="341" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="amD-F7-aeQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-Zh-9HW">
+                                <rect key="frame" x="0.0" y="193" width="341" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5t-HD-IZ4">
+                                        <rect key="frame" x="0.0" y="11.5" width="107" height="20"/>
+                                        <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xs9-oT-ncK">
+                                        <rect key="frame" x="0.0" y="38" width="80" height="20"/>
+                                        <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
+                                        <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26th March 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAg-ux-xkt">
+                                        <rect key="frame" x="88" y="38" width="113.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-fX-nab">
+                                        <rect key="frame" x="294" y="11.5" width="47" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="5kQ-jx-pQD"/>
+                                            <constraint firstAttribute="height" constant="24" id="grs-nw-ZCK"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GAg-ux-xkt" firstAttribute="centerY" secondItem="xs9-oT-ncK" secondAttribute="centerY" id="6V3-2a-USx"/>
+                                    <constraint firstAttribute="trailing" secondItem="YgK-fX-nab" secondAttribute="trailing" id="7cv-9J-y9V"/>
+                                    <constraint firstItem="xs9-oT-ncK" firstAttribute="top" secondItem="o5t-HD-IZ4" secondAttribute="bottom" constant="6.5" id="Ied-ym-V3y"/>
+                                    <constraint firstItem="GAg-ux-xkt" firstAttribute="leading" secondItem="xs9-oT-ncK" secondAttribute="trailing" constant="8" id="Sg1-6w-gZH"/>
+                                    <constraint firstItem="o5t-HD-IZ4" firstAttribute="top" secondItem="FKN-Zh-9HW" secondAttribute="top" constant="11.5" id="aqj-xE-rkQ"/>
+                                    <constraint firstItem="o5t-HD-IZ4" firstAttribute="leading" secondItem="FKN-Zh-9HW" secondAttribute="leading" id="g6U-Cs-m2K"/>
+                                    <constraint firstItem="YgK-fX-nab" firstAttribute="top" secondItem="FKN-Zh-9HW" secondAttribute="top" constant="11.5" id="ppl-ej-3Jy"/>
+                                    <constraint firstItem="xs9-oT-ncK" firstAttribute="leading" secondItem="FKN-Zh-9HW" secondAttribute="leading" id="vFZ-eN-gNd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xe8-4z-JcZ" firstAttribute="height" secondItem="AvT-k0-rnM" secondAttribute="height" multiplier="3/4" id="1Xx-7K-CSy"/>
+                            <constraint firstItem="xe8-4z-JcZ" firstAttribute="top" secondItem="AvT-k0-rnM" secondAttribute="top" id="HOg-RN-hKt"/>
+                            <constraint firstItem="xe8-4z-JcZ" firstAttribute="leading" secondItem="AvT-k0-rnM" secondAttribute="leading" id="K7S-tb-eGX"/>
+                            <constraint firstItem="FKN-Zh-9HW" firstAttribute="leading" secondItem="AvT-k0-rnM" secondAttribute="leading" id="OyU-Yb-Wul"/>
+                            <constraint firstItem="FKN-Zh-9HW" firstAttribute="top" secondItem="xe8-4z-JcZ" secondAttribute="bottom" id="UkS-84-PZj"/>
+                            <constraint firstAttribute="trailing" secondItem="FKN-Zh-9HW" secondAttribute="trailing" id="WQ5-z6-IjP"/>
+                            <constraint firstAttribute="trailing" secondItem="xe8-4z-JcZ" secondAttribute="trailing" id="cXu-Wm-rdp"/>
+                            <constraint firstItem="FHq-hk-gn6" firstAttribute="leading" secondItem="AvT-k0-rnM" secondAttribute="leading" id="e4g-DW-jlZ"/>
+                            <constraint firstAttribute="bottom" secondItem="FHq-hk-gn6" secondAttribute="bottom" id="nGV-on-eS7"/>
+                            <constraint firstItem="FHq-hk-gn6" firstAttribute="top" secondItem="FKN-Zh-9HW" secondAttribute="bottom" id="nak-0b-3F1"/>
+                            <constraint firstAttribute="trailing" secondItem="FHq-hk-gn6" secondAttribute="trailing" id="vlv-8y-zgo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="AvT-k0-rnM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J19-4S-KkE"/>
+                <constraint firstAttribute="trailing" secondItem="AvT-k0-rnM" secondAttribute="trailing" id="ZGJ-eL-Xwo"/>
+                <constraint firstItem="AvT-k0-rnM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oGM-VR-JhP"/>
+                <constraint firstAttribute="bottom" secondItem="AvT-k0-rnM" secondAttribute="bottom" id="xZI-a6-dMe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="341" height="257"/>
+            <connections>
+                <outlet property="vLine" destination="FHq-hk-gn6" id="Ww7-NT-qdN"/>
+            </connections>
+            <point key="canvasLocation" x="97.5" y="117.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="voucher_image" width="290" height="138"/>
+    </resources>
+</document>

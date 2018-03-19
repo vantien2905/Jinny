@@ -62,7 +62,8 @@ extension PRSideMenuVC {
     }
     
     @IBAction func settingTapped() {
-        
+        let vc = SettingViewController.initControllerFromNib()
+        self.push(controller: vc)
     }
     
     @IBAction func termsAndConditionsTapped() {

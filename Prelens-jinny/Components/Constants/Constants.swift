@@ -50,6 +50,14 @@ struct Cell {
     
     //Merchant
     static let merchantDetail   = "MerchantDetailCell"
+    static let promotionDetailCell = "PromotionDetailCell"
+    static let promotionDetailHeaderCell = "PromotionDetailHeaderCell"
+    static let promotionDetailFooterCell = "PromotionDetailFooterCell"
+
+    static let promotionHeader  = "PromotionHeaderCell"
+    static let promotionCell    = "PromotionCell"
+    static let searchPromotion  = "SearchPromotionCell"
+    static let emptyPromotion   = "EmptyPromotionCell"
 }
 
 struct PRFont {

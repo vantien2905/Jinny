@@ -28,7 +28,6 @@ class MembershipViewModel {
         Provider.shared.memberShipService.getListAllMembership().subscribe(onNext: { [weak self] (member) in
             self?.outputs.listMembership.value = member
         }).disposed(by: disposeBag)
-
     }
     
 //    init() {

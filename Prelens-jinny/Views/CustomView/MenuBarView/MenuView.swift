@@ -29,7 +29,8 @@ class MenuView: UIView{
         view.backgroundColor = UIColor.black
         return view
     }()
-
+    var titleFont: UIFont?
+    
     var listItem = [AnyObject]() {
         didSet {
             collectionView.reloadData()
@@ -65,7 +66,7 @@ class MenuView: UIView{
         horizontalBarLeftAnchorConstraint?.isActive = true
         vScrollBar.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         vScrollBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/item).isActive = true
-        vScrollBar.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        vScrollBar.heightAnchor.constraint(equalToConstant: 4.0).isActive = true
     }
     
     func scrollToIndex(index: Int) {
@@ -103,10 +104,10 @@ class MenuView: UIView{
         }
     }
     
-    func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem])
+    func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem], textFont: UIFont?)
     {
         self.listItem = listItem
-        
+        self.titleFont = textFont
     }
 }
 
@@ -120,6 +121,7 @@ UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         as! MenuItemCollectionViewCell
         cell.setData(item: listItem[indexPath.item], normalColor: UIColor.lightGray, selectedColor: UIColor.black)
+        cell.lbTitle.font = titleFont
         return cell
     }
     
