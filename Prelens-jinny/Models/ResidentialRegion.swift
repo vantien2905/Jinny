@@ -10,15 +10,15 @@ import Foundation
 import ObjectMapper
 
 class ResidentialRegion: NSObject, Mappable {
-    var id          : Int?
-    var name        : String?
-    
+    var id: Int?
+    var name: String?
+
     override init() {
         super.init()
     }
-    
+
     required init?(map: Map) {
-        
+
     }
 
     func mapping(map: Map) {

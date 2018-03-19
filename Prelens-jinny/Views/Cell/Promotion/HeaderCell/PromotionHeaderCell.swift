@@ -10,7 +10,7 @@ import UIKit
 
 class PromotionHeaderCell: UICollectionViewCell {
     @IBOutlet weak var vFilter: UIView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

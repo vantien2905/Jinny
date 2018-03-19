@@ -9,13 +9,13 @@
 import UIKit
 
 class SettingViewController: BaseViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false
@@ -27,5 +27,5 @@ class SettingViewController: BaseViewController {
         let changePasswordVC = PRChangePassWordViewController.initControllerFromNib()
         self.push(controller: changePasswordVC)
     }
- 
+
 }

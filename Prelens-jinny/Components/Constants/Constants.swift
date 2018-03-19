@@ -14,16 +14,14 @@ struct PRColor {
     static let borderColor          = UIColor(red: 172/255, green: 172/255, blue: 172/255, alpha: 1)
     static let backgroundColor      = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
     static let emptyMembership      = UIColor(red: 72/255, green: 72/255, blue: 72/255, alpha: 1)
-    
+
     static let lineColor            = UIColor.black.withAlphaComponent(0.1)
     static let blackColor           = UIColor.black
     static let whiteColor           = UIColor.white
     static let navigationBar        = UIColor.white
-    
+
     static let backgroundPopUp      = UIColor.black.withAlphaComponent(0.6)
 }
-
-
 
 struct PRImage {
     static let tabbarMembershipOff  = UIImage(named: "membership_off")!
@@ -47,7 +45,7 @@ struct Cell {
     static let membershipDetail    = "MembershipDetailCell"
     static let headerMemBershipDetail = "HeaderMembershipDetailCell"
     static let footerMembershipDetail = "FooterMembershipDetailCell"
-    
+
     //Merchant
     static let merchantDetail   = "MerchantDetailCell"
     static let promotionDetailCell = "PromotionDetailCell"
@@ -70,7 +68,7 @@ struct ContantMessages {
         static let errorContentPassword =  "Password is too short (minimum is 6 characters)"
         static let successResetPassword =  "You will receive an email with instructions on how to reset your password in a few minutes"
     }
-    
+
     struct User {
         static let successChangePassword = "Your password has been changed successfully"
     }
@@ -82,8 +80,3 @@ struct ConstantString {
         static let emptyOtherMembership = "Press the + button below to add new membership"
     }
 }
-
-
-
-
-

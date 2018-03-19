@@ -13,12 +13,12 @@ class PRBaseViewXib: UIView {
         super.init(frame: frame)
         loadViewFromNib()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadViewFromNib()
     }
-    
+
     func loadViewFromNib() {
         let nibName     = String(describing: type(of: self))
         let nib         = UINib(nibName: nibName, bundle: nil)
@@ -29,11 +29,9 @@ class PRBaseViewXib: UIView {
         self.fillHorizontalSuperview()
         setUpSize()
     }
-    
+
     func setUpSize() {
-        
+
     }
-    
+
 }
-
-

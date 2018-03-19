@@ -16,7 +16,7 @@ class PromotionCell: UICollectionViewCell {
         setupView()
         // Initialization code
     }
-    func setupView(){
+    func setupView() {
         vLine.backgroundColor = PRColor.lineColor
     }
 

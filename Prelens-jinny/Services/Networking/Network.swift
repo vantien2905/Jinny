@@ -17,29 +17,29 @@ protocol NetworkProtocol {
 }
 
 class Network: NetworkProtocol {
-    
+
     let session: NetworkSession
-    
+
     var header: HTTPHeaders {
         var token: String = ""
         if let _token = KeychainManager.shared.getToken() {
             token = _token
         }
         let headers = [
-            "Jinny-Http-Token"   : token, //this will be assigned from user model
-            "Accept"            : "application/json"
+            "Jinny-Http-Token": token, //this will be assigned from user model
+            "Accept": "application/json"
         ]
         return headers
     }
-    
+
     init(session: NetworkSession) {
         self.session = session
     }
-    
+
     func handleUrl(_ path: String) -> String {
         return "\(APIURL.baseURL)\(path)"
     }
-    
+
     func getAlamofireUrlEncoding(method: HTTPMethod) -> ParameterEncoding {
         switch method {
         case .get:
@@ -50,7 +50,7 @@ class Network: NetworkProtocol {
             return JSONEncoding.default
         }
     }
-    
+
     func rx_Object<T: Mappable>(url: String, method: HTTPMethod, parameters: [String: AnyObject]?) -> Observable<T?> {
         let urlRequest = self.handleUrl(url)
         let encoding = self.getAlamofireUrlEncoding(method: method)
@@ -60,11 +60,11 @@ class Network: NetworkProtocol {
             return Mapper<T>().map(JSONObject: jsonData.dictionaryObject)
         }
     }
-    
+
     func rx_Array<T: Mappable>(url: String, method: HTTPMethod, parameters: [String: AnyObject]?) -> Observable<[T]> {
         let urlRequest = self.handleUrl(url)
         let encoding = self.getAlamofireUrlEncoding(method: method)
-        
+
         return session.request(urlRequest, method: method, parameters: parameters, encoding: encoding, headers: header)
             .map {(response)  in
                 let json = JSON(response.data)
@@ -72,5 +72,5 @@ class Network: NetworkProtocol {
                 return Mapper<T>().mapArray(JSONObject: jsonData.arrayObject) ?? []
         }
     }
-    
+
 }

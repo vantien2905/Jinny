@@ -14,22 +14,22 @@ class Merchant: NSObject, Mappable {
     var descriptions: String?
     var logo: Logo?
     var createdAt: String?
-    
+
     override init() {
         super.init()
     }
-    
+
     required init?(map: Map) {
-        
+
     }
-    
+
     func mapping(map: Map) {
         self.id <- map["id"]
         self.name <- map["name"]
         self.descriptions <- map["description"]
         self.createdAt <- map["created_at"]
         self.logo <- map["logo"]
-        
+
     }
-    
+
 }

@@ -9,15 +9,15 @@
 import ObjectMapper
 
 class ResponseError: Mappable {
-    
+
     var message: String?
     var code: Int?
     var status: Bool?
-    
+
     required init?(map: Map) {
-        
+
     }
-    
+
     func mapping(map: Map) {
         self.message <- map["message"]
         self.code <- map["code"]

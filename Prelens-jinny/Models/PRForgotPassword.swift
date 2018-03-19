@@ -9,18 +9,18 @@
 import ObjectMapper
 
 class PRForgotPassword: NSObject, Mappable {
-    
+
     var message: String?
     var status: String?
-    
+
     override init() {
         super.init()
     }
-    
+
     required init?(map: Map) {
-        
+
     }
-    
+
     func mapping(map: Map) {
         self.message <- map["message"]
         self.status  <- map["status"]

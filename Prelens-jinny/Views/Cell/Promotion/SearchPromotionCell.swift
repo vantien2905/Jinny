@@ -17,7 +17,7 @@ class SearchPromotionCell: UICollectionViewCell {
         // Initialization code
         setUpView()
     }
-    
+
     func setUpView() {
         tfSearch.borderStyle = .none
         tfSearch.placeholder = "Search merchant"

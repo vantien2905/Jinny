@@ -12,8 +12,8 @@ protocol MenuBarDelegate: class {
     func itemMenuSelected(index: Int)
 }
 
-class MenuView: UIView{
-    
+class MenuView: UIView {
+
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -23,25 +23,25 @@ class MenuView: UIView{
         cv.backgroundColor = .clear
         return cv
     }()
-    
+
     let vScrollBar: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black
         return view
     }()
     var titleFont: UIFont?
-    
+
     var listItem = [AnyObject]() {
         didSet {
             collectionView.reloadData()
             setupScrollBar(item: CGFloat(listItem.count))
         }
     }
-    
+
     weak var delegate: MenuBarDelegate?
     let cellID = "MenuBarCell"
-    var horizontalBarLeftAnchorConstraint:NSLayoutConstraint?
-    
+    var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCollectionView()
@@ -50,16 +50,16 @@ class MenuView: UIView{
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implement")
     }
-    
-    func setupCollectionView(){
+
+    func setupCollectionView() {
         collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         collectionView.delegate = self
         collectionView.dataSource = self
         addSubview(collectionView)
-        collectionView.anchor(self.topAnchor, left: self.leftAnchor,bottom: self.bottomAnchor,right: self.rightAnchor, topConstant: 0, leftConstant: 0 ,bottomConstant:0 ,rightConstant:0)
+        collectionView.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
     }
-    
-    func setupScrollBar(item: CGFloat){
+
+    func setupScrollBar(item: CGFloat) {
         vScrollBar.translatesAutoresizingMaskIntoConstraints = false
         addSubview(vScrollBar)
         horizontalBarLeftAnchorConstraint = vScrollBar.leftAnchor.constraint(equalTo: self.leftAnchor)
@@ -68,21 +68,21 @@ class MenuView: UIView{
         vScrollBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/item).isActive = true
         vScrollBar.heightAnchor.constraint(equalToConstant: 4.0).isActive = true
     }
-    
+
     func scrollToIndex(index: Int) {
-        
+
         //get cell selected
         let indexPath = IndexPath(item: index, section: 0)
         guard let cellScroll = collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell else { return }
-        
+
         UIView.animate(withDuration: 0.5) {
             //-- scroll view horizontal
             self.vScrollBar.frame = CGRect(x: self.vScrollBar.frame.minX, y: self.vScrollBar.frame.minY, width: cellScroll.frame.width, height: self.vScrollBar.frame.height)
             self.vScrollBar.center.x = cellScroll.center.x
-            
+
             //-- scroll collction view
             self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            
+
             //-- set color nomal for all item in screen
             //-- indexPathsForVisibleItems get indexPath all item in screen
             let listIndexPathVisible = self.collectionView.indexPathsForVisibleItems
@@ -91,10 +91,10 @@ class MenuView: UIView{
                     cell.lbTitle.textColor = UIColor.lightGray
                 }
             }
-            
+
             //-- set color selected for current cell
             cellScroll.lbTitle.textColor = UIColor.black
-            
+
             //--
             guard let listCategory = self.listItem as? [MenuItem] else { return }
             for i in 0...listCategory.count - 1 {
@@ -103,20 +103,19 @@ class MenuView: UIView{
             listCategory[index].isSelected = true
         }
     }
-    
-    func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem], textFont: UIFont?)
-    {
+
+    func setUpMenuView(menuColorBackground: UIColor, listItem: [MenuItem], textFont: UIFont?) {
         self.listItem = listItem
         self.titleFont = textFont
     }
 }
 
-extension MenuView:UICollectionViewDataSource,UICollectionViewDelegate,
+extension MenuView: UICollectionViewDataSource, UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listItem.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         as! MenuItemCollectionViewCell
@@ -124,11 +123,11 @@ UICollectionViewDelegateFlowLayout {
         cell.lbTitle.font = titleFont
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/CGFloat(listItem.count), height: collectionView.frame.height)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.itemMenuSelected(index: indexPath.item)
         scrollToIndex(index: indexPath.item)
@@ -142,31 +141,31 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         lb.textColor = UIColor.gray
         lb.font =  UIFont(name: "OstrichSans-Black", size: 17.5)
         lb.textAlignment = .center
-        
+
         return lb
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpView()
     }
     override var isSelected: Bool {
-        didSet{
+        didSet {
             lbTitle.textColor = isSelected ? UIColor.black : UIColor.gray
         }
     }
-    
+
     func setUpView() {
         addSubview(lbTitle)
         lbTitle.centerXToSuperview()
         lbTitle.centerYToSuperview()
     }
-    
+
     func setData(item: AnyObject?, normalColor: UIColor, selectedColor: UIColor) {
         if let _item = item as? MenuItem {
             lbTitle.text = _item.title
@@ -183,5 +182,3 @@ class MenuItem {
         self.isSelected = isSelected
     }
 }
-
-

@@ -15,13 +15,13 @@ class BasePopUpView: UIView {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         return view
     }()
-    
+
     let vContent: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
     }()
-    
+
     lazy var btnCover: UIButton = {
         let btn = UIButton()
         btn.addTarget(self, action: #selector(btnCoverTapped), for: .touchUpInside)
@@ -32,12 +32,12 @@ class BasePopUpView: UIView {
         super.init(frame: frame)
         setupView()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
     }
-    
+
     func setupView() {
         addSubview(vBackground)
         vBackground.fillSuperview()
@@ -45,15 +45,15 @@ class BasePopUpView: UIView {
         btnCover.fillSuperview()
         vBackground.addSubview(vContent)
     }
-    
+
     @objc func btnCoverTapped() {
         hidePopUp()
     }
-    
+
     func showPopUp(height: CGFloat = 250) {
         if let window = UIApplication.shared.keyWindow {
             vContent.frame = CGRect(x: 0, y: window.frame.height + height, width: window.frame.width, height: height)
-            
+
             window.addSubview(self)
             self.fillSuperview()
             self.vBackground.alpha = 0
@@ -72,16 +72,16 @@ class BasePopUpView: UIView {
         guard let window = UIApplication.shared.keyWindow else { return }
         UIView.animate(withDuration: 0.3, animations: { [unowned self] in
             self.vContent.frame = CGRect(x: 0, y: window.frame.height + 1000, width: self.vContent.frame.width, height: self.vContent.frame.height)
-            
+
             }, completion: { [weak self] _ in
                 guard let strongSelf = self else {
                     success?(false)
                     return }
-                
+
                 strongSelf.vBackground.alpha = 0
                 strongSelf.removeFromSuperview()
                 success?(true)
         })
-        
+
     }
 }

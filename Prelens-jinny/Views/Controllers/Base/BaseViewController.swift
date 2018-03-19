@@ -16,20 +16,20 @@ protocol BaseViewControllerDelegate {
 }
 
 class BaseViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
         self.view.backgroundColor = PRColor.backgroundColor
     }
-    
+
     var delegate: BaseViewControllerDelegate?
     override func viewDidAppear(_ animated: Bool) {
         let img = UIImage()
         self.navigationController?.navigationBar.shadowImage = img
         self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
     }
-    
+
     func setTitle(title: String, textColor: UIColor = UIColor.white, backgroundColor: UIColor = PRColor.mainAppColor ) {
         let lb = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - self.view.bounds.width/4)/2, y: 0,
                                        width: self.view.bounds.width, height: 44))
@@ -42,23 +42,23 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = backgroundColor
         self.navigationItem.titleView = lb
     }
-    
-    func setUpLayout(){
+
+    func setUpLayout() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         self.navigationController?.navigationBar.isTranslucent = false
         UIApplication.shared.statusBarStyle = .lightContent
     }
-    
+
     func addButtonToNavigation(image: UIImage, style: StyleNavigation, action: Selector?) {
         let btn = UIButton()
         btn.setImage(image, for: .normal)
         if let _action = action {
             btn.addTarget(self, action: _action, for: .touchUpInside)
         }
-        
+
         btn.frame = CGRect(x: 0, y: 0, width: 60, height: 44)
-        
+
         let button = UIBarButtonItem(customView: btn)
         if style == .left {
             btn.contentHorizontalAlignment = .left
@@ -68,14 +68,14 @@ class BaseViewController: UIViewController {
             btn.contentHorizontalAlignment = .right
         }
     }
-    
+
     func addButtonToNavigation(image: UIImage, style: StyleNavigation, action: CocoaAction) {
         var btn = UIButton()
         btn.setImage(image, for: .normal)
         btn.rx.action = action
-        
+
         btn.frame = CGRect(x: 0, y: 0, width: 60, height: 44)
-        
+
         let button = UIBarButtonItem(customView: btn)
         if style == .left {
             btn.contentHorizontalAlignment = .left
@@ -85,23 +85,23 @@ class BaseViewController: UIViewController {
             btn.contentHorizontalAlignment = .right
         }
     }
-    
+
     func addStarButtonOff() {
         self.addButtonToNavigation(image: PRImage.imgStarOff, style: .right, action: #selector(btnStarTapped))
     }
-    
+
     func addStarButtonOn() {
         self.addButtonToNavigation(image: PRImage.imgStarOn, style: .right, action: #selector(btnStarTapped))
     }
-    
+
     func addBackButton() {
         self.addButtonToNavigation(image: PRImage.imgBack, style: .left, action: #selector(btnBackTapped))
     }
-    
+
     @objc func btnStarTapped() {
         delegate?.starBookmarkTapped()
     }
-    
+
     @objc func btnBackTapped() {
         self.navigationController?.popViewController(animated: true)
     }

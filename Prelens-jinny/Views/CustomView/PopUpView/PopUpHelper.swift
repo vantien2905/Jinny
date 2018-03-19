@@ -10,14 +10,14 @@ import Foundation
 
 class PopUpHelper {
     static let shared = PopUpHelper()
-    
+
     func showMessage(message: String) {
         DispatchQueue.main.async {
             let popUp = PopUpView()
             popUp.showPopUp(message: message)
         }
     }
-    
+
     func showPopUp(message: String, action: @escaping () -> Void) {
         DispatchQueue.main.async {
             let popUp = PopUpView()

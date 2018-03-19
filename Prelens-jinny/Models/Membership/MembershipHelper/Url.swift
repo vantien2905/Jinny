@@ -9,19 +9,19 @@
 import ObjectMapper
 
 class Url: NSObject, Mappable {
-    
+
     var thumb: String?
     var medium: String?
     var original: String?
-    
+
     override init() {
         super.init()
     }
-    
+
     required init?(map: Map) {
-        
+
     }
-    
+
     func mapping(map: Map) {
         self.thumb <- map["thumb"]
         self.medium <- map["medium"]

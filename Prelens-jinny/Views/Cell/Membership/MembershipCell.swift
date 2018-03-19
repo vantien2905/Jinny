@@ -13,7 +13,7 @@ class MembershipCell: UICollectionViewCell {
     @IBOutlet weak var vContent: UIView!
     @IBOutlet weak var imgMemberShip: UIImageView!
     @IBOutlet weak var imgStar: UIImageView!
-    
+
     var membership = Member() {
         didSet {
             self.setData()
@@ -26,12 +26,12 @@ class MembershipCell: UICollectionViewCell {
         setUpView()
         setData()
     }
-    
+
     func setUpView() {
         vContent.layer.borderWidth = 0.5
         vContent.layer.borderColor = PRColor.lineColor.cgColor
     }
-    
+
     func setData() {
         if let _merchant = membership.merchant,
         let _logo = _merchant.logo,

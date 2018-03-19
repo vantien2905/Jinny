@@ -19,5 +19,5 @@ extension UIButton {
         }
         self.setAttributedTitle(attr, for: .normal)
     }
-    
+
 }

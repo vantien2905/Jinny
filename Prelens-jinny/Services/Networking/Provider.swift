@@ -13,19 +13,19 @@ class Provider {
     static let shared: Provider = {
         return Provider()
     }()
-    
+
     var session: NetworkSession {
         return SessionManager.default
     }
-    
+
     var network: NetworkProtocol {
         return Network(session: session)
     }
-    
+
     var authenticationService: AuthenticationServiceProtocol {
         return AuthenticationService(network: network)
     }
-    
+
     var memberShipService: MembershipServiceProtocol {
         return MembershipService(network: network)
     }

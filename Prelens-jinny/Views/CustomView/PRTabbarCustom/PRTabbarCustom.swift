@@ -13,32 +13,32 @@ protocol PRTabbarCustomDelegate: class {
 }
 
 class PRTabbarCustom: PRBaseViewXib {
-    
+
     @IBOutlet weak var vMemberships: PRButtonTabbar!
     @IBOutlet weak var vPromotions: PRButtonTabbar!
     @IBOutlet weak var vMore: PRButtonTabbar!
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpView()
     }
-    
+
     weak var buttonTappedDelegate: PRTabbarCustomDelegate?
-    
+
     func setUpView() {
         vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
         vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
         vMore.setIcon(image: PRImage.tabbarMore)
-        
+
         vMemberships.tabbarButtonDelegate = self
         vPromotions.tabbarButtonDelegate = self
         vMore.tabbarButtonDelegate = self
     }
-    
+
     func setIndexSelected(index: Int) {
         switch index {
         case 0:
@@ -53,7 +53,7 @@ class PRTabbarCustom: PRBaseViewXib {
             vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
             vMore.setIcon(image: PRImage.tabbarMore)
-            
+
         default:
             vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
@@ -76,9 +76,3 @@ extension PRTabbarCustom: PRTabbarButtonDelegate {
         }
     }
 }
-
-
-
-
-
-

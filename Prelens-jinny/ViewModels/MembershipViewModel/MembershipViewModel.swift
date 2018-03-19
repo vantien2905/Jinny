@@ -9,27 +9,26 @@
 import RxSwift
 import RxCocoa
 
-
 class MembershipViewModel {
     let disposeBag = DisposeBag()
-    
+
     class MembershipViewModelInput {
-        
+
     }
-    
+
     class MembershipViewModelOutput {
         var listMembership: Variable<Membership?>  = Variable<Membership?> (nil)
     }
-    
+
     var inputs = MembershipViewModelInput()
     var outputs = MembershipViewModelOutput()
-    
+
     func getListMembership() {
         Provider.shared.memberShipService.getListAllMembership().subscribe(onNext: { [weak self] (member) in
             self?.outputs.listMembership.value = member
         }).disposed(by: disposeBag)
     }
-    
+
 //    init() {
 //        Provider.shared.memberShipService.getListAllMembership().subscribe(onNext: { [weak self] (member) in
 //            self?.outputs.listMembership.value = member

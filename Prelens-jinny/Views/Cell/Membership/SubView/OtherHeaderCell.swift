@@ -9,7 +9,7 @@
 import UIKit
 
 class OtherHeaderCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var lbSortBy: UILabel!
     @IBOutlet weak var lbLatest: UILabel!
     @IBOutlet weak var lbOther: UILabel!

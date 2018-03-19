@@ -11,10 +11,10 @@ import SwiftyJSON
 import ObjectMapper
 
 class ApiError: Error {
-    
+
     let statusCode: Int
 //    let responseError: ResponseError?
-    
+
     init?(response: Response) {
         switch response.statusCode {
         case 200...299:
@@ -28,8 +28,7 @@ class ApiError: Error {
                 PopUpHelper.shared.showMessage(message: _responseError.message&)
                 self.statusCode = 0
             }
-            
-            
+
         default: self.statusCode = response.statusCode
         }
     }

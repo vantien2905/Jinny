@@ -9,21 +9,21 @@
 import ObjectMapper
 
 class Member: NSObject, Mappable {
-    
+
     var id: Int = 1
     var merchant: Merchant?
     var code: String?
     var addedDate: String?
     var hasBookmark: Bool = false
-    
+
     override init() {
         super.init()
     }
-    
+
     required init?(map: Map) {
-        
+
     }
-    
+
     func mapping(map: Map) {
         self.id <- map["id"]
         self.merchant <- map["merchant"]

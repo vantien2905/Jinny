@@ -15,35 +15,34 @@ protocol TabbarMainViewControllerDelegate: class {
 }
 
 class PRTabbarMainViewController: UITabBarController {
-    
+
     //  weak var delagateBtnDrawer: TabbarMainViewControllerDelegate?
-    
+
     var membershipVC: MemberShipViewController?
     let promotionVC = UIViewController()
     let moreVC = UIViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //  delegate = self as! UITabBarControllerDelegate
         setUpTabbar()
     }
-    
+
     func setUpTabbar() {
         membershipVC = MemberShipViewController()
         let nvMembership = UINavigationController(rootViewController: membershipVC!)
-      
+
         nvMembership.tabBarItem = UITabBarItem(title: "Memberships", image: PRImage.tabbarMembershipOff, selectedImage: nil)
-      
+
         let nvPromotions = UINavigationController(rootViewController: promotionVC)
         nvPromotions.tabBarItem = UITabBarItem(title: "Promotions", image: PRImage.tabbarPromotionsOff, selectedImage: nil)
-        
+
         let nvMore = UINavigationController(rootViewController: moreVC)
         nvMore.tabBarItem = UITabBarItem(title: "More...", image: PRImage.tabbarMore, selectedImage: nil)
-        
+
         let tabbarListVC: [UIViewController] = [nvMembership, nvPromotions, nvMore]
         viewControllers = tabbarListVC
-        
-        
+
         //IphoneX configuration
         //        for controller in tabbarListVC {
         //            if DeviceTypeHelper.getDeviceType() != NCSDeviceType.small {
@@ -55,11 +54,11 @@ class PRTabbarMainViewController: UITabBarController {
         //            }
         //        }
     }
- 
+
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         //     delagateBtnDrawer?.tabbarSelected(index: tabBarController.selectedIndex)
         //  tabLeft.setIndexSelected(index: tabBarController.selectedIndex)
-        
-        //MARK: Delegate Action here when item was tapped
+
+        // MARK: Delegate Action here when item was tapped
     }
 }

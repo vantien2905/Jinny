@@ -18,10 +18,10 @@ class PromotionDetailHeaderCell: UICollectionViewCell {
 
     func setUpView() {
         self.backgroundColor = .white
-        
+
         tvName.isUserInteractionEnabled = false
         tvName.text = "Name of Merchant here....Name of Merchant here...."
         tvName.backgroundColor = .clear
-        
+
     }
 }

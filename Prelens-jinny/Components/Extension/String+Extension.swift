@@ -24,11 +24,11 @@ extension String {
         }
         return (self.cutWhiteSpace().trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) == "")
     }
-    
+
     func cutWhiteSpace() -> String {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
-    
+
     func isValidPassword() -> Bool {
         if self.count >= 6 {
             return true
@@ -36,7 +36,7 @@ extension String {
             return false
         }
     }
-    
+
     func checkUrl () -> Bool {
         // create NSURL instance
         if let url = URL(string: self) {
@@ -65,11 +65,8 @@ extension String {
     func contains(_ find: String) -> Bool {
         return self.range(of: find) != nil
     }
-    
+
     func containsIgnoringCase(_ find: String) -> Bool {
         return self.range(of: find, options: .caseInsensitive) != nil
     }
 }
-
-
-

@@ -13,11 +13,11 @@ class Logo: NSObject, Mappable {
     override init() {
         super.init()
     }
-    
+
     required init?(map: Map) {
-        
+
     }
-    
+
     func mapping(map: Map) {
         self.url <- map["url"]
     }

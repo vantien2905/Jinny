@@ -18,22 +18,19 @@ class MerchantDetailViewController: BaseViewController {
         configureTableView()
         setUpNavigation()
     }
-    
 
     func configureTableView() {
         tbMerchantDetail.register(UINib(nibName: Cell.merchantDetail, bundle: nil), forCellReuseIdentifier: Cell.merchantDetail)
         tbMerchantDetail.delegate = self
         tbMerchantDetail.dataSource = self
     }
-    
+
     class func configureViewController() -> UIViewController {
         let vcMerchantDetail = MerchantDetailViewController.initControllerFromNib() as! MerchantDetailViewController
-       
-       
-       
+
         return vcMerchantDetail
     }
-    
+
     func setUpNavigation() {
         self.setTitle(title: "StarBucks", textColor: .black, backgroundColor: .white)
         addBackButton()
@@ -44,16 +41,15 @@ extension MerchantDetailViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.merchantDetail, for: indexPath) as! MerchantDetailCell
-        
+
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 35
     }
-    
-}
 
+}

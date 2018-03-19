@@ -17,8 +17,7 @@ class APIUserService: APIBaseService {
             "new_password": newPassword
         ]
         let requestInfo = RequestInfo(headers: header, fullPath: _fullPath, params: params, method: .put)
-        
+
         return execute(requestInfo, responseType: SingleResponse<PRUser>.self)
     }
 }
-

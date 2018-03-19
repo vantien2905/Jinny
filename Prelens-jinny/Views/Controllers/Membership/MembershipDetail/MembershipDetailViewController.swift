@@ -11,19 +11,19 @@ import RxSwift
 import SDWebImage
 
 class MembershipDetailViewController: BaseViewController {
-    
+
     @IBOutlet weak var tbMembershipDetail: UITableView!
-    
+
     @IBAction func btnLogoTapped() {
         let vcMerchantDetail = MerchantDetailViewController.configureViewController()
         self.push(controller: vcMerchantDetail, animated: true)
     }
-    
+
     let disposeBag = DisposeBag()
-    
+
      var isStarTapped = false
     var viewModel: MembershipDetailViewModelProtocol!
-    
+
     var membershipDetail = Member() {
         didSet {
             tbMembershipDetail.reloadData()
@@ -31,7 +31,7 @@ class MembershipDetailViewController: BaseViewController {
             isStarTapped = membershipDetail.hasBookmark
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
@@ -39,17 +39,17 @@ class MembershipDetailViewController: BaseViewController {
         setNavigation()
         self.delegate = self
     }
-    
+
     func configureTableView() {
         tbMembershipDetail.register(UINib(nibName: Cell.membershipDetail, bundle: nil), forCellReuseIdentifier: Cell.membershipDetail)
         tbMembershipDetail.register(UINib(nibName: Cell.headerMemBershipDetail, bundle: nil), forCellReuseIdentifier: Cell.headerMemBershipDetail)
         tbMembershipDetail.register(UINib(nibName: Cell.footerMembershipDetail, bundle: nil), forCellReuseIdentifier: Cell.footerMembershipDetail)
-        
+
         tbMembershipDetail.delegate = self
         tbMembershipDetail.dataSource = self
-        
+
     }
-    
+
     class func configureViewController(id: Int) -> UIViewController {
         let vc = MembershipDetailViewController.initControllerFromNib() as! MembershipDetailViewController
         var viewModel: MembershipDetailViewModelProtocol {
@@ -58,23 +58,22 @@ class MembershipDetailViewController: BaseViewController {
         vc.viewModel = viewModel
         return vc
     }
-    
+
     func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         setTitle(title: "STARBUCKS", textColor: UIColor.black, backgroundColor: .white)
         addBackButton()
     }
-    
+
     func bindData() {
         viewModel.membership.asObservable().subscribe(onNext: {[weak self] (member) in
             if let _member = member {
                 self?.membershipDetail = _member
             }
-            
+
         }).disposed(by: disposeBag)
     }
-    
-   
+
 }
 
 extension MembershipDetailViewController: BaseViewControllerDelegate {
@@ -87,7 +86,7 @@ extension MembershipDetailViewController: BaseViewControllerDelegate {
 
 extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.headerMemBershipDetail, for: indexPath) as! HeaderMembershipDetailCell
             let url = membershipDetail.merchant?.logo?.url?.thumb
@@ -100,14 +99,13 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.footerMembershipDetail, for: indexPath)
             return cell
         }
-        
-        
+
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 5
@@ -115,7 +113,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             return 1
         }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -126,16 +124,16 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             return 50
         }
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 1 {
             return "Related promotions"
         } else {
             return ""
         }
-        
+
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
             return 50
@@ -144,4 +142,3 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
         }
     }
 }
-

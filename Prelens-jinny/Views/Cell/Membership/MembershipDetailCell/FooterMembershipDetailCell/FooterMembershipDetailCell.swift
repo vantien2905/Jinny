@@ -11,7 +11,7 @@ import UIKit
 class FooterMembershipDetailCell: UITableViewCell {
 
     @IBAction func btnRemoveTapped() {
-    
+
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +21,6 @@ class FooterMembershipDetailCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
     }
-    
+
 }
