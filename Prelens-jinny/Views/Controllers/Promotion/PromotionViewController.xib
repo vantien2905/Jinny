@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionViewController" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
+                <outlet property="cvMenuController" destination="ZRr-ty-gD9" id="2DF-EA-21M"/>
                 <outlet property="vContainMenu" destination="m4g-Zy-CNL" id="nsP-rZ-hye"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,14 +25,28 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4g-Zy-CNL">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-ty-gD9">
+                    <rect key="frame" x="0.0" y="43" width="375" height="624"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GkH-ke-5gI">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ZRr-ty-gD9" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HLl-Fi-a0m"/>
+                <constraint firstItem="ZRr-ty-gD9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HlS-M1-QoB"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QtB-Ih-sa7"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="43:667" id="Sdl-S1-hrj"/>
+                <constraint firstItem="ZRr-ty-gD9" firstAttribute="top" secondItem="m4g-Zy-CNL" secondAttribute="bottom" id="Xog-OE-itb"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e9q-My-0tl"/>
+                <constraint firstItem="ZRr-ty-gD9" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="jlp-2v-6EM"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r5B-Jc-8pp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
