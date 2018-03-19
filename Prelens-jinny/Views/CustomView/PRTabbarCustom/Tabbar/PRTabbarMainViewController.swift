@@ -18,7 +18,7 @@ class PRTabbarMainViewController: UITabBarController {
     
     //  weak var delagateBtnDrawer: TabbarMainViewControllerDelegate?
     
-    var membershipVC: PRMemberShipVC?
+    var membershipVC: MemberShipViewController?
     let promotionVC = UIViewController()
     let moreVC = UIViewController()
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class PRTabbarMainViewController: UITabBarController {
     }
     
     func setUpTabbar() {
-        membershipVC = PRMemberShipVC()
+        membershipVC = MemberShipViewController()
         let nvMembership = UINavigationController(rootViewController: membershipVC!)
       
         nvMembership.tabBarItem = UITabBarItem(title: "Memberships", image: PRImage.tabbarMembershipOff, selectedImage: nil)

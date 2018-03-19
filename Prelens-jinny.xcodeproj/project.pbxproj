@@ -32,8 +32,8 @@
 		B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626F2059096700C7004D /* OtherHeaderCell.xib */; };
 		B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738627220590CE700C7004D /* MembershipFooterCell.swift */; };
 		B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738627320590CE700C7004D /* MembershipFooterCell.xib */; };
-		B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7386277205913CD00C7004D /* MembershipDetailVC.swift */; };
-		B738627A205913CD00C7004D /* MembershipDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailVC.xib */; };
+		B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7386277205913CD00C7004D /* MembershipDetailViewController.swift */; };
+		B738627A205913CD00C7004D /* MembershipDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailViewController.xib */; };
 		B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */; };
 		B74E486C205BAD06006ABB4D /* MembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */; };
 		B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */; };
@@ -91,8 +91,8 @@
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */; };
 		BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */; };
-		BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */; };
-		BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */; };
+		BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE62057E6CC008F929F /* MemberShipViewController.xib */; };
+		BCB04FEE2057E6CC008F929F /* MemberShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB04FEA2057E6CC008F929F /* MemberShipViewController.swift */; };
 		BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */; };
 		BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E320562BB8004C1985 /* PRForgotPasswordViewController.xib */; };
 		BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E520562BB8004C1985 /* PRSignUpViewController.xib */; };
@@ -154,8 +154,8 @@
 		B738626F2059096700C7004D /* OtherHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherHeaderCell.xib; sourceTree = "<group>"; };
 		B738627220590CE700C7004D /* MembershipFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipFooterCell.swift; sourceTree = "<group>"; };
 		B738627320590CE700C7004D /* MembershipFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipFooterCell.xib; sourceTree = "<group>"; };
-		B7386277205913CD00C7004D /* MembershipDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailVC.swift; sourceTree = "<group>"; };
-		B7386278205913CD00C7004D /* MembershipDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailVC.xib; sourceTree = "<group>"; };
+		B7386277205913CD00C7004D /* MembershipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailViewController.swift; sourceTree = "<group>"; };
+		B7386278205913CD00C7004D /* MembershipDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailViewController.xib; sourceTree = "<group>"; };
 		B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailCell.swift; sourceTree = "<group>"; };
 		B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailCell.xib; sourceTree = "<group>"; };
 		B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMembershipCell.swift; sourceTree = "<group>"; };
@@ -217,8 +217,8 @@
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSideMenuVC.swift; sourceTree = "<group>"; };
 		BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSideMenuVC.xib; sourceTree = "<group>"; };
-		BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRMemberShipVC.xib; sourceTree = "<group>"; };
-		BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRMemberShipVC.swift; sourceTree = "<group>"; };
+		BCB04FE62057E6CC008F929F /* MemberShipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberShipViewController.xib; sourceTree = "<group>"; };
+		BCB04FEA2057E6CC008F929F /* MemberShipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberShipViewController.swift; sourceTree = "<group>"; };
 		BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		BCBC95E320562BB8004C1985 /* PRForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		BCBC95E520562BB8004C1985 /* PRSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignUpViewController.xib; sourceTree = "<group>"; };
@@ -327,8 +327,8 @@
 		B73862762059139000C7004D /* MembershipDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B7386277205913CD00C7004D /* MembershipDetailVC.swift */,
-				B7386278205913CD00C7004D /* MembershipDetailVC.xib */,
+				B7386277205913CD00C7004D /* MembershipDetailViewController.swift */,
+				B7386278205913CD00C7004D /* MembershipDetailViewController.xib */,
 			);
 			path = MembershipDetail;
 			sourceTree = "<group>";
@@ -540,8 +540,8 @@
 		BCB04FE52057E6CC008F929F /* ListMembership */ = {
 			isa = PBXGroup;
 			children = (
-				BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */,
-				BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */,
+				BCB04FEA2057E6CC008F929F /* MemberShipViewController.swift */,
+				BCB04FE62057E6CC008F929F /* MemberShipViewController.xib */,
 			);
 			path = ListMembership;
 			sourceTree = "<group>";
@@ -897,7 +897,7 @@
 				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
 				B7B1BCA22058D7FA0042B3D4 /* seguibl.ttf in Resources */,
 				BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */,
-				B738627A205913CD00C7004D /* MembershipDetailVC.xib in Resources */,
+				B738627A205913CD00C7004D /* MembershipDetailViewController.xib in Resources */,
 				B7B1BCA02058D7FA0042B3D4 /* OstrichSans-Black.otf in Resources */,
 				B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
@@ -922,7 +922,7 @@
 				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
-				BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */,
+				BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
 				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
 				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
@@ -1106,14 +1106,14 @@
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				D9911856205B7AC100F701ED /* Provider.swift in Sources */,
-				BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */,
+				BCB04FEE2057E6CC008F929F /* MemberShipViewController.swift in Sources */,
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
 				B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */,
 				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
-				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
+				B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
 				BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import SDWebImage
 
-class MembershipDetailVC: BaseViewController {
+class MembershipDetailViewController: BaseViewController {
     
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var imgBarCode: UIImageView!
@@ -63,7 +63,7 @@ class MembershipDetailVC: BaseViewController {
     }
     
     class func configureViewController(id: Int) -> UIViewController {
-        let vc = MembershipDetailVC.initControllerFromNib() as! MembershipDetailVC
+        let vc = MembershipDetailViewController.initControllerFromNib() as! MembershipDetailViewController
 
         var viewModel: MembershipDetailViewModelProtocol {
             return MembershipDetailViewModel(idMember: id)
@@ -132,7 +132,7 @@ class MembershipDetailVC: BaseViewController {
     }
 }
 
-extension MembershipDetailVC: BaseViewControllerDelegate {
+extension MembershipDetailViewController: BaseViewControllerDelegate {
     func starBookmarkTapped() {
         isStarTapped = !isStarTapped
         isStarTapped ? addStarButtonOn() : addStarButtonOff()
@@ -140,7 +140,7 @@ extension MembershipDetailVC: BaseViewControllerDelegate {
     }
 }
 
-extension MembershipDetailVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension MembershipDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.membershipDetail, for: indexPath) as! MembershipDetailCell
         cell.imgPromotion.image = listPromotion.value[indexPath.item]

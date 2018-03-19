@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
     var sideMenuTrigger: Bool = true
     
-    let membershipVC = PRMemberShipVC.initControllerFromNib()
+    let membershipVC = MemberShipViewController.initControllerFromNib()
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true

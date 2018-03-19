@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class PRMemberShipVC: BaseViewController {
+class MemberShipViewController: BaseViewController {
     
     @IBOutlet weak var cvMembership: UICollectionView!
     
@@ -63,7 +63,7 @@ class PRMemberShipVC: BaseViewController {
     
 }
 
-extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0 {
@@ -198,13 +198,13 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             if listMember.startedMemberships.count != 0 {
-                let vc = MembershipDetailVC.configureViewController(id: self.listMember.startedMemberships[indexPath.item].id)
+                let vc = MembershipDetailViewController.configureViewController(id: self.listMember.startedMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
             }
             
         } else {
             if listMember.otherMemberships.count != 0 {
-                let vc = MembershipDetailVC.configureViewController(id: self.listMember.otherMemberships[indexPath.item].id)
+                let vc = MembershipDetailViewController.configureViewController(id: self.listMember.otherMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
             }
         }

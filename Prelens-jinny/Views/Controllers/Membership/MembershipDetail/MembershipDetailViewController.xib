@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MembershipDetailVC" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MembershipDetailViewController" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
                 <outlet property="cvPromotion" destination="pNW-ut-Ic3" id="2wg-jA-VkO"/>
                 <outlet property="imgBarCode" destination="yZS-ZB-klj" id="SPx-r9-GGa"/>
