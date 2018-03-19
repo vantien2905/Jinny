@@ -110,7 +110,6 @@ extension HomeViewController: PRTabbarCustomDelegate {
             vTabbar.setIndexSelected(index: 0)
             
         case 1:
-            
             if self.childViewControllers.contains(promotionVC) {
             } else {
                 //Adding Promotion child view controller
