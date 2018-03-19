@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var vTabbar: PRTabbarCustom!
     
+    @IBOutlet weak var lcsHeightSideMenu: NSLayoutConstraint!
     @IBOutlet weak var lcsSideMenu: NSLayoutConstraint!
     @IBOutlet weak var vSideMenu: UIView!
     @IBOutlet weak var vCloseTap: UIView!
@@ -34,14 +35,13 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         vTabbar.buttonTappedDelegate = self
-        
-        setUpView()
-        
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubView()
+        setUpView()
     }
     
     func setUpView() {
@@ -58,6 +58,9 @@ class HomeViewController: UIViewController {
         //Setup the tapped Button in first time
         vTabbar.setIndexSelected(index: 0)
         
+        //Setup the size of SideMenu
+        lcsSideMenu.constant = UIScreen.main.bounds.width * 2/3
+        lcsHeightSideMenu.constant = UIScreen.main.bounds.width * 2/3
     }
     
     func setTitle(title: String) {
@@ -91,7 +94,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func handleTap(_ sender: Any) {
-        lcsSideMenu.constant = 248
+        lcsSideMenu.constant = UIScreen.main.bounds.width * 2/3
         UIView.animate(withDuration: 0.2, animations: self.view.layoutIfNeeded, completion: nil)
         sideMenuTrigger = !sideMenuTrigger
         vCloseTap.isHidden = true
