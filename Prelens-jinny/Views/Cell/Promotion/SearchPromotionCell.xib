@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SearchPromotionCell" customModule="Prelens_jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="531" height="102"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="531" height="102"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lez-pu-v6m">
+                        <rect key="frame" x="1" y="29" width="529" height="44"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="LD4-CW-9Wv">
+                                <rect key="frame" x="12.5" y="15" width="14.5" height="14.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="14.5" id="RMM-29-ODn"/>
+                                    <constraint firstAttribute="height" constant="14.5" id="ZdT-03-jZF"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UzR-14-pb5">
+                                <rect key="frame" x="39.5" y="0.0" width="489.5" height="44"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LD4-CW-9Wv" firstAttribute="leading" secondItem="Lez-pu-v6m" secondAttribute="leading" constant="12.5" id="78k-4Z-Vuo"/>
+                            <constraint firstAttribute="height" constant="44" id="F1b-Sf-Jmp"/>
+                            <constraint firstItem="UzR-14-pb5" firstAttribute="leading" secondItem="LD4-CW-9Wv" secondAttribute="trailing" constant="12.5" id="H1Z-Bm-5xf"/>
+                            <constraint firstItem="LD4-CW-9Wv" firstAttribute="centerY" secondItem="Lez-pu-v6m" secondAttribute="centerY" id="Sby-0m-szD"/>
+                            <constraint firstItem="UzR-14-pb5" firstAttribute="top" secondItem="Lez-pu-v6m" secondAttribute="top" id="Tf3-Yx-c5E"/>
+                            <constraint firstAttribute="trailing" secondItem="UzR-14-pb5" secondAttribute="trailing" id="Up6-Wg-RzP"/>
+                            <constraint firstAttribute="bottom" secondItem="UzR-14-pb5" secondAttribute="bottom" id="eeP-8W-c0L"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Lez-pu-v6m" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="clK-bW-wNe"/>
+                <constraint firstAttribute="trailing" secondItem="Lez-pu-v6m" secondAttribute="trailing" constant="1" id="sIt-a4-19O"/>
+                <constraint firstItem="Lez-pu-v6m" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="xWc-vQ-yH3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="531" height="102"/>
+            <connections>
+                <outlet property="tfSearch" destination="UzR-14-pb5" id="nVp-gF-fiv"/>
+                <outlet property="vSearch" destination="Lez-pu-v6m" id="2a3-5w-PAS"/>
+            </connections>
+            <point key="canvasLocation" x="67" y="27"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="search" width="14" height="14"/>
+    </resources>
+</document>

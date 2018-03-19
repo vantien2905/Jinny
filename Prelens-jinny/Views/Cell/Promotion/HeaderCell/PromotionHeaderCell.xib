@@ -11,9 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="segoeui.ttf">
-            <string>SegoeUI</string>
-        </array>
         <array key="seguisb.ttf">
             <string>SegoeUI-Semibold</string>
         </array>
@@ -37,25 +34,25 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe2-FO-bqc">
                         <rect key="frame" x="150.5" y="0.0" width="150.5" height="50"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="idI-pR-Aa5">
-                                <rect key="frame" x="143.5" y="23" width="5" height="4.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="4.5" id="XVZ-PF-QAu"/>
-                                    <constraint firstAttribute="width" constant="5" id="xkj-DL-IWy"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lastest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sl-hd-7L8">
-                                <rect key="frame" x="85" y="19.5" width="50" height="20"/>
-                                <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sl-hd-7L8">
+                                <rect key="frame" x="103.5" y="15" width="47" height="20"/>
+                                <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                 <color key="textColor" red="0.8901960784313725" green="0.070588235294117646" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opC-iq-90E">
+                                <rect key="frame" x="45.5" y="15.5" width="49.5" height="20"/>
+                                <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="idI-pR-Aa5" secondAttribute="trailing" constant="2" id="D38-ga-L0w"/>
-                            <constraint firstItem="idI-pR-Aa5" firstAttribute="centerY" secondItem="xe2-FO-bqc" secondAttribute="centerY" id="W78-uq-2gp"/>
-                            <constraint firstItem="3Sl-hd-7L8" firstAttribute="centerY" secondItem="idI-pR-Aa5" secondAttribute="centerY" constant="4" id="yXO-JV-YK8"/>
+                            <constraint firstAttribute="trailing" secondItem="3Sl-hd-7L8" secondAttribute="trailing" id="6zP-Y0-Co0"/>
+                            <constraint firstItem="opC-iq-90E" firstAttribute="centerY" secondItem="xe2-FO-bqc" secondAttribute="centerY" id="8sd-hO-ZqY"/>
+                            <constraint firstItem="3Sl-hd-7L8" firstAttribute="centerY" secondItem="xe2-FO-bqc" secondAttribute="centerY" id="Vue-UI-ycY"/>
+                            <constraint firstItem="3Sl-hd-7L8" firstAttribute="leading" secondItem="opC-iq-90E" secondAttribute="trailing" constant="8.5" id="atd-CL-nNK"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -72,17 +69,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="301" height="50"/>
-            <point key="canvasLocation" x="-39.5" y="80"/>
+            <point key="canvasLocation" x="-25" y="23"/>
         </collectionViewCell>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ypS-OF-FwA">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-        </label>
     </objects>
-    <resources>
-        <image name="dropdown" width="5" height="4"/>
-    </resources>
 </document>

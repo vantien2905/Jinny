@@ -31,6 +31,7 @@ class PromotionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
+
         let listItemMenu = [
             MenuItem(title: "All", isSelected: true),
             MenuItem(title: "Stared", isSelected: false),
@@ -38,7 +39,8 @@ class PromotionViewController: UIViewController {
         ]
         controllers = [ vcAllPromotion, vcStarredPromotion, vcAchivedPromotion ]
         
-        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu)
+        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu, textFont: UIFont(name: "SegoeUI-Semibold", size: 15.0)!)
+        
         // Do any additional setup after loading the view.
     }
 

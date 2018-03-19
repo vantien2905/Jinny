@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4g-Zy-CNL">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-ty-gD9">
@@ -43,8 +43,8 @@
                 <constraint firstItem="ZRr-ty-gD9" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HLl-Fi-a0m"/>
                 <constraint firstItem="ZRr-ty-gD9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HlS-M1-QoB"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QtB-Ih-sa7"/>
-                <constraint firstItem="m4g-Zy-CNL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="43:667" id="Sdl-S1-hrj"/>
-                <constraint firstItem="ZRr-ty-gD9" firstAttribute="top" secondItem="m4g-Zy-CNL" secondAttribute="bottom" id="Xog-OE-itb"/>
+                <constraint firstItem="m4g-Zy-CNL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="43:667" constant="2" id="Sdl-S1-hrj"/>
+                <constraint firstItem="ZRr-ty-gD9" firstAttribute="top" secondItem="m4g-Zy-CNL" secondAttribute="bottom" constant="-2" id="Xog-OE-itb"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e9q-My-0tl"/>
                 <constraint firstItem="ZRr-ty-gD9" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="jlp-2v-6EM"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r5B-Jc-8pp"/>
