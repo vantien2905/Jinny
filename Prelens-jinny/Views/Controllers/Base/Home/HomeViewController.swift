@@ -29,23 +29,22 @@ class HomeViewController: UIViewController {
     var sideMenuTrigger: Bool = true
     
     let membershipVC = PRMemberShipVC.initControllerFromNib()
-    let promotionVC  = UIViewController()
+    let promotionVC  = PromotionViewController.initControllerFromNib()
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         vTabbar.buttonTappedDelegate = self
         
         setUpView()
-        addSubView()
+       addSubView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        
     }
     
     func setUpView() {
-        
         vNavigation.backgroundColor = PRColor.mainAppColor
         lcsNavigationHeight.constant = 64 //(60/667)*(UIScreen.main.bounds.height)
         
@@ -80,11 +79,7 @@ class HomeViewController: UIViewController {
         membershipVC.view.frame = vContainer.bounds
         self.vContainer.addSubview(membershipVC.view)
         
-        //Promotion
-        self.addChildViewController(promotionVC)
-        promotionVC.view.frame = vContainer.bounds
-        promotionVC.view.backgroundColor = .yellow
-        self.vContainer.addSubview(membershipVC.view)
+
         
         //SideMenu
         self.addChildViewController(sideMenuVC)
@@ -92,7 +87,7 @@ class HomeViewController: UIViewController {
         self.vSideMenu.addSubview(sideMenuVC.view)
         sideMenuVC.view.fillSuperview()
         
-        switchScreen(from: promotionVC, to: membershipVC)
+//        switchScreen(from: promotionVC, to: membershipVC)
     }
     
     func switchScreen(from VC1: UIViewController, to VC2: UIViewController) {
@@ -117,6 +112,13 @@ extension HomeViewController: PRTabbarCustomDelegate {
             vTabbar.setIndexSelected(index: 0)
             
         case 1:
+            
+            //Promotion
+            self.addChildViewController(promotionVC)
+            promotionVC.view.frame = vContainer.bounds
+            promotionVC.view.backgroundColor = .yellow
+            self.vContainer.addSubview(membershipVC.view)
+            
             switchScreen(from: membershipVC, to: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             
