@@ -9,8 +9,10 @@
 import UIKit
 
 class StarredPromotionViewController: UIViewController {
-
+    
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
+    var listStarred = [String] ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configColecttionView()
@@ -26,6 +28,7 @@ class StarredPromotionViewController: UIViewController {
         cvStarredPromotion.register(UINib(nibName: Cell.searchPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.searchPromotion)
         cvStarredPromotion.register(UINib(nibName: Cell.promotionHeader, bundle: nil), forCellWithReuseIdentifier: Cell.promotionHeader)
         cvStarredPromotion.register(UINib(nibName: Cell.promotionCell, bundle: nil), forCellWithReuseIdentifier:Cell.promotionCell )
+         cvStarredPromotion.register(UINib(nibName: Cell.emptyPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.emptyPromotion)
         
         cvStarredPromotion.backgroundColor = PRColor.backgroundColor
         cvStarredPromotion.delegate = self
@@ -41,13 +44,22 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             
             return cell
         } else if indexPath.section == 1 {
-            let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath)
-            
+            let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
+            if self.listStarred.count == 0 {
+                cell.vFilter.isHidden = true
+            }
             return cell
         }
         else {
-            let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
-            return cell
+            if self.listStarred.count == 0 {
+                let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.emptyPromotion, for: indexPath) as! EmptyPromotionCell
+                
+                return cell
+            } else {
+                let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
+                return cell
+            }
+            
         }
     }
     
@@ -59,10 +71,14 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
         if section == 0 {
             return 1
         }
-        else if section  == 1{
+        else if section  == 1 {
             return 1
         } else {
-            return 5
+            if listStarred.count == 0 {
+                return 1
+            } else {
+                return 5
+            }
         }
     }
     

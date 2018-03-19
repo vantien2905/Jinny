@@ -73,7 +73,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
         }
         else {
             return CGSize(width: (collectionView.frame.width - 30), height:
-            (collectionView.frame.height / 2  ))
+            (collectionView.frame.height / 2))
         }
     }
     
@@ -86,7 +86,10 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if indexPath.section == 2 {
+                let vc = PromotionDetailViewController.initControllerFromNib()
+                self.push(controller: vc, animated: true)
+        }
     }
 }
 

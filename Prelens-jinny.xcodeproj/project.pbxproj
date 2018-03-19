@@ -11,6 +11,8 @@
 		760C1124205D164C009B9205 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C1122205D164C009B9205 /* SettingViewController.swift */; };
 		760C1125205D164C009B9205 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760C1123205D164C009B9205 /* SettingViewController.xib */; };
 		7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
+		7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */; };
+		7638FA1C205FB73A00D33011 /* EmptyPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */; };
 		7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C097205A167100F384B4 /* PRForgotPassword.swift */; };
 		7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
@@ -155,6 +157,8 @@
 		760C1122205D164C009B9205 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		760C1123205D164C009B9205 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPromotionCell.swift; sourceTree = "<group>"; };
+		7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPromotionCell.xib; sourceTree = "<group>"; };
 		7640C097205A167100F384B4 /* PRForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPassword.swift; sourceTree = "<group>"; };
 		7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -402,6 +406,8 @@
 				76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */,
 				76DC8906205F763F00AD87F3 /* AllPromotionCell */,
 				76DC88FC205F6AC100AD87F3 /* HeaderCell */,
+				7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */,
+				7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */,
 			);
 			path = Promotion;
 			sourceTree = "<group>";
@@ -1078,6 +1084,7 @@
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */,
+				7638FA1C205FB73A00D33011 /* EmptyPromotionCell.xib in Resources */,
 				B7B1BC7E2058D6F40042B3D4 /* MembershipCell.xib in Resources */,
 				BC6E9DBB205A4AB100C5DF01 /* HomeViewController.xib in Resources */,
 				BC6E9DC1205A529800C5DF01 /* PRTabbarCustom.xib in Resources */,
@@ -1289,6 +1296,7 @@
 				B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */,
 				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
+				7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
 				BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */,
