@@ -89,8 +89,12 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             return CGSize(width: collectionView.frame.width - 30, height: 40 )
         }
         else {
-            return CGSize(width: (collectionView.frame.width - 30), height:
-                (collectionView.frame.height / 2  ))
+            if self.listStarred.count == 0 {
+                return CGSize(width: collectionView.frame.width - 30, height: 20)
+            } else {
+                return CGSize(width: (collectionView.frame.width - 30), height:(collectionView.frame.height / 2  ))
+            }
+           
         }
     }
     
