@@ -14,6 +14,7 @@ class EmptyMembershipCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lbContent.textColor = PRColor.emptyMembership
     }
 
 }

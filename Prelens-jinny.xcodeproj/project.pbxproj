@@ -73,6 +73,8 @@
 		B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC912058D7FA0042B3D4 /* seguibli.ttf */; };
 		B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */; };
 		B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */; };
+		B7F32C64205BCEFF00090A0C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F32C62205BCEFF00090A0C /* CardViewController.swift */; };
+		B7F32C65205BCEFF00090A0C /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F32C63205BCEFF00090A0C /* CardViewController.xib */; };
 		BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
@@ -190,6 +192,8 @@
 		B7B1BC912058D7FA0042B3D4 /* seguibli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibli.ttf; sourceTree = "<group>"; };
 		B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisbi.ttf; sourceTree = "<group>"; };
 		B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
+		B7F32C62205BCEFF00090A0C /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		B7F32C63205BCEFF00090A0C /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		BC36E973205846B1006A90A0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
@@ -439,6 +443,15 @@
 				B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B7F32C61205BCEA800090A0C /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				B7F32C62205BCEFF00090A0C /* CardViewController.swift */,
+				B7F32C63205BCEFF00090A0C /* CardViewController.xib */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */ = {
@@ -738,6 +751,7 @@
 		BCBC960D20563012004C1985 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
+				B7F32C61205BCEA800090A0C /* Card */,
 				B73862762059139000C7004D /* MembershipDetail */,
 				BCB04FE52057E6CC008F929F /* ListMembership */,
 				BCBC960E20563012004C1985 /* AddMembership */,
@@ -873,6 +887,7 @@
 				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
 				B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */,
 				B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */,
+				B7F32C65205BCEFF00090A0C /* CardViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
@@ -1029,6 +1044,7 @@
 				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
+				B7F32C64205BCEFF00090A0C /* CardViewController.swift in Sources */,
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
 				B788665B205A1C5800096F27 /* Url.swift in Sources */,
 				B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */,

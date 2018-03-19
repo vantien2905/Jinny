@@ -61,6 +61,12 @@
                                 <constraint firstAttribute="width" constant="14.5" id="IBN-8F-LFE"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jn-g1-SpT">
+                            <rect key="frame" x="140.5" y="20" width="113" height="94"/>
+                            <connections>
+                                <action selector="btnLogoTapped" destination="-1" eventType="touchUpInside" id="i5O-9P-1jg"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -68,9 +74,13 @@
                         <constraint firstItem="iIS-h5-xPP" firstAttribute="centerX" secondItem="yZS-ZB-klj" secondAttribute="centerX" id="3Qo-IH-JNS"/>
                         <constraint firstItem="iIS-h5-xPP" firstAttribute="top" secondItem="yZS-ZB-klj" secondAttribute="bottom" id="8RP-JH-XKs"/>
                         <constraint firstItem="2f3-yI-i9v" firstAttribute="leading" secondItem="EFX-nh-KBi" secondAttribute="trailing" constant="2.5" id="8be-ad-N0t"/>
+                        <constraint firstItem="8Jn-g1-SpT" firstAttribute="leading" secondItem="EFX-nh-KBi" secondAttribute="leading" id="ALv-SA-bpB"/>
                         <constraint firstItem="EFX-nh-KBi" firstAttribute="centerX" secondItem="Ufe-9a-cMN" secondAttribute="centerX" id="DHq-6F-LvW"/>
                         <constraint firstItem="2f3-yI-i9v" firstAttribute="top" secondItem="EFX-nh-KBi" secondAttribute="top" id="NEM-BH-eTv"/>
+                        <constraint firstItem="8Jn-g1-SpT" firstAttribute="bottom" secondItem="EFX-nh-KBi" secondAttribute="bottom" id="jPa-YX-y4c"/>
                         <constraint firstItem="EFX-nh-KBi" firstAttribute="top" secondItem="Ufe-9a-cMN" secondAttribute="top" constant="20" id="kfu-Qa-8ro"/>
+                        <constraint firstItem="8Jn-g1-SpT" firstAttribute="trailing" secondItem="EFX-nh-KBi" secondAttribute="trailing" constant="20" id="oIF-vA-GRs"/>
+                        <constraint firstItem="8Jn-g1-SpT" firstAttribute="top" secondItem="EFX-nh-KBi" secondAttribute="top" id="odq-m8-yO3"/>
                         <constraint firstItem="yZS-ZB-klj" firstAttribute="centerX" secondItem="Ufe-9a-cMN" secondAttribute="centerX" id="rGg-VM-WMg"/>
                         <constraint firstItem="yZS-ZB-klj" firstAttribute="top" secondItem="EFX-nh-KBi" secondAttribute="bottom" constant="30.5" id="v41-wL-7Br"/>
                     </constraints>

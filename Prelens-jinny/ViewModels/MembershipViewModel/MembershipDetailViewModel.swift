@@ -30,6 +30,9 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
         idMembership.asObservable().subscribe(onNext: { [weak self] idMember in
             self?.getDetailMembership(idMember: idMember)
         }).disposed(by: disposeBag)
+        isBookmark.asObservable().subscribe(onNext: { (_) in
+            self.addBookmarkMembership(idMember: idMember)
+        }).disposed(by: disposeBag)
         
         
     }
@@ -38,5 +41,11 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
         Provider.shared.memberShipService.getDetailMembership(idMember: idMember).subscribe(onNext: { [weak self] (membership) in
             self?.membership.value = membership
             }).disposed(by: disposeBag)
+    }
+    
+    func addBookmarkMembership(idMember: Int) {
+//        Provider.shared.memberShipService.addBookmarkMembership(id: idMember).subscribe(onNext: { (<#Member?#>) in
+//            <#code#>
+//        }, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
 }

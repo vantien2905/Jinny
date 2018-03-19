@@ -16,6 +16,11 @@ class MembershipDetailVC: BaseViewController {
     @IBOutlet weak var imgBarCode: UIImageView!
     @IBOutlet weak var lbNumberCode: UILabel!
     @IBOutlet weak var cvPromotion: UICollectionView!
+    
+    @IBAction func btnLogoTapped() {
+        
+    }
+    
     let disposeBag = DisposeBag()
     
     var viewModel: MembershipDetailViewModelProtocol!
@@ -32,6 +37,7 @@ class MembershipDetailVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imgLogo.contentMode = .scaleAspectFill
         imgBarCode.contentMode = .scaleAspectFill
         imgBarCode.layer.masksToBounds = true
@@ -46,8 +52,12 @@ class MembershipDetailVC: BaseViewController {
     
     func configureCollectionView() {
         cvPromotion.register(UINib(nibName: Cell.membershipDetail, bundle: nil), forCellWithReuseIdentifier: Cell.membershipDetail)
-        cvPromotion.showsHorizontalScrollIndicator = true
         cvPromotion.isPagingEnabled = true
+        
+        if let layout = self.cvPromotion.collectionViewLayout as? UICollectionViewFlowLayout {
+                layout.scrollDirection = .horizontal
+        }
+        
         cvPromotion.delegate = self
         cvPromotion.dataSource = self
     }
@@ -70,10 +80,6 @@ class MembershipDetailVC: BaseViewController {
     
     func bindData() {
         
-//        listPromotion.asObservable().bind(to: cvPromotion.rx.items) {table, _, image in
-//            let cell = table.de
-//        }
-        
         viewModel.membership.asObservable().subscribe(onNext: { (member) in
             if let _member = member {
                 self.membershipDetail = _member
@@ -93,10 +99,10 @@ class MembershipDetailVC: BaseViewController {
                     let url = URL(string: _urlLogo)
                     imgLogo.sd_setImage(with: url, placeholderImage: nil)
                 }
-                if let _urlMedium = _url.medium {
-                    let url = URL(string: _urlMedium)
-                    imgBarCode.sd_setImage(with: url, placeholderImage: nil)
-                }
+//                if let _urlMedium = _url.medium {
+//                    let url = URL(string: _urlMedium)
+//                    imgBarCode.sd_setImage(with: url, placeholderImage: nil)
+//                }
             }
         }
         
@@ -105,7 +111,23 @@ class MembershipDetailVC: BaseViewController {
         
         if let _code = membershipDetail.code {
             lbNumberCode.text = _code
+            imgBarCode.image = generateBarcode(from: "8934602001078")
         }
+    }
+    
+    func generateBarcode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        
+        if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+        
+        return nil
     }
 }
 

@@ -40,7 +40,6 @@ class PRMemberShipVC: BaseViewController {
             if let _member = member {
                 self.listMember = _member
             }
-            
         }).disposed(by: disposeBag)
     }
     
@@ -51,7 +50,6 @@ class PRMemberShipVC: BaseViewController {
         cvMembership.register(UINib(nibName: Cell.starredheader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.starredheader)
         cvMembership.register(UINib(nibName: Cell.otherHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader)
         cvMembership.register(UINib(nibName: Cell.membershipFooter, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter)
-        
         
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.delegate = self
@@ -84,7 +82,7 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         } else {
             if listMember.otherMemberships.count == 0 {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.emptyMembership, for: indexPath) as! EmptyMembershipCell
-                
+                cell.lbContent.text = "Press the + button below to add new membership"
                 return cell
             } else {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.memberShip, for: indexPath) as! MembershipCell
@@ -125,13 +123,13 @@ extension PRMemberShipVC: UICollectionViewDelegateFlowLayout, UICollectionViewDa
             return CGSize(width: collectionView.frame.width - 30, height: 50)
         } else if indexPath.section == 1 {
             if self.listMember.startedMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 30, height: 30)
+                return CGSize(width: collectionView.frame.width - 30, height: 20)
             } else {
                 return CGSize(width: (collectionView.frame.width - 35)/2, height: (collectionView.frame.width - 35)/2)
             }
         } else {
             if self.listMember.otherMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 30, height: 30)
+                return CGSize(width: collectionView.frame.width - 30, height: 20)
             } else {
                 return CGSize(width: (collectionView.frame.width - 35)/2, height: (collectionView.frame.width - 35)/2)
             }
