@@ -13,7 +13,7 @@ protocol AuthenticationServiceProtocol {
     func login(email: String, password: String) -> Observable<PRUser?>
     func signUp(email: String, password: String) -> Observable<PRUser?>
     func forgotPassword(email: String) -> Observable<PRForgotPassword?>
-    func changePassword(currentPassword: String, new_password: String) -> Observable<PRUser?>
+    func changePassword(currentPassword: String, newPassword: String) -> Observable<PRUser?>
 }
 
 class AuthenticationService: AuthenticationServiceProtocol {
@@ -49,10 +49,10 @@ class AuthenticationService: AuthenticationServiceProtocol {
         return network.rx_Object(url: APIEndpoint.Authentication.forgotPassword, method: .post, parameters: parameters as [String: AnyObject])
     }
 
-    func changePassword(currentPassword: String, new_password: String) -> Observable<PRUser?> {
+    func changePassword(currentPassword: String, newPassword: String) -> Observable<PRUser?> {
         let parameters = [
             "current_password": currentPassword,
-            "new_password": new_password
+            "new_password": newPassword
         ]
 
         return network.rx_Object(url: APIEndpoint.Authentication.changePassword, method: .put, parameters: parameters as [String: AnyObject])

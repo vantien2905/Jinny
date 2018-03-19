@@ -62,7 +62,7 @@ final class ChangePasswordViewModel {
 
     func callAPIChangePassword() {
         guard let _currentPassword = self.currentPassword.value, let _newPassword = self.newPassword.value else { return }
-        Provider.shared.authenticationService.changePassword(currentPassword: _currentPassword, new_password: _newPassword)
+        Provider.shared.authenticationService.changePassword(currentPassword: _currentPassword, newPassword: _newPassword)
             .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else { return }
                 PopUpHelper.shared.showMessage(message: ContantMessages.User.successChangePassword)

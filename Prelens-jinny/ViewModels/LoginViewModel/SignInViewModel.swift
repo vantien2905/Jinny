@@ -51,10 +51,10 @@ final class SignInViewModel {
 
         userLogin.asObservable()
             .ignoreNil()
-            .subscribe(onNext: {  [weak self] _userLogin in
+            .subscribe(onNext: {  [weak self] userLogin in
                 guard let strongSelf = self else { return }
 
-                if let token = _userLogin.token {
+                if let token = userLogin.token {
                       KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
                       KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
                       KeychainManager.shared.setToken(token)

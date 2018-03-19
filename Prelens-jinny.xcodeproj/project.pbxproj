@@ -267,8 +267,6 @@
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC770A72204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prelens_jinnyTests.swift; sourceTree = "<group>"; };
-		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSideMenuVC.swift; sourceTree = "<group>"; };
 		BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSideMenuVC.xib; sourceTree = "<group>"; };
 		BC9A614A205F77310071EF4F /* PromotionDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailHeaderCell.swift; sourceTree = "<group>"; };
@@ -668,7 +666,6 @@
 			isa = PBXGroup;
 			children = (
 				BC770A65204CEE5D0052A285 /* Prelens-jinny */,
-				BC770A7A204CEE5D0052A285 /* Prelens-jinnyTests */,
 				BC770A64204CEE5D0052A285 /* Products */,
 				C2031F63C23FE59B8717BCA4 /* Pods */,
 				41E1775A7640208EFCC65BDD /* Frameworks */,
@@ -698,15 +695,6 @@
 				BC770A72204CEE5D0052A285 /* Info.plist */,
 			);
 			path = "Prelens-jinny";
-			sourceTree = "<group>";
-		};
-		BC770A7A204CEE5D0052A285 /* Prelens-jinnyTests */ = {
-			isa = PBXGroup;
-			children = (
-				BC770A7B204CEE5D0052A285 /* Prelens_jinnyTests.swift */,
-				BC770A7D204CEE5D0052A285 /* Info.plist */,
-			);
-			path = "Prelens-jinnyTests";
 			sourceTree = "<group>";
 		};
 		BC78F4952058D406003904E0 /* SideMenu */ = {
