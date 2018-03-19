@@ -38,27 +38,26 @@ class StarredPromotionViewController: UIViewController {
 
 extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
-
+            
             return cell
-        } else if indexPath.section == 1 {
+        case 1:
             let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
             if self.listStarred.count == 0 {
                 cell.vFilter.isHidden = true
             }
             return cell
-        } else {
+        default:
             if self.listStarred.count == 0 {
                 let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.emptyPromotion, for: indexPath) as! EmptyPromotionCell
-
+                
                 return cell
             } else {
                 let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
                 return cell
             }
-
         }
     }
 
@@ -67,31 +66,30 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section  == 1 {
-            return 1
-        } else {
+        switch section {
+        case 2:
             if listStarred.count == 0 {
                 return 1
             } else {
                 return 5
             }
+        default:
+            return 1
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             return CGSize(width: collectionView.frame.width - 30, height: 70 )
-        } else if indexPath.section == 1 {
+        case 1:
             return CGSize(width: collectionView.frame.width - 30, height: 40 )
-        } else {
+        default:
             if self.listStarred.count == 0 {
-                return CGSize(width: collectionView.frame.width - 30, height: 20)
+                return CGSize(width: collectionView.frame.width - 30, height: 30)
             } else {
                 return CGSize(width: (collectionView.frame.width - 30), height: (collectionView.frame.height / 2  ))
             }
-
         }
     }
 

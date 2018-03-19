@@ -23,6 +23,7 @@ class PromotionViewController: UIViewController {
     let vcStarredPromotion = StarredPromotionViewController.initControllerFromNib() as! StarredPromotionViewController
     let vcAchivedPromotion = AchivedPromotionViewController.initControllerFromNib() as! AchivedPromotionViewController
     let cellId = "CellId"
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupView()

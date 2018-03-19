@@ -10,9 +10,13 @@ import UIKit
 
 class EmptyPromotionCell: UICollectionViewCell {
 
+    @IBOutlet weak var vLine: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupView()
         // Initialization code
     }
-
+    func setupView() {
+        vLine.backgroundColor = PRColor.lineColor
+    }
 }
