@@ -23,6 +23,8 @@
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
 		76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */; };
+		76DC88EA205F5A6700AD87F3 /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */; };
+		76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
@@ -145,6 +147,8 @@
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
+		76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
+		76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionViewController.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
 		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
@@ -309,6 +313,15 @@
 				7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */,
 			);
 			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
+			isa = PBXGroup;
+			children = (
+				76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */,
+				76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */,
+			);
+			path = Promotion;
 			sourceTree = "<group>";
 		};
 		B73862612058FF1600C7004D /* SubView */ = {
@@ -667,6 +680,7 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76DC88E7205F5A4600AD87F3 /* Promotion */,
 				B7B1BC712058CFD60042B3D4 /* Base */,
 				BCBC960D20563012004C1985 /* Membership */,
 				BCBC960420562D26004C1985 /* Redeem */,
@@ -908,6 +922,7 @@
 				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
 				B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */,
 				B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */,
+				76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */,
 				B7F32C65205BCEFF00090A0C /* CardViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
@@ -1073,6 +1088,7 @@
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
 				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
 				D9911860205BAB8900F701ED /* ResponseError.swift in Sources */,
+				76DC88EA205F5A6700AD87F3 /* PromotionViewController.swift in Sources */,
 				B7B1BC732058CFF60042B3D4 /* BaseViewController.swift in Sources */,
 				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
 				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
