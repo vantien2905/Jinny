@@ -1,5 +1,5 @@
 //
-//  PromotionHeaderCell.swift
+//  EmptyPromotionCell.swift
 //  Prelens-jinny
 //
 //  Created by vinova on 3/19/18.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class PromotionHeaderCell: UICollectionViewCell {
-    @IBOutlet weak var vFilter: UIView!
-    
+class EmptyPromotionCell: UICollectionViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

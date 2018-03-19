@@ -82,7 +82,7 @@ struct Cell {
     static let promotionHeader  = "PromotionHeaderCell"
     static let promotionCell    = "PromotionCell"
     static let searchPromotion  = "SearchPromotionCell"
-
+    static let emptyPromotion   = "EmptyPromotionCell"
 }
 
 struct PRFont {
