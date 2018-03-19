@@ -73,6 +73,10 @@ struct Cell {
     static let otherHeader  = "OtherHeaderCell"
     static let membershipFooter = "MembershipFooterCell"
     static let membershipDetail    = "MembershipDetailCell"
+    
+    static let promotionDetailCell = "PromotionDetailCell"
+    static let promotionDetailHeaderCell = "PromotionDetailHeaderCell"
+    static let promotionDetailFooterCell = "PromotionDetailFooterCell"
 }
 
 struct PRFont {

@@ -59,7 +59,7 @@
                 <outlet property="imgStar" destination="MxZ-CO-UJB" id="qul-Mt-Wob"/>
                 <outlet property="vContent" destination="iwN-Gd-jyk" id="f57-Yi-iCH"/>
             </connections>
-            <point key="canvasLocation" x="-6" y="-21"/>
+            <point key="canvasLocation" x="-6.5" y="-21"/>
         </collectionViewCell>
     </objects>
     <resources>

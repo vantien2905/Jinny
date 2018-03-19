@@ -103,6 +103,12 @@
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
 		BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */; };
 		BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */; };
+		BC9A614C205F77310071EF4F /* PromotionDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A614A205F77310071EF4F /* PromotionDetailHeaderCell.swift */; };
+		BC9A614D205F77310071EF4F /* PromotionDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A614B205F77310071EF4F /* PromotionDetailHeaderCell.xib */; };
+		BC9A6151205F77F00071EF4F /* PromotionDetailFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A614F205F77F00071EF4F /* PromotionDetailFooterCell.swift */; };
+		BC9A6152205F77F00071EF4F /* PromotionDetailFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A6150205F77F00071EF4F /* PromotionDetailFooterCell.xib */; };
+		BC9A6156205F9BBE0071EF4F /* PromotionDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9A6154205F9BBE0071EF4F /* PromotionDetailCell.swift */; };
+		BC9A6157205F9BBE0071EF4F /* PromotionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A6155205F9BBE0071EF4F /* PromotionDetailCell.xib */; };
 		BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */; };
 		BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */; };
 		BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */; };
@@ -241,6 +247,12 @@
 		BC770A7D204CEE5D0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC78F48F2058D3FC003904E0 /* PRSideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSideMenuVC.swift; sourceTree = "<group>"; };
 		BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSideMenuVC.xib; sourceTree = "<group>"; };
+		BC9A614A205F77310071EF4F /* PromotionDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailHeaderCell.swift; sourceTree = "<group>"; };
+		BC9A614B205F77310071EF4F /* PromotionDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionDetailHeaderCell.xib; sourceTree = "<group>"; };
+		BC9A614F205F77F00071EF4F /* PromotionDetailFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailFooterCell.swift; sourceTree = "<group>"; };
+		BC9A6150205F77F00071EF4F /* PromotionDetailFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionDetailFooterCell.xib; sourceTree = "<group>"; };
+		BC9A6154205F9BBE0071EF4F /* PromotionDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailCell.swift; sourceTree = "<group>"; };
+		BC9A6155205F9BBE0071EF4F /* PromotionDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionDetailCell.xib; sourceTree = "<group>"; };
 		BCB04FE62057E6CC008F929F /* PRMemberShipVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRMemberShipVC.xib; sourceTree = "<group>"; };
 		BCB04FEA2057E6CC008F929F /* PRMemberShipVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRMemberShipVC.swift; sourceTree = "<group>"; };
 		BCBC95E220562BB8004C1985 /* PRForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -397,6 +409,9 @@
 			children = (
 				76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */,
 				76DC8903205F70C500AD87F3 /* PromotionDetailViewController.xib */,
+				BC9A6158205F9BC50071EF4F /* PromotionDetailCell */,
+				BC9A614E205F77380071EF4F /* HeaderCell */,
+				BC9A6153205F78430071EF4F /* FooterCell */,
 			);
 			path = PromotionDetail;
 			sourceTree = "<group>";
@@ -626,6 +641,33 @@
 				BC78F4902058D3FC003904E0 /* PRSideMenuVC.xib */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		BC9A614E205F77380071EF4F /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC9A614A205F77310071EF4F /* PromotionDetailHeaderCell.swift */,
+				BC9A614B205F77310071EF4F /* PromotionDetailHeaderCell.xib */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		BC9A6153205F78430071EF4F /* FooterCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC9A614F205F77F00071EF4F /* PromotionDetailFooterCell.swift */,
+				BC9A6150205F77F00071EF4F /* PromotionDetailFooterCell.xib */,
+			);
+			path = FooterCell;
+			sourceTree = "<group>";
+		};
+		BC9A6158205F9BC50071EF4F /* PromotionDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC9A6154205F9BBE0071EF4F /* PromotionDetailCell.swift */,
+				BC9A6155205F9BBE0071EF4F /* PromotionDetailCell.xib */,
+			);
+			path = PromotionDetailCell;
 			sourceTree = "<group>";
 		};
 		BCB04FE52057E6CC008F929F /* ListMembership */ = {
@@ -985,7 +1027,9 @@
 				760C1125205D164C009B9205 /* SettingViewController.xib in Resources */,
 				B7B1BC9A2058D7FA0042B3D4 /* seguisli.ttf in Resources */,
 				76DC88FA205F604D00AD87F3 /* AchivedPromotionViewController.xib in Resources */,
+				BC9A6157205F9BBE0071EF4F /* PromotionDetailCell.xib in Resources */,
 				B7B1BC9F2058D7FA0042B3D4 /* seguisb.ttf in Resources */,
+				BC9A614D205F77310071EF4F /* PromotionDetailHeaderCell.xib in Resources */,
 				B7B1BC9B2058D7FA0042B3D4 /* segoeuisl.ttf in Resources */,
 				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
 				B7B1BCA22058D7FA0042B3D4 /* seguibl.ttf in Resources */,
@@ -1007,6 +1051,7 @@
 				B7F32C65205BCEFF00090A0C /* CardViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
+				BC9A6152205F77F00071EF4F /* PromotionDetailFooterCell.xib in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
@@ -1191,7 +1236,9 @@
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
+				BC9A6156205F9BBE0071EF4F /* PromotionDetailCell.swift in Sources */,
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
+				BC9A614C205F77310071EF4F /* PromotionDetailHeaderCell.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				D9911858205B7AC100F701ED /* Network.swift in Sources */,
 				76DC8904205F70C500AD87F3 /* PromotionDetailViewController.swift in Sources */,
@@ -1211,6 +1258,7 @@
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				D9911856205B7AC100F701ED /* Provider.swift in Sources */,
 				BCB04FEE2057E6CC008F929F /* PRMemberShipVC.swift in Sources */,
+				BC9A6151205F77F00071EF4F /* PromotionDetailFooterCell.swift in Sources */,
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
