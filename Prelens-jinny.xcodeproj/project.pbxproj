@@ -33,6 +33,8 @@
 		76DC88FA205F604D00AD87F3 /* AchivedPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88F8205F604D00AD87F3 /* AchivedPromotionViewController.xib */; };
 		76DC88FF205F6B5600AD87F3 /* PromotionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88FD205F6B5600AD87F3 /* PromotionHeaderCell.swift */; };
 		76DC8900205F6B5600AD87F3 /* PromotionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88FE205F6B5600AD87F3 /* PromotionHeaderCell.xib */; };
+		76DC8904205F70C500AD87F3 /* PromotionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */; };
+		76DC8905205F70C500AD87F3 /* PromotionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8903205F70C500AD87F3 /* PromotionDetailViewController.xib */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
 		76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
 		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
@@ -165,6 +167,8 @@
 		76DC88F8205F604D00AD87F3 /* AchivedPromotionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchivedPromotionViewController.xib; sourceTree = "<group>"; };
 		76DC88FD205F6B5600AD87F3 /* PromotionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionHeaderCell.swift; sourceTree = "<group>"; };
 		76DC88FE205F6B5600AD87F3 /* PromotionHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionHeaderCell.xib; sourceTree = "<group>"; };
+		76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewController.swift; sourceTree = "<group>"; };
+		76DC8903205F70C500AD87F3 /* PromotionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionDetailViewController.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
 		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
+				76DC8901205F70AE00AD87F3 /* PromotionDetail */,
 				76DC88ED205F5FFA00AD87F3 /* Achived */,
 				76DC88EE205F5FFA00AD87F3 /* All */,
 				76DC88EC205F5FFA00AD87F3 /* Starred */,
@@ -385,6 +390,15 @@
 				76DC88FE205F6B5600AD87F3 /* PromotionHeaderCell.xib */,
 			);
 			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		76DC8901205F70AE00AD87F3 /* PromotionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */,
+				76DC8903205F70C500AD87F3 /* PromotionDetailViewController.xib */,
+			);
+			path = PromotionDetail;
 			sourceTree = "<group>";
 		};
 		B73862612058FF1600C7004D /* SubView */ = {
@@ -984,6 +998,7 @@
 				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
 				76DC88F2205F602000AD87F3 /* AllPromotionViewController.xib in Resources */,
 				B7B1BC982058D7FA0042B3D4 /* OstrichSans-Light.otf in Resources */,
+				76DC8905205F70C500AD87F3 /* PromotionDetailViewController.xib in Resources */,
 				B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */,
 				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
 				B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */,
@@ -1179,6 +1194,7 @@
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				D9911858205B7AC100F701ED /* Network.swift in Sources */,
+				76DC8904205F70C500AD87F3 /* PromotionDetailViewController.swift in Sources */,
 				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
