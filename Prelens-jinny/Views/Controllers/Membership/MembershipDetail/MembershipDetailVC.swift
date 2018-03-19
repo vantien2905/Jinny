@@ -73,6 +73,7 @@ class MembershipDetailVC: BaseViewController {
     }
     
     func setNavigation() {
+        navigationController?.navigationBar.isHidden = false
         setTitle(title: "STARBUCKS", textColor: UIColor.black, backgroundColor: .white)
         addBackButton()
         addStarButtonOn()

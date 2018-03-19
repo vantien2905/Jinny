@@ -1,0 +1,38 @@
+
+default_platform :ios
+platform :ios do
+
+before_all do
+  versionNumber = get_version_number
+  newBuildNumber = get_build_number.to_i + 1
+
+  Actions.lane_context[SharedValues::VERSION_NUMBER] = "#{versionNumber}"
+  Actions.lane_context[SharedValues::BUILD_NUMBER] = "#{newBuildNumber}"
+
+  GIT_BRANCH = sh("git rev-parse --abbrev-ref HEAD")
+
+  IPA_PATH  = "build/#{ENV["APP_NAME"]}.ipa"
+  IPA_INFO  = "#{ENV["APP_NAME"]} v#{versionNumber}(#{newBuildNumber})"
+end
+
+lane :watch do
+  sh("watchbuild -a #{ENV["APP_ID"]} -u #{ENV["APPLE_USER_NAME"]}")
+end
+
+def get_build_number
+  `/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' ../#{ENV["APP_PLIST"]}`.strip
+end
+
+def get_version_number
+  `/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' ../#{ENV["APP_PLIST"]}`.strip
+end
+
+def set_build_number(build_number = nil)
+  raise if build_number.nil?
+
+  puts "Setting build number to #{build_number}"
+  Actions.lane_context[SharedValues::BUILD_NUMBER] = "#{build_number}"
+  sh("/usr/libexec/PlistBuddy -c 'Set CFBundleVersion #{build_number}' ../#{ENV["APP_PLIST"]}")
+end
+
+end

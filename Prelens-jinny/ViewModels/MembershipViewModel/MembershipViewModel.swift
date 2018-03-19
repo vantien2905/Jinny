@@ -24,10 +24,16 @@ class MembershipViewModel {
     var inputs = MembershipViewModelInput()
     var outputs = MembershipViewModelOutput()
     
-    
-    init() {
+    func getListMembership() {
         Provider.shared.memberShipService.getListAllMembership().subscribe(onNext: { [weak self] (member) in
             self?.outputs.listMembership.value = member
         }).disposed(by: disposeBag)
+
     }
+    
+//    init() {
+//        Provider.shared.memberShipService.getListAllMembership().subscribe(onNext: { [weak self] (member) in
+//            self?.outputs.listMembership.value = member
+//        }).disposed(by: disposeBag)
+//    }
 }

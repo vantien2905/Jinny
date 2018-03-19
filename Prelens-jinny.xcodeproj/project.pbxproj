@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
+		760C1124205D164C009B9205 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C1122205D164C009B9205 /* SettingViewController.swift */; };
+		760C1125205D164C009B9205 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760C1123205D164C009B9205 /* SettingViewController.xib */; };
 		7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
 		7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C097205A167100F384B4 /* PRForgotPassword.swift */; };
 		7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
+		764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
 		765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
-		765028012051265300618C84 /* PRSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027FF2051265300618C84 /* PRSettingViewController.swift */; };
-		765028032051265300618C84 /* PRSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765028002051265300618C84 /* PRSettingViewController.xib */; };
 		765087862057716100199FBB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SignInViewModel.swift */; };
 		76508789205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
@@ -81,8 +82,8 @@
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
 		BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */; };
-		BC6E9DB9205A4AB100C5DF01 /* PRNewBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */; };
-		BC6E9DBB205A4AB100C5DF01 /* PRNewBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DB8205A4AB100C5DF01 /* PRNewBaseVC.xib */; };
+		BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */; };
+		BC6E9DBB205A4AB100C5DF01 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */; };
 		BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */; };
 		BC6E9DC1205A529800C5DF01 /* PRTabbarCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
@@ -121,20 +122,23 @@
 		D991185E205B82D900F701ED /* MembershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991185D205B82D900F701ED /* MembershipService.swift */; };
 		D9911860205BAB8900F701ED /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991185F205BAB8900F701ED /* ResponseError.swift */; };
 		D9911862205BB0A600F701ED /* PopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9911861205BB0A600F701ED /* PopUpHelper.swift */; };
+		D9911866205BC39400F701ED /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9911864205BC39400F701ED /* Fabric.framework */; };
+		D9911867205BC39400F701ED /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9911865205BC39400F701ED /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		760C1122205D164C009B9205 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		760C1123205D164C009B9205 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7640C097205A167100F384B4 /* PRForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPassword.swift; sourceTree = "<group>"; };
 		7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialRegion.swift; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
-		765027FF2051265300618C84 /* PRSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSettingViewController.swift; sourceTree = "<group>"; };
-		765028002051265300618C84 /* PRSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRSettingViewController.xib; sourceTree = "<group>"; };
 		765087852057716100199FBB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		76508788205772D200199FBB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
@@ -200,8 +204,8 @@
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseViewXib.swift; sourceTree = "<group>"; };
-		BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRNewBaseVC.swift; sourceTree = "<group>"; };
-		BC6E9DB8205A4AB100C5DF01 /* PRNewBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRNewBaseVC.xib; sourceTree = "<group>"; };
+		BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarCustom.swift; sourceTree = "<group>"; };
 		BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRTabbarCustom.xib; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +250,8 @@
 		D991185D205B82D900F701ED /* MembershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipService.swift; sourceTree = "<group>"; };
 		D991185F205BAB8900F701ED /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		D9911861205BB0A600F701ED /* PopUpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpHelper.swift; sourceTree = "<group>"; };
+		D9911864205BC39400F701ED /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		D9911865205BC39400F701ED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -255,6 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */,
+				D9911867205BC39400F701ED /* Crashlytics.framework in Frameworks */,
+				D9911866205BC39400F701ED /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +272,8 @@
 		41E1775A7640208EFCC65BDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9911865205BC39400F701ED /* Crashlytics.framework */,
+				D9911864205BC39400F701ED /* Fabric.framework */,
 				31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */,
 				564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */,
 			);
@@ -276,6 +286,7 @@
 				B7795902205B75B2005404FC /* Membership */,
 				BCE3495820565A5000B8C440 /* PRUser.swift */,
 				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
+				764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,8 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B1BC722058CFF60042B3D4 /* BaseViewController.swift */,
-				BC6E9DB7205A4AB100C5DF01 /* PRNewBaseVC.swift */,
-				BC6E9DB8205A4AB100C5DF01 /* PRNewBaseVC.xib */,
+				BC6F3368205BC6DB00CDAD85 /* Home */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -462,6 +472,15 @@
 				BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */,
 			);
 			path = PRTabbarCustom;
+			sourceTree = "<group>";
+		};
+		BC6F3368205BC6DB00CDAD85 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */,
+				BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		BC770A5A204CEE5D0052A285 = {
@@ -602,8 +621,8 @@
 		BCBC959920562488004C1985 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				765027FF2051265300618C84 /* PRSettingViewController.swift */,
-				765028002051265300618C84 /* PRSettingViewController.xib */,
+				760C1122205D164C009B9205 /* SettingViewController.swift */,
+				760C1123205D164C009B9205 /* SettingViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -820,6 +839,7 @@
 				EC8069F93B495D536F6A3A87 /* [CP] Embed Pods Frameworks */,
 				9F174E9888A3CAE4E009E496 /* [CP] Copy Pods Resources */,
 				B75C4179205A705900E4A77F /* ShellScript */,
+				D9911863205BC36600F701ED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -842,7 +862,7 @@
 				TargetAttributes = {
 					BC770A62204CEE5D0052A285 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -870,6 +890,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */,
+				760C1125205D164C009B9205 /* SettingViewController.xib in Resources */,
 				B7B1BC9A2058D7FA0042B3D4 /* seguisli.ttf in Resources */,
 				B7B1BC9F2058D7FA0042B3D4 /* seguisb.ttf in Resources */,
 				B7B1BC9B2058D7FA0042B3D4 /* segoeuisl.ttf in Resources */,
@@ -896,10 +917,9 @@
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */,
 				B7B1BC7E2058D6F40042B3D4 /* MembershipCell.xib in Resources */,
-				BC6E9DBB205A4AB100C5DF01 /* PRNewBaseVC.xib in Resources */,
+				BC6E9DBB205A4AB100C5DF01 /* HomeViewController.xib in Resources */,
 				BC6E9DC1205A529800C5DF01 /* PRTabbarCustom.xib in Resources */,
 				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
-				765028032051265300618C84 /* PRSettingViewController.xib in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
 				BCB04FEB2057E6CC008F929F /* PRMemberShipVC.xib in Resources */,
@@ -967,6 +987,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D9911863205BC36600F701ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0d3bccabbaed333bc9bde7468e94e18109778ee7 c8914428269aea20ddb8a47fc185386bf24f8920b045b41c18b9a739c39a7eb8";
+		};
 		EC8069F93B495D536F6A3A87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1026,12 +1059,13 @@
 				7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				D9911862205BB0A600F701ED /* PopUpHelper.swift in Sources */,
-				765028012051265300618C84 /* PRSettingViewController.swift in Sources */,
 				D991185C205B7B1800F701ED /* AuthenticationService.swift in Sources */,
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
+				764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
+				760C1124205D164C009B9205 /* SettingViewController.swift in Sources */,
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
@@ -1081,7 +1115,7 @@
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailVC.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
-				BC6E9DB9205A4AB100C5DF01 /* PRNewBaseVC.swift in Sources */,
+				BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
@@ -1214,11 +1248,18 @@
 			baseConfigurationReference = C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GU9U74T6LC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "test.Prelens-jinny";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "179b8381-1f1d-413f-9731-806d592269a1";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development sg.vinova.prelens";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1229,11 +1270,19 @@
 			baseConfigurationReference = BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GU9U74T6LC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "test.Prelens-jinny";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d813a21e-8c86-4f33-b084-2951f8f4626d";
+				PROVISIONING_PROFILE_SPECIFIER = "match InHouse sg.vinova.prelens";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -45,7 +45,7 @@ class PRSideMenuVC: UIViewController {
     }
     
     func setUpView() {
-        vAccount.backgroundColor = PRColor.mainAppColor
+        vAccount.backgroundColor = .yellow
         
         lbAccount.font = PRFont.sideBarMenuFont
         lbSetting.font = PRFont.sideBarMenuFont
@@ -59,7 +59,6 @@ class PRSideMenuVC: UIViewController {
 //MARK: Button Action
 extension PRSideMenuVC {
     @IBAction func editProfileTapped() {
-        
     }
     
     @IBAction func settingTapped() {
@@ -75,7 +74,9 @@ extension PRSideMenuVC {
     }
     
     @IBAction func logoutTapped() {
-        
+        KeychainManager.shared.deleteAllSavedData()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.goToLogin()
     }
 }
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Crashlytics.self])
         handleFlow()
         return true
     }
@@ -34,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleFlow() {
         UITabBar.appearance().tintColor = UIColor.red
         if KeychainManager.shared.getToken() != nil {
+
 //            KeychainManager.shared.deleteToken()
+
             goToMainApp()
         } else {
             goToLogin()
@@ -47,7 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func goToMainApp() {
-        window?.rootViewController = PRTabbarMainViewController()
+//        window?.rootViewController = PRTabbarMainViewController()
+        let vc  = UINavigationController(rootViewController:HomeViewController())
+        window?.rootViewController = vc
         
         //        apiNotification.asObservable().subscribe(onNext: { [weak self] unreadNotification in
         //            guard let _unreadNotification = unreadNotification else { return }
