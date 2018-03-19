@@ -60,7 +60,6 @@ class MemberShipViewController: BaseViewController {
         cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 0, right: 15)
         
     }
-    
 }
 
 extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -73,7 +72,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
         } else if indexPath.section == 1 {
             if self.listMember.startedMemberships.count == 0 {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.emptyMembership, for: indexPath) as! EmptyMembershipCell
-                
+                cell.lbContent.text = ConstantString.Membership.emptyStarMembership
                 return cell
             } else {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.memberShip, for: indexPath) as! MembershipCell
@@ -85,7 +84,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
         } else {
             if listMember.otherMemberships.count == 0 {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.emptyMembership, for: indexPath) as! EmptyMembershipCell
-                cell.lbContent.text = "Press the + button below to add new membership"
+                cell.lbContent.text = ConstantString.Membership.emptyOtherMembership
                 return cell
             } else {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.memberShip, for: indexPath) as! MembershipCell
@@ -95,7 +94,6 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 return cell
             }
         }
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -201,14 +199,12 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 let vc = MembershipDetailViewController.configureViewController(id: self.listMember.startedMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
             }
-            
         } else {
             if listMember.otherMemberships.count != 0 {
                 let vc = MembershipDetailViewController.configureViewController(id: self.listMember.otherMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
             }
         }
-        
     }
 }
 

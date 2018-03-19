@@ -1,5 +1,5 @@
 //
-//  MembershipDetailCell.swift
+//  FooterMembershipDetailCell.swift
 //  Prelens-jinny
 //
 //  Created by Felix Dinh on 3/19/18.
@@ -8,17 +8,20 @@
 
 import UIKit
 
-class MembershipDetailCell: UITableViewCell {
+class FooterMembershipDetailCell: UITableViewCell {
 
+    @IBAction func btnRemoveTapped() {
+    
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = PRColor.backgroundColor
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
     
 }

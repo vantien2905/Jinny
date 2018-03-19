@@ -34,8 +34,6 @@
 		B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738627320590CE700C7004D /* MembershipFooterCell.xib */; };
 		B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7386277205913CD00C7004D /* MembershipDetailViewController.swift */; };
 		B738627A205913CD00C7004D /* MembershipDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailViewController.xib */; };
-		B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */; };
-		B74E486C205BAD06006ABB4D /* MembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */; };
 		B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */; };
 		B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */; };
 		B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */; };
@@ -74,8 +72,16 @@
 		B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC912058D7FA0042B3D4 /* seguibli.ttf */; };
 		B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */; };
 		B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */; };
-		B7F32C64205BCEFF00090A0C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F32C62205BCEFF00090A0C /* CardViewController.swift */; };
-		B7F32C65205BCEFF00090A0C /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F32C63205BCEFF00090A0C /* CardViewController.xib */; };
+		B7CD063D205F6E80009951A4 /* MerchantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD063B205F6E80009951A4 /* MerchantDetailViewController.swift */; };
+		B7CD063E205F6E80009951A4 /* MerchantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD063C205F6E80009951A4 /* MerchantDetailViewController.xib */; };
+		B7CD0644205F71E9009951A4 /* MerchantDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD0642205F71E9009951A4 /* MerchantDetailCell.swift */; };
+		B7CD0645205F71E9009951A4 /* MerchantDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD0643205F71E9009951A4 /* MerchantDetailCell.xib */; };
+		B7CD064A205F9ACA009951A4 /* HeaderMembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD0648205F9ACA009951A4 /* HeaderMembershipDetailCell.swift */; };
+		B7CD064B205F9ACA009951A4 /* HeaderMembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD0649205F9ACA009951A4 /* HeaderMembershipDetailCell.xib */; };
+		B7CD064F205F9AF6009951A4 /* FooterMembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD064D205F9AF6009951A4 /* FooterMembershipDetailCell.swift */; };
+		B7CD0650205F9AF6009951A4 /* FooterMembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD064E205F9AF6009951A4 /* FooterMembershipDetailCell.xib */; };
+		B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */; };
+		B7CD0654205FA765009951A4 /* MembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */; };
 		BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
@@ -156,8 +162,6 @@
 		B738627320590CE700C7004D /* MembershipFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipFooterCell.xib; sourceTree = "<group>"; };
 		B7386277205913CD00C7004D /* MembershipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailViewController.swift; sourceTree = "<group>"; };
 		B7386278205913CD00C7004D /* MembershipDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailViewController.xib; sourceTree = "<group>"; };
-		B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailCell.swift; sourceTree = "<group>"; };
-		B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailCell.xib; sourceTree = "<group>"; };
 		B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMembershipCell.swift; sourceTree = "<group>"; };
 		B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyMembershipCell.xib; sourceTree = "<group>"; };
 		B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailViewModel.swift; sourceTree = "<group>"; };
@@ -196,8 +200,16 @@
 		B7B1BC912058D7FA0042B3D4 /* seguibli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibli.ttf; sourceTree = "<group>"; };
 		B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisbi.ttf; sourceTree = "<group>"; };
 		B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
-		B7F32C62205BCEFF00090A0C /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		B7F32C63205BCEFF00090A0C /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		B7CD063B205F6E80009951A4 /* MerchantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantDetailViewController.swift; sourceTree = "<group>"; };
+		B7CD063C205F6E80009951A4 /* MerchantDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantDetailViewController.xib; sourceTree = "<group>"; };
+		B7CD0642205F71E9009951A4 /* MerchantDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantDetailCell.swift; sourceTree = "<group>"; };
+		B7CD0643205F71E9009951A4 /* MerchantDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantDetailCell.xib; sourceTree = "<group>"; };
+		B7CD0648205F9ACA009951A4 /* HeaderMembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMembershipDetailCell.swift; sourceTree = "<group>"; };
+		B7CD0649205F9ACA009951A4 /* HeaderMembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderMembershipDetailCell.xib; sourceTree = "<group>"; };
+		B7CD064D205F9AF6009951A4 /* FooterMembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterMembershipDetailCell.swift; sourceTree = "<group>"; };
+		B7CD064E205F9AF6009951A4 /* FooterMembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterMembershipDetailCell.xib; sourceTree = "<group>"; };
+		B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailCell.swift; sourceTree = "<group>"; };
+		B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailCell.xib; sourceTree = "<group>"; };
 		BC36E973205846B1006A90A0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
@@ -336,8 +348,10 @@
 		B74E4868205BACD4006ABB4D /* MembershipDetailCell */ = {
 			isa = PBXGroup;
 			children = (
-				B74E4869205BAD06006ABB4D /* MembershipDetailCell.swift */,
-				B74E486A205BAD06006ABB4D /* MembershipDetailCell.xib */,
+				B7CD064C205F9AD3009951A4 /* FooterMembershipDetailCell */,
+				B7CD0647205F9A94009951A4 /* HeaderMembershipDetailCell */,
+				B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */,
+				B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */,
 			);
 			path = MembershipDetailCell;
 			sourceTree = "<group>";
@@ -410,6 +424,7 @@
 		B7B1BC742058D37D0042B3D4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B7CD0640205F71A1009951A4 /* Merchant */,
 				B7B1BC752058D38B0042B3D4 /* Membership */,
 			);
 			path = Cell;
@@ -455,13 +470,48 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		B7F32C61205BCEA800090A0C /* Card */ = {
+		B7CD063A205F6E55009951A4 /* MerchantDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B7F32C62205BCEFF00090A0C /* CardViewController.swift */,
-				B7F32C63205BCEFF00090A0C /* CardViewController.xib */,
+				B7CD063B205F6E80009951A4 /* MerchantDetailViewController.swift */,
+				B7CD063C205F6E80009951A4 /* MerchantDetailViewController.xib */,
 			);
-			path = Card;
+			path = MerchantDetail;
+			sourceTree = "<group>";
+		};
+		B7CD0640205F71A1009951A4 /* Merchant */ = {
+			isa = PBXGroup;
+			children = (
+				B7CD0641205F71AE009951A4 /* MerchantDetailCell */,
+			);
+			path = Merchant;
+			sourceTree = "<group>";
+		};
+		B7CD0641205F71AE009951A4 /* MerchantDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B7CD0642205F71E9009951A4 /* MerchantDetailCell.swift */,
+				B7CD0643205F71E9009951A4 /* MerchantDetailCell.xib */,
+			);
+			path = MerchantDetailCell;
+			sourceTree = "<group>";
+		};
+		B7CD0647205F9A94009951A4 /* HeaderMembershipDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B7CD0648205F9ACA009951A4 /* HeaderMembershipDetailCell.swift */,
+				B7CD0649205F9ACA009951A4 /* HeaderMembershipDetailCell.xib */,
+			);
+			path = HeaderMembershipDetailCell;
+			sourceTree = "<group>";
+		};
+		B7CD064C205F9AD3009951A4 /* FooterMembershipDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B7CD064D205F9AF6009951A4 /* FooterMembershipDetailCell.swift */,
+				B7CD064E205F9AF6009951A4 /* FooterMembershipDetailCell.xib */,
+			);
+			path = FooterMembershipDetailCell;
 			sourceTree = "<group>";
 		};
 		BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */ = {
@@ -770,7 +820,7 @@
 		BCBC960D20563012004C1985 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
-				B7F32C61205BCEA800090A0C /* Card */,
+				B7CD063A205F6E55009951A4 /* MerchantDetail */,
 				B73862762059139000C7004D /* MembershipDetail */,
 				BCB04FE52057E6CC008F929F /* ListMembership */,
 				BCBC960E20563012004C1985 /* AddMembership */,
@@ -896,6 +946,7 @@
 				B7B1BC9B2058D7FA0042B3D4 /* segoeuisl.ttf in Resources */,
 				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
 				B7B1BCA22058D7FA0042B3D4 /* seguibl.ttf in Resources */,
+				B7CD064B205F9ACA009951A4 /* HeaderMembershipDetailCell.xib in Resources */,
 				BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */,
 				B738627A205913CD00C7004D /* MembershipDetailViewController.xib in Resources */,
 				B7B1BCA02058D7FA0042B3D4 /* OstrichSans-Black.otf in Resources */,
@@ -906,14 +957,16 @@
 				B7B1BC982058D7FA0042B3D4 /* OstrichSans-Light.otf in Resources */,
 				B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */,
 				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
+				B7CD0650205F9AF6009951A4 /* FooterMembershipDetailCell.xib in Resources */,
 				B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */,
+				B7CD063E205F6E80009951A4 /* MerchantDetailViewController.xib in Resources */,
 				B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */,
-				B7F32C65205BCEFF00090A0C /* CardViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
+				B7CD0645205F71E9009951A4 /* MerchantDetailCell.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
 				BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */,
 				B7B1BC7E2058D6F40042B3D4 /* MembershipCell.xib in Resources */,
@@ -925,6 +978,7 @@
 				BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
 				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
+				B7CD0654205FA765009951A4 /* MembershipDetailCell.xib in Resources */,
 				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
@@ -932,7 +986,6 @@
 				B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */,
 				B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */,
 				BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */,
-				B74E486C205BAD06006ABB4D /* MembershipDetailCell.xib in Resources */,
 				B7B1BC9D2058D7FA0042B3D4 /* ostrich-regular.ttf in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 			);
@@ -1077,18 +1130,21 @@
 				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
 				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
+				B7CD0644205F71E9009951A4 /* MerchantDetailCell.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
-				B7F32C64205BCEFF00090A0C /* CardViewController.swift in Sources */,
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
+				B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */,
 				B788665B205A1C5800096F27 /* Url.swift in Sources */,
 				B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */,
 				BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				B7886659205A1C3800096F27 /* Logo.swift in Sources */,
 				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
+				B7CD064F205F9AF6009951A4 /* FooterMembershipDetailCell.swift in Sources */,
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
+				B7CD063D205F6E80009951A4 /* MerchantDetailViewController.swift in Sources */,
 				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				D9911858205B7AC100F701ED /* Network.swift in Sources */,
 				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
@@ -1110,7 +1166,7 @@
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
-				B74E486B205BAD06006ABB4D /* MembershipDetailCell.swift in Sources */,
+				B7CD064A205F9ACA009951A4 /* HeaderMembershipDetailCell.swift in Sources */,
 				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */,

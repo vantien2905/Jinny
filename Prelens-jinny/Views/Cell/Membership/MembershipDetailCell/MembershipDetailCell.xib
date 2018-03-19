@@ -12,42 +12,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MembershipDetailCell" customModule="Prelens_jinny" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="370" height="177"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="177"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="156" id="KGk-i7-Jjw" customClass="MembershipDetailCell" customModule="Prelens_jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="156"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="155.5"/>
+                <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEP-dv-Gcv">
-                        <rect key="frame" x="0.0" y="0.0" width="370" height="177"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Pp-va-iR6">
-                                <rect key="frame" x="0.0" y="0.0" width="370" height="177"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8Pp-va-iR6" firstAttribute="leading" secondItem="NEP-dv-Gcv" secondAttribute="leading" id="0fv-VY-n4P"/>
-                            <constraint firstAttribute="bottom" secondItem="8Pp-va-iR6" secondAttribute="bottom" id="Kdn-um-GlJ"/>
-                            <constraint firstAttribute="trailing" secondItem="8Pp-va-iR6" secondAttribute="trailing" id="gMs-BQ-mt5"/>
-                            <constraint firstItem="8Pp-va-iR6" firstAttribute="top" secondItem="NEP-dv-Gcv" secondAttribute="top" id="qW2-8w-cxB"/>
-                        </constraints>
-                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k1i-wD-4rs">
+                        <rect key="frame" x="24" y="0.0" width="305" height="155.5"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.55294117649999996" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
                 </subviews>
-            </view>
-            <constraints>
-                <constraint firstItem="NEP-dv-Gcv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1am-FD-A21"/>
-                <constraint firstAttribute="bottom" secondItem="NEP-dv-Gcv" secondAttribute="bottom" id="LFF-Yh-8QT"/>
-                <constraint firstItem="NEP-dv-Gcv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="McN-EB-8aM"/>
-                <constraint firstAttribute="trailing" secondItem="NEP-dv-Gcv" secondAttribute="trailing" id="VAK-Ye-BGf"/>
-            </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="370" height="177"/>
-            <connections>
-                <outlet property="imgPromotion" destination="8Pp-va-iR6" id="Wbk-r8-7Hc"/>
-            </connections>
-            <point key="canvasLocation" x="10" y="-9.5"/>
-        </collectionViewCell>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="k1i-wD-4rs" secondAttribute="trailing" constant="24" id="BMa-eV-uJS"/>
+                    <constraint firstAttribute="bottom" secondItem="k1i-wD-4rs" secondAttribute="bottom" id="Nnm-Cf-G6o"/>
+                    <constraint firstItem="k1i-wD-4rs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="eq6-YY-Xph"/>
+                    <constraint firstItem="k1i-wD-4rs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gWd-q3-dHy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="54.5" y="110"/>
+        </tableViewCell>
     </objects>
 </document>

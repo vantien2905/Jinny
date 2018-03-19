@@ -32,4 +32,5 @@ class PRBaseView: UIView {
     func setUpSize() {
         
     }
+    
 }

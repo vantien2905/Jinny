@@ -1,5 +1,5 @@
 //
-//  MembershipDetailCell.swift
+//  MerchantDetailCell.swift
 //  Prelens-jinny
 //
 //  Created by Felix Dinh on 3/19/18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MembershipDetailCell: UITableViewCell {
+class MerchantDetailCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = PRColor.backgroundColor
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
