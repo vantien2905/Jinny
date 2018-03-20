@@ -126,6 +126,18 @@
 		BC6E9DBB205A4AB100C5DF01 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */; };
 		BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */; };
 		BC6E9DC1205A529800C5DF01 /* PRTabbarCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */; };
+		BC6EF8462060F1E200A156B9 /* PRPhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF8442060F1E200A156B9 /* PRPhotoDetail.swift */; };
+		BC6EF8472060F1E200A156B9 /* PRPhotoDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6EF8452060F1E200A156B9 /* PRPhotoDetail.xib */; };
+		BC6EF84A2060F1FE00A156B9 /* PRPhotoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF8482060F1FE00A156B9 /* PRPhotoDetailCell.swift */; };
+		BC6EF84B2060F1FE00A156B9 /* PRPhotoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6EF8492060F1FE00A156B9 /* PRPhotoDetailCell.xib */; };
+		BC6EF8522060F3FF00A156B9 /* VIMetadataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF84D2060F3FF00A156B9 /* VIMetadataCell.swift */; };
+		BC6EF8532060F3FF00A156B9 /* VIMetadataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF84E2060F3FF00A156B9 /* VIMetadataVC.swift */; };
+		BC6EF8542060F3FF00A156B9 /* VIMetadataVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF84F2060F3FF00A156B9 /* VIMetadataVCProtocol.swift */; };
+		BC6EF8552060F3FF00A156B9 /* VIMetadataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6EF8502060F3FF00A156B9 /* VIMetadataCell.xib */; };
+		BC6EF8562060F3FF00A156B9 /* VIMetadataVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6EF8512060F3FF00A156B9 /* VIMetadataVC.xib */; };
+		BC6EF8582060F53400A156B9 /* PRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF8572060F53400A156B9 /* PRHelper.swift */; };
+		BC6EF85A2060F57D00A156B9 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF8592060F57D00A156B9 /* UIApplication+Extension.swift */; };
+		BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */; };
 		BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC770A66204CEE5D0052A285 /* AppDelegate.swift */; };
 		BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6D204CEE5D0052A285 /* Assets.xcassets */; };
 		BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC770A6F204CEE5D0052A285 /* LaunchScreen.storyboard */; };
@@ -291,6 +303,19 @@
 		BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarCustom.swift; sourceTree = "<group>"; };
 		BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRTabbarCustom.xib; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6EF8442060F1E200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
+		BC6EF8452060F1E200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
+		BC6EF8482060F1FE00A156B9 /* PRPhotoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetailCell.swift; sourceTree = "<group>"; };
+		BC6EF8492060F1FE00A156B9 /* PRPhotoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetailCell.xib; sourceTree = "<group>"; };
+		BC6EF84D2060F3FF00A156B9 /* VIMetadataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataCell.swift; sourceTree = "<group>"; };
+		BC6EF84E2060F3FF00A156B9 /* VIMetadataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataVC.swift; sourceTree = "<group>"; };
+		BC6EF84F2060F3FF00A156B9 /* VIMetadataVCProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataVCProtocol.swift; sourceTree = "<group>"; };
+		BC6EF8502060F3FF00A156B9 /* VIMetadataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMetadataCell.xib; sourceTree = "<group>"; };
+		BC6EF8512060F3FF00A156B9 /* VIMetadataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMetadataVC.xib; sourceTree = "<group>"; };
+		BC6EF8572060F53400A156B9 /* PRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRHelper.swift; sourceTree = "<group>"; };
+		BC6EF8592060F57D00A156B9 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
+		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -626,6 +651,7 @@
 		B7B1BC6B2058CB590042B3D4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				BC6EF8572060F53400A156B9 /* PRHelper.swift */,
 				B7B1BC6C2058CBA20042B3D4 /* Constants.swift */,
 				B7B1BC6E2058CBB40042B3D4 /* Enum.swift */,
 			);
@@ -745,6 +771,29 @@
 			path = PRTabbarCustom;
 			sourceTree = "<group>";
 		};
+		BC6EF8432060F0D800A156B9 /* PRPhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BC6EF8442060F1E200A156B9 /* PRPhotoDetail.swift */,
+				BC6EF8452060F1E200A156B9 /* PRPhotoDetail.xib */,
+				BC6EF8482060F1FE00A156B9 /* PRPhotoDetailCell.swift */,
+				BC6EF8492060F1FE00A156B9 /* PRPhotoDetailCell.xib */,
+			);
+			path = PRPhotoDetail;
+			sourceTree = "<group>";
+		};
+		BC6EF84C2060F3FF00A156B9 /* VIMetadataVC */ = {
+			isa = PBXGroup;
+			children = (
+				BC6EF84D2060F3FF00A156B9 /* VIMetadataCell.swift */,
+				BC6EF84E2060F3FF00A156B9 /* VIMetadataVC.swift */,
+				BC6EF84F2060F3FF00A156B9 /* VIMetadataVCProtocol.swift */,
+				BC6EF8502060F3FF00A156B9 /* VIMetadataCell.xib */,
+				BC6EF8512060F3FF00A156B9 /* VIMetadataVC.xib */,
+			);
+			path = VIMetadataVC;
+			sourceTree = "<group>";
+		};
 		BC6F3368205BC6DB00CDAD85 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,6 +894,8 @@
 				76508788205772D200199FBB /* String+Extension.swift */,
 				B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */,
 				76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */,
+				BC6EF8592060F57D00A156B9 /* UIApplication+Extension.swift */,
+				BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -888,11 +939,16 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+
+				BC6EF84C2060F3FF00A156B9 /* VIMetadataVC */,
+
 				B7899EB12060A36600ADEC43 /* SearchView */,
+
 				B7AC7FD72057A7A900C0BFCA /* PopUpView */,
 				BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */,
 				BCBC95982056245C004C1985 /* PRBarButton */,
 				BCBC9595205623BE004C1985 /* BaseView */,
+				BC6EF8432060F0D800A156B9 /* PRPhotoDetail */,
 				BCBC95942056239E004C1985 /* MenuBarView */,
 			);
 			path = CustomView;
@@ -1176,7 +1232,12 @@
 			files = (
 				B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */,
 				760C1125205D164C009B9205 /* SettingViewController.xib in Resources */,
+
+				BC6EF84B2060F1FE00A156B9 /* PRPhotoDetailCell.xib in Resources */,
+				BC6EF8552060F3FF00A156B9 /* VIMetadataCell.xib in Resources */,
+
 				B7899EB32060A39800ADEC43 /* SearchView.xib in Resources */,
+
 				B7B1BC9A2058D7FA0042B3D4 /* seguisli.ttf in Resources */,
 				76DC88FA205F604D00AD87F3 /* AchivedPromotionViewController.xib in Resources */,
 				BC9A6157205F9BBE0071EF4F /* PromotionDetailCell.xib in Resources */,
@@ -1191,6 +1252,7 @@
 				B7B1BCA02058D7FA0042B3D4 /* OstrichSans-Black.otf in Resources */,
 				B79AEE5A2060C107007F0BB3 /* AddManualViewController.xib in Resources */,
 				B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */,
+				BC6EF8562060F3FF00A156B9 /* VIMetadataVC.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
 				B7899EB92060A76100ADEC43 /* AddMerchantViewController.xib in Resources */,
 				B7B1BC992058D7FA0042B3D4 /* segoeuiz.ttf in Resources */,
@@ -1236,6 +1298,7 @@
 				B7B1BC9D2058D7FA0042B3D4 /* ostrich-regular.ttf in Resources */,
 				76DC88F6205F603A00AD87F3 /* StarredPromotionViewController.xib in Resources */,
 				76DC8900205F6B5600AD87F3 /* PromotionHeaderCell.xib in Resources */,
+				BC6EF8472060F1E200A156B9 /* PRPhotoDetail.xib in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 				76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */,
 				B7899EBE2060B31900ADEC43 /* AddMerchantCell.xib in Resources */,
@@ -1366,15 +1429,19 @@
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				D9911862205BB0A600F701ED /* PopUpHelper.swift in Sources */,
 				D991185C205B7B1800F701ED /* AuthenticationService.swift in Sources */,
+				BC6EF8522060F3FF00A156B9 /* VIMetadataCell.swift in Sources */,
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
 				764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */,
+				BC6EF85A2060F57D00A156B9 /* UIApplication+Extension.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
 				760C1124205D164C009B9205 /* SettingViewController.swift in Sources */,
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
+				BC6EF8532060F3FF00A156B9 /* VIMetadataVC.swift in Sources */,
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
+				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
 				760EC3B52060ADBE001390B8 /* PromotionViewModel.swift in Sources */,
@@ -1422,19 +1489,23 @@
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
 				D9911855205B7AC100F701ED /* NetworkSession.swift in Sources */,
 				BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */,
+				BC6EF8582060F53400A156B9 /* PRHelper.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
 				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
 				760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */,
 				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
 				D991185E205B82D900F701ED /* MembershipService.swift in Sources */,
+				BC6EF8542060F3FF00A156B9 /* VIMetadataVCProtocol.swift in Sources */,
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
+				BC6EF84A2060F1FE00A156B9 /* PRPhotoDetailCell.swift in Sources */,
 				D9911856205B7AC100F701ED /* Provider.swift in Sources */,
 				BC9A6151205F77F00071EF4F /* PromotionDetailFooterCell.swift in Sources */,
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				76DC890D205F768400AD87F3 /* PromotionCell.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
+				BC6EF8462060F1E200A156B9 /* PRPhotoDetail.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
 				B7CD064A205F9ACA009951A4 /* HeaderMembershipDetailCell.swift in Sources */,
 				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,

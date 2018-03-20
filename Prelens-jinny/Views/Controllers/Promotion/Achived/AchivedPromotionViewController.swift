@@ -10,7 +10,7 @@ import UIKit
 
 class AchivedPromotionViewController: UIViewController {
     @IBOutlet weak var cvAchivedPromotion: UICollectionView!
-
+    var listAchived = [String] ()
     override func viewDidLoad() {
         super.viewDidLoad()
         configColecttionView()
@@ -25,7 +25,8 @@ class AchivedPromotionViewController: UIViewController {
         cvAchivedPromotion.register(UINib(nibName: Cell.searchPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.searchPromotion)
         cvAchivedPromotion.register(UINib(nibName: Cell.promotionHeader, bundle: nil), forCellWithReuseIdentifier: Cell.promotionHeader)
         cvAchivedPromotion.register(UINib(nibName: Cell.promotionCell, bundle: nil), forCellWithReuseIdentifier: Cell.promotionCell )
-
+        cvAchivedPromotion.register(UINib(nibName: Cell.emptyPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.emptyPromotion)
+        
         cvAchivedPromotion.backgroundColor = PRColor.backgroundColor
         cvAchivedPromotion.delegate = self
         cvAchivedPromotion.dataSource = self
@@ -39,11 +40,20 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
              let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
             return cell
         case 1:
-            let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath)
+            let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
+            if self.listAchived.count == 0 {
+                cell.vFilter.isHidden = true
+            }
             return cell
         default:
-            let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
-            return cell
+            if self.listAchived.count == 0 {
+                let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.emptyPromotion, for: indexPath) as! EmptyPromotionCell
+                
+                return cell
+            } else {
+                let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
+                return cell
+            }
         }
     }
 
@@ -54,7 +64,11 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 2:
-            return 5
+            if listAchived.count == 0 {
+                return 1
+            } else {
+                return 5
+            }
         default:
             return 1
         }
@@ -67,8 +81,11 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
         case 1:
             return CGSize(width: collectionView.frame.width - 30, height: 40 )
         default:
-            return CGSize(width: (collectionView.frame.width - 30), height:
-                (collectionView.frame.height / 2))
+            if self.listAchived.count == 0 {
+                return CGSize(width: collectionView.frame.width - 30, height: 30)
+            } else {
+                return CGSize(width: (collectionView.frame.width - 30), height: (collectionView.frame.height / 2  ))
+            }
         }
     }
 

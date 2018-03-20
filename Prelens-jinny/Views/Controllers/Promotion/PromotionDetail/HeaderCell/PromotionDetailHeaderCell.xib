@@ -58,6 +58,8 @@
             <size key="customSize" width="352" height="153"/>
             <connections>
                 <outlet property="lbExpireDate" destination="kwa-yY-ay7" id="Ecn-rb-SmM"/>
+                <outlet property="lcsMerchantNameHeight" destination="hUN-Z8-oYN" id="3Mm-UM-pAv"/>
+                <outlet property="lcsSideConstraintName" destination="hYe-oZ-gxj" id="HMp-0V-lq0"/>
                 <outlet property="tvName" destination="hOg-ve-vNy" id="lm9-3A-ZeB"/>
             </connections>
             <point key="canvasLocation" x="185" y="105.5"/>

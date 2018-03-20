@@ -13,6 +13,7 @@ import RxCocoa
 class AllPromotionViewController: UIViewController {
 
     @IBOutlet weak var cvAllPromotion: UICollectionView!
+    var refresher:UIRefreshControl?
     
     let viewModel = PromotionViewModel()
     let disposeBag = DisposeBag()
@@ -28,7 +29,7 @@ class AllPromotionViewController: UIViewController {
         
         bindData()
         viewModel.getListPromotion()
-        
+        //pullToRefesh()
     }
     
     override func viewDidLoad() {
@@ -42,13 +43,23 @@ class AllPromotionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
+    func pullToRefesh(){
+        self.refresher = UIRefreshControl()
+        self.cvAllPromotion.alwaysBounceVertical = true
+        self.refresher?.tintColor = UIColor.black
+        self.refresher?.addTarget(self, action: #selector(bindData), for: .valueChanged)
+        self.cvAllPromotion!.addSubview(refresher!)
+    }
+    func stopRefresher() {
+        self.refresher?.endRefreshing()
+    }
     
-    func bindData() {
+    @objc func bindData() {
         viewModel.outputs.listPromotion.asObservable().subscribe(onNext: { promotions in
             //if let _promotion = promotions {
                 self.listPromotion = promotions
                 self.cvAllPromotion.reloadData()
+                self.stopRefresher()
             //}
         }).disposed(by: disposeBag)
     }

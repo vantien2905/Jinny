@@ -12,3 +12,8 @@ enum StyleNavigation {
     case left
     case right
 }
+
+enum CellRegisterType {
+    case tCass
+    case tNib
+}

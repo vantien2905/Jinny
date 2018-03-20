@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC770A62204CEE5D0052A285"
-               BuildableName = "Prelens-jinny.app"
+               BuildableName = "Jinny.app"
                BlueprintName = "Prelens-jinny"
                ReferencedContainer = "container:Prelens-jinny.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC770A62204CEE5D0052A285"
-            BuildableName = "Prelens-jinny.app"
+            BuildableName = "Jinny.app"
             BlueprintName = "Prelens-jinny"
             ReferencedContainer = "container:Prelens-jinny.xcodeproj">
          </BuildableReference>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC770A62204CEE5D0052A285"
-            BuildableName = "Prelens-jinny.app"
+            BuildableName = "Jinny.app"
             BlueprintName = "Prelens-jinny"
             ReferencedContainer = "container:Prelens-jinny.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC770A62204CEE5D0052A285"
-            BuildableName = "Prelens-jinny.app"
+            BuildableName = "Jinny.app"
             BlueprintName = "Prelens-jinny"
             ReferencedContainer = "container:Prelens-jinny.xcodeproj">
          </BuildableReference>

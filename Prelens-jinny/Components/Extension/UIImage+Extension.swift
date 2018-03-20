@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 extension UIImage {
     var uncompressedPNGData: NSData? { return UIImagePNGRepresentation(self) as NSData?        }
@@ -29,5 +30,4 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image!
     }
-
 }

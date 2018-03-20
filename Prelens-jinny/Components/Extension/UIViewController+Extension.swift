@@ -18,6 +18,15 @@ public extension UIViewController {
 
         return self.init(nibName: self.className, bundle: nil)
     }
+    
+    class var identifier: String {
+        return "\(self)"
+    }
+    
+    static func instantiateFromNib() -> Self {
+        return self.init(nibName: (self as UIViewController.Type).identifier, bundle: nil)
+    }
+    
 }
 extension UIViewController {
     func getViewController<T: UIViewController>(controller: T) -> T {
