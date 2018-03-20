@@ -113,4 +113,12 @@ class BaseViewController: UIViewController {
     func showNavigation() {
         self.navigationController?.isNavigationBarHidden = false
     }
+    
+    func lightStatus() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    }
+    
+    func darkStatus() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
 }

@@ -28,6 +28,7 @@ class AddManualViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         hideNavigation()
+        darkStatus()
     }
 
     func setUpView() {

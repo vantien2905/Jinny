@@ -35,9 +35,10 @@ class MemberShipViewController: BaseViewController {
         cvMembership.showsHorizontalScrollIndicator = false
 
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
+        lightStatus()
         bindData()
         viewModel.getListMembership()
     }

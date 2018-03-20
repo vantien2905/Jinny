@@ -24,7 +24,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-xA-N6x">
                                 <rect key="frame" x="0.0" y="0.0" width="227" height="178"/>
-                                <color key="backgroundColor" red="0.1215686275" green="0.70980392160000005" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starred_highlight" translatesAutoresizingMaskIntoConstraints="NO" id="MxZ-CO-UJB">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>

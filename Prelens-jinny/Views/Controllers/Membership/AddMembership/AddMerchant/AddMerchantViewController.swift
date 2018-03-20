@@ -22,12 +22,14 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         showNavigation()
+        darkStatus()
         setTitle(title: "ADD MEMBERSHIP", textColor: .black, backgroundColor: .white)
         self.navigationController?.navigationBar.setShadow()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         hideNavigation()
+        
     }
 
     func setUpView() {
