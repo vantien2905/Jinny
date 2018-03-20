@@ -13,6 +13,7 @@ class PromotionDetailFooterCell: UICollectionViewCell {
     @IBOutlet weak var btnRemoveVoucher: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
+    
 }
