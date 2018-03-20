@@ -97,7 +97,11 @@ class BaseViewController: UIViewController {
     func addBackButton() {
         self.addButtonToNavigation(image: PRImage.imgBack, style: .left, action: #selector(btnBackTapped))
     }
-
+    
+    func addWhiteBackButton() {
+        self.addButtonToNavigation(image: PRImage.imgWhiteBack, style: .left, action: #selector(btnBackTapped))
+    }
+    
     @objc func btnStarTapped() {
         delegate?.starBookmarkTapped()
     }

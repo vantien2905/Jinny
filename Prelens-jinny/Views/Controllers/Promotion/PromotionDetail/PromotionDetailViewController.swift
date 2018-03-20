@@ -17,9 +17,12 @@ class PromotionDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setNavigation(name: "Voucher Name")
         setUpComponents()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setNavigation(name: "Voucher Name")
     }
     
     func setNavigation(name: String) {
@@ -111,6 +114,12 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
                         referenceSizeForFooterInSection section: Int) -> CGSize {
         let size = UIScreen.main.bounds.width - 40
         return CGSize(width: size, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = PRPhotoDetail()
+        vc.photoData = promotionDetailData
+        push(controller: vc, animated: true)
     }
 }
 

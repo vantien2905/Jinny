@@ -30,8 +30,9 @@ struct PRImage {
     static let tabbarPromotionsOn   = UIImage(named: "voucher_on")!
     static let tabbarMore           = UIImage(named: "more")!
     static let imgBack              = UIImage(named: "back_black")!
-    static let imgStarOff              = UIImage(named: "star_action_off")!
-    static let imgStarOn              = UIImage(named: "star_action_on")!
+    static let imgWhiteBack         = UIImage(named: "back_white")!
+    static let imgStarOff           = UIImage(named: "star_action_off")!
+    static let imgStarOn            = UIImage(named: "star_action_on")!
     static let imgNext              = UIImage(named: "next_gray")!
 }
 
