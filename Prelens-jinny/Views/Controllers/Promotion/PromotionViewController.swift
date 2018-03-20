@@ -35,7 +35,7 @@ class PromotionViewController: UIViewController {
 
         let listItemMenu = [
             MenuItem(title: "All", isSelected: true),
-            MenuItem(title: "Stared", isSelected: false),
+            MenuItem(title: "Starred", isSelected: false),
             MenuItem(title: "Archived", isSelected: false)
         ]
         controllers = [ vcAllPromotion, vcStarredPromotion, vcAchivedPromotion ]
