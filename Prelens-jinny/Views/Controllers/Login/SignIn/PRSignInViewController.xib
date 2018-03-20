@@ -23,6 +23,7 @@
             <connections>
                 <outlet property="btnShowHidePassword" destination="035-Jr-kZw" id="rmU-Go-0Lh"/>
                 <outlet property="btnSignIn" destination="3Vh-U0-Ls9" id="J9a-8X-J2Y"/>
+                <outlet property="lbForgotPassword" destination="frS-GS-SC7" id="J2K-sh-8QI"/>
                 <outlet property="tfEmail" destination="SCv-UA-Whd" id="l0v-MY-kiP"/>
                 <outlet property="tfPassword" destination="P34-7D-nVX" id="wZv-Zj-IJ2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
