@@ -66,8 +66,11 @@ struct PRFont {
 
 struct ContantMessages {
     struct Login {
+        static let errorInvalidEmail    =  "Email is in an invalid"
         static let errorContentPassword =  "Password is too short (minimum is 6 characters)"
-        static let successResetPassword =  "You will receive an email with instructions on how to reset your password in a few minutes"
+        static let successResetPassword =  "You will receive an email with instructions on how to       reset your password in a few minutes"
+        static let errorUncheckedCondition = "Please indicate that you have agree to the Terms and Conditions"
+        static let errorEmptyInputValue    =  "Please enter your email & password"
     }
 
     struct User {
