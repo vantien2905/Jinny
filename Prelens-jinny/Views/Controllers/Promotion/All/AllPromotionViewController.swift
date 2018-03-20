@@ -129,7 +129,9 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2 {
-            let vc = PromotionDetailViewController.initControllerFromNib()
+            let vc = PromotionDetailViewController()
+            vc.promotionDetailData = listPromotion[indexPath.item]
+            
             self.push(controller: vc, animated: true)
         }
     }
