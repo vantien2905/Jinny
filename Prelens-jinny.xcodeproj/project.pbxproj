@@ -10,6 +10,10 @@
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
 		760C1124205D164C009B9205 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C1122205D164C009B9205 /* SettingViewController.swift */; };
 		760C1125205D164C009B9205 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760C1123205D164C009B9205 /* SettingViewController.xib */; };
+		760EC3AE2060A682001390B8 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3AD2060A682001390B8 /* Promotion.swift */; };
+		760EC3B02060A93D001390B8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3AF2060A93D001390B8 /* Image.swift */; };
+		760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3B12060AC5E001390B8 /* PromotionService.swift */; };
+		760EC3B52060ADBE001390B8 /* PromotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3B42060ADBE001390B8 /* PromotionViewModel.swift */; };
 		7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
 		7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */; };
 		7638FA1C205FB73A00D33011 /* EmptyPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */; };
@@ -162,6 +166,10 @@
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		760C1122205D164C009B9205 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		760C1123205D164C009B9205 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		760EC3AD2060A682001390B8 /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		760EC3AF2060A93D001390B8 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		760EC3B12060AC5E001390B8 /* PromotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionService.swift; sourceTree = "<group>"; };
+		760EC3B42060ADBE001390B8 /* PromotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewModel.swift; sourceTree = "<group>"; };
 		7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPromotionCell.swift; sourceTree = "<group>"; };
 		7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPromotionCell.xib; sourceTree = "<group>"; };
@@ -338,9 +346,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		760EC3A92060A54D001390B8 /* Promotion */ = {
+			isa = PBXGroup;
+			children = (
+				760EC3AD2060A682001390B8 /* Promotion.swift */,
+				760EC3AF2060A93D001390B8 /* Image.swift */,
+			);
+			path = Promotion;
+			sourceTree = "<group>";
+		};
+		760EC3B32060ADA5001390B8 /* PromotionViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				760EC3B42060ADBE001390B8 /* PromotionViewModel.swift */,
+			);
+			path = PromotionViewModel;
+			sourceTree = "<group>";
+		};
 		76469D0120563D4400E2950E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				760EC3A92060A54D001390B8 /* Promotion */,
 				B7795902205B75B2005404FC /* Membership */,
 				BCE3495820565A5000B8C440 /* PRUser.swift */,
 				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
@@ -352,6 +378,7 @@
 		76469D0220563D5500E2950E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				760EC3B32060ADA5001390B8 /* PromotionViewModel */,
 				B7886650205A151100096F27 /* MembershipViewModel */,
 				765087812057703900199FBB /* LoginViewModel */,
 			);
@@ -1019,6 +1046,7 @@
 			children = (
 				D991185B205B7B1800F701ED /* AuthenticationService.swift */,
 				D991185D205B82D900F701ED /* MembershipService.swift */,
+				760EC3B12060AC5E001390B8 /* PromotionService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -1284,6 +1312,7 @@
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
+				760EC3B52060ADBE001390B8 /* PromotionViewModel.swift in Sources */,
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
 				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
 				D9911860205BAB8900F701ED /* ResponseError.swift in Sources */,
@@ -1293,6 +1322,7 @@
 				76DC88F9205F604D00AD87F3 /* AchivedPromotionViewController.swift in Sources */,
 				B7B1BC6F2058CBB40042B3D4 /* Enum.swift in Sources */,
 				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
+				760EC3AE2060A682001390B8 /* Promotion.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				B7CD0644205F71E9009951A4 /* MerchantDetailCell.swift in Sources */,
 				76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */,
@@ -1326,6 +1356,7 @@
 				BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
 				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
+				760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */,
 				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
 				D991185E205B82D900F701ED /* MembershipService.swift in Sources */,
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
@@ -1342,6 +1373,7 @@
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */,
 				7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */,
+				760EC3B02060A93D001390B8 /* Image.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
 				BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
