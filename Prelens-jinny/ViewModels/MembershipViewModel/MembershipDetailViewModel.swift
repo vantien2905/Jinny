@@ -14,6 +14,8 @@ protocol MembershipDetailViewModelProtocol {
     var isBookmark: Variable<Bool> { get }
     var membership: Variable<Member?> { get }
     var isBookmarkSucess: Variable<Bool> { get }
+    var isRemoveMembership: Variable<Bool> { get }
+    var successRemove: Variable<Bool> { get }
 }
 
 class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
@@ -21,6 +23,8 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
     var isBookmark: Variable<Bool> = Variable<Bool> (false)
     var membership: Variable<Member?> = Variable<Member?>(nil)
     var isBookmarkSucess: Variable<Bool> = Variable<Bool> (false)
+    var isRemoveMembership: Variable<Bool> = Variable<Bool> (false)
+    var successRemove: Variable<Bool> = Variable<Bool> (false)
 
     let disposeBag = DisposeBag()
 
@@ -35,7 +39,19 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
                 self?.addBookmarkMembership(idMember: idMember)
             }
         }).disposed(by: disposeBag)
+        
+        isRemoveMembership.asObservable().subscribe(onNext: { [weak self] idRemove in
+            if self?.isRemoveMembership.value == true {
+                self?.removeMembership(idMemBer: idMember)
+            }
+        }).disposed(by: disposeBag)
 
+    }
+    
+    func removeMembership(idMemBer: Int) {
+        Provider.shared.memberShipService.deleteMembership(idDelete: idMemBer).subscribe(onNext: {(_) in
+            self.successRemove.value = true
+        }).disposed(by: disposeBag)
     }
 
     func getDetailMembership(idMember: Int) {
@@ -45,7 +61,7 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
     }
 
     func addBookmarkMembership(idMember: Int) {
-        Provider.shared.memberShipService.addBookmarkMembership(id: idMember).subscribe(onNext: { (_) in
+        Provider.shared.memberShipService.addBookmarkMembership(idBookmark: idMember).subscribe(onNext: { (_) in
             print(idMember)
         }).disposed(by: disposeBag)
     }

@@ -12,6 +12,11 @@ import RxSwift
 class MemberShipViewController: BaseViewController {
 
     @IBOutlet weak var cvMembership: UICollectionView!
+    
+    @IBAction func btnAddMembershipTapped() {
+        let vcAddMerchant = AddMerchantViewController.initControllerFromNib()
+        self.push(controller: vcAddMerchant, animated: true)
+    }
 
     let viewModel = MembershipViewModel()
     let disposeBag = DisposeBag()
@@ -30,9 +35,10 @@ class MemberShipViewController: BaseViewController {
         cvMembership.showsHorizontalScrollIndicator = false
 
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
+        lightStatus()
         bindData()
         viewModel.getListMembership()
     }
@@ -195,12 +201,12 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             if listMember.startedMemberships.count != 0 {
-                let vc = MembershipDetailViewController.configureViewController(id: self.listMember.startedMemberships[indexPath.item].id)
+                let vc = MembershipDetailViewController.configureViewController(idMembership: self.listMember.startedMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
             }
         } else {
             if listMember.otherMemberships.count != 0 {
-                let vc = MembershipDetailViewController.configureViewController(id: self.listMember.otherMemberships[indexPath.item].id)
+                let vc = MembershipDetailViewController.configureViewController(idMembership: self.listMember.otherMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
             }
         }

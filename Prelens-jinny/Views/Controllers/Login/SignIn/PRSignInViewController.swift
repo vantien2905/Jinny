@@ -18,7 +18,8 @@ class PRSignInViewController: UIViewController {
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnShowHidePassword: UIButton!
-
+    @IBOutlet weak var lbForgotPassword: UILabel!
+    
     let disposeBag                      = DisposeBag()
     var passIsSecurity: Bool?
 
@@ -26,8 +27,6 @@ class PRSignInViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         setupView()
-        tfEmail.text = "felix@vinova.sg"
-        tfPassword.text = "123456"
         bindViewModel()
         // Do any additional setup after loading the view.AEWFG
     }
@@ -42,6 +41,9 @@ class PRSignInViewController: UIViewController {
         passIsSecurity = true
         tfPassword.isSecureTextEntry = true
         btnSignIn.layer.cornerRadius = 2.5
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PRSignInViewController.gotoForgotPasswordVC))
+        lbForgotPassword.isUserInteractionEnabled = true
+        lbForgotPassword.addGestureRecognizer(tap)
         btnShowHidePassword.setImage(UIImage(named: "hidden"), for: .normal)
     }
 
@@ -94,9 +96,13 @@ class PRSignInViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
     }
-
-    @IBAction func forgotPassBtnTapped(_ sender: Any) {
+    
+    @objc func gotoForgotPasswordVC(){
         let vc = PRForgotPasswordViewController.initControllerFromNib()
         self.push(controller: vc, animated: true)
+    }
+    
+    @IBAction func forgotPassBtnTapped(_ sender: Any) {
+       gotoForgotPasswordVC()
     }
 }

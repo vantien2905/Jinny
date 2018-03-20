@@ -15,6 +15,7 @@ class Member: NSObject, Mappable {
     var code: String?
     var addedDate: String?
     var hasBookmark: Bool = false
+    var vouchers: [Promotion]?
 
     override init() {
         super.init()
@@ -30,5 +31,6 @@ class Member: NSObject, Mappable {
         self.code <- map["code"]
         self.addedDate <- map["added_date"]
         self.hasBookmark <- map["has_bookmark"]
+        self.vouchers <- map["vouchers"]
     }
 }

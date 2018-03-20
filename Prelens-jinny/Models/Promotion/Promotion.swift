@@ -29,4 +29,3 @@ class Promotion: NSObject, Mappable {
         self.image      <- map["image"]
      }
 }
-

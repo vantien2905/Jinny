@@ -66,6 +66,16 @@
 		B7886657205A1C1600096F27 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886656205A1C1600096F27 /* Merchant.swift */; };
 		B7886659205A1C3800096F27 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7886658205A1C3800096F27 /* Logo.swift */; };
 		B788665B205A1C5800096F27 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B788665A205A1C5800096F27 /* Url.swift */; };
+		B7899EB32060A39800ADEC43 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7899EB22060A39800ADEC43 /* SearchView.xib */; };
+		B7899EB52060A3C600ADEC43 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7899EB42060A3C600ADEC43 /* SearchView.swift */; };
+		B7899EB82060A76100ADEC43 /* AddMerchantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7899EB62060A76100ADEC43 /* AddMerchantViewController.swift */; };
+		B7899EB92060A76100ADEC43 /* AddMerchantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7899EB72060A76100ADEC43 /* AddMerchantViewController.xib */; };
+		B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7899EBB2060B31900ADEC43 /* AddMerchantCell.swift */; };
+		B7899EBE2060B31900ADEC43 /* AddMerchantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7899EBC2060B31900ADEC43 /* AddMerchantCell.xib */; };
+		B79AEE532060BA8C007F0BB3 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79AEE512060BA8C007F0BB3 /* ScanCodeViewController.swift */; };
+		B79AEE542060BA8C007F0BB3 /* ScanCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79AEE522060BA8C007F0BB3 /* ScanCodeViewController.xib */; };
+		B79AEE592060C107007F0BB3 /* AddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79AEE572060C107007F0BB3 /* AddManualViewController.swift */; };
+		B79AEE5A2060C107007F0BB3 /* AddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79AEE582060C107007F0BB3 /* AddManualViewController.xib */; };
 		B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */; };
 		B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */; };
 		B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */; };
@@ -153,8 +163,6 @@
 		BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC960620562D26004C1985 /* RedeemViewController.xib */; };
 		BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */; };
 		BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */; };
-		BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961320563012004C1985 /* PRAddManualViewController.swift */; };
-		BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961420563012004C1985 /* PRAddManualViewController.xib */; };
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
@@ -235,6 +243,16 @@
 		B7886656205A1C1600096F27 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		B7886658205A1C3800096F27 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		B788665A205A1C5800096F27 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
+		B7899EB22060A39800ADEC43 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		B7899EB42060A3C600ADEC43 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		B7899EB62060A76100ADEC43 /* AddMerchantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMerchantViewController.swift; sourceTree = "<group>"; };
+		B7899EB72060A76100ADEC43 /* AddMerchantViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMerchantViewController.xib; sourceTree = "<group>"; };
+		B7899EBB2060B31900ADEC43 /* AddMerchantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMerchantCell.swift; sourceTree = "<group>"; };
+		B7899EBC2060B31900ADEC43 /* AddMerchantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMerchantCell.xib; sourceTree = "<group>"; };
+		B79AEE512060BA8C007F0BB3 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
+		B79AEE522060BA8C007F0BB3 /* ScanCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanCodeViewController.xib; sourceTree = "<group>"; };
+		B79AEE572060C107007F0BB3 /* AddManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManualViewController.swift; sourceTree = "<group>"; };
+		B79AEE582060C107007F0BB3 /* AddManualViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddManualViewController.xib; sourceTree = "<group>"; };
 		B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -324,8 +342,6 @@
 		BCBC960620562D26004C1985 /* RedeemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedeemViewController.xib; sourceTree = "<group>"; };
 		BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
 		BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
-		BCBC961320563012004C1985 /* PRAddManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddManualViewController.swift; sourceTree = "<group>"; };
-		BCBC961420563012004C1985 /* PRAddManualViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddManualViewController.xib; sourceTree = "<group>"; };
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
@@ -576,6 +592,51 @@
 			path = MembershipHelper;
 			sourceTree = "<group>";
 		};
+		B7899EB020609F2600ADEC43 /* AddMerchant */ = {
+			isa = PBXGroup;
+			children = (
+				B7899EB62060A76100ADEC43 /* AddMerchantViewController.swift */,
+				B7899EB72060A76100ADEC43 /* AddMerchantViewController.xib */,
+			);
+			path = AddMerchant;
+			sourceTree = "<group>";
+		};
+		B7899EB12060A36600ADEC43 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				B7899EB22060A39800ADEC43 /* SearchView.xib */,
+				B7899EB42060A3C600ADEC43 /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		B7899EBA2060B2F300ADEC43 /* AddMerchantCell */ = {
+			isa = PBXGroup;
+			children = (
+				B7899EBB2060B31900ADEC43 /* AddMerchantCell.swift */,
+				B7899EBC2060B31900ADEC43 /* AddMerchantCell.xib */,
+			);
+			path = AddMerchantCell;
+			sourceTree = "<group>";
+		};
+		B79AEE502060BA4D007F0BB3 /* ScanCode */ = {
+			isa = PBXGroup;
+			children = (
+				B79AEE512060BA8C007F0BB3 /* ScanCodeViewController.swift */,
+				B79AEE522060BA8C007F0BB3 /* ScanCodeViewController.xib */,
+			);
+			path = ScanCode;
+			sourceTree = "<group>";
+		};
+		B79AEE562060C0E5007F0BB3 /* AddManual */ = {
+			isa = PBXGroup;
+			children = (
+				B79AEE572060C107007F0BB3 /* AddManualViewController.swift */,
+				B79AEE582060C107007F0BB3 /* AddManualViewController.xib */,
+			);
+			path = AddManual;
+			sourceTree = "<group>";
+		};
 		B7AC7FD72057A7A900C0BFCA /* PopUpView */ = {
 			isa = PBXGroup;
 			children = (
@@ -666,6 +727,7 @@
 		B7CD0640205F71A1009951A4 /* Merchant */ = {
 			isa = PBXGroup;
 			children = (
+				B7899EBA2060B2F300ADEC43 /* AddMerchantCell */,
 				B7CD0641205F71AE009951A4 /* MerchantDetailCell */,
 			);
 			path = Merchant;
@@ -876,7 +938,11 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+
 				BC6EF84C2060F3FF00A156B9 /* VIMetadataVC */,
+
+				B7899EB12060A36600ADEC43 /* SearchView */,
+
 				B7AC7FD72057A7A900C0BFCA /* PopUpView */,
 				BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */,
 				BCBC95982056245C004C1985 /* PRBarButton */,
@@ -1061,8 +1127,10 @@
 		BCBC960E20563012004C1985 /* AddMembership */ = {
 			isa = PBXGroup;
 			children = (
+				B79AEE562060C0E5007F0BB3 /* AddManual */,
+				B79AEE502060BA4D007F0BB3 /* ScanCode */,
+				B7899EB020609F2600ADEC43 /* AddMerchant */,
 				BCBC960F20563012004C1985 /* AddSuccess */,
-				BCBC961220563012004C1985 /* AddManual */,
 			);
 			path = AddMembership;
 			sourceTree = "<group>";
@@ -1074,15 +1142,6 @@
 				BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */,
 			);
 			path = AddSuccess;
-			sourceTree = "<group>";
-		};
-		BCBC961220563012004C1985 /* AddManual */ = {
-			isa = PBXGroup;
-			children = (
-				BCBC961320563012004C1985 /* PRAddManualViewController.swift */,
-				BCBC961420563012004C1985 /* PRAddManualViewController.xib */,
-			);
-			path = AddManual;
 			sourceTree = "<group>";
 		};
 		C2031F63C23FE59B8717BCA4 /* Pods */ = {
@@ -1172,8 +1231,12 @@
 			files = (
 				B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */,
 				760C1125205D164C009B9205 /* SettingViewController.xib in Resources */,
+
 				BC6EF84B2060F1FE00A156B9 /* PRPhotoDetailCell.xib in Resources */,
 				BC6EF8552060F3FF00A156B9 /* VIMetadataCell.xib in Resources */,
+
+				B7899EB32060A39800ADEC43 /* SearchView.xib in Resources */,
+
 				B7B1BC9A2058D7FA0042B3D4 /* seguisli.ttf in Resources */,
 				76DC88FA205F604D00AD87F3 /* AchivedPromotionViewController.xib in Resources */,
 				BC9A6157205F9BBE0071EF4F /* PromotionDetailCell.xib in Resources */,
@@ -1183,12 +1246,14 @@
 				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
 				B7B1BCA22058D7FA0042B3D4 /* seguibl.ttf in Resources */,
 				B7CD064B205F9ACA009951A4 /* HeaderMembershipDetailCell.xib in Resources */,
-				BCBC961820563012004C1985 /* PRAddManualViewController.xib in Resources */,
+				B79AEE542060BA8C007F0BB3 /* ScanCodeViewController.xib in Resources */,
 				B738627A205913CD00C7004D /* MembershipDetailViewController.xib in Resources */,
 				B7B1BCA02058D7FA0042B3D4 /* OstrichSans-Black.otf in Resources */,
+				B79AEE5A2060C107007F0BB3 /* AddManualViewController.xib in Resources */,
 				B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */,
 				BC6EF8562060F3FF00A156B9 /* VIMetadataVC.xib in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
+				B7899EB92060A76100ADEC43 /* AddMerchantViewController.xib in Resources */,
 				B7B1BC992058D7FA0042B3D4 /* segoeuiz.ttf in Resources */,
 				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
 				76DC88F2205F602000AD87F3 /* AllPromotionViewController.xib in Resources */,
@@ -1235,6 +1300,7 @@
 				BC6EF8472060F1E200A156B9 /* PRPhotoDetail.xib in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 				76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */,
+				B7899EBE2060B31900ADEC43 /* AddMerchantCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1354,6 +1420,7 @@
 				B7AE6013205FCAB300357B7C /* MemberShipViewController.swift in Sources */,
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */,
 				BCE3495920565A5000B8C440 /* PRUser.swift in Sources */,
+				B7899EB82060A76100ADEC43 /* AddMerchantViewController.swift in Sources */,
 				D9911859205B7AC100F701ED /* ApiError.swift in Sources */,
 				BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
@@ -1375,10 +1442,12 @@
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
+				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
 				760EC3B52060ADBE001390B8 /* PromotionViewModel.swift in Sources */,
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
 				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
 				D9911860205BAB8900F701ED /* ResponseError.swift in Sources */,
+				B79AEE532060BA8C007F0BB3 /* ScanCodeViewController.swift in Sources */,
 				76DC88F1205F602000AD87F3 /* AllPromotionViewController.swift in Sources */,
 				76DC88EA205F5A6700AD87F3 /* PromotionViewController.swift in Sources */,
 				B7B1BC732058CFF60042B3D4 /* BaseViewController.swift in Sources */,
@@ -1391,6 +1460,7 @@
 				76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */,
 				76DC88FF205F6B5600AD87F3 /* PromotionHeaderCell.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
+				B79AEE592060C107007F0BB3 /* AddManualViewController.swift in Sources */,
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
 				B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */,
 				76DC88F5205F603A00AD87F3 /* StarredPromotionViewController.swift in Sources */,
@@ -1408,8 +1478,8 @@
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
 				B7CD063D205F6E80009951A4 /* MerchantDetailViewController.swift in Sources */,
 				BC9A614C205F77310071EF4F /* PromotionDetailHeaderCell.swift in Sources */,
-				BCBC961720563012004C1985 /* PRAddManualViewController.swift in Sources */,
 				D9911858205B7AC100F701ED /* Network.swift in Sources */,
+				B7899EB52060A3C600ADEC43 /* SearchView.swift in Sources */,
 				76DC8904205F70C500AD87F3 /* PromotionDetailViewController.swift in Sources */,
 				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,

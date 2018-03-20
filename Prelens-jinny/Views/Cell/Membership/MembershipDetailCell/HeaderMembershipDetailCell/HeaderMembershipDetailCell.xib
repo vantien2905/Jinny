@@ -25,11 +25,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNx-Hd-54W">
-                        <rect key="frame" x="0.0" y="0.0" width="346" height="293.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="291.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HEc-dc-fTK">
                                 <rect key="frame" x="126.5" y="25" width="93" height="94"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="HyU-0o-Wre"/>
                                     <constraint firstAttribute="height" constant="94" id="UVU-Gs-Tuh"/>
@@ -37,7 +36,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-sO-8Si">
                                 <rect key="frame" x="89.5" y="138" width="167.5" height="76"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="167.5" id="5ee-04-6I4"/>
                                     <constraint firstAttribute="height" constant="76" id="vQh-SN-jPy"/>
@@ -84,7 +82,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="pNx-Hd-54W" secondAttribute="trailing" id="Agt-3G-kUh"/>
                     <constraint firstItem="pNx-Hd-54W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yza-6s-44J"/>
-                    <constraint firstAttribute="bottom" secondItem="pNx-Hd-54W" secondAttribute="bottom" id="eqQ-sN-1ZJ"/>
+                    <constraint firstAttribute="bottom" secondItem="pNx-Hd-54W" secondAttribute="bottom" constant="2" id="eqQ-sN-1ZJ"/>
                     <constraint firstItem="pNx-Hd-54W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pJY-im-clH"/>
                 </constraints>
             </tableViewCellContentView>
@@ -93,6 +91,7 @@
                 <outlet property="imgBarcode" destination="HOb-sO-8Si" id="9F3-l9-Tpg"/>
                 <outlet property="imgLogo" destination="HEc-dc-fTK" id="80i-Q7-mF1"/>
                 <outlet property="lbCodeNumber" destination="pO1-QT-uLb" id="oN1-cG-JTd"/>
+                <outlet property="vContent" destination="pNx-Hd-54W" id="ZRV-EM-quX"/>
             </connections>
             <point key="canvasLocation" x="62" y="38"/>
         </tableViewCell>

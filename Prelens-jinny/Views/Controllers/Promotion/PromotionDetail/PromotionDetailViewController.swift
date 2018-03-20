@@ -112,13 +112,6 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
         let size = UIScreen.main.bounds.width - 40
         return CGSize(width: size, height: 100)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let metadata = VIMetadataVC.instantiateFromNib(with: (promotionDetailData?.image?.url)!, playButtonImage: nil)
-        
-        push(controller: metadata, animated: true)
-    }
-    
 }
 
 

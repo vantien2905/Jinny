@@ -39,6 +39,9 @@ class MembershipDetailViewController: BaseViewController {
         setNavigation()
         self.delegate = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        darkStatus()
+    }
 
     func configureTableView() {
         tbMembershipDetail.register(UINib(nibName: Cell.membershipDetail, bundle: nil), forCellReuseIdentifier: Cell.membershipDetail)
@@ -50,10 +53,10 @@ class MembershipDetailViewController: BaseViewController {
 
     }
 
-    class func configureViewController(id: Int) -> UIViewController {
+    class func configureViewController(idMembership: Int) -> UIViewController {
         let vc = MembershipDetailViewController.initControllerFromNib() as! MembershipDetailViewController
         var viewModel: MembershipDetailViewModelProtocol {
-            return MembershipDetailViewModel(idMember: id)
+            return MembershipDetailViewModel(idMember: idMembership)
         }
         vc.viewModel = viewModel
         return vc
@@ -66,6 +69,12 @@ class MembershipDetailViewController: BaseViewController {
     }
 
     func bindData() {
+        viewModel.successRemove.asObservable().subscribe(onNext: { [weak self](isSuccess) in
+            if isSuccess == true {
+                self?.pop()
+            }
+        }).disposed(by: disposeBag)
+        
         viewModel.membership.asObservable().subscribe(onNext: {[weak self] (member) in
             if let _member = member {
                 self?.membershipDetail = _member
@@ -91,12 +100,14 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.headerMemBershipDetail, for: indexPath) as! HeaderMembershipDetailCell
             let url = membershipDetail.merchant?.logo?.url?.thumb
             cell.setData(urlLogo: url, code: membershipDetail.code)
+            cell.vContent.setShadow()
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.membershipDetail, for: indexPath)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.footerMembershipDetail, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.footerMembershipDetail, for: indexPath) as! FooterMembershipDetailCell
+            cell.delegate = self
             return cell
         }
 
@@ -125,20 +136,33 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
         }
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 {
-            return "Related promotions"
+            
+            let viewHeader = UIView()
+            let lbTitle = UILabel()
+            viewHeader.addSubview(lbTitle)
+            lbTitle.text = "Related promotions"
+            lbTitle.font = PRFont.semiBold15
+            lbTitle.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 23).isActive = true
+            lbTitle.centerYToSuperview()
+            return viewHeader
         } else {
-            return ""
+            return nil
         }
-
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
-            return 50
+            return 47.5
         } else {
             return 0
         }
+    }
+}
+
+extension MembershipDetailViewController: FooterMembershipDetailCellDelegate {
+    func isRemoveMembership() {
+        self.viewModel.isRemoveMembership.value = true
     }
 }

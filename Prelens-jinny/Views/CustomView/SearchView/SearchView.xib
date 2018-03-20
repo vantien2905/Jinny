@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchView" customModule="Prelens_jinny" customModuleProvider="target">
+            <connections>
+                <outlet property="imgSearch" destination="BC7-0o-f4T" id="4Gw-RL-tqy"/>
+                <outlet property="tfSearch" destination="75r-hP-AJu" id="K3S-Oe-ylG"/>
+                <outlet property="vContent" destination="eE7-7j-FIp" id="PyN-BH-VI8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="273" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eE7-7j-FIp">
+                    <rect key="frame" x="0.0" y="0.0" width="273" height="58"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="BC7-0o-f4T">
+                            <rect key="frame" x="12.5" y="22" width="14.5" height="14.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14.5" id="jtl-mQ-fkT"/>
+                                <constraint firstAttribute="height" constant="14.5" id="obL-1u-c8C"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search merchant" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75r-hP-AJu">
+                            <rect key="frame" x="39.5" y="0.0" width="233.5" height="58"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uo9-jk-9vD">
+                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="58"/>
+                            <connections>
+                                <action selector="btnSearchTapped" destination="-1" eventType="touchUpInside" id="xPW-8T-acg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Uo9-jk-9vD" firstAttribute="leading" secondItem="eE7-7j-FIp" secondAttribute="leading" id="6fe-VE-30Q"/>
+                        <constraint firstAttribute="trailing" secondItem="75r-hP-AJu" secondAttribute="trailing" id="7zV-nV-rSN"/>
+                        <constraint firstItem="BC7-0o-f4T" firstAttribute="centerY" secondItem="eE7-7j-FIp" secondAttribute="centerY" id="BFp-lx-v9E"/>
+                        <constraint firstItem="75r-hP-AJu" firstAttribute="leading" secondItem="BC7-0o-f4T" secondAttribute="trailing" constant="12.5" id="FUt-4o-0jJ"/>
+                        <constraint firstItem="Uo9-jk-9vD" firstAttribute="top" secondItem="eE7-7j-FIp" secondAttribute="top" id="Ig9-Qr-gdE"/>
+                        <constraint firstAttribute="bottom" secondItem="Uo9-jk-9vD" secondAttribute="bottom" id="NEG-Ni-cgZ"/>
+                        <constraint firstItem="75r-hP-AJu" firstAttribute="top" secondItem="eE7-7j-FIp" secondAttribute="top" id="YZb-XB-AWk"/>
+                        <constraint firstItem="BC7-0o-f4T" firstAttribute="leading" secondItem="eE7-7j-FIp" secondAttribute="leading" constant="12.5" id="Z2D-dc-VgT"/>
+                        <constraint firstAttribute="bottom" secondItem="75r-hP-AJu" secondAttribute="bottom" id="bLj-ht-fdb"/>
+                        <constraint firstItem="75r-hP-AJu" firstAttribute="leading" secondItem="Uo9-jk-9vD" secondAttribute="trailing" constant="5" id="x4p-G0-9Ct"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eE7-7j-FIp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1AL-wA-qQU"/>
+                <constraint firstAttribute="bottom" secondItem="eE7-7j-FIp" secondAttribute="bottom" id="H4w-ba-C0d"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eE7-7j-FIp" secondAttribute="trailing" id="PgG-eD-RDg"/>
+                <constraint firstItem="eE7-7j-FIp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Q7s-zh-d4a"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-66.5" y="198"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="search" width="14" height="14"/>
+    </resources>
+</document>

@@ -20,18 +20,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k1i-wD-4rs">
-                        <rect key="frame" x="24" y="0.0" width="305" height="155.5"/>
-                        <color key="backgroundColor" red="0.17254901959999999" green="0.55294117649999996" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="24" y="0.0" width="305" height="153.5"/>
+                        <color key="backgroundColor" red="0.1215686275" green="0.70980392160000005" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="k1i-wD-4rs" secondAttribute="trailing" constant="24" id="BMa-eV-uJS"/>
-                    <constraint firstAttribute="bottom" secondItem="k1i-wD-4rs" secondAttribute="bottom" id="Nnm-Cf-G6o"/>
+                    <constraint firstAttribute="bottom" secondItem="k1i-wD-4rs" secondAttribute="bottom" constant="2" id="Nnm-Cf-G6o"/>
                     <constraint firstItem="k1i-wD-4rs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="eq6-YY-Xph"/>
                     <constraint firstItem="k1i-wD-4rs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gWd-q3-dHy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgPromotion" destination="k1i-wD-4rs" id="RUM-lU-S8m"/>
+            </connections>
             <point key="canvasLocation" x="54.5" y="110"/>
         </tableViewCell>
     </objects>
