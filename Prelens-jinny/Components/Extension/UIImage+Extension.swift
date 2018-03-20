@@ -22,9 +22,9 @@ extension UIImage {
         return UIImage(named: named)?.withRenderingMode(.alwaysOriginal)
     }
 
-    func resize(to _size: CGSize) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: _size.width, height: _size.height), false, UIScreen.main.scale)
-        self.draw(in: CGRect(x: 0, y: 0, width: _size.width, height: _size.height))
+    func resize(to size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: size.width, height: size.height), false, UIScreen.main.scale)
+        self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image!
