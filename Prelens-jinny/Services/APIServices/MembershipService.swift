@@ -13,6 +13,7 @@ protocol MembershipServiceProtocol {
     func getListAllMembership() -> Observable<Membership?>
     func getDetailMembership(idMember: Int) -> Observable<Member?>
     func addBookmarkMembership(idBookmark: Int) -> Observable<Member?>
+    func deleteMembership(idDelete: Int) -> Observable<Member?>
 }
 
 class MembershipService: MembershipServiceProtocol {
@@ -35,5 +36,10 @@ class MembershipService: MembershipServiceProtocol {
         var _url = APIEndpoint.Membership.addBookmarkMembership
         _url = String(format: _url, "\(idBookmark)")
         return network.rx_Object(url: _url, method: .post, parameters: [:])
+    }
+    
+    func deleteMembership(idDelete: Int) -> Observable<Member?> {
+        let _url = APIEndpoint.Membership.deleteMembership + "\(idDelete)"
+        return network.rx_Object(url: _url, method: .delete, parameters: [:])
     }
 }

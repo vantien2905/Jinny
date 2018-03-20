@@ -7,11 +7,15 @@
 //
 
 import UIKit
+protocol FooterMembershipDetailCellDelegate: class {
+    func isRemoveMembership()
+}
 
 class FooterMembershipDetailCell: UITableViewCell {
 
+    weak var delegate: FooterMembershipDetailCellDelegate?
     @IBAction func btnRemoveTapped() {
-
+        delegate?.isRemoveMembership()
     }
     override func awakeFromNib() {
         super.awakeFromNib()

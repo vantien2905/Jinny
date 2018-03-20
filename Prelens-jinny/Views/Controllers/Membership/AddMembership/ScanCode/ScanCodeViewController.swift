@@ -32,6 +32,7 @@ class ScanCodeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         hideNavigation()
+        darkStatus()
     }
 
 }
