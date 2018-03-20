@@ -37,15 +37,29 @@ final class SignInViewModel {
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
             self.isValidInput.value = value
         }).disposed(by: disposeBag)
-
+        
         self.btnSignInTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
-            guard let pass = strongSelf.password.value else { return }
-
-            if pass.isValidPassword() {
-                strongSelf.callAPISignIn()
+            guard let pass = strongSelf.password.value, let email = strongSelf.email.value else {
+                print("error")
+                return
+            }
+            
+            if self?.isValidInput.value == true {
+                if email.isValidEmail() && pass.isValidPassword() {
+                    strongSelf.callAPISignIn()
+                } else {
+                    if email.isValidEmail() == false {
+                        PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorInvalidEmail)
+                        return
+                    }
+                    if pass.isValidPassword() == false {
+                        PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
+                        return
+                    }
+                }
             } else {
-                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
+                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
             }
         }).disposed(by: disposeBag)
 

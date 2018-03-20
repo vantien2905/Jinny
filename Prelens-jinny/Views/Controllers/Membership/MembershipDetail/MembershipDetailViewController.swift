@@ -146,6 +146,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             lbTitle.font = PRFont.semiBold15
             lbTitle.leftAnchor.constraint(equalTo: viewHeader.leftAnchor, constant: 23).isActive = true
             lbTitle.centerYToSuperview()
+            viewHeader.backgroundColor = PRColor.backgroundColor
             return viewHeader
         } else {
             return nil

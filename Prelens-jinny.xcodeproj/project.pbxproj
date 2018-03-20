@@ -295,6 +295,18 @@
 		BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarCustom.swift; sourceTree = "<group>"; };
 		BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRTabbarCustom.xib; sourceTree = "<group>"; };
+
+		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6EF8442060F1E200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
+		BC6EF8452060F1E200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
+		BC6EF8482060F1FE00A156B9 /* PRPhotoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetailCell.swift; sourceTree = "<group>"; };
+		BC6EF8492060F1FE00A156B9 /* PRPhotoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetailCell.xib; sourceTree = "<group>"; };
+		BC6EF84D2060F3FF00A156B9 /* VIMetadataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataCell.swift; sourceTree = "<group>"; };
+		BC6EF84E2060F3FF00A156B9 /* VIMetadataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataVC.swift; sourceTree = "<group>"; };
+		BC6EF84F2060F3FF00A156B9 /* VIMetadataVCProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataVCProtocol.swift; sourceTree = "<group>"; };
+		BC6EF8502060F3FF00A156B9 /* VIMetadataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMetadataCell.xib; sourceTree = "<group>"; };
+		BC6EF8512060F3FF00A156B9 /* VIMetadataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMetadataVC.xib; sourceTree = "<group>"; };
+
 		BC6EF8572060F53400A156B9 /* PRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRHelper.swift; sourceTree = "<group>"; };
 		BC6EF8592060F57D00A156B9 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
@@ -787,7 +799,7 @@
 		BC770A64204CEE5D0052A285 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC770A63204CEE5D0052A285 /* Prelens-jinny.app */,
+				BC770A63204CEE5D0052A285 /* Jinny.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1155,7 +1167,7 @@
 			);
 			name = "Prelens-jinny";
 			productName = "Prelens-jinny";
-			productReference = BC770A63204CEE5D0052A285 /* Prelens-jinny.app */;
+			productReference = BC770A63204CEE5D0052A285 /* Jinny.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1613,7 +1625,7 @@
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Jinny;
 				PROVISIONING_PROFILE = "179b8381-1f1d-413f-9731-806d592269a1";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development sg.vinova.prelens";
 				SWIFT_VERSION = 4.0;
@@ -1636,7 +1648,7 @@
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Jinny;
 				PROVISIONING_PROFILE = "d813a21e-8c86-4f33-b084-2951f8f4626d";
 				PROVISIONING_PROFILE_SPECIFIER = "match InHouse sg.vinova.prelens";
 				SWIFT_VERSION = 4.0;

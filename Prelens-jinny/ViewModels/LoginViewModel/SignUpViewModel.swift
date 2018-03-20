@@ -45,20 +45,30 @@ final class SignUpViewModel {
 
         self.btnSignUpTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
-            guard let pass = strongSelf.password.value else {
+            guard let pass = strongSelf.password.value, let email = strongSelf.email.value else {
                print("error")
                return
             }
-            if pass.isValidPassword() {
-                if self?.isValidInput.value == false {
-                    PopUpHelper.shared.showMessage(message: "Please enter your email & password")
-                } else if self?.isChecked.value == false {
-                    PopUpHelper.shared.showMessage(message: "Please indicate that you have agree to the Terms and Conditions")
+            
+            if self?.isValidInput.value == true {
+                if email.isValidEmail() && pass.isValidPassword() && self?.isChecked.value == true {
+                     strongSelf.callAPISignUp()
                 } else {
-                    strongSelf.callAPISignUp()
+                    if email.isValidEmail() == false {
+                        PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorInvalidEmail)
+                        return
+                    }
+                    if pass.isValidPassword() == false {
+                            PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
+                        return
+                    }
+                    if self?.isChecked.value == false {
+                         PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorUncheckedCondition )
+                        return
+                    }
                 }
             } else {
-                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
+                 PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
             }
         }).disposed(by: disposeBag)
     }
