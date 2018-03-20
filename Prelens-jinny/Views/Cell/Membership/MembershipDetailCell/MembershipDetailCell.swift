@@ -10,15 +10,16 @@ import UIKit
 
 class MembershipDetailCell: UITableViewCell {
 
+    @IBOutlet weak var imgPromotion: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = PRColor.backgroundColor
+        imgPromotion.layer.cornerRadius = 2.5
+        imgPromotion.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

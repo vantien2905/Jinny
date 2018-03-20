@@ -38,6 +38,9 @@
                         <constraint firstAttribute="height" constant="50" id="gK3-n3-dCZ"/>
                     </constraints>
                     <state key="normal" image="add_new"/>
+                    <connections>
+                        <action selector="btnAddMembershipTapped" destination="-1" eventType="touchUpInside" id="aQq-cb-z8B"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

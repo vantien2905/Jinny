@@ -14,6 +14,7 @@ class HeaderMembershipDetailCell: UITableViewCell {
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var imgBarcode: UIImageView!
     @IBOutlet weak var lbCodeNumber: UILabel!
+    @IBOutlet weak var vContent: UIView!
 
     @IBAction func btnLogoTapped() {
 

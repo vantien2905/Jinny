@@ -50,10 +50,10 @@ class MembershipDetailViewController: BaseViewController {
 
     }
 
-    class func configureViewController(id: Int) -> UIViewController {
+    class func configureViewController(idMembership: Int) -> UIViewController {
         let vc = MembershipDetailViewController.initControllerFromNib() as! MembershipDetailViewController
         var viewModel: MembershipDetailViewModelProtocol {
-            return MembershipDetailViewModel(idMember: id)
+            return MembershipDetailViewModel(idMember: idMembership)
         }
         vc.viewModel = viewModel
         return vc
@@ -91,6 +91,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.headerMemBershipDetail, for: indexPath) as! HeaderMembershipDetailCell
             let url = membershipDetail.merchant?.logo?.url?.thumb
             cell.setData(urlLogo: url, code: membershipDetail.code)
+            cell.vContent.setShadow()
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.membershipDetail, for: indexPath)

@@ -33,5 +33,4 @@ class PRBaseViewXib: UIView {
     func setUpSize() {
 
     }
-
 }

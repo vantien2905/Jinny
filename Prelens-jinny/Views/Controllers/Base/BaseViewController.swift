@@ -11,7 +11,7 @@ import UIKit
 import Action
 import Foundation
 
-protocol BaseViewControllerDelegate {
+protocol BaseViewControllerDelegate: class {
     func starBookmarkTapped()
 }
 
@@ -23,7 +23,7 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = PRColor.backgroundColor
     }
 
-    var delegate: BaseViewControllerDelegate?
+    weak var delegate: BaseViewControllerDelegate?
     override func viewDidAppear(_ animated: Bool) {
         let img = UIImage()
         self.navigationController?.navigationBar.shadowImage = img
@@ -104,5 +104,13 @@ class BaseViewController: UIViewController {
 
     @objc func btnBackTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func hideNavigation() {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    func showNavigation() {
+        self.navigationController?.isNavigationBarHidden = false
     }
 }

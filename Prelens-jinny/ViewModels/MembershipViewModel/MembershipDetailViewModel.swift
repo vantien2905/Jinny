@@ -45,7 +45,7 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
     }
 
     func addBookmarkMembership(idMember: Int) {
-        Provider.shared.memberShipService.addBookmarkMembership(id: idMember).subscribe(onNext: { (_) in
+        Provider.shared.memberShipService.addBookmarkMembership(idBookmark: idMember).subscribe(onNext: { (_) in
             print(idMember)
         }).disposed(by: disposeBag)
     }

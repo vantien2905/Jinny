@@ -12,7 +12,7 @@ import Alamofire
 protocol MembershipServiceProtocol {
     func getListAllMembership() -> Observable<Membership?>
     func getDetailMembership(idMember: Int) -> Observable<Member?>
-    func addBookmarkMembership(id: Int) -> Observable<Member?>
+    func addBookmarkMembership(idBookmark: Int) -> Observable<Member?>
 }
 
 class MembershipService: MembershipServiceProtocol {
@@ -31,9 +31,9 @@ class MembershipService: MembershipServiceProtocol {
         return network.rx_Object(url: url, method: .get, parameters: [:])
     }
 
-    func addBookmarkMembership(id: Int) -> Observable<Member?> {
+    func addBookmarkMembership(idBookmark: Int) -> Observable<Member?> {
         var _url = APIEndpoint.Membership.addBookmarkMembership
-        _url = String(format: _url, "\(id)")
+        _url = String(format: _url, "\(idBookmark)")
         return network.rx_Object(url: _url, method: .post, parameters: [:])
     }
 }
