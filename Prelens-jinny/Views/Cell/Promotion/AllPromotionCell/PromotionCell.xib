@@ -107,6 +107,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="341" height="257"/>
             <connections>
+                <outlet property="imgPromotion" destination="xe8-4z-JcZ" id="tTo-Ln-bid"/>
+                <outlet property="lbExpiresAt" destination="GAg-ux-xkt" id="8ki-dZ-2r0"/>
+                <outlet property="lbMerchantName" destination="o5t-HD-IZ4" id="SFj-Q2-QA9"/>
                 <outlet property="vLine" destination="FHq-hk-gn6" id="Ww7-NT-qdN"/>
             </connections>
             <point key="canvasLocation" x="97.5" y="117.5"/>

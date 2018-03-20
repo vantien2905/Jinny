@@ -29,4 +29,8 @@ class Provider {
     var memberShipService: MembershipServiceProtocol {
         return MembershipService(network: network)
     }
+    
+    var promotionService: PromotionServiceProtocol {
+        return PromotionService(network: network)
+    }
 }

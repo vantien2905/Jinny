@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PromotionDetailCell: UICollectionViewCell {
 
+    @IBOutlet weak var imvPromotionDetail: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    
+    func setUpView(with data: Promotion) {
+        guard let urlString = data.image?.url?.medium, let url = URL(string: urlString) else { return }
+            
+        imvPromotionDetail.contentMode = .scaleAspectFill
+        imvPromotionDetail.sd_setImage(with: url, placeholderImage: nil, options: .delayPlaceholder, completed: nil)
+    }
 }

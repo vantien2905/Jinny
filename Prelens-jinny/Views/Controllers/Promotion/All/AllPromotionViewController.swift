@@ -7,10 +7,30 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class AllPromotionViewController: UIViewController {
 
     @IBOutlet weak var cvAllPromotion: UICollectionView!
+    
+    let viewModel = PromotionViewModel()
+    let disposeBag = DisposeBag()
+    
+    var listPromotion = [Promotion](){
+        didSet {
+            self.cvAllPromotion.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
+        
+        bindData()
+        viewModel.getListPromotion()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configColecttionView()
@@ -21,34 +41,30 @@ class AllPromotionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+   
+    
+    func bindData() {
+        viewModel.outputs.listPromotion.asObservable().subscribe(onNext: { promotions in
+            //if let _promotion = promotions {
+                self.listPromotion = promotions
+                self.cvAllPromotion.reloadData()
+            //}
+        }).disposed(by: disposeBag)
+    }
+    
     func configColecttionView() {
         cvAllPromotion.register(UINib(nibName: Cell.searchPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.searchPromotion)
         cvAllPromotion.register(UINib(nibName: Cell.promotionHeader, bundle: nil), forCellWithReuseIdentifier: Cell.promotionHeader)
         cvAllPromotion.register(UINib(nibName: Cell.promotionCell, bundle: nil), forCellWithReuseIdentifier: Cell.promotionCell )
-
+        cvAllPromotion.register(UINib(nibName: Cell.emptyPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.emptyPromotion)
+        
         cvAllPromotion.backgroundColor = PRColor.backgroundColor
         cvAllPromotion.delegate = self
         cvAllPromotion.dataSource = self
     }
 }
 extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
-        
-            return cell
-        case 1:
-            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath)
-            
-            return cell
-        default:
-            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
-            return cell
-        }
-    }
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -56,12 +72,38 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 2:
-            return 5
+            if self.listPromotion.count == 0{
+                return 1
+            } else {
+                return self.listPromotion.count
+            }
         default:
             return 1
         }
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section {
+        case 0:
+            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
+            return cell
+        case 1:
+            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath)
+            
+            return cell
+        default:
+            if self.listPromotion.count == 0 {
+                let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.emptyPromotion, for: indexPath) as! EmptyPromotionCell
+                
+                return cell
+            } else {
+                let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
+                cell.promotion = listPromotion[indexPath.item]
+                
+                return cell
+            }
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
@@ -69,8 +111,11 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
         case 1:
             return CGSize(width: collectionView.frame.width - 30, height: 40 )
         default:
-            return CGSize(width: (collectionView.frame.width - 30), height:
-                (collectionView.frame.height / 2))
+            if self.listPromotion.count == 0 {
+                return CGSize(width: collectionView.frame.width - 30, height: 30)
+            } else {
+                return CGSize(width: (collectionView.frame.width - 30), height: (collectionView.frame.height / 2))
+            }
         }
     }
 
@@ -84,7 +129,9 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2 {
-            let vc = PromotionDetailViewController.initControllerFromNib()
+            let vc = PromotionDetailViewController()
+            vc.promotionDetailData = listPromotion[indexPath.item]
+            
             self.push(controller: vc, animated: true)
         }
     }
