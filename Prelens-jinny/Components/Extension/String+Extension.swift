@@ -6,7 +6,7 @@
 //  Copyright © 2018 Lamp. All rights reserved.
 //
 
-import Foundation
+import UIKit
 postfix operator &
 
 postfix func & <T>(element: T?) -> String {
@@ -48,17 +48,13 @@ extension String {
 }
 
 extension String {
-//    func toAttributedString(color: UIColor, font: UIFont? = nil, isUnderLine: Bool = false) -> NSAttributedString {
-//        if let font = font {
-//            if isUnderLine {
-//                return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: color, NSAttributedStringKey.underlineColor: color, NSAttributedStringKey.underlineStyle: 1])
-//            }
-//            return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: color])
-//        } else {
-//            return NSAttributedString(string: self, attributes: [NSAttributedStringKey.foregroundColor: color])
-//        }
-//        
-//    }
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        
+        return boundingBox.height + 4 * 2 // Inset
+    }
 }
 
 extension String {

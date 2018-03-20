@@ -47,7 +47,7 @@ class PromotionDetailViewController: BaseViewController {
 
 extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -87,7 +87,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = UIScreen.main.bounds.width - 46
-        return CGSize(width: size, height: 1.5*size)
+        return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -99,8 +99,11 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
+        guard let text = promotionDetailData?.merchant?.name else { return CGSize(width: 0, height: 0) }
+        let height = text.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20,
+                                 font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
         let size = UIScreen.main.bounds.width
-        return CGSize(width: size, height: 125)
+        return CGSize(width: size, height: 125 - (57 - height))
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -110,4 +113,34 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
         return CGSize(width: size, height: 100)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let metadata = VIMetadataVC.instantiateFromNib(with: (promotionDetailData?.image?.url)!, playButtonImage: nil)
+        
+        push(controller: metadata, animated: true)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

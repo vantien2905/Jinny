@@ -46,15 +46,25 @@
                         <constraint firstAttribute="height" constant="50" id="lKs-qB-eUx"/>
                     </constraints>
                 </view>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DA7-MB-c8N">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="iZY-AB-XI0"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="DA7-MB-c8N" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3Iy-6h-dFt"/>
+                <constraint firstItem="DA7-MB-c8N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="79v-5k-qBo"/>
                 <constraint firstItem="Rdy-Lw-Kvz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="H9s-BP-0H6"/>
                 <constraint firstItem="o7G-Ih-IWA" firstAttribute="top" secondItem="DFy-rO-aFV" secondAttribute="top" id="Ki3-Tz-tBh"/>
                 <constraint firstItem="Rdy-Lw-Kvz" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RST-h5-EB7"/>
                 <constraint firstItem="o7G-Ih-IWA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="RTl-xK-t0K"/>
                 <constraint firstItem="DFy-rO-aFV" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="UpQ-18-yCL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rdy-Lw-Kvz" secondAttribute="trailing" constant="22" id="V6p-oT-U2O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DA7-MB-c8N" secondAttribute="trailing" id="VPg-ac-3NQ"/>
                 <constraint firstItem="DFy-rO-aFV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="afj-AZ-K5C"/>
                 <constraint firstItem="o7G-Ih-IWA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gpD-NL-Fnd"/>
                 <constraint firstItem="DFy-rO-aFV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sJc-R4-4TB"/>

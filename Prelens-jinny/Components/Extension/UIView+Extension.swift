@@ -264,5 +264,29 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-
 }
+
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    class var identifier: String {
+        return "\(self)"
+    }
+    
+    // Warn: working only on Main Bundle
+    static func loadFromNib<T: UIView>(viewClass: T.Type) -> T {
+        let id = viewClass.identifier
+        return Bundle.main.loadNibNamed(id, owner: nil, options: nil)!.first as! T
+    }
+}
+
+
+
