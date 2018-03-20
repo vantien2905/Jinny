@@ -10,9 +10,15 @@ import UIKit
 
 class PromotionDetailCell: UICollectionViewCell {
 
+    @IBOutlet weak var imvPromotionDetail: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
+    func setUpComponents() {
+        imvPromotionDetail.contentMode = .scaleAspectFit
+    }
+    
 }

@@ -57,6 +57,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="352" height="153"/>
             <connections>
+                <outlet property="lbExpireDate" destination="kwa-yY-ay7" id="Ecn-rb-SmM"/>
                 <outlet property="tvName" destination="hOg-ve-vNy" id="lm9-3A-ZeB"/>
             </connections>
             <point key="canvasLocation" x="185" y="105.5"/>

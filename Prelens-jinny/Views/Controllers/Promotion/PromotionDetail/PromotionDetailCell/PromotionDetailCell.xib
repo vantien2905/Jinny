@@ -32,6 +32,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="243" height="305"/>
+            <connections>
+                <outlet property="imvPromotionDetail" destination="UhX-TH-80c" id="HJV-f2-WbT"/>
+            </connections>
             <point key="canvasLocation" x="130.5" y="181.5"/>
         </collectionViewCell>
     </objects>

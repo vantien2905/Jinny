@@ -11,6 +11,7 @@ import UIKit
 class PromotionDetailHeaderCell: UICollectionViewCell {
 
     @IBOutlet weak var tvName: UITextView!
+    @IBOutlet weak var lbExpireDate: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpView()
