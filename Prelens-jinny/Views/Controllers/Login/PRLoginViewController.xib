@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OstrichSans-Black.otf">
+            <string>OstrichSans-Black</string>
+        </array>
         <array key="OstrichSans-Heavy.otf">
             <string>OstrichSans-Heavy</string>
         </array>
@@ -61,11 +64,21 @@
                                             <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ1-BK-5uu">
+                                            <rect key="frame" x="163" y="37" width="49" height="21"/>
+                                            <fontDescription key="fontDescription" name="OstrichSans-Black" family="Ostrich Sans" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="Gbu-KJ-Nrc" firstAttribute="top" secondItem="65I-m8-Kiu" secondAttribute="top" constant="37.5" id="01I-Ia-LNp"/>
+                                        <constraint firstItem="nZ1-BK-5uu" firstAttribute="leading" secondItem="65I-m8-Kiu" secondAttribute="leading" constant="163" id="ORq-Tr-mwH"/>
+                                        <constraint firstItem="nZ1-BK-5uu" firstAttribute="top" secondItem="65I-m8-Kiu" secondAttribute="top" constant="37" id="SOm-ry-G9e"/>
+                                        <constraint firstAttribute="trailing" secondItem="nZ1-BK-5uu" secondAttribute="trailing" constant="163" id="TTC-g6-W8H"/>
                                         <constraint firstItem="Gbu-KJ-Nrc" firstAttribute="centerX" secondItem="65I-m8-Kiu" secondAttribute="centerX" id="pU1-Yk-g5N"/>
+                                        <constraint firstAttribute="bottom" secondItem="nZ1-BK-5uu" secondAttribute="bottom" constant="17" id="pY2-oL-Zh3"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -105,7 +118,7 @@
                 <constraint firstItem="tFL-yt-Tcf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pl0-qg-Y07"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="34" y="109"/>
+            <point key="canvasLocation" x="33.5" y="108.5"/>
         </view>
     </objects>
 </document>

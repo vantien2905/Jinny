@@ -42,7 +42,7 @@ class PRLoginViewController: BaseViewController {
             MenuItem(title: "SIGN IN", isSelected: false)
         ]
         controllers = [ vcSignUp, vcSignIn ]
-        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu, textFont: nil)
+        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu, textFont: UIFont(name: "OstrichSans-Black", size: 17.5))
     }
 
    override func didReceiveMemoryWarning() {
