@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isB-vn-SdG">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVp-Qz-fxX">
                             <rect key="frame" x="0.0" y="15" width="375" height="45"/>
@@ -185,7 +185,7 @@
             </subviews>
             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="isB-vn-SdG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-32" id="6rE-dk-xaq"/>
+                <constraint firstItem="isB-vn-SdG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="6rE-dk-xaq"/>
                 <constraint firstItem="isB-vn-SdG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aub-JV-6CY"/>
                 <constraint firstItem="xVp-Qz-fxX" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="45:667" id="cN7-nh-OfO"/>
                 <constraint firstItem="isB-vn-SdG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tcU-Ie-7gb"/>

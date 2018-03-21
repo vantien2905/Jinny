@@ -9,12 +9,12 @@
 import ObjectMapper
 
 class PRUser: NSObject, Mappable {
-    var id: String?
-    var email: String?
-    var fullName: String?
-    var dob: Date?
-    var gender: String?
-    var token: String?
+    var id          : String?
+    var email       : String?
+    var fullName    : String?
+    var dob         : String?
+    var gender      : String?
+    var token       : String?
     var residentialRegion: ResidentialRegion?
 
     override init() {

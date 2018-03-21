@@ -58,6 +58,8 @@ class PRSideMenuVC: UIViewController {
 // MARK: Button Action
 extension PRSideMenuVC {
     @IBAction func editProfileTapped() {
+        let vc = PREditProfileViewController.initControllerFromNib()
+        self.push(controller: vc)
     }
 
     @IBAction func settingTapped() {
