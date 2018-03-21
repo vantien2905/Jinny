@@ -18,6 +18,7 @@ class SettingViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        darkStatus()
         self.navigationController?.navigationBar.isHidden = false
         setTitle(title: "Setting", textColor: .black, backgroundColor: .white)
         addBackButton()
