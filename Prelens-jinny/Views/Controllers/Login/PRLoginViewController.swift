@@ -30,6 +30,7 @@ class PRLoginViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        darkStatus()
         setupView()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
