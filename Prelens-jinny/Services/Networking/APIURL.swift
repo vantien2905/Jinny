@@ -33,6 +33,6 @@ struct APIEndpoint {
     
     struct Profile {
         static let getProfile         = "users/my_profile"
-        static let editProfile        = "users/update_profile"
+        static let updateProfile        = "users/update_profile"
     }
 }
