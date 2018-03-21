@@ -27,6 +27,8 @@
 		765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
 		765087862057716100199FBB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SignInViewModel.swift */; };
 		76508789205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
+		765270F92062917500CD4038 /* ChooseDatePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765270F82062917400CD4038 /* ChooseDatePopupView.swift */; };
+		765270FB2062918700CD4038 /* ChooseDatePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765270FA2062918700CD4038 /* ChooseDatePopupView.xib */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
@@ -206,6 +208,8 @@
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
 		765087852057716100199FBB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		76508788205772D200199FBB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		765270F82062917400CD4038 /* ChooseDatePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDatePopupView.swift; sourceTree = "<group>"; };
+		765270FA2062918700CD4038 /* ChooseDatePopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDatePopupView.xib; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
@@ -315,11 +319,7 @@
 		BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		BC6EF85D2061063200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
 		BC6EF85E2061063200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
-		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Prelens-jinny.app"; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
-
 		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -456,6 +456,15 @@
 				7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */,
 			);
 			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+		765270F72062910900CD4038 /* ChooseDatePopupView */ = {
+			isa = PBXGroup;
+			children = (
+				765270F82062917400CD4038 /* ChooseDatePopupView.swift */,
+				765270FA2062918700CD4038 /* ChooseDatePopupView.xib */,
+			);
+			path = ChooseDatePopupView;
 			sourceTree = "<group>";
 		};
 		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
@@ -834,7 +843,7 @@
 		BC770A64204CEE5D0052A285 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC770A63204CEE5D0052A285 /* Prelens-jinny.app */,
+				BC770A63204CEE5D0052A285 /* Jinny.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -965,6 +974,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				765270F72062910900CD4038 /* ChooseDatePopupView */,
 				B7899EB12060A36600ADEC43 /* SearchView */,
 				B7AC7FD72057A7A900C0BFCA /* PopUpView */,
 				BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */,
@@ -1174,11 +1184,8 @@
 				D991185B205B7B1800F701ED /* AuthenticationService.swift */,
 				D991185D205B82D900F701ED /* MembershipService.swift */,
 				760EC3B12060AC5E001390B8 /* PromotionService.swift */,
-
 				BC4899982062167200E7DE0D /* MerchantService.swift */,
-
 				760DC7FF206215DB008A8EF1 /* ProfileService.swift */,
-
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -1205,7 +1212,7 @@
 			);
 			name = "Prelens-jinny";
 			productName = "Prelens-jinny";
-			productReference = BC770A63204CEE5D0052A285 /* Prelens-jinny.app */;
+			productReference = BC770A63204CEE5D0052A285 /* Jinny.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1295,6 +1302,7 @@
 				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				BC6EF8602061063200A156B9 /* PRPhotoDetail.xib in Resources */,
+				765270FB2062918700CD4038 /* ChooseDatePopupView.xib in Resources */,
 				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
 				BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
@@ -1479,6 +1487,7 @@
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
 				760DC800206215DB008A8EF1 /* ProfileService.swift in Sources */,
 				B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */,
+				765270F92062917500CD4038 /* ChooseDatePopupView.swift in Sources */,
 				76DC88F5205F603A00AD87F3 /* StarredPromotionViewController.swift in Sources */,
 				B788665B205A1C5800096F27 /* Url.swift in Sources */,
 				BCAA4A5420623A8900B6D1D9 /* MerchantDetailViewModel.swift in Sources */,
