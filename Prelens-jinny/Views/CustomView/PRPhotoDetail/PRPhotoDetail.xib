@@ -12,24 +12,59 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRPhotoDetail" customModule="Prelens_jinny" customModuleProvider="target">
             <connections>
+                <outlet property="cvPhotoPreview" destination="Ip9-I5-ivQ" id="VUa-dY-rkl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="oBF-5E-Iza"/>
-            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c7k-ch-oGk">
-                <size key="itemSize" width="50" height="50"/>
-                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-            </collectionViewFlowLayout>
-            <connections>
-                <outlet property="dataSource" destination="-1" id="Tng-2m-Rnh"/>
-                <outlet property="delegate" destination="-1" id="9aC-8N-iBw"/>
-            </connections>
-        </collectionView>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ip9-I5-ivQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UJG-pd-Yau">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ss-tP-j75">
+                    <rect key="frame" x="325" y="301" width="50" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="8Ed-Jd-PgF"/>
+                        <constraint firstAttribute="width" constant="50" id="Aga-F9-5gK"/>
+                    </constraints>
+                    <state key="normal" image="next_photo"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfO-kc-UF8">
+                    <rect key="frame" x="0.0" y="301" width="50" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="blF-uL-sS8"/>
+                        <constraint firstAttribute="width" constant="50" id="fr7-xj-FE0"/>
+                    </constraints>
+                    <state key="normal" image="prev_photo"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ip9-I5-ivQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4Os-qq-Ufx"/>
+                <constraint firstItem="VfO-kc-UF8" firstAttribute="centerY" secondItem="Ip9-I5-ivQ" secondAttribute="centerY" id="9Af-81-kuX"/>
+                <constraint firstItem="Ip9-I5-ivQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KK8-oN-BS2"/>
+                <constraint firstItem="Ip9-I5-ivQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Zwc-PG-U5D"/>
+                <constraint firstItem="6ss-tP-j75" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dcO-TJ-WJb"/>
+                <constraint firstItem="VfO-kc-UF8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i5j-xe-0Qq"/>
+                <constraint firstItem="Ip9-I5-ivQ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="lBj-FQ-hbs"/>
+                <constraint firstItem="6ss-tP-j75" firstAttribute="centerY" secondItem="Ip9-I5-ivQ" secondAttribute="centerY" id="xZv-7V-X3l"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
+        </view>
     </objects>
+    <resources>
+        <image name="next_photo" width="47" height="63"/>
+        <image name="prev_photo" width="47" height="63"/>
+    </resources>
 </document>
