@@ -18,5 +18,6 @@ target 'Prelens-jinny' do
   pod 'PKHUD'
   pod 'AlamofireObjectMapper'
   pod 'RxAlamofire'
+  pod 'BarcodeScanner'
 
 end

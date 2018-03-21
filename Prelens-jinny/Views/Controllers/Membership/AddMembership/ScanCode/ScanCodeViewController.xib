@@ -15,9 +15,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanCodeViewController" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanCodeViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
-                <outlet property="imgLogo" destination="GHe-f7-Af3" id="uH3-D0-GlT"/>
+                <outlet property="imgLogo" destination="GHe-f7-Af3" id="pk9-u1-dlA"/>
                 <outlet property="lbAddManual" destination="hpQ-dP-pkJ" id="abH-qh-VBC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

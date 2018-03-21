@@ -76,6 +76,9 @@
 		B79AEE542060BA8C007F0BB3 /* ScanCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79AEE522060BA8C007F0BB3 /* ScanCodeViewController.xib */; };
 		B79AEE592060C107007F0BB3 /* AddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79AEE572060C107007F0BB3 /* AddManualViewController.swift */; };
 		B79AEE5A2060C107007F0BB3 /* AddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79AEE582060C107007F0BB3 /* AddManualViewController.xib */; };
+		B7AC4AD6206201830028BDDD /* AddMerchantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC4AD5206201830028BDDD /* AddMerchantViewModel.swift */; };
+		B7AC4AD8206232EE0028BDDD /* ScanCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC4AD7206232EE0028BDDD /* ScanCodeViewModel.swift */; };
+		B7AC4ADA2062356B0028BDDD /* AddManualViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC4AD92062356B0028BDDD /* AddManualViewModel.swift */; };
 		B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */; };
 		B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */; };
 		B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */; };
@@ -246,6 +249,9 @@
 		B79AEE522060BA8C007F0BB3 /* ScanCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanCodeViewController.xib; sourceTree = "<group>"; };
 		B79AEE572060C107007F0BB3 /* AddManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManualViewController.swift; sourceTree = "<group>"; };
 		B79AEE582060C107007F0BB3 /* AddManualViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddManualViewController.xib; sourceTree = "<group>"; };
+		B7AC4AD5206201830028BDDD /* AddMerchantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMerchantViewModel.swift; sourceTree = "<group>"; };
+		B7AC4AD7206232EE0028BDDD /* ScanCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewModel.swift; sourceTree = "<group>"; };
+		B7AC4AD92062356B0028BDDD /* AddManualViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManualViewModel.swift; sourceTree = "<group>"; };
 		B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -295,24 +301,12 @@
 		BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTabbarCustom.swift; sourceTree = "<group>"; };
 		BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRTabbarCustom.xib; sourceTree = "<group>"; };
-
-		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC6EF8442060F1E200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
-		BC6EF8452060F1E200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
-		BC6EF8482060F1FE00A156B9 /* PRPhotoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetailCell.swift; sourceTree = "<group>"; };
-		BC6EF8492060F1FE00A156B9 /* PRPhotoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetailCell.xib; sourceTree = "<group>"; };
-		BC6EF84D2060F3FF00A156B9 /* VIMetadataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataCell.swift; sourceTree = "<group>"; };
-		BC6EF84E2060F3FF00A156B9 /* VIMetadataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataVC.swift; sourceTree = "<group>"; };
-		BC6EF84F2060F3FF00A156B9 /* VIMetadataVCProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIMetadataVCProtocol.swift; sourceTree = "<group>"; };
-		BC6EF8502060F3FF00A156B9 /* VIMetadataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMetadataCell.xib; sourceTree = "<group>"; };
-		BC6EF8512060F3FF00A156B9 /* VIMetadataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIMetadataVC.xib; sourceTree = "<group>"; };
-
 		BC6EF8572060F53400A156B9 /* PRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRHelper.swift; sourceTree = "<group>"; };
 		BC6EF8592060F57D00A156B9 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		BC6EF85D2061063200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
 		BC6EF85E2061063200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
-		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prelens-jinny.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -575,6 +569,9 @@
 			children = (
 				B7886651205A154700096F27 /* MembershipViewModel.swift */,
 				B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */,
+				B7AC4AD5206201830028BDDD /* AddMerchantViewModel.swift */,
+				B7AC4AD7206232EE0028BDDD /* ScanCodeViewModel.swift */,
+				B7AC4AD92062356B0028BDDD /* AddManualViewModel.swift */,
 			);
 			path = MembershipViewModel;
 			sourceTree = "<group>";
@@ -1419,6 +1416,7 @@
 				760EC3B52060ADBE001390B8 /* PromotionViewModel.swift in Sources */,
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
 				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
+				B7AC4ADA2062356B0028BDDD /* AddManualViewModel.swift in Sources */,
 				D9911860205BAB8900F701ED /* ResponseError.swift in Sources */,
 				B79AEE532060BA8C007F0BB3 /* ScanCodeViewController.swift in Sources */,
 				76DC88F1205F602000AD87F3 /* AllPromotionViewController.swift in Sources */,
@@ -1483,8 +1481,10 @@
 				7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */,
 				760EC3B02060A93D001390B8 /* Image.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
+				B7AC4AD8206232EE0028BDDD /* ScanCodeViewModel.swift in Sources */,
 				BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
+				B7AC4AD6206201830028BDDD /* AddMerchantViewModel.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 			);
@@ -1623,6 +1623,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = Jinny;
@@ -1646,6 +1647,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = Jinny;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddMerchantViewController: BaseViewController {
 
@@ -18,7 +19,12 @@ class AddMerchantViewController: BaseViewController {
         setNavigation()
         setUpView()
         configureTableView()
+        bindData()
+       
     }
+    
+    var viewModel = AddMerchantViewModel()
+    let disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
         showNavigation()
@@ -45,28 +51,30 @@ class AddMerchantViewController: BaseViewController {
     func configureTableView() {
         tbMerchant.register(UINib(nibName: Cell.addMerchantCell, bundle: nil), forCellReuseIdentifier: Cell.addMerchantCell)
         tbMerchant.delegate = self
-        tbMerchant.dataSource = self
         tbMerchant.backgroundColor = PRColor.backgroundColor
+    }
+    
+    func bindData() {
+        viewModel.loadData()
+        viewModel.listMerchant.asObservable().bind(to: tbMerchant.rx.items) { table, _, merchant in
+            let cell = table.dequeueReusableCell(withIdentifier: Cell.addMerchantCell) as! AddMerchantCell
+            cell.merchant = merchant
+            return cell
+        }.disposed(by: disposeBag)
+        
+        tbMerchant.rx.modelSelected(Merchant.self).subscribe(onNext: { [weak self](merchant) in
+            guard let strongSelf = self else { return }
+            
+            let vcScancode = ScanCodeViewController.initControllerFromNib() as! ScanCodeViewController
+            vcScancode.viewModel.urlLogo.value = merchant.logo?.url
+            strongSelf.push(controller: vcScancode, animated: true)
+        }).disposed(by: disposeBag)
     }
 }
 
-extension AddMerchantViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.addMerchantCell, for: indexPath)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
+extension AddMerchantViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 42
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vcScancode = ScanCodeViewController.initControllerFromNib()
-        self.push(controller: vcScancode, animated: true)
+        return 44.5
     }
 }

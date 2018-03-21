@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddManualViewController: BaseViewController {
 
@@ -21,9 +22,13 @@ class AddManualViewController: BaseViewController {
     @IBAction func btnBackClick() {
         self.pop()
     }
+    
+    let viewModel = AddManualViewModel()
+    let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        bindData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,5 +38,15 @@ class AddManualViewController: BaseViewController {
 
     func setUpView() {
         vHeader.setShadow()
+    }
+    
+    func bindData() {
+        viewModel.urlLogo.asObservable().subscribe(onNext: {[weak self] (url) in
+            guard let strongSelf = self else { return }
+            if let _url = url, let _urlThumb = _url.thumb {
+                let urlThumb = URL(string: _urlThumb)
+                strongSelf.imgLogo.sd_setImage(with: urlThumb, placeholderImage: nil)
+            }
+        }).disposed(by: disposeBag)
     }
 }
