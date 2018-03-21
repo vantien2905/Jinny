@@ -33,4 +33,8 @@ class Provider {
     var promotionService: PromotionServiceProtocol {
         return PromotionService(network: network)
     }
+    
+    var profileService: ProfileServiceProtocol {
+        return ProfileService(network: network)
+    }
 }

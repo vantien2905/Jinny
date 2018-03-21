@@ -29,4 +29,9 @@ struct APIEndpoint {
     struct Promotion {
         static let getListAllPromotion   = "vouchers"
     }
+    
+    struct Profile {
+        static let getProfile         = "users/my_profile"
+        static let editProfile        = "users/update_profile"
+    }
 }
