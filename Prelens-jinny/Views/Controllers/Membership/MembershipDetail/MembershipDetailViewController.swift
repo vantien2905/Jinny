@@ -15,7 +15,7 @@ class MembershipDetailViewController: BaseViewController {
     @IBOutlet weak var tbMembershipDetail: UITableView!
 
     @IBAction func btnLogoTapped() {
-        let vcMerchantDetail = MerchantDetailViewController.configureViewController()
+        let vcMerchantDetail = MerchantDetailViewController.configureViewController(idMerchant: 1)
         self.push(controller: vcMerchantDetail, animated: true)
     }
 
@@ -100,6 +100,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.headerMemBershipDetail, for: indexPath) as! HeaderMembershipDetailCell
             let url = membershipDetail.merchant?.logo?.url?.thumb
             cell.setData(urlLogo: url, code: membershipDetail.code)
+            //hhh
             cell.vContent.setShadow()
             return cell
         } else if indexPath.section == 1 {

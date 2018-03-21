@@ -31,6 +31,10 @@ struct APIEndpoint {
         static let getListAllPromotion   = "vouchers"
     }
     
+
+    struct Merchant {
+        static let getMerchantDetail = "merchants/%@/branches"
+    }
     struct Profile {
         static let getProfile         = "users/my_profile"
         static let updateProfile        = "users/update_profile"
