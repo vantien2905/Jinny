@@ -29,6 +29,10 @@ class MembershipDetailViewController: BaseViewController {
             tbMembershipDetail.reloadData()
             membershipDetail.hasBookmark ? addStarButtonOn() : addStarButtonOff()
             isStarTapped = membershipDetail.hasBookmark
+            if let _merchant = membershipDetail.merchant, let _name = _merchant.name {
+                setTitle(title: _name, textColor: UIColor.black, backgroundColor: .white)
+            }
+            
         }
     }
 
@@ -64,7 +68,6 @@ class MembershipDetailViewController: BaseViewController {
 
     func setNavigation() {
         navigationController?.navigationBar.isHidden = false
-        setTitle(title: "STARBUCKS", textColor: UIColor.black, backgroundColor: .white)
         addBackButton()
     }
 

@@ -33,7 +33,8 @@ class MemberShipViewController: BaseViewController {
         setTitle(title: "Jinny")
         confireCollectionView()
         cvMembership.showsHorizontalScrollIndicator = false
-
+        hideKeyboard()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +43,11 @@ class MemberShipViewController: BaseViewController {
         bindData()
         viewModel.getListMembership()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        hideNavigation()
+    }
+    
     func bindData() {
         viewModel.outputs.listMembership.asObservable().subscribe(onNext: { member in
             if let _member = member {
@@ -63,7 +68,7 @@ class MemberShipViewController: BaseViewController {
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.delegate = self
         cvMembership.dataSource = self
-        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 0, right: 15)
+        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
 
     }
 }

@@ -20,6 +20,7 @@ class AddMerchantViewController: BaseViewController {
         setUpView()
         configureTableView()
         bindData()
+        hideKeyboard()
        
     }
     
@@ -35,7 +36,6 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         hideNavigation()
-        
     }
 
     func setUpView() {
@@ -65,8 +65,8 @@ class AddMerchantViewController: BaseViewController {
         tbMerchant.rx.modelSelected(Merchant.self).subscribe(onNext: { [weak self](merchant) in
             guard let strongSelf = self else { return }
             
-            let vcScancode = ScanCodeViewController.initControllerFromNib() as! ScanCodeViewController
-            vcScancode.viewModel.urlLogo.value = merchant.logo?.url
+            let vcScancode = ScanCodeViewController.configureController(merchant: merchant)
+
             strongSelf.push(controller: vcScancode, animated: true)
         }).disposed(by: disposeBag)
     }

@@ -25,6 +25,7 @@ struct APIEndpoint {
         static let addBookmarkMembership = "memberships/%@/toggle_bookmark"
         static let deleteMembership = "memberships/"
         static let getAllMerchant = "merchants"
+        static let addMembership = "memberships"
     }
     
     struct Promotion {
