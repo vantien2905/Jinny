@@ -49,6 +49,7 @@ class MemberShipViewController: BaseViewController {
     }
     
     func bindData() {
+        
         viewModel.outputs.listMembership.asObservable().subscribe(onNext: { member in
             if let _member = member {
                 self.listMember = _member
@@ -77,8 +78,8 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         if indexPath.section == 0 {
-            let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.searchMemberShip, for: indexPath)
-
+            let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.searchMemberShip, for: indexPath) as! SearchMembershipCell
+            cell.delegate = self
             return cell
         } else if indexPath.section == 1 {
             if self.listMember.startedMemberships.count == 0 {
@@ -215,5 +216,24 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 self.push(controller: vc, animated: true)
             }
         }
+    }
+}
+
+extension MemberShipViewController: SearchMembershipCellDelegate {
+    func searchTextChange(textSearch: String?) {
+        print("\(textSearch)")
+//        guard let _textSearch = textSearch else { return }
+//        let listStar = listMember.startedMemberships.filter { (member) -> Bool in
+//            return (member.merchant?.name?.contains(_textSearch))!
+//        }
+//
+//        let listOther = listMember.otherMemberships.filter { (member) -> Bool in
+//            return (member.merchant?.name?.contains(_textSearch))!
+//        }
+//        viewModel.outputs.listMembership.value?.startedMemberships = listStar
+//        viewModel.outputs.listMembership.value?.otherMemberships = listOther
+//        if let _listMember = viewModel.outputs.listMembership.value {
+//            listMember = _listMember
+//        }
     }
 }

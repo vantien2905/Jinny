@@ -315,11 +315,7 @@
 		BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		BC6EF85D2061063200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
 		BC6EF85E2061063200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
-		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Prelens-jinny.app"; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
-
 		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -834,7 +830,7 @@
 		BC770A64204CEE5D0052A285 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC770A63204CEE5D0052A285 /* Prelens-jinny.app */,
+				BC770A63204CEE5D0052A285 /* Jinny.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1174,11 +1170,8 @@
 				D991185B205B7B1800F701ED /* AuthenticationService.swift */,
 				D991185D205B82D900F701ED /* MembershipService.swift */,
 				760EC3B12060AC5E001390B8 /* PromotionService.swift */,
-
 				BC4899982062167200E7DE0D /* MerchantService.swift */,
-
 				760DC7FF206215DB008A8EF1 /* ProfileService.swift */,
-
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -1205,7 +1198,7 @@
 			);
 			name = "Prelens-jinny";
 			productName = "Prelens-jinny";
-			productReference = BC770A63204CEE5D0052A285 /* Prelens-jinny.app */;
+			productReference = BC770A63204CEE5D0052A285 /* Jinny.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1663,6 +1656,7 @@
 			baseConfigurationReference = C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GU9U74T6LC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1686,7 +1680,7 @@
 			baseConfigurationReference = BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GU9U74T6LC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1698,8 +1692,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = Jinny;
-				PROVISIONING_PROFILE = "d813a21e-8c86-4f33-b084-2951f8f4626d";
-				PROVISIONING_PROFILE_SPECIFIER = "match InHouse sg.vinova.prelens";
+				PROVISIONING_PROFILE = "179b8381-1f1d-413f-9731-806d592269a1";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development sg.vinova.prelens";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
