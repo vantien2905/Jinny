@@ -68,7 +68,7 @@ class Network: NetworkProtocol {
         return session.request(urlRequest, method: method, parameters: parameters, encoding: encoding, headers: header)
             .map {(response)  in
                 let json = JSON(response.data)
-                let jsonData = json["result"]
+                let jsonData = json["results"]
                 return Mapper<T>().mapArray(JSONObject: jsonData.arrayObject) ?? []
         }
     }
