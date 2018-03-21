@@ -10,6 +10,8 @@
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
 		760C1124205D164C009B9205 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C1122205D164C009B9205 /* SettingViewController.swift */; };
 		760C1125205D164C009B9205 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760C1123205D164C009B9205 /* SettingViewController.xib */; };
+		760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC7FD2062127B008A8EF1 /* EditProfileViewModel.swift */; };
+		760DC800206215DB008A8EF1 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC7FF206215DB008A8EF1 /* ProfileService.swift */; };
 		760EC3AE2060A682001390B8 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3AD2060A682001390B8 /* Promotion.swift */; };
 		760EC3B02060A93D001390B8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3AF2060A93D001390B8 /* Image.swift */; };
 		760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3B12060AC5E001390B8 /* PromotionService.swift */; };
@@ -46,8 +48,6 @@
 		76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */; };
 		76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
-		76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E98F5620502FF600555BA1 /* PRProfileViewController.swift */; };
-		76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E98F5720502FF600555BA1 /* PRProfileViewController.xib */; };
 		B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626A205907AC00C7004D /* StarredHeaderCell.swift */; };
 		B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626B205907AC00C7004D /* StarredHeaderCell.xib */; };
 		B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626E2059096700C7004D /* OtherHeaderCell.swift */; };
@@ -76,6 +76,9 @@
 		B79AEE542060BA8C007F0BB3 /* ScanCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79AEE522060BA8C007F0BB3 /* ScanCodeViewController.xib */; };
 		B79AEE592060C107007F0BB3 /* AddManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79AEE572060C107007F0BB3 /* AddManualViewController.swift */; };
 		B79AEE5A2060C107007F0BB3 /* AddManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79AEE582060C107007F0BB3 /* AddManualViewController.xib */; };
+		B7AC4AD6206201830028BDDD /* AddMerchantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC4AD5206201830028BDDD /* AddMerchantViewModel.swift */; };
+		B7AC4AD8206232EE0028BDDD /* ScanCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC4AD7206232EE0028BDDD /* ScanCodeViewModel.swift */; };
+		B7AC4ADA2062356B0028BDDD /* AddManualViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC4AD92062356B0028BDDD /* AddManualViewModel.swift */; };
 		B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */; };
 		B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */; };
 		B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */; };
@@ -186,6 +189,8 @@
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		760C1122205D164C009B9205 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		760C1123205D164C009B9205 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		760DC7FD2062127B008A8EF1 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		760DC7FF206215DB008A8EF1 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		760EC3AD2060A682001390B8 /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		760EC3AF2060A93D001390B8 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		760EC3B12060AC5E001390B8 /* PromotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionService.swift; sourceTree = "<group>"; };
@@ -222,8 +227,6 @@
 		76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPromotionCell.swift; sourceTree = "<group>"; };
 		76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPromotionCell.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		76E98F5620502FF600555BA1 /* PRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRProfileViewController.swift; sourceTree = "<group>"; };
-		76E98F5720502FF600555BA1 /* PRProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRProfileViewController.xib; sourceTree = "<group>"; };
 		B738626A205907AC00C7004D /* StarredHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredHeaderCell.swift; sourceTree = "<group>"; };
 		B738626B205907AC00C7004D /* StarredHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredHeaderCell.xib; sourceTree = "<group>"; };
 		B738626E2059096700C7004D /* OtherHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHeaderCell.swift; sourceTree = "<group>"; };
@@ -252,6 +255,9 @@
 		B79AEE522060BA8C007F0BB3 /* ScanCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanCodeViewController.xib; sourceTree = "<group>"; };
 		B79AEE572060C107007F0BB3 /* AddManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManualViewController.swift; sourceTree = "<group>"; };
 		B79AEE582060C107007F0BB3 /* AddManualViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddManualViewController.xib; sourceTree = "<group>"; };
+		B7AC4AD5206201830028BDDD /* AddMerchantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMerchantViewModel.swift; sourceTree = "<group>"; };
+		B7AC4AD7206232EE0028BDDD /* ScanCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewModel.swift; sourceTree = "<group>"; };
+		B7AC4AD92062356B0028BDDD /* AddManualViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManualViewModel.swift; sourceTree = "<group>"; };
 		B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		B7AC7FDC2057B76C00C0BFCA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -310,6 +316,10 @@
 		BC6EF85D2061063200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
 		BC6EF85E2061063200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
 		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Prelens-jinny.app"; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+
+
+		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -386,6 +396,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		760DC7FC20621249008A8EF1 /* ProfileViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				760DC7FD2062127B008A8EF1 /* EditProfileViewModel.swift */,
+			);
+			path = ProfileViewModel;
+			sourceTree = "<group>";
+		};
 		760EC3A92060A54D001390B8 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +438,7 @@
 		76469D0220563D5500E2950E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				760DC7FC20621249008A8EF1 /* ProfileViewModel */,
 				760EC3B32060ADA5001390B8 /* PromotionViewModel */,
 				B7886650205A151100096F27 /* MembershipViewModel */,
 				765087812057703900199FBB /* LoginViewModel */,
@@ -577,6 +596,9 @@
 			children = (
 				B7886651205A154700096F27 /* MembershipViewModel.swift */,
 				B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */,
+				B7AC4AD5206201830028BDDD /* AddMerchantViewModel.swift */,
+				B7AC4AD7206232EE0028BDDD /* ScanCodeViewModel.swift */,
+				B7AC4AD92062356B0028BDDD /* AddManualViewModel.swift */,
 			);
 			path = MembershipViewModel;
 			sourceTree = "<group>";
@@ -977,7 +999,6 @@
 			children = (
 				BCBC95A920562621004C1985 /* ChangePassword */,
 				BCBC95A720562613004C1985 /* EditProfile */,
-				BCBC95AA2056262D004C1985 /* ViewProfile */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -998,15 +1019,6 @@
 				765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */,
 			);
 			path = ChangePassword;
-			sourceTree = "<group>";
-		};
-		BCBC95AA2056262D004C1985 /* ViewProfile */ = {
-			isa = PBXGroup;
-			children = (
-				76E98F5620502FF600555BA1 /* PRProfileViewController.swift */,
-				76E98F5720502FF600555BA1 /* PRProfileViewController.xib */,
-			);
-			path = ViewProfile;
 			sourceTree = "<group>";
 		};
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
@@ -1162,7 +1174,11 @@
 				D991185B205B7B1800F701ED /* AuthenticationService.swift */,
 				D991185D205B82D900F701ED /* MembershipService.swift */,
 				760EC3B12060AC5E001390B8 /* PromotionService.swift */,
+
 				BC4899982062167200E7DE0D /* MerchantService.swift */,
+
+				760DC7FF206215DB008A8EF1 /* ProfileService.swift */,
+
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -1267,7 +1283,6 @@
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				BC9A6152205F77F00071EF4F /* PromotionDetailFooterCell.xib in Resources */,
-				76E98F5A20502FF600555BA1 /* PRProfileViewController.xib in Resources */,
 				B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
 				B7CD0645205F71E9009951A4 /* MerchantDetailCell.xib in Resources */,
@@ -1439,11 +1454,13 @@
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
+				760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */,
 				BC6EF85F2061063200A156B9 /* PRPhotoDetail.swift in Sources */,
 				BC48999E20621EBF00E7DE0D /* DateOpen.swift in Sources */,
 				760EC3B52060ADBE001390B8 /* PromotionViewModel.swift in Sources */,
 				B7AC7FDD2057B76C00C0BFCA /* UIButton+Extension.swift in Sources */,
 				7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */,
+				B7AC4ADA2062356B0028BDDD /* AddManualViewModel.swift in Sources */,
 				D9911860205BAB8900F701ED /* ResponseError.swift in Sources */,
 				B79AEE532060BA8C007F0BB3 /* ScanCodeViewController.swift in Sources */,
 				76DC88F1205F602000AD87F3 /* AllPromotionViewController.swift in Sources */,
@@ -1460,6 +1477,7 @@
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
 				B79AEE592060C107007F0BB3 /* AddManualViewController.swift in Sources */,
 				B7AC7FD92057A7CD00C0BFCA /* BasePopUpView.swift in Sources */,
+				760DC800206215DB008A8EF1 /* ProfileService.swift in Sources */,
 				B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */,
 				76DC88F5205F603A00AD87F3 /* StarredPromotionViewController.swift in Sources */,
 				B788665B205A1C5800096F27 /* Url.swift in Sources */,
@@ -1468,7 +1486,6 @@
 				BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				B7886659205A1C3800096F27 /* Logo.swift in Sources */,
-				76E98F5820502FF600555BA1 /* PRProfileViewController.swift in Sources */,
 				BC446B0E2060B18E00ED4117 /* PromotionDetailViewModel.swift in Sources */,
 				B7CD064F205F9AF6009951A4 /* FooterMembershipDetailCell.swift in Sources */,
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
@@ -1511,8 +1528,10 @@
 				7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */,
 				760EC3B02060A93D001390B8 /* Image.swift in Sources */,
 				B765ECB62057D89E0095B443 /* KeychainManager.swift in Sources */,
+				B7AC4AD8206232EE0028BDDD /* ScanCodeViewModel.swift in Sources */,
 				BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */,
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
+				B7AC4AD6206201830028BDDD /* AddMerchantViewModel.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
 				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
 			);
@@ -1651,6 +1670,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = Jinny;
@@ -1674,6 +1694,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Prelens-jinny/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = Jinny;

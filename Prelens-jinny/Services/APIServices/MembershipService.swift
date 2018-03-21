@@ -14,6 +14,7 @@ protocol MembershipServiceProtocol {
     func getDetailMembership(idMember: Int) -> Observable<Member?>
     func addBookmarkMembership(idBookmark: Int) -> Observable<Member?>
     func deleteMembership(idDelete: Int) -> Observable<Member?>
+    func getAllMerchants(page: Int, perPage: Int) -> Observable<[Merchant]>
 }
 
 class MembershipService: MembershipServiceProtocol {
@@ -41,5 +42,10 @@ class MembershipService: MembershipServiceProtocol {
     func deleteMembership(idDelete: Int) -> Observable<Member?> {
         let _url = APIEndpoint.Membership.deleteMembership + "\(idDelete)"
         return network.rx_Object(url: _url, method: .delete, parameters: [:])
+    }
+    
+    func getAllMerchants(page: Int, perPage: Int) -> Observable<[Merchant]> {
+        let url = APIEndpoint.Membership.getAllMerchant
+        return network.rx_Array(url: url, method: .get, parameters: [:])
     }
 }

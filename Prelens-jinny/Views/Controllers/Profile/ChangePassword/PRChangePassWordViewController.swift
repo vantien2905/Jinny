@@ -22,7 +22,12 @@ class PRChangePassWordViewController: BaseViewController {
     var curPassIsSecurity: Bool?
     var newPassIsSecurity: Bool?
     private let disposeBag = DisposeBag()
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        darkStatus()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()

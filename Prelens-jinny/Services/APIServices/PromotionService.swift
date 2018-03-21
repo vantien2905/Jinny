@@ -23,5 +23,4 @@ class PromotionService: PromotionServiceProtocol {
     func getListAllPromotion() -> Observable<[Promotion]> {
         return network.rx_Array(url: APIEndpoint.Promotion.getListAllPromotion, method: .get, parameters: [:])
     }
-    
 }

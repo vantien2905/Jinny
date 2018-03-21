@@ -34,7 +34,12 @@ class Provider {
         return PromotionService(network: network)
     }
     
+
     var merchantService: MerchantServiceProtocol {
         return MerchantService(network: network)
+
+    var profileService: ProfileServiceProtocol {
+        return ProfileService(network: network)
+
     }
 }

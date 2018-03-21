@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AddMerchantCell: UITableViewCell {
 
@@ -15,6 +16,11 @@ class AddMerchantCell: UITableViewCell {
     @IBOutlet weak var lbMemrchantName: UILabel!
     @IBOutlet weak var vBottom: UIView!
     
+    var merchant: Merchant? {
+        didSet {
+            self.loadData()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpView()
@@ -29,8 +35,21 @@ class AddMerchantCell: UITableViewCell {
         self.backgroundColor = PRColor.backgroundColor
         lbMemrchantName.backgroundColor = PRColor.backgroundColor
         vContent.backgroundColor = PRColor.backgroundColor
-        vBottom.backgroundColor = UIColor.gray
+        vBottom.backgroundColor = PRColor.lineColor
         imgMerchant.layer.cornerRadius = 2.5
+        imgMerchant.contentMode = .scaleAspectFit
+    }
+    
+    func loadData() {
+        guard let _merchant = merchant else { return }
+        if let _name = _merchant.name {
+            self.lbMemrchantName.text = _name
+        }
+        
+        if let _logo = _merchant.logo, let _url = _logo.url, let _urlThump = _url.thumb {
+            let url = URL(string: _urlThump)
+            imgMerchant.sd_setImage(with: url, placeholderImage: nil)
+        }
     }
     
 }
