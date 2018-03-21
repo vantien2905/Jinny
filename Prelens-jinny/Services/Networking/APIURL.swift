@@ -29,4 +29,8 @@ struct APIEndpoint {
     struct Promotion {
         static let getListAllPromotion   = "vouchers"
     }
+    
+    struct Merchant {
+        static let getMerchantDetail = "merchants/%@/branches"
+    }
 }

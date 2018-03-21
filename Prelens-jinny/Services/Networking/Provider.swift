@@ -33,4 +33,8 @@ class Provider {
     var promotionService: PromotionServiceProtocol {
         return PromotionService(network: network)
     }
+    
+    var merchantService: MerchantServiceProtocol {
+        return MerchantService(network: network)
+    }
 }
