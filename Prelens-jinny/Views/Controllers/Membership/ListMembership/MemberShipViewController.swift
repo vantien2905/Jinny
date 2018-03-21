@@ -12,6 +12,7 @@ import RxSwift
 class MemberShipViewController: BaseViewController {
 
     @IBOutlet weak var cvMembership: UICollectionView!
+    @IBOutlet weak var btnAddMembership: UIButton!
     
     @IBAction func btnAddMembershipTapped() {
         let vcAddMerchant = AddMerchantViewController.initControllerFromNib()
@@ -71,6 +72,17 @@ class MemberShipViewController: BaseViewController {
         cvMembership.dataSource = self
         cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
 
+    }
+    
+    @objc func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        //        print(actualPosition)
+        if actualPosition.y > 0 {
+            btnAddMembership.isHidden = true
+        } else if actualPosition.y < 0 {
+            btnAddMembership.isHidden = false
+        }
     }
 }
 
