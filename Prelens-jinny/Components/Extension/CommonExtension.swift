@@ -43,7 +43,7 @@ extension UIImageView {
     func sd_setImage(with path: String,
                      placeholder: UIImage? = #imageLiteral(resourceName: "image_loading"),
                      failedImage: UIImage? = #imageLiteral(resourceName: "image_not_found")) {
-        
+
         sd_setImage(with: URL(string: path), placeholderImage: placeholder) { (image, error, _, _) in
             guard let _ = image, error == nil else {
                 self.image = failedImage
@@ -52,3 +52,4 @@ extension UIImageView {
         }
     }
 }
+

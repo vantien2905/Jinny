@@ -11,13 +11,13 @@ import UIKit
 class MerchantDetailHeaderCell: UITableViewCell {
 
     @IBOutlet weak var imvMerchantAvatar: UIImageView!
+    @IBOutlet weak var lcsImageAvatar: NSLayoutConstraint!
+    @IBOutlet weak var lbAddress: UILabel!
+    @IBOutlet weak var tvDescription: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-    
-    func setUptView() {
         
     }
-    
+
 }

@@ -26,7 +26,8 @@ class MerchantDetail: NSObject, Mappable {
     
     func mapping(map: Map) {
         self.id <- map["id"]
-        self.name <- map["address"]
+        self.name <- map["name"]
+        self.address <- map["address"]
         self.merchantId <- map["merchant_id"]
         self.createdAt <- map["created_at"]
         self.openHours <- map["opening_hours"]

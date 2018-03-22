@@ -123,6 +123,8 @@
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
+		BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */; };
+		BC409EBE2062BE2C00A3F044 /* MerchantBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */; };
 		BC446B0E2060B18E00ED4117 /* PromotionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */; };
 		BC4899992062167200E7DE0D /* MerchantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4899982062167200E7DE0D /* MerchantService.swift */; };
 		BC48999C20621D4500E7DE0D /* MerchantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC48999B20621D4500E7DE0D /* MerchantDetail.swift */; };
@@ -301,6 +303,8 @@
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantBranchViewController.swift; sourceTree = "<group>"; };
+		BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantBranchViewController.xib; sourceTree = "<group>"; };
 		BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewModel.swift; sourceTree = "<group>"; };
 		BC4899982062167200E7DE0D /* MerchantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantService.swift; sourceTree = "<group>"; };
 		BC48999B20621D4500E7DE0D /* MerchantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantDetail.swift; sourceTree = "<group>"; };
@@ -315,11 +319,7 @@
 		BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		BC6EF85D2061063200A156B9 /* PRPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRPhotoDetail.swift; sourceTree = "<group>"; };
 		BC6EF85E2061063200A156B9 /* PRPhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRPhotoDetail.xib; sourceTree = "<group>"; };
-		BC770A63204CEE5D0052A285 /* Prelens-jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Prelens-jinny.app"; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
-
 		BC770A63204CEE5D0052A285 /* Jinny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinny.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		BC770A66204CEE5D0052A285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC770A6D204CEE5D0052A285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC770A70204CEE5D0052A285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -783,6 +783,24 @@
 			path = FooterMembershipDetailCell;
 			sourceTree = "<group>";
 		};
+		BC409EBF2062BE3E00A3F044 /* MerchantBranch */ = {
+			isa = PBXGroup;
+			children = (
+				BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */,
+				BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */,
+			);
+			path = MerchantBranch;
+			sourceTree = "<group>";
+		};
+		BC409EC02062BE5F00A3F044 /* Merchant */ = {
+			isa = PBXGroup;
+			children = (
+				B7CD063A205F6E55009951A4 /* MerchantDetail */,
+				BC409EBF2062BE3E00A3F044 /* MerchantBranch */,
+			);
+			path = Merchant;
+			sourceTree = "<group>";
+		};
 		BC48999A20621BFF00E7DE0D /* Merchant */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,7 +852,7 @@
 		BC770A64204CEE5D0052A285 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC770A63204CEE5D0052A285 /* Prelens-jinny.app */,
+				BC770A63204CEE5D0052A285 /* Jinny.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1027,6 +1045,7 @@
 				B7B1BC712058CFD60042B3D4 /* Base */,
 				BC6F3368205BC6DB00CDAD85 /* Home */,
 				76DC88E7205F5A4600AD87F3 /* Promotion */,
+				BC409EC02062BE5F00A3F044 /* Merchant */,
 				BCBC960D20563012004C1985 /* Membership */,
 				BCBC960420562D26004C1985 /* Redeem */,
 				BCBC95E020562BB8004C1985 /* Login */,
@@ -1129,7 +1148,6 @@
 		BCBC960D20563012004C1985 /* Membership */ = {
 			isa = PBXGroup;
 			children = (
-				B7CD063A205F6E55009951A4 /* MerchantDetail */,
 				B73862762059139000C7004D /* MembershipDetail */,
 				BCB04FE52057E6CC008F929F /* ListMembership */,
 				BCBC960E20563012004C1985 /* AddMembership */,
@@ -1174,11 +1192,8 @@
 				D991185B205B7B1800F701ED /* AuthenticationService.swift */,
 				D991185D205B82D900F701ED /* MembershipService.swift */,
 				760EC3B12060AC5E001390B8 /* PromotionService.swift */,
-
 				BC4899982062167200E7DE0D /* MerchantService.swift */,
-
 				760DC7FF206215DB008A8EF1 /* ProfileService.swift */,
-
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -1205,7 +1220,7 @@
 			);
 			name = "Prelens-jinny";
 			productName = "Prelens-jinny";
-			productReference = BC770A63204CEE5D0052A285 /* Prelens-jinny.app */;
+			productReference = BC770A63204CEE5D0052A285 /* Jinny.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1275,6 +1290,7 @@
 				76DC8905205F70C500AD87F3 /* PromotionDetailViewController.xib in Resources */,
 				B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */,
 				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
+				BC409EBE2062BE2C00A3F044 /* MerchantBranchViewController.xib in Resources */,
 				B7CD0650205F9AF6009951A4 /* FooterMembershipDetailCell.xib in Resources */,
 				B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */,
 				B7CD063E205F6E80009951A4 /* MerchantDetailViewController.xib in Resources */,
@@ -1451,6 +1467,7 @@
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
+				BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */,
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
