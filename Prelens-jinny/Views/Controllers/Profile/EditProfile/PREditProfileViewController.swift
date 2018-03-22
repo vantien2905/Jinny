@@ -25,10 +25,16 @@ class PREditProfileViewController: BaseViewController {
     @IBOutlet weak var vContainEmail: UIView!
     @IBOutlet weak var vContaintName: UIView!
     @IBOutlet weak var vContainDate: UIView!
-    
+    @IBOutlet weak var btnSelectGender: UIButton!
+    @IBOutlet weak var btnSelectRegion: UIButton!
     @IBOutlet weak var btnChooseDate: UIButton!
+    
     let viewModel = EditProfileViewModel()
     let disposeBag = DisposeBag()
+    
+    var listRegion = [ResidentialRegion]()
+    var listGender = ["male", "female"]
+    var selectGender: Bool = false
     
     var user = PRUser(){
         didSet {
@@ -38,9 +44,9 @@ class PREditProfileViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         darkStatus()
-        
         addBackButton()
         viewModel.getProfile()
+        viewModel.getResidentialRegion()
         bindData()
     }
     
@@ -62,6 +68,10 @@ class PREditProfileViewController: BaseViewController {
                 self.user = _user
             }
         }).disposed(by: disposeBag)
+        
+        viewModel.regions.asObservable().subscribe(onNext: { list in
+            self.listRegion = list
+        }).disposed(by: disposeBag)
     }
 
     func updateLayout(user: PRUser){
@@ -69,18 +79,23 @@ class PREditProfileViewController: BaseViewController {
         viewModel.email.value = tfEmail.text
         tfName.text     = user.fullName
         viewModel.name.value = tfName.text
+        
         guard let _dob = user.dob else { return lbDate.text = " mm/yyyy" }
         viewModel.dob.value = _dob
         lbDate.text     =  _dob
-        guard let _gender = user.gender else { return lbGender.text = " Select"}
-        lbGender.text   =  _gender
+        
         guard let _residential = user.residentialRegion?.name else { return lbResidentialRegion.text = " Select" }
+        viewModel.regionID.value = user.residentialRegion?.id
         lbResidentialRegion.text = _residential
+        
+        guard let _gender = user.gender else { return lbGender.text = " Select"}
+        viewModel.gender.value = _gender
+        lbGender.text   =  _gender
     }
     
     func bindViewModel(){
-         _ = tfEmail.rx.text.map { $0 ?? ""}.bind(to: viewModel.email).disposed(by: disposeBag)
-        _ = tfName.rx.text.map { $0 ?? ""}.bind(to: viewModel.name).disposed(by: disposeBag)
+         _ = tfEmail.rx.text.map { $0?.cutWhiteSpace() ?? ""}.bind(to: viewModel.email).disposed(by: disposeBag)
+        _ = tfName.rx.text.map { $0?.cutWhiteSpace() ?? ""}.bind(to: viewModel.name).disposed(by: disposeBag)
        
         
         btnSave.rx.tap
@@ -95,6 +110,18 @@ class PREditProfileViewController: BaseViewController {
                self.tfName.endEditing(true)
             }).disposed(by: disposeBag)
         
+        btnSelectGender.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.selectGender = true
+                let choose = PickerPopupView()
+                choose.delegate = self
+                //self.vmNewTask.inputs.isStartDate.value = false
+                self.tfName.endEditing(true)
+                self.tfEmail.endEditing(true)
+               choose.showPopUp()
+            }).disposed(by: disposeBag)
+        
         btnChooseDate.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
@@ -103,7 +130,19 @@ class PREditProfileViewController: BaseViewController {
                 //self.vmNewTask.inputs.isStartDate.value = false
                 self.tfName.endEditing(true)
                 self.tfEmail.endEditing(true)
-               choose.showPopUp(minDate: nil, maxDate: Date(), currentDate: nil)
+                choose.showPopUp(minDate: nil, maxDate: Date(), currentDate: nil)
+            }).disposed(by: disposeBag)
+        
+        btnSelectRegion.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.selectGender = false
+                let choose = PickerPopupView()
+                choose.delegate = self
+                //self.vmNewTask.inputs.isStartDate.value = false
+                self.tfName.endEditing(true)
+                self.tfEmail.endEditing(true)
+                choose.showPopUp()
             }).disposed(by: disposeBag)
     }
     
@@ -146,5 +185,37 @@ extension PREditProfileViewController: ChooseDatePopUpViewDelegate {
         lbDate.text = _date
         viewModel.dob.value = lbDate.text
         //vmNewTask.inputs.dateSelected.value = date
+    }
+}
+
+extension PREditProfileViewController: PickerViewDelegate {
+    func numberOfRowsInComponent() -> Int {
+        switch selectGender {
+        case true:
+            return listGender.count
+        default:
+           return listRegion.count
+        }
+    }
+
+    func titleForRow(atIndex:Int) -> String {
+        guard let title = listRegion[atIndex].name else { return ""}
+        switch selectGender {
+        case true:
+            return listGender[atIndex]
+        default:
+            return title
+        }
+    }
+    
+    func didSelectRow(atIndex: Int) {
+        switch selectGender {
+        case true:
+           lbGender.text = listGender[atIndex]
+           viewModel.gender.value =  listGender[atIndex]
+        default:
+            lbResidentialRegion.text = listRegion[atIndex].name
+            viewModel.regionID.value = listRegion[atIndex].id ?? 0
+        }
     }
 }

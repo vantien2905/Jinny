@@ -28,11 +28,11 @@
 		765087862057716100199FBB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SignInViewModel.swift */; };
 		76508789205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
 		765270F92062917500CD4038 /* ChooseDatePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765270F82062917400CD4038 /* ChooseDatePopupView.swift */; };
-		765270FB2062918700CD4038 /* ChooseDatePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765270FA2062918700CD4038 /* ChooseDatePopupView.xib */; };
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
 		76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */; };
+		76D9FB502063886200EDF2FC /* PickerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9FB4F2063886200EDF2FC /* PickerPopupView.swift */; };
 		76DC88EA205F5A6700AD87F3 /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */; };
 		76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */; };
 		76DC88F1205F602000AD87F3 /* AllPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */; };
@@ -209,11 +209,11 @@
 		765087852057716100199FBB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		76508788205772D200199FBB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		765270F82062917400CD4038 /* ChooseDatePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDatePopupView.swift; sourceTree = "<group>"; };
-		765270FA2062918700CD4038 /* ChooseDatePopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDatePopupView.xib; sourceTree = "<group>"; };
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
+		76D9FB4F2063886200EDF2FC /* PickerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPopupView.swift; sourceTree = "<group>"; };
 		76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
 		76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionViewController.xib; sourceTree = "<group>"; };
 		76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPromotionViewController.swift; sourceTree = "<group>"; };
@@ -462,9 +462,16 @@
 			isa = PBXGroup;
 			children = (
 				765270F82062917400CD4038 /* ChooseDatePopupView.swift */,
-				765270FA2062918700CD4038 /* ChooseDatePopupView.xib */,
 			);
 			path = ChooseDatePopupView;
+			sourceTree = "<group>";
+		};
+		76D9FB4E2063883600EDF2FC /* PickerPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				76D9FB4F2063886200EDF2FC /* PickerPopupView.swift */,
+			);
+			path = PickerPopupView;
 			sourceTree = "<group>";
 		};
 		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
@@ -974,6 +981,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				76D9FB4E2063883600EDF2FC /* PickerPopupView */,
 				765270F72062910900CD4038 /* ChooseDatePopupView */,
 				B7899EB12060A36600ADEC43 /* SearchView */,
 				B7AC7FD72057A7A900C0BFCA /* PopUpView */,
@@ -1302,7 +1310,6 @@
 				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				BC6EF8602061063200A156B9 /* PRPhotoDetail.xib in Resources */,
-				765270FB2062918700CD4038 /* ChooseDatePopupView.xib in Resources */,
 				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
 				BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
@@ -1459,6 +1466,7 @@
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
+				76D9FB502063886200EDF2FC /* PickerPopupView.swift in Sources */,
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
