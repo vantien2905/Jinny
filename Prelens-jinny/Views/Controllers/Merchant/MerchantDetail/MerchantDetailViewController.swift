@@ -16,6 +16,8 @@ class MerchantDetailViewController: BaseViewController {
     @IBOutlet weak var imgMerchant: UIImageView!
     
     let disposeBag = DisposeBag()
+    var urlThumb: String?
+    var merchantName: String?
     
     var merchantDetail = [MerchantDetail]() {
         didSet {
@@ -28,11 +30,13 @@ class MerchantDetailViewController: BaseViewController {
         super.viewDidLoad()
         configureTableView()
         setUpNavigation()
+        bindData()
+        
     }
     
     func configureTableView() {
         tbMerchantDetail.register(UINib(nibName: Cell.merchantDetail, bundle: nil), forCellReuseIdentifier: Cell.merchantDetail)
-        tbMerchantDetail.register(UINib(nibName: Cell.merchantDetailHeaderCell, bundle: nil), forHeaderFooterViewReuseIdentifier: "headerCell")
+        tbMerchantDetail.register(UINib(nibName: Cell.merchantDetailHeaderCell, bundle: nil), forCellReuseIdentifier: "headerCell")
         
         tbMerchantDetail.delegate = self
         tbMerchantDetail.dataSource = self
@@ -48,44 +52,63 @@ class MerchantDetailViewController: BaseViewController {
     }
     
     func setUpNavigation() {
-        self.setTitle(title: "StarBucks", textColor: .black, backgroundColor: .white)
+        self.setTitle(title: MembershipDetailViewController.merchantName!, textColor: .black, backgroundColor: .white)
         addBackButton()
     }
     
     func bindData() {
+        
         viewModel.merchantDetail.asObservable().subscribe(onNext: { [weak self] merchants in
             self?.merchantDetail = merchants
         }).disposed(by: disposeBag)
-        
     }
 }
 
 extension MerchantDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if section == 0 {
+            return 1
+        } else if section == 1 {
+            return merchantDetail.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.merchantDetail, for: indexPath) as! MerchantDetailCell
-        
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell",
+                                                     for: indexPath) as! MerchantDetailHeaderCell
+            cell.imvMerchantAvatar.sd_setImage(with: MembershipDetailViewController.urlThumb!,
+                                               placeholder: nil, failedImage: nil)
+            cell.lbAddress.isHidden = true
+            cell.tvDescription.isHidden = true
+            
+            return cell
+        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.merchantDetail,
+                                                     for: indexPath) as! MerchantDetailCell
+            cell.lbMerchantName.text = merchantDetail[indexPath.row].name
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 35
+        if indexPath.section == 0 {
+            return 200
+        } else {
+            return 35
+        }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tbMerchantDetail.dequeueReusableCell(withIdentifier: "headerCell") as! MerchantDetailHeaderCell
-        return  headerCell
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 250
-    }
 }
+

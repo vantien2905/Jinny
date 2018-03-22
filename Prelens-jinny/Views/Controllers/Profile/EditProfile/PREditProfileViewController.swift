@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import QuartzCore
 import RxSwift
 import RxCocoa
 
@@ -20,6 +19,7 @@ class PREditProfileViewController: BaseViewController {
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var btnSave: UIButton!
+    
     @IBOutlet weak var vResidentialRegion: UIView!
     @IBOutlet weak var vGender: UIView!
     @IBOutlet weak var vContainEmail: UIView!
@@ -57,7 +57,7 @@ class PREditProfileViewController: BaseViewController {
     }
     
     func bindData() {
-        viewModel.outputs.user.asObservable().subscribe(onNext: { user in
+        viewModel.user.asObservable().subscribe(onNext: { user in
             if let _user = user {
                 self.user = _user
             }
@@ -66,24 +66,44 @@ class PREditProfileViewController: BaseViewController {
 
     func updateLayout(user: PRUser){
         tfEmail.text    = user.email
+        viewModel.email.value = tfEmail.text
         tfName.text     = user.fullName
+        viewModel.name.value = tfName.text
         guard let _dob = user.dob else { return lbDate.text = " mm/yyyy" }
+        viewModel.dob.value = _dob
         lbDate.text     =  _dob
         guard let _gender = user.gender else { return lbGender.text = " Select"}
         lbGender.text   =  _gender
         guard let _residential = user.residentialRegion?.name else { return lbResidentialRegion.text = " Select" }
         lbResidentialRegion.text = _residential
     }
+    
     func bindViewModel(){
+         _ = tfEmail.rx.text.map { $0 ?? ""}.bind(to: viewModel.email).disposed(by: disposeBag)
+        _ = tfName.rx.text.map { $0 ?? ""}.bind(to: viewModel.name).disposed(by: disposeBag)
+       
+        
+        btnSave.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .bind(to: viewModel.btnSaveTapped)
+            .disposed(by: disposeBag)
+        
+        btnSave.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                self.tfEmail.endEditing(true)
+               self.tfName.endEditing(true)
+            }).disposed(by: disposeBag)
+        
         btnChooseDate.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
                 let choose = ChooseDatePopupView()
                 choose.delegate = self
                 //self.vmNewTask.inputs.isStartDate.value = false
-                //self.view.endEditing(true)
-               //choose.showPopUp(minDate: self.vmNewTask.outputs.startDate.value, maxDate: nil, currentDate: self.vmNewTask.outputs.targetDate.value)
-                choose.showPopUp()
+                self.tfName.endEditing(true)
+                self.tfEmail.endEditing(true)
+               choose.showPopUp(minDate: nil, maxDate: Date(), currentDate: nil)
             }).disposed(by: disposeBag)
     }
     
@@ -122,7 +142,9 @@ extension PREditProfileViewController: ChooseDatePopUpViewDelegate {
     func selectedDate(date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        lbDate.text = dateFormatter.string(from: date)
+        let _date = dateFormatter.string(from: date)
+        lbDate.text = _date
+        viewModel.dob.value = lbDate.text
         //vmNewTask.inputs.dateSelected.value = date
     }
 }

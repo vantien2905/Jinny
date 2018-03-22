@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol HeaderMembershipDetailCellDelegate: class {
+    func goToMerchantDetail()
+}
+
 class HeaderMembershipDetailCell: UITableViewCell {
 
     @IBOutlet weak var imgLogo: UIImageView!
@@ -16,8 +20,10 @@ class HeaderMembershipDetailCell: UITableViewCell {
     @IBOutlet weak var lbCodeNumber: UILabel!
     @IBOutlet weak var vContent: UIView!
 
+    weak var headerCellDelegate: HeaderMembershipDetailCellDelegate?
+    
     @IBAction func btnLogoTapped() {
-
+        headerCellDelegate?.goToMerchantDetail()
     }
 
     override func awakeFromNib() {
