@@ -51,7 +51,7 @@ class MembershipDetailViewController: BaseViewController {
         tbMembershipDetail.register(UINib(nibName: Cell.membershipDetail, bundle: nil), forCellReuseIdentifier: Cell.membershipDetail)
         tbMembershipDetail.register(UINib(nibName: Cell.headerMemBershipDetail, bundle: nil), forCellReuseIdentifier: Cell.headerMemBershipDetail)
         tbMembershipDetail.register(UINib(nibName: Cell.footerMembershipDetail, bundle: nil), forCellReuseIdentifier: Cell.footerMembershipDetail)
-
+        tbMembershipDetail.backgroundColor = PRColor.backgroundColor
         tbMembershipDetail.delegate = self
         tbMembershipDetail.dataSource = self
 
@@ -107,7 +107,14 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             cell.vContent.setShadow()
             return cell
         } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.membershipDetail, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.membershipDetail, for: indexPath) as! MembershipDetailCell
+            if let _vouchers = membershipDetail.vouchers {
+                if _vouchers.count > indexPath.item {
+                    if let _image = _vouchers[indexPath.item].image, let _urlImage = _image.url, let _urlThumb = _urlImage.thumb {
+                        cell.setData(urlImage: _urlThumb)
+                    }
+                }
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.footerMembershipDetail, for: indexPath) as! FooterMembershipDetailCell
@@ -123,7 +130,10 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
-            return 5
+            if let vouchers = membershipDetail.vouchers {
+                return vouchers.count
+            }
+            return 0
         } else {
             return 1
         }
@@ -160,6 +170,8 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
             return 47.5
+        } else if section == 2 {
+            return 25
         } else {
             return 0
         }

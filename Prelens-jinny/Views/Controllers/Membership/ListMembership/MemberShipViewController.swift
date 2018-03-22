@@ -24,9 +24,13 @@ class MemberShipViewController: BaseViewController {
 
     var listMember = Membership() {
         didSet {
+//            self.cvMembership.reloadSections(IndexSet(integer: 1))
+//            self.cvMembership.reloadSections(IndexSet(integer: 2))
             self.cvMembership.reloadData()
         }
     }
+    
+    var listSearch = Membership()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +58,7 @@ class MemberShipViewController: BaseViewController {
         viewModel.outputs.listMembership.asObservable().subscribe(onNext: { member in
             if let _member = member {
                 self.listMember = _member
+                self.listSearch = _member
                 self.cvMembership.reloadData()
             }
         }).disposed(by: disposeBag)
@@ -233,19 +238,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
 
 extension MemberShipViewController: SearchMembershipCellDelegate {
     func searchTextChange(textSearch: String?) {
-        print("\(textSearch)")
-//        guard let _textSearch = textSearch else { return }
-//        let listStar = listMember.startedMemberships.filter { (member) -> Bool in
-//            return (member.merchant?.name?.contains(_textSearch))!
-//        }
-//
-//        let listOther = listMember.otherMemberships.filter { (member) -> Bool in
-//            return (member.merchant?.name?.contains(_textSearch))!
-//        }
-//        viewModel.outputs.listMembership.value?.startedMemberships = listStar
-//        viewModel.outputs.listMembership.value?.otherMemberships = listOther
-//        if let _listMember = viewModel.outputs.listMembership.value {
-//            listMember = _listMember
-//        }
+//        print("\(textSearch)")
+        viewModel.inputs.textSearch.value = textSearch
     }
 }

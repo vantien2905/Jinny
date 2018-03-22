@@ -34,7 +34,10 @@ class SearchMembershipCell: UICollectionViewCell {
         vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 2.5, scale: true)
         
         tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](string: String?) in
+            guard let _string = string else { return }
+            if _string != "" {
                 self?.delegate?.searchTextChange(textSearch: string)
+            }
         }).disposed(by: disposeBag)
         
     }
