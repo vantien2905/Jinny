@@ -152,10 +152,10 @@ private_lane :preprocess do | options |
     xcversion(version: ENV["XCODE_VERSION"])
   end
 
-  slack(
-   message: "#{ENV["APP_NAME"]} incoming from branch #{GIT_BRANCH}",
-   default_payloads: []
-  )
+  # slack(
+  #  message: "#{ENV["APP_NAME"]} incoming from branch #{GIT_BRANCH}",
+  #  default_payloads: []
+  # )
 end
 
 private_lane :commit_build_number do | options |
