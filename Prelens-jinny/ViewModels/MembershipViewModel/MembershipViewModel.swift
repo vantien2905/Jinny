@@ -26,7 +26,8 @@ class MembershipViewModel {
     var outputs = MembershipViewModelOutput()
 
     func getListMembership() {
-        Provider.shared.memberShipService.getListAllMembership().subscribe(onNext: { [weak self] (member) in
+        Provider.shared.memberShipService.getListAllMembership()
+            .subscribe(onNext: { [weak self] (member) in
             self?.outputs.listMembership.value = member
             self?.outputs.listSearchMember.value = member
         }).disposed(by: disposeBag)

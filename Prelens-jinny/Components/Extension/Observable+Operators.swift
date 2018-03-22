@@ -25,3 +25,19 @@ internal extension Observable where Element: OptionalType {
         }
     }
 }
+
+extension ObservableType {
+    public func showProgressIndicator() -> Observable<Self.E> {
+        return self.do(onError: { _ in
+            print("Dismiss onError progress")
+            ProgressLoadingHelper.shared.hideIndicator()
+        }, onCompleted: {
+            print("Dismiss onCompleted progress")
+            ProgressLoadingHelper.shared.hideIndicator()
+        }, onSubscribe: {
+            print("Show progress")
+            ProgressLoadingHelper.shared.showIndicator()
+        })
+    }
+}
+

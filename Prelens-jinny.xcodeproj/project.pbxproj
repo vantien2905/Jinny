@@ -50,6 +50,7 @@
 		76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */; };
 		76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */; };
 		76E29B132052654A0039CA45 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E29B122052654A0039CA45 /* MenuView.swift */; };
+		B7054003206383C80028D90E /* PRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7054002206383C80028D90E /* PRLoadingView.swift */; };
 		B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626A205907AC00C7004D /* StarredHeaderCell.swift */; };
 		B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626B205907AC00C7004D /* StarredHeaderCell.xib */; };
 		B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626E2059096700C7004D /* OtherHeaderCell.swift */; };
@@ -231,6 +232,7 @@
 		76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPromotionCell.swift; sourceTree = "<group>"; };
 		76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPromotionCell.xib; sourceTree = "<group>"; };
 		76E29B122052654A0039CA45 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		B7054002206383C80028D90E /* PRLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoadingView.swift; sourceTree = "<group>"; };
 		B738626A205907AC00C7004D /* StarredHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredHeaderCell.swift; sourceTree = "<group>"; };
 		B738626B205907AC00C7004D /* StarredHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredHeaderCell.xib; sourceTree = "<group>"; };
 		B738626E2059096700C7004D /* OtherHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHeaderCell.swift; sourceTree = "<group>"; };
@@ -548,6 +550,14 @@
 				76DC890C205F768400AD87F3 /* PromotionCell.xib */,
 			);
 			path = AllPromotionCell;
+			sourceTree = "<group>";
+		};
+		B7054001206383A10028D90E /* PRLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				B7054002206383C80028D90E /* PRLoadingView.swift */,
+			);
+			path = PRLoadingView;
 			sourceTree = "<group>";
 		};
 		B73862612058FF1600C7004D /* SubView */ = {
@@ -974,6 +984,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B7054001206383A10028D90E /* PRLoadingView */,
 				765270F72062910900CD4038 /* ChooseDatePopupView */,
 				B7899EB12060A36600ADEC43 /* SearchView */,
 				B7AC7FD72057A7A900C0BFCA /* PopUpView */,
@@ -1447,6 +1458,7 @@
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
+				B7054003206383C80028D90E /* PRLoadingView.swift in Sources */,
 				D9911862205BB0A600F701ED /* PopUpHelper.swift in Sources */,
 				D991185C205B7B1800F701ED /* AuthenticationService.swift in Sources */,
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
