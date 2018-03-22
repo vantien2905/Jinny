@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MembershipDetailCell: UITableViewCell {
 
@@ -16,10 +17,18 @@ class MembershipDetailCell: UITableViewCell {
         self.backgroundColor = PRColor.backgroundColor
         imgPromotion.layer.cornerRadius = 2.5
         imgPromotion.layer.masksToBounds = true
+        imgPromotion.contentMode = .scaleAspectFit
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setData(urlImage: String?) {
+        if let _url = urlImage {
+            let url = URL(string: _url)
+            imgPromotion.sd_setImage(with: url, placeholderImage: nil)
+        }
     }
 
 }

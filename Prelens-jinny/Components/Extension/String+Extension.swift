@@ -73,6 +73,18 @@ extension String {
     func containsIgnoringCase(_ find: String) -> Bool {
         return self.range(of: find, options: .caseInsensitive) != nil
     }
-    
-    
+}
+
+extension String {
+    func toAttributedString(color: UIColor, font: UIFont? = nil, isUnderLine: Bool = false) -> NSAttributedString {
+        if let font = font {
+            if isUnderLine {
+                return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: color, NSAttributedStringKey.underlineColor: color, NSAttributedStringKey.underlineStyle: 1])
+            }
+            return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: color])
+        } else {
+            return NSAttributedString(string: self, attributes: [NSAttributedStringKey.foregroundColor: color])
+        }
+        
+    }
 }

@@ -65,6 +65,7 @@ struct Cell {
 struct PRFont {
     static let sideBarMenuFont = UIFont(name: "SegoeUI-Semibold", size: 15)
     static let semiBold15   = UIFont(name: "SegoeUI-Semibold", size: 15)
+    static let regular15    = UIFont(name: "SegoeUI-Regular", size: 15)
 }
 
 struct ContantMessages {

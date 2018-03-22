@@ -43,6 +43,7 @@ class AddManualViewController: BaseViewController {
 
     func setUpView() {
         vHeader.setShadow()
+        tfSerial.attributedPlaceholder = "Serial number".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.semiBold15, isUnderLine: false)
         vTextField.layer.cornerRadius = 2.5
         vTextField.layer.borderWidth = 1
         vTextField.layer.borderColor = PRColor.lineColor.cgColor
