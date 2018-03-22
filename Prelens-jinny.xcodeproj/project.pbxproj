@@ -1732,7 +1732,7 @@
 			baseConfigurationReference = BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GU9U74T6LC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1744,8 +1744,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.vinova.prelens;
 				PRODUCT_NAME = Jinny;
-				PROVISIONING_PROFILE = "179b8381-1f1d-413f-9731-806d592269a1";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development sg.vinova.prelens";
+				PROVISIONING_PROFILE = "d813a21e-8c86-4f33-b084-2951f8f4626d";
+				PROVISIONING_PROFILE_SPECIFIER = "match InHouse sg.vinova.prelens";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
