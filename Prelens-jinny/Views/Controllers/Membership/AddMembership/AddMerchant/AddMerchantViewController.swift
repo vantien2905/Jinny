@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class AddMerchantViewController: BaseViewController {
 
@@ -20,6 +21,7 @@ class AddMerchantViewController: BaseViewController {
         setUpView()
         configureTableView()
         bindData()
+        hideKeyboard()
        
     }
     
@@ -35,11 +37,11 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         hideNavigation()
-        
     }
 
     func setUpView() {
-        vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 2.5, scale: true)
+        vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 2.5, scale: true)
+        vSearch.tfSearch.attributedPlaceholder = "Search merchant".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
     }
     
     func setNavigation() {
@@ -55,6 +57,9 @@ class AddMerchantViewController: BaseViewController {
     }
     
     func bindData() {
+        vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
+            self?.viewModel.searchTextChange.value = text
+        }).disposed(by: disposeBag)
         viewModel.loadData()
         viewModel.listMerchant.asObservable().bind(to: tbMerchant.rx.items) { table, _, merchant in
             let cell = table.dequeueReusableCell(withIdentifier: Cell.addMerchantCell) as! AddMerchantCell
@@ -65,8 +70,8 @@ class AddMerchantViewController: BaseViewController {
         tbMerchant.rx.modelSelected(Merchant.self).subscribe(onNext: { [weak self](merchant) in
             guard let strongSelf = self else { return }
             
-            let vcScancode = ScanCodeViewController.initControllerFromNib() as! ScanCodeViewController
-            vcScancode.viewModel.urlLogo.value = merchant.logo?.url
+            let vcScancode = ScanCodeViewController.configureController(merchant: merchant)
+
             strongSelf.push(controller: vcScancode, animated: true)
         }).disposed(by: disposeBag)
     }

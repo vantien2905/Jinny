@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRProfileViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
+                <outlet property="btnChooseDate" destination="pgm-TM-8af" id="0u9-Kf-0Mp"/>
                 <outlet property="btnSave" destination="VdZ-8o-WNa" id="3gR-wK-Zxg"/>
                 <outlet property="lbDate" destination="THr-Aw-KrF" id="heP-sN-PZn"/>
                 <outlet property="lbGender" destination="fy7-CB-N4y" id="Ffy-Te-azk"/>
@@ -185,11 +186,18 @@ customized for you!</string>
                                             <color key="textColor" red="0.28235019610000001" green="0.28235019610000001" blue="0.28235019610000001" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgm-TM-8af">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="47"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="THr-Aw-KrF" firstAttribute="leading" secondItem="pRb-F4-4wq" secondAttribute="leading" constant="5" id="94V-Qk-kYs"/>
                                         <constraint firstItem="THr-Aw-KrF" firstAttribute="centerY" secondItem="pRb-F4-4wq" secondAttribute="centerY" id="9NO-CE-V7t"/>
+                                        <constraint firstItem="pgm-TM-8af" firstAttribute="leading" secondItem="pRb-F4-4wq" secondAttribute="leading" id="SFi-QL-ygN"/>
+                                        <constraint firstItem="pgm-TM-8af" firstAttribute="top" secondItem="pRb-F4-4wq" secondAttribute="top" id="jDj-1M-Zzb"/>
+                                        <constraint firstAttribute="trailing" secondItem="pgm-TM-8af" secondAttribute="trailing" id="tZz-gw-sZN"/>
+                                        <constraint firstAttribute="bottom" secondItem="pgm-TM-8af" secondAttribute="bottom" id="wRy-Z5-bCa"/>
                                     </constraints>
                                 </view>
                             </subviews>

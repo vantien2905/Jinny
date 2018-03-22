@@ -10,11 +10,9 @@ import RxCocoa
 import RxSwift
 
 protocol ScanCodeViewModelProtocol {
-    var urlLogo: Variable<Url?> { get }
+    var merchant: Variable<Merchant?> { get }
 }
 
 class ScanCodeViewModel: ScanCodeViewModelProtocol {
-    var urlLogo: Variable<Url?> = Variable<Url?>(nil)
-    
-    
+    var merchant: Variable<Merchant?> = Variable<Merchant?>(nil)
 }

@@ -12,6 +12,7 @@ import RxSwift
 class MemberShipViewController: BaseViewController {
 
     @IBOutlet weak var cvMembership: UICollectionView!
+    @IBOutlet weak var btnAddMembership: UIButton!
     
     @IBAction func btnAddMembershipTapped() {
         let vcAddMerchant = AddMerchantViewController.initControllerFromNib()
@@ -23,9 +24,13 @@ class MemberShipViewController: BaseViewController {
 
     var listMember = Membership() {
         didSet {
+//            self.cvMembership.reloadSections(IndexSet(integer: 1))
+//            self.cvMembership.reloadSections(IndexSet(integer: 2))
             self.cvMembership.reloadData()
         }
     }
+    
+    var listSearch = Membership()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +38,8 @@ class MemberShipViewController: BaseViewController {
         setTitle(title: "Jinny")
         confireCollectionView()
         cvMembership.showsHorizontalScrollIndicator = false
-
+        hideKeyboard()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +48,17 @@ class MemberShipViewController: BaseViewController {
         bindData()
         viewModel.getListMembership()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        hideNavigation()
+    }
+    
     func bindData() {
+        
         viewModel.outputs.listMembership.asObservable().subscribe(onNext: { member in
             if let _member = member {
                 self.listMember = _member
+                self.listSearch = _member
                 self.cvMembership.reloadData()
             }
         }).disposed(by: disposeBag)
@@ -63,8 +75,19 @@ class MemberShipViewController: BaseViewController {
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.delegate = self
         cvMembership.dataSource = self
-        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 0, right: 15)
+        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
 
+    }
+    
+    @objc func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        //        print(actualPosition)
+        if actualPosition.y > 0 {
+            btnAddMembership.isHidden = true
+        } else if actualPosition.y < 0 {
+            btnAddMembership.isHidden = false
+        }
     }
 }
 
@@ -72,8 +95,8 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         if indexPath.section == 0 {
-            let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.searchMemberShip, for: indexPath)
-
+            let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.searchMemberShip, for: indexPath) as! SearchMembershipCell
+            cell.delegate = self
             return cell
         } else if indexPath.section == 1 {
             if self.listMember.startedMemberships.count == 0 {
@@ -210,5 +233,12 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 self.push(controller: vc, animated: true)
             }
         }
+    }
+}
+
+extension MemberShipViewController: SearchMembershipCellDelegate {
+    func searchTextChange(textSearch: String?) {
+//        print("\(textSearch)")
+        viewModel.inputs.textSearch.value = textSearch
     }
 }

@@ -27,6 +27,8 @@ class SearchView: PRBaseViewXib {
 
     func setUpView() {
         tfSearch.borderStyle = .none
+        vContent.layer.cornerRadius = 2.5
+        vContent.layer.masksToBounds = true
 //        vContent.backgroundColor = PRColor.backgroundColor
     }
 }

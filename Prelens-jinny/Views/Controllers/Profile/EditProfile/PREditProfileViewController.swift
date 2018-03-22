@@ -26,6 +26,7 @@ class PREditProfileViewController: BaseViewController {
     @IBOutlet weak var vContaintName: UIView!
     @IBOutlet weak var vContainDate: UIView!
     
+    @IBOutlet weak var btnChooseDate: UIButton!
     let viewModel = EditProfileViewModel()
     let disposeBag = DisposeBag()
     
@@ -46,7 +47,7 @@ class PREditProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-       
+        bindViewModel()
         // Do any additional setup after loading the view.
     }
 
@@ -72,6 +73,18 @@ class PREditProfileViewController: BaseViewController {
         lbGender.text   =  _gender
         guard let _residential = user.residentialRegion?.name else { return lbResidentialRegion.text = " Select" }
         lbResidentialRegion.text = _residential
+    }
+    func bindViewModel(){
+        btnChooseDate.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                let choose = ChooseDatePopupView()
+                choose.delegate = self
+                //self.vmNewTask.inputs.isStartDate.value = false
+                //self.view.endEditing(true)
+               //choose.showPopUp(minDate: self.vmNewTask.outputs.startDate.value, maxDate: nil, currentDate: self.vmNewTask.outputs.targetDate.value)
+                choose.showPopUp()
+            }).disposed(by: disposeBag)
     }
     
     func setupView(){
@@ -102,5 +115,14 @@ class PREditProfileViewController: BaseViewController {
         vContainDate.layer.cornerRadius = 2.5
         btnSave.layer.cornerRadius = 2.5
         
+    }
+}
+extension PREditProfileViewController: ChooseDatePopUpViewDelegate {
+    
+    func selectedDate(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        lbDate.text = dateFormatter.string(from: date)
+        //vmNewTask.inputs.dateSelected.value = date
     }
 }
