@@ -19,7 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRProfileViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
                 <outlet property="btnChooseDate" destination="pgm-TM-8af" id="0u9-Kf-0Mp"/>
-                <outlet property="btnSave" destination="VdZ-8o-WNa" id="3gR-wK-Zxg"/>
+                <outlet property="btnSave" destination="VdZ-8o-WNa" id="m0s-9u-r89"/>
                 <outlet property="lbDate" destination="THr-Aw-KrF" id="heP-sN-PZn"/>
                 <outlet property="lbGender" destination="fy7-CB-N4y" id="Ffy-Te-azk"/>
                 <outlet property="lbResidentialRegion" destination="MW3-Hs-dsM" id="JwA-yG-XOl"/>

@@ -99,8 +99,8 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
             return cell
         case 1:
-            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath)
-            
+            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
+            cell.vFilter.isHidden = true
             return cell
         default:
             if self.listPromotion.count == 0 {

@@ -60,6 +60,21 @@ class ChooseDatePopupView: BasePopUpView {
         datePicker.fillSuperview()
     }
     
+    func showPopUp(minDate: Date? = nil, maxDate: Date? = nil, currentDate: Date? = nil) {
+        showPopUp()
+//        var min =  Date()
+//        if minDate != nil {
+//            min = minDate!
+//        }
+        self.datePicker.minimumDate = minDate
+        self.datePicker.maximumDate = maxDate
+        
+        if currentDate != nil {
+            self.datePicker.setDate(currentDate!, animated: true)
+        }
+        
+    }
+    
     @objc func btnDoneTapped() {
         self.hidePopUp()
         let dateSelected = datePicker.date
