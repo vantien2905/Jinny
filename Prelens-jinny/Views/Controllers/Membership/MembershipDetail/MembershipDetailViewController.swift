@@ -43,6 +43,7 @@ class MembershipDetailViewController: BaseViewController {
         setNavigation()
         self.delegate = self
         setTitle(title: "", textColor: UIColor.black, backgroundColor: .white)
+       ProgressLoadingHelper.shared.showIndicator()
     }
     override func viewWillAppear(_ animated: Bool) {
         darkStatus()

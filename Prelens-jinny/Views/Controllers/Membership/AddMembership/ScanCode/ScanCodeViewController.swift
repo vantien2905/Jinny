@@ -11,6 +11,10 @@ import SDWebImage
 import RxSwift
 import AVFoundation
 
+protocol BarcodeDelegate: class {
+    func barcodeReaded(barcode: String)
+}
+
 class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     @IBOutlet weak var imgLogo: UIImageView!
@@ -20,6 +24,8 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         let vcAddManual = AddManualViewController.configureViewController(merchant: viewModel.merchant.value)
         self.push(controller: vcAddManual, animated: true)
     }
+    //-----
+    weak var delegateBarCode: BarcodeDelegate?
     
     @IBAction func btnBackClick() {
         self.pop()
@@ -109,11 +115,45 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
             let transformed = videoPreviewLayer?.transformedMetadataObject(for: metaData) as? AVMetadataMachineReadableCodeObject
             if let unwraped = transformed {
                 print(unwraped.stringValue)
+                if let barcode = unwraped.stringValue {
+                    self.delegateBarCode?.barcodeReaded(barcode: barcode)
+                }
                 lbAddManual.text = unwraped.stringValue
                 lbAddManual.text = "Start"
                 self.performSelector(onMainThread: #selector(stopReading), with: nil, waitUntilDone: false)
                 isReading = false
             }
+        }
+    }
+    
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+//        for data in metadataObjects {
+//            let metaData = data as! AVMetadataObject
+//            print(metaData.description)
+//            let transformed = videoPreviewLayer?.transformedMetadataObject(for: metaData) as? AVMetadataMachineReadableCodeObject
+//            if let unwraped = transformed {
+//                print(unwraped.stringValue)
+//                if let barcode = unwraped.stringValue {
+//                    self.delegateBarCode?.barcodeReaded(barcode: barcode)
+//                    let vcAddManual = AddManualViewController.configureViewController(merchant: viewModel.merchant.value)
+//                    self.push(controller: vcAddManual, animated: true)
+//                }
+//                self.performSelector(onMainThread: #selector(stopReading), with: nil, waitUntilDone: false)
+//                isReading = false
+//            }
+//        }
+        for metadata in metadataObjects {
+            let readableObject = metadata as! AVMetadataMachineReadableCodeObject
+            let code = readableObject.stringValue
+        
+            self.dismiss(animated: true, completion: nil)
+            if let _code = code {
+                print(_code)
+                self.delegateBarCode?.barcodeReaded(barcode: _code)
+                let vcAddManual = AddManualViewController.configureViewController(merchant: viewModel.merchant.value)
+                self.push(controller: vcAddManual, animated: true)
+            }
+            
         }
     }
 

@@ -27,6 +27,7 @@ class MembershipViewModel {
 
     func getListMembership() {
         Provider.shared.memberShipService.getListAllMembership()
+            .showProgressIndicator()
             .subscribe(onNext: { [weak self] (member) in
             self?.outputs.listMembership.value = member
             self?.outputs.listSearchMember.value = member

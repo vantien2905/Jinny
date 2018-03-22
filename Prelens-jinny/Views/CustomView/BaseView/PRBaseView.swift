@@ -11,23 +11,23 @@ import UIKit
 class PRBaseView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadViewFromNib()
+//        loadViewFromNib()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadViewFromNib()
+//        loadViewFromNib()
     }
 
-    func loadViewFromNib() {
-        let nibName     = String(describing: type(of: self))
-        let nib         = UINib(nibName: nibName, bundle: nil)
-        let view        = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-        view.frame      = bounds
-        addSubview(view)
-
-        setUpSize()
-    }
+//    func loadViewFromNib() {
+//        let nibName     = String(describing: type(of: self))
+//        let nib         = UINib(nibName: nibName, bundle: nil)
+//        let view        = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+//        view.frame      = bounds
+//        addSubview(view)
+//
+//        setUpSize()
+//    }
 
     func setUpSize() {
 

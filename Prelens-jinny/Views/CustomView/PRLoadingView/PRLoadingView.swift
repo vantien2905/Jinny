@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-class PRLoadingView: PRBaseView {
+class PRLoadingView: UIView {
     let activityIndicator: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         aiv.startAnimating()
