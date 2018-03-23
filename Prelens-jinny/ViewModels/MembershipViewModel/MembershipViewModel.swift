@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-clas {
+class MembershipViewModel {
     let disposeBag = DisposeBag()
 
     class MembershipViewModelInput {
@@ -35,39 +35,39 @@ clas {
     }
 
     init() {
-        inputs.textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
-            print("\(textSearch)")
-            let listStar = self?.outputs.listSearchMember.value?.startedMemberships.filter { (member) -> Bool in
-                guard let _textSearch = textSearch else { return true }
-                if _textSearch == "" {
-                    return true
-                } else {
-                    if let _mechant = member.merchant, let _name = _mechant.name {
-                        return _name.containsIgnoringCase(_textSearch)
-                    }
-                    return false
-                }
-            }
-            
-            let listOther = self?.outputs.listSearchMember.value?.otherMemberships.filter { (member) -> Bool in
-                guard let _textSearch = textSearch else { return true }
-                if _textSearch == "" {
-                    return true
-                } else {
-                    if let _mechant = member.merchant, let _name = _mechant.name {
-                        return _name.containsIgnoringCase(_textSearch)
-                    }
-                    return false
-                }
-            }
-            if let _listStar = listStar {
-                self?.inputs.listTemp.startedMemberships = _listStar
-            }
-            if let _listOther = listOther {
-                 self?.inputs.listTemp.otherMemberships = _listOther
-            }
-           
-            self?.outputs.listMembership.value = self?.inputs.listTemp
-        }).disposed(by: disposeBag)
+//        inputs.textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
+//            print("\(textSearch)")
+//            let listStar = self?.outputs.listSearchMember.value?.startedMemberships.filter { (member) -> Bool in
+//                guard let _textSearch = textSearch else { return true }
+//                if _textSearch == "" {
+//                    return true
+//                } else {
+//                    if let _mechant = member.merchant, let _name = _mechant.name {
+//                        return _name.containsIgnoringCase(_textSearch)
+//                    }
+//                    return false
+//                }
+//            }
+//            
+//            let listOther = self?.outputs.listSearchMember.value?.otherMemberships.filter { (member) -> Bool in
+//                guard let _textSearch = textSearch else { return true }
+//                if _textSearch == "" {
+//                    return true
+//                } else {
+//                    if let _mechant = member.merchant, let _name = _mechant.name {
+//                        return _name.containsIgnoringCase(_textSearch)
+//                    }
+//                    return false
+//                }
+//            }
+//            if let _listStar = listStar {
+//                self?.inputs.listTemp.startedMemberships = _listStar
+//            }
+//            if let _listOther = listOther {
+//                 self?.inputs.listTemp.otherMemberships = _listOther
+//            }
+//           
+//            self?.outputs.listMembership.value = self?.inputs.listTemp
+//        }).disposed(by: disposeBag)
     }
 }
