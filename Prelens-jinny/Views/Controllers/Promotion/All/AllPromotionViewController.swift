@@ -164,7 +164,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
         } else {
             if indexPath.section == 2 {
                 let vc = PromotionDetailViewController()
-                vc.promotionDetailData = listPromotion[indexPath.item]
+                vc.promotionDetailData = filteredData[indexPath.item]
                 self.push(controller: vc, animated: true)
             }
         }
@@ -173,7 +173,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 extension AllPromotionViewController: SearchPromotionCellDelegate {
     func searchTextChange(textSearch: String?) {
         guard let _textSearch = textSearch else {return}
-        filteredData = _textSearch.isEmpty ? listPromotion : listPromotion.filter{($0.merchant?.name?.lowercased().contains((_textSearch.lowercased())))!}
+        filteredData = _textSearch.isEmpty ? listPromotion : listPromotion.filter{($0.merchant?.name?.lowercased().containsIgnoringCase(_textSearch))!}
         let indexHeader = IndexSet(integer: 1)
         let indexCollectionView = IndexSet(integer: 2)
         self.cvAllPromotion.reloadSections(indexCollectionView)
