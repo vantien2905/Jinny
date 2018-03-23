@@ -55,7 +55,9 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
     }
 
     func getDetailMembership(idMember: Int) {
-        Provider.shared.memberShipService.getDetailMembership(idMember: idMember).subscribe(onNext: { [weak self] (membership) in
+        Provider.shared.memberShipService.getDetailMembership(idMember: idMember)
+            .showProgressIndicator()
+            .subscribe(onNext: { [weak self] (membership) in
             self?.membership.value = membership
             }).disposed(by: disposeBag)
     }

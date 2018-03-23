@@ -40,6 +40,7 @@ class MemberShipViewController: BaseViewController {
         cvMembership.showsHorizontalScrollIndicator = false
         hideKeyboard()
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

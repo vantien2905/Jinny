@@ -23,3 +23,23 @@ class PRHelper {
         })
     }
 }
+
+class ProgressLoadingHelper {
+    
+    static let shared = ProgressLoadingHelper()
+    
+    var vLoading = PRLoadingView()
+    
+    func showIndicator() {
+        DispatchQueue.main.async {
+            self.vLoading.showActivityIndicator()
+        }
+    }
+    
+    func hideIndicator() {
+        DispatchQueue.main.async {
+            self.vLoading.hideActivityIndicator()
+        }
+        
+    }
+}

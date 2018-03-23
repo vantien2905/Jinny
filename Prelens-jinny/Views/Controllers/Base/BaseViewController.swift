@@ -127,7 +127,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-extension UIViewController{
+extension UIViewController {
     func hideKeyboard() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
@@ -138,4 +138,3 @@ extension UIViewController{
         view.endEditing(true)
     }
 }
-

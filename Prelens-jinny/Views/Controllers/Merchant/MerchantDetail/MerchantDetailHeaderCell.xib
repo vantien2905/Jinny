@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="265" id="KGk-i7-Jjw" customClass="MerchantDetailHeaderCell" customModule="Jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="264.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERb-Q4-7or">
+                        <rect key="frame" x="113" y="36" width="94" height="94"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="94" id="IjV-Ry-pjn"/>
+                            <constraint firstAttribute="width" constant="94" id="uVk-Fl-zye"/>
+                            <constraint firstAttribute="width" secondItem="ERb-Q4-7or" secondAttribute="height" multiplier="1:1" id="uyR-q1-yow"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6e-3y-lF8">
+                        <rect key="frame" x="36" y="145" width="248" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-mR-jFK">
+                        <rect key="frame" x="20" y="178" width="280" height="71.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cwJ-mR-jFK" secondAttribute="trailing" constant="20" id="1wX-oH-oUU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="i6e-3y-lF8" secondAttribute="trailing" constant="20" id="4mB-UQ-hVM"/>
+                    <constraint firstItem="cwJ-mR-jFK" firstAttribute="top" secondItem="i6e-3y-lF8" secondAttribute="bottom" constant="12" id="8dd-HH-AfE"/>
+                    <constraint firstItem="i6e-3y-lF8" firstAttribute="top" secondItem="ERb-Q4-7or" secondAttribute="bottom" constant="15" id="CJ6-h9-8GW"/>
+                    <constraint firstItem="ERb-Q4-7or" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="P2Q-b7-y88"/>
+                    <constraint firstItem="ERb-Q4-7or" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="25" id="gfy-8g-nls"/>
+                    <constraint firstItem="cwJ-mR-jFK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gh4-Ld-oPq"/>
+                    <constraint firstItem="i6e-3y-lF8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="hG8-s8-Ktf"/>
+                    <constraint firstAttribute="bottom" secondItem="cwJ-mR-jFK" secondAttribute="bottom" constant="15" id="rhE-iJ-84Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imvMerchantAvatar" destination="ERb-Q4-7or" id="FhL-IN-P17"/>
+                <outlet property="lbAddress" destination="i6e-3y-lF8" id="AwO-T0-MI3"/>
+                <outlet property="lcsImageAvatar" destination="IjV-Ry-pjn" id="s4v-bC-pKm"/>
+                <outlet property="tvDescription" destination="cwJ-mR-jFK" id="j6G-t7-JDW"/>
+            </connections>
+            <point key="canvasLocation" x="-178" y="49.5"/>
+        </tableViewCell>
+    </objects>
+</document>

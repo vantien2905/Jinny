@@ -10,6 +10,8 @@ import UIKit
 
 class MerchantDetailCell: UITableViewCell {
 
+    @IBOutlet weak var lbMerchantName: UILabel!
+    @IBOutlet weak var btnGoto: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
