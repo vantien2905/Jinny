@@ -80,8 +80,9 @@ class AllPromotionViewController: UIViewController {
         cvAllPromotion.dataSource = self
     }
     
-    func goToAddVoucher() {
-        
+    @IBAction func goToAddVoucher() {
+        let scanQRVC = AddVoucherViewController.instantiateFromNib()
+        push(controller: scanQRVC, animated: true)
     }
     
 }
