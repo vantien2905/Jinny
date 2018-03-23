@@ -12,6 +12,7 @@ class Promotion: NSObject, Mappable {
     var id              : Int = 1
     var expiresAt       : String?
     var merchant        : Merchant?
+    var isReaded        : Bool = false
     var image           : Image?
     
     override init() {
@@ -26,6 +27,7 @@ class Promotion: NSObject, Mappable {
         self.id         <- map["id"]
         self.expiresAt  <- map["expires_at"]
         self.merchant   <- map["merchant"]
+        self.isReaded   <- map["is_readed"]
         self.image      <- map["image"]
      }
 }

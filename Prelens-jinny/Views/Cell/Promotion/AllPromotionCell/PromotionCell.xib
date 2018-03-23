@@ -16,9 +16,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionCell" customModule="Prelens_jinny" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionCell" customModule="Jinny" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromotionCell" customModule="Prelens_jinny" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromotionCell" customModule="Jinny" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-k0-rnM">
                         <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voucher_image" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-4z-JcZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-4z-JcZ">
                                 <rect key="frame" x="0.0" y="0.0" width="341" height="193"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-hk-gn6">
@@ -59,7 +59,7 @@
                                         <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-fX-nab">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unread_voucher" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-fX-nab">
                                         <rect key="frame" x="294" y="11.5" width="47" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="47" id="5kQ-jx-pQD"/>
@@ -108,6 +108,7 @@
             <size key="customSize" width="341" height="257"/>
             <connections>
                 <outlet property="imgPromotion" destination="xe8-4z-JcZ" id="tTo-Ln-bid"/>
+                <outlet property="imgReadPromotion" destination="YgK-fX-nab" id="cqq-Ax-ORU"/>
                 <outlet property="lbExpiresAt" destination="GAg-ux-xkt" id="8ki-dZ-2r0"/>
                 <outlet property="lbMerchantName" destination="o5t-HD-IZ4" id="SFj-Q2-QA9"/>
                 <outlet property="vLine" destination="FHq-hk-gn6" id="Ww7-NT-qdN"/>
@@ -116,6 +117,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="voucher_image" width="290" height="138"/>
+        <image name="unread_voucher" width="93" height="46"/>
     </resources>
 </document>

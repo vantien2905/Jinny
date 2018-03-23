@@ -44,7 +44,22 @@ class EditProfileViewModel {
             if strongSelf.isValidInput.value == true {
                  strongSelf.updateProfile()
             } else {
-                PopUpHelper.shared.showMessage(message: "Validation failed")
+                if _name.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: "Validation failed: Name can't be blank")
+                    return
+                }
+                if _email.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: "Validation failed: Email can't be blank")
+                    return
+                }
+                if _dob.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: "Validation failed: Data of birth can't be blank")
+                    return
+                }
+                if _email.isValidEmail() == false {
+                    PopUpHelper.shared.showMessage(message: "Validation failed: Email invalid")
+                    return
+                }
             }
         }).disposed(by: disposeBag)
     }
@@ -67,6 +82,7 @@ class EditProfileViewModel {
             .subscribe(onNext: { [weak self] (user) in
                 guard let strongSelf = self else { return }
                 strongSelf.user.value = user
+                KeychainManager.shared.saveString(value: email, forkey: .email)
                 PopUpHelper.shared.showMessage(message: "Update profile success")
                 }, onError: { (error) in
                     print(error)
@@ -78,7 +94,7 @@ class EditProfileViewModel {
             guard let _email = email, let _name = name, let _dob = dob else {
                 return false
             }
-            return  ( !_email.isValidEmpty() && !_name.isValidEmpty() && !_dob.isValidEmpty())
+            return  ( _email.isValidEmail() && !_name.isValidEmpty() && !_dob.isValidEmpty())
         }
     }
 }

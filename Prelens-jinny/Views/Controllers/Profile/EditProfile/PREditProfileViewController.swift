@@ -75,14 +75,14 @@ class PREditProfileViewController: BaseViewController {
     }
 
     func updateLayout(user: PRUser){
-        tfEmail.text    = user.email
-        viewModel.email.value = tfEmail.text
-        tfName.text     = user.fullName
-        viewModel.name.value = tfName.text
+        tfEmail.text            = user.email
+        viewModel.email.value   = tfEmail.text
+        tfName.text             = user.fullName
+        viewModel.name.value    = tfName.text
         
         guard let _dob = user.dob else { return lbDate.text = " mm/yyyy" }
-        viewModel.dob.value = _dob
-        lbDate.text     =  _dob
+        viewModel.dob.value     = _dob
+        lbDate.text             =  _dob
         
         guard let _residential = user.residentialRegion?.name else { return lbResidentialRegion.text = " Select" }
         viewModel.regionID.value = user.residentialRegion?.id
@@ -198,24 +198,24 @@ extension PREditProfileViewController: PickerViewDelegate {
         }
     }
 
-    func titleForRow(atIndex:Int) -> String {
-        guard let title = listRegion[atIndex].name else { return ""}
+    func titleForRow(index:Int) -> String {
+        guard let title = listRegion[index].name else { return ""}
         switch selectGender {
         case true:
-            return listGender[atIndex]
+            return listGender[index]
         default:
             return title
         }
     }
     
-    func didSelectRow(atIndex: Int) {
+    func didSelectRow(index: Int) {
         switch selectGender {
         case true:
-           lbGender.text = listGender[atIndex]
-           viewModel.gender.value =  listGender[atIndex]
+           lbGender.text = listGender[index]
+           viewModel.gender.value =  listGender[index]
         default:
-            lbResidentialRegion.text = listRegion[atIndex].name
-            viewModel.regionID.value = listRegion[atIndex].id ?? 0
+            lbResidentialRegion.text = listRegion[index].name
+            viewModel.regionID.value = listRegion[index].id ?? 0
         }
     }
 }

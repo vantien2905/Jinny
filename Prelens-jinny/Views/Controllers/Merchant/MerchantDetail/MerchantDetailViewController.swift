@@ -54,10 +54,10 @@ class MerchantDetailViewController: BaseViewController {
     func setUpNavigation() {
         self.setTitle(title: MembershipDetailViewController.merchantName!, textColor: .black, backgroundColor: .white)
         addBackButton()
+        darkStatus()
     }
     
     func bindData() {
-        
         viewModel.merchantDetail.asObservable().subscribe(onNext: { [weak self] merchants in
             self?.merchantDetail = merchants
         }).disposed(by: disposeBag)
@@ -87,7 +87,7 @@ extension MerchantDetailViewController: UITableViewDelegate, UITableViewDataSour
                                                placeholder: nil, failedImage: nil)
             cell.lbAddress.isHidden = true
             cell.tvDescription.isHidden = true
-            
+
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.merchantDetail,
@@ -102,13 +102,15 @@ extension MerchantDetailViewController: UITableViewDelegate, UITableViewDataSour
         if indexPath.section == 0 {
             return 200
         } else {
-            return 35
+            return 38
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let vc = MerchantBranchViewController()
+            vc.merchantBrancht = merchantDetail[indexPath.row]
+            self.push(controller: vc)
+        }
+    }
 }
-
