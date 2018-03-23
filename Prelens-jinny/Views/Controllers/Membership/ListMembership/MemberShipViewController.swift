@@ -24,6 +24,7 @@ class MemberShipViewController: BaseViewController {
 
     var listMember = Membership() {
         didSet {
+            
 //            self.cvMembership.reloadSections(IndexSet(integer: 1))
 //            self.cvMembership.reloadSections(IndexSet(integer: 2))
             self.cvMembership.reloadData()
@@ -39,8 +40,6 @@ class MemberShipViewController: BaseViewController {
         confireCollectionView()
         cvMembership.showsHorizontalScrollIndicator = false
         hideKeyboard()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
