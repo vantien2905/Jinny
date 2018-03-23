@@ -31,7 +31,11 @@ class PRSideMenuVC: UIViewController {
 
     @IBOutlet weak var lbLogout: UILabel!
     @IBOutlet weak var btnLogout: UIButton!
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        lbEmail.text = KeychainManager.shared.getString(key: .email)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

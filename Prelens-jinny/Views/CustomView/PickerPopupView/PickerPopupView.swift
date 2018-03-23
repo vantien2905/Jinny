@@ -1,19 +1,21 @@
 //
-//  ChooseDatePopupView.swift
+//  PickerPopupView.swift
 //  Prelens-jinny
 //
-//  Created by vinova on 3/21/18.
+//  Created by vinova on 3/22/18.
 //  Copyright © 2018 Lamp. All rights reserved.
 //
 
 import UIKit
 
-protocol ChooseDatePopUpViewDelegate: class {
-    func selectedDate(date: Date)
+protocol PickerViewDelegate: class {
+    func numberOfRowsInComponent() -> Int
+    func titleForRow(index: Int) -> String
+    func didSelectRow(index: Int)
 }
 
-class ChooseDatePopupView: BasePopUpView {
-    static let shared = ChooseDatePopupView()
+class PickerPopupView: BasePopUpView {
+    static let shared = PickerPopupView()
     
     let vTop: UIView = {
         let view = UIView()
@@ -25,8 +27,12 @@ class ChooseDatePopupView: BasePopUpView {
         let btn = UIButton()
         btn.setAttributed(title: "Done", color: PRColor.whiteColor, font: PRFont.semiBold15)
         btn.addTarget(self, action: #selector(btnDoneTapped), for: .touchUpInside)
-
+        
         return btn
+    }()
+    let pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        return pickerView
     }()
     
     let vBottom: UIView = {
@@ -35,44 +41,46 @@ class ChooseDatePopupView: BasePopUpView {
         
         return view
     }()
+    weak var delegate: PickerViewDelegate?
     
-    let datePicker: UIDatePicker = {
-        let date = UIDatePicker()
-        date.locale = Locale(identifier: "en_SG")
-        date.datePickerMode = UIDatePickerMode.date
-        //date.setValue(NCSColor.whiteColor, forKey: "textColor")
-        
-        return date
-    }()
-    weak var delegate: ChooseDatePopUpViewDelegate?
     override func setupView() {
         super.setupView()
+        pickerView.dataSource = self
+        pickerView.delegate   = self
         vContent.addSubview(vTop)
         vTop.addSubview(btnDone)
         vContent.addSubview(vBottom)
-        vBottom.addSubview(datePicker)
+        vBottom.addSubview(pickerView)
         
         vTop.anchor(vContent.topAnchor, left: vContent.leftAnchor, bottom: nil, right: vContent.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 41)
         btnDone.rightAnchor.constraint(equalTo: vTop.rightAnchor, constant: -20).isActive = true
         btnDone.centerYToSuperview()
         
         vBottom.anchor(vTop.bottomAnchor, left: vTop.leftAnchor, bottom: vContent.bottomAnchor, right: vTop.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        datePicker.fillSuperview()
-    }
-    
-    func showPopUp(minDate: Date? = nil, maxDate: Date? = nil, currentDate: Date? = nil) {
-        showPopUp()
-        self.datePicker.minimumDate = minDate
-        self.datePicker.maximumDate = maxDate
-        
-        if currentDate != nil {
-            self.datePicker.setDate(currentDate!, animated: true)
-        }
+        pickerView.fillSuperview()
     }
     
     @objc func btnDoneTapped() {
         self.hidePopUp()
-        let dateSelected = datePicker.date
-        delegate?.selectedDate(date: dateSelected)
+    }
+}
+extension PickerPopupView:UIPickerViewDataSource,UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        guard let _num = delegate?.numberOfRowsInComponent() else { return 0 }
+        return _num
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        guard let _title = delegate?.titleForRow(index: row) else { return "" }
+        return _title
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        delegate?.didSelectRow(index: row)
     }
 }

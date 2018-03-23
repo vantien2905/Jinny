@@ -79,7 +79,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="vBottom" destination="bbk-Ix-Zmd" id="276-aG-mW2"/>
                 <outlet property="vContent" destination="ys0-hK-uNJ" id="LAA-Hd-YDC"/>
+                <outlet property="vSupper" destination="H2p-sc-9uM" id="fxk-7M-yYC"/>
             </connections>
             <point key="canvasLocation" x="67" y="-4"/>
         </tableViewCell>

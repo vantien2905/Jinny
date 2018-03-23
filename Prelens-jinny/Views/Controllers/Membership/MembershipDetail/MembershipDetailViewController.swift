@@ -60,7 +60,7 @@ class MembershipDetailViewController: BaseViewController {
         tbMembershipDetail.register(UINib(nibName: Cell.footerMembershipDetail, bundle: nil), forCellReuseIdentifier: Cell.footerMembershipDetail)
 
         tbMembershipDetail.backgroundColor = PRColor.backgroundColor
-
+        tbMembershipDetail.separatorStyle = .none
         tbMembershipDetail.delegate = self
         tbMembershipDetail.dataSource = self
         
@@ -111,10 +111,11 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.headerMemBershipDetail, for: indexPath) as! HeaderMembershipDetailCell
-            let url = membershipDetail.merchant?.logo?.url?.thumb
+            let url = membershipDetail.merchant?.logo?.url?.original
             cell.setData(urlLogo: url, code: membershipDetail.code)
             cell.headerCellDelegate = self
             cell.vContent.setShadow()
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.membershipDetail, for: indexPath) as! MembershipDetailCell
@@ -128,6 +129,8 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.footerMembershipDetail, for: indexPath) as! FooterMembershipDetailCell
+            cell.backgroundColor = PRColor.backgroundColor
+            cell.vContent.backgroundColor = PRColor.backgroundColor
             cell.delegate = self
             return cell
         }
@@ -183,6 +186,14 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             return 25
         } else {
             return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = PromotionDetailViewController()
+        if let _voucher = membershipDetail.vouchers {
+            vc.promotionDetailData = _voucher[indexPath.item]
+             self.push(controller: vc, animated: true)
         }
     }
 }

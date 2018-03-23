@@ -18,8 +18,11 @@ class EditProfileViewModel {
     public var dob  : Variable<String?>
     public var btnSaveTapped: PublishSubject<Void>
     public var isValidInput: Variable<Bool>
+    public var regionID: Variable<Int?>
+    public var gender : Variable<String?>
     
     var user = Variable<PRUser?>(nil)
+    var regions = Variable<[ResidentialRegion]>([])
     
     init() {
         self.email = Variable<String?>(nil)
@@ -27,6 +30,8 @@ class EditProfileViewModel {
         self.dob  = Variable<String?>(nil)
         self.btnSaveTapped = PublishSubject<Void>()
         self.isValidInput = Variable<Bool>(false)
+        self.regionID = Variable<Int?>(nil)
+        self.gender  = Variable<String?>(nil)
         
         let isValid = self.checkValid(emailText: email.asObservable(), nameText: name.asObservable(), dobText: dob.asObservable())
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
@@ -36,37 +41,26 @@ class EditProfileViewModel {
         self.btnSaveTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
             guard let _email = strongSelf.email.value, let _name = strongSelf.name.value , let _dob = strongSelf.dob.value else {return}
-            
             if strongSelf.isValidInput.value == true {
                  strongSelf.updateProfile()
             } else {
-                if _email.isValidEmpty() == false {
-                    PopUpHelper.shared.showMessage(message: "Validation failed: Email can't be blank")
-                    return
-                }
-                if _name.isValidEmpty() == false {
+                if _name.isValidEmpty() {
                     PopUpHelper.shared.showMessage(message: "Validation failed: Name can't be blank")
                     return
                 }
-                if _dob.isValidEmpty() == false {
-                    PopUpHelper.shared.showMessage(message: "Validation failed: Date of birth can't be select")
+                if _email.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: "Validation failed: Email can't be blank")
+                    return
+                }
+                if _dob.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: "Validation failed: Data of birth can't be blank")
+                    return
+                }
+                if _email.isValidEmail() == false {
+                    PopUpHelper.shared.showMessage(message: "Validation failed: Email invalid")
                     return
                 }
             }
-//            else {
-//                if email.isValidEmail() == false {
-//                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorInvalidEmail)
-//                    return
-//                }
-//                if name.isValidEmpty() == true {
-//                    PopUpHelper.shared.showMessage(message: "Name can't be blank")
-//                    return
-//                }
-//                if dob.isValidEmpty() == true {
-//                    PopUpHelper.shared.showMessage(message: "Please select doate of birth")
-//                    return
-//                }
-//            }
         }).disposed(by: disposeBag)
     }
     
@@ -76,12 +70,19 @@ class EditProfileViewModel {
         }).disposed(by: disposeBag)
     }
     
+    func getResidentialRegion() {
+        Provider.shared.profileService.getResidentialRegion().subscribe(onNext: { [weak self] (list) in
+            self?.regions.value = list
+        }).disposed(by: disposeBag)
+    }
+    
     func updateProfile() {
         guard let email = self.email.value, let name = self.name.value, let dob = self.dob.value else { return }
-        Provider.shared.profileService.updateProfile(fullName: name, email: email, dateOfBirth: dob)
+        Provider.shared.profileService.updateProfile(fullName: name, email: email, dateOfBirth: dob, regionID: self.regionID.value, gender: self.gender.value)
             .subscribe(onNext: { [weak self] (user) in
                 guard let strongSelf = self else { return }
                 strongSelf.user.value = user
+                KeychainManager.shared.saveString(value: email, forkey: .email)
                 PopUpHelper.shared.showMessage(message: "Update profile success")
                 }, onError: { (error) in
                     print(error)
@@ -93,7 +94,7 @@ class EditProfileViewModel {
             guard let _email = email, let _name = name, let _dob = dob else {
                 return false
             }
-            return  ( !_email.isValidEmpty() && !_name.isValidEmpty() && !_dob.isValidEmpty())
+            return  ( _email.isValidEmail() && !_name.isValidEmpty() && !_dob.isValidEmpty())
         }
     }
 }
