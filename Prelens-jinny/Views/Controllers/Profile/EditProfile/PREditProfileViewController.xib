@@ -16,10 +16,12 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRProfileViewController" customModule="Jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PREditProfileViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
                 <outlet property="btnChooseDate" destination="pgm-TM-8af" id="0u9-Kf-0Mp"/>
                 <outlet property="btnSave" destination="VdZ-8o-WNa" id="m0s-9u-r89"/>
+                <outlet property="btnSelectGender" destination="CPM-pT-F2M" id="f5K-R3-9eq"/>
+                <outlet property="btnSelectRegion" destination="LRx-bn-g0F" id="cxO-ZA-E5F"/>
                 <outlet property="lbDate" destination="THr-Aw-KrF" id="heP-sN-PZn"/>
                 <outlet property="lbGender" destination="fy7-CB-N4y" id="Ffy-Te-azk"/>
                 <outlet property="lbResidentialRegion" destination="MW3-Hs-dsM" id="JwA-yG-XOl"/>
@@ -92,11 +94,18 @@ customized for you!</string>
                                                 <constraint firstAttribute="height" constant="7" id="MlC-5B-fEk"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPM-pT-F2M">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="46.5"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="CPM-pT-F2M" secondAttribute="bottom" id="5Cm-27-kSe"/>
+                                        <constraint firstItem="CPM-pT-F2M" firstAttribute="leading" secondItem="FGS-k9-7RF" secondAttribute="leading" id="K7d-xa-e7R"/>
                                         <constraint firstItem="fy7-CB-N4y" firstAttribute="leading" secondItem="FGS-k9-7RF" secondAttribute="leading" constant="5" id="PFB-I9-05q"/>
+                                        <constraint firstItem="CPM-pT-F2M" firstAttribute="top" secondItem="FGS-k9-7RF" secondAttribute="top" id="PUC-JA-NaD"/>
                                         <constraint firstAttribute="trailing" secondItem="n7j-HO-lUB" secondAttribute="trailing" constant="20.5" id="Vym-JI-Tjn"/>
+                                        <constraint firstAttribute="trailing" secondItem="CPM-pT-F2M" secondAttribute="trailing" id="jOd-f4-ku0"/>
                                         <constraint firstItem="fy7-CB-N4y" firstAttribute="centerY" secondItem="FGS-k9-7RF" secondAttribute="centerY" id="lBK-5Q-RLg"/>
                                         <constraint firstItem="n7j-HO-lUB" firstAttribute="centerY" secondItem="fy7-CB-N4y" secondAttribute="centerY" id="lP2-Ee-cef"/>
                                     </constraints>
@@ -131,13 +140,20 @@ customized for you!</string>
                                                 <constraint firstAttribute="width" constant="8" id="z00-bg-ZY5"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRx-bn-g0F">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="47"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="LRx-bn-g0F" secondAttribute="trailing" id="7fG-Cg-c2y"/>
                                         <constraint firstItem="vI4-aa-yji" firstAttribute="centerY" secondItem="MW3-Hs-dsM" secondAttribute="centerY" id="8mz-FD-G6d"/>
                                         <constraint firstItem="MW3-Hs-dsM" firstAttribute="leading" secondItem="T4b-8n-i4R" secondAttribute="leading" constant="5" id="AHV-0c-3qY"/>
+                                        <constraint firstItem="LRx-bn-g0F" firstAttribute="top" secondItem="T4b-8n-i4R" secondAttribute="top" id="WiC-aO-mTA"/>
                                         <constraint firstAttribute="trailing" secondItem="vI4-aa-yji" secondAttribute="trailing" constant="20.5" id="fdl-Ea-RQX"/>
+                                        <constraint firstItem="LRx-bn-g0F" firstAttribute="leading" secondItem="T4b-8n-i4R" secondAttribute="leading" id="kXu-fx-BBA"/>
                                         <constraint firstItem="MW3-Hs-dsM" firstAttribute="centerY" secondItem="T4b-8n-i4R" secondAttribute="centerY" id="mXF-DE-UpP"/>
+                                        <constraint firstAttribute="bottom" secondItem="LRx-bn-g0F" secondAttribute="bottom" id="sON-Wv-Xj9"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQD-HH-1Ee">
