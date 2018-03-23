@@ -60,10 +60,14 @@ class AddManualViewController: BaseViewController {
     func bindData() {
 
         viewModel.isAddSuccess.asObservable().subscribe(onNext: {[weak self] (isSuccess) in
-            guard let strongSelf = self else { return }
             if isSuccess == true {
-                let viewControllers: [UIViewController] = strongSelf.navigationController!.viewControllers as [UIViewController]
-                strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
+                PopUpHelper.shared.showPopUp(message: "Membership added", action: {
+                    guard let strongSelf = self else { return }
+                    if isSuccess == true {
+                        let viewControllers: [UIViewController] = strongSelf.navigationController!.viewControllers as [UIViewController]
+                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
+                    }
+                })
             }
         }).disposed(by: disposeBag)
         

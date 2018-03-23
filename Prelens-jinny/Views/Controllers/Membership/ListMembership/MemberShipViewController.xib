@@ -15,6 +15,7 @@
                 <outlet property="btnAddMembership" destination="PEa-T2-bvt" id="mAB-8n-H2U"/>
                 <outlet property="cvMembership" destination="uym-RN-mHO" id="Lrg-A7-fGo"/>
                 <outlet property="heightViewScroll" destination="gWG-MK-ctD" id="jH4-FE-Sjg"/>
+                <outlet property="scrollView" destination="aqW-uV-7ZT" id="PE5-fE-yL1"/>
                 <outlet property="vHeader" destination="0av-hO-Zbt" id="ku7-5e-WKN"/>
                 <outlet property="vSearch" destination="fco-CQ-01a" id="0gn-5D-gLf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -42,7 +42,6 @@
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dpC-RK-Onl">
                             <rect key="frame" x="159.5" y="45.5" width="56" height="56.5"/>
-                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="56" id="h0l-9j-KQO"/>
                                 <constraint firstAttribute="height" constant="56.5" id="vZQ-nH-cTd"/>

@@ -37,6 +37,7 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         bindData()
         captureSession = nil
         startReading()
+        print(vScanCode.layer.bounds)
     }
     
     class func configureController(merchant: Merchant?) -> UIViewController {
@@ -51,6 +52,18 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     }
     
     func bindData() {
+        viewModel.isAddSuccess.asObservable().subscribe(onNext: {[weak self] (isSuccess) in
+            if isSuccess == true {
+                PopUpHelper.shared.showPopUp(message: "Membership added", action: {
+                    guard let strongSelf = self else { return }
+                    if isSuccess == true {
+                        let viewControllers: [UIViewController] = strongSelf.navigationController!.viewControllers as [UIViewController]
+                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+                    }
+                })
+            }
+        }).disposed(by: disposeBag)
+        
         viewModel.merchant.asObservable().subscribe(onNext: {[weak self] (merchant) in
             guard let strongSelf = self else { return }
             
@@ -67,6 +80,7 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     }
     
     func startReading() -> Bool {
+          print(vScanCode.layer.bounds)
         let captureDevice = AVCaptureDevice.default(for: .video)
         guard let _captureDevice = captureDevice else { return false}
         do {
@@ -82,7 +96,9 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        videoPreviewLayer.frame = vScanCode.layer.bounds
+        print(vScanCode.layer.bounds)
+        videoPreviewLayer.frame = CGRect(x: vScanCode.layer.bounds.minX, y: vScanCode.layer.bounds.minY, width: UIScreen.main.bounds.size.width, height: 250)
+        
         vScanCode.layer.addSublayer(videoPreviewLayer)
         
         /* Check for metadata */
@@ -112,9 +128,9 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
             if let _code = code {
                 print(_code)
                  captureSession?.stopRunning()
-                let vcAddManual = AddManualViewController.configureViewController(merchant: viewModel.merchant.value) as! AddManualViewController
-                vcAddManual.serial = _code
-                self.push(controller: vcAddManual, animated: true)
+                if let _merchant = viewModel.merchant.value {
+                    viewModel.addMembership(code: _code, merchantId: _merchant.id)
+                }
             }
             
         }

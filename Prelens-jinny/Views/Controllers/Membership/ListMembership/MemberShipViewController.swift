@@ -9,13 +9,14 @@
 import UIKit
 import RxSwift
 
-class MemberShipViewController: BaseViewController {
+class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var cvMembership: UICollectionView!
     @IBOutlet weak var btnAddMembership: UIButton!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBAction func btnAddMembershipTapped() {
         let vcAddMerchant = AddMerchantViewController.initControllerFromNib()
         self.push(controller: vcAddMerchant, animated: true)
@@ -57,6 +58,7 @@ class MemberShipViewController: BaseViewController {
     }
     
     func setUpView() {
+        scrollView.delegate = self
         vHeader.backgroundColor = PRColor.backgroundColor
         vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 2.5, scale: true)
         vSearch.tfSearch.attributedPlaceholder = "Search membership".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
@@ -92,7 +94,7 @@ class MemberShipViewController: BaseViewController {
 
     }
     
-    @objc func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
         //        print(actualPosition)
