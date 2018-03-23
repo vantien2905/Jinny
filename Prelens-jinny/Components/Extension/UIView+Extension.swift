@@ -287,6 +287,3 @@ extension UIView {
         return Bundle.main.loadNibNamed(id, owner: nil, options: nil)!.first as! T
     }
 }
-
-
-

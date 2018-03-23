@@ -121,7 +121,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.membershipDetail, for: indexPath) as! MembershipDetailCell
             if let _vouchers = membershipDetail.vouchers {
                 if _vouchers.count > indexPath.item {
-                    if let _image = _vouchers[indexPath.item].image, let _urlImage = _image.url, let _urlThumb = _urlImage.thumb {
+                    if let _image = _vouchers[indexPath.item].image, let _urlImage = _image.url, let _urlThumb = _urlImage.original {
                         cell.setData(urlImage: _urlThumb)
                     }
                 }
@@ -175,7 +175,9 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             viewHeader.backgroundColor = PRColor.backgroundColor
             return viewHeader
         } else {
-            return nil
+            let viewHeder = UIView()
+            viewHeder.backgroundColor = PRColor.backgroundColor
+            return viewHeder
         }
     }
     
@@ -190,10 +192,12 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PromotionDetailViewController()
-        if let _voucher = membershipDetail.vouchers {
-            vc.promotionDetailData = _voucher[indexPath.item]
-             self.push(controller: vc, animated: true)
+        if indexPath.section == 1 {
+            let vc = PromotionDetailViewController()
+            if let _voucher = membershipDetail.vouchers {
+                vc.promotionDetailData = _voucher[indexPath.item]
+                self.push(controller: vc, animated: true)
+            }
         }
     }
 }

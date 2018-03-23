@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-k0-rnM">
                         <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voucher_image" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-4z-JcZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-4z-JcZ">
                                 <rect key="frame" x="0.0" y="0.0" width="341" height="193"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-hk-gn6">
@@ -118,6 +118,5 @@
     </objects>
     <resources>
         <image name="unread_voucher" width="93" height="46"/>
-        <image name="voucher_image" width="290" height="138"/>
     </resources>
 </document>

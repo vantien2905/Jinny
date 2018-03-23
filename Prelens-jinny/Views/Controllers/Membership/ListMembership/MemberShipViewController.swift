@@ -9,11 +9,14 @@
 import UIKit
 import RxSwift
 
-class MemberShipViewController: BaseViewController {
+class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var cvMembership: UICollectionView!
     @IBOutlet weak var btnAddMembership: UIButton!
-    
+    @IBOutlet weak var vSearch: SearchView!
+    @IBOutlet weak var vHeader: UIView!
+    @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBAction func btnAddMembershipTapped() {
         let vcAddMerchant = AddMerchantViewController.initControllerFromNib()
         self.push(controller: vcAddMerchant, animated: true)
@@ -24,10 +27,11 @@ class MemberShipViewController: BaseViewController {
 
     var listMember = Membership() {
         didSet {
-            
-//            self.cvMembership.reloadSections(IndexSet(integer: 1))
-//            self.cvMembership.reloadSections(IndexSet(integer: 2))
-            self.cvMembership.reloadData()
+            UIView.transition(with: cvMembership,
+                              duration: 0.35,
+                              options: .transitionCrossDissolve,
+                              animations: { self.cvMembership.reloadData() })
+//            self.cvMembership.reloadData()
         }
     }
     
@@ -35,7 +39,7 @@ class MemberShipViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpView()
         setTitle(title: "Jinny")
         confireCollectionView()
         cvMembership.showsHorizontalScrollIndicator = false
@@ -53,7 +57,18 @@ class MemberShipViewController: BaseViewController {
         hideNavigation()
     }
     
+    func setUpView() {
+        scrollView.delegate = self
+        vHeader.backgroundColor = PRColor.backgroundColor
+        vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 2.5, scale: true)
+        vSearch.tfSearch.attributedPlaceholder = "Search membership".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
+    }
+    
     func bindData() {
+        
+        vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
+            self?.viewModel.inputs.textSearch.value = text
+        }).disposed(by: disposeBag)
         
         viewModel.outputs.listMembership.asObservable().subscribe(onNext: { member in
             if let _member = member {
@@ -66,11 +81,11 @@ class MemberShipViewController: BaseViewController {
 
     func confireCollectionView() {
         cvMembership.register(UINib(nibName: Cell.memberShip, bundle: nil), forCellWithReuseIdentifier: Cell.memberShip)
-        cvMembership.register(UINib(nibName: Cell.searchMemberShip, bundle: nil), forCellWithReuseIdentifier: Cell.searchMemberShip)
         cvMembership.register(UINib(nibName: Cell.emptyMembership, bundle: nil), forCellWithReuseIdentifier: Cell.emptyMembership)
         cvMembership.register(UINib(nibName: Cell.starredheader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.starredheader)
         cvMembership.register(UINib(nibName: Cell.otherHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader)
         cvMembership.register(UINib(nibName: Cell.membershipFooter, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter)
+        cvMembership.isScrollEnabled = false
 
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.delegate = self
@@ -79,7 +94,7 @@ class MemberShipViewController: BaseViewController {
 
     }
     
-    @objc func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
         //        print(actualPosition)
@@ -93,20 +108,14 @@ class MemberShipViewController: BaseViewController {
 
 extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        heightViewScroll.constant = cvMembership.contentSize.height + 84
         if indexPath.section == 0 {
-            let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.searchMemberShip, for: indexPath) as! SearchMembershipCell
-            
-            cell.delegate = self
-            return cell
-        } else if indexPath.section == 1 {
             if self.listMember.startedMemberships.count == 0 {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.emptyMembership, for: indexPath) as! EmptyMembershipCell
                 cell.lbContent.text = ConstantString.Membership.emptyStarMembership
                 return cell
             } else {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.memberShip, for: indexPath) as! MembershipCell
-
                 cell.membership = listMember.startedMemberships[indexPath.item]
                 return cell
             }
@@ -127,13 +136,11 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
-        } else if section == 1 {
             if self.listMember.startedMemberships.count == 0 {
                 return 1
             } else {
@@ -150,9 +157,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
-            return CGSize(width: collectionView.frame.width - 30, height: 50)
-        } else if indexPath.section == 1 {
+         if indexPath.section == 0 {
             if self.listMember.startedMemberships.count == 0 {
                 return CGSize(width: collectionView.frame.width - 30, height: 20)
             } else {
@@ -176,16 +181,11 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 0 {
-            return CGSize(width: 0, height: 0)
-        } else {
-            return CGSize(width: collectionView.frame.width, height: 50)
-        }
-
+        return CGSize(width: collectionView.frame.width, height: 42.5)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if section == 1 {
+        if section == 0 {
             return CGSize(width: collectionView.frame.width, height: 10)
         } else {
             return CGSize(width: 0, height: 0)
@@ -199,7 +199,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
         // Create header
         if (kind == UICollectionElementKindSectionHeader) {
             // Create Header
-            if indexPath.section == 1 {
+            if indexPath.section == 0 {
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.starredheader, for: indexPath as IndexPath) as! StarredHeaderCell
                 reusableView = headerView
             } else {
@@ -207,6 +207,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 if listMember.otherMemberships.count == 0 {
                     headerView.vSort.isHidden = true
                     headerView.lbOther.text = "Other memberships"
+                    
                 } else {
                     headerView.vSort.isHidden = false
                     headerView.lbOther.text = "Other"
@@ -223,7 +224,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
             if listMember.startedMemberships.count != 0 {
                 let vc = MembershipDetailViewController.configureViewController(idMembership: self.listMember.startedMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
@@ -234,12 +235,5 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 self.push(controller: vc, animated: true)
             }
         }
-    }
-}
-
-extension MemberShipViewController: SearchMembershipCellDelegate {
-    func searchTextChange(textSearch: String?) {
-//        print("\(textSearch)")
-        viewModel.inputs.textSearch.value = textSearch
     }
 }

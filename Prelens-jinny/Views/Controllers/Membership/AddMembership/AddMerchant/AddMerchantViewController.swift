@@ -40,8 +40,9 @@ class AddMerchantViewController: BaseViewController {
     }
 
     func setUpView() {
-        vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 2.5, scale: true)
+        vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 10, scale: true)
         vSearch.tfSearch.attributedPlaceholder = "Search merchant".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
+        
     }
     
     func setNavigation() {
@@ -61,9 +62,14 @@ class AddMerchantViewController: BaseViewController {
             self?.viewModel.searchTextChange.value = text
         }).disposed(by: disposeBag)
         viewModel.loadData()
-        viewModel.listMerchant.asObservable().bind(to: tbMerchant.rx.items) { table, _, merchant in
+        viewModel.listMerchant.asObservable().bind(to: tbMerchant.rx.items) { table, index, merchant in
             let cell = table.dequeueReusableCell(withIdentifier: Cell.addMerchantCell) as! AddMerchantCell
             cell.merchant = merchant
+            if index == self.viewModel.listMerchant.value.count - 1 {
+                cell.vBottom.isHidden = true
+            } else {
+                cell.vBottom.isHidden = false
+            }
             return cell
         }.disposed(by: disposeBag)
         

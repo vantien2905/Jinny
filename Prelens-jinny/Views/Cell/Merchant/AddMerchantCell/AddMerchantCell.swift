@@ -28,7 +28,7 @@ class AddMerchantCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+         self.selectionStyle = .none
     }
     
     func setUpView() {
@@ -38,6 +38,8 @@ class AddMerchantCell: UITableViewCell {
         vBottom.backgroundColor = PRColor.lineColor
         imgMerchant.layer.cornerRadius = 2.5
         imgMerchant.contentMode = .scaleAspectFit
+        imgMerchant.layer.masksToBounds = true
+        imgMerchant.backgroundColor = UIColor.white
     }
     
     func loadData() {
@@ -46,7 +48,7 @@ class AddMerchantCell: UITableViewCell {
             self.lbMemrchantName.text = _name
         }
         
-        if let _logo = _merchant.logo, let _url = _logo.url, let _urlThump = _url.thumb {
+        if let _logo = _merchant.logo, let _url = _logo.url, let _urlThump = _url.medium {
             let url = URL(string: _urlThump)
             imgMerchant.sd_setImage(with: url, placeholderImage: nil)
         }

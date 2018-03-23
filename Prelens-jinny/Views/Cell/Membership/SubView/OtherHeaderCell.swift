@@ -18,6 +18,8 @@ class OtherHeaderCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         vSort.backgroundColor = PRColor.backgroundColor
+        lbOther.font = PRFont.semiBold15
+        lbLatest.textAlignment = .center
     }
 
 }

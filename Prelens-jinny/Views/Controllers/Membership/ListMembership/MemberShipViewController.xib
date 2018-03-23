@@ -12,8 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberShipViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
-                <outlet property="btnAddMembership" destination="193-3D-q7w" id="Z4N-JI-ZUE"/>
-                <outlet property="cvMembership" destination="4UQ-2g-H4R" id="SxV-K2-fMf"/>
+                <outlet property="btnAddMembership" destination="PEa-T2-bvt" id="mAB-8n-H2U"/>
+                <outlet property="cvMembership" destination="uym-RN-mHO" id="Lrg-A7-fGo"/>
+                <outlet property="heightViewScroll" destination="gWG-MK-ctD" id="jH4-FE-Sjg"/>
+                <outlet property="scrollView" destination="aqW-uV-7ZT" id="PE5-fE-yL1"/>
+                <outlet property="vHeader" destination="0av-hO-Zbt" id="ku7-5e-WKN"/>
+                <outlet property="vSearch" destination="fco-CQ-01a" id="0gn-5D-gLf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,36 +26,83 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4UQ-2g-H4R">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-uV-7ZT">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a6d-I5-y0H">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="193-3D-q7w">
-                    <rect key="frame" x="305.5" y="606" width="50" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGc-QI-nzm">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0av-hO-Zbt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fco-CQ-01a" customClass="SearchView" customModule="Jinny" customModuleProvider="target">
+                                            <rect key="frame" x="22" y="10" width="331" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="LtF-SU-N6I"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fco-CQ-01a" secondAttribute="trailing" constant="22" id="O8j-Kf-RAC"/>
+                                        <constraint firstAttribute="height" constant="56" id="VYa-gX-6Z1"/>
+                                        <constraint firstItem="fco-CQ-01a" firstAttribute="top" secondItem="0av-hO-Zbt" secondAttribute="top" constant="10" id="a4f-a8-IJA"/>
+                                        <constraint firstItem="fco-CQ-01a" firstAttribute="leading" secondItem="0av-hO-Zbt" secondAttribute="leading" constant="22" id="w6Q-Yc-PTz"/>
+                                    </constraints>
+                                </view>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uym-RN-mHO">
+                                    <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pUI-T0-1qz">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEa-T2-bvt">
+                                    <rect key="frame" x="305.5" y="586" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="Eya-6x-7N0"/>
+                                        <constraint firstAttribute="width" constant="50" id="ebH-dT-POX"/>
+                                    </constraints>
+                                    <state key="normal" image="add_new"/>
+                                    <connections>
+                                        <action selector="btnAddMembershipTapped" destination="-1" eventType="touchUpInside" id="Faf-ZJ-Y7o"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="0av-hO-Zbt" firstAttribute="leading" secondItem="uGc-QI-nzm" secondAttribute="leading" id="3vp-Rz-Pop"/>
+                                <constraint firstItem="uym-RN-mHO" firstAttribute="top" secondItem="0av-hO-Zbt" secondAttribute="bottom" id="Nh4-vM-oj1"/>
+                                <constraint firstAttribute="trailing" secondItem="0av-hO-Zbt" secondAttribute="trailing" id="OwA-Fz-kbN"/>
+                                <constraint firstAttribute="height" constant="1000" id="gWG-MK-ctD"/>
+                                <constraint firstAttribute="trailing" secondItem="uym-RN-mHO" secondAttribute="trailing" id="hru-cF-Huy"/>
+                                <constraint firstItem="0av-hO-Zbt" firstAttribute="top" secondItem="uGc-QI-nzm" secondAttribute="top" id="ltc-An-pum"/>
+                                <constraint firstItem="uym-RN-mHO" firstAttribute="leading" secondItem="uGc-QI-nzm" secondAttribute="leading" id="tZ7-MZ-64I"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="emQ-yd-VIo"/>
-                        <constraint firstAttribute="height" constant="50" id="gK3-n3-dCZ"/>
+                        <constraint firstAttribute="trailing" secondItem="uGc-QI-nzm" secondAttribute="trailing" id="Of9-XJ-Fby"/>
+                        <constraint firstAttribute="bottom" secondItem="uGc-QI-nzm" secondAttribute="bottom" id="QPi-lf-2bh"/>
+                        <constraint firstItem="uGc-QI-nzm" firstAttribute="top" secondItem="aqW-uV-7ZT" secondAttribute="top" id="cnj-b4-vj9"/>
+                        <constraint firstItem="uGc-QI-nzm" firstAttribute="leading" secondItem="aqW-uV-7ZT" secondAttribute="leading" id="hJ6-K2-9Gu"/>
+                        <constraint firstItem="uGc-QI-nzm" firstAttribute="width" secondItem="aqW-uV-7ZT" secondAttribute="width" id="kab-VY-7hE"/>
                     </constraints>
-                    <state key="normal" image="add_new"/>
-                    <connections>
-                        <action selector="btnAddMembershipTapped" destination="-1" eventType="touchUpInside" id="aQq-cb-z8B"/>
-                    </connections>
-                </button>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4UQ-2g-H4R" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Bnh-MW-VXi"/>
-                <constraint firstItem="4UQ-2g-H4R" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="J33-Tu-r3e"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="193-3D-q7w" secondAttribute="bottom" constant="11" id="Rym-01-QOW"/>
-                <constraint firstItem="4UQ-2g-H4R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jZM-S8-WRF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="193-3D-q7w" secondAttribute="trailing" constant="19.5" id="ohL-Zp-EPb"/>
-                <constraint firstItem="4UQ-2g-H4R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tKV-2B-oXa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PEa-T2-bvt" secondAttribute="trailing" constant="19.5" id="7zN-Ne-bvJ"/>
+                <constraint firstItem="uym-RN-mHO" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Omy-TO-7rj"/>
+                <constraint firstItem="aqW-uV-7ZT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Uag-A2-PaB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aqW-uV-7ZT" secondAttribute="bottom" id="bpv-lY-0oD"/>
+                <constraint firstItem="aqW-uV-7ZT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e7h-HV-4t5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PEa-T2-bvt" secondAttribute="bottom" constant="11" id="sVK-u7-6eh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aqW-uV-7ZT" secondAttribute="trailing" id="vxF-kt-mcT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-190" y="-37"/>

@@ -33,13 +33,14 @@ class MembershipCell: UICollectionViewCell {
         imgMemberShip.layer.borderColor = PRColor.lineColor.cgColor
         vContent.layer.cornerRadius = 2.5
         vContent.layer.masksToBounds = true
+        imgMemberShip.contentMode = .scaleAspectFill
     }
 
     func setData() {
         if let _merchant = membership.merchant,
         let _logo = _merchant.logo,
         let _url = _logo.url,
-            let _urlLogo = _url.thumb {
+            let _urlLogo = _url.original {
             let url = URL(string: _urlLogo)
             imgMemberShip.sd_setImage(with: url, placeholderImage: nil)
         }
