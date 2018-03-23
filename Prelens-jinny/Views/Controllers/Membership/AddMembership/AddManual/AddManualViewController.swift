@@ -16,7 +16,7 @@ class AddManualViewController: BaseViewController {
     @IBOutlet weak var btnDone: UIButton!
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var vTextField: UIView!
-    
+    var serial: String?
     @IBAction func btnDoneTapped() {
         if let _code = tfSerial.text, let _merchant = viewModel.merchant.value {
             viewModel.addMembership(code: _code, merchantId: _merchant.id)
@@ -48,6 +48,7 @@ class AddManualViewController: BaseViewController {
         vTextField.layer.borderWidth = 1
         vTextField.layer.borderColor = PRColor.lineColor.cgColor
         btnDone.layer.cornerRadius = 2.5
+        tfSerial.text = serial
     }
     
     class func configureViewController(merchant: Merchant?) -> UIViewController {
@@ -76,3 +77,12 @@ class AddManualViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
 }
+
+//extension AddManualViewController: BarcodeDelegate {
+//    func barcodeReaded(barcode: String) {
+//        tfSerial.text = barcode
+//    }
+//    
+//    
+//}
+

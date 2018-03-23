@@ -67,7 +67,7 @@ class MembershipViewModel {
 //                 self?.inputs.listTemp.otherMemberships = _listOther
 //            }
 //           
-////            self?.outputs.listMembership.value = self?.inputs.listTemp
+//            self?.outputs.listMembership.value = self?.inputs.listTemp
 //        }).disposed(by: disposeBag)
     }
 }

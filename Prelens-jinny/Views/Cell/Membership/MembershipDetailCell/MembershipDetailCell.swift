@@ -10,18 +10,21 @@ import UIKit
 import SDWebImage
 
 class MembershipDetailCell: UITableViewCell {
-
+    @IBOutlet weak var vContent: UIView!
     @IBOutlet weak var imgPromotion: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = PRColor.backgroundColor
         imgPromotion.layer.cornerRadius = 2.5
         imgPromotion.layer.masksToBounds = true
-        imgPromotion.contentMode = .scaleAspectFit
+        imgPromotion.contentMode = .scaleAspectFill
+        vContent.backgroundColor = PRColor.backgroundColor
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.selectionStyle = .none
     }
     
     func setData(urlImage: String?) {
