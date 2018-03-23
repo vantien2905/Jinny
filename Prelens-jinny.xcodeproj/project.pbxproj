@@ -175,6 +175,8 @@
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
+		BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */; };
+		BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
 		D9911854205B7AC100F701ED /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991184E205B7AC100F701ED /* Response.swift */; };
 		D9911855205B7AC100F701ED /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991184F205B7AC100F701ED /* NetworkSession.swift */; };
@@ -363,6 +365,8 @@
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
+		BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewController.swift; sourceTree = "<group>"; };
+		BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVoucherViewController.xib; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.release.xcconfig"; sourceTree = "<group>"; };
 		C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinny/Pods-Prelens-jinny.debug.xcconfig"; sourceTree = "<group>"; };
@@ -487,6 +491,7 @@
 		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F6A72064E9A1007CE003 /* AddVoucher */,
 				76DC8901205F70AE00AD87F3 /* PromotionDetail */,
 				76DC88ED205F5FFA00AD87F3 /* Achived */,
 				76DC88EE205F5FFA00AD87F3 /* All */,
@@ -1230,6 +1235,15 @@
 			path = MerchantBranchCell;
 			sourceTree = "<group>";
 		};
+		BCF5F6A72064E9A1007CE003 /* AddVoucher */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */,
+				BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */,
+			);
+			path = AddVoucher;
+			sourceTree = "<group>";
+		};
 		C2031F63C23FE59B8717BCA4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1382,6 +1396,7 @@
 				B7B1BC9D2058D7FA0042B3D4 /* ostrich-regular.ttf in Resources */,
 				76DC88F6205F603A00AD87F3 /* StarredPromotionViewController.xib in Resources */,
 				76DC8900205F6B5600AD87F3 /* PromotionHeaderCell.xib in Resources */,
+				BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */,
 				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
 				76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */,
 				B7899EBE2060B31900ADEC43 /* AddMerchantCell.xib in Resources */,
@@ -1591,6 +1606,7 @@
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
+				BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */,
 				D9911856205B7AC100F701ED /* Provider.swift in Sources */,
 				BC9A6151205F77F00071EF4F /* PromotionDetailFooterCell.swift in Sources */,
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,

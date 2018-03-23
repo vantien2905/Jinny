@@ -13,13 +13,15 @@ import RxCocoa
 class AllPromotionViewController: UIViewController {
 
     @IBOutlet weak var cvAllPromotion: UICollectionView!
-    var refresher:UIRefreshControl?
+    @IBOutlet weak var btnAddVoucher: UIButton!
+    
+    var refresher: UIRefreshControl?
     
     let viewModel = PromotionViewModel()
     let disposeBag = DisposeBag()
     var filteredData: [Promotion] = []
     
-    var listPromotion = [Promotion](){
+    var listPromotion = [Promotion]() {
         didSet {
             filteredData = listPromotion
             self.cvAllPromotion.reloadData()
@@ -46,7 +48,7 @@ class AllPromotionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func pullToRefesh(){
+    func pullToRefesh() {
         self.refresher = UIRefreshControl()
         self.cvAllPromotion.alwaysBounceVertical = true
         self.refresher?.tintColor = UIColor.black
@@ -77,6 +79,11 @@ class AllPromotionViewController: UIViewController {
         cvAllPromotion.delegate = self
         cvAllPromotion.dataSource = self
     }
+    
+    func goToAddVoucher() {
+        
+    }
+    
 }
 extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -100,10 +107,14 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
         switch indexPath.section {
         case 0:
             let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath) as! SearchPromotionCell
+            cell.tfSearch.text = ""
             cell.delegate = self
             return cell
         case 1:
-            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
+
+            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader,
+                                                          for: indexPath) as! PromotionHeaderCell
+
             if self.filteredData.count == 0 {
                 cell.vFilter.isHidden = true
             } else {
@@ -147,13 +158,13 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
         if self.filteredData.count == 0{
             return
         } else {
             if indexPath.section == 2 {
                 let vc = PromotionDetailViewController()
                 vc.promotionDetailData = filteredData[indexPath.item]
-            
                 self.push(controller: vc, animated: true)
             }
         }
@@ -162,7 +173,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 extension AllPromotionViewController: SearchPromotionCellDelegate {
     func searchTextChange(textSearch: String?) {
         guard let _textSearch = textSearch else {return}
-        filteredData = _textSearch.isEmpty ? listPromotion : listPromotion.filter{($0.merchant?.name?.lowercased().contains((_textSearch.lowercased())))!}
+        filteredData = _textSearch.isEmpty ? listPromotion : listPromotion.filter{($0.merchant?.name?.lowercased().containsIgnoringCase(_textSearch))!}
         let indexHeader = IndexSet(integer: 1)
         let indexCollectionView = IndexSet(integer: 2)
         self.cvAllPromotion.reloadSections(indexCollectionView)
