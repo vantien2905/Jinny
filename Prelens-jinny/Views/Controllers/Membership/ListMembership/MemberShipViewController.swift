@@ -47,6 +47,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        vSearch.tfSearch.text = ""
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         lightStatus()
         bindData()

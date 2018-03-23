@@ -78,7 +78,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYL-vV-N6c">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr" translatesAutoresizingMaskIntoConstraints="NO" id="rYL-vV-N6c">
                             <rect key="frame" x="292" y="15.5" width="16" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="X9h-XO-Tmr"/>
@@ -128,5 +128,6 @@
     </objects>
     <resources>
         <image name="back_black" width="9" height="15"/>
+        <image name="qr" width="16" height="16"/>
     </resources>
 </document>

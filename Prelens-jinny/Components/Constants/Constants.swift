@@ -16,6 +16,8 @@ struct PRColor {
     static let emptyMembership      = UIColor(red: 72/255, green: 72/255, blue: 72/255, alpha: 1)
 
     static let lineColor            = UIColor.black.withAlphaComponent(0.1)
+    static let searchColor   = UIColor(red: 110/255, green: 109/255, blue: 105/255, alpha: 1)
+    
     static let blackColor           = UIColor.black
     static let whiteColor           = UIColor.white
     static let navigationBar        = UIColor.white
