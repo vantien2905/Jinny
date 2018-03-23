@@ -17,12 +17,15 @@ class AllPromotionViewController: UIViewController {
     
     let viewModel = PromotionViewModel()
     let disposeBag = DisposeBag()
+    var filteredData: [Promotion] = []
     
     var listPromotion = [Promotion](){
         didSet {
+            filteredData = listPromotion
             self.cvAllPromotion.reloadData()
         }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
@@ -83,10 +86,10 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 2:
-            if self.listPromotion.count == 0{
+            if self.filteredData.count == 0{
                 return 1
             } else {
-                return self.listPromotion.count
+                return self.filteredData.count
             }
         default:
             return 1
@@ -96,24 +99,25 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
+            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath) as! SearchPromotionCell
+            cell.delegate = self
             return cell
         case 1:
             let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
-            if self.listPromotion.count == 0 {
+            if self.filteredData.count == 0 {
                 cell.vFilter.isHidden = true
             } else {
                 cell.vFilter.isHidden = false
             }
             return cell
         default:
-            if self.listPromotion.count == 0 {
+            if self.filteredData.count == 0 {
                 let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.emptyPromotion, for: indexPath) as! EmptyPromotionCell
                 
                 return cell
             } else {
                 let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
-                cell.promotion = listPromotion[indexPath.item]
+                cell.promotion = filteredData[indexPath.item]
                 
                 return cell
             }
@@ -126,7 +130,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
         case 1:
             return CGSize(width: collectionView.frame.width - 30, height: 40 )
         default:
-            if self.listPromotion.count == 0 {
+            if self.filteredData.count == 0 {
                 return CGSize(width: collectionView.frame.width - 30, height: 30)
             } else {
                 return CGSize(width: (collectionView.frame.width - 30), height: (collectionView.frame.height / 2))
@@ -143,15 +147,25 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.listPromotion.count == 0{
+        if self.filteredData.count == 0{
             return
         } else {
             if indexPath.section == 2 {
                 let vc = PromotionDetailViewController()
-                vc.promotionDetailData = listPromotion[indexPath.item]
+                vc.promotionDetailData = filteredData[indexPath.item]
             
                 self.push(controller: vc, animated: true)
             }
         }
+    }
+}
+extension AllPromotionViewController: SearchPromotionCellDelegate {
+    func searchTextChange(textSearch: String?) {
+        guard let _textSearch = textSearch else {return}
+        filteredData = _textSearch.isEmpty ? listPromotion : listPromotion.filter{($0.merchant?.name?.lowercased().contains((_textSearch.lowercased())))!}
+        let indexHeader = IndexSet(integer: 1)
+        let indexCollectionView = IndexSet(integer: 2)
+        self.cvAllPromotion.reloadSections(indexCollectionView)
+        self.cvAllPromotion.reloadSections(indexHeader)
     }
 }
