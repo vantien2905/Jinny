@@ -10,8 +10,8 @@ import UIKit
 
 protocol PickerViewDelegate: class {
     func numberOfRowsInComponent() -> Int
-    func titleForRow(atIndex: Int) -> String
-    func didSelectRow(atIndex: Int)
+    func titleForRow(index: Int) -> String
+    func didSelectRow(index: Int)
 }
 
 class PickerPopupView: BasePopUpView {
@@ -76,11 +76,11 @@ extension PickerPopupView:UIPickerViewDataSource,UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        guard let _title = delegate?.titleForRow(atIndex: row) else { return "" }
+        guard let _title = delegate?.titleForRow(index: row) else { return "" }
         return _title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        delegate?.didSelectRow(atIndex: row)
+        delegate?.didSelectRow(index: row)
     }
 }

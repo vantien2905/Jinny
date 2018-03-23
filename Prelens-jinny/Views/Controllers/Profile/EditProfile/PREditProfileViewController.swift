@@ -198,24 +198,24 @@ extension PREditProfileViewController: PickerViewDelegate {
         }
     }
 
-    func titleForRow(atIndex:Int) -> String {
-        guard let title = listRegion[atIndex].name else { return ""}
+    func titleForRow(index:Int) -> String {
+        guard let title = listRegion[index].name else { return ""}
         switch selectGender {
         case true:
-            return listGender[atIndex]
+            return listGender[index]
         default:
             return title
         }
     }
     
-    func didSelectRow(atIndex: Int) {
+    func didSelectRow(index: Int) {
         switch selectGender {
         case true:
-           lbGender.text = listGender[atIndex]
-           viewModel.gender.value =  listGender[atIndex]
+           lbGender.text = listGender[index]
+           viewModel.gender.value =  listGender[index]
         default:
-            lbResidentialRegion.text = listRegion[atIndex].name
-            viewModel.regionID.value = listRegion[atIndex].id ?? 0
+            lbResidentialRegion.text = listRegion[index].name
+            viewModel.regionID.value = listRegion[index].id ?? 0
         }
     }
 }
