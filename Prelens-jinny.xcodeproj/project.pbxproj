@@ -132,6 +132,8 @@
 		BC4899992062167200E7DE0D /* MerchantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4899982062167200E7DE0D /* MerchantService.swift */; };
 		BC48999C20621D4500E7DE0D /* MerchantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC48999B20621D4500E7DE0D /* MerchantDetail.swift */; };
 		BC48999E20621EBF00E7DE0D /* DateOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC48999D20621EBF00E7DE0D /* DateOpen.swift */; };
+		BC4F84742064947600B330B9 /* MerchantBranchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4F84722064947600B330B9 /* MerchantBranchCell.swift */; };
+		BC4F84752064947600B330B9 /* MerchantBranchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4F84732064947600B330B9 /* MerchantBranchCell.xib */; };
 		BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */; };
 		BC6E9DB9205A4AB100C5DF01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */; };
 		BC6E9DBB205A4AB100C5DF01 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */; };
@@ -315,6 +317,8 @@
 		BC4899982062167200E7DE0D /* MerchantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantService.swift; sourceTree = "<group>"; };
 		BC48999B20621D4500E7DE0D /* MerchantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantDetail.swift; sourceTree = "<group>"; };
 		BC48999D20621EBF00E7DE0D /* DateOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOpen.swift; sourceTree = "<group>"; };
+		BC4F84722064947600B330B9 /* MerchantBranchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantBranchCell.swift; sourceTree = "<group>"; };
+		BC4F84732064947600B330B9 /* MerchantBranchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantBranchCell.xib; sourceTree = "<group>"; };
 		BC6E9DB5205A4A4E00C5DF01 /* PRBaseViewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseViewXib.swift; sourceTree = "<group>"; };
 		BC6E9DB7205A4AB100C5DF01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BC6E9DB8205A4AB100C5DF01 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -764,8 +768,6 @@
 			children = (
 				B7CD063B205F6E80009951A4 /* MerchantDetailViewController.swift */,
 				B7CD063C205F6E80009951A4 /* MerchantDetailViewController.xib */,
-				BCAA4A5620624B8A00B6D1D9 /* MerchantDetailHeaderCell.swift */,
-				BCAA4A5720624B8A00B6D1D9 /* MerchantDetailHeaderCell.xib */,
 			);
 			path = MerchantDetail;
 			sourceTree = "<group>";
@@ -773,7 +775,9 @@
 		B7CD0640205F71A1009951A4 /* Merchant */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F6A12064D7CB007CE003 /* MerchantDetailHeaderCell */,
 				B7899EBA2060B2F300ADEC43 /* AddMerchantCell */,
+				BCF5F6A22064D7E1007CE003 /* MerchantBranchCell */,
 				B7CD0641205F71AE009951A4 /* MerchantDetailCell */,
 			);
 			path = Merchant;
@@ -1200,6 +1204,24 @@
 			path = AddSuccess;
 			sourceTree = "<group>";
 		};
+		BCF5F6A12064D7CB007CE003 /* MerchantDetailHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				BCAA4A5620624B8A00B6D1D9 /* MerchantDetailHeaderCell.swift */,
+				BCAA4A5720624B8A00B6D1D9 /* MerchantDetailHeaderCell.xib */,
+			);
+			path = MerchantDetailHeaderCell;
+			sourceTree = "<group>";
+		};
+		BCF5F6A22064D7E1007CE003 /* MerchantBranchCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC4F84722064947600B330B9 /* MerchantBranchCell.swift */,
+				BC4F84732064947600B330B9 /* MerchantBranchCell.xib */,
+			);
+			path = MerchantBranchCell;
+			sourceTree = "<group>";
+		};
 		C2031F63C23FE59B8717BCA4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1311,6 +1333,7 @@
 				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
 				76DC88F2205F602000AD87F3 /* AllPromotionViewController.xib in Resources */,
 				B7B1BC982058D7FA0042B3D4 /* OstrichSans-Light.otf in Resources */,
+				BC4F84752064947600B330B9 /* MerchantBranchCell.xib in Resources */,
 				76DC890E205F768400AD87F3 /* PromotionCell.xib in Resources */,
 				76DC8905205F70C500AD87F3 /* PromotionDetailViewController.xib in Resources */,
 				B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */,
@@ -1516,6 +1539,7 @@
 				760EC3AE2060A682001390B8 /* Promotion.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
 				B7CD0644205F71E9009951A4 /* MerchantDetailCell.swift in Sources */,
+				BC4F84742064947600B330B9 /* MerchantBranchCell.swift in Sources */,
 				76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */,
 				76DC88FF205F6B5600AD87F3 /* PromotionHeaderCell.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,

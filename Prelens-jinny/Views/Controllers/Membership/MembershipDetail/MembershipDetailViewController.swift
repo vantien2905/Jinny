@@ -15,8 +15,10 @@ class MembershipDetailViewController: BaseViewController {
     @IBOutlet weak var tbMembershipDetail: UITableView!
     
     let disposeBag = DisposeBag()
+    
     static var urlThumb: String?
     static var merchantName: String?
+    static var merchantDescription: String?
     
     var isStarTapped = false
     var viewModel: MembershipDetailViewModelProtocol!
@@ -25,6 +27,10 @@ class MembershipDetailViewController: BaseViewController {
         didSet {
             guard let merchant = membershipDetail.merchant?.name else {return}
             setTitle(title: merchant, textColor: UIColor.black, backgroundColor: .white)
+            guard let url = membershipDetail.merchant?.logo?.url?.thumb else { return }
+            MembershipDetailViewController.urlThumb = url
+            MembershipDetailViewController.merchantName = membershipDetail.merchant?.name
+            MembershipDetailViewController.merchantDescription = membershipDetail.merchant?.descriptions
             
             tbMembershipDetail.reloadData()
             membershipDetail.hasBookmark ? addStarButtonOn() : addStarButtonOff()
@@ -32,7 +38,6 @@ class MembershipDetailViewController: BaseViewController {
             if let _merchant = membershipDetail.merchant, let _name = _merchant.name {
                 setTitle(title: _name, textColor: UIColor.black, backgroundColor: .white)
             }
-            
         }
     }
     
@@ -191,10 +196,8 @@ extension MembershipDetailViewController: FooterMembershipDetailCellDelegate {
 extension MembershipDetailViewController: HeaderMembershipDetailCellDelegate {
     func goToMerchantDetail() {
         guard let idMerchant = membershipDetail.merchant?.id else { return }
-        guard let url = membershipDetail.merchant?.logo?.url?.thumb else { return }
+        
         let vcMerchantDetail = MerchantDetailViewController.configureViewController(idMerchant: idMerchant)
-        MembershipDetailViewController.urlThumb = url
-        MembershipDetailViewController.merchantName = membershipDetail.merchant?.name
         self.push(controller: vcMerchantDetail, animated: true)
     }
 }
