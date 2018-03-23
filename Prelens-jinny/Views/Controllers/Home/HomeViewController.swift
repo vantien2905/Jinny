@@ -30,21 +30,19 @@ class HomeViewController: UIViewController {
     var sideMenuTrigger: Bool = true
 
     let membershipVC = MemberShipViewController.initControllerFromNib()
-
     let promotionVC  = PromotionViewController.initControllerFromNib()
-
+    let btnBack = BaseViewController()
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         vTabbar.buttonTappedDelegate = self
-
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubView()
         setUpView()
+        
     }
-
     func setUpView() {
         vNavigation.backgroundColor = PRColor.mainAppColor
         lcsNavigationHeight.constant = 64 //(60/667)*(UIScreen.main.bounds.height)
@@ -147,3 +145,4 @@ extension HomeViewController: PRTabbarCustomDelegate {
 
     }
 }
+

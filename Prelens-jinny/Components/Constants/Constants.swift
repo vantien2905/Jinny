@@ -50,6 +50,7 @@ struct Cell {
     //Merchant
     static let merchantDetail   = "MerchantDetailCell"
     static let merchantDetailHeaderCell = "MerchantDetailHeaderCell"
+    static let merchantBranchCell = "MerchantBranchCell"
     
     static let promotionDetailCell = "PromotionDetailCell"
     static let promotionDetailHeaderCell = "PromotionDetailHeaderCell"
