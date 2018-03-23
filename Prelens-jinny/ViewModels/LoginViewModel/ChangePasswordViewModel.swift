@@ -46,6 +46,14 @@ final class ChangePasswordViewModel {
             if curPassword.isValidPassword() && newPassword.isValidPassword() {
                 self?.callAPIChangePassword()
             } else {
+                if curPassword.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message:"Validation failed: Current password can't be blank")
+                    return
+                }
+                if newPassword.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message:"Validation failed: New password can't be blank")
+                    return
+                }
                 PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
             }
          }).disposed(by: disposeBag)
