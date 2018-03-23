@@ -82,6 +82,7 @@ class EditProfileViewModel {
             .subscribe(onNext: { [weak self] (user) in
                 guard let strongSelf = self else { return }
                 strongSelf.user.value = user
+                KeychainManager.shared.saveString(value: email, forkey: .email)
                 PopUpHelper.shared.showMessage(message: "Update profile success")
                 }, onError: { (error) in
                     print(error)

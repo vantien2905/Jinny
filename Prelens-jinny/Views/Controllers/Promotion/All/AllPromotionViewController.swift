@@ -100,7 +100,11 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             return cell
         case 1:
             let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
-            cell.vFilter.isHidden = true
+            if self.listPromotion.count == 0 {
+                cell.vFilter.isHidden = true
+            } else {
+                cell.vFilter.isHidden = false
+            }
             return cell
         default:
             if self.listPromotion.count == 0 {
@@ -139,11 +143,15 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 2 {
-            let vc = PromotionDetailViewController()
-            vc.promotionDetailData = listPromotion[indexPath.item]
+        if self.listPromotion.count == 0{
+            return
+        } else {
+            if indexPath.section == 2 {
+                let vc = PromotionDetailViewController()
+                vc.promotionDetailData = listPromotion[indexPath.item]
             
-            self.push(controller: vc, animated: true)
+                self.push(controller: vc, animated: true)
+            }
         }
     }
 }

@@ -75,14 +75,14 @@ class PREditProfileViewController: BaseViewController {
     }
 
     func updateLayout(user: PRUser){
-        tfEmail.text    = user.email
-        viewModel.email.value = tfEmail.text
-        tfName.text     = user.fullName
-        viewModel.name.value = tfName.text
+        tfEmail.text            = user.email
+        viewModel.email.value   = tfEmail.text
+        tfName.text             = user.fullName
+        viewModel.name.value    = tfName.text
         
         guard let _dob = user.dob else { return lbDate.text = " mm/yyyy" }
-        viewModel.dob.value = _dob
-        lbDate.text     =  _dob
+        viewModel.dob.value     = _dob
+        lbDate.text             =  _dob
         
         guard let _residential = user.residentialRegion?.name else { return lbResidentialRegion.text = " Select" }
         viewModel.regionID.value = user.residentialRegion?.id

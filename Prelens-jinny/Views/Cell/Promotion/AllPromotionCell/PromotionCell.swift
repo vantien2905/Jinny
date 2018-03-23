@@ -18,6 +18,7 @@ class PromotionCell: UICollectionViewCell {
     @IBOutlet weak var lbExpiresAt: UILabel!
     @IBOutlet weak var lbMerchantName: UILabel!
     @IBOutlet weak var vLine: UIView!
+    @IBOutlet weak var imgReadPromotion: UIImageView!
     @IBOutlet weak var imgPromotion: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,11 +28,17 @@ class PromotionCell: UICollectionViewCell {
     }
     
     func setupView() {
+        imgReadPromotion.layer.cornerRadius = 2.5
         vLine.backgroundColor = PRColor.lineColor
     }
     
     func setData() {
         if  let _expiresAt = promotion.expiresAt, let _merchantName = promotion.merchant?.name,  let _url = promotion.image?.url?.medium {
+            if promotion.isReaded {
+                imgReadPromotion.isHidden = true
+            } else {
+                imgReadPromotion.isHidden = false
+            }
             let url = URL(string: _url)
             lbExpiresAt.text    = _expiresAt
             lbMerchantName.text = _merchantName
