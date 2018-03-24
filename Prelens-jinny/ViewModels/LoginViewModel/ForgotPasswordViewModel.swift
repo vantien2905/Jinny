@@ -27,7 +27,7 @@ final class ForgotPasswordViewModel {
             if email.isValidEmpty() == false {
                 self?.callAPIForgotPassword()
             } else {
-                PopUpHelper.shared.showMessage(message: "Please enter your email")
+                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyEmail)
             }
         }).disposed(by: disposeBag)
     }
