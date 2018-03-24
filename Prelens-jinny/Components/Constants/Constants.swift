@@ -63,6 +63,9 @@ struct Cell {
     static let promotionCell    = "PromotionCell"
     static let searchPromotion  = "SearchPromotionCell"
     static let emptyPromotion   = "EmptyPromotionCell"
+    
+    //Custom View
+    static let selectDataCell   = "SelectDataPopUpCell"
 }
 
 struct PRFont {

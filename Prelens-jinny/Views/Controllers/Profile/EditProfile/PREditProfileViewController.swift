@@ -114,7 +114,7 @@ class PREditProfileViewController: BaseViewController {
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
                 self.selectGender = true
-                let choose = PickerPopupView()
+                let choose = SelectDataPopUpView()
                 choose.delegate = self
                 //self.vmNewTask.inputs.isStartDate.value = false
                 self.tfName.endEditing(true)
@@ -137,7 +137,7 @@ class PREditProfileViewController: BaseViewController {
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
                 self.selectGender = false
-                let choose = PickerPopupView()
+                let choose = SelectDataPopUpView()
                 choose.delegate = self
                 //self.vmNewTask.inputs.isStartDate.value = false
                 self.tfName.endEditing(true)
@@ -176,6 +176,37 @@ class PREditProfileViewController: BaseViewController {
         
     }
 }
+extension PREditProfileViewController:SelectDataPopUpViewDelegate {
+    
+    func numberOfRows() -> Int {
+        switch selectGender {
+        case true:
+            return listGender.count
+        default:
+            return listRegion.count
+        }
+    }
+    
+    func titleForRow(index:Int) -> String {
+        guard let title = listRegion[index].name else { return ""}
+        switch selectGender {
+        case true:
+            return listGender[index]
+        default:
+            return title
+        }
+    }
+    func didSelectRow(index:Int) {
+        switch selectGender {
+        case true:
+            lbGender.text = listGender[index]
+            viewModel.gender.value =  listGender[index]
+        default:
+            lbResidentialRegion.text = listRegion[index].name
+            viewModel.regionID.value = listRegion[index].id ?? 0
+        }
+    }
+}
 extension PREditProfileViewController: ChooseDatePopUpViewDelegate {
     
     func selectedDate(date: Date) {
@@ -188,34 +219,3 @@ extension PREditProfileViewController: ChooseDatePopUpViewDelegate {
     }
 }
 
-extension PREditProfileViewController: PickerViewDelegate {
-    func numberOfRowsInComponent() -> Int {
-        switch selectGender {
-        case true:
-            return listGender.count
-        default:
-           return listRegion.count
-        }
-    }
-
-    func titleForRow(index:Int) -> String {
-        guard let title = listRegion[index].name else { return ""}
-        switch selectGender {
-        case true:
-            return listGender[index]
-        default:
-            return title
-        }
-    }
-    
-    func didSelectRow(index: Int) {
-        switch selectGender {
-        case true:
-           lbGender.text = listGender[index]
-           viewModel.gender.value =  listGender[index]
-        default:
-            lbResidentialRegion.text = listRegion[index].name
-            viewModel.regionID.value = listRegion[index].id ?? 0
-        }
-    }
-}
