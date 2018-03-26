@@ -22,8 +22,8 @@ class BaseViewController: UIViewController {
         setUpLayout()
         self.view.backgroundColor = PRColor.backgroundColor
     }
-
-    weak var delegate: BaseViewControllerDelegate?
+    weak var backTapDelegate: BaseViewControllerBackDelegate?
+    
     override func viewDidAppear(_ animated: Bool) {
         let img = UIImage()
         self.navigationController?.navigationBar.shadowImage = img
