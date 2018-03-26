@@ -38,20 +38,20 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acB-sn-ePF">
-                                    <rect key="frame" x="303" y="10" width="65" height="25"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BC-ze-1Bp" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
+                                    <rect key="frame" x="292" y="11" width="75" height="23"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="KNw-9A-tiC"/>
-                                        <constraint firstAttribute="width" constant="65.5" id="Rjb-gW-wSS"/>
+                                        <constraint firstAttribute="width" constant="75" id="B2U-2E-QWi"/>
+                                        <constraint firstAttribute="height" constant="23" id="p3E-5J-QM7"/>
                                     </constraints>
-                                    <state key="normal" image="switch_on"/>
-                                </button>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="acB-sn-ePF" secondAttribute="trailing" constant="7.5" id="2hp-2d-Dfb"/>
+                                <constraint firstItem="6BC-ze-1Bp" firstAttribute="centerY" secondItem="mfI-Iq-Z38" secondAttribute="centerY" id="9cY-Tr-F1m"/>
                                 <constraint firstItem="mfI-Iq-Z38" firstAttribute="leading" secondItem="xVp-Qz-fxX" secondAttribute="leading" constant="20" id="ARN-oE-gmM"/>
-                                <constraint firstItem="acB-sn-ePF" firstAttribute="centerY" secondItem="mfI-Iq-Z38" secondAttribute="centerY" id="ESF-35-Yfg"/>
+                                <constraint firstAttribute="trailing" secondItem="6BC-ze-1Bp" secondAttribute="trailing" constant="8" id="NoH-Jl-Hud"/>
                                 <constraint firstItem="mfI-Iq-Z38" firstAttribute="centerY" secondItem="xVp-Qz-fxX" secondAttribute="centerY" id="uhC-Mg-NR3"/>
                             </constraints>
                         </view>
@@ -64,17 +64,19 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvq-97-bt4">
-                                    <rect key="frame" x="303" y="10" width="65" height="25"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhd-S5-fYz" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
+                                    <rect key="frame" x="292" y="11" width="75" height="23"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="UfI-P7-eRq"/>
+                                        <constraint firstAttribute="height" constant="23" id="JGq-Mb-85Q"/>
+                                        <constraint firstAttribute="width" constant="75" id="iX6-QJ-Phf"/>
                                     </constraints>
-                                    <state key="normal" image="switch_on"/>
-                                </button>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="tvq-97-bt4" firstAttribute="centerY" secondItem="tf4-hK-GGe" secondAttribute="centerY" id="lBy-Fw-5gJ"/>
+                                <constraint firstAttribute="trailing" secondItem="jhd-S5-fYz" secondAttribute="trailing" constant="8" id="GDO-V0-aku"/>
+                                <constraint firstItem="jhd-S5-fYz" firstAttribute="centerY" secondItem="tf4-hK-GGe" secondAttribute="centerY" id="NG1-Iy-hlI"/>
                                 <constraint firstItem="tf4-hK-GGe" firstAttribute="centerY" secondItem="DfL-wV-iZH" secondAttribute="centerY" id="mmS-hN-sSe"/>
                             </constraints>
                         </view>
@@ -87,18 +89,20 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ni-bV-LNG">
-                                    <rect key="frame" x="303" y="10" width="65" height="25"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3b-cx-vLH" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
+                                    <rect key="frame" x="292" y="11" width="75" height="23"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="vSB-by-XRq"/>
+                                        <constraint firstAttribute="width" constant="75" id="3a7-q3-gaa"/>
+                                        <constraint firstAttribute="height" constant="23" id="GzW-AK-Egv"/>
                                     </constraints>
-                                    <state key="normal" image="switch_on"/>
-                                </button>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="2Ni-bV-LNG" firstAttribute="centerY" secondItem="Raa-4R-LQT" secondAttribute="centerY" id="Rdb-Xa-kqZ"/>
+                                <constraint firstItem="x3b-cx-vLH" firstAttribute="centerY" secondItem="Raa-4R-LQT" secondAttribute="centerY" id="IWN-qO-loO"/>
                                 <constraint firstItem="Raa-4R-LQT" firstAttribute="centerY" secondItem="3DE-zC-TUA" secondAttribute="centerY" id="a9v-Qk-Okd"/>
+                                <constraint firstAttribute="trailing" secondItem="x3b-cx-vLH" secondAttribute="trailing" constant="8" id="h99-9i-xiq"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-7F-qQN">
@@ -154,14 +158,11 @@
                     <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="xVp-Qz-fxX" firstAttribute="leading" secondItem="isB-vn-SdG" secondAttribute="leading" id="2d1-NK-J0V"/>
-                        <constraint firstItem="tvq-97-bt4" firstAttribute="leading" secondItem="acB-sn-ePF" secondAttribute="leading" id="35Y-GF-zpF"/>
                         <constraint firstItem="eo3-7F-qQN" firstAttribute="top" secondItem="3DE-zC-TUA" secondAttribute="bottom" constant="6" id="3DU-Vc-Mcd"/>
-                        <constraint firstItem="tvq-97-bt4" firstAttribute="trailing" secondItem="acB-sn-ePF" secondAttribute="trailing" id="3Jo-5U-62j"/>
                         <constraint firstItem="3DE-zC-TUA" firstAttribute="leading" secondItem="isB-vn-SdG" secondAttribute="leading" id="6Nt-b5-F6a"/>
                         <constraint firstAttribute="trailing" secondItem="eo3-7F-qQN" secondAttribute="trailing" id="BPA-VT-RIa"/>
                         <constraint firstItem="BNK-oX-3Wf" firstAttribute="top" secondItem="eo3-7F-qQN" secondAttribute="bottom" constant="53" id="Ewh-nK-UBv"/>
                         <constraint firstAttribute="trailing" secondItem="3DE-zC-TUA" secondAttribute="trailing" id="HOy-uZ-0n3"/>
-                        <constraint firstItem="2Ni-bV-LNG" firstAttribute="leading" secondItem="tvq-97-bt4" secondAttribute="leading" id="JFk-F8-MHd"/>
                         <constraint firstAttribute="trailing" secondItem="BNK-oX-3Wf" secondAttribute="trailing" id="M0C-u5-sbj"/>
                         <constraint firstItem="DfL-wV-iZH" firstAttribute="top" secondItem="xVp-Qz-fxX" secondAttribute="bottom" constant="6" id="MCD-Ca-RCm"/>
                         <constraint firstAttribute="trailing" secondItem="xVp-Qz-fxX" secondAttribute="trailing" id="PT8-7Q-GhS"/>
@@ -169,7 +170,6 @@
                         <constraint firstItem="Raa-4R-LQT" firstAttribute="leading" secondItem="mfI-Iq-Z38" secondAttribute="leading" id="Y6w-Ii-M4R"/>
                         <constraint firstItem="eo3-7F-qQN" firstAttribute="height" secondItem="3DE-zC-TUA" secondAttribute="height" id="aqI-qr-lnt"/>
                         <constraint firstItem="BNK-oX-3Wf" firstAttribute="height" secondItem="eo3-7F-qQN" secondAttribute="height" id="b9a-xF-Fet"/>
-                        <constraint firstItem="2Ni-bV-LNG" firstAttribute="trailing" secondItem="tvq-97-bt4" secondAttribute="trailing" id="bFe-5a-55I"/>
                         <constraint firstAttribute="trailing" secondItem="DfL-wV-iZH" secondAttribute="trailing" id="eYc-Zt-a0h"/>
                         <constraint firstItem="BNK-oX-3Wf" firstAttribute="leading" secondItem="isB-vn-SdG" secondAttribute="leading" id="giG-wo-5s1"/>
                         <constraint firstItem="xVp-Qz-fxX" firstAttribute="top" secondItem="isB-vn-SdG" secondAttribute="top" constant="15" id="jUh-zA-xa7"/>
@@ -197,6 +197,5 @@
     </objects>
     <resources>
         <image name="next_black" width="5" height="9"/>
-        <image name="switch_on" width="65" height="25"/>
     </resources>
 </document>

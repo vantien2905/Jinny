@@ -33,7 +33,7 @@ class PRSwitch :PRBaseView {
      var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
     override func setUpViews() {
         self.addSubview(vHorizontal)
-        //self.addSubview(imgCircle)
+        self.addSubview(imgCircle)
         self.addSubview(btnAction)
         
         vHorizontal.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
@@ -46,18 +46,22 @@ class PRSwitch :PRBaseView {
     
     @objc func btnActionTapped() {
         if isCheck.value {
+            vHorizontal.backgroundColor = UIColor.green
             UIView.animate(withDuration: 0.5, animations: {
-                self.imgCircle.frame = CGRect(x: self.bounds.maxX - 22.5, y: self.bounds.minY, width: 22.5, height: 22.5)
+                self.imgCircle.frame = CGRect(x: self.bounds.maxX - 26, y: self.bounds.minY + 0.5 , width: 22, height: 22)
+                self.isCheck.value = false
             })
         } else {
+            vHorizontal.backgroundColor = UIColor.gray
             UIView.animate(withDuration: 0.5, animations: {
-                self.imgCircle.frame = CGRect(x: self.bounds.minX, y: self.bounds.minY, width: 22.5, height: 22.5)
+                self.imgCircle.frame = CGRect(x: self.bounds.minX + 4 , y: self.bounds.minY + 0.5, width: 22, height: 22)
+                self.isCheck.value = true
             })
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        imgCircle.frame = CGRect(x: self.bounds.minX, y: self.bounds.minY, width: 22.5, height: 22.5)
+        imgCircle.frame = CGRect(x: self.bounds.minX + 4, y: self.bounds.minY + 0.5 , width: 22, height: 22)
     }
 }
