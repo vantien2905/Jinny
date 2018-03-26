@@ -7,16 +7,39 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class StarredPromotionViewController: UIViewController {
 
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
-    var listStarred = [String] ()
+    let viewModel = PromotionViewModel()
+    let disposeBag = DisposeBag()
+    
+    var listStarredPromotion = [Promotion]() {
+        didSet {
+//            filteredData = listPromotion
+            self.cvStarredPromotion.reloadData()
+        }
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
+        
+        bindData()
+        viewModel.getListStarredPromotion()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configColecttionView()
-        // Do any additional setup after loading the view.
+    }
+    
+    @objc func bindData() {
+        viewModel.outputs.listStarredPromotion.asObservable().subscribe(onNext: { promotions in
+            self.listStarredPromotion = promotions
+            self.cvStarredPromotion.reloadData()
+        }).disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,12 +68,12 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             return cell
         case 1:
             let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
-            if self.listStarred.count == 0 {
+            if self.listStarredPromotion.count == 0 {
                 cell.vFilter.isHidden = true
             }
             return cell
         default:
-            if self.listStarred.count == 0 {
+            if self.listStarredPromotion.count == 0 {
                 let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.emptyPromotion, for: indexPath) as! EmptyPromotionCell
                 
                 return cell
@@ -68,10 +91,10 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 2:
-            if listStarred.count == 0 {
+            if listStarredPromotion.count == 0 {
                 return 1
             } else {
-                return 5
+                return listStarredPromotion.count
             }
         default:
             return 1
@@ -85,7 +108,7 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
         case 1:
             return CGSize(width: collectionView.frame.width - 30, height: 40 )
         default:
-            if self.listStarred.count == 0 {
+            if self.listStarredPromotion.count == 0 {
                 return CGSize(width: collectionView.frame.width - 30, height: 30)
             } else {
                 return CGSize(width: (collectionView.frame.width - 30), height: (collectionView.frame.height / 2  ))

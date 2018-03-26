@@ -64,6 +64,12 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
             }
         }).disposed(by: disposeBag)
         
+        viewModel.isAddFail.asObservable().subscribe(onNext: {[weak self] (fail) in
+            if fail == true {
+                self?.startReading()
+            }
+        }).disposed(by: disposeBag)
+        
         viewModel.merchant.asObservable().subscribe(onNext: {[weak self] (merchant) in
             guard let strongSelf = self else { return }
             

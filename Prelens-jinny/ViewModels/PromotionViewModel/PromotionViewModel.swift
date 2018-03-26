@@ -18,15 +18,22 @@ class PromotionViewModel {
     }
     
     class PromotionViewModelOutput {
-        var listPromotion = Variable<[Promotion]>([])
+        var listAllPromotion        = Variable<[Promotion]>([])
+        var listStarredPromotion    = Variable<[Promotion]>([])
     }
     
     var inputs = PromotionViewModelInput()
     var outputs = PromotionViewModelOutput()
     
-    func getListPromotion() {
+    func getListAllPromotion() {
         Provider.shared.promotionService.getListAllPromotion().subscribe(onNext: { (listPromotion) in
-            self.outputs.listPromotion.value = listPromotion
+            self.outputs.listAllPromotion.value = listPromotion
+        }).disposed(by: disposeBag)
+    }
+    
+    func getListStarredPromotion(){
+        Provider.shared.promotionService.getListStarredPromotion().subscribe(onNext: { (listPromotion) in
+            self.outputs.listStarredPromotion.value = listPromotion
         }).disposed(by: disposeBag)
     }
     

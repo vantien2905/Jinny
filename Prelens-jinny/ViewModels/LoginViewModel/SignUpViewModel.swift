@@ -68,7 +68,18 @@ final class SignUpViewModel {
                     }
                 }
             } else {
-                 PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
+                if email.isValidEmpty() && pass.isValidEmpty(){
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
+                    return
+                }
+                if email.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyEmail)
+                    return
+                }
+                if pass.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyPassword)
+                    return
+                }
             }
         }).disposed(by: disposeBag)
     }

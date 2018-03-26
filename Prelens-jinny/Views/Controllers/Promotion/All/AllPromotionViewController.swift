@@ -33,7 +33,7 @@ class AllPromotionViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         
         bindData()
-        viewModel.getListPromotion()
+        viewModel.getListAllPromotion()
         //pullToRefesh()
     }
     
@@ -60,7 +60,7 @@ class AllPromotionViewController: UIViewController {
     }
     
     @objc func bindData() {
-        viewModel.outputs.listPromotion.asObservable().subscribe(onNext: { promotions in
+        viewModel.outputs.listAllPromotion.asObservable().subscribe(onNext: { promotions in
             //if let _promotion = promotions {
                 self.listPromotion = promotions
                 self.cvAllPromotion.reloadData()
