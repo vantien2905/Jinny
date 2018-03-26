@@ -31,6 +31,6 @@ class SearchView: PRBaseViewXib {
         vContent.layer.masksToBounds = true
         self.layer.cornerRadius = 2.5
         vContent.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
-//        vContent.backgroundColor = PRColor.backgroundColor
+        self.backgroundColor = PRColor.backgroundColor
     }
 }

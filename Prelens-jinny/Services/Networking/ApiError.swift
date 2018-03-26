@@ -9,12 +9,13 @@
 import Foundation
 import SwiftyJSON
 import ObjectMapper
+import RxSwift
+var scanError: Variable<Bool> = Variable<Bool>(false)
 
 class ApiError: Error {
 
     let statusCode: Int
 //    let responseError: ResponseError?
-
     init?(response: Response) {
         switch response.statusCode {
         case 200...299:
@@ -25,7 +26,15 @@ class ApiError: Error {
             } else {
                 let responseError = Mapper<ResponseError>().map(JSONObject: json.dictionaryObject)
                 guard let _responseError = responseError else { return nil }
-                PopUpHelper.shared.showMessage(message: _responseError.message&)
+                
+                if _responseError.message == "Validation failed: Code has already been taken" {
+                    PopUpHelper.shared.showPopUp(message: _responseError.message&, action: {
+                        scanError.value = true
+                    })
+                    
+                } else {
+                     PopUpHelper.shared.showMessage(message: _responseError.message&)
+                }
                 self.statusCode = 0
             }
 

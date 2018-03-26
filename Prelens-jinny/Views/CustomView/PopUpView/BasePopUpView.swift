@@ -47,7 +47,7 @@ class BasePopUpView: UIView {
     }
 
     @objc func btnCoverTapped() {
-        hidePopUp()
+//        hidePopUp()
     }
 
     func showPopUp(height: CGFloat = 250) {
