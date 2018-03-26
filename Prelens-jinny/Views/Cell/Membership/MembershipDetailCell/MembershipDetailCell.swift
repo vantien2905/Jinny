@@ -10,28 +10,41 @@ import UIKit
 import SDWebImage
 
 class MembershipDetailCell: UITableViewCell {
-    @IBOutlet weak var vContent: UIView!
+    var promotion = Promotion() {
+        didSet {
+            self.setData()
+        }
+    }
+    
+    @IBOutlet weak var lbExpiresAt: UILabel!
+    @IBOutlet weak var lbMerchantName: UILabel!
+    @IBOutlet weak var vLine: UIView!
     @IBOutlet weak var imgPromotion: UIImageView!
+    @IBOutlet weak var vContent: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = PRColor.backgroundColor
-        imgPromotion.layer.cornerRadius = 2.5
-        imgPromotion.layer.masksToBounds = true
-        imgPromotion.contentMode = .scaleAspectFill
-        vContent.backgroundColor = PRColor.backgroundColor
-        
+        setupView()
+        setData()
+        // Initialization code
     }
-
+    
+    func setupView() {
+        vLine.backgroundColor = PRColor.lineColor
+        vContent.backgroundColor = PRColor.backgroundColor
+    }
+    
+    func setData() {
+        if  let _expiresAt = promotion.expiresAt, let _merchantName = promotion.merchant?.name,  let _url = promotion.image?.url?.medium {
+            let url = URL(string: _url)
+            lbExpiresAt.text    = "Expiry date: \(_expiresAt)"
+            lbMerchantName.text = _merchantName
+            imgPromotion.sd_setImage(with: url, placeholderImage: nil)
+        }
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.selectionStyle = .none
-    }
-    
-    func setData(urlImage: String?) {
-        if let _url = urlImage {
-            let url = URL(string: _url)
-            imgPromotion.sd_setImage(with: url, placeholderImage: nil)
-        }
     }
 
 }

@@ -35,6 +35,7 @@
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
 		76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */; };
+		76BA686720689A860006E226 /* PRSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA686620689A860006E226 /* PRSwitch.swift */; };
 		76DC88EA205F5A6700AD87F3 /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */; };
 		76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */; };
 		76DC88F1205F602000AD87F3 /* AllPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */; };
@@ -226,6 +227,7 @@
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
+		76BA686620689A860006E226 /* PRSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSwitch.swift; sourceTree = "<group>"; };
 		76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
 		76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionViewController.xib; sourceTree = "<group>"; };
 		76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPromotionViewController.swift; sourceTree = "<group>"; };
@@ -485,6 +487,14 @@
 				765270F82062917400CD4038 /* ChooseDatePopupView.swift */,
 			);
 			path = ChooseDatePopupView;
+			sourceTree = "<group>";
+		};
+		76BA6865206899FA0006E226 /* PRSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				76BA686620689A860006E226 /* PRSwitch.swift */,
+			);
+			path = PRSwitch;
 			sourceTree = "<group>";
 		};
 		76D9FB4E2063883600EDF2FC /* PickerPopupView */ = {
@@ -1031,6 +1041,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				76BA6865206899FA0006E226 /* PRSwitch */,
 				76D9FB4E2063883600EDF2FC /* PickerPopupView */,
 				B7054001206383A10028D90E /* PRLoadingView */,
 				765270F72062910900CD4038 /* ChooseDatePopupView */,
@@ -1554,6 +1565,7 @@
 				BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */,
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
+				76BA686720689A860006E226 /* PRSwitch.swift in Sources */,
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
 				760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */,
 				BC6EF85F2061063200A156B9 /* PRPhotoDetail.swift in Sources */,

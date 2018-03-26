@@ -32,7 +32,6 @@ class ScanCodeViewModel: ScanCodeViewModelProtocol {
             strongSelf.isAddSuccess.value = true
             }, onError: { (_) in
                 print("error")
-                self.isAddFail.value = true
         }).disposed(by: disposeBag)
     }
 }

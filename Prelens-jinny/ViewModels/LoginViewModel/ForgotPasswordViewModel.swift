@@ -14,13 +14,14 @@ final class ForgotPasswordViewModel {
     private var disposeBag          = DisposeBag()
 
     public var email: Variable<String?>
-    //public var isValidInput         : Variable<Bool>
     public var btnSubmitTapped: PublishSubject<Void>
-
+     public var isSuccess: PublishSubject<Bool>
+    
     init() {
         self.email = Variable<String?>(nil)
         self.btnSubmitTapped = PublishSubject<Void>()
-
+         self.isSuccess = PublishSubject<Bool>()
+        
         self.btnSubmitTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
             guard let email = strongSelf.email.value else { return }
@@ -37,10 +38,11 @@ final class ForgotPasswordViewModel {
         Provider.shared.authenticationService.forgotPassword(email: email)
         .subscribe(onNext: { [weak self] (_) in
             guard let strongSelf = self else { return }
-            PopUpHelper.shared.showMessage(message: ContantMessages.Login.successResetPassword)
+            PopUpHelper.shared.showPopUp(message: ContantMessages.Login.successResetPassword, action: {
+                strongSelf.isSuccess.onCompleted()
+            })
         }, onError: { (error) in
             print(error)
         }).disposed(by: disposeBag)
     }
-
 }

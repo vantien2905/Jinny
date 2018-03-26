@@ -49,5 +49,11 @@ class PRForgotPasswordViewController: BaseViewController {
             .subscribe(onNext: {
                 self.tfEmail.endEditing(true)
             }).disposed(by: disposeBag)
+        
+        vm.isSuccess.subscribe (onCompleted: {
+            DispatchQueue.main.async {
+              self.navigationController?.popViewController(animated: true)
+            }
+        }).disposed(by: disposeBag)
     }
 }

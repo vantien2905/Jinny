@@ -58,6 +58,8 @@ class MembershipDetailViewController: BaseViewController {
         tbMembershipDetail.register(UINib(nibName: Cell.membershipDetail, bundle: nil), forCellReuseIdentifier: Cell.membershipDetail)
         tbMembershipDetail.register(UINib(nibName: Cell.headerMemBershipDetail, bundle: nil), forCellReuseIdentifier: Cell.headerMemBershipDetail)
         tbMembershipDetail.register(UINib(nibName: Cell.footerMembershipDetail, bundle: nil), forCellReuseIdentifier: Cell.footerMembershipDetail)
+        tbMembershipDetail.estimatedRowHeight = 100
+        tbMembershipDetail.rowHeight = UITableViewAutomaticDimension
 
         tbMembershipDetail.backgroundColor = PRColor.backgroundColor
         tbMembershipDetail.separatorStyle = .none
@@ -119,13 +121,11 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.membershipDetail, for: indexPath) as! MembershipDetailCell
-            if let _vouchers = membershipDetail.vouchers {
-                if _vouchers.count > indexPath.item {
-                    if let _image = _vouchers[indexPath.item].image, let _urlImage = _image.url, let _urlThumb = _urlImage.original {
-                        cell.setData(urlImage: _urlThumb)
-                    }
-                }
+            if let _voucher = membershipDetail.vouchers {
+                _voucher[indexPath.item].merchant = membershipDetail.merchant
+                cell.promotion = _voucher[indexPath.item]
             }
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.footerMembershipDetail, for: indexPath) as! FooterMembershipDetailCell
@@ -157,7 +157,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
         case 0:
             return 270
         case 1:
-            return 163
+            return UITableViewAutomaticDimension
         default:
             return 50
         }
