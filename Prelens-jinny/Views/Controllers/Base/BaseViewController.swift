@@ -22,7 +22,8 @@ class BaseViewController: UIViewController {
         setUpLayout()
         self.view.backgroundColor = PRColor.backgroundColor
     }
-    weak var backTapDelegate: BaseViewControllerBackDelegate?
+    
+    weak var delegate: BaseViewControllerDelegate?
     
     override func viewDidAppear(_ animated: Bool) {
         let img = UIImage()

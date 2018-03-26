@@ -57,7 +57,7 @@ extension MerchantBranchViewController: UITableViewDelegate, UITableViewDataSour
             let cell = tbMerchantBranch.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! MerchantDetailHeaderCell
             cell.imvMerchantAvatar.sd_setImage(with: MembershipDetailViewController.urlThumb!, placeholder: nil, failedImage: nil)
             cell.lbAddress.text = merchantBrancht.name
-            cell.tvDescription.text = MembershipDetailViewController.merchantDescription!
+            cell.tvDescription.text = merchantBrancht.address //  MembershipDetailViewController.merchantDescription!
             return cell
         } else if indexPath.section == 2 {
             let cell = tbMerchantBranch.dequeueReusableCell(withIdentifier: "merchantBranchCell", for: indexPath) as! MerchantBranchCell
@@ -78,7 +78,7 @@ extension MerchantBranchViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            guard let description = MembershipDetailViewController.merchantDescription else { return 120 }
+            guard let description = merchantBrancht.address else { return 120 }
             let height = description.height(withConstrainedWidth: UIScreen.main.bounds.width - 70, font: UIFont.systemFont(ofSize: 14))
             return 200 + height + 20
         } else if indexPath.section == 1 {
