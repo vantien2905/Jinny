@@ -122,6 +122,7 @@
 		B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */; };
 		B7CD0654205FA765009951A4 /* MembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */; };
 		BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
+		BC387EC020681B29009E29A7 /* PromotionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC387EBF20681B29009E29A7 /* PromotionDetail.swift */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
@@ -309,6 +310,7 @@
 		B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailCell.swift; sourceTree = "<group>"; };
 		B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailCell.xib; sourceTree = "<group>"; };
 		BC36E973205846B1006A90A0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		BC387EBF20681B29009E29A7 /* PromotionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetail.swift; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			children = (
 				760EC3AD2060A682001390B8 /* Promotion.swift */,
 				760EC3AF2060A93D001390B8 /* Image.swift */,
+				BC387EBF20681B29009E29A7 /* PromotionDetail.swift */,
 			);
 			path = Promotion;
 			sourceTree = "<group>";
@@ -1574,6 +1577,7 @@
 				76DC88F5205F603A00AD87F3 /* StarredPromotionViewController.swift in Sources */,
 				B788665B205A1C5800096F27 /* Url.swift in Sources */,
 				BCAA4A5420623A8900B6D1D9 /* MerchantDetailViewModel.swift in Sources */,
+				BC387EC020681B29009E29A7 /* PromotionDetail.swift in Sources */,
 				B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */,
 				BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,

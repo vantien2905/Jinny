@@ -14,6 +14,7 @@ class Promotion: NSObject, Mappable {
     var merchant        : Merchant?
     var isReaded        : Bool = false
     var image           : Image?
+    var isBookMarked    : Bool = false
     
     override init() {
         super.init()
@@ -29,5 +30,6 @@ class Promotion: NSObject, Mappable {
         self.merchant   <- map["merchant"]
         self.isReaded   <- map["is_readed"]
         self.image      <- map["image"]
+        self.isBookMarked <- map["is_bookmarked"]
      }
 }

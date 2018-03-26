@@ -160,7 +160,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        if self.filteredData.count == 0{
+        if self.filteredData.count == 0 {
             return
         } else {
             if indexPath.section == 2 {

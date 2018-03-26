@@ -11,6 +11,7 @@ import RxCocoa
 
 class PromotionViewModel {
     let disposeBag = DisposeBag()
+    var isBookmark: Variable<Bool> = Variable<Bool> (false)
     
     class PromotionViewModelInput {
         
@@ -28,4 +29,13 @@ class PromotionViewModel {
             self.outputs.listPromotion.value = listPromotion
         }).disposed(by: disposeBag)
     }
+    
+    func addBookmarkVoucher(idBookmark: Int) {
+        Provider.shared.promotionService.addBookmarkVoucher(idBookmark: idBookmark).subscribe(onNext: { (promotion) in
+            guard let _promotion = promotion else { return }
+            self.isBookmark.value = _promotion.isBookMarked
+        }).disposed(by: disposeBag)
+    }
+    
+    
 }
