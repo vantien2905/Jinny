@@ -19,12 +19,11 @@ class AddVoucherViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpScan()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        delay(0.5) {
+        delay(1) {
             self.reloadScanner()
         }
     }
@@ -36,7 +35,8 @@ class AddVoucherViewController: BaseViewController {
     
     func setUpView() {
         setTitle(title: "ADD VOUCHER", textColor: .black, backgroundColor: .white)
-        
+        self.navigationController?.navigationBar.isHidden = false
+        setUpScan()
     }
     
     func setUpScan() {
@@ -50,7 +50,7 @@ class AddVoucherViewController: BaseViewController {
         scanner?.maxDetectedCount = 1
         scanner?.prepareScan(vScanQR, completion: { (qrstring) in
             //            string in this colosure is the result
-            print("abcabc")
+            print(qrstring)
         })
         scanner?.startScan()
     }

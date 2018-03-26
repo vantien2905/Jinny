@@ -13,7 +13,6 @@ protocol FooterMembershipDetailCellDelegate: class {
 
 class FooterMembershipDetailCell: UITableViewCell {
     @IBOutlet weak var vContent: UIView!
-    @IBOutlet weak var vBottom: UIView!
     @IBOutlet weak var vSupper: UIView!
     weak var delegate: FooterMembershipDetailCellDelegate?
     @IBAction func btnRemoveTapped() {
@@ -23,7 +22,6 @@ class FooterMembershipDetailCell: UITableViewCell {
         super.awakeFromNib()
         vContent.backgroundColor = PRColor.backgroundColor
         self.backgroundColor = PRColor.backgroundColor
-        vBottom.backgroundColor = PRColor.lineColor
         vSupper.backgroundColor = PRColor.backgroundColor
     }
 

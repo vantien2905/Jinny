@@ -28,7 +28,6 @@ class AllPromotionViewController: UIViewController {
         }
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         
@@ -160,7 +159,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        if self.filteredData.count == 0{
+        if self.filteredData.count == 0 {
             return
         } else {
             if indexPath.section == 2 {

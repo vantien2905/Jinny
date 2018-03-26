@@ -52,6 +52,7 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     }
     
     func bindData() {
+        scanError.asObservable().bind(to: self.viewModel.isAddFail).disposed(by: disposeBag)
         viewModel.isAddSuccess.asObservable().subscribe(onNext: {[weak self] (isSuccess) in
             if isSuccess == true {
                 PopUpHelper.shared.showPopUp(message: "Membership added", action: {
@@ -127,8 +128,9 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
 
         for metadata in metadataObjects {
-            let readableObject = metadata as! AVMetadataMachineReadableCodeObject
-            let code = readableObject.stringValue
+            let readableObject = metadata as? AVMetadataMachineReadableCodeObject
+            guard let _readableObject = readableObject else { return }
+            let code = _readableObject.stringValue
         
             self.dismiss(animated: true, completion: nil)
             if let _code = code {
@@ -141,5 +143,4 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
             
         }
     }
-
 }
