@@ -65,14 +65,15 @@ extension MerchantBranchViewController: UITableViewDelegate, UITableViewDataSour
             cell.lbDays.text = daysArray[indexPath.row]
             cell.lbTime.text = (merchantBrancht.openHours!.first?.startTime!)! + "-" + (merchantBrancht.openHours!.first?.closeTime!)!
             cell.lbOpeningHours.isHidden = true
-
+            
             return cell
         } else {
             let cell = tbMerchantBranch.dequeueReusableCell(withIdentifier: "merchantBranchCell", for: indexPath) as! MerchantBranchCell
             cell.lbDays.isHidden = true
             cell.lbTime.isHidden = true
-              cell.vBottomLine.isHidden = true
+            cell.vBottomLine.isHidden = true
             cell.lbOpeningHours.text = "Opening Hours"
+            
             return cell
         }
     }
