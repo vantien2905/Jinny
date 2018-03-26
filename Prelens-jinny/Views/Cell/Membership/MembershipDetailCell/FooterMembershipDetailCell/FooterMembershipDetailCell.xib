@@ -28,14 +28,14 @@
                         <rect key="frame" x="110" y="26" width="166" height="30.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="671-5h-xus">
-                                <rect key="frame" x="0.0" y="5.5" width="16.5" height="17.5"/>
+                                <rect key="frame" x="0.0" y="6.5" width="16.5" height="17.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16.5" id="S9N-xe-cSN"/>
                                     <constraint firstAttribute="height" constant="17.5" id="nxF-i2-QDd"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove membership" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWG-Gn-q3L">
-                                <rect key="frame" x="21.5" y="5" width="144.5" height="20"/>
+                                <rect key="frame" x="21.5" y="6" width="144.5" height="20"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                 <color key="textColor" red="0.8901960784313725" green="0.070588235294117646" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -50,13 +50,6 @@
                             <constraint firstItem="VWG-Gn-q3L" firstAttribute="centerY" secondItem="671-5h-xus" secondAttribute="centerY" id="dde-rQ-L4w"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbk-Ix-Zmd">
-                        <rect key="frame" x="24" y="0.0" width="338" height="1"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="evi-ye-Vmx"/>
-                        </constraints>
-                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-4y-G2h">
                         <rect key="frame" x="110" y="26" width="166" height="30"/>
                         <connections>
@@ -66,19 +59,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="ys0-hK-uNJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2Et-nG-FsY"/>
-                    <constraint firstItem="bbk-Ix-Zmd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QDi-fD-vHQ"/>
                     <constraint firstItem="ys0-hK-uNJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="QEq-o3-qqd"/>
                     <constraint firstItem="nOd-4y-G2h" firstAttribute="leading" secondItem="ys0-hK-uNJ" secondAttribute="leading" id="UDS-kC-pYr"/>
                     <constraint firstItem="nOd-4y-G2h" firstAttribute="top" secondItem="ys0-hK-uNJ" secondAttribute="top" id="WK5-ne-1ib"/>
                     <constraint firstItem="nOd-4y-G2h" firstAttribute="bottom" secondItem="ys0-hK-uNJ" secondAttribute="bottom" id="aCt-Cq-7hX"/>
                     <constraint firstItem="nOd-4y-G2h" firstAttribute="trailing" secondItem="ys0-hK-uNJ" secondAttribute="trailing" id="cpG-ad-Aax"/>
-                    <constraint firstAttribute="trailing" secondItem="bbk-Ix-Zmd" secondAttribute="trailing" constant="24" id="fCo-LJ-qwm"/>
-                    <constraint firstItem="bbk-Ix-Zmd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="uHj-aP-fpx"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="vBottom" destination="bbk-Ix-Zmd" id="276-aG-mW2"/>
                 <outlet property="vContent" destination="ys0-hK-uNJ" id="LAA-Hd-YDC"/>
                 <outlet property="vSupper" destination="H2p-sc-9uM" id="fxk-7M-yYC"/>
             </connections>
