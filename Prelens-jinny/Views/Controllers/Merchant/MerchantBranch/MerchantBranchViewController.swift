@@ -57,7 +57,8 @@ extension MerchantBranchViewController: UITableViewDelegate, UITableViewDataSour
             let cell = tbMerchantBranch.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! MerchantDetailHeaderCell
             cell.imvMerchantAvatar.sd_setImage(with: MembershipDetailViewController.urlThumb!, placeholder: nil, failedImage: nil)
             cell.lbAddress.text = merchantBrancht.name
-            cell.tvDescription.text = merchantBrancht.address //  MembershipDetailViewController.merchantDescription!
+            cell.tvDescription.text = merchantBrancht.address
+            cell.lcsImageAvatar.constant = 70
             return cell
         } else if indexPath.section == 2 {
             let cell = tbMerchantBranch.dequeueReusableCell(withIdentifier: "merchantBranchCell", for: indexPath) as! MerchantBranchCell
