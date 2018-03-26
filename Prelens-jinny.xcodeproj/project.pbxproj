@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
+		760B45A020653F0800DDD7B0 /* SelectDataPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760B459F20653F0800DDD7B0 /* SelectDataPopUpView.swift */; };
 		760C1124205D164C009B9205 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C1122205D164C009B9205 /* SettingViewController.swift */; };
 		760C1125205D164C009B9205 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760C1123205D164C009B9205 /* SettingViewController.xib */; };
 		760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC7FD2062127B008A8EF1 /* EditProfileViewModel.swift */; };
 		760DC800206215DB008A8EF1 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC7FF206215DB008A8EF1 /* ProfileService.swift */; };
+		760DD37B2065E3E70031DA90 /* SelectDataPopUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DD3792065E3E70031DA90 /* SelectDataPopUpCell.swift */; };
+		760DD37C2065E3E70031DA90 /* SelectDataPopUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760DD37A2065E3E70031DA90 /* SelectDataPopUpCell.xib */; };
 		760EC3AE2060A682001390B8 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3AD2060A682001390B8 /* Promotion.swift */; };
 		760EC3B02060A93D001390B8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3AF2060A93D001390B8 /* Image.swift */; };
 		760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3B12060AC5E001390B8 /* PromotionService.swift */; };
@@ -32,7 +35,6 @@
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
 		76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */; };
-		76D9FB502063886200EDF2FC /* PickerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9FB4F2063886200EDF2FC /* PickerPopupView.swift */; };
 		76DC88EA205F5A6700AD87F3 /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */; };
 		76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */; };
 		76DC88F1205F602000AD87F3 /* AllPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */; };
@@ -196,10 +198,13 @@
 		31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C2604B2DD562F683B9FC9 /* Pods_Prelens_jinnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prelens_jinnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		760B459F20653F0800DDD7B0 /* SelectDataPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataPopUpView.swift; sourceTree = "<group>"; };
 		760C1122205D164C009B9205 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		760C1123205D164C009B9205 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		760DC7FD2062127B008A8EF1 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		760DC7FF206215DB008A8EF1 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		760DD3792065E3E70031DA90 /* SelectDataPopUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataPopUpCell.swift; sourceTree = "<group>"; };
+		760DD37A2065E3E70031DA90 /* SelectDataPopUpCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDataPopUpCell.xib; sourceTree = "<group>"; };
 		760EC3AD2060A682001390B8 /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		760EC3AF2060A93D001390B8 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		760EC3B12060AC5E001390B8 /* PromotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionService.swift; sourceTree = "<group>"; };
@@ -220,7 +225,6 @@
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
-		76D9FB4F2063886200EDF2FC /* PickerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPopupView.swift; sourceTree = "<group>"; };
 		76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
 		76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionViewController.xib; sourceTree = "<group>"; };
 		76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPromotionViewController.swift; sourceTree = "<group>"; };
@@ -483,7 +487,9 @@
 		76D9FB4E2063883600EDF2FC /* PickerPopupView */ = {
 			isa = PBXGroup;
 			children = (
-				76D9FB4F2063886200EDF2FC /* PickerPopupView.swift */,
+				760B459F20653F0800DDD7B0 /* SelectDataPopUpView.swift */,
+				760DD3792065E3E70031DA90 /* SelectDataPopUpCell.swift */,
+				760DD37A2065E3E70031DA90 /* SelectDataPopUpCell.xib */,
 			);
 			path = PickerPopupView;
 			sourceTree = "<group>";
@@ -1351,6 +1357,7 @@
 				B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */,
 				BC770A71204CEE5D0052A285 /* LaunchScreen.storyboard in Resources */,
 				B7899EB92060A76100ADEC43 /* AddMerchantViewController.xib in Resources */,
+				760DD37C2065E3E70031DA90 /* SelectDataPopUpCell.xib in Resources */,
 				B7B1BC992058D7FA0042B3D4 /* segoeuiz.ttf in Resources */,
 				BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */,
 				76DC88F2205F602000AD87F3 /* AllPromotionViewController.xib in Resources */,
@@ -1522,6 +1529,7 @@
 				BCE3495920565A5000B8C440 /* PRUser.swift in Sources */,
 				B7899EB82060A76100ADEC43 /* AddMerchantViewController.swift in Sources */,
 				D9911859205B7AC100F701ED /* ApiError.swift in Sources */,
+				760B45A020653F0800DDD7B0 /* SelectDataPopUpView.swift in Sources */,
 				BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */,
@@ -1538,8 +1546,8 @@
 				760C1124205D164C009B9205 /* SettingViewController.swift in Sources */,
 				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
+				760DD37B2065E3E70031DA90 /* SelectDataPopUpCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
-				76D9FB502063886200EDF2FC /* PickerPopupView.swift in Sources */,
 				BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */,
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,

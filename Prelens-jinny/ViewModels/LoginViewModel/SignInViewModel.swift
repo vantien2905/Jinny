@@ -59,7 +59,18 @@ final class SignInViewModel {
                     }
                 }
             } else {
-                PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
+                if email.isValidEmpty() && pass.isValidEmpty(){
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
+                    return
+                }
+                if email.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyEmail)
+                    return
+                }
+                if pass.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyPassword)
+                    return
+                }
             }
         }).disposed(by: disposeBag)
 
@@ -83,7 +94,6 @@ final class SignInViewModel {
             }).disposed(by: disposeBag)
 
     }
-
     func checkValid(emailText: Observable<String?>, passwordText: Observable<String?>) -> Observable<Bool> {
         return Observable.combineLatest(emailText, passwordText) {(email, password) -> Bool in
             guard let _email = email, let _password = password else {
