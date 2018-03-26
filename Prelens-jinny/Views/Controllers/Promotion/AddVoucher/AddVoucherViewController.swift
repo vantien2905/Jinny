@@ -49,7 +49,7 @@ class AddVoucherViewController: BaseViewController {
         scanner = QRCode()
         scanner?.maxDetectedCount = 1
         scanner?.prepareScan(vScanQR, completion: { (qrstring) in
-            //            string in this colosure is the result
+            
             print(qrstring)
         })
         scanner?.startScan()

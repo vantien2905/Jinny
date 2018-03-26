@@ -22,8 +22,9 @@ class BaseViewController: UIViewController {
         setUpLayout()
         self.view.backgroundColor = PRColor.backgroundColor
     }
-
+    
     weak var delegate: BaseViewControllerDelegate?
+    
     override func viewDidAppear(_ animated: Bool) {
         let img = UIImage()
         self.navigationController?.navigationBar.shadowImage = img
