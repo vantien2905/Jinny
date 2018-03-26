@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import RxSwift
 
 class PromotionDetailViewController: BaseViewController {
     
     @IBOutlet weak var cvVoucherDetail: UICollectionView!
     @IBOutlet weak var btnRedeem: UIButton!
     
-    var promotionDetailData: Promotion?
+    var isStarTapped = false
+    var viewModel: PromotionDetailViewModelProtocol!
+    var promotionDetailData: Promotion? {
+        didSet {
+            guard let data = promotionDetailData else { return }
+        //    data.isBookmarked ? addStarButtonOn() : addStarButtonOff()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +33,22 @@ class PromotionDetailViewController: BaseViewController {
         setNavigation(name: "Voucher Name")
     }
     
+    class func configureViewController(idVoucher: Int) -> UIViewController {
+        let vcVoucherDetail = PromotionDetailViewController.initControllerFromNib() as! PromotionDetailViewController
+        var viewModel: PromotionDetailViewModelProtocol {
+            return PromotionDetailViewModel(id: idVoucher)
+        }
+        vcVoucherDetail.viewModel = viewModel
+        return vcVoucherDetail
+    }
+    
+    
     func setNavigation(name: String) {
         self.navigationController?.navigationBar.isHidden = false
         setTitle(title: name, textColor: .black, backgroundColor: .white)
         addBackButton()
         addStarButtonOff()
+        self.delegate = self
     }
     
     func setUpComponents() {
@@ -123,7 +142,14 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
     }
 }
 
-
+extension PromotionDetailViewController: BaseViewControllerDelegate {
+    func starBookmarkTapped() {
+        isStarTapped = !isStarTapped
+   //     viewModel.isBookmark.value = true
+        isStarTapped ? addStarButtonOn() : addStarButtonOff()
+     //   viewModel.addBookmarkVoucher(idBookmark: (promotionDetailData?.id)!)
+    }
+}
 
 
 
