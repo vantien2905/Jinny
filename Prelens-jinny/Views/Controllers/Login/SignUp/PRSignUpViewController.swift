@@ -93,5 +93,12 @@ class PRSignUpViewController: UIViewController {
                 self.tfEmail.endEditing(true)
                 self.tfPassword.endEditing(true)
             }).disposed(by: disposeBag)
+        
+        vm.isSignUpSuccess.subscribe (onCompleted: {
+            self.tfEmail.text = ""
+            self.tfPassword.text = ""
+            self.btnCheckConditions.setImage(UIImage(named: "check_box"), for: .normal)
+            self.conditionsIsChecked = false
+        }).disposed(by: disposeBag)
     }
 }
