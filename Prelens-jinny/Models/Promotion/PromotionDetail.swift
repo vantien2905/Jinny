@@ -9,11 +9,13 @@
 import ObjectMapper
 
 class PromotionDetail: NSObject, Mappable {
-    var id: Int = 0
-    var expireAt: String?
-    var isReaded: Bool = false
-    var isBookmarked: Bool = false
-    var image           : Image?
+    var id                      : Int = 0
+    var promoDescription        : String?
+    var expireAt                : String?
+    var expireAtString          : String?
+    var isReaded                : Bool = false
+    var isBookmarked            : Bool = false
+    var image                   : Image?
     
     override init() {
         super.init()
@@ -24,10 +26,11 @@ class PromotionDetail: NSObject, Mappable {
     
     func mapping(map: Map) {
         self.id <- map["id"]
+        self.promoDescription <- map["description"]
         self.expireAt <- map["expires_at"]
+        self.expireAtString <- map["expires_at_in_words"]
         self.isReaded <- map["is_readed"]
         self.isBookmarked <- map["is_bookmarked"]
         self.image <- map["image"]
     }
-    
 }
