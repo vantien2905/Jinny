@@ -9,7 +9,8 @@ import RxSwift
 import Alamofire
 
 protocol PromotionServiceProtocol {
-    func getListAllPromotion() -> Observable<[Promotion]>
+    func getListAllPromotion()      -> Observable<[Promotion]>
+    func getListStarredPromotion()  -> Observable<[Promotion]>
 }
 
 class PromotionService: PromotionServiceProtocol {
@@ -22,5 +23,9 @@ class PromotionService: PromotionServiceProtocol {
     
     func getListAllPromotion() -> Observable<[Promotion]> {
         return network.rx_Array(url: APIEndpoint.Promotion.getListAllPromotion, method: .get, parameters: [:])
+    }
+    
+    func getListStarredPromotion() -> Observable<[Promotion]> {
+        return network.rx_Array(url: APIEndpoint.Promotion.getListStarredPromotion, method: .get, parameters: [:])
     }
 }
