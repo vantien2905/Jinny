@@ -82,7 +82,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             return 1
         } else if section == 1 {
             guard let numberOfCells = promotionDetail?.image?.count else { return 0 }
-            return 1
+            return numberOfCells
         } else {
             return 1
         }
@@ -141,8 +141,8 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = PRPhotoDetail()
-        //        vc.photoData = promotionDetailData
-        //        push(controller: vc, animated: true)
+        vc.photoData = promotionDetail?.image
+        push(controller: vc, animated: true)
     }
 }
 
