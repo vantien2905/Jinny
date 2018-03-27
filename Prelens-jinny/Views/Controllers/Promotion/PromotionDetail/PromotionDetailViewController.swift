@@ -121,7 +121,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = UIScreen.main.bounds.width - 46
+        let size = UIScreen.main.bounds.width - 40
         return CGSize(width: size, height: size)
     }
     

@@ -15,10 +15,10 @@ final class SignUpViewModel {
     public var email: Variable<String?>
     public var password: Variable<String?>
     public var isValidInput: Variable<Bool>
-    private var userSignUp          = Variable<PRUser?>(nil)
+    private var userSignUp = Variable<PRUser?>(nil)
     public var btnSignUpTapped: PublishSubject<Void>
     public var isChecked: Variable<Bool>
-    public var isLoginSuccess: PublishSubject<Bool>
+    public var isSignUpSuccess: PublishSubject<Bool>
 
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()) { email, password in email!.count > 0 && password!.count > 0
@@ -31,8 +31,8 @@ final class SignUpViewModel {
         self.isValidInput = Variable<Bool>(false)
         self.isChecked = Variable<Bool>(false)
         self.btnSignUpTapped = PublishSubject<Void>()
-        self.isLoginSuccess = PublishSubject<Bool>()
-
+        self.isSignUpSuccess = PublishSubject<Bool>()
+        
         _ = isChecked.asObservable().subscribe(onNext: { _ in
             //TODO
         })
@@ -100,14 +100,9 @@ final class SignUpViewModel {
                 guard let strongSelf = self else { return }
                 strongSelf.userSignUp.value = user
                 PopUpHelper.shared.showMessage(message: "Sign up success!")
-                strongSelf.resetUI()
+                strongSelf.isSignUpSuccess.onCompleted()
             }, onError: { (error) in
                 print(error)
             }).disposed(by: disposeBag)
-    }
-
-    func resetUI() {
-        self.email.value = ""
-        self.password.value = ""
     }
 }

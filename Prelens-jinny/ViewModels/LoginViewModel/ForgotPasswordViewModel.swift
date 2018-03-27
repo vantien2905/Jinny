@@ -26,7 +26,11 @@ final class ForgotPasswordViewModel {
             guard let strongSelf = self else { return }
             guard let email = strongSelf.email.value else { return }
             if email.isValidEmpty() == false {
-                self?.callAPIForgotPassword()
+                if email.isValidEmail() {
+                    self?.callAPIForgotPassword()
+                } else {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorInvalidEmail)
+                }
             } else {
                 PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyEmail)
             }
