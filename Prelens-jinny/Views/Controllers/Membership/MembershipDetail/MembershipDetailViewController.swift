@@ -185,7 +185,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
         if section == 1 {
             return 47.5
         } else if section == 2 {
-            return 25
+            return 5
         } else {
             return 0
         }
