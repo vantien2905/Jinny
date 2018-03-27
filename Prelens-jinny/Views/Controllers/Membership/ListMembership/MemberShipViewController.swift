@@ -24,7 +24,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     let viewModel = MembershipViewModel()
     let disposeBag = DisposeBag()
-
     var listMember = Membership() {
         didSet {
             UIView.transition(with: cvMembership,
@@ -34,6 +33,17 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 //            self.cvMembership.reloadData()
         }
     }
+    
+    let viewDrop: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    let lbTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Latest"
+        return label
+    }()
     
     var listSearch = Membership()
 
@@ -118,6 +128,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
             } else {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.memberShip, for: indexPath) as! MembershipCell
                 cell.membership = listMember.startedMemberships[indexPath.item]
+                cell.imgStar.isHidden = false
                 return cell
             }
 
@@ -205,7 +216,6 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 reusableView = headerView
             } else {
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader, for: indexPath as IndexPath) as! OtherHeaderCell
-//                headerView.delegate = self
                 if listMember.otherMemberships.count == 0 {
                     headerView.vSort.isHidden = true
                     headerView.lbOther.text = "Other memberships"
@@ -239,11 +249,3 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
         }
     }
 }
-//
-//extension MemberShipViewController: OtherHeaderCellDelegate {
-//    func sortTapped() {
-//        let vSort = Dropdown()
-//        self.view.addSubview(vSort)
-//    }
-//}
-

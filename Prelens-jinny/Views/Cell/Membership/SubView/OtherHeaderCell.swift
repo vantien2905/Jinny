@@ -9,7 +9,7 @@
 import UIKit
 
 protocol OtherHeaderCellDelegate: class {
-    func sortTapped()
+    func sortTapped(cgRect: CGRect)
 }
 
 class OtherHeaderCell: UICollectionViewCell {
@@ -22,11 +22,12 @@ class OtherHeaderCell: UICollectionViewCell {
     weak var delegate: OtherHeaderCellDelegate?
     
     @IBAction func btnSortTapped() {
-        delegate?.sortTapped()
+        print(lbLatest.frame)
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        print(lbLatest.frame)
         vSort.backgroundColor = PRColor.backgroundColor
         lbOther.font = PRFont.semiBold15
         lbLatest.textAlignment = .center

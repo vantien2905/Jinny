@@ -60,7 +60,8 @@ class PromotionDetailViewController: BaseViewController {
     
     func bindData() {
         viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
-            self?.promotionDetail = voucher
+            guard let strongSelf = self else { return }
+            strongSelf.promotionDetail = voucher
         }).disposed(by: disposeBag)
     }
     
