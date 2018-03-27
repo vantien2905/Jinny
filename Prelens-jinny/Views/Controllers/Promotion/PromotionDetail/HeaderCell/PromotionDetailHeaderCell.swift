@@ -13,9 +13,6 @@ class PromotionDetailHeaderCell: UICollectionViewCell {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbExpireDate: UILabel!
     
-//    @IBOutlet weak var lcsMerchantNameHeight: NSLayoutConstraint!
-//    @IBOutlet weak var lcsSideConstraintName: NSLayoutConstraint!
-//
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,12 +21,10 @@ class PromotionDetailHeaderCell: UICollectionViewCell {
         self.backgroundColor = .white
         lbName.isUserInteractionEnabled = false
         lbName.backgroundColor = .clear
-        
-//        lcsMerchantNameHeight.constant = getHeight(with: data)
-        
-//        lbName.text = data.merchant?.name
-//        guard let expiryDate = data.expiresAt else { return }
-//        lbExpireDate.text = "Expiry date: " + expiryDate
+
+        lbName.text = data.detailDescription
+        guard let expiryDate = data.expireAtString else { return }
+        lbExpireDate.text = "Expiry date: " + expiryDate
     }
     
 //    func getHeight(with merchant: Promotion) -> CGFloat {

@@ -18,13 +18,6 @@ class PromotionDetailViewController: BaseViewController {
     var isStarTapped = false
     var viewModel: PromotionDetailViewModelProtocol!
     
-//    var promotionDetailData: Promotion? {
-//        didSet {
-//            guard let data = promotionDetailData else { return }
-//        //    data.isBookmarked ? addStarButtonOn() : addStarButtonOff()
-//        }
-//    }
-    
     var promotionDetail:  PromotionDetail? {
         didSet {
             cvVoucherDetail.reloadData()
@@ -38,7 +31,7 @@ class PromotionDetailViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        setNavigation(name: "Voucher Name")
+        setNavigation(name: AllPromotionViewController.merchantName!)
         bindData()
     }
     
@@ -60,10 +53,10 @@ class PromotionDetailViewController: BaseViewController {
     }
     
     func bindData() {
-//        viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
-//            guard let strongSelf = self else { return }
-//            strongSelf.promotionDetail = voucher
-//        }).disposed(by: disposeBag)
+        viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
+            guard let strongSelf = self else { return }
+            strongSelf.promotionDetail = voucher
+        }).disposed(by: disposeBag)
     }
     
     func setUpComponents() {
@@ -73,98 +66,92 @@ class PromotionDetailViewController: BaseViewController {
         cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailCell, bundle: nil),
                                  forCellWithReuseIdentifier: "promotionDetailCell")
         cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailHeaderCell, bundle: nil),
-                                 forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
-                                 withReuseIdentifier: "headerCell")
+                                 forCellWithReuseIdentifier: "headerCell")
         cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailFooterCell, bundle: nil),
-                                 forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
-                                 withReuseIdentifier: "footerCell")
+                                 forCellWithReuseIdentifier: "footerCell")
     }
-    
 }
 
 extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let numberOfCells = promotionDetail?.image?.count else { return 0 }
-        return numberOfCells
+        if section == 0 {
+            return 1
+        } else if section == 1 {
+            guard let numberOfCells = promotionDetail?.image?.count else { return 0 }
+            return 1
+        } else {
+            return 1
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "promotionDetailCell",
-                                                      for: indexPath) as! PromotionDetailCell
-        guard let data = promotionDetail else { return UICollectionViewCell()}
-        cell.backgroundColor = .white
-//        cell.setUpView(with: data)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let data = promotionDetail else { return UICollectionViewCell()}
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                             withReuseIdentifier: "headerCell",
-                                                                             for: indexPath) as! PromotionDetailHeaderCell
-
-//            headerCell.setUpView(with: data)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 0 {
+            let headerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "headerCell",
+                                                                for: indexPath) as! PromotionDetailHeaderCell
+            if let data = promotionDetail {
+                headerCell.setUpView(with: data)
+            }
             return headerCell
-        case UICollectionElementKindSectionFooter:
-            let footerCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                             withReuseIdentifier: "footerCell",
-                                                                             for: indexPath) as! PromotionDetailFooterCell
-            //setup the delegate for button here
+        } else if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "promotionDetailCell",
+                                                          for: indexPath) as! PromotionDetailCell
+            guard let data = promotionDetail, let listImage = data.image else { return UICollectionViewCell()}
+            let image = listImage[indexPath.row]
+            cell.backgroundColor = .clear
+            cell.setUpView(with: image)
+            return cell
+        } else {
+            let footerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "footerCell",
+                                                                for: indexPath) as! PromotionDetailFooterCell
             return footerCell
-        default:
-            return UICollectionViewCell()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = UIScreen.main.bounds.width - 40
-        return CGSize(width: size, height: size)
+        if indexPath.section == 0 {
+            let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20, font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
+            let size = UIScreen.main.bounds.width
+            guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
+            
+            return CGSize(width: size, height: 125 - (57 - _height))
+        } else if indexPath.section == 1 {
+            let size = UIScreen.main.bounds.width - 40
+            return CGSize(width: size, height: size)
+        } else if indexPath.section == 2 {
+            let size = UIScreen.main.bounds.width - 40
+            
+            return CGSize(width: size, height: 100)
+        } else {
+            
+            return CGSize(width: 0, height: 0)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 23, left: 0, bottom: 23, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        guard let text = promotionDetailData?.merchant?.name else { return CGSize(width: 0, height: 0) }
-//        let height = text.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20,
-//                                 font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
-        let size = UIScreen.main.bounds.width
-//        return CGSize(width: size, height: 125 - (57 - height))
-         return CGSize(width: size, height: 125 - (57))
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForFooterInSection section: Int) -> CGSize {
-        let size = UIScreen.main.bounds.width - 40
-        return CGSize(width: size, height: 100)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 23, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = PRPhotoDetail()
-//        vc.photoData = promotionDetailData
-//        push(controller: vc, animated: true)
+        //        vc.photoData = promotionDetailData
+        //        push(controller: vc, animated: true)
     }
 }
 
 extension PromotionDetailViewController: BaseViewControllerDelegate {
     func starBookmarkTapped() {
         isStarTapped = !isStarTapped
-   //     viewModel.isBookmark.value = true
+        //     viewModel.isBookmark.value = true
         isStarTapped ? addStarButtonOn() : addStarButtonOff()
-     //   viewModel.addBookmarkVoucher(idBookmark: (promotionDetailData?.id)!)
+        //   viewModel.addBookmarkVoucher(idBookmark: (promotionDetailData?.id)!)
     }
 }
 
