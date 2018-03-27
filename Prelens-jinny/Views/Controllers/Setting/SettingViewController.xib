@@ -14,10 +14,14 @@
         <array key="segoeui.ttf">
             <string>SegoeUI</string>
         </array>
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
+                <outlet property="lbVersion" destination="LBd-P0-9dQ" id="Cvz-nz-2uU"/>
                 <outlet property="vDaysToRemind" destination="eo3-7F-qQN" id="Aja-ci-jkz"/>
                 <outlet property="vPushNotiSwitch" destination="6BC-ze-1Bp" id="Fns-4H-791"/>
                 <outlet property="vStoreDiscountSwitch" destination="jhd-S5-fYz" id="qpr-K6-g9l"/>
@@ -166,6 +170,12 @@
                                 <constraint firstItem="yny-8Q-hho" firstAttribute="top" secondItem="BNK-oX-3Wf" secondAttribute="top" id="cGd-4K-Wj4"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jinny v0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBd-P0-9dQ">
+                            <rect key="frame" x="155" y="602.5" width="65" height="20"/>
+                            <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -200,6 +210,8 @@
                 <constraint firstItem="isB-vn-SdG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="6rE-dk-xaq"/>
                 <constraint firstItem="isB-vn-SdG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aub-JV-6CY"/>
                 <constraint firstItem="xVp-Qz-fxX" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="45:667" id="cN7-nh-OfO"/>
+                <constraint firstItem="LBd-P0-9dQ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dwZ-04-1Gc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LBd-P0-9dQ" secondAttribute="bottom" constant="44.5" id="joq-wr-3jQ"/>
                 <constraint firstItem="isB-vn-SdG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tcU-Ie-7gb"/>
                 <constraint firstItem="isB-vn-SdG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tg5-JL-nPd"/>
             </constraints>

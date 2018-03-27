@@ -25,7 +25,7 @@ class Dropdown: PRBaseView, UITableViewDelegate, UITableViewDataSource {
     
     let lbTitle: UILabel = {
         let label = UILabel()
-        
+        label.text = "Latest"
         return label
     }()
     
@@ -35,7 +35,11 @@ class Dropdown: PRBaseView, UITableViewDelegate, UITableViewDataSource {
         tbView.delegate = self
         tbView.dataSource = self
         btnCover.fillSuperview()
-        tbView.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+
+    }
+    
+    func setPositionTable(cgRect: CGRect) {
+        tbView.frame = cgRect
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

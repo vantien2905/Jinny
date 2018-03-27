@@ -59,7 +59,7 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
                     guard let strongSelf = self else { return }
                     if isSuccess == true {
                         let viewControllers: [UIViewController] = strongSelf.navigationController!.viewControllers as [UIViewController]
-                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
                     }
                 })
             }

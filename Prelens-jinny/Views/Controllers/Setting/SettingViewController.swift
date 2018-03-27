@@ -12,11 +12,11 @@ import RxCocoa
 
 class SettingViewController: BaseViewController {
 
-    
     @IBOutlet weak var vDaysToRemind: UIView!
     @IBOutlet weak var vPushNotiSwitch: PRSwitch!
     @IBOutlet weak var vStoreDiscountSwitch: PRSwitch!
     @IBOutlet weak var vVoucherNotiSwitch: PRSwitch!
+    @IBOutlet weak var lbVersion: UILabel!
     
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class SettingViewController: BaseViewController {
             }
         }).disposed(by: disposeBag)
         // Do any additional setup after loading the view.
-
+        setVersion()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +56,12 @@ class SettingViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = false
         setTitle(title: "Setting", textColor: .black, backgroundColor: .white)
         addBackButton()
+    }
+    
+    func setVersion() {
+        let version     = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "0"
+        let build       = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") ?? "0"
+        lbVersion.text  = "Jinny v\(version) build\(build)"
     }
 
     @IBAction func btnChangePasswordTapped(_ sender: Any) {
