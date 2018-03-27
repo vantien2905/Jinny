@@ -12,12 +12,14 @@ import RxCocoa
 protocol PromotionDetailViewModelProtocol {
     var idVoucher: Variable<Int> { get }
     var voucherDetail: Variable<PromotionDetail?> { get }
+    var isBookmarked: Variable<Bool> { get }
 }
 
 class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
+    var isBookmarked: Variable<Bool> = Variable<Bool> (false)
     var idVoucher: Variable<Int> = Variable<Int>(0)
     var voucherDetail: Variable<PromotionDetail?> = Variable<PromotionDetail?>(nil)
-
+    
     let disposeBag = DisposeBag()
     
     init(id: Int) {
@@ -30,6 +32,13 @@ class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
     func getVoucherDetail(id : Int) {
         Provider.shared.promotionService.getPromotionDetail(id: id).subscribe(onNext: {[weak self] (voucher) in
             self?.voucherDetail.value = voucher
+        }).disposed(by: disposeBag)
+    }
+    
+    func addBookmarkVoucher(idBookmark: Int) {
+        Provider.shared.promotionService.addBookmarkVoucher(idBookmark: idBookmark).subscribe(onNext: { (promotion) in
+            guard let _promotion = promotion else { return }
+            self.isBookmarked.value = _promotion.isBookMarked
         }).disposed(by: disposeBag)
     }
 }

@@ -14,12 +14,19 @@ class PromotionDetailViewController: BaseViewController {
     @IBOutlet weak var cvVoucherDetail: UICollectionView!
     @IBOutlet weak var btnRedeem: UIButton!
     
+    let disposeBag = DisposeBag()
     var isStarTapped = false
     var viewModel: PromotionDetailViewModelProtocol!
     var promotionDetailData: Promotion? {
         didSet {
             guard let data = promotionDetailData else { return }
         //    data.isBookmarked ? addStarButtonOn() : addStarButtonOff()
+        }
+    }
+    
+    var promotionDetail:  PromotionDetail? {
+        didSet {
+            cvVoucherDetail.reloadData()
         }
     }
     
@@ -31,6 +38,7 @@ class PromotionDetailViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         setNavigation(name: "Voucher Name")
+        bindData()
     }
     
     class func configureViewController(idVoucher: Int) -> UIViewController {
@@ -42,13 +50,18 @@ class PromotionDetailViewController: BaseViewController {
         return vcVoucherDetail
     }
     
-    
     func setNavigation(name: String) {
         self.navigationController?.navigationBar.isHidden = false
         setTitle(title: name, textColor: .black, backgroundColor: .white)
         addBackButton()
         addStarButtonOff()
         self.delegate = self
+    }
+    
+    func bindData() {
+        viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
+            self?.promotionDetail = voucher
+        }).disposed(by: disposeBag)
     }
     
     func setUpComponents() {
@@ -76,23 +89,23 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "promotionDetailCell",
                                                       for: indexPath) as! PromotionDetailCell
-        guard let data = promotionDetailData else { return UICollectionViewCell()}
+        guard let data = promotionDetail else { return UICollectionViewCell()}
         cell.backgroundColor = .white
-        cell.setUpView(with: data)
+//        cell.setUpView(with: data)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let data = promotionDetailData else { return UICollectionViewCell()}
+        guard let data = promotionDetail else { return UICollectionViewCell()}
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: "headerCell",
                                                                              for: indexPath) as! PromotionDetailHeaderCell
             
-            headerCell.setUpView(with: data)
+//            headerCell.setUpView(with: data)
             return headerCell
         case UICollectionElementKindSectionFooter:
             let footerCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,

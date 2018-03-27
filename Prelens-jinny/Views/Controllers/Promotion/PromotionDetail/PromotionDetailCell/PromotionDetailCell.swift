@@ -18,7 +18,7 @@ class PromotionDetailCell: UICollectionViewCell {
         
     }
     
-    func setUpView(with data: Promotion) {
+    func setUpView(with data: PromotionDetail) {
         guard let urlString = data.image?.url?.medium, let url = URL(string: urlString) else { return }
             
         imvPromotionDetail.contentMode = .scaleAspectFit

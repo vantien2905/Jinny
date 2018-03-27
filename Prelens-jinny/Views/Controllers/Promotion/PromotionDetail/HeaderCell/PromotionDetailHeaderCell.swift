@@ -20,16 +20,16 @@ class PromotionDetailHeaderCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func setUpView(with data: Promotion) {
+    func setUpView(with data: PromotionDetail) {
         self.backgroundColor = .white
         lbName.isUserInteractionEnabled = false
         lbName.backgroundColor = .clear
         
 //        lcsMerchantNameHeight.constant = getHeight(with: data)
-
-        lbName.text = data.merchant?.name
-        guard let expiryDate = data.expiresAt else { return }
-        lbExpireDate.text = "Expiry date: " + expiryDate
+        
+//        lbName.text = data.merchant?.name
+//        guard let expiryDate = data.expiresAt else { return }
+//        lbExpireDate.text = "Expiry date: " + expiryDate
     }
     
 //    func getHeight(with merchant: Promotion) -> CGFloat {

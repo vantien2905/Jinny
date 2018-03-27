@@ -35,7 +35,7 @@ class PRTabbarMainViewController: UITabBarController {
         nvMembership.tabBarItem = UITabBarItem(title: "Memberships", image: PRImage.tabbarMembershipOff, selectedImage: nil)
 
         let nvPromotions = UINavigationController(rootViewController: promotionVC)
-        nvPromotions.tabBarItem = UITabBarItem(title: "Promotions", image: PRImage.tabbarPromotionsOff, selectedImage: nil)
+        nvPromotions.tabBarItem = UITabBarItem(title: "Vouchers", image: PRImage.tabbarPromotionsOff, selectedImage: nil)
 
         let nvMore = UINavigationController(rootViewController: moreVC)
         nvMore.tabBarItem = UITabBarItem(title: "More...", image: PRImage.tabbarMore, selectedImage: nil)

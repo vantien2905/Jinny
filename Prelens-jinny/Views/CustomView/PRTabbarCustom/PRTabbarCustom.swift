@@ -67,9 +67,9 @@ extension PRTabbarCustom: PRTabbarButtonDelegate {
         switch name {
         case "Memberships":
             buttonTappedDelegate?.btnTapped(tag: 0)
-        case "Promotions":
+        case "Vouchers":
             buttonTappedDelegate?.btnTapped(tag: 1)
-        case "More":
+        case "More...":
             buttonTappedDelegate?.btnTapped(tag: 2)
         default:
             break
