@@ -87,7 +87,7 @@ customized for you!</string>
                                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                             <color key="textColor" red="0.28235019607843098" green="0.28235019607843098" blue="0.28235019607843098" alpha="1" colorSpace="deviceRGB"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7j-HO-lUB">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="n7j-HO-lUB">
                                             <rect key="frame" x="265.5" y="20" width="8" height="7"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="8" id="0QT-Te-U5q"/>
@@ -133,7 +133,7 @@ customized for you!</string>
                                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                             <color key="textColor" red="0.28235019610000001" green="0.28235019610000001" blue="0.28235019610000001" alpha="1" colorSpace="deviceRGB"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vI4-aa-yji">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="vI4-aa-yji">
                                             <rect key="frame" x="265.5" y="20" width="8" height="7"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="7" id="pIB-ol-xcJ"/>
@@ -283,4 +283,7 @@ customized for you!</string>
             <point key="canvasLocation" x="26.5" y="79"/>
         </view>
     </objects>
+    <resources>
+        <image name="field_dropdown" width="8" height="7"/>
+    </resources>
 </document>
