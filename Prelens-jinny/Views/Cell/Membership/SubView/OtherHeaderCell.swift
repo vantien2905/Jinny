@@ -8,12 +8,22 @@
 
 import UIKit
 
+protocol OtherHeaderCellDelegate: class {
+    func sortTapped()
+}
+
 class OtherHeaderCell: UICollectionViewCell {
 
     @IBOutlet weak var lbSortBy: UILabel!
     @IBOutlet weak var lbLatest: UILabel!
     @IBOutlet weak var lbOther: UILabel!
     @IBOutlet weak var vSort: UIView!
+    
+    weak var delegate: OtherHeaderCellDelegate?
+    
+    @IBAction func btnSortTapped() {
+        delegate?.sortTapped()
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

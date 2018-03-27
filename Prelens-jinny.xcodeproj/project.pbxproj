@@ -124,6 +124,7 @@
 		B7CD0650205F9AF6009951A4 /* FooterMembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD064E205F9AF6009951A4 /* FooterMembershipDetailCell.xib */; };
 		B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */; };
 		B7CD0654205FA765009951A4 /* MembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */; };
+		B7D54B032069EDC8000F4957 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D54B022069EDC8000F4957 /* Dropdown.swift */; };
 		BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
 		BC387EC020681B29009E29A7 /* PromotionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC387EBF20681B29009E29A7 /* PromotionDetail.swift */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
@@ -315,6 +316,7 @@
 		B7CD064E205F9AF6009951A4 /* FooterMembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterMembershipDetailCell.xib; sourceTree = "<group>"; };
 		B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailCell.swift; sourceTree = "<group>"; };
 		B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailCell.xib; sourceTree = "<group>"; };
+		B7D54B022069EDC8000F4957 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
 		BC36E973205846B1006A90A0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC387EBF20681B29009E29A7 /* PromotionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetail.swift; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
@@ -841,6 +843,14 @@
 			path = FooterMembershipDetailCell;
 			sourceTree = "<group>";
 		};
+		B7D54B012069ED9C000F4957 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				B7D54B022069EDC8000F4957 /* Dropdown.swift */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
 		BC409EBF2062BE3E00A3F044 /* MerchantBranch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1041,6 +1051,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B7D54B012069ED9C000F4957 /* Dropdown */,
 				76BA6865206899FA0006E226 /* PRSwitch */,
 				76D9FB4E2063883600EDF2FC /* PickerPopupView */,
 				B7054001206383A10028D90E /* PRLoadingView */,
@@ -1630,6 +1641,7 @@
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
+				B7D54B032069EDC8000F4957 /* Dropdown.swift in Sources */,
 				BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */,
 				D9911856205B7AC100F701ED /* Provider.swift in Sources */,
 				BC9A6151205F77F00071EF4F /* PromotionDetailFooterCell.swift in Sources */,
