@@ -9,7 +9,7 @@
 import UIKit
 
 protocol OtherHeaderCellDelegate: class {
-    func sortTapped(cgRect: CGRect)
+    func sortTapped()
 }
 
 class OtherHeaderCell: UICollectionViewCell {
@@ -23,6 +23,7 @@ class OtherHeaderCell: UICollectionViewCell {
     
     @IBAction func btnSortTapped() {
         print(lbLatest.frame)
+        delegate?.sortTapped()
     }
 
     override func awakeFromNib() {
