@@ -11,16 +11,14 @@ import RxSwift
 import RxCocoa
 
 class AllPromotionViewController: UIViewController {
-
+    
     @IBOutlet weak var cvAllPromotion: UICollectionView!
     @IBOutlet weak var btnAddVoucher: UIButton!
     
     var refresher: UIRefreshControl?
-    
-    let viewModel = PromotionViewModel()
+    var viewModel: PromotionViewModelProtocol!
     let disposeBag = DisposeBag()
     var filteredData: [Promotion] = []
-    
     var listPromotion = [Promotion]() {
         didSet {
             filteredData = listPromotion
@@ -30,21 +28,13 @@ class AllPromotionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
-        
         bindData()
-        viewModel.getListAllPromotion()
-        //pullToRefesh()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configColecttionView()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     func pullToRefesh() {
@@ -58,13 +48,29 @@ class AllPromotionViewController: UIViewController {
         self.refresher?.endRefreshing()
     }
     
+    class func configureViewController() -> UIViewController {
+        let allPromotionVC = AllPromotionViewController.initControllerFromNib() as! AllPromotionViewController
+        var viewModel: PromotionViewModelProtocol {
+            return PromotionViewModel()
+        }
+        allPromotionVC.viewModel = viewModel
+        return allPromotionVC
+    }
+    
     @objc func bindData() {
-        viewModel.outputs.listAllPromotion.asObservable().subscribe(onNext: { promotions in
-            //if let _promotion = promotions {
-                self.listPromotion = promotions
-                self.cvAllPromotion.reloadData()
-                self.stopRefresher()
-            //}
+        //        viewModel.outputs.listAllPromotion.asObservable().subscribe(onNext: { promotions in
+        //            //if let _promotion = promotions {
+        //                self.listPromotion = promotions
+        //                self.cvAllPromotion.reloadData()
+        //                self.stopRefresher()
+        //            //}
+        //        }).disposed(by: disposeBag)
+        
+        viewModel.listAllPromotion.asObservable().subscribe(onNext: {listPromotions in
+            guard let _listPromotions = listPromotions else { return }
+            self.listPromotion = _listPromotions
+            self.cvAllPromotion.reloadData()
+            self.stopRefresher()
         }).disposed(by: disposeBag)
     }
     
@@ -89,11 +95,11 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 2:
-            if self.filteredData.count == 0{
+            if self.filteredData.count == 0 {
                 return 1
             } else {
                 return self.filteredData.count
@@ -111,10 +117,10 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             cell.delegate = self
             return cell
         case 1:
-
+            
             let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader,
                                                           for: indexPath) as! PromotionHeaderCell
-
+            
             if self.filteredData.count == 0 {
                 cell.vFilter.isHidden = true
             } else {
@@ -148,17 +154,17 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             }
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         if self.filteredData.count == 0 {
             return
         } else {
