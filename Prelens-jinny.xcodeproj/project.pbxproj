@@ -515,8 +515,8 @@
 				BCF5F6A72064E9A1007CE003 /* AddVoucher */,
 				76DC8901205F70AE00AD87F3 /* PromotionDetail */,
 				76DC88ED205F5FFA00AD87F3 /* Achived */,
-				76DC88EE205F5FFA00AD87F3 /* All */,
 				76DC88EC205F5FFA00AD87F3 /* Starred */,
+				76DC88EE205F5FFA00AD87F3 /* All */,
 				76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */,
 				76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */,
 			);
