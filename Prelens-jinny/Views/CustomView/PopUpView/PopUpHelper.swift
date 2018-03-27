@@ -24,4 +24,11 @@ class PopUpHelper {
             popUp.showPopUp(message: message, completion: action)
         }
     }
+    
+    func showPopUpSort(message: String, actionLatest: @escaping () -> Void, actionEarliest: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            let popUp = SortPopUpView()
+            popUp.showPopUp(message: message, completionLatest: actionLatest, completionEarliest: actionEarliest)
+        }
+    }
 }

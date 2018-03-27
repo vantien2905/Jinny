@@ -65,7 +65,7 @@ class AddManualViewController: BaseViewController {
                     guard let strongSelf = self else { return }
                     if isSuccess == true {
                         let viewControllers: [UIViewController] = strongSelf.navigationController!.viewControllers as [UIViewController]
-                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
                     }
                 })
             }
@@ -81,12 +81,3 @@ class AddManualViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
 }
-
-//extension AddManualViewController: BarcodeDelegate {
-//    func barcodeReaded(barcode: String) {
-//        tfSerial.text = barcode
-//    }
-//    
-//    
-//}
-
