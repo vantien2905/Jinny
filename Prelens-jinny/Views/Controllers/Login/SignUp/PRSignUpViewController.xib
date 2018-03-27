@@ -19,9 +19,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSignUpViewController" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSignUpViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
-                <outlet property="btnCheckConditions" destination="45f-hV-yeM" id="hOX-x3-vmt"/>
+                <outlet property="btnCheckConditions" destination="oX6-rp-3kg" id="1na-BF-2gY"/>
                 <outlet property="btnShowHidePassword" destination="ccm-fJ-RNH" id="qoP-MH-qT9"/>
                 <outlet property="btnSignUp" destination="jZY-J5-bdZ" id="iMB-R3-SJA"/>
                 <outlet property="tfEmail" destination="5Gf-sl-B9y" id="8Am-A3-mVv"/>
@@ -61,12 +61,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdE-Lz-WfN">
-                            <rect key="frame" x="134" y="232" width="117.5" height="17"/>
-                            <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="12.5"/>
-                            <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccm-fJ-RNH">
                             <rect key="frame" x="300.5" y="171" width="16" height="14"/>
                             <constraints>
@@ -82,13 +76,16 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45f-hV-yeM">
-                            <rect key="frame" x="116" y="234.5" width="12" height="12.5"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX6-rp-3kg">
+                            <rect key="frame" x="116.5" y="232" width="142" height="17"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="12.5" id="d2B-WY-NqX"/>
-                                <constraint firstAttribute="width" constant="12.5" id="sGY-Zz-Vu7"/>
+                                <constraint firstAttribute="width" constant="142" id="43E-Ap-y5t"/>
                             </constraints>
-                            <state key="normal" image="check_box"/>
+                            <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="12.5"/>
+                            <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Terms and conditions" image="check_box">
+                                <color key="titleColor" red="0.28235019610000001" green="0.28235019610000001" blue="0.28235294117647058" alpha="1" colorSpace="deviceRGB"/>
+                            </state>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,24 +93,22 @@
                         <constraint firstItem="ccm-fJ-RNH" firstAttribute="trailing" secondItem="SLb-2i-VA7" secondAttribute="trailing" constant="-17" id="0f0-9r-Wb8"/>
                         <constraint firstAttribute="trailing" secondItem="jZY-J5-bdZ" secondAttribute="trailing" constant="41.5" id="0pk-Tv-X7b"/>
                         <constraint firstItem="SLb-2i-VA7" firstAttribute="height" secondItem="5Gf-sl-B9y" secondAttribute="height" id="1jk-mT-YNN"/>
-                        <constraint firstItem="gdE-Lz-WfN" firstAttribute="leading" secondItem="45f-hV-yeM" secondAttribute="trailing" constant="6" id="7ZP-Oh-EqT"/>
                         <constraint firstItem="SLb-2i-VA7" firstAttribute="top" secondItem="slm-8m-Gai" secondAttribute="bottom" constant="4.5" id="8jl-t8-m6D"/>
+                        <constraint firstItem="oX6-rp-3kg" firstAttribute="top" secondItem="SLb-2i-VA7" secondAttribute="bottom" constant="25.5" id="Ais-Um-pxB"/>
                         <constraint firstItem="jZY-J5-bdZ" firstAttribute="leading" secondItem="gxz-tw-HRW" secondAttribute="leading" constant="40.5" id="D6e-wf-xKn"/>
                         <constraint firstItem="5Gf-sl-B9y" firstAttribute="leading" secondItem="gxz-tw-HRW" secondAttribute="leading" constant="39" id="Dpc-1L-SMx"/>
                         <constraint firstItem="slm-8m-Gai" firstAttribute="top" secondItem="5Gf-sl-B9y" secondAttribute="bottom" constant="15.5" id="PG9-ln-1OU"/>
                         <constraint firstItem="5Gf-sl-B9y" firstAttribute="top" secondItem="YJR-w8-Yr9" secondAttribute="bottom" constant="4.5" id="RsX-kP-Gtj"/>
                         <constraint firstItem="slm-8m-Gai" firstAttribute="leading" secondItem="YJR-w8-Yr9" secondAttribute="leading" id="TB4-HK-jGp"/>
                         <constraint firstItem="YJR-w8-Yr9" firstAttribute="leading" secondItem="gxz-tw-HRW" secondAttribute="leading" constant="41.5" id="Tp6-9g-8Oj"/>
-                        <constraint firstItem="gdE-Lz-WfN" firstAttribute="top" secondItem="SLb-2i-VA7" secondAttribute="bottom" constant="25.5" id="Uh1-0T-G8g"/>
                         <constraint firstItem="YJR-w8-Yr9" firstAttribute="top" secondItem="gxz-tw-HRW" secondAttribute="top" constant="28" id="Vpf-dw-sMN"/>
                         <constraint firstItem="jZY-J5-bdZ" firstAttribute="height" secondItem="SLb-2i-VA7" secondAttribute="height" constant="-2" id="W89-ZR-AfR"/>
-                        <constraint firstItem="45f-hV-yeM" firstAttribute="centerY" secondItem="gdE-Lz-WfN" secondAttribute="centerY" id="YaW-C3-LRK"/>
                         <constraint firstItem="SLb-2i-VA7" firstAttribute="trailing" secondItem="5Gf-sl-B9y" secondAttribute="trailing" id="Ykf-jZ-RBf"/>
-                        <constraint firstItem="gdE-Lz-WfN" firstAttribute="centerX" secondItem="gxz-tw-HRW" secondAttribute="centerX" constant="5" id="crO-Nv-kRe"/>
+                        <constraint firstItem="jZY-J5-bdZ" firstAttribute="top" secondItem="oX6-rp-3kg" secondAttribute="bottom" constant="29.5" id="aHp-Yj-jsa"/>
                         <constraint firstAttribute="trailing" secondItem="5Gf-sl-B9y" secondAttribute="trailing" constant="41.5" id="dki-LP-Sx1"/>
                         <constraint firstItem="SLb-2i-VA7" firstAttribute="leading" secondItem="5Gf-sl-B9y" secondAttribute="leading" id="mIS-Cs-QUM"/>
-                        <constraint firstItem="jZY-J5-bdZ" firstAttribute="top" secondItem="gdE-Lz-WfN" secondAttribute="bottom" constant="29.5" id="rBT-Mc-H27"/>
                         <constraint firstItem="ccm-fJ-RNH" firstAttribute="centerY" secondItem="SLb-2i-VA7" secondAttribute="centerY" id="rDA-OI-9NI"/>
+                        <constraint firstItem="oX6-rp-3kg" firstAttribute="centerX" secondItem="gxz-tw-HRW" secondAttribute="centerX" id="st0-RI-E3q"/>
                         <constraint firstItem="5Gf-sl-B9y" firstAttribute="height" secondItem="gxz-tw-HRW" secondAttribute="height" multiplier="47/533.5" id="yKS-Gy-Ra1"/>
                     </constraints>
                 </view>

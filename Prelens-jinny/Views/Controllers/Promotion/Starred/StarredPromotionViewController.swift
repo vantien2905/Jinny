@@ -13,7 +13,7 @@ import RxCocoa
 class StarredPromotionViewController: UIViewController {
 
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
-    let viewModel = PromotionViewModel()
+    var viewModel: PromotionViewModelProtocol!
     let disposeBag = DisposeBag()
     
     var listStarredPromotion = [Promotion]() {
@@ -27,7 +27,7 @@ class StarredPromotionViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         
         bindData()
-        viewModel.getListStarredPromotion()
+//        viewModel.getListStarredPromotion()
     }
     
     override func viewDidLoad() {
@@ -36,15 +36,20 @@ class StarredPromotionViewController: UIViewController {
     }
     
     @objc func bindData() {
-        viewModel.outputs.listStarredPromotion.asObservable().subscribe(onNext: { promotions in
-            self.listStarredPromotion = promotions
+        viewModel.listStarredPromotion.asObservable().subscribe(onNext: { promotions in
+            guard let _promotions = promotions else { return }
+            self.listStarredPromotion = _promotions
             self.cvStarredPromotion.reloadData()
         }).disposed(by: disposeBag)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    class func configureViewController() -> UIViewController {
+        let starredPromotionVC = StarredPromotionViewController.initControllerFromNib() as! StarredPromotionViewController
+        var viewModel: PromotionViewModelProtocol {
+            return PromotionViewModel()
+        }
+        starredPromotionVC.viewModel = viewModel
+        return starredPromotionVC
     }
 
     func configColecttionView() {

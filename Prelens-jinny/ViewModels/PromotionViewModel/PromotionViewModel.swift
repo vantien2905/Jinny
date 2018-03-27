@@ -9,32 +9,41 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PromotionViewModel {
+protocol PromotionViewModelProtocol {
+    var listAllPromotion: Variable<[Promotion]?> {get}
+    var listStarredPromotion: Variable<[Promotion]?>{get}
+}
+
+class PromotionViewModel: PromotionViewModelProtocol {
+    var listAllPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
+    var listStarredPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
     let disposeBag = DisposeBag()
 
-    class PromotionViewModelInput {
-    
+//    class PromotionViewModelInput {
+//    }
+//    class PromotionViewModelOutput {
+//        var listAllPromotion        = Variable<[Promotion]>([])
+//        var listStarredPromotion    = Variable<[Promotion]>([])
+//    }
+//
+//    var inputs = PromotionViewModelInput()
+//    var outputs = PromotionViewModelOutput()
+//    
+    init() {
+        getListAllPromotion()
+        getListStarredPromotion()
     }
-    
-    class PromotionViewModelOutput {
-        var listAllPromotion        = Variable<[Promotion]>([])
-        var listStarredPromotion    = Variable<[Promotion]>([])
-    }
-    
-    var inputs = PromotionViewModelInput()
-    var outputs = PromotionViewModelOutput()
-    
+
     func getListAllPromotion() {
         Provider.shared.promotionService.getListAllPromotion().subscribe(onNext: { (listPromotion) in
-            self.outputs.listAllPromotion.value = listPromotion
+            self.listAllPromotion.value = listPromotion
         }).disposed(by: disposeBag)
     }
     
-    func getListStarredPromotion(){
+    func getListStarredPromotion() {
         Provider.shared.promotionService.getListStarredPromotion().subscribe(onNext: { (listPromotion) in
-            self.outputs.listStarredPromotion.value = listPromotion
+            self.listStarredPromotion.value = listPromotion
         }).disposed(by: disposeBag)
     }
     
-
 }
