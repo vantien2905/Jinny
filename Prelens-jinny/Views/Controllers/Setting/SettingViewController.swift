@@ -24,6 +24,7 @@ class SettingViewController: BaseViewController {
         
         vPushNotiSwitch.isCheck.asObservable().subscribe(onNext: { value in
             if value {
+                LocalNotification.registerForLocalNotification(on: UIApplication.shared)
                 self.vVoucherNotiSwitch.btnAction.isEnabled = true
                 self.vStoreDiscountSwitch.btnAction.isEnabled = true
                 print(value)
@@ -41,6 +42,7 @@ class SettingViewController: BaseViewController {
         
         vVoucherNotiSwitch.isCheck.asObservable().subscribe(onNext: { value in
             if value {
+                LocalNotification.dispatchlocalNotification(with: "Notification Title for iOS10+", body: "This is the notification body, works on all versions")
                 //TODO
             } else {
                 //TODO

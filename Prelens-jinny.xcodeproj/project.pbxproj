@@ -25,6 +25,7 @@
 		7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C097205A167100F384B4 /* PRForgotPassword.swift */; };
 		7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */; };
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
+		76440AD5206A35E400F6F167 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76440AD4206A35E300F6F167 /* LocalNotification.swift */; };
 		764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */; };
 		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
 		765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
@@ -218,6 +219,7 @@
 		7640C097205A167100F384B4 /* PRForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPassword.swift; sourceTree = "<group>"; };
 		7640C09A205B6B9800F384B4 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		76440AD4206A35E300F6F167 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialRegion.swift; sourceTree = "<group>"; };
 		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
 		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
@@ -1008,6 +1010,7 @@
 				76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */,
 				BC6EF8592060F57D00A156B9 /* UIApplication+Extension.swift */,
 				BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */,
+				76440AD4206A35E300F6F167 /* LocalNotification.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1576,6 +1579,7 @@
 				BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */,
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
+				76440AD5206A35E400F6F167 /* LocalNotification.swift in Sources */,
 				76BA686720689A860006E226 /* PRSwitch.swift in Sources */,
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
 				760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */,
