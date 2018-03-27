@@ -169,9 +169,11 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             return
         } else {
             if indexPath.section == 2 {
-                let vc = PromotionDetailViewController()
-                vc.promotionDetailData = filteredData[indexPath.item]
-                self.push(controller: vc, animated: true)
+                let idVoucher = filteredData[indexPath.item].id
+                let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
+                //        let vc = PromotionDetailViewController()
+                //        vc.promotionDetailData = filteredData[indexPath.item]
+                self.push(controller: detailVoucherVC, animated: true)
             }
         }
     }

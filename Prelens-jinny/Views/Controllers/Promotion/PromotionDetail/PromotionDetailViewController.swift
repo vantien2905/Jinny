@@ -17,12 +17,13 @@ class PromotionDetailViewController: BaseViewController {
     let disposeBag = DisposeBag()
     var isStarTapped = false
     var viewModel: PromotionDetailViewModelProtocol!
-    var promotionDetailData: Promotion? {
-        didSet {
-            guard let data = promotionDetailData else { return }
-        //    data.isBookmarked ? addStarButtonOn() : addStarButtonOff()
-        }
-    }
+    
+//    var promotionDetailData: Promotion? {
+//        didSet {
+//            guard let data = promotionDetailData else { return }
+//        //    data.isBookmarked ? addStarButtonOn() : addStarButtonOff()
+//        }
+//    }
     
     var promotionDetail:  PromotionDetail? {
         didSet {
@@ -59,10 +60,10 @@ class PromotionDetailViewController: BaseViewController {
     }
     
     func bindData() {
-        viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
-            guard let strongSelf = self else { return }
-            strongSelf.promotionDetail = voucher
-        }).disposed(by: disposeBag)
+//        viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
+//            guard let strongSelf = self else { return }
+//            strongSelf.promotionDetail = voucher
+//        }).disposed(by: disposeBag)
     }
     
     func setUpComponents() {
@@ -83,7 +84,8 @@ class PromotionDetailViewController: BaseViewController {
 
 extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        guard let numberOfCells = promotionDetail?.image?.count else { return 0 }
+        return numberOfCells
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -105,7 +107,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: "headerCell",
                                                                              for: indexPath) as! PromotionDetailHeaderCell
-            
+
 //            headerCell.setUpView(with: data)
             return headerCell
         case UICollectionElementKindSectionFooter:
@@ -135,11 +137,12 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        guard let text = promotionDetailData?.merchant?.name else { return CGSize(width: 0, height: 0) }
-        let height = text.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20,
-                                 font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
+//        guard let text = promotionDetailData?.merchant?.name else { return CGSize(width: 0, height: 0) }
+//        let height = text.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20,
+//                                 font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
         let size = UIScreen.main.bounds.width
-        return CGSize(width: size, height: 125 - (57 - height))
+//        return CGSize(width: size, height: 125 - (57 - height))
+         return CGSize(width: size, height: 125 - (57))
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -151,8 +154,8 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = PRPhotoDetail()
-        vc.photoData = promotionDetailData
-        push(controller: vc, animated: true)
+//        vc.photoData = promotionDetailData
+//        push(controller: vc, animated: true)
     }
 }
 
@@ -164,24 +167,6 @@ extension PromotionDetailViewController: BaseViewControllerDelegate {
      //   viewModel.addBookmarkVoucher(idBookmark: (promotionDetailData?.id)!)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
