@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         vTabbar.buttonTappedDelegate = self
         
         //Hide the sidemenu after back from VC in side menu
-        if lcsSideMenu.constant == 0 {
+        if !sideMenuTrigger {
             lcsSideMenu.constant = UIScreen.main.bounds.width * 2/3
             sideMenuTrigger = !sideMenuTrigger
             vCloseTap.isHidden = true
@@ -55,8 +55,8 @@ class HomeViewController: UIViewController {
         lcsNavigationHeight.constant = 64
         
         vTabbar.vMemberships.setTitle(title: "Memberships")
-        vTabbar.vPromotions.setTitle(title: "Promotions")
-        vTabbar.vMore.setTitle(title: "More")
+        vTabbar.vPromotions.setTitle(title: "Vouchers")
+        vTabbar.vMore.setTitle(title: "More...")
         
         btnLeft.isHidden = true
         vCloseTap.isHidden = true

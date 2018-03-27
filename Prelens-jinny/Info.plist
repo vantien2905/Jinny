@@ -17,11 +17,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>14</string>
+	<string>13</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>0d3bccabbaed333bc9bde7468e94e18109778ee7</string>
+		<string>9844f00f3473290163788b84137b78b6cc326c2c</string>
 		<key>Kits</key>
 		<array>
 			<dict>

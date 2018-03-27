@@ -88,12 +88,12 @@ class MenuView: UIView {
             let listIndexPathVisible = self.collectionView.indexPathsForVisibleItems
             for indexPath in listIndexPathVisible {
                 if let cell = self.collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell {
-                    cell.lbTitle.textColor = UIColor.lightGray
+                    cell.lbTitle.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
                 }
             }
 
             //-- set color selected for current cell
-            cellScroll.lbTitle.textColor = UIColor.black
+            cellScroll.lbTitle.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 
             //--
             guard let listCategory = self.listItem as? [MenuItem] else { return }
@@ -119,7 +119,7 @@ UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         as! MenuItemCollectionViewCell
-        cell.setData(item: listItem[indexPath.item], normalColor: UIColor.lightGray, selectedColor: UIColor.black)
+        cell.setData(item: listItem[indexPath.item], normalColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5), selectedColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         cell.lbTitle.font = titleFont
         return cell
     }
@@ -138,7 +138,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     let lbTitle: UILabel = {
         let lb = UILabel()
         lb.text = "SIGN UP"
-        lb.textColor = UIColor.gray
+        lb.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
         lb.font =  UIFont(name: "OstrichSans-Black", size: 17.5)
         lb.textAlignment = .center
 
@@ -156,7 +156,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     }
     override var isSelected: Bool {
         didSet {
-            lbTitle.textColor = isSelected ? UIColor.black : UIColor.gray
+            lbTitle.textColor = isSelected ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
     }
 
