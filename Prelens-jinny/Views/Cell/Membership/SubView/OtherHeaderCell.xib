@@ -56,13 +56,23 @@
                                 <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oL-VT-hDd">
+                                <rect key="frame" x="43.5" y="0.0" width="104.5" height="50"/>
+                                <connections>
+                                    <action selector="btnSortTapped" destination="gTV-IL-0wX" eventType="touchUpInside" id="FUz-qu-QM3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jyp-W9-L69" firstAttribute="centerY" secondItem="x44-AC-u7m" secondAttribute="centerY" id="08f-c1-dgP"/>
+                            <constraint firstItem="3oL-VT-hDd" firstAttribute="leading" secondItem="e1f-3q-a98" secondAttribute="leading" id="8c6-dJ-F7T"/>
                             <constraint firstItem="jyp-W9-L69" firstAttribute="leading" secondItem="kKF-3A-tUO" secondAttribute="trailing" constant="5.5" id="I2h-AF-Y40"/>
+                            <constraint firstItem="3oL-VT-hDd" firstAttribute="top" secondItem="x44-AC-u7m" secondAttribute="top" id="J3W-CX-iht"/>
+                            <constraint firstAttribute="bottom" secondItem="3oL-VT-hDd" secondAttribute="bottom" id="Qez-0w-n8R"/>
                             <constraint firstItem="kKF-3A-tUO" firstAttribute="leading" secondItem="e1f-3q-a98" secondAttribute="trailing" constant="5" id="TJ8-wW-QEE"/>
                             <constraint firstItem="kKF-3A-tUO" firstAttribute="centerY" secondItem="x44-AC-u7m" secondAttribute="centerY" id="eJn-YA-Qsz"/>
+                            <constraint firstAttribute="trailing" secondItem="3oL-VT-hDd" secondAttribute="trailing" id="g8Y-eE-b86"/>
                             <constraint firstAttribute="trailing" secondItem="jyp-W9-L69" secondAttribute="trailing" constant="2" id="oUI-Wb-a8Q"/>
                             <constraint firstItem="e1f-3q-a98" firstAttribute="centerY" secondItem="kKF-3A-tUO" secondAttribute="centerY" id="sXy-YU-tdS"/>
                         </constraints>

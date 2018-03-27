@@ -25,9 +25,9 @@ class EditProfileViewModel {
     var regions = Variable<[ResidentialRegion]>([])
     
     init() {
-        self.email = Variable<String?>(nil)
-        self.name  = Variable<String?>(nil)
-        self.dob  = Variable<String?>(nil)
+        self.email = Variable<String?>("")
+        self.name  = Variable<String?>("")
+        self.dob  = Variable<String?>("")
         self.btnSaveTapped = PublishSubject<Void>()
         self.isValidInput = Variable<Bool>(false)
         self.regionID = Variable<Int?>(nil)
@@ -40,7 +40,10 @@ class EditProfileViewModel {
         
         self.btnSaveTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
-            guard let _email = strongSelf.email.value, let _name = strongSelf.name.value , let _dob = strongSelf.dob.value else {return}
+            guard let _email = strongSelf.email.value, let _name = strongSelf.name.value , let _dob = strongSelf.dob.value else {
+                print("error")
+                return
+            }
             if strongSelf.isValidInput.value == true {
                  strongSelf.updateProfile()
             } else {

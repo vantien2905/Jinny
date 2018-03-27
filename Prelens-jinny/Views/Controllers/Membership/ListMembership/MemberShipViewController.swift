@@ -205,6 +205,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 reusableView = headerView
             } else {
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader, for: indexPath as IndexPath) as! OtherHeaderCell
+//                headerView.delegate = self
                 if listMember.otherMemberships.count == 0 {
                     headerView.vSort.isHidden = true
                     headerView.lbOther.text = "Other memberships"
@@ -238,3 +239,11 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
         }
     }
 }
+//
+//extension MemberShipViewController: OtherHeaderCellDelegate {
+//    func sortTapped() {
+//        let vSort = Dropdown()
+//        self.view.addSubview(vSort)
+//    }
+//}
+
