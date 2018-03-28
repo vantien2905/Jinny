@@ -38,7 +38,7 @@
                         <rect key="frame" x="148" y="0.0" width="148" height="50"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="jyp-W9-L69">
-                                <rect key="frame" x="141" y="22" width="5" height="4.5"/>
+                                <rect key="frame" x="141" y="25" width="5" height="4.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="5" id="GRN-8v-Zb0"/>
                                     <constraint firstAttribute="height" constant="4.5" id="ane-xA-goX"/>
@@ -65,7 +65,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jyp-W9-L69" firstAttribute="centerY" secondItem="x44-AC-u7m" secondAttribute="centerY" id="08f-c1-dgP"/>
+                            <constraint firstItem="jyp-W9-L69" firstAttribute="centerY" secondItem="x44-AC-u7m" secondAttribute="centerY" constant="2" id="08f-c1-dgP"/>
                             <constraint firstItem="3oL-VT-hDd" firstAttribute="leading" secondItem="e1f-3q-a98" secondAttribute="leading" id="8c6-dJ-F7T"/>
                             <constraint firstItem="jyp-W9-L69" firstAttribute="leading" secondItem="kKF-3A-tUO" secondAttribute="trailing" constant="5.5" id="I2h-AF-Y40"/>
                             <constraint firstItem="3oL-VT-hDd" firstAttribute="top" secondItem="x44-AC-u7m" secondAttribute="top" id="J3W-CX-iht"/>

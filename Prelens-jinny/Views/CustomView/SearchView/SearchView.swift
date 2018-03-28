@@ -12,12 +12,14 @@ class SearchView: PRBaseViewXib {
     @IBOutlet weak var vContent: UIView!
     @IBOutlet weak var tfSearch: UITextField!
     @IBOutlet weak var imgSearch: UIImageView!
+    @IBOutlet weak var vSupper: UIView!
     @IBAction func btnSearchTapped() {
         
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUpView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,8 +31,9 @@ class SearchView: PRBaseViewXib {
         tfSearch.borderStyle = .none
         vContent.layer.cornerRadius = 2.5
         vContent.layer.masksToBounds = true
-        self.layer.cornerRadius = 2.5
+        vContent.backgroundColor = .white
+        vSupper.backgroundColor = .clear
         vContent.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
-        self.backgroundColor = PRColor.backgroundColor
+//        self.backgroundColor = PRColor.backgroundColor
     }
 }
