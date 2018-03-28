@@ -10,9 +10,11 @@ import UIKit
 
 class StarredHeaderCell: UICollectionViewCell {
 
+    @IBOutlet weak var lbTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        lbTitle.font = PRFont.semiBold15
+        lbTitle.textColor = PRColor.emptyMembership
     }
 
 }

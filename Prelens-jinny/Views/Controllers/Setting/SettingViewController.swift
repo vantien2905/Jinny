@@ -12,11 +12,14 @@ import RxCocoa
 
 class SettingViewController: BaseViewController {
 
+    @IBOutlet weak var lbDaysToRemind: UILabel!
+    @IBOutlet weak var lbNumberDay: UILabel!
     @IBOutlet weak var vDaysToRemind: UIView!
     @IBOutlet weak var vPushNotiSwitch: PRSwitch!
     @IBOutlet weak var vStoreDiscountSwitch: PRSwitch!
     @IBOutlet weak var vVoucherNotiSwitch: PRSwitch!
     @IBOutlet weak var lbVersion: UILabel!
+    @IBOutlet weak var btnDayToRemind: UIButton!
     
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
@@ -42,9 +45,13 @@ class SettingViewController: BaseViewController {
         
         vVoucherNotiSwitch.isCheck.asObservable().subscribe(onNext: { value in
             if value {
+                self.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                self.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 LocalNotification.dispatchlocalNotification(with: "Notification Title for iOS10+", body: "This is the notification body, works on all versions")
                 //TODO
             } else {
+                self.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
+                self.lbNumberDay.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
                 //TODO
             }
         }).disposed(by: disposeBag)
