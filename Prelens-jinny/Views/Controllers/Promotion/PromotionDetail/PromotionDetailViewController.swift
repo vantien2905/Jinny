@@ -21,6 +21,13 @@ class PromotionDetailViewController: BaseViewController {
     var promotionDetail:  PromotionDetail? {
         didSet {
             cvVoucherDetail.reloadData()
+            
+            //MARK: Setup the merchantName
+            if let merchantName = promotionDetail?.merchantName {
+                setNavigation(name: merchantName)
+            } else {
+                setNavigation(name: "")
+            }
         }
     }
     
@@ -31,8 +38,6 @@ class PromotionDetailViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        guard let merchantName = AllPromotionViewController.merchantName else { return }
-        setNavigation(name: merchantName)
         bindData()
     }
     
@@ -43,6 +48,18 @@ class PromotionDetailViewController: BaseViewController {
         }
         vcVoucherDetail.viewModel = viewModel
         return vcVoucherDetail
+    }
+    
+    func setUpComponents() {
+        cvVoucherDetail.delegate = self
+        cvVoucherDetail.dataSource = self
+        
+        cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailCell, bundle: nil),
+                                 forCellWithReuseIdentifier: "promotionDetailCell")
+        cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailHeaderCell, bundle: nil),
+                                 forCellWithReuseIdentifier: "headerCell")
+        cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailFooterCell, bundle: nil),
+                                 forCellWithReuseIdentifier: "footerCell")
     }
     
     func setNavigation(name: String) {
@@ -62,18 +79,6 @@ class PromotionDetailViewController: BaseViewController {
         viewModel.isBookmarked.asObservable().subscribe(onNext: { [weak self] value in
             value ? self?.addStarButtonOn() : self?.addStarButtonOff()
         }).disposed(by: disposeBag)
-    }
-    
-    func setUpComponents() {
-        cvVoucherDetail.delegate = self
-        cvVoucherDetail.dataSource = self
-        
-        cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailCell, bundle: nil),
-                                 forCellWithReuseIdentifier: "promotionDetailCell")
-        cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailHeaderCell, bundle: nil),
-                                 forCellWithReuseIdentifier: "headerCell")
-        cvVoucherDetail.register(UINib(nibName: Cell.promotionDetailFooterCell, bundle: nil),
-                                 forCellWithReuseIdentifier: "footerCell")
     }
 }
 
