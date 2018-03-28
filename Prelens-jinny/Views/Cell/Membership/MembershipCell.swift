@@ -29,11 +29,8 @@ class MembershipCell: UICollectionViewCell {
 
     func setUpView() {
         imgMemberShip.contentMode = .scaleAspectFit
-//        imgMemberShip.clipsToBounds = false
         vContent.layer.borderWidth = 0.5
         vContent.layer.borderColor = PRColor.lineColor.cgColor
-//        imgMemberShip.layer.borderWidth = 0.5
-//        imgMemberShip.layer.borderColor = PRColor.lineColor.cgColor
         vContent.layer.cornerRadius = 2.5
         vContent.layer.masksToBounds = true
         
