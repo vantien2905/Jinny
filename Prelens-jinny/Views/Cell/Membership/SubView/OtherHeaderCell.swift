@@ -31,6 +31,7 @@ class OtherHeaderCell: UICollectionViewCell {
         print(lbLatest.frame)
         vSort.backgroundColor = PRColor.backgroundColor
         lbOther.font = PRFont.semiBold15
+        lbOther.textColor = PRColor.emptyMembership
         lbLatest.textAlignment = .center
     }
 
