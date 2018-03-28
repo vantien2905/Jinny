@@ -104,9 +104,16 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
                                                           for: indexPath) as! PromotionHeaderCell
             
             if self.listStarredPromotion.count == 0 {
-                cell.vFilter.isHidden = true
+                cell.vSort.isHidden = true
+
             } else {
-                cell.vFilter.isHidden = false
+                cell.vSort.isHidden = false
+                if self.viewModel.isLatest.value {
+                    cell.lbSort.text = "Latest"
+                } else {
+                    cell.lbSort.text = "Earliest"
+                }
+                cell.delegate = self
             }
             return cell
         default:
@@ -165,5 +172,14 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+    }
+}
+extension StarredPromotionViewController: PromotionSortDelegate {
+    func sortTapped() {
+        PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
+            self.viewModel.isLatest.value = true
+        }) {
+            self.viewModel.isLatest.value = false
+        }
     }
 }

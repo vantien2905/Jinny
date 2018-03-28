@@ -143,9 +143,14 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
                                                           for: indexPath) as! PromotionHeaderCell
             
             if self.listPromotion.count == 0 {
-                cell.vFilter.isHidden = true
+                cell.vSort.isHidden = true
             } else {
-                cell.vFilter.isHidden = false
+                cell.vSort.isHidden = false
+                if self.viewModel.isLatest.value {
+                    cell.lbSort.text = "Latest"
+                } else {
+                    cell.lbSort.text = "Earliest"
+                }
                 cell.delegate = self
             }
             return cell
@@ -202,6 +207,10 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 
 extension AllPromotionViewController: PromotionSortDelegate {
     func sortTapped() {
-       print("sort button tapped")
+        PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
+            self.viewModel.isLatest.value = true
+        }) {
+            self.viewModel.isLatest.value = false
+        }
     }
 }

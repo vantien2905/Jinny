@@ -47,8 +47,28 @@ class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
             
             self?.listStarredPromotion.value = self?.listTemp
         }).disposed(by: disposeBag)
+        sortStarredPromotion()
     }
-    
+    func sortStarredPromotion() {
+        isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
+            guard let strongSelf = self else { return }
+            let other = strongSelf.listStarredPromotion.value
+            if isLatest {
+                if let _other = other {
+                    strongSelf.listStarredPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
+                        return other1 > other2
+                    })
+                }
+            } else {
+                if let _other = other {
+                    strongSelf.listStarredPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
+                        return other1 < other2
+                    })
+                }
+            }
+            strongSelf.listStarredPromotion.value = strongSelf.listStarredPromotion.value
+        }).disposed(by: disposeBag)
+    }
     func getListStarredPromotion() {
         Provider.shared.promotionService.getListStarredPromotion().subscribe(onNext: { (listPromotion) in
             self.listStarredPromotion.value = listPromotion

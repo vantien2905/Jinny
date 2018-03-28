@@ -82,8 +82,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="301" height="50"/>
             <connections>
+                <outlet property="btnSort" destination="yVH-sO-yqQ" id="Sf3-nE-MEd"/>
                 <outlet property="lbSort" destination="3Sl-hd-7L8" id="haw-Lm-1py"/>
-                <outlet property="vFilter" destination="xe2-FO-bqc" id="ydy-L9-M3c"/>
+                <outlet property="vSort" destination="xe2-FO-bqc" id="8hC-P2-FTq"/>
             </connections>
             <point key="canvasLocation" x="-25.5" y="23"/>
         </collectionViewCell>
