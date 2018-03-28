@@ -15,9 +15,10 @@ class Promotion: NSObject, Mappable {
     var expiresString   : String?
     var isReaded        : Bool = true
     var isBookMarked    : Bool = false
+    var createString      : String?
     var merchant        : Merchant?
-    var expiresDate: Date? {
-        return Date.dateFromString(expiresString)
+    var createDate: Date? {
+        return Date.dateFromString(createString)
     }
     var image           : Image?
     override init() {
@@ -29,6 +30,7 @@ class Promotion: NSObject, Mappable {
     }
     
      func mapping(map: Map) {
+
         self.id                     <- map["id"]
         self.promotionDescription   <- map["description"]
         self.expiresAt              <- map["expires_at"]
@@ -37,5 +39,7 @@ class Promotion: NSObject, Mappable {
         self.isReaded               <- map["is_readed"]
         self.image                  <- map["image"]
         self.isBookMarked           <- map["is_bookmarked"]
+        self.createString           <- map["created_at"]
+
      }
 }

@@ -130,7 +130,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             } else {
                 let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
                 cell.promotion = filteredData[indexPath.item]
-                
+                print(filteredData[indexPath.item].createDate)
                 return cell
             }
         }
@@ -184,11 +184,6 @@ extension AllPromotionViewController: SearchPromotionCellDelegate {
 }
 extension AllPromotionViewController: PromotionSortDelegate {
     func sortTapped() {
-        PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
-            self.viewModel.isLatest.value = true
-        }) {
-            self.viewModel.isLatest.value = false
-        }
+       print("sort button tapped")
     }
-    
 }

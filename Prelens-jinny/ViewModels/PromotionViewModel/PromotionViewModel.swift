@@ -40,12 +40,7 @@ class PromotionViewModel: PromotionViewModelProtocol {
 
     func getListAllPromotion() {
         Provider.shared.promotionService.getListAllPromotion().subscribe(onNext: { (listPromotion) in
-            if self.isLatest.value {
-                self.listAllPromotion.value = listPromotion.sorted(by: { $0.expiresDate?.compare($1.expiresDate!) == .orderedDescending })
-            } else {
-                self.listAllPromotion.value = listPromotion.sorted(by: { $0.expiresDate?.compare($1.expiresDate!) == .orderedAscending })
-            }
-            
+            self.listAllPromotion.value = listPromotion
         }).disposed(by: disposeBag)
     }
     
