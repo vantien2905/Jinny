@@ -15,9 +15,8 @@ class PromotionDetailViewController: BaseViewController {
     @IBOutlet weak var btnRedeem: UIButton!
     
     let disposeBag = DisposeBag()
-    var isStarTapped = false
+
     var viewModel: PromotionDetailViewModelProtocol!
-    
     var promotionDetail:  PromotionDetail? {
         didSet {
             cvVoucherDetail.reloadData()
@@ -105,6 +104,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             if let data = promotionDetail {
                 headerCell.setUpView(with: data)
             }
+
             return headerCell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "promotionDetailCell",
@@ -160,8 +160,6 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
 
 extension PromotionDetailViewController: BaseViewControllerDelegate {
     func starBookmarkTapped() {
-        isStarTapped = !isStarTapped
-        isStarTapped ? addStarButtonOn() : addStarButtonOff()
         guard let id = promotionDetail?.id else { return }
         viewModel.addBookmarkVoucher(idBookmark: id)
     }

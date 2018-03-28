@@ -521,7 +521,6 @@
 		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
-				BCF5F6A72064E9A1007CE003 /* AddVoucher */,
 				76DC8901205F70AE00AD87F3 /* PromotionDetail */,
 				76DC88ED205F5FFA00AD87F3 /* Achived */,
 				76DC88EC205F5FFA00AD87F3 /* Starred */,
@@ -967,6 +966,7 @@
 			children = (
 				BC9A614A205F77310071EF4F /* PromotionDetailHeaderCell.swift */,
 				BC9A614B205F77310071EF4F /* PromotionDetailHeaderCell.xib */,
+				BCF5F6A72064E9A1007CE003 /* AddVoucher */,
 			);
 			path = HeaderCell;
 			sourceTree = "<group>";
