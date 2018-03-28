@@ -31,7 +31,8 @@ class PromotionDetailViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        setNavigation(name: AllPromotionViewController.merchantName!)
+        guard let merchantName = AllPromotionViewController.merchantName else { return }
+        setNavigation(name: merchantName)
         bindData()
     }
     
@@ -56,6 +57,10 @@ class PromotionDetailViewController: BaseViewController {
         viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
             guard let strongSelf = self else { return }
             strongSelf.promotionDetail = voucher
+        }).disposed(by: disposeBag)
+        
+        viewModel.isBookmarked.asObservable().subscribe(onNext: { [weak self] value in
+            value ? self?.addStarButtonOn() : self?.addStarButtonOff()
         }).disposed(by: disposeBag)
     }
     
@@ -151,12 +156,8 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
 extension PromotionDetailViewController: BaseViewControllerDelegate {
     func starBookmarkTapped() {
         isStarTapped = !isStarTapped
-        //     viewModel.isBookmark.value = true
         isStarTapped ? addStarButtonOn() : addStarButtonOff()
-        //   viewModel.addBookmarkVoucher(idBookmark: (promotionDetailData?.id)!)
+        guard let id = promotionDetail?.id else { return }
+        viewModel.addBookmarkVoucher(idBookmark: id)
     }
 }
-
-
-
-

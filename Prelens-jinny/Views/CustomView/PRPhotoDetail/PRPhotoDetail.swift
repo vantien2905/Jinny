@@ -131,6 +131,15 @@ class ImagePreviewFullViewCell: UICollectionViewCell, UIScrollViewDelegate {
         }
     }
     
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let imvSize = imgView.bounds.size
+        let scrollViewSize = scrollImg.bounds.size
+        let verticalPadding = imvSize.height < scrollViewSize.height ? (scrollViewSize.height - imvSize.height) / 2 : 0
+        let horizontalPadding = imvSize.width < scrollViewSize.width ? (scrollViewSize.width - imvSize.width) / 2 : 0
+        
+        scrollImg.contentInset = UIEdgeInsets(top: verticalPadding, left: horizontalPadding, bottom: verticalPadding, right: horizontalPadding)
+    }
+    
     func zoomRectForScale(scale: CGFloat, center: CGPoint) -> CGRect {
         var zoomRect = CGRect.zero
         zoomRect.size.height = imgView.frame.size.height / scale
