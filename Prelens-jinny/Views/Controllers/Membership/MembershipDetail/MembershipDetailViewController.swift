@@ -80,7 +80,11 @@ class MembershipDetailViewController: BaseViewController {
     func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         setTitle(title: "", textColor: UIColor.black, backgroundColor: .white)
-        addBackButton()
+        self.addButtonToNavigation(image: PRImage.imgBack, style: .left, action: #selector(btnBackRootTapped))
+    }
+    
+    @objc func btnBackRootTapped() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func bindData() {
@@ -97,7 +101,6 @@ class MembershipDetailViewController: BaseViewController {
             
         }).disposed(by: disposeBag)
     }
-    
 }
 
 extension MembershipDetailViewController: BaseViewControllerDelegate {

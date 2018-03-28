@@ -15,7 +15,7 @@ protocol MembershipServiceProtocol {
     func addBookmarkMembership(idBookmark: Int) -> Observable<Member?>
     func deleteMembership(idDelete: Int) -> Observable<Member?>
     func getAllMerchants(page: Int, perPage: Int) -> Observable<[Merchant]>
-     func addMembership(code: String, merchantId: Int) -> Observable<Membership?>
+     func addMembership(code: String, merchantId: Int) -> Observable<Member?>
 }
 
 class MembershipService: MembershipServiceProtocol {
@@ -50,7 +50,7 @@ class MembershipService: MembershipServiceProtocol {
         return network.rx_Array(url: url, method: .get, parameters: [:])
     }
     
-    func addMembership(code: String, merchantId: Int) -> Observable<Membership?> {
+    func addMembership(code: String, merchantId: Int) -> Observable<Member?> {
         let url = APIEndpoint.Membership.addMembership
         let param = [
             "code": code,
