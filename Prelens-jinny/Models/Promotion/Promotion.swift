@@ -13,7 +13,7 @@ class Promotion: NSObject, Mappable {
     var promotionDescription: String?
     var expiresAt       : String?
     var expiresString   : String?
-    var isReaded        : Bool = false
+    var isReaded        : Bool = true
     var isBookMarked    : Bool = false
     var merchant        : Merchant?
     

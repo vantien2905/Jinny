@@ -19,7 +19,6 @@ class PRPhotoDetail: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUpView()
         configureCollectionView()
     }
@@ -61,6 +60,8 @@ class PRPhotoDetail: BaseViewController {
         layout.minimumInteritemSpacing=0
         layout.minimumLineSpacing=0
         layout.scrollDirection = .horizontal
+        cvPhotoPreview.bounces = false
+        cvPhotoPreview.collectionViewLayout = layout
         cvPhotoPreview.backgroundColor = .clear
         cvPhotoPreview.delegate = self
         cvPhotoPreview.dataSource = self

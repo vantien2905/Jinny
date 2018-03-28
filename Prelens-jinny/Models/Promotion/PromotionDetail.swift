@@ -31,6 +31,6 @@ class PromotionDetail: NSObject, Mappable {
         self.expireAtString <- map["expires_at_in_words"]
         self.isReaded <- map["is_readed"]
         self.isBookmarked <- map["is_bookmarked"]
-        self.image <- map["image"]
+        self.image <- map["images"]
     }
 }
