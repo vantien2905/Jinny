@@ -13,6 +13,7 @@ protocol PromotionDetailViewModelProtocol {
     var idVoucher: Variable<Int> { get }
     var voucherDetail: Variable<PromotionDetail?> { get }
     var isBookmarked: Variable<Bool> { get }
+    func addBookmarkVoucher(idBookmark: Int)
 }
 
 class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
@@ -32,6 +33,9 @@ class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
     func getVoucherDetail(id : Int) {
         Provider.shared.promotionService.getPromotionDetail(id: id).subscribe(onNext: {[weak self] (voucher) in
             self?.voucherDetail.value = voucher
+            if let _isBookmarked = voucher?.isBookmarked {
+                 self?.isBookmarked.value = _isBookmarked
+            }
         }).disposed(by: disposeBag)
     }
     
@@ -40,5 +44,6 @@ class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
             guard let _promotion = promotion else { return }
             self.isBookmarked.value = _promotion.isBookMarked
         }).disposed(by: disposeBag)
+        getVoucherDetail(id: idBookmark)
     }
 }
