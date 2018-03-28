@@ -17,7 +17,7 @@ protocol SelectDataPopUpViewDelegate: class {
 class SelectDataPopUpView: BasePopUpView {
 
     static let shared = SelectDataPopUpView()
-    var index = 0
+    var index:Int?
     let vTop: UIView = {
     let view = UIView()
     view.backgroundColor = UIColor.red
@@ -48,7 +48,8 @@ class SelectDataPopUpView: BasePopUpView {
     
     @objc func btnDoneTapped() {
         self.hidePopUp()
-        delegate?.didSelectRow(index: index)
+        guard let _index = index else {return}
+        delegate?.didSelectRow(index: _index)
     }
     
     weak var delegate: SelectDataPopUpViewDelegate?

@@ -16,7 +16,9 @@ class Promotion: NSObject, Mappable {
     var isReaded        : Bool = false
     var isBookMarked    : Bool = false
     var merchant        : Merchant?
-    
+    var expiresDate: Date? {
+        return Date.dateFromString(expiresString)
+    }
     var image           : Image?
     override init() {
         super.init()

@@ -119,6 +119,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
                 cell.vFilter.isHidden = true
             } else {
                 cell.vFilter.isHidden = false
+                cell.delegate = self
             }
             return cell
         default:
@@ -180,4 +181,14 @@ extension AllPromotionViewController: SearchPromotionCellDelegate {
         self.cvAllPromotion.reloadSections(indexCollectionView)
         self.cvAllPromotion.reloadSections(indexHeader)
     }
+}
+extension AllPromotionViewController: PromotionSortDelegate {
+    func sortTapped() {
+        PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
+            self.viewModel.isLatest.value = true
+        }) {
+            self.viewModel.isLatest.value = false
+        }
+    }
+    
 }
