@@ -14,7 +14,7 @@ class PromotionDetail: NSObject, Mappable {
     var expireAt                : String?
     var expireAtString          : String?
     var isReaded                : Bool = false
-    var isBookmarked            : Bool = false
+    var isBookmarked            : Bool?
     var image                   : [Image]?
     var merchantName            : String?
     
