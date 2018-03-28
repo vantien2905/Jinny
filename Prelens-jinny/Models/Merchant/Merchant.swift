@@ -14,7 +14,11 @@ class Merchant: NSObject, Mappable {
     var descriptions: String?
     var logo: Logo?
     var createdAt: String?
-
+    
+    var createdDate: Date? {
+        return Date.dateFromString(createdAt)
+    }
+    
     override init() {
         super.init()
     }

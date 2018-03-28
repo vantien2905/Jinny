@@ -10,12 +10,12 @@ import ObjectMapper
 
 class PromotionDetail: NSObject, Mappable {
     var id                      : Int = 0
-    var promoDescription        : String?
+    var detailDescription        : String?
     var expireAt                : String?
     var expireAtString          : String?
     var isReaded                : Bool = false
     var isBookmarked            : Bool = false
-    var image                   : Image?
+    var image                   : [Image]?
     
     override init() {
         super.init()
@@ -26,7 +26,7 @@ class PromotionDetail: NSObject, Mappable {
     
     func mapping(map: Map) {
         self.id <- map["id"]
-        self.promoDescription <- map["description"]
+        self.detailDescription <- map["description"]
         self.expireAt <- map["expires_at"]
         self.expireAtString <- map["expires_at_in_words"]
         self.isReaded <- map["is_readed"]

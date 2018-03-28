@@ -66,9 +66,11 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         hideNavigation()
+        btnAddMembership.isHidden = true
     }
     
     func setUpView() {
+        scrollView.alwaysBounceVertical = true
         scrollView.delegate = self
         vHeader.backgroundColor = PRColor.backgroundColor
         vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 2.5, scale: true)
@@ -97,7 +99,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.register(UINib(nibName: Cell.otherHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader)
         cvMembership.register(UINib(nibName: Cell.membershipFooter, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter)
         cvMembership.isScrollEnabled = false
-
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.delegate = self
         cvMembership.dataSource = self
@@ -216,6 +217,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 reusableView = headerView
             } else {
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader, for: indexPath as IndexPath) as! OtherHeaderCell
+                headerView.delegate = self
                 if listMember.otherMemberships.count == 0 {
                     headerView.vSort.isHidden = true
                     headerView.lbOther.text = "Other memberships"
@@ -246,6 +248,16 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 let vc = MembershipDetailViewController.configureViewController(idMembership: self.listMember.otherMemberships[indexPath.item].id)
                 self.push(controller: vc, animated: true)
             }
+        }
+    }
+}
+
+extension MemberShipViewController: OtherHeaderCellDelegate {
+    func sortTapped() {
+        PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
+            self.viewModel.inputs.islatest.value = true
+        }) {
+            self.viewModel.inputs.islatest.value = false
         }
     }
 }

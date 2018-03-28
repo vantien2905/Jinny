@@ -15,6 +15,7 @@ class MembershipViewModel {
     class MembershipViewModelInput {
         var textSearch: Variable<String?> = Variable<String?>(nil)
         var listTemp = Membership()
+        var islatest: Variable<Bool> = Variable<Bool> (true)
     }
 
     class MembershipViewModelOutput {
@@ -29,6 +30,11 @@ class MembershipViewModel {
         Provider.shared.memberShipService.getListAllMembership()
             .showProgressIndicator()
             .subscribe(onNext: { [weak self] (member) in
+                if let _member = member {
+                    member?.otherMemberships = _member.otherMemberships.sorted(by: { (other1, other2) -> Bool in
+                        return other1 > other2
+                    })
+                }
             self?.outputs.listMembership.value = member
             self?.outputs.listSearchMember.value = member
         }).disposed(by: disposeBag)
@@ -68,5 +74,31 @@ class MembershipViewModel {
            
             self?.outputs.listMembership.value = self?.inputs.listTemp
         }).disposed(by: disposeBag)
+        
+        sortOtherMember()
     }
+    
+    func sortOtherMember() {
+        //---sort other membership
+        inputs.islatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
+            guard let strongSelf = self else { return }
+            let other = strongSelf.outputs.listMembership.value?.otherMemberships
+            if isLatest {
+                if let _other = other {
+                    strongSelf.outputs.listMembership.value?.otherMemberships = _other.sorted(by: { (other1, other2) -> Bool in
+                        return other1 > other2
+                    })
+                }
+                
+            } else {
+                if let _other = other {
+                    strongSelf.outputs.listMembership.value?.otherMemberships = _other.sorted(by: { (other1, other2) -> Bool in
+                        return other1 < other2
+                    })
+                }
+            }
+            strongSelf.outputs.listMembership.value = strongSelf.outputs.listMembership.value
+        }).disposed(by: disposeBag)
+    }
+    
 }

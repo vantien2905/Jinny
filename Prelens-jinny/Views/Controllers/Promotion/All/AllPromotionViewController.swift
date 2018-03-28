@@ -26,6 +26,8 @@ class AllPromotionViewController: UIViewController {
         }
     }
     
+    static var merchantName: String?
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         bindData()
@@ -58,14 +60,6 @@ class AllPromotionViewController: UIViewController {
     }
     
     @objc func bindData() {
-        //        viewModel.outputs.listAllPromotion.asObservable().subscribe(onNext: { promotions in
-        //            //if let _promotion = promotions {
-        //                self.listPromotion = promotions
-        //                self.cvAllPromotion.reloadData()
-        //                self.stopRefresher()
-        //            //}
-        //        }).disposed(by: disposeBag)
-        
         viewModel.listAllPromotion.asObservable().subscribe(onNext: {listPromotions in
             guard let _listPromotions = listPromotions else { return }
             self.listPromotion = _listPromotions
@@ -169,9 +163,10 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             return
         } else {
             if indexPath.section == 2 {
-                let vc = PromotionDetailViewController()
-                vc.promotionDetailData = filteredData[indexPath.item]
-                self.push(controller: vc, animated: true)
+                let idVoucher = filteredData[indexPath.item].id
+                let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
+                self.push(controller: detailVoucherVC, animated: true)
+                AllPromotionViewController.merchantName = filteredData[indexPath.item].merchant?.name
             }
         }
     }

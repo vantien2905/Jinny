@@ -43,11 +43,15 @@ class PRTabbarCustom: PRBaseViewXib {
         switch index {
         case 0:
             vMemberships.setIcon(image: PRImage.tabbarMembershipOn)
+            vMemberships.lbTitle.textColor = PRColor.mainAppColor
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
+            vPromotions.lbTitle.textColor = .black
             vMore.setIcon(image: PRImage.tabbarMore)
         case 1:
-            vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOn)
+            vPromotions.lbTitle.textColor = PRColor.mainAppColor
+            vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
+            vMemberships.lbTitle.textColor = .black
             vMore.setIcon(image: PRImage.tabbarMore)
         case 2:
             vMemberships.setIcon(image: PRImage.tabbarMembershipOff)

@@ -18,7 +18,6 @@ class MembershipDetailViewController: BaseViewController {
     
     static var urlThumb: String?
     static var merchantName: String?
-    static var merchantDescription: String?
     
     var isStarTapped = false
     var viewModel: MembershipDetailViewModelProtocol!
@@ -30,7 +29,6 @@ class MembershipDetailViewController: BaseViewController {
             guard let url = membershipDetail.merchant?.logo?.url?.thumb else { return }
             MembershipDetailViewController.urlThumb = url
             MembershipDetailViewController.merchantName = membershipDetail.merchant?.name
-            MembershipDetailViewController.merchantDescription = membershipDetail.merchant?.descriptions
             
             tbMembershipDetail.reloadData()
             membershipDetail.hasBookmark ? addStarButtonOn() : addStarButtonOff()
@@ -48,7 +46,7 @@ class MembershipDetailViewController: BaseViewController {
         setNavigation()
         self.delegate = self
         setTitle(title: "", textColor: UIColor.black, backgroundColor: .white)
-       ProgressLoadingHelper.shared.showIndicator()
+        ProgressLoadingHelper.shared.showIndicator()
     }
     override func viewWillAppear(_ animated: Bool) {
         darkStatus()
@@ -60,7 +58,7 @@ class MembershipDetailViewController: BaseViewController {
         tbMembershipDetail.register(UINib(nibName: Cell.footerMembershipDetail, bundle: nil), forCellReuseIdentifier: Cell.footerMembershipDetail)
         tbMembershipDetail.estimatedRowHeight = 100
         tbMembershipDetail.rowHeight = UITableViewAutomaticDimension
-
+        
         tbMembershipDetail.backgroundColor = PRColor.backgroundColor
         tbMembershipDetail.separatorStyle = .none
         tbMembershipDetail.delegate = self
@@ -193,11 +191,10 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            let vc = PromotionDetailViewController()
-            if let _voucher = membershipDetail.vouchers {
-                vc.promotionDetailData = _voucher[indexPath.item]
-                self.push(controller: vc, animated: true)
-            }
+            guard let _vouchers = membershipDetail.vouchers else { return }
+            let _voucher = _vouchers[indexPath.item]
+            let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: _voucher.id)
+            push(controller: detailVoucherVC, animated: true)
         }
     }
 }
