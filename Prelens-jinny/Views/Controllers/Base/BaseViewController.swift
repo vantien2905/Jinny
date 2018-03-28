@@ -35,13 +35,17 @@ class BaseViewController: UIViewController {
         let lb = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - self.view.bounds.width/4)/2, y: 0,
                                        width: self.view.bounds.width, height: 44))
         lb.font = UIFont(name: "OstrichSans-Heavy", size: 22.5)
-        lb.text = title
+        lb.text = title.uppercased()
         lb.textAlignment = .center
         lb.numberOfLines = 2
         lb.textColor = textColor
         lb.sizeToFit()
         self.navigationController?.navigationBar.barTintColor = backgroundColor
         self.navigationItem.titleView = lb
+        self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(3, for: UIBarMetrics.default)
+    }
+    override func viewDidLayoutSubviews() {
+        navigationController?.navigationItem.titleView?.sizeToFit()
     }
 
     func setUpLayout() {
