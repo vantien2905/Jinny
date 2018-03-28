@@ -33,7 +33,7 @@ class PromotionCell: UICollectionViewCell {
     }
     
     func setData() {
-        if  let _expiresAt = promotion.expiresAt, let _merchantName = promotion.merchant?.name,  let _url = promotion.image?.url?.medium {
+        if  let _expiresAt = promotion.expiresString, let _merchantName = promotion.merchant?.name,  let _url = promotion.image?.url?.medium {
             if promotion.isReaded {
                 imgReadPromotion.isHidden = true
             } else {

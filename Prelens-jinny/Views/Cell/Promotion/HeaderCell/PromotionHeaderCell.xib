@@ -18,7 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromotionHeaderCell" customModule="Prelens_jinny" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromotionHeaderCell" customModule="Jinny" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="301" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -46,13 +46,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVH-sO-yqQ">
+                                <rect key="frame" x="104" y="0.0" width="47" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="xli-A7-uXA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="btnSortTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6KQ-UP-3Ct"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Sl-hd-7L8" secondAttribute="trailing" id="6zP-Y0-Co0"/>
                             <constraint firstItem="opC-iq-90E" firstAttribute="centerY" secondItem="xe2-FO-bqc" secondAttribute="centerY" id="8sd-hO-ZqY"/>
+                            <constraint firstItem="yVH-sO-yqQ" firstAttribute="top" secondItem="xe2-FO-bqc" secondAttribute="top" id="JMh-Cx-UVD"/>
+                            <constraint firstAttribute="trailing" secondItem="yVH-sO-yqQ" secondAttribute="trailing" id="OiU-yM-DOA"/>
                             <constraint firstItem="3Sl-hd-7L8" firstAttribute="centerY" secondItem="xe2-FO-bqc" secondAttribute="centerY" id="Vue-UI-ycY"/>
                             <constraint firstItem="3Sl-hd-7L8" firstAttribute="leading" secondItem="opC-iq-90E" secondAttribute="trailing" constant="8.5" id="atd-CL-nNK"/>
+                            <constraint firstAttribute="bottom" secondItem="yVH-sO-yqQ" secondAttribute="bottom" id="pHm-aT-g5k"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -70,9 +82,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="301" height="50"/>
             <connections>
+                <outlet property="lbSort" destination="3Sl-hd-7L8" id="haw-Lm-1py"/>
                 <outlet property="vFilter" destination="xe2-FO-bqc" id="ydy-L9-M3c"/>
             </connections>
-            <point key="canvasLocation" x="-25" y="23"/>
+            <point key="canvasLocation" x="-25.5" y="23"/>
         </collectionViewCell>
     </objects>
 </document>

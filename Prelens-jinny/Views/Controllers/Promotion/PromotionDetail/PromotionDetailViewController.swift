@@ -122,7 +122,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             return CGSize(width: size, height: 125 - (57 - _height))
         } else if indexPath.section == 1 {
             let size = UIScreen.main.bounds.width - 40
-            return CGSize(width: size, height: size)
+            return CGSize(width: size, height: size*0.75)
         } else if indexPath.section == 2 {
             let size = UIScreen.main.bounds.width - 40
             
@@ -140,9 +140,11 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = PRPhotoDetail()
-        vc.photoData = promotionDetail?.image
-        push(controller: vc, animated: true)
+        if indexPath.section == 1 {
+            let vc = PRPhotoDetail()
+            vc.photoData = promotionDetail?.image
+            push(controller: vc, animated: true)
+        }
     }
 }
 

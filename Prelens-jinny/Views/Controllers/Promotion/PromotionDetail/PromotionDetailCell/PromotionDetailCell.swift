@@ -20,7 +20,7 @@ class PromotionDetailCell: UICollectionViewCell {
     func setUpView(with data: Image?) {
 //        guard let urlString = data.image?.url?.medium, let url = URL(string: urlString) else { return }
         guard let imageURL = data?.url?.medium, let url = URL(string: imageURL) else { return }
-        imvPromotionDetail.contentMode = .scaleAspectFit
+        imvPromotionDetail.contentMode = .scaleAspectFill
         imvPromotionDetail.sd_setImage(with: url, placeholderImage: nil, options: .delayPlaceholder, completed: nil)
     }
 }
