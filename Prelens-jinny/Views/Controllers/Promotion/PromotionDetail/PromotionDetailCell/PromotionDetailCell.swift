@@ -15,12 +15,11 @@ class PromotionDetailCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
-    func setUpView(with data: PromotionDetail) {
-        guard let urlString = data.image?.url?.medium, let url = URL(string: urlString) else { return }
-            
+    func setUpView(with data: Image?) {
+//        guard let urlString = data.image?.url?.medium, let url = URL(string: urlString) else { return }
+        guard let imageURL = data?.url?.medium, let url = URL(string: imageURL) else { return }
         imvPromotionDetail.contentMode = .scaleAspectFit
         imvPromotionDetail.sd_setImage(with: url, placeholderImage: nil, options: .delayPlaceholder, completed: nil)
     }

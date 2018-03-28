@@ -14,7 +14,7 @@ class PRPhotoDetail: BaseViewController {
     @IBOutlet weak var cvPhotoPreview: UICollectionView!
     
     var imgArray: Any? //[UIImage]()
-    var photoData: Any?
+    var photoData: [Image]?
     var passedContentOffset = IndexPath()
     
     override func viewDidLoad() {
@@ -74,14 +74,15 @@ class PRPhotoDetail: BaseViewController {
 
 extension PRPhotoDetail: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1// imgArray.count
+        guard let numberCells = photoData?.count else { return 0 }
+        return numberCells
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImagePreviewFullViewCell
-        guard let data = photoData as? Promotion else { return UICollectionViewCell() }
+        guard let data = photoData else { return UICollectionViewCell() }
         //cell.imgView.image=imgArray[indexPath.row]
-        cell.imgView.sd_setImage(with: (data.image?.url?.original)!, placeholder: nil, failedImage: nil)
+        cell.imgView.sd_setImage(with: (data[indexPath.row].url?.original)!, placeholder: nil, failedImage: nil)
         
         return cell
     }

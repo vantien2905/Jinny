@@ -20,9 +20,7 @@ class PromotionViewController: UIViewController {
     var controllers = [UIViewController]()
     
     let vcAllPromotion = AllPromotionViewController.configureViewController()
-//    initControllerFromNib() as! AllPromotionViewController
     let vcStarredPromotion = StarredPromotionViewController.configureViewController()
-//    initControllerFromNib() as! StarredPromotionViewController
     let vcAchivedPromotion = AchivedPromotionViewController.initControllerFromNib() as! AchivedPromotionViewController
     let cellId = "CellId"
     
