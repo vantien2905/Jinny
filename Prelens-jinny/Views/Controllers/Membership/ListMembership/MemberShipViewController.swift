@@ -17,6 +17,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vShadow: UIView!
     @IBAction func btnAddMembershipTapped() {
         let vcAddMerchant = AddMerchantViewController.initControllerFromNib()
         self.push(controller: vcAddMerchant, animated: true)
@@ -53,6 +54,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         confireCollectionView()
         cvMembership.showsHorizontalScrollIndicator = false
         hideKeyboard()
+        vSearch.backgroundColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +74,8 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         scrollView.alwaysBounceVertical = true
         scrollView.delegate = self
         vHeader.backgroundColor = PRColor.backgroundColor
-        vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: -1, height: 1.5), radius: 2.5, scale: true)
+        vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
+        vShadow.backgroundColor = .clear
         vSearch.tfSearch.attributedPlaceholder = "Search membership".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
     }
     
@@ -101,7 +104,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.delegate = self
         cvMembership.dataSource = self
-        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 22, bottom: 10, right: 22)
 
     }
     
@@ -171,15 +174,15 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          if indexPath.section == 0 {
             if self.listMember.startedMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 30, height: 20)
+                return CGSize(width: collectionView.frame.width - 44, height: 20)
             } else {
-                return CGSize(width: (collectionView.frame.width - 35)/2, height: (collectionView.frame.width - 35)/2)
+                return CGSize(width: (collectionView.frame.width - 49)/2, height: (collectionView.frame.width - 49)/2)
             }
         } else {
             if self.listMember.otherMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 30, height: 20)
+                return CGSize(width: collectionView.frame.width - 44, height: 20)
             } else {
-                return CGSize(width: (collectionView.frame.width - 35)/2, height: (collectionView.frame.width - 35)/2)
+                return CGSize(width: (collectionView.frame.width - 49)/2, height: (collectionView.frame.width - 49)/2)
             }
         }
     }
@@ -193,7 +196,11 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 42.5)
+        if section == 0 {
+            return CGSize(width: collectionView.frame.width, height: 25)
+        } else {
+            return CGSize(width: collectionView.frame.width, height: 42.5)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
