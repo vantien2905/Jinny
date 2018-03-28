@@ -30,7 +30,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
                               duration: 0.35,
                               options: .transitionCrossDissolve,
                               animations: { self.cvMembership.reloadData() })
-//            self.cvMembership.reloadData()
         }
     }
     
@@ -225,6 +224,11 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 } else {
                     headerView.vSort.isHidden = false
                     headerView.lbOther.text = "Other"
+                    if self.viewModel.inputs.islatest.value {
+                        headerView.lbLatest.text = "Latest"
+                    } else {
+                        headerView.lbLatest.text = "Earliest"
+                    }
                 }
                 reusableView = headerView
             }
