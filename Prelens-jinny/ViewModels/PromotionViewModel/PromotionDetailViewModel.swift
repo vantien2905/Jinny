@@ -40,9 +40,7 @@ class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
     }
     
     func addBookmarkVoucher(idBookmark: Int) {
-        Provider.shared.promotionService.addBookmarkVoucher(idBookmark: idBookmark).subscribe(onNext: { (promotion) in
-            guard let _promotion = promotion else { return }
-            self.isBookmarked.value = _promotion.isBookMarked
+        Provider.shared.promotionService.addBookmarkVoucher(idBookmark: idBookmark).subscribe(onNext: { (_) in
         }).disposed(by: disposeBag)
         getVoucherDetail(id: idBookmark)
     }
