@@ -21,6 +21,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
+                <outlet property="btnDayToRemind" destination="kbQ-Mz-VtP" id="Eu6-ab-BsZ"/>
+                <outlet property="lbDaysToRemind" destination="vnx-dl-QJP" id="8GI-Eh-iDh"/>
+                <outlet property="lbNumberDay" destination="fbq-zE-y6l" id="WvO-ys-Cn9"/>
                 <outlet property="lbVersion" destination="LBd-P0-9dQ" id="Cvz-nz-2uU"/>
                 <outlet property="vDaysToRemind" destination="eo3-7F-qQN" id="Aja-ci-jkz"/>
                 <outlet property="vPushNotiSwitch" destination="6BC-ze-1Bp" id="Fns-4H-791"/>
@@ -128,12 +131,19 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-Mz-VtP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="fbq-zE-y6l" firstAttribute="centerY" secondItem="vnx-dl-QJP" secondAttribute="centerY" id="BRu-DG-aaG"/>
+                                <constraint firstAttribute="bottom" secondItem="kbQ-Mz-VtP" secondAttribute="bottom" id="Gzu-rZ-8Ce"/>
                                 <constraint firstItem="vnx-dl-QJP" firstAttribute="centerY" secondItem="eo3-7F-qQN" secondAttribute="centerY" id="Kdy-SG-jpd"/>
                                 <constraint firstAttribute="trailing" secondItem="fbq-zE-y6l" secondAttribute="trailing" constant="14" id="SC6-vM-xBm"/>
+                                <constraint firstAttribute="trailing" secondItem="kbQ-Mz-VtP" secondAttribute="trailing" id="dTq-Jx-hcc"/>
+                                <constraint firstItem="kbQ-Mz-VtP" firstAttribute="top" secondItem="eo3-7F-qQN" secondAttribute="top" id="fIH-P3-zeD"/>
+                                <constraint firstItem="kbQ-Mz-VtP" firstAttribute="leading" secondItem="eo3-7F-qQN" secondAttribute="leading" id="igG-kl-Alf"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNK-oX-3Wf">

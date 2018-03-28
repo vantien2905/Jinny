@@ -15,7 +15,7 @@ class Promotion: NSObject, Mappable {
     var isReaded        : Bool = false
     var image           : Image?
     var isBookMarked    : Bool = false
-    
+    var expireAtInWords : String?
     override init() {
         super.init()
     }
@@ -25,11 +25,12 @@ class Promotion: NSObject, Mappable {
     }
     
      func mapping(map: Map) {
-        self.id         <- map["id"]
-        self.expiresAt  <- map["expires_at"]
-        self.merchant   <- map["merchant"]
-        self.isReaded   <- map["is_readed"]
-        self.image      <- map["image"]
-        self.isBookMarked <- map["is_bookmarked"]
+        self.id                    <- map["id"]
+        self.expiresAt             <- map["expires_at"]
+        self.expireAtInWords       <- map["expires_at_in_words"]
+        self.merchant              <- map["merchant"]
+        self.isReaded              <- map["is_readed"]
+        self.image                 <- map["image"]
+        self.isBookMarked          <- map["is_bookmarked"]
      }
 }
