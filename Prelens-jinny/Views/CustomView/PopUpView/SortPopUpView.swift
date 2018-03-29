@@ -48,11 +48,12 @@ class SortPopUpView: BasePopUpView {
         
         lbContent.anchor(vContent.topAnchor, left: vContent.leftAnchor, bottom: btnLatest.topAnchor, right: vContent.rightAnchor, topConstant: 20, leftConstant: 20, bottomConstant: 5, rightConstant: 20, widthConstant: 0, heightConstant: 0)
         
-        btnLatest.anchor(lbContent.bottomAnchor, left: vContent.leftAnchor, right: vContent.rightAnchor, topConstant: 20, leftConstant: 8.5, rightConstant: 8.5, heightConstant: 40)
-        btnEarliest.anchor(btnLatest.bottomAnchor, left: vContent.leftAnchor, right: vContent.rightAnchor, topConstant: 20, leftConstant: 8.5, rightConstant: 8.5, heightConstant: 40)
-        
-//        btnLatest.addTarget(self, action: #selector(btnLatestTapped), for: .touchUpInside)
-//        btnLatest.addTarget(self, action: #selector(btnEarliestTapped), for: .touchUpInside)
+        btnLatest.anchor(lbContent.bottomAnchor, left: vContent.leftAnchor, right: vContent.rightAnchor, topConstant: 20, leftConstant: 0, rightConstant: 0, heightConstant: 40)
+        btnEarliest.anchor(btnLatest.bottomAnchor, left: vContent.leftAnchor, right: vContent.rightAnchor, topConstant: 0, leftConstant: 0, rightConstant: 0, heightConstant: 40)
+    }
+    
+    override func btnCoverTapped() {
+        hidePopUp()
     }
     
     @objc func btnLatestTapped() {
@@ -72,7 +73,7 @@ class SortPopUpView: BasePopUpView {
         showPopUp()
     }
     
-    override func showPopUp(height: CGFloat = 500) {
-        super.showPopUp(height: 250)
+    override func showPopUp(height: CGFloat = 150) {
+        super.showPopUp(height: 150)
     }
 }

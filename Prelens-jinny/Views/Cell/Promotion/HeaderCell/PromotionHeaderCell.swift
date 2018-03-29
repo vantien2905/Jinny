@@ -13,8 +13,9 @@ protocol PromotionSortDelegate: class {
 }
 
 class PromotionHeaderCell: UICollectionViewCell {
-    @IBOutlet weak var vFilter: UIView!
+    @IBOutlet weak var vSort: UIView!
     @IBOutlet weak var lbSort: UILabel!
+    @IBOutlet weak var btnSort: UIButton!
     
     weak var delegate: PromotionSortDelegate?
     @IBAction func btnSortTapped(_ sender: Any) {

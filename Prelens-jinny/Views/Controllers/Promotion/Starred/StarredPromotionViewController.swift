@@ -10,71 +10,110 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class StarredPromotionViewController: UIViewController {
+class StarredPromotionViewController: UIViewController,UIScrollViewDelegate {
 
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
-    var viewModel: PromotionViewModelProtocol!
+    @IBOutlet weak var btnAddVoucher: UIButton!
+    @IBOutlet weak var vSearch: SearchView!
+    @IBOutlet weak var vHeader: UIView!
+    @IBOutlet weak var vShadow: UIView!
+    @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
+    var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
-    
+    static var merchantName: String?
     var listStarredPromotion = [Promotion]() {
         didSet {
-//            filteredData = listPromotion
             self.cvStarredPromotion.reloadData()
         }
     }
+    var listSearch = [Promotion]()
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
-        
+        vSearch.tfSearch.text = ""
         bindData()
-//        viewModel.getListStarredPromotion()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpView()
         configColecttionView()
     }
     
     @objc func bindData() {
+        vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
+            self?.viewModel.textSearch.value = text
+        }).disposed(by: disposeBag)
+        
         viewModel.listStarredPromotion.asObservable().subscribe(onNext: { promotions in
             guard let _promotions = promotions else { return }
             self.listStarredPromotion = _promotions
+            self.listSearch = _promotions
             self.cvStarredPromotion.reloadData()
         }).disposed(by: disposeBag)
     }
     
+    func setUpView() {
+        scrollView.alwaysBounceVertical = true
+        scrollView.delegate = self
+        vHeader.backgroundColor = PRColor.backgroundColor
+        vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
+        vShadow.backgroundColor = .clear
+        vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
+    }
+    
     class func configureViewController() -> UIViewController {
         let starredPromotionVC = StarredPromotionViewController.initControllerFromNib() as! StarredPromotionViewController
-        var viewModel: PromotionViewModelProtocol {
-            return PromotionViewModel()
+        var viewModel: StarredPromotionViewModel {
+            return StarredPromotionViewModel()
         }
         starredPromotionVC.viewModel = viewModel
         return starredPromotionVC
     }
 
     func configColecttionView() {
-        cvStarredPromotion.register(UINib(nibName: Cell.searchPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.searchPromotion)
         cvStarredPromotion.register(UINib(nibName: Cell.promotionHeader, bundle: nil), forCellWithReuseIdentifier: Cell.promotionHeader)
         cvStarredPromotion.register(UINib(nibName: Cell.promotionCell, bundle: nil), forCellWithReuseIdentifier: Cell.promotionCell )
         cvStarredPromotion.register(UINib(nibName: Cell.emptyPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.emptyPromotion)
-
+        cvStarredPromotion.isScrollEnabled = false
         cvStarredPromotion.backgroundColor = PRColor.backgroundColor
         cvStarredPromotion.delegate = self
         cvStarredPromotion.dataSource = self
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        //        print(actualPosition)
+        if actualPosition.y > 0 {
+            btnAddVoucher.isHidden = true
+        } else if actualPosition.y < 0 {
+            btnAddVoucher.isHidden = false
+        }
     }
 }
 
 extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        heightViewScroll.constant = cvStarredPromotion.contentSize.height + 60
         switch indexPath.section {
         case 0:
-            let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
             
-            return cell
-        case 1:
-            let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
+            let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader,
+                                                          for: indexPath) as! PromotionHeaderCell
+            
             if self.listStarredPromotion.count == 0 {
-                cell.vFilter.isHidden = true
+                cell.vSort.isHidden = true
+
+            } else {
+                cell.vSort.isHidden = false
+                if self.viewModel.isLatest.value {
+                    cell.lbSort.text = "Latest"
+                } else {
+                    cell.lbSort.text = "Earliest"
+                }
+                cell.delegate = self
             }
             return cell
         default:
@@ -83,23 +122,24 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
                 
                 return cell
             } else {
-                let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath)
+                let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
+                cell.promotion = listStarredPromotion[indexPath.item]
                 return cell
             }
         }
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
-        case 2:
-            if listStarredPromotion.count == 0 {
+        case 1:
+            if self.listStarredPromotion.count == 0 {
                 return 1
             } else {
-                return listStarredPromotion.count
+                return self.listStarredPromotion.count
             }
         default:
             return 1
@@ -107,16 +147,17 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.section {
-        case 0:
-            return CGSize(width: collectionView.frame.width - 30, height: 70 )
-        case 1:
-            return CGSize(width: collectionView.frame.width - 30, height: 40 )
-        default:
+        if indexPath.section == 0 {
             if self.listStarredPromotion.count == 0 {
-                return CGSize(width: collectionView.frame.width - 30, height: 30)
+                return CGSize(width: collectionView.frame.width - 44, height: 50)
             } else {
-                return CGSize(width: (collectionView.frame.width - 30), height: (collectionView.frame.height / 2  ))
+                return CGSize(width: (collectionView.frame.width - 49), height: 50)
+            }
+        } else {
+            if self.listStarredPromotion.count == 0 {
+                return CGSize(width: collectionView.frame.width - 44, height: 50)
+            } else {
+                return CGSize(width: (collectionView.frame.width - 49), height: 300)
             }
         }
     }
@@ -130,6 +171,24 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        if self.listStarredPromotion.count == 0 {
+            return
+        } else {
+            if indexPath.section == 1 {
+                let idVoucher = listStarredPromotion[indexPath.item].id
+                let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
+                self.push(controller: detailVoucherVC, animated: true)
+                StarredPromotionViewController.merchantName = listStarredPromotion[indexPath.item].merchant?.name
+            }
+        }
+    }
+}
+extension StarredPromotionViewController: PromotionSortDelegate {
+    func sortTapped() {
+        PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
+            self.viewModel.isLatest.value = true
+        }) {
+            self.viewModel.isLatest.value = false
+        }
     }
 }
