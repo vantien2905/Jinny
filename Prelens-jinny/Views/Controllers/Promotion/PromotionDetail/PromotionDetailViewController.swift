@@ -15,12 +15,18 @@ class PromotionDetailViewController: BaseViewController {
     @IBOutlet weak var btnRedeem: UIButton!
     
     let disposeBag = DisposeBag()
-
+    
+    var starTapped: Bool? {
+        didSet {
+            if let _starTapped = starTapped {
+                _starTapped ? self.addStarButtonOn() : self.addStarButtonOff()
+            }
+        }
+    }
     var viewModel: PromotionDetailViewModelProtocol!
     var promotionDetail:  PromotionDetail? {
         didSet {
             cvVoucherDetail.reloadData()
-            
             //MARK: Setup the merchantName
             if let merchantName = promotionDetail?.merchantName {
                 setNavigation(name: merchantName)
@@ -40,7 +46,7 @@ class PromotionDetailViewController: BaseViewController {
         bindData()
     }
     
-    class func configureViewController(idVoucher: Int) -> UIViewController {
+    class func configureViewController(idVoucher: String) -> UIViewController {
         let vcVoucherDetail = PromotionDetailViewController.initControllerFromNib() as! PromotionDetailViewController
         var viewModel: PromotionDetailViewModelProtocol {
             return PromotionDetailViewModel(id: idVoucher)
@@ -50,6 +56,7 @@ class PromotionDetailViewController: BaseViewController {
     }
     
     func setUpComponents() {
+        darkStatus()
         cvVoucherDetail.delegate = self
         cvVoucherDetail.dataSource = self
         
@@ -73,6 +80,7 @@ class PromotionDetailViewController: BaseViewController {
         viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
             guard let strongSelf = self else { return }
             strongSelf.promotionDetail = voucher
+            strongSelf.starTapped = voucher?.isBookmarked
         }).disposed(by: disposeBag)
         
         viewModel.isBookmarked.asObservable().subscribe(onNext: { [weak self] value in
@@ -160,6 +168,9 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
 
 extension PromotionDetailViewController: BaseViewControllerDelegate {
     func starBookmarkTapped() {
+        if let _starTapped = starTapped {
+            starTapped = !_starTapped
+        }
         guard let id = promotionDetail?.id else { return }
         viewModel.addBookmarkVoucher(idBookmark: id)
     }
