@@ -20,7 +20,7 @@ class EditProfileViewModel {
     public var isValidInput: Variable<Bool>
     public var regionID: Variable<Int?>
     public var gender : Variable<String?>
-    
+    public var isUpdateSuccess: PublishSubject<Bool>
     var user = Variable<PRUser?>(nil)
     var regions = Variable<[ResidentialRegion]>([])
     
@@ -32,7 +32,7 @@ class EditProfileViewModel {
         self.isValidInput = Variable<Bool>(false)
         self.regionID = Variable<Int?>(nil)
         self.gender  = Variable<String?>(nil)
-        
+        self.isUpdateSuccess = PublishSubject<Bool>()
         let isValid = self.checkValid(emailText: email.asObservable(), nameText: name.asObservable(), dobText: dob.asObservable())
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
             self.isValidInput.value = value
@@ -86,8 +86,10 @@ class EditProfileViewModel {
                 guard let strongSelf = self else { return }
                 strongSelf.user.value = user
                 KeychainManager.shared.saveString(value: email, forkey: .email)
-                PopUpHelper.shared.showMessage(message: "Update profile success")
-                }, onError: { (error) in
+                PopUpHelper.shared.showPopUp(message: "Update profile success", action: {
+                    strongSelf.isUpdateSuccess.onCompleted()
+                })
+            }, onError: { (error) in
                     print(error)
             }).disposed(by: disposeBag)
     }

@@ -49,7 +49,7 @@ class SettingViewController: BaseViewController {
             if value {
                 self.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 self.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                //LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test")
+                LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test",day:"29/03/2018",dayBeforeExprise: 0)
                 //TODO
             } else {
                 self.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
