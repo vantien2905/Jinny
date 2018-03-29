@@ -40,13 +40,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJR-w8-Yr9">
                             <rect key="frame" x="41.5" y="28" width="37" height="20"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
-                            <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.28627450980392155" green="0.28627450980392155" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slm-8m-Gai">
                             <rect key="frame" x="41.5" y="125" width="64" height="20"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
-                            <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Gf-sl-B9y">

@@ -19,7 +19,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSignInViewController" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSignInViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
                 <outlet property="btnShowHidePassword" destination="035-Jr-kZw" id="rmU-Go-0Lh"/>
                 <outlet property="btnSignIn" destination="3Vh-U0-Ls9" id="J9a-8X-J2Y"/>
@@ -40,13 +40,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-AE-lk0">
                             <rect key="frame" x="41.5" y="28" width="37" height="20"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
-                            <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogL-ad-Zpa">
                             <rect key="frame" x="41.5" y="125" width="64" height="20"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
-                            <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCv-UA-Whd">
