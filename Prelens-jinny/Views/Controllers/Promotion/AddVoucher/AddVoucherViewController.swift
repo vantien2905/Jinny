@@ -15,6 +15,14 @@ class AddVoucherViewController: BaseViewController {
     @IBOutlet weak var lcsVScanQRHeight: NSLayoutConstraint!
     
     var scanner: QRCode?
+    var qrCode: String? {
+        didSet{
+            guard let code = qrCode else { return }
+            PopUpHelper.shared.showPopUp(message: code) {
+                self.reloadScanner()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +42,9 @@ class AddVoucherViewController: BaseViewController {
     }
     
     func setUpView() {
+        darkStatus()
         setTitle(title: "ADD VOUCHER", textColor: .black, backgroundColor: .white)
+        addBackButton()
         self.navigationController?.navigationBar.isHidden = false
         setUpScan()
     }
@@ -49,7 +59,7 @@ class AddVoucherViewController: BaseViewController {
         scanner = QRCode()
         scanner?.maxDetectedCount = 1
         scanner?.prepareScan(vScanQR, completion: { (qrstring) in
-            
+            self.qrCode = qrstring
             print(qrstring)
         })
         scanner?.startScan()

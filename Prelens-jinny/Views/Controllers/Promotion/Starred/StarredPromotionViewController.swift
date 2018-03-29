@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class StarredPromotionViewController: UIViewController,UIScrollViewDelegate {
+class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
     @IBOutlet weak var btnAddVoucher: UIButton!
@@ -33,8 +33,10 @@ class StarredPromotionViewController: UIViewController,UIScrollViewDelegate {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         vSearch.tfSearch.text = ""
         bindData()
+        viewModel.getListStarredPromotion()
+        hideKeyboard()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -175,7 +177,7 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             return
         } else {
             if indexPath.section == 1 {
-                let idVoucher = listStarredPromotion[indexPath.item].id
+                guard let idVoucher = listStarredPromotion[indexPath.item].id else { return }
                 let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
                 self.push(controller: detailVoucherVC, animated: true)
                 StarredPromotionViewController.merchantName = listStarredPromotion[indexPath.item].merchant?.name

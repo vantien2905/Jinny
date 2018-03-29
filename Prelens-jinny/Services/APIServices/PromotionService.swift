@@ -11,11 +11,10 @@ import Alamofire
 protocol PromotionServiceProtocol {
     
     func getListAllPromotion() -> Observable<[Promotion]>
-    func addBookmarkVoucher(idBookmark: Int) -> Observable<Promotion?>
-    func getPromotionDetail(id: Int) -> Observable<PromotionDetail?>
+    func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?>
+    func getPromotionDetail(id: String) -> Observable<PromotionDetail?>
     func getListStarredPromotion()  -> Observable<[Promotion]>
     func addVoucher(code: String) -> Observable<PromotionDetail?>
-    
 }
 
 class PromotionService: PromotionServiceProtocol {
@@ -30,13 +29,13 @@ class PromotionService: PromotionServiceProtocol {
     }
     
     
-    func addBookmarkVoucher(idBookmark: Int) -> Observable<Promotion?> {
+    func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?> {
         var _url = APIEndpoint.Promotion.addBookmarkVoucher
         _url = String(format: _url, "\(idBookmark)")
         return network.rx_Object(url: _url, method: .put, parameters: [:])
     }
     
-    func getPromotionDetail(id: Int) -> Observable<PromotionDetail?> {
+    func getPromotionDetail(id: String) -> Observable<PromotionDetail?> {
         var _url = APIEndpoint.Promotion.getPromotionDetail
         _url = String(format: _url, "\(id)")
         return network.rx_Object(url: _url, method: .get, parameters: [:])

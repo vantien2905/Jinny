@@ -16,8 +16,13 @@ protocol AddVoucherViewModelProtocol {
 
 
 class AddVoucherViewModel: AddVoucherViewModelProtocol {
+    let disposeBag = DisposeBag()
+    
     func addVoucher(code: String) {
-        
+        Provider.shared.promotionService.addVoucher(code: code).asObservable().subscribe(onNext: {[weak self] (voucher) in
+            
+        }).disposed(by: disposeBag)
+
     }
     
 }

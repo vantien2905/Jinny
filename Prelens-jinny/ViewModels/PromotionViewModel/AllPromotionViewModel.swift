@@ -14,6 +14,7 @@ protocol AllPromotionViewModelProtocol {
     var listAllPromotion: Variable<[Promotion]?> {get}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var isLatest: Variable<Bool>{get set}
+    func getListAllPromotion()
 }
 
 class AllPromotionViewModel: AllPromotionViewModelProtocol {
@@ -26,7 +27,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
     
     init() {
         isLatest = Variable<Bool>(true)
-        getListAllPromotion()
+//        getListAllPromotion()
         textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
             let listVoucher = self?.listSearchVoucher.value?.filter { (promotion) -> Bool in
                 guard let _textSearch = textSearch else { return true }

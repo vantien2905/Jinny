@@ -195,7 +195,8 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
         if indexPath.section == 1 {
             guard let _vouchers = membershipDetail.vouchers else { return }
             let _voucher = _vouchers[indexPath.item]
-            let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: _voucher.id)
+            guard let id = _voucher.id else { return }
+            let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: id)
             push(controller: detailVoucherVC, animated: true)
         }
     }

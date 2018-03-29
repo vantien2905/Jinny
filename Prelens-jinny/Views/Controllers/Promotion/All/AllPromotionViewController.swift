@@ -36,6 +36,8 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         vSearch.tfSearch.text = ""
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         bindData()
+        viewModel.getListAllPromotion()
+        hideKeyboard()
     }
     
     override func viewDidLoad() {
@@ -196,7 +198,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             return
         } else {
             if indexPath.section == 1 {
-                let idVoucher = listPromotion[indexPath.item].id
+                guard let idVoucher = listPromotion[indexPath.item].id else { return }
                 let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
                 self.push(controller: detailVoucherVC, animated: true)
                 AllPromotionViewController.merchantName = listPromotion[indexPath.item].merchant?.name

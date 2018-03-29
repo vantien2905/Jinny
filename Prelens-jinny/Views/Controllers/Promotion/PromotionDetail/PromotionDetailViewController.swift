@@ -15,7 +15,7 @@ class PromotionDetailViewController: BaseViewController {
     @IBOutlet weak var btnRedeem: UIButton!
     
     let disposeBag = DisposeBag()
-
+    
     var starTapped: Bool? {
         didSet {
             if let _starTapped = starTapped {
@@ -46,7 +46,7 @@ class PromotionDetailViewController: BaseViewController {
         bindData()
     }
     
-    class func configureViewController(idVoucher: Int) -> UIViewController {
+    class func configureViewController(idVoucher: String) -> UIViewController {
         let vcVoucherDetail = PromotionDetailViewController.initControllerFromNib() as! PromotionDetailViewController
         var viewModel: PromotionDetailViewModelProtocol {
             return PromotionDetailViewModel(id: idVoucher)
@@ -56,6 +56,7 @@ class PromotionDetailViewController: BaseViewController {
     }
     
     func setUpComponents() {
+        darkStatus()
         cvVoucherDetail.delegate = self
         cvVoucherDetail.dataSource = self
         

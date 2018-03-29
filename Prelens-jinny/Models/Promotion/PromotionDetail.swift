@@ -9,7 +9,7 @@
 import ObjectMapper
 
 class PromotionDetail: NSObject, Mappable {
-    var id                      : Int = 0
+    var id                      : String?
     var detailDescription       : String?
     var expireAt                : String?
     var expireAtString          : String?
