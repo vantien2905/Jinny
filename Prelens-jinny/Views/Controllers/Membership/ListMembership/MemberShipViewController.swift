@@ -78,6 +78,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     func setUpView() {
+        vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
         scrollView.delegate = self
         vHeader.backgroundColor = PRColor.backgroundColor

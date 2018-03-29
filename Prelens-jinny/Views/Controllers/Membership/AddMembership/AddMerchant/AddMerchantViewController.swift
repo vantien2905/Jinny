@@ -40,6 +40,7 @@ class AddMerchantViewController: BaseViewController {
     }
 
     func setUpView() {
+        vSearch.tfSearch.returnKeyType = .search
         vSearch.backgroundColor = .clear
         vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: true)
         vSearch.tfSearch.attributedPlaceholder = "Search merchant".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)

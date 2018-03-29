@@ -37,6 +37,7 @@ class StarredPromotionViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        vSearch.tfSearch.returnKeyType = .search
         setUpView()
         configColecttionView()
     }

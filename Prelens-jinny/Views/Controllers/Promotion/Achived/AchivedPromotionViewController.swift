@@ -37,7 +37,8 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath)
+             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.searchPromotion, for: indexPath) as! SearchPromotionCell
+             cell.tfSearch.returnKeyType = .search
             return cell
         case 1:
             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
