@@ -92,12 +92,10 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEa-T2-bvt">
-                    <rect key="frame" x="305" y="606" width="50" height="50"/>
+                    <rect key="frame" x="308" y="608" width="52" height="52"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Eya-6x-7N0"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Q8b-Em-qoy"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="X39-bL-4VN"/>
-                        <constraint firstAttribute="width" constant="50" id="ebH-dT-POX"/>
+                        <constraint firstAttribute="height" constant="52" id="Eya-6x-7N0"/>
+                        <constraint firstAttribute="width" constant="52" id="ebH-dT-POX"/>
                     </constraints>
                     <state key="normal" image="add_new"/>
                     <connections>
@@ -107,12 +105,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PEa-T2-bvt" secondAttribute="bottom" constant="11" id="088-3f-A6V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PEa-T2-bvt" secondAttribute="bottom" constant="7" id="088-3f-A6V"/>
                 <constraint firstItem="uym-RN-mHO" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Omy-TO-7rj"/>
                 <constraint firstItem="aqW-uV-7ZT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Uag-A2-PaB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aqW-uV-7ZT" secondAttribute="bottom" id="bpv-lY-0oD"/>
                 <constraint firstItem="aqW-uV-7ZT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e7h-HV-4t5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PEa-T2-bvt" secondAttribute="trailing" constant="19.5" id="fxb-R8-g0f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PEa-T2-bvt" secondAttribute="trailing" constant="15" id="fxb-R8-g0f"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aqW-uV-7ZT" secondAttribute="trailing" id="vxF-kt-mcT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

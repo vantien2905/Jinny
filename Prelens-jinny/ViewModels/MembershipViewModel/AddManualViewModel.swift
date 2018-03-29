@@ -22,9 +22,16 @@ class AddManualViewModel: AddManualViewModelProtocol {
     let disposeBag = DisposeBag()
     var isAddSuccess: Variable<Bool> = Variable<Bool>(false)
     func addMembership(code: String, merchantId: Int) {
-        Provider.shared.memberShipService.addMembership(code: code, merchantId: merchantId).subscribe(onNext: {[weak self] (membership) in
-            self?.membership.value = membership
-            self?.isAddSuccess.value = true
+        Provider.shared.memberShipService.addMembership(code: code, merchantId: merchantId).subscribe(onNext: {[weak self] ( membership) in
+            guard let strongSelf = self else { return }
+            strongSelf.membership.value = membership
+            strongSelf.isAddSuccess.value = true
+            }, onError: { (_) in
+                print("error")
+                PopUpHelper.shared.showPopUp(message: "Code has already been taken", action: {
+//                    self.isAddFail.value = true
+                    print("askdjfg")
+                })
         }).disposed(by: disposeBag)
     }
 }
