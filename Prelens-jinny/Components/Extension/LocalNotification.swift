@@ -36,9 +36,10 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
             }
             
             content.sound = UNNotificationSound.default()
-            
-            //let comp = Calendar.current.dateComponents([.hour, .minute], from: date)
-            
+            var dateComponents = DateComponents()
+            dateComponents.hour = 09
+            dateComponents.minute = 25
+           // let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
@@ -59,6 +60,14 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
             notification.soundName = UILocalNotificationDefaultSoundName
             UIApplication.shared.scheduleLocalNotification(notification)
             
+        }
+    }
+    class func removeLocalNotification(_ item: Promotion) {
+        guard let scheduledLocalNotifications = UIApplication.shared.scheduledLocalNotifications else { return }
+        for notification in scheduledLocalNotifications {
+            if notification.userInfo!["id"] as? Int == item.merchant?.id {
+                UIApplication.shared.cancelLocalNotification(notification)
+            }
         }
     }
 }

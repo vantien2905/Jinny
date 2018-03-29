@@ -15,11 +15,7 @@ class Promotion: NSObject, Mappable {
     var expiresString   : String?
     var isReaded        : Bool = true
     var isBookMarked    : Bool = false
-    var createString      : String?
     var merchant        : Merchant?
-    var createDate: Date? {
-        return Date.dateFromString(createString)
-    }
     var image           : Image?
     override init() {
         super.init()
@@ -39,7 +35,24 @@ class Promotion: NSObject, Mappable {
         self.isReaded               <- map["is_readed"]
         self.image                  <- map["image"]
         self.isBookMarked           <- map["is_bookmarked"]
-        self.createString           <- map["created_at"]
-
      }
+}
+extension Promotion: Comparable {
+    public static func >(lhs: Promotion, rhs: Promotion) -> Bool {
+        guard let lhsDate = lhs.merchant?.createdDate else { return false }
+        guard let rhsDate = rhs.merchant?.createdDate else { return true }
+        return lhsDate > rhsDate
+    }
+    
+    public static func <(lhs: Promotion, rhs: Promotion) -> Bool {
+        guard let lhsDate = lhs.merchant?.createdDate else { return true }
+        guard let rhsDate = rhs.merchant?.createdDate else { return false }
+        return lhsDate < rhsDate
+    }
+    
+    public static func ==(lhs: Promotion, rhs: Promotion) -> Bool {
+        guard let lhsDate = lhs.merchant?.createdDate else { return false }
+        guard let rhsDate = rhs.merchant?.createdDate else { return false }
+        return lhsDate == rhsDate
+    }
 }

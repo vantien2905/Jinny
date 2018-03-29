@@ -42,7 +42,7 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
         case 1:
             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader, for: indexPath) as! PromotionHeaderCell
             if self.listAchived.count == 0 {
-                cell.vFilter.isHidden = true
+                cell.vSort.isHidden = true
             }
             return cell
         default:
