@@ -34,7 +34,7 @@ class MembershipDetailCell: UITableViewCell {
     }
     
     func setData() {
-        if  let _expiresAt = promotion.expiresAt, let _merchantName = promotion.merchant?.name,  let _url = promotion.image?.url?.medium {
+        if  let _expiresAt = promotion.expiresString, let _merchantName = promotion.merchant?.name,  let _url = promotion.image?.url?.medium {
             let url = URL(string: _url)
             lbExpiresAt.text    = "Expiry date: \(_expiresAt)"
             lbMerchantName.text = _merchantName
