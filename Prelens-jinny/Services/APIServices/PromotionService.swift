@@ -47,8 +47,8 @@ class PromotionService: PromotionServiceProtocol {
     }
     
     func addVoucher(code: String) -> Observable<PromotionDetail?> {
-        return network.rx_Object(url: APIEndpoint.Promotion.addVoucher, method: .get, parameters: [:])
+        let param = ["key" : code]  as [String : AnyObject]
+        return network.rx_Object(url: APIEndpoint.Promotion.addVoucher, method: .post, parameters: param)
     }
-    
 }
 
