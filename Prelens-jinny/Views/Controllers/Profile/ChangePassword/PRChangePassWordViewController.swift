@@ -84,6 +84,15 @@ class PRChangePassWordViewController: BaseViewController {
                 self.tfCurrentPassword.endEditing(true)
                 self.tfNewPassword.endEditing(true)
             }).disposed(by: disposeBag)
+        
+        viewModel.isChangePasswordSuccess.subscribe (onCompleted: {
+            DispatchQueue.main.async {
+                KeychainManager.shared.deleteToken()
+                KeychainManager.shared.deleteAllSavedData()
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                appDelegate.goToLogin()
+            }
+        }).disposed(by: disposeBag)
     }
 
     func toggleEyeImage(isShow: Bool, button: UIButton) {

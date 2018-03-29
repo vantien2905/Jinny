@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
@@ -25,6 +26,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     let viewModel = MembershipViewModel()
     let disposeBag = DisposeBag()
+    var refreshControl: UIRefreshControl!
     var listMember = Membership() {
         didSet {
             UIView.transition(with: cvMembership,
@@ -49,6 +51,10 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.alwaysBounceVertical = true
+        scrollView.bounces  = true
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
         setUpView()
         setTitle(title: "Jinny")
         confireCollectionView()
@@ -63,11 +69,12 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         lightStatus()
         bindData()
         viewModel.getListMembership()
+        btnAddMembership.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         hideNavigation()
-        btnAddMembership.isHidden = true
+        
     }
     
     func setUpView() {
@@ -81,6 +88,13 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     
     func bindData() {
         
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.refresh()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
+
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.inputs.textSearch.value = text
         }).disposed(by: disposeBag)
@@ -95,6 +109,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     }
 
     func confireCollectionView() {
+        
         cvMembership.register(UINib(nibName: Cell.memberShip, bundle: nil), forCellWithReuseIdentifier: Cell.memberShip)
         cvMembership.register(UINib(nibName: Cell.emptyMembership, bundle: nil), forCellWithReuseIdentifier: Cell.emptyMembership)
         cvMembership.register(UINib(nibName: Cell.starredheader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.starredheader)
@@ -102,9 +117,10 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.register(UINib(nibName: Cell.membershipFooter, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter)
         cvMembership.isScrollEnabled = false
         cvMembership.backgroundColor = PRColor.backgroundColor
+        
+        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 23, bottom: 22, right: 23)
         cvMembership.delegate = self
         cvMembership.dataSource = self
-        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 22, bottom: 10, right: 22)
 
     }
     
@@ -122,7 +138,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
 extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        heightViewScroll.constant = cvMembership.contentSize.height + 84
+        heightViewScroll.constant = cvMembership.contentSize.height + 90
         if indexPath.section == 0 {
             if self.listMember.startedMemberships.count == 0 {
                 let cell = cvMembership.dequeueReusableCell(withReuseIdentifier: Cell.emptyMembership, for: indexPath) as! EmptyMembershipCell
@@ -174,15 +190,15 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          if indexPath.section == 0 {
             if self.listMember.startedMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 20)
+                return CGSize(width: collectionView.frame.width - 46, height: 20)
             } else {
-                return CGSize(width: (collectionView.frame.width - 49)/2, height: (collectionView.frame.width - 49)/2)
+                return CGSize(width: (collectionView.frame.width - 51)/2, height: (collectionView.frame.width - 51)/2)
             }
         } else {
             if self.listMember.otherMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 20)
+                return CGSize(width: collectionView.frame.width - 46, height: 20)
             } else {
-                return CGSize(width: (collectionView.frame.width - 49)/2, height: (collectionView.frame.width - 49)/2)
+                return CGSize(width: (collectionView.frame.width - 51)/2, height: (collectionView.frame.width - 51)/2)
             }
         }
     }

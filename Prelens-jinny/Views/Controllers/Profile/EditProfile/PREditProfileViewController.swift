@@ -144,6 +144,12 @@ class PREditProfileViewController: BaseViewController {
                 self.tfEmail.endEditing(true)
                 choose.showPopUp()
             }).disposed(by: disposeBag)
+        
+        viewModel.isUpdateSuccess.subscribe (onCompleted: {
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }).disposed(by: disposeBag)
     }
     
     func setupView(){

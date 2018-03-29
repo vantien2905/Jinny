@@ -101,4 +101,17 @@ class MembershipViewModel {
         }).disposed(by: disposeBag)
     }
     
+    func refresh() {
+        Provider.shared.memberShipService.getListAllMembership()
+            .subscribe(onNext: { [weak self] (member) in
+                if let _member = member {
+                    member?.otherMemberships = _member.otherMemberships.sorted(by: { (other1, other2) -> Bool in
+                        return other1 > other2
+                    })
+                }
+                self?.outputs.listMembership.value = member
+                self?.outputs.listSearchMember.value = member
+            }).disposed(by: disposeBag)
+    }
+    
 }
