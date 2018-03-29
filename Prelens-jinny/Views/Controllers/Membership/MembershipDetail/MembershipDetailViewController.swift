@@ -87,7 +87,7 @@ class MembershipDetailViewController: BaseViewController {
     func bindData() {
         viewModel.successRemove.asObservable().subscribe(onNext: { [weak self](isSuccess) in
             if isSuccess == true {
-                self?.pop()
+                self?.navigationController?.popToRootViewController(animated: true)
             }
         }).disposed(by: disposeBag)
         

@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
@@ -25,6 +26,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     let viewModel = MembershipViewModel()
     let disposeBag = DisposeBag()
+    var refreshControl: UIRefreshControl!
     var listMember = Membership() {
         didSet {
             UIView.transition(with: cvMembership,
@@ -49,6 +51,10 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.alwaysBounceVertical = true
+        scrollView.bounces  = true
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
         setUpView()
         setTitle(title: "Jinny")
         confireCollectionView()
@@ -63,11 +69,12 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         lightStatus()
         bindData()
         viewModel.getListMembership()
+        btnAddMembership.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         hideNavigation()
-        btnAddMembership.isHidden = true
+        
     }
     
     func setUpView() {
@@ -81,6 +88,13 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     
     func bindData() {
         
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.refresh()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
+
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.inputs.textSearch.value = text
         }).disposed(by: disposeBag)
@@ -95,6 +109,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     }
 
     func confireCollectionView() {
+        
         cvMembership.register(UINib(nibName: Cell.memberShip, bundle: nil), forCellWithReuseIdentifier: Cell.memberShip)
         cvMembership.register(UINib(nibName: Cell.emptyMembership, bundle: nil), forCellWithReuseIdentifier: Cell.emptyMembership)
         cvMembership.register(UINib(nibName: Cell.starredheader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.starredheader)
