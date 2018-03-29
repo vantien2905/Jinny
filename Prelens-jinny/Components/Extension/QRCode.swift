@@ -180,8 +180,9 @@ open class QRCode: NSObject, AVCaptureMetadataOutputObjectsDelegate {
             print("the capture session is running")
             return
         }
+        guard let _videoInput = videoInput else { return }
         
-        if !session.canAddInput(videoInput!) {
+        if !session.canAddInput(_videoInput) {
             print("can not add input device")
             return
         }

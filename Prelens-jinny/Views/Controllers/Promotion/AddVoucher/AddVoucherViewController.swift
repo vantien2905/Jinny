@@ -16,7 +16,7 @@ class AddVoucherViewController: BaseViewController {
     
     var scanner: QRCode?
     var qrCode: String? {
-        didSet{
+        didSet {
             guard let code = qrCode else { return }
             PopUpHelper.shared.showPopUp(message: code) {
                 self.reloadScanner()
@@ -31,7 +31,7 @@ class AddVoucherViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        delay(1) {
+        delay(0.0) {
             self.reloadScanner()
         }
     }
@@ -60,7 +60,6 @@ class AddVoucherViewController: BaseViewController {
         scanner?.maxDetectedCount = 1
         scanner?.prepareScan(vScanQR, completion: { (qrstring) in
             self.qrCode = qrstring
-            print(qrstring)
         })
         scanner?.startScan()
     }

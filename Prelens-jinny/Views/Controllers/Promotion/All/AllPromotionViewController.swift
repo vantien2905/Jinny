@@ -78,7 +78,6 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
     }
     
     @objc func bindData() {
-        
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.textSearch.value = text
         }).disposed(by: disposeBag)
