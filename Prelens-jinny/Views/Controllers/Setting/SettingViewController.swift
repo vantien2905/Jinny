@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import UserNotifications
 
 class SettingViewController: BaseViewController {
 
@@ -40,6 +41,7 @@ class SettingViewController: BaseViewController {
                 }
                 self.vVoucherNotiSwitch.btnAction.isEnabled = false
                 self.vStoreDiscountSwitch.btnAction.isEnabled = false
+                UIApplication.shared.cancelAllLocalNotifications()
             }
         }).disposed(by: disposeBag)
         
@@ -47,11 +49,12 @@ class SettingViewController: BaseViewController {
             if value {
                 self.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 self.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                LocalNotification.dispatchlocalNotification(with: "Notification Title for iOS10+", body: "This is the notification body, works on all versions")
+                //LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test")
                 //TODO
             } else {
                 self.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
                 self.lbNumberDay.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
+                 UIApplication.shared.cancelAllLocalNotifications()
                 //TODO
             }
         }).disposed(by: disposeBag)
