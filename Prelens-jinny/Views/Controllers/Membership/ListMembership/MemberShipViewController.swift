@@ -104,7 +104,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.delegate = self
         cvMembership.dataSource = self
-        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 22, bottom: 10, right: 22)
+        cvMembership.contentInset = UIEdgeInsets(top: 10, left: 23, bottom: 22, right: 23)
 
     }
     
@@ -174,15 +174,15 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          if indexPath.section == 0 {
             if self.listMember.startedMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 20)
+                return CGSize(width: collectionView.frame.width - 46, height: 20)
             } else {
-                return CGSize(width: (collectionView.frame.width - 49)/2, height: (collectionView.frame.width - 49)/2)
+                return CGSize(width: (collectionView.frame.width - 51)/2, height: (collectionView.frame.width - 51)/2)
             }
         } else {
             if self.listMember.otherMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 20)
+                return CGSize(width: collectionView.frame.width - 46, height: 20)
             } else {
-                return CGSize(width: (collectionView.frame.width - 49)/2, height: (collectionView.frame.width - 49)/2)
+                return CGSize(width: (collectionView.frame.width - 51)/2, height: (collectionView.frame.width - 51)/2)
             }
         }
     }

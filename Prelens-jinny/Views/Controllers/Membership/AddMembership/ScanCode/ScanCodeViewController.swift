@@ -52,7 +52,7 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     }
     
     func bindData() {
-        scanError.asObservable().bind(to: self.viewModel.isAddFail).disposed(by: disposeBag)
+//        scanError.asObservable().bind(to: self.viewModel.isAddFail).disposed(by: disposeBag)
         viewModel.isAddSuccess.asObservable().subscribe(onNext: {[weak self] (isSuccess) in
             if isSuccess == true {
                 PopUpHelper.shared.showPopUp(message: "Membership added", action: {
@@ -66,8 +66,10 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         }).disposed(by: disposeBag)
         
         viewModel.isAddFail.asObservable().subscribe(onNext: {[weak self] (fail) in
+            guard let strongSelf = self else { return }
             if fail == true {
-                self?.startReading()
+                strongSelf.videoPreviewLayer.removeFromSuperlayer()
+                strongSelf.startReading()
             }
         }).disposed(by: disposeBag)
         

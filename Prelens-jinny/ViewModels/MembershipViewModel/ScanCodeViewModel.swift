@@ -33,6 +33,9 @@ class ScanCodeViewModel: ScanCodeViewModelProtocol {
             strongSelf.isAddSuccess.value = true
             }, onError: { (_) in
                 print("error")
+                PopUpHelper.shared.showPopUp(message: "Code has already been taken", action: {
+                    self.isAddFail.value = true
+                })
         }).disposed(by: disposeBag)
     }
 }

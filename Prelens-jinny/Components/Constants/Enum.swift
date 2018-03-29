@@ -17,3 +17,7 @@ enum CellRegisterType {
     case tCass
     case tNib
 }
+
+enum ErrorCode: Int {
+    case errorBarcode = 2003
+}
