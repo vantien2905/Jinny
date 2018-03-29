@@ -21,7 +21,7 @@ class StarredPromotionViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
-    
+    static var merchantName: String?
     var listStarredPromotion = [Promotion]() {
         didSet {
             self.cvStarredPromotion.reloadData()
@@ -171,7 +171,16 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        if self.listStarredPromotion.count == 0 {
+            return
+        } else {
+            if indexPath.section == 1 {
+                let idVoucher = listStarredPromotion[indexPath.item].id
+                let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
+                self.push(controller: detailVoucherVC, animated: true)
+                StarredPromotionViewController.merchantName = listStarredPromotion[indexPath.item].merchant?.name
+            }
+        }
     }
 }
 extension StarredPromotionViewController: PromotionSortDelegate {
