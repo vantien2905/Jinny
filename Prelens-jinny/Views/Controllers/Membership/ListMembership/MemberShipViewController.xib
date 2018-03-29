@@ -92,10 +92,10 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEa-T2-bvt">
-                    <rect key="frame" x="310" y="610" width="50" height="50"/>
+                    <rect key="frame" x="308" y="608" width="52" height="52"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Eya-6x-7N0"/>
-                        <constraint firstAttribute="width" constant="50" id="ebH-dT-POX"/>
+                        <constraint firstAttribute="height" constant="52" id="Eya-6x-7N0"/>
+                        <constraint firstAttribute="width" constant="52" id="ebH-dT-POX"/>
                     </constraints>
                     <state key="normal" image="add_new"/>
                     <connections>
