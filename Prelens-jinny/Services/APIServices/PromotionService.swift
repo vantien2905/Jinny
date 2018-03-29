@@ -14,6 +14,7 @@ protocol PromotionServiceProtocol {
     func addBookmarkVoucher(idBookmark: Int) -> Observable<Promotion?>
     func getPromotionDetail(id: Int) -> Observable<PromotionDetail?>
     func getListStarredPromotion()  -> Observable<[Promotion]>
+    func addVoucher(code: String) -> Observable<PromotionDetail?>
     
 }
 
@@ -42,8 +43,12 @@ class PromotionService: PromotionServiceProtocol {
     }
     
     func getListStarredPromotion() -> Observable<[Promotion]> {
-        return network.rx_Array(url: APIEndpoint.Promotion.getListStarredPromotion, method: .get, parameters: [:])
-        
+        return network.rx_Array(url: APIEndpoint.Promotion.getListStarredPromotion,
+                                method: .get, parameters: [:])
+    }
+    
+    func addVoucher(code: String) -> Observable<PromotionDetail?> {
+        return network.rx_Object(url: APIEndpoint.Promotion.addVoucher, method: .get, parameters: [:])
     }
     
 }

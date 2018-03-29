@@ -137,6 +137,7 @@
 		BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */; };
 		BC409EBE2062BE2C00A3F044 /* MerchantBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */; };
 		BC446B0E2060B18E00ED4117 /* PromotionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */; };
+		BC47636F206C95B20096BACB /* AddVoucherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47636E206C95B20096BACB /* AddVoucherViewModel.swift */; };
 		BC4899992062167200E7DE0D /* MerchantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4899982062167200E7DE0D /* MerchantService.swift */; };
 		BC48999C20621D4500E7DE0D /* MerchantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC48999B20621D4500E7DE0D /* MerchantDetail.swift */; };
 		BC48999E20621EBF00E7DE0D /* DateOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC48999D20621EBF00E7DE0D /* DateOpen.swift */; };
@@ -332,6 +333,7 @@
 		BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantBranchViewController.swift; sourceTree = "<group>"; };
 		BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantBranchViewController.xib; sourceTree = "<group>"; };
 		BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewModel.swift; sourceTree = "<group>"; };
+		BC47636E206C95B20096BACB /* AddVoucherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewModel.swift; sourceTree = "<group>"; };
 		BC4899982062167200E7DE0D /* MerchantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantService.swift; sourceTree = "<group>"; };
 		BC48999B20621D4500E7DE0D /* MerchantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantDetail.swift; sourceTree = "<group>"; };
 		BC48999D20621EBF00E7DE0D /* DateOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOpen.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 			children = (
 				760EC3B42060ADBE001390B8 /* PromotionViewModel.swift */,
 				BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */,
+				BC47636E206C95B20096BACB /* AddVoucherViewModel.swift */,
 			);
 			path = PromotionViewModel;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5F6A72064E9A1007CE003 /* AddVoucher */,
 				76DC8901205F70AE00AD87F3 /* PromotionDetail */,
 				76DC88ED205F5FFA00AD87F3 /* Achived */,
 				76DC88EC205F5FFA00AD87F3 /* Starred */,
@@ -963,7 +967,6 @@
 			children = (
 				BC9A614A205F77310071EF4F /* PromotionDetailHeaderCell.swift */,
 				BC9A614B205F77310071EF4F /* PromotionDetailHeaderCell.xib */,
-				BCF5F6A72064E9A1007CE003 /* AddVoucher */,
 			);
 			path = HeaderCell;
 			sourceTree = "<group>";
@@ -1633,6 +1636,7 @@
 				B7CD063D205F6E80009951A4 /* MerchantDetailViewController.swift in Sources */,
 				BC9A614C205F77310071EF4F /* PromotionDetailHeaderCell.swift in Sources */,
 				D9911858205B7AC100F701ED /* Network.swift in Sources */,
+				BC47636F206C95B20096BACB /* AddVoucherViewModel.swift in Sources */,
 				B7899EB52060A3C600ADEC43 /* SearchView.swift in Sources */,
 				76DC8904205F70C500AD87F3 /* PromotionDetailViewController.swift in Sources */,
 				BC48999C20621D4500E7DE0D /* MerchantDetail.swift in Sources */,

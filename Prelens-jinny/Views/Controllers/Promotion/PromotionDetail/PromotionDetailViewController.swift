@@ -16,11 +16,17 @@ class PromotionDetailViewController: BaseViewController {
     
     let disposeBag = DisposeBag()
 
+    var starTapped: Bool? {
+        didSet {
+            if let _starTapped = starTapped {
+                _starTapped ? self.addStarButtonOn() : self.addStarButtonOff()
+            }
+        }
+    }
     var viewModel: PromotionDetailViewModelProtocol!
     var promotionDetail:  PromotionDetail? {
         didSet {
             cvVoucherDetail.reloadData()
-            
             //MARK: Setup the merchantName
             if let merchantName = promotionDetail?.merchantName {
                 setNavigation(name: merchantName)
@@ -73,6 +79,7 @@ class PromotionDetailViewController: BaseViewController {
         viewModel.voucherDetail.asObservable().subscribe(onNext: { [weak self] voucher in
             guard let strongSelf = self else { return }
             strongSelf.promotionDetail = voucher
+            strongSelf.starTapped = voucher?.isBookmarked
         }).disposed(by: disposeBag)
         
         viewModel.isBookmarked.asObservable().subscribe(onNext: { [weak self] value in
@@ -160,6 +167,9 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
 
 extension PromotionDetailViewController: BaseViewControllerDelegate {
     func starBookmarkTapped() {
+        if let _starTapped = starTapped {
+            starTapped = !_starTapped
+        }
         guard let id = promotionDetail?.id else { return }
         viewModel.addBookmarkVoucher(idBookmark: id)
     }
