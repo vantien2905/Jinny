@@ -27,13 +27,14 @@ final class ChangePasswordViewModel {
     public var newPassword: Variable<String?>
     public var isValidInput: Variable<Bool>
     public var btnChangeTapped: PublishSubject<Void>
-
+    public var isChangePasswordSuccess: PublishSubject<Bool>
+    
     init() {
         self.currentPassword        = Variable<String?>(nil)
         self.newPassword            = Variable<String?>(nil)
         self.btnChangeTapped        = PublishSubject<Void>()
         self.isValidInput           = Variable<Bool>(false)
-
+        self.isChangePasswordSuccess = PublishSubject<Bool>()
         let isValid = self.checkValid(curPassword: currentPassword.asObservable(), newPassword: newPassword.asObservable())
 
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
@@ -73,9 +74,9 @@ final class ChangePasswordViewModel {
         Provider.shared.authenticationService.changePassword(currentPassword: _currentPassword, newPassword: _newPassword)
             .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else { return }
-                PopUpHelper.shared.showMessage(message: ContantMessages.User.successChangePassword)
-                strongSelf.currentPassword.value = ""
-                strongSelf.newPassword.value = ""
+                PopUpHelper.shared.showPopUp(message: ContantMessages.User.successChangePassword, action: {
+                    strongSelf.isChangePasswordSuccess.onCompleted()
+                })
             }, onError: { (error) in
                 print(error)
             }).disposed(by: disposeBag)
