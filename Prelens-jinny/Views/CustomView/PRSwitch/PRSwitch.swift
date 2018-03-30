@@ -30,7 +30,8 @@ class PRSwitch :PRBaseView {
         return btn
     }()
     var isCheck = Variable<Bool>(false)
-     var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
+    var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
+    
     override func setUpViews() {
         self.addSubview(vHorizontal)
         self.addSubview(imgCircle)
@@ -59,9 +60,15 @@ class PRSwitch :PRBaseView {
             })
         }
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        imgCircle.frame = CGRect(x: self.bounds.minX + 4, y: self.bounds.minY + 0.5 , width: 22, height: 22)
+        if isCheck.value {
+            vHorizontal.backgroundColor = UIColor.green
+            self.imgCircle.frame = CGRect(x: self.bounds.maxX - 26, y: self.bounds.minY + 0.5 , width: 22, height: 22)
+        } else {
+            vHorizontal.backgroundColor = UIColor.gray
+            imgCircle.frame = CGRect(x: self.bounds.minX + 4, y: self.bounds.minY + 0.5 , width: 22, height: 22)
+        }
     }
 }

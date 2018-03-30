@@ -19,6 +19,10 @@ enum KeychainItem: String {
     case password       = "Password"
     case userId         = "UserId"
     case isShowTerm     = "IsShowTerm"
+    case pushNotificationStatus = "PushNotiStatus"
+    case storeDiscountStatus    = "StoreDiscountStatus"
+    case voucherExprireStatus   = "VoucherExprireStatus"
+    case leftDayToRemind        = "LeftDayToremind"
 }
 
 class KeychainManager {
@@ -82,5 +86,12 @@ class KeychainManager {
     func getString(key: KeychainItem) -> String? {
         return keychain.get(key.rawValue)
     }
-
+    
+    func saveBool(value: Bool, forkey key: KeychainItem) {
+        keychain.set(value, forKey: key.rawValue)
+    }
+    
+    func getBool(key: KeychainItem) -> Bool? {
+        return keychain.getBool(key.rawValue)
+    }
 }
