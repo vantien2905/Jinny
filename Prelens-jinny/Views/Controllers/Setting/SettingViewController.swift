@@ -24,8 +24,6 @@ class SettingViewController: BaseViewController {
     var listDay = [1,2,3,4,5,6,7]
     
     let disposeBag = DisposeBag()
-    let viewModel = SettingViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
