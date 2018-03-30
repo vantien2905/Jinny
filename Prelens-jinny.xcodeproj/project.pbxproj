@@ -453,11 +453,8 @@
 			children = (
 				760EC3B42060ADBE001390B8 /* AllPromotionViewModel.swift */,
 				BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */,
-
 				BC47636E206C95B20096BACB /* AddVoucherViewModel.swift */,
-
 				76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */,
-
 			);
 			path = PromotionViewModel;
 			sourceTree = "<group>";
