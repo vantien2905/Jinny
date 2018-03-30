@@ -25,7 +25,7 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
     static var merchantName: String?
-    
+    var refreshControl: UIRefreshControl!
     weak var buttonHidden: StarredPromotionDelegate?
     
     var listStarredPromotion = [Promotion]() {
@@ -47,10 +47,19 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         vSearch.tfSearch.returnKeyType = .search
         setUpView()
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
         configColecttionView()
     }
     
     @objc func bindData() {
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                //self?.viewModel.refresh()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
+        
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.textSearch.value = text
         }).disposed(by: disposeBag)

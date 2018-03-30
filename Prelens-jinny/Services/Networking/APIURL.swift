@@ -36,6 +36,8 @@ struct APIEndpoint {
         static let getListStarredPromotion  = "vouchers/starred"
         static let addVoucher            = "vouchers"
         static let removeVoucher         = "vouchers/%@"
+        static let getListAchivedPromotion      = "vouchers/archived?order=desc"
+
     }
     
 
