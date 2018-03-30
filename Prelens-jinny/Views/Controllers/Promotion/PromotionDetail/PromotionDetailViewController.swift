@@ -24,9 +24,11 @@ class PromotionDetailViewController: BaseViewController {
         }
     }
     var viewModel: PromotionDetailViewModelProtocol!
+    
     var promotionDetail:  PromotionDetail? {
         didSet {
             cvVoucherDetail.reloadData()
+            
             //MARK: Setup the merchantName
             if let merchantName = promotionDetail?.merchantName {
                 setNavigation(name: merchantName)
@@ -87,6 +89,12 @@ class PromotionDetailViewController: BaseViewController {
             value ? self?.addStarButtonOn() : self?.addStarButtonOff()
         }).disposed(by: disposeBag)
     }
+    
+    @IBAction func redeemTapped() {
+        let vc = RedeemVoucherViewController.instantiateFromNib()
+        vc.promotionDetail = promotionDetail
+        self.push(controller: vc)
+    }
 }
 
 extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -112,7 +120,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             if let data = promotionDetail {
                 headerCell.setUpView(with: data)
             }
-
+            
             return headerCell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "promotionDetailCell",
@@ -125,6 +133,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
         } else {
             let footerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "footerCell",
                                                                 for: indexPath) as! PromotionDetailFooterCell
+            footerCell.btnRemoveDelegate = self
             return footerCell
         }
     }
@@ -173,5 +182,15 @@ extension PromotionDetailViewController: BaseViewControllerDelegate {
         }
         guard let id = promotionDetail?.id else { return }
         viewModel.addBookmarkVoucher(idBookmark: id)
+    }
+}
+
+extension PromotionDetailViewController: PromotionDetailFooterCellDelegate {
+    func btnRemoveTapped() {
+        guard let id = promotionDetail?.id else { return }
+        viewModel.removeVoucher(idVoucher: id)
+        PopUpHelper.shared.showPopUp(message: "Voucher is removed") {
+            self.pop()
+        }
     }
 }

@@ -58,6 +58,7 @@ struct Cell {
     static let promotionDetailHeaderCell = "PromotionDetailHeaderCell"
     static let promotionDetailFooterCell = "PromotionDetailFooterCell"
     static let addMerchantCell = "AddMerchantCell"
+    static let voucherRedeemFooterCell = "RedeemVoucherFooterCell"
 
     static let promotionHeader  = "PromotionHeaderCell"
     static let promotionCell    = "PromotionCell"
@@ -71,7 +72,7 @@ struct Cell {
 struct PRFont {
     static let sideBarMenuFont = UIFont(name: "SegoeUI-Semibold", size: 15)
     static let semiBold15   = UIFont(name: "SegoeUI-Semibold", size: 15)
-    static let regular15    = UIFont(name: "SegoeUI-Regular", size: 15)
+    static let regular15    = UIFont(name: "SegoeUI", size: 15)
 }
 
 struct ContantMessages {

@@ -14,6 +14,7 @@ protocol PromotionDetailViewModelProtocol {
     var voucherDetail: Variable<PromotionDetail?> { get }
     var isBookmarked: Variable<Bool> { get }
     func addBookmarkVoucher(idBookmark: String)
+    func removeVoucher(idVoucher: String)
 }
 
 class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
@@ -42,6 +43,12 @@ class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
     
     func addBookmarkVoucher(idBookmark: String) {
         Provider.shared.promotionService.addBookmarkVoucher(idBookmark: idBookmark).subscribe(onNext: { (_) in
+        }).disposed(by: disposeBag)
+    }
+    
+    func removeVoucher(idVoucher: String) {
+        Provider.shared.promotionService.removeVoucher(idVoucher: idVoucher).subscribe(onNext: { _ in
+            print("123123123")
         }).disposed(by: disposeBag)
     }
 }

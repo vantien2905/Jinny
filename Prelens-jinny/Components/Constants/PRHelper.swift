@@ -25,9 +25,7 @@ class PRHelper {
 }
 
 class ProgressLoadingHelper {
-    
     static let shared = ProgressLoadingHelper()
-    
     var vLoading = PRLoadingView()
     
     func showIndicator() {
@@ -41,5 +39,22 @@ class ProgressLoadingHelper {
             self.vLoading.hideActivityIndicator()
         }
         
+    }
+}
+
+extension PRHelper {
+    class func setNSAttributedString(text: String, font: UIFont, foregroundColor: UIColor) -> NSAttributedString{
+        return NSAttributedString(string: text,
+                                  attributes: [NSAttributedStringKey.foregroundColor: foregroundColor, NSAttributedStringKey.font: font])
+    }
+    
+    class func setNSMutableAttributedString(text: String, font: UIFont, foregroundColor: UIColor) -> NSMutableAttributedString{
+        return NSMutableAttributedString(string: text,
+                                         attributes: [NSAttributedStringKey.foregroundColor: foregroundColor,
+                                                      NSAttributedStringKey.font: font])
+    }
+    
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
 }

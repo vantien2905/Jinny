@@ -8,12 +8,21 @@
 
 import UIKit
 
+protocol PromotionDetailFooterCellDelegate: class {
+    func btnRemoveTapped()
+}
+
 class PromotionDetailFooterCell: UICollectionViewCell {
 
+    weak var btnRemoveDelegate: PromotionDetailFooterCellDelegate?
+    
     @IBOutlet weak var btnRemoveVoucher: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-    
+
+    @IBAction func btnRemoveTapped() {
+        btnRemoveDelegate?.btnRemoveTapped()
+    }
 }
