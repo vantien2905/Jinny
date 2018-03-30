@@ -48,13 +48,13 @@ class PopUpView: BasePopUpView {
         self.completion?()
     }
 
-    func showPopUp(message: String, completion: CompletionClosure? = nil) {
+    func showPopUp(message: String, completion: CompletionClosure? = nil, height: CGFloat = 250) {
         self.lbContent.text     = message
         self.completion         = completion
-        showPopUp()
+        showPopUp(height: height)
     }
 
     override func showPopUp(height: CGFloat = 250) {
-        super.showPopUp(height: 250)
+        super.showPopUp(height: height)
     }
 }

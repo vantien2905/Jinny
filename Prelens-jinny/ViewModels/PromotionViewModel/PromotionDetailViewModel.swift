@@ -48,7 +48,6 @@ class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
     
     func removeVoucher(idVoucher: String) {
         Provider.shared.promotionService.removeVoucher(idVoucher: idVoucher).subscribe(onNext: { _ in
-            print("123123123")
         }).disposed(by: disposeBag)
     }
 }

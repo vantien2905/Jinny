@@ -67,6 +67,26 @@ class BasePopUpView: UIView {
                 }, completion: nil)
         }
     }
+    
+    func showPopUpBottom(height: CGFloat = 250) {
+        if let window = UIApplication.shared.keyWindow {
+            vContent.frame = CGRect(x: 0, y: window.frame.height/2, width: window.frame.width, height: height)
+            
+            window.addSubview(self)
+            self.fillSuperview()
+            self.vBackground.alpha = 0
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIViewAnimationOptions.curveEaseOut, animations: { [unowned self] in
+                self.vBackground.alpha = 1
+                if #available(iOS 11, *) {
+                    self.vContent.frame = CGRect(x: 0, y: window.safeAreaLayoutGuide.layoutFrame.height - height, width: window.safeAreaLayoutGuide.layoutFrame.width, height: height)
+                } else {
+                    self.vContent.frame = CGRect(x: 0, y: window.frame.height - height, width: window.frame.width, height: height)
+                }
+                }, completion: nil)
+        }
+    }
+
+    
     func hidePopUp(success: ((Bool) -> Void)? = nil) {
         self.vBackground.alpha = 1
         guard let window = UIApplication.shared.keyWindow else { return }
