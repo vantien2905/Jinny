@@ -21,7 +21,9 @@ extension SessionManager: NetworkSession {
             .responseData()
             .map { (response, data) -> Response in
                 let responseData = Response(statusCode: response.statusCode, data: data)
-                if let error = ApiError(response: responseData) { throw error }
+                if let error = ApiError(response: responseData) {
+                    throw error
+                }
                 return responseData
         }
     }

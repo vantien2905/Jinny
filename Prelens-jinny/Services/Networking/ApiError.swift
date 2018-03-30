@@ -25,7 +25,6 @@ class ApiError: Error {
             } else {
                 let responseError = Mapper<ResponseError>().map(JSONObject: json.dictionaryObject)
                 guard let _responseError = responseError else { return nil }
-                
                 if _responseError.code == ErrorCode.errorBarcode.rawValue {
                     print("error Barcode")
                     

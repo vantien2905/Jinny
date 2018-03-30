@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import RxSwift
 import PKHUD
 
 class AddVoucherViewController: BaseViewController {
     
     @IBOutlet weak var vScanQR: UIView!
     @IBOutlet weak var lcsVScanQRHeight: NSLayoutConstraint!
+    @IBOutlet weak var btnRefreshScanner: UIButton!
+    
+    var viewModel: AddVoucherViewModelProtocol!
+    let disposeBag = DisposeBag()
     
     var scanner: QRCode?
     var qrCode: String? {
         didSet {
-            guard let code = qrCode else { return }
-            PopUpHelper.shared.showPopUp(message: code) {
-                self.reloadScanner()
+            if let code = qrCode {
+                viewModel.addVoucher(code: code)
+                btnRefreshScanner.isHidden = false
+            } else {
+                btnRefreshScanner.isHidden = true
             }
         }
     }
@@ -27,6 +34,8 @@ class AddVoucherViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        viewModel = AddVoucherViewModel()
+        btnRefreshScanner.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,11 +43,22 @@ class AddVoucherViewController: BaseViewController {
         delay(0.0) {
             self.reloadScanner()
         }
+        setUpBinding()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         scanner?.stopScan()
+        
+    }
+    
+    func setUpBinding() {
+        viewModel.resultString.asObservable().subscribe(onNext: { [weak self] result in
+            guard let _result = result else { return }
+            PopUpHelper.shared.showPopUp(message: _result, action: {
+                self?.reloadScanner()
+            })
+        }).disposed(by: disposeBag)
     }
     
     func setUpView() {
@@ -66,5 +86,9 @@ class AddVoucherViewController: BaseViewController {
     
     func delay(_ delay:Double, closure:@escaping ()->()) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
+    }
+    
+    @IBAction func refreshScanner() {
+        reloadScanner()
     }
 }

@@ -42,6 +42,8 @@ class PromotionCell: UICollectionViewCell {
             let url = URL(string: _url)
             lbExpiresAt.text    = _expiresAt
             lbMerchantName.text = _merchantName
+            
+            imgPromotion.contentMode = .scaleAspectFill
             imgPromotion.sd_setImage(with: url, placeholderImage: nil)
         }
     }
