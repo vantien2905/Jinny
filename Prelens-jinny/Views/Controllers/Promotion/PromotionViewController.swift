@@ -11,6 +11,8 @@ import UIKit
 class PromotionViewController: UIViewController {
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!
+    @IBOutlet weak var btnAddVoucher: UIButton!
+
     let vMenu: MenuView = {
         let view = MenuView()
         return view
@@ -27,6 +29,8 @@ class PromotionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupView()
+        vcAllPromotion.buttonHidden = self
+        vcStarredPromotion.buttonHidden = self
     }
     
     override func viewDidLoad() {
@@ -40,15 +44,11 @@ class PromotionViewController: UIViewController {
         ]
         controllers = [ vcAllPromotion, vcStarredPromotion, vcAchivedPromotion ]
         
-        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu, textFont: UIFont(name: "SegoeUI-Semibold", size: 15.0)!)
-        
-        // Do any additional setup after loading the view.
+        self.vMenu.setUpMenuView(menuColorBackground: .clear, listItem: listItemMenu,
+                                 textFont: UIFont(name: "SegoeUI-Semibold", size: 15.0)!)
+
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     private func setupView() {
         configMenuView()
     }
@@ -63,6 +63,11 @@ class PromotionViewController: UIViewController {
         cvMenuController.dataSource = self
         cvMenuController.delegate = self
         cvMenuController.isPagingEnabled = true
+    }
+    
+    @IBAction func goToAddVoucher() {
+        let scanQRVC = AddVoucherViewController.instantiateFromNib()
+        push(controller: scanQRVC, animated: true)
     }
 }
 
@@ -104,9 +109,22 @@ extension PromotionViewController: UICollectionViewDataSource, UICollectionViewD
     }
 }
 
-extension PromotionViewController: MenuBarDelegate {
+extension PromotionViewController: MenuBarDelegate, AllPromotionDelegate {
     func itemMenuSelected(index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
         cvMenuController.scrollToItem(at: indexPath, at: .left, animated: true)
     }
+    
+    func isHiddenBtnAll(isHidden: Bool) {
+        self.btnAddVoucher.isHidden = isHidden
+    }
 }
+
+extension PromotionViewController: StarredPromotionDelegate {
+    func isHiddenBtnStar(isHidden: Bool) {
+        self.btnAddVoucher.isHidden = isHidden
+    }
+}
+
+
+

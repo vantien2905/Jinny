@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol ArchivedPromotionDelegate: class {
+    func isHidden(isHidden: Bool)
+}
+
 class AchivedPromotionViewController: UIViewController {
     @IBOutlet weak var cvAchivedPromotion: UICollectionView!
+    
     var listAchived = [String] ()
+    weak var buttonHidden: ArchivedPromotionDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configColecttionView()
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +37,16 @@ class AchivedPromotionViewController: UIViewController {
         cvAchivedPromotion.backgroundColor = PRColor.backgroundColor
         cvAchivedPromotion.delegate = self
         cvAchivedPromotion.dataSource = self
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if actualPosition.y > 0 {
+            buttonHidden?.isHidden(isHidden: true)
+        } else if actualPosition.y < 0 {
+            buttonHidden?.isHidden(isHidden: false)
+        }
     }
 
 }

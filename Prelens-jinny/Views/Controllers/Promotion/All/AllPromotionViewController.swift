@@ -10,27 +10,31 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol AllPromotionDelegate: class {
+    func isHiddenBtnAll(isHidden: Bool)
+}
+
 class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
-    
     @IBOutlet weak var cvAllPromotion: UICollectionView!
-    @IBOutlet weak var btnAddVoucher: UIButton!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var vShadow: UIView!
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     var refresher: UIRefreshControl?
     var viewModel: AllPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
-
+    var listSearch = [Promotion]()
+    static var merchantName: String?
+    
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
         }
     }
-    var listSearch = [Promotion]()
     
-    static var merchantName: String?
+    weak var buttonHidden: AllPromotionDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
         vSearch.tfSearch.text = ""
@@ -69,7 +73,7 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         self.refresher?.endRefreshing()
     }
     
-    class func configureViewController() -> UIViewController {
+    class func configureViewController() -> AllPromotionViewController {
         let allPromotionVC = AllPromotionViewController.initControllerFromNib() as! AllPromotionViewController
         var viewModel: AllPromotionViewModel {
             return AllPromotionViewModel()
@@ -106,17 +110,13 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         self.view.layoutIfNeeded()
         //        print(actualPosition)
         if actualPosition.y > 0 {
-            btnAddVoucher.isHidden = true
+//            btnAddVoucher.isHidden = true
+            buttonHidden?.isHiddenBtnAll(isHidden: true)
         } else if actualPosition.y < 0 {
-            btnAddVoucher.isHidden = false
+//            btnAddVoucher.isHidden = false
+            buttonHidden?.isHiddenBtnAll(isHidden: false)
         }
     }
-    
-    @IBAction func goToAddVoucher() {
-        let scanQRVC = AddVoucherViewController.instantiateFromNib()
-        push(controller: scanQRVC, animated: true)
-    }
-    
 }
 extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {

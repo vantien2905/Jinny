@@ -37,6 +37,7 @@ class PRPhotoDetail: BaseViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()

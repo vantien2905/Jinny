@@ -11,8 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionViewController" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromotionViewController" customModule="Jinny" customModuleProvider="target">
             <connections>
+                <outlet property="btnAddVoucher" destination="eDy-03-Iud" id="CAK-pg-Ryu"/>
                 <outlet property="cvMenuController" destination="ZRr-ty-gD9" id="2DF-EA-21M"/>
                 <outlet property="vContainMenu" destination="m4g-Zy-CNL" id="nsP-rZ-hye"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,6 +38,17 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDy-03-Iud">
+                    <rect key="frame" x="308" y="608" width="52" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="I5e-RA-EQm"/>
+                        <constraint firstAttribute="height" constant="52" id="tFX-Vl-D32"/>
+                    </constraints>
+                    <state key="normal" image="add_new"/>
+                    <connections>
+                        <action selector="goToAddVoucher" destination="-1" eventType="touchUpInside" id="ICS-We-8cl"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -46,11 +58,16 @@
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="43:667" constant="2" id="Sdl-S1-hrj"/>
                 <constraint firstItem="ZRr-ty-gD9" firstAttribute="top" secondItem="m4g-Zy-CNL" secondAttribute="bottom" constant="-2" id="Xog-OE-itb"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e9q-My-0tl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eDy-03-Iud" secondAttribute="trailing" constant="15" id="hkw-8a-ypu"/>
                 <constraint firstItem="ZRr-ty-gD9" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="jlp-2v-6EM"/>
                 <constraint firstItem="m4g-Zy-CNL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r5B-Jc-8pp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eDy-03-Iud" secondAttribute="bottom" constant="7" id="wTU-Bp-71d"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="92.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="add_new" width="57" height="57"/>
+    </resources>
 </document>
