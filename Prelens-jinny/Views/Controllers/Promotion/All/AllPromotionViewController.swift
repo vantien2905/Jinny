@@ -108,12 +108,9 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
-        //        print(actualPosition)
         if actualPosition.y > 0 {
-//            btnAddVoucher.isHidden = true
             buttonHidden?.isHiddenBtnAll(isHidden: true)
         } else if actualPosition.y < 0 {
-//            btnAddVoucher.isHidden = false
             buttonHidden?.isHiddenBtnAll(isHidden: false)
         }
     }
