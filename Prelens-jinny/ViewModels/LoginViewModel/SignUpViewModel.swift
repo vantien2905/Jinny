@@ -82,6 +82,25 @@ final class SignUpViewModel {
                 }
             }
         }).disposed(by: disposeBag)
+        
+        userSignUp.asObservable()
+            .ignoreNil()
+            .subscribe(onNext: {  [weak self] userSignUp in
+                guard let strongSelf = self else { return }
+                
+                if let token = userSignUp.token {
+                    KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
+                    KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
+                    KeychainManager.shared.setToken(token)
+                }
+                
+                strongSelf.isSignUpSuccess.onCompleted()
+                }, onError: { error in
+                    print(error)
+                    
+            }, onCompleted: {
+                print("Completion")
+            }).disposed(by: disposeBag)
     }
 
     func checkValid(emailText: Observable<String?>, passwordText: Observable<String?>) -> Observable<Bool> {
@@ -98,9 +117,9 @@ final class SignUpViewModel {
         Provider.shared.authenticationService.signUp(email: email, password: pass)
             .subscribe(onNext: { [weak self] (user) in
                 guard let strongSelf = self else { return }
-                strongSelf.userSignUp.value = user
-                PopUpHelper.shared.showMessage(message: "Sign up success!")
-                strongSelf.isSignUpSuccess.onCompleted()
+                PopUpHelper.shared.showPopUp(message: "Sign up success!", action: {
+                    strongSelf.userSignUp.value = user
+                })
             }, onError: { (error) in
                 print(error)
             }).disposed(by: disposeBag)
