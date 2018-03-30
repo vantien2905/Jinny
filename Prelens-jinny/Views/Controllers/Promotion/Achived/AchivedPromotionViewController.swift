@@ -22,8 +22,9 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     var viewModel: AchivedPromotionViewModelProtocol!
+    var refreshControl: UIRefreshControl!
     let disposeBag = DisposeBag()
-     var listSearch = [Promotion]()
+    var listSearch = [Promotion]()
     var listAchivedPromotion = [Promotion]() {
         didSet {
             self.cvAchivedPromotion.reloadData()
@@ -44,6 +45,8 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
         configColecttionView()
         setUpView()
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
         vSearch.backgroundColor = .clear
     }
     
@@ -67,6 +70,13 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
     }
     
     @objc func bindData() {
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                //self?.viewModel.refresh()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
+        
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.textSearch.value = text
         }).disposed(by: disposeBag)

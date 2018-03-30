@@ -15,6 +15,7 @@ protocol AllPromotionViewModelProtocol {
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var isLatest: Variable<Bool>{get set}
     func getListAllPromotion()
+    func refresh()
 }
 
 class AllPromotionViewModel: AllPromotionViewModelProtocol {
@@ -81,5 +82,8 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
             }
             strongSelf.listAllPromotion.value = strongSelf.listAllPromotion.value
         }).disposed(by: disposeBag)
+    }
+    func refresh() {
+        //getListAllPromotion()
     }
 }
