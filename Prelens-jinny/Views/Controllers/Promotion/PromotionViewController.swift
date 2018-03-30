@@ -31,6 +31,7 @@ class PromotionViewController: UIViewController {
         setupView()
         vcAllPromotion.buttonHidden = self
         vcStarredPromotion.buttonHidden = self
+        vcAchivedPromotion.buttonHidden = self
     }
     
     override func viewDidLoad() {
@@ -125,6 +126,10 @@ extension PromotionViewController: StarredPromotionDelegate {
         self.btnAddVoucher.isHidden = isHidden
     }
 }
-
+extension PromotionViewController: ArchivedPromotionDelegate {
+    func isHidden(isHidden: Bool) {
+        self.btnAddVoucher.isHidden = isHidden
+    }
+}
 
 
