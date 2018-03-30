@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
             vCloseTap.isHidden = true
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubView()
@@ -112,7 +112,9 @@ extension HomeViewController: PRTabbarCustomDelegate {
     func btnTapped(tag: Int) {
         switch tag {
         case 0:
-            switchScreen(from: promotionVC, to: membershipVC)
+            if self.childViewControllers.contains(promotionVC) {
+                switchScreen(from: promotionVC, to: membershipVC)
+            }
             vTabbar.setIndexSelected(index: 0)
             
         case 1:
@@ -124,7 +126,6 @@ extension HomeViewController: PRTabbarCustomDelegate {
                 promotionVC.view.backgroundColor = .yellow
                 self.vContainer.addSubview(membershipVC.view)
             }
-            
             switchScreen(from: membershipVC, to: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             

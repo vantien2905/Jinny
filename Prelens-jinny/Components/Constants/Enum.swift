@@ -19,5 +19,7 @@ enum CellRegisterType {
 }
 
 enum ErrorCode: Int {
-    case errorBarcode = 2003
+    case errorBarcode  = 2003
+    case errorQROut    = 3002
+    case errorNotExist = 2002
 }

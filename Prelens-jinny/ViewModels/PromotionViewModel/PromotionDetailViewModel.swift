@@ -22,6 +22,7 @@ class PromotionDetailViewModel: PromotionDetailViewModelProtocol {
     var voucherDetail: Variable<PromotionDetail?> = Variable<PromotionDetail?>(nil)
     
     let disposeBag = DisposeBag()
+  
     
     init(id: String) {
         self.idVoucher.value = id
