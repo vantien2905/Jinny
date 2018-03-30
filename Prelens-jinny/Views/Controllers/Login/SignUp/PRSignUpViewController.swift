@@ -95,10 +95,10 @@ class PRSignUpViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         vm.isSignUpSuccess.subscribe (onCompleted: {
-            self.tfEmail.text = ""
-            self.tfPassword.text = ""
-            self.btnCheckConditions.setImage(UIImage(named: "check_box"), for: .normal)
-            self.conditionsIsChecked = false
+            DispatchQueue.main.async {
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                appDelegate.goToMainApp()
+            }
         }).disposed(by: disposeBag)
     }
 }

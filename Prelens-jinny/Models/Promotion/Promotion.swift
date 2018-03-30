@@ -13,7 +13,7 @@ class Promotion: NSObject, Mappable {
     var promotionDescription: String?
     var expiresAt       : String?
     var expiresString   : String?
-    var isReaded        : Bool = true
+    var isReaded        : Bool = false
     var isBookMarked    : Bool = false
     var merchant        : Merchant?
     var image           : Image?
@@ -32,7 +32,7 @@ class Promotion: NSObject, Mappable {
         self.expiresAt              <- map["expires_at"]
         self.expiresString          <- map["expires_at_in_words"]
         self.merchant               <- map["merchant"]
-        self.isReaded               <- map["is_readed"]
+        self.isReaded               <- map["is_read"]
         self.image                  <- map["image"]
         self.isBookMarked           <- map["is_bookmarked"]
      }
