@@ -10,6 +10,8 @@ import Foundation
 import SwiftyJSON
 import ObjectMapper
 import RxSwift
+var errorQROut: Variable<Bool> = Variable<Bool>(false)
+var errorNotExit: Variable<Bool> = Variable<Bool>(false)
 
 class ApiError: Error {
 
@@ -27,9 +29,14 @@ class ApiError: Error {
                 guard let _responseError = responseError else { return nil }
                 if _responseError.code == ErrorCode.errorBarcode.rawValue {
                     print("error Barcode")
-                    
+                } else if (_responseError.code == ErrorCode.errorQROut.rawValue) {
+                    errorQROut.value = true
+                    errorNotExit.value = false
+                } else if (_responseError.code == ErrorCode.errorNotExist.rawValue) {
+                    errorNotExit.value = true
+                    errorQROut.value = false
                 } else {
-                     PopUpHelper.shared.showMessage(message: _responseError.message&)
+                    PopUpHelper.shared.showMessage(message: _responseError.message&)
                 }
                 self.statusCode = 0
             }

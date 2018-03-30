@@ -22,9 +22,13 @@ class AddVoucherViewModel: AddVoucherViewModelProtocol {
     func addVoucher(code: String) {
         Provider.shared.promotionService.addVoucher(code: code).asObservable().subscribe(onNext: {[weak self] (_) in
             self?.resultString.value = "Voucher Added!"
-            
-            }, onError: { (error) in
-                
+            }, onError: { (_) in
+                if errorNotExit.value == true {
+                    self.resultString.value = "The resource you are looking for doesn't exist"
+                }
+                if errorQROut.value == true {
+                    self.resultString.value = "Out Of Stock"
+                }
         }).disposed(by: disposeBag)
     }
 }
