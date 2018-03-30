@@ -10,8 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRPhotoDetail" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRPhotoDetail" customModule="Jinny" customModuleProvider="target">
             <connections>
+                <outlet property="btnBack" destination="VfO-kc-UF8" id="a5X-ZH-MQe"/>
+                <outlet property="btnNext" destination="6ss-tP-j75" id="baI-DQ-EJ4"/>
                 <outlet property="cvPhotoPreview" destination="Ip9-I5-ivQ" id="VUa-dY-rkl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -38,6 +40,9 @@
                         <constraint firstAttribute="width" constant="50" id="Aga-F9-5gK"/>
                     </constraints>
                     <state key="normal" image="next_photo"/>
+                    <connections>
+                        <action selector="btnNextTapped" destination="-1" eventType="touchUpInside" id="GS9-i7-Mmc"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfO-kc-UF8">
                     <rect key="frame" x="0.0" y="301" width="50" height="65"/>
@@ -46,6 +51,9 @@
                         <constraint firstAttribute="width" constant="50" id="fr7-xj-FE0"/>
                     </constraints>
                     <state key="normal" image="prev_photo"/>
+                    <connections>
+                        <action selector="btnPreviousTapped" destination="-1" eventType="touchUpInside" id="9S2-b0-ABs"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

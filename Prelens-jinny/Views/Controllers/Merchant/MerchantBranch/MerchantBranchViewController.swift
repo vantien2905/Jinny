@@ -63,7 +63,12 @@ extension MerchantBranchViewController: UITableViewDelegate, UITableViewDataSour
         } else if indexPath.section == 2 {
             let cell = tbMerchantBranch.dequeueReusableCell(withIdentifier: "merchantBranchCell", for: indexPath) as! MerchantBranchCell
             cell.lbDays.text = daysArray[indexPath.row]
-            cell.lbTime.text = (merchantBrancht.openHours!.first?.startTime!)! + "-" + (merchantBrancht.openHours!.first?.closeTime!)!
+            if let startTime = merchantBrancht.openHours!.first?.startTime {
+                if let closeTime = merchantBrancht.openHours!.first?.closeTime {
+                    cell.lbTime.text = startTime + "-" + closeTime
+                }
+            }
+            
             cell.lbOpeningHours.isHidden = true
             
             return cell
