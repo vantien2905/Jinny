@@ -140,6 +140,7 @@
 		BC3FB2D4206E13060070157A /* RedeemVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3FB2D2206E13060070157A /* RedeemVoucherViewController.xib */; };
 		BC3FB2D8206E19C50070157A /* RedeemVoucherFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3FB2D6206E19C50070157A /* RedeemVoucherFooterCell.swift */; };
 		BC3FB2D9206E19C50070157A /* RedeemVoucherFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3FB2D7206E19C50070157A /* RedeemVoucherFooterCell.xib */; };
+		BC3FB2DC206E39700070157A /* PopUpYesNo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3FB2DB206E39700070157A /* PopUpYesNo.swift */; };
 		BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */; };
 		BC409EBE2062BE2C00A3F044 /* MerchantBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */; };
 		BC446B0E2060B18E00ED4117 /* PromotionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */; };
@@ -340,6 +341,7 @@
 		BC3FB2D2206E13060070157A /* RedeemVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemVoucherViewController.xib; sourceTree = "<group>"; };
 		BC3FB2D6206E19C50070157A /* RedeemVoucherFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemVoucherFooterCell.swift; sourceTree = "<group>"; };
 		BC3FB2D7206E19C50070157A /* RedeemVoucherFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemVoucherFooterCell.xib; sourceTree = "<group>"; };
+		BC3FB2DB206E39700070157A /* PopUpYesNo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYesNo.swift; sourceTree = "<group>"; };
 		BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantBranchViewController.swift; sourceTree = "<group>"; };
 		BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantBranchViewController.xib; sourceTree = "<group>"; };
 		BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewModel.swift; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 				B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */,
 				D9911861205BB0A600F701ED /* PopUpHelper.swift */,
 				B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */,
+				BC3FB2DB206E39700070157A /* PopUpYesNo.swift */,
 				B7645EA5206A328E007EAE38 /* SortPopUpView.swift */,
 			);
 			path = PopUpView;
@@ -1656,6 +1659,7 @@
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BC9A6156205F9BBE0071EF4F /* PromotionDetailCell.swift in Sources */,
+				BC3FB2DC206E39700070157A /* PopUpYesNo.swift in Sources */,
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
 				B7CD063D205F6E80009951A4 /* MerchantDetailViewController.swift in Sources */,
 				BC9A614C205F77310071EF4F /* PromotionDetailHeaderCell.swift in Sources */,
