@@ -45,8 +45,8 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
             dateComponents.year  = calendar.component(.year, from: dayBefore)
             dateComponents.month = calendar.component(.month, from: dayBefore)
             dateComponents.day  = calendar.component(.day, from: dayBefore)
-            dateComponents.hour = 14
-            dateComponents.minute = 32
+            dateComponents.hour = 17
+            dateComponents.minute = 23
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)

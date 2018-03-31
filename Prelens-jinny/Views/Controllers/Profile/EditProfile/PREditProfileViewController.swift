@@ -138,7 +138,7 @@ class PREditProfileViewController: BaseViewController {
                 self.tfEmail.endEditing(true)
                 choose.showPopUp(minDate: nil, maxDate: Date(), currentDate: nil)
             }).disposed(by: disposeBag)
-        
+    
         btnSelectRegion.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
