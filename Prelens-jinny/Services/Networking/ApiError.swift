@@ -35,7 +35,16 @@ class ApiError: Error {
                 } else if (_responseError.code == ErrorCode.errorNotExist.rawValue) {
                     errorNotExit.value = true
                     errorQROut.value = false
-                } else {
+                } else if (_responseError.code == ErrorCode.errorTokenInvalid.rawValue) {
+                    PopUpHelper.shared.showPopUp(message: _responseError.message& , action: {
+                        KeychainManager.shared.deleteAllSavedData()
+                        DispatchQueue.main.async {
+                            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                            appDelegate.goToLogin()
+                        }
+                    })
+                }
+                else {
                     PopUpHelper.shared.showMessage(message: _responseError.message&)
                 }
                 self.statusCode = 0
