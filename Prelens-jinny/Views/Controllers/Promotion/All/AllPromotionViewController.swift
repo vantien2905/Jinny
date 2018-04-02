@@ -26,7 +26,7 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
     let disposeBag = DisposeBag()
     var listSearch = [Promotion]()
     static var merchantName: String?
-    //var refreshControl: UIRefreshControl!
+    var refreshControl: UIRefreshControl!
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
@@ -51,8 +51,8 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
         configColecttionView()
         setUpView()
-//        refreshControl = UIRefreshControl()
-//        self.scrollView.addSubview(refreshControl)
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
         vSearch.backgroundColor = .clear
     }
     
@@ -76,13 +76,12 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
     }
     
     @objc func bindData() {
-        
-//        refreshControl.rx.controlEvent(.valueChanged)
-//            .subscribe(onNext: { [weak self] _ in
-//                self?.viewModel.refresh()
-//                self?.refreshControl.endRefreshing()
-//            })
-//            .disposed(by: disposeBag)
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.refresh()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
         
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.textSearch.value = text

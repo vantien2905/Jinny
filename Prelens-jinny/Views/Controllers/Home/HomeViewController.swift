@@ -96,7 +96,7 @@ class HomeViewController: UIViewController {
     
     func switchScreen(from VC1: UIViewController, to VC2: UIViewController) {
         self.transition(from: VC1, to: VC2, duration: 0, options: UIViewAnimationOptions.allowAnimatedContent,
-                        animations: self.view.layoutIfNeeded, completion: nil)
+                        animations: nil, completion: nil)
     }
     
     @IBAction func handleTap(_ sender: Any) {
