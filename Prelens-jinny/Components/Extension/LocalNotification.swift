@@ -24,10 +24,10 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
     class func dispatchlocalNotification(with title: String, body: String, userInfo: [AnyHashable: Any]? = nil,day:String, dayBeforeExprise:Int) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy z"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         guard let _day = dateFormatter.date(from: day) else { return }
-        guard let dayBefore = Calendar.current.date(byAdding: .day, value: dayBeforeExprise, to: _day) else {return}
+        guard let dayBefore = Calendar.current.date(byAdding: .day, value: -dayBeforeExprise, to: _day) else {return}
         print(dayBefore)
         
         if #available(iOS 10.0, *) {
@@ -45,8 +45,8 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
             dateComponents.year  = calendar.component(.year, from: dayBefore)
             dateComponents.month = calendar.component(.month, from: dayBefore)
             dateComponents.day  = calendar.component(.day, from: dayBefore)
-            dateComponents.hour = 17
-            dateComponents.minute = 23
+            dateComponents.hour = 10
+            dateComponents.minute = 24
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)

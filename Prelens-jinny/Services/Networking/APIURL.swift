@@ -29,7 +29,7 @@ struct APIEndpoint {
     }
     
     struct Promotion {
-        static let getListAllPromotion          = "vouchers?order=desc"
+        static let getListAllPromotion          = "vouchers?order="
         static let addBookmarkVoucher           = "vouchers/%@/bookmark"
         static let getPromotionDetail           = "vouchers/%@"
         static let getListStarredPromotion      = "vouchers/starred"
