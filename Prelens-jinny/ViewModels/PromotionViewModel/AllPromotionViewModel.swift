@@ -89,4 +89,5 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 strongSelf.listSearchVoucher.value = listPromotion
             }).disposed(by: disposeBag)
     }
+
 }

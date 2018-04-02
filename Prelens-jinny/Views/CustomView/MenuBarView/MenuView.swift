@@ -21,6 +21,7 @@ class MenuView: UIView {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .clear
+        cv.showsHorizontalScrollIndicator = false
         return cv
     }()
 

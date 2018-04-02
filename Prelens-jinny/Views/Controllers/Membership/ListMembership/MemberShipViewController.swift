@@ -74,17 +74,22 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         hideNavigation()
-        
+        refreshControl.removeFromSuperview()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        vHeader.backgroundColor = PRColor.backgroundColor
+        vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
+        vShadow.backgroundColor = .clear
+        vSearch.tfSearch.attributedPlaceholder = "Search membership".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
     }
     
     func setUpView() {
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
         scrollView.delegate = self
-        vHeader.backgroundColor = PRColor.backgroundColor
-        vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
-        vShadow.backgroundColor = .clear
-        vSearch.tfSearch.attributedPlaceholder = "Search membership".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
+        
+        
     }
     
     func bindData() {

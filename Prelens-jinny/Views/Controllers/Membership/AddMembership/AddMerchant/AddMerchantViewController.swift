@@ -18,7 +18,7 @@ class AddMerchantViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
-        setUpView()
+//        setUpView()
         configureTableView()
         bindData()
         hideKeyboard()
@@ -37,6 +37,11 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         hideNavigation()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setUpView()
     }
 
     func setUpView() {
