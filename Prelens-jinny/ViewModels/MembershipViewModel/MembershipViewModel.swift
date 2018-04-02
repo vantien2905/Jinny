@@ -102,6 +102,7 @@ class MembershipViewModel {
     }
     
     func refresh() {
+        inputs.islatest.value = true
         Provider.shared.memberShipService.getListAllMembership()
             .subscribe(onNext: { [weak self] (member) in
                 if let _member = member {
