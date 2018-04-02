@@ -19,10 +19,10 @@ class PopUpHelper {
         }
     }
     
-    func showPopUp(message: String, action: @escaping () -> Void, height: CGFloat = 250) {
+    func showPopUp(message: String, height: CGFloat = 250, action: @escaping () -> Void) {
         DispatchQueue.main.async {
             let popUp = PopUpView()
-            popUp.showPopUp(message: message, completion: action, height: height)
+            popUp.showPopUp(message: message, height: height, completion: action)
         }
     }
     

@@ -36,7 +36,7 @@ class PREditProfileViewController: BaseViewController {
     var listGender = ["male", "female"]
     var selectGender: Bool = false
     
-    var user = PRUser(){
+    var user = PRUser() {
         didSet {
             self.updateLayout(user: user)
         }
@@ -74,7 +74,7 @@ class PREditProfileViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
 
-    func updateLayout(user: PRUser){
+    func updateLayout(user: PRUser) {
         tfEmail.text            = user.email
         viewModel.email.value   = tfEmail.text
         tfName.text             = user.fullName
@@ -99,7 +99,7 @@ class PREditProfileViewController: BaseViewController {
         }
     }
     
-    func bindViewModel(){
+    func bindViewModel() {
          _ = tfEmail.rx.text.map { $0?.cutWhiteSpace() ?? ""}.bind(to: viewModel.email).disposed(by: disposeBag)
         _ = tfName.rx.text.map { $0?.cutWhiteSpace() ?? ""}.bind(to: viewModel.name).disposed(by: disposeBag)
        
@@ -158,7 +158,7 @@ class PREditProfileViewController: BaseViewController {
         }).disposed(by: disposeBag)
     }
     
-    func setupView(){
+    func setupView() {
         tapHideKeyboard()
         self.navigationController?.navigationBar.isHidden = false
         setTitle(title: "Edit Profile", textColor: .black, backgroundColor: .white)
@@ -230,4 +230,3 @@ extension PREditProfileViewController: ChooseDatePopUpViewDelegate {
         //vmNewTask.inputs.dateSelected.value = date
     }
 }
-

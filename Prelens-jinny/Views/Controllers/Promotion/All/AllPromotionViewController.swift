@@ -34,7 +34,7 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
             if listPromotion.count != 0 {
 //                for item in listPromotion {
 //                    LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
-//                }
+                
             }
         }
     }

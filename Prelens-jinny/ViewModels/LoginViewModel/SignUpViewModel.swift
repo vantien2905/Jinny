@@ -34,7 +34,7 @@ final class SignUpViewModel {
         self.isSignUpSuccess = PublishSubject<Bool>()
         
         _ = isChecked.asObservable().subscribe(onNext: { _ in
-            //TODO
+            //todo
         })
 
         let isValid = self.checkValid(emailText: email.asObservable(), passwordText: password.asObservable())
@@ -68,7 +68,7 @@ final class SignUpViewModel {
                     }
                 }
             } else {
-                if email.isValidEmpty() && pass.isValidEmpty(){
+                if email.isValidEmpty() && pass.isValidEmpty() {
                     PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
                     return
                 }

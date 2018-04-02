@@ -190,9 +190,9 @@ extension PromotionDetailViewController: PromotionDetailFooterCellDelegate {
         guard let id = promotionDetail?.id else { return }
         PopUpHelper.shared.showPopUpYesNo(message: "Do you want to delete this voucher?", actionYes: {
             self.viewModel.removeVoucher(idVoucher: id)
-            PopUpHelper.shared.showPopUp(message: "Deleted!", action: {
+            PopUpHelper.shared.showPopUp(message: "Deleted!", height: 120, action: {
                 self.pop()
-            }, height: 120)
+            })
         }, actionNo: {})
     }
     
