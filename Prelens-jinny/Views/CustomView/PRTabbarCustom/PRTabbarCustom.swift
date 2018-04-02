@@ -45,22 +45,24 @@ class PRTabbarCustom: PRBaseViewXib {
             vMemberships.setIcon(image: PRImage.tabbarMembershipOn)
             vMemberships.lbTitle.textColor = PRColor.mainAppColor
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
-            vPromotions.lbTitle.textColor = .black
+            vPromotions.lbTitle.textColor = UIColor.black.withAlphaComponent(0.5)
             vMore.setIcon(image: PRImage.tabbarMore)
         case 1:
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOn)
             vPromotions.lbTitle.textColor = PRColor.mainAppColor
             vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
-            vMemberships.lbTitle.textColor = .black
+            vMemberships.lbTitle.textColor = UIColor.black.withAlphaComponent(0.5)
             vMore.setIcon(image: PRImage.tabbarMore)
         case 2:
             vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
+            vMore.lbTitle.textColor = UIColor.black.withAlphaComponent(0.5)
             vMore.setIcon(image: PRImage.tabbarMore)
 
         default:
             vMemberships.setIcon(image: PRImage.tabbarMembershipOff)
             vPromotions.setIcon(image: PRImage.tabbarPromotionsOff)
+            vMore.lbTitle.textColor = UIColor.black.withAlphaComponent(0.5)
             vMore.setIcon(image: PRImage.tabbarMore)
         }
     }

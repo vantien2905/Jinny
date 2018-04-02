@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRButtonTabbar" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRButtonTabbar" customModule="Jinny" customModuleProvider="target">
             <connections>
                 <outlet property="btnIconTapped" destination="YbV-3s-CFO" id="Hgu-AX-XTF"/>
                 <outlet property="imvIcon" destination="q9z-kD-bJq" id="6v5-bv-3dI"/>
@@ -29,7 +29,7 @@
                         <constraint firstAttribute="height" constant="14" id="rc4-QF-MD7"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbV-3s-CFO">
