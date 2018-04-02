@@ -47,7 +47,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
             
             self?.listAllPromotion.value = self?.listTemp
         }).disposed(by: disposeBag)
-        //sortAllPromotion()
+        sortAllPromotion()
     }
     
     func getListAllPromotion(order:String) {
@@ -60,27 +60,17 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
             }).disposed(by: disposeBag)
     }
     
-//    func sortAllPromotion() {
-//        isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
-//            guard let strongSelf = self else { return }
-//            let other = strongSelf.listAllPromotion.value
-//            if isLatest {
-//                if let _other = other {
-//                    strongSelf.listAllPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
-//                        return other1 > other2
-//                    })
-//                }
-//            } else {
-//                if let _other = other {
-//                    strongSelf.listAllPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
-//                        return other1 < other2
-//                    })
-//                }
-//
-//            }
-//            strongSelf.listAllPromotion.value = strongSelf.listAllPromotion.value
-//        }).disposed(by: disposeBag)
-//    }
+    func sortAllPromotion() {
+        isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
+            guard let strongSelf = self else { return }
+            if isLatest {
+                strongSelf.getListAllPromotion(order: "desc")
+           } else {
+                 strongSelf.getListAllPromotion(order: "asc")
+            }
+        }).disposed(by: disposeBag)
+    }
+    
     func refresh() {
         Provider.shared.promotionService.getListAllPromotion(order: "desc")
             .subscribe(onNext: { [weak self] (listPromotion) in

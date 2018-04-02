@@ -208,9 +208,9 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 extension AllPromotionViewController: PromotionSortDelegate {
     func sortTapped() {
         PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
-            self.viewModel.getListAllPromotion(order: "desc")
+            self.viewModel.isLatest.value = true
         }) {
-             self.viewModel.getListAllPromotion(order: "asc")
+            self.viewModel.isLatest.value = false
         }
     }
 }
