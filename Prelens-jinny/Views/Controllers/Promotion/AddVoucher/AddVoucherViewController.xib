@@ -26,6 +26,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="312-3C-L64">
                     <rect key="frame" x="0.0" y="80" width="375" height="217"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr-scanner" translatesAutoresizingMaskIntoConstraints="NO" id="5w2-fF-ocN">
+                            <rect key="frame" x="15" y="15" width="345" height="187"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgP-On-UDh">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
                             <connections>
@@ -35,11 +39,15 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="5w2-fF-ocN" firstAttribute="top" secondItem="312-3C-L64" secondAttribute="top" constant="15" id="BP4-QK-LDD"/>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="height" secondItem="312-3C-L64" secondAttribute="height" id="Del-7X-dog"/>
+                        <constraint firstItem="5w2-fF-ocN" firstAttribute="leading" secondItem="312-3C-L64" secondAttribute="leading" constant="15" id="Nxc-lJ-Yt3"/>
                         <constraint firstAttribute="height" constant="217" id="hXO-yr-HQo"/>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="centerY" secondItem="312-3C-L64" secondAttribute="centerY" id="jFc-GP-LWC"/>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="width" secondItem="312-3C-L64" secondAttribute="width" id="jSm-Zg-0cQ"/>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="centerX" secondItem="312-3C-L64" secondAttribute="centerX" id="lqR-ZN-EgN"/>
+                        <constraint firstAttribute="bottom" secondItem="5w2-fF-ocN" secondAttribute="bottom" constant="15" id="nvY-MG-BZm"/>
+                        <constraint firstAttribute="trailing" secondItem="5w2-fF-ocN" secondAttribute="trailing" constant="15" id="oCN-he-KTT"/>
                     </constraints>
                 </view>
             </subviews>
@@ -54,4 +62,7 @@
             <point key="canvasLocation" x="87.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="qr-scanner" width="461" height="484"/>
+    </resources>
 </document>

@@ -144,6 +144,9 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
                 return cell
             } else {
                 let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
+                if indexPath.item == listAchivedPromotion.count - 1 {
+                    cell.vLine.isHidden = true
+                }
                 cell.promotion = listAchivedPromotion[indexPath.item]
                 return cell
             }
