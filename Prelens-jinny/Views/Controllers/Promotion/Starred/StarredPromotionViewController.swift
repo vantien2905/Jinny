@@ -146,6 +146,9 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
                 return cell
             } else {
                 let cell = cvStarredPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
+                if indexPath.item == listStarredPromotion.count - 1 {
+                    cell.vLine.isHidden = true
+                }
                 cell.promotion = listStarredPromotion[indexPath.item]
                 return cell
             }

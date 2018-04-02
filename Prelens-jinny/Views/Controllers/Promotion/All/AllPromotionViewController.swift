@@ -169,11 +169,13 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
         default:
             if self.listPromotion.count == 0 {
                 let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.emptyPromotion, for: indexPath) as! EmptyPromotionCell
-                
                 return cell
             } else {
                 let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
                 cell.promotion = listPromotion[indexPath.item]
+                if indexPath.item == listPromotion.count - 1 {
+                    cell.vLine.isHidden = true
+                }
                 return cell
             }
         }
