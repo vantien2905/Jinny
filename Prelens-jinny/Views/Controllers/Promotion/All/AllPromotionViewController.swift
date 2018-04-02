@@ -22,7 +22,6 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var refresher: UIRefreshControl?
     var viewModel: AllPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
     var listSearch = [Promotion]()
@@ -61,18 +60,6 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
         vShadow.backgroundColor = .clear
         vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
-    }
-    
-    func pullToRefesh() {
-        self.refresher = UIRefreshControl()
-        self.cvAllPromotion.alwaysBounceVertical = true
-        self.refresher?.tintColor = UIColor.black
-        self.refresher?.addTarget(self, action: #selector(bindData), for: .valueChanged)
-        self.cvAllPromotion!.addSubview(refresher!)
-    }
-    
-    func stopRefresher() {
-        self.refresher?.endRefreshing()
     }
     
     class func configureViewController() -> AllPromotionViewController {
