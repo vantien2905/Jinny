@@ -72,11 +72,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         btnAddMembership.isHidden = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        hideNavigation()
-        refreshControl.removeFromSuperview()
-    }
-    
     override func viewDidLayoutSubviews() {
         vHeader.backgroundColor = PRColor.backgroundColor
         vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
@@ -88,8 +83,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
         scrollView.delegate = self
-        
-        
     }
     
     func bindData() {
