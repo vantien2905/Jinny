@@ -70,7 +70,6 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
             }
         }).disposed(by: disposeBag)
     }
-    
     func refresh() {
         Provider.shared.promotionService.getListAllPromotion(order: "desc")
             .subscribe(onNext: { [weak self] (listPromotion) in

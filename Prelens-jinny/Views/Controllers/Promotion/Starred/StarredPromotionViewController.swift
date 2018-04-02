@@ -39,7 +39,7 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         vSearch.tfSearch.text = ""
         bindData()
-        viewModel.getListStarredPromotion()
+        viewModel.getListStarredPromotion(order:"desc")
         hideKeyboard()
     }
 
