@@ -31,9 +31,12 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         didSet {
             self.cvAllPromotion.reloadData()
             UIApplication.shared.cancelAllLocalNotifications()
-//            for item in listPromotion {
-//                LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
-//            }
+
+            if listPromotion.count != 0 {
+//                for item in listPromotion {
+//                    LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
+                
+            }
         }
     }
     
@@ -218,9 +221,9 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
 extension AllPromotionViewController: PromotionSortDelegate {
     func sortTapped() {
         PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
-            self.viewModel.getListAllPromotion(order: "desc")
+            self.viewModel.isLatest.value = true
         }) {
-             self.viewModel.getListAllPromotion(order: "asc")
+            self.viewModel.isLatest.value = false
         }
     }
 }

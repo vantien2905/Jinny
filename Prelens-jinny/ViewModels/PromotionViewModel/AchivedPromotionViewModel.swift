@@ -15,8 +15,7 @@ protocol AchivedPromotionViewModelProtocol {
     var listAchivedPromotion: Variable<[Promotion]?> {get}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var isLatest: Variable<Bool>{get set}
-    func getListAchivedPromotion()
-    //func getListAllPromotion()
+    func getListAchivedPromotion(order:String)
 }
 
 class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
@@ -51,12 +50,10 @@ class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
         sortAchivedPromotion()
     }
     
-    func getListAchivedPromotion() {
-        Provider.shared.promotionService.getListAchivedPromotion()
-            //.showProgressIndicator()
+    func getListAchivedPromotion(order:String) {
+        Provider.shared.promotionService.getListAchivedPromotion(order: order)
             .subscribe(onNext: { [weak self] (listPromotion) in
                 guard let strongSelf = self else { return }
-                
                 strongSelf.listAchivedPromotion.value = listPromotion
                 strongSelf.listSearchVoucher.value = listPromotion
             }).disposed(by: disposeBag)
@@ -65,22 +62,11 @@ class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
     func sortAchivedPromotion() {
         isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
             guard let strongSelf = self else { return }
-            let other = strongSelf.listAchivedPromotion.value
             if isLatest {
-                if let _other = other {
-                    strongSelf.listAchivedPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
-                        return other1 > other2
-                    })
-                }
+                strongSelf.getListAchivedPromotion(order: "desc")
             } else {
-                if let _other = other {
-                    strongSelf.listAchivedPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
-                        return other1 < other2
-                    })
-                }
-                
+               strongSelf.getListAchivedPromotion(order: "asc")
             }
-            strongSelf.listAchivedPromotion.value = strongSelf.listAchivedPromotion.value
         }).disposed(by: disposeBag)
     }
 }

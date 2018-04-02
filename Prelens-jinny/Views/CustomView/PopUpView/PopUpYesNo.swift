@@ -78,11 +78,11 @@ class PopUpYesNo: BasePopUpView {
         self.lbContent.text     = message
         self.completionYes      = completionYes
         self.completionNo       = completionNo
-        showPopUpBottom()
+        showPopUp()
     }
     
-    override func showPopUpBottom(height: CGFloat = 150) {
-        super.showPopUpBottom(height: 150)
+    override func showPopUp(height: CGFloat = 150) {
+        super.showPopUp(height: 150)
     }
 }
 

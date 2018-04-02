@@ -13,10 +13,10 @@ protocol PromotionServiceProtocol {
     func getListAllPromotion(order: String) -> Observable<[Promotion]>
     func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?>
     func getPromotionDetail(id: String) -> Observable<PromotionDetail?>
-    func getListStarredPromotion()  -> Observable<[Promotion]>
+    func getListStarredPromotion(order: String)  -> Observable<[Promotion]>
     func addVoucher(code: String) -> Observable<PromotionDetail?>
     func removeVoucher(idVoucher: String) -> Observable<PromotionDetail?>
-    func getListAchivedPromotion() -> Observable<[Promotion]>
+    func getListAchivedPromotion(order:String) -> Observable<[Promotion]>
     
 }
 
@@ -44,9 +44,10 @@ class PromotionService: PromotionServiceProtocol {
         return network.rx_Object(url: _url, method: .get, parameters: [:])
     }
     
-    func getListStarredPromotion() -> Observable<[Promotion]> {
+    func getListStarredPromotion(order:String) -> Observable<[Promotion]> {
+        let param = ["order" : order]  as [String : AnyObject]
         return network.rx_Array(url: APIEndpoint.Promotion.getListStarredPromotion,
-                                method: .get, parameters: [:])
+                                method: .get, parameters: param)
     }
     
     func addVoucher(code: String) -> Observable<PromotionDetail?> {
@@ -61,8 +62,9 @@ class PromotionService: PromotionServiceProtocol {
         return network.rx_Object(url: _url, method: .delete, parameters: param)
     }
     
-    func getListAchivedPromotion() -> Observable<[Promotion]> {
-        return network.rx_Array(url: APIEndpoint.Promotion.getListAchivedPromotion, method: .get, parameters: [:])
+    func getListAchivedPromotion(order:String) -> Observable<[Promotion]> {
+        let param = ["order" : order]  as [String : AnyObject]
+        return network.rx_Array(url: APIEndpoint.Promotion.getListAchivedPromotion, method: .get, parameters: param)
         
     }
 }
