@@ -32,7 +32,7 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
             self.cvAllPromotion.reloadData()
             UIApplication.shared.cancelAllLocalNotifications()
             for item in listPromotion {
-                LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
+//                LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
             }
         }
     }

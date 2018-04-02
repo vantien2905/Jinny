@@ -48,7 +48,7 @@ class PopUpView: BasePopUpView {
         self.completion?()
     }
 
-    func showPopUp(message: String, completion: CompletionClosure? = nil, height: CGFloat = 250) {
+    func showPopUp(message: String, height: CGFloat = 250, completion: CompletionClosure? = nil) {
         self.lbContent.text     = message
         self.completion         = completion
         showPopUp(height: height)
