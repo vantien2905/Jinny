@@ -45,6 +45,7 @@ class PromotionDetailViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        darkStatus()
         bindData()
     }
     
