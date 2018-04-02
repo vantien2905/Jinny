@@ -52,15 +52,17 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BC-ze-1Bp" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
                                     <rect key="frame" x="301.5" y="10" width="65.5" height="25"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="12X-q3-Cat"/>
+                                        <constraint firstAttribute="width" constant="65.5" id="P0k-au-HdF"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="6BC-ze-1Bp" firstAttribute="width" secondItem="xVp-Qz-fxX" secondAttribute="width" multiplier="65.5/375" id="4Um-PP-DSP"/>
                                 <constraint firstItem="6BC-ze-1Bp" firstAttribute="centerY" secondItem="mfI-Iq-Z38" secondAttribute="centerY" id="9cY-Tr-F1m"/>
                                 <constraint firstItem="mfI-Iq-Z38" firstAttribute="leading" secondItem="xVp-Qz-fxX" secondAttribute="leading" constant="20" id="ARN-oE-gmM"/>
                                 <constraint firstAttribute="trailing" secondItem="6BC-ze-1Bp" secondAttribute="trailing" constant="7.5" id="NoH-Jl-Hud"/>
-                                <constraint firstItem="6BC-ze-1Bp" firstAttribute="height" secondItem="xVp-Qz-fxX" secondAttribute="height" multiplier="25/45" id="RFn-jS-OkC"/>
                                 <constraint firstItem="mfI-Iq-Z38" firstAttribute="centerY" secondItem="xVp-Qz-fxX" secondAttribute="centerY" id="uhC-Mg-NR3"/>
                             </constraints>
                         </view>
@@ -76,14 +78,16 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhd-S5-fYz" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
                                     <rect key="frame" x="301.5" y="10" width="65.5" height="25"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="54U-yf-gXq"/>
+                                        <constraint firstAttribute="width" constant="65.5" id="dVL-70-11U"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="jhd-S5-fYz" firstAttribute="width" secondItem="DfL-wV-iZH" secondAttribute="width" multiplier="65.5/375" id="4Ci-Wr-NB7"/>
                                 <constraint firstAttribute="trailing" secondItem="jhd-S5-fYz" secondAttribute="trailing" constant="7.5" id="GDO-V0-aku"/>
                                 <constraint firstItem="jhd-S5-fYz" firstAttribute="centerY" secondItem="tf4-hK-GGe" secondAttribute="centerY" id="NG1-Iy-hlI"/>
-                                <constraint firstItem="jhd-S5-fYz" firstAttribute="height" secondItem="DfL-wV-iZH" secondAttribute="height" multiplier="25/45" id="TEV-CK-pF6"/>
                                 <constraint firstItem="tf4-hK-GGe" firstAttribute="centerY" secondItem="DfL-wV-iZH" secondAttribute="centerY" id="mmS-hN-sSe"/>
                             </constraints>
                         </view>
@@ -99,13 +103,15 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3b-cx-vLH" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
                                     <rect key="frame" x="301.5" y="10" width="65.5" height="25"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="65.5" id="ARY-Ha-PvL"/>
+                                        <constraint firstAttribute="height" constant="25" id="DSU-Vc-Wc9"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="x3b-cx-vLH" firstAttribute="width" secondItem="3DE-zC-TUA" secondAttribute="width" multiplier="65.5/375" id="0R6-LE-M2S"/>
                                 <constraint firstItem="x3b-cx-vLH" firstAttribute="centerY" secondItem="Raa-4R-LQT" secondAttribute="centerY" id="IWN-qO-loO"/>
-                                <constraint firstItem="x3b-cx-vLH" firstAttribute="height" secondItem="3DE-zC-TUA" secondAttribute="height" multiplier="25/45" id="R6q-gW-5sP"/>
                                 <constraint firstItem="Raa-4R-LQT" firstAttribute="centerY" secondItem="3DE-zC-TUA" secondAttribute="centerY" id="a9v-Qk-Okd"/>
                                 <constraint firstAttribute="trailing" secondItem="x3b-cx-vLH" secondAttribute="trailing" constant="7.5" id="h99-9i-xiq"/>
                             </constraints>

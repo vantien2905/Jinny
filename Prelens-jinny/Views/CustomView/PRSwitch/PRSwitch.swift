@@ -66,6 +66,7 @@ class PRSwitch :PRBaseView {
         if isCheck.value {
             vHorizontal.backgroundColor = UIColor.green
             self.imgCircle.frame = CGRect(x: self.bounds.maxX - 28, y: self.bounds.minY + 1.5 , width: 22, height: 22)
+            
         } else {
             vHorizontal.backgroundColor = UIColor.gray
             imgCircle.frame = CGRect(x: self.bounds.minX + 6, y: self.bounds.minY + 1.5 , width: 22, height: 22)

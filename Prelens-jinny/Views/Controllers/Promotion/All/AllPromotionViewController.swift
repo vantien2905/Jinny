@@ -58,11 +58,7 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.addSubview(refreshControl)
         vSearch.backgroundColor = .clear
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.refreshControl.removeFromSuperview()
-//    }
-    
+        
     override func viewWillLayoutSubviews() {
         self.view.layoutIfNeeded()
         vHeader.backgroundColor = PRColor.backgroundColor
@@ -189,7 +185,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             }
         } else {
             if self.listPromotion.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 50)
+                return CGSize(width: collectionView.frame.width - 44, height: 30)
             } else {
                 return CGSize(width: (collectionView.frame.width - 49), height: 300)
             }
@@ -197,7 +193,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 17
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

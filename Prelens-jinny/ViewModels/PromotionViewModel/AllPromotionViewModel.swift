@@ -71,12 +71,10 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
         }).disposed(by: disposeBag)
     }
     func refresh() {
-        Provider.shared.promotionService.getListAllPromotion(order: "desc")
-            .subscribe(onNext: { [weak self] (listPromotion) in
-                guard let strongSelf = self else { return }
-                strongSelf.listAllPromotion.value = listPromotion
-                strongSelf.listSearchVoucher.value = listPromotion
-            }).disposed(by: disposeBag)
+        if isLatest.value {
+            getListAllPromotion(order: "desc")
+        } else {
+            getListAllPromotion(order: "asc")
+        }
     }
-
 }

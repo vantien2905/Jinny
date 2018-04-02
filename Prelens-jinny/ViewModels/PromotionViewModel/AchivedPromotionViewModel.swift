@@ -16,6 +16,7 @@ protocol AchivedPromotionViewModelProtocol {
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var isLatest: Variable<Bool>{get set}
     func getListAchivedPromotion(order:String)
+    func refresh()
 }
 
 class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
@@ -68,5 +69,12 @@ class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
                strongSelf.getListAchivedPromotion(order: "asc")
             }
         }).disposed(by: disposeBag)
+    }
+    func refresh() {
+        if isLatest.value {
+            getListAchivedPromotion(order: "desc")
+        } else {
+           getListAchivedPromotion(order: "asc")
+        }
     }
 }
