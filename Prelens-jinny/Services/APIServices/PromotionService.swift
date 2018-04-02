@@ -10,7 +10,7 @@ import Alamofire
 
 protocol PromotionServiceProtocol {
     
-    func getListAllPromotion(order: String) -> Observable<[Promotion]>
+    func getListAllPromotion() -> Observable<[Promotion]>
     func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?>
     func getPromotionDetail(id: String) -> Observable<PromotionDetail?>
     func getListStarredPromotion()  -> Observable<[Promotion]>
@@ -27,9 +27,8 @@ class PromotionService: PromotionServiceProtocol {
         self.network = network
     }
     
-    func getListAllPromotion(order: String) -> Observable<[Promotion]> {
-        let param = ["order" : order]  as [String : AnyObject]
-        return network.rx_Array(url: APIEndpoint.Promotion.getListAllPromotion, method: .get, parameters: param)
+    func getListAllPromotion() -> Observable<[Promotion]> {
+        return network.rx_Array(url: APIEndpoint.Promotion.getListAllPromotion, method: .get, parameters: [:])
     }
     
     func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?> {

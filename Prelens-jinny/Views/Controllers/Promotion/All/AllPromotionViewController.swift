@@ -39,7 +39,7 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         vSearch.tfSearch.text = ""
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         bindData()
-        viewModel.getListAllPromotion(order: "desc")
+        viewModel.getListAllPromotion()
         hideKeyboard()
     }
     

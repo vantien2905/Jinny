@@ -14,7 +14,7 @@ protocol AllPromotionViewModelProtocol {
     var listAllPromotion: Variable<[Promotion]?> {get}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var isLatest: Variable<Bool>{get set}
-    func getListAllPromotion(order: String)
+    func getListAllPromotion()
     func refresh()
 }
 
@@ -50,8 +50,8 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
         sortAllPromotion()
     }
     
-    func getListAllPromotion(order: String) {
-        Provider.shared.promotionService.getListAllPromotion(order: order)
+    func getListAllPromotion() {
+        Provider.shared.promotionService.getListAllPromotion()
             //.showProgressIndicator()
             .subscribe(onNext: { [weak self] (listPromotion) in
                 guard let strongSelf = self else { return }
@@ -82,7 +82,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
         }).disposed(by: disposeBag)
     }
     func refresh() {
-        Provider.shared.promotionService.getListAllPromotion(order: "desc")
+        Provider.shared.promotionService.getListAllPromotion()
             .subscribe(onNext: { [weak self] (listPromotion) in
                 guard let strongSelf = self else { return }
                 strongSelf.listAllPromotion.value = listPromotion
