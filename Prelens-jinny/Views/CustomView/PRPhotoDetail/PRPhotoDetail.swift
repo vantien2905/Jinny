@@ -12,10 +12,31 @@ import SDWebImage
 class PRPhotoDetail: BaseViewController {
     
     @IBOutlet weak var cvPhotoPreview: UICollectionView!
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     
     var imgArray: Any? //[UIImage]()
     var photoData: [Image]?
     var passedContentOffset = IndexPath()
+    
+    private var currentPage: Int = 0 {
+        didSet {
+            guard let count = photoData?.count else { return }
+            if currentPage > 0 && currentPage < count - 1 {
+                btnBack.isHidden    = false
+                btnNext.isHidden        = false
+            } else if currentPage > 0 && currentPage == count - 1 {
+                btnBack.isHidden    = false
+                btnNext.isHidden        = true
+            } else if currentPage == 0 && count > 1 {
+                btnBack.isHidden    = true
+                btnNext.isHidden        = false
+            } else {
+                btnBack.isHidden    = true
+                btnNext.isHidden        = true
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +53,15 @@ class PRPhotoDetail: BaseViewController {
         cvPhotoPreview.collectionViewLayout.invalidateLayout()
     }
     
+    func didMoveTo(page: Int) {
+        guard let count = photoData?.count else { return }
+        guard page >= 0 && page < count else { return }
+        
+        currentPage = page
+        let targetOffsetX = cvPhotoPreview.frame.size.width * CGFloat(currentPage)
+        cvPhotoPreview.setContentOffset(CGPoint(x: targetOffsetX, y: 0), animated: true)
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         let offset = cvPhotoPreview.contentOffset
@@ -39,9 +69,9 @@ class PRPhotoDetail: BaseViewController {
         
         let index = round(offset.x / width)
         let newOffset = CGPoint(x: index * size.width, y: offset.y)
-        
+
         cvPhotoPreview.setContentOffset(newOffset, animated: false)
-        
+       
         coordinator.animate(alongsideTransition: { (context) in
             self.cvPhotoPreview.reloadData()
             self.cvPhotoPreview.setContentOffset(newOffset, animated: false)
@@ -71,6 +101,15 @@ class PRPhotoDetail: BaseViewController {
         
         cvPhotoPreview.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue)))
     }
+    
+    @IBAction func btnNextTapped() {
+        didMoveTo(page: currentPage + 1)
+    }
+    
+    @IBAction func btnPreviousTapped() {
+        didMoveTo(page: currentPage - 1)
+    }
+    
 }
 
 extension PRPhotoDetail: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -92,6 +131,10 @@ extension PRPhotoDetail: UICollectionViewDelegate, UICollectionViewDataSource, U
         return CGSize(width: UIScreen.main.bounds.width, height: self.view.frame.height)
     }
 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentPage = scrollView.currentPage - 1
+        didMoveTo(page: currentPage)
+    }
 }
 
 class ImagePreviewFullViewCell: UICollectionViewCell, UIScrollViewDelegate {

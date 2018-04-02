@@ -10,18 +10,24 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
+protocol StarredPromotionDelegate: class {
+    func isHiddenBtnStar(isHidden: Bool)
+}
 
+class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
-    @IBOutlet weak var btnAddVoucher: UIButton!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var vShadow: UIView!
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
     static var merchantName: String?
+    var refreshControl: UIRefreshControl!
+    weak var buttonHidden: StarredPromotionDelegate?
+    
     var listStarredPromotion = [Promotion]() {
         didSet {
             self.cvStarredPromotion.reloadData()
@@ -41,10 +47,19 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         vSearch.tfSearch.returnKeyType = .search
         setUpView()
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
         configColecttionView()
     }
     
     @objc func bindData() {
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                //self?.viewModel.refresh()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
+        
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.textSearch.value = text
         }).disposed(by: disposeBag)
@@ -66,7 +81,7 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
         vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
     }
     
-    class func configureViewController() -> UIViewController {
+    class func configureViewController() -> StarredPromotionViewController {
         let starredPromotionVC = StarredPromotionViewController.initControllerFromNib() as! StarredPromotionViewController
         var viewModel: StarredPromotionViewModel {
             return StarredPromotionViewModel()
@@ -88,11 +103,10 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
-        //        print(actualPosition)
         if actualPosition.y > 0 {
-            btnAddVoucher.isHidden = true
+            buttonHidden?.isHiddenBtnStar(isHidden: true)
         } else if actualPosition.y < 0 {
-            btnAddVoucher.isHidden = false
+            buttonHidden?.isHiddenBtnStar(isHidden: false)
         }
     }
 }

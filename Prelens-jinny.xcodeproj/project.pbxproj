@@ -35,6 +35,8 @@
 		767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */; };
 		767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */; };
 		769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A742A205023B700414DFE /* NSObject+Extension.swift */; };
+		76A3D2A4206E127F00D52966 /* AchivedPromotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3D2A3206E127F00D52966 /* AchivedPromotionViewModel.swift */; };
+		76A3D2A6206E159600D52966 /* AchivedPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76A3D2A5206E159600D52966 /* AchivedPromotionViewController.xib */; };
 		76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */; };
 		76BA686720689A860006E226 /* PRSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA686620689A860006E226 /* PRSwitch.swift */; };
 		76DC88EA205F5A6700AD87F3 /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */; };
@@ -42,7 +44,6 @@
 		76DC88F1205F602000AD87F3 /* AllPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */; };
 		76DC88F5205F603A00AD87F3 /* StarredPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88F3205F603A00AD87F3 /* StarredPromotionViewController.swift */; };
 		76DC88F9205F604D00AD87F3 /* AchivedPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88F7205F604D00AD87F3 /* AchivedPromotionViewController.swift */; };
-		76DC88FA205F604D00AD87F3 /* AchivedPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88F8205F604D00AD87F3 /* AchivedPromotionViewController.xib */; };
 		76DC88FF205F6B5600AD87F3 /* PromotionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC88FD205F6B5600AD87F3 /* PromotionHeaderCell.swift */; };
 		76DC8900205F6B5600AD87F3 /* PromotionHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DC88FE205F6B5600AD87F3 /* PromotionHeaderCell.xib */; };
 		76DC8904205F70C500AD87F3 /* PromotionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */; };
@@ -135,6 +136,11 @@
 		BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */; };
 		BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */; };
 		BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */; };
+		BC3FB2D3206E13060070157A /* RedeemVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3FB2D1206E13060070157A /* RedeemVoucherViewController.swift */; };
+		BC3FB2D4206E13060070157A /* RedeemVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3FB2D2206E13060070157A /* RedeemVoucherViewController.xib */; };
+		BC3FB2D8206E19C50070157A /* RedeemVoucherFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3FB2D6206E19C50070157A /* RedeemVoucherFooterCell.swift */; };
+		BC3FB2D9206E19C50070157A /* RedeemVoucherFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3FB2D7206E19C50070157A /* RedeemVoucherFooterCell.xib */; };
+		BC3FB2DC206E39700070157A /* PopUpYesNo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3FB2DB206E39700070157A /* PopUpYesNo.swift */; };
 		BC409EBD2062BE2C00A3F044 /* MerchantBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */; };
 		BC409EBE2062BE2C00A3F044 /* MerchantBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */; };
 		BC446B0E2060B18E00ED4117 /* PromotionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */; };
@@ -178,8 +184,6 @@
 		BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */; };
 		BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */; };
 		BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */; };
-		BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC960520562D26004C1985 /* RedeemViewController.swift */; };
-		BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC960620562D26004C1985 /* RedeemViewController.xib */; };
 		BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */; };
 		BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */; };
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
@@ -233,6 +237,8 @@
 		767FF65B204D3ED600EA7DE9 /* PREditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PREditProfileViewController.swift; sourceTree = "<group>"; };
 		767FF65C204D3ED600EA7DE9 /* PREditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PREditProfileViewController.xib; sourceTree = "<group>"; };
 		769A742A205023B700414DFE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		76A3D2A3206E127F00D52966 /* AchivedPromotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivedPromotionViewModel.swift; sourceTree = "<group>"; };
+		76A3D2A5206E159600D52966 /* AchivedPromotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchivedPromotionViewController.xib; sourceTree = "<group>"; };
 		76A3F0CE2057C5ED007BC21A /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
 		76BA686620689A860006E226 /* PRSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRSwitch.swift; sourceTree = "<group>"; };
 		76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +246,6 @@
 		76DC88EF205F602000AD87F3 /* AllPromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPromotionViewController.swift; sourceTree = "<group>"; };
 		76DC88F3205F603A00AD87F3 /* StarredPromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredPromotionViewController.swift; sourceTree = "<group>"; };
 		76DC88F7205F604D00AD87F3 /* AchivedPromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivedPromotionViewController.swift; sourceTree = "<group>"; };
-		76DC88F8205F604D00AD87F3 /* AchivedPromotionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchivedPromotionViewController.xib; sourceTree = "<group>"; };
 		76DC88FD205F6B5600AD87F3 /* PromotionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionHeaderCell.swift; sourceTree = "<group>"; };
 		76DC88FE205F6B5600AD87F3 /* PromotionHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionHeaderCell.xib; sourceTree = "<group>"; };
 		76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewController.swift; sourceTree = "<group>"; };
@@ -332,6 +337,11 @@
 		BC3F1AD5204D19B10006A6F5 /* PRButtonTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRButtonTabbar.swift; sourceTree = "<group>"; };
 		BC3F1AD6204D19B10006A6F5 /* PRButtonTabbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRButtonTabbar.xib; sourceTree = "<group>"; };
 		BC3F1ADB204D1C1A0006A6F5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BC3FB2D1206E13060070157A /* RedeemVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemVoucherViewController.swift; sourceTree = "<group>"; };
+		BC3FB2D2206E13060070157A /* RedeemVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemVoucherViewController.xib; sourceTree = "<group>"; };
+		BC3FB2D6206E19C50070157A /* RedeemVoucherFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemVoucherFooterCell.swift; sourceTree = "<group>"; };
+		BC3FB2D7206E19C50070157A /* RedeemVoucherFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemVoucherFooterCell.xib; sourceTree = "<group>"; };
+		BC3FB2DB206E39700070157A /* PopUpYesNo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYesNo.swift; sourceTree = "<group>"; };
 		BC409EBB2062BE2C00A3F044 /* MerchantBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantBranchViewController.swift; sourceTree = "<group>"; };
 		BC409EBC2062BE2C00A3F044 /* MerchantBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantBranchViewController.xib; sourceTree = "<group>"; };
 		BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewModel.swift; sourceTree = "<group>"; };
@@ -378,8 +388,6 @@
 		BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
 		BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
 		BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
-		BCBC960520562D26004C1985 /* RedeemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
-		BCBC960620562D26004C1985 /* RedeemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedeemViewController.xib; sourceTree = "<group>"; };
 		BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
 		BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -455,6 +463,7 @@
 				BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */,
 				BC47636E206C95B20096BACB /* AddVoucherViewModel.swift */,
 				76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */,
+				76A3D2A3206E127F00D52966 /* AchivedPromotionViewModel.swift */,
 			);
 			path = PromotionViewModel;
 			sourceTree = "<group>";
@@ -524,6 +533,7 @@
 		76DC88E7205F5A4600AD87F3 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
+				BC3FB2D5206E13BC0070157A /* RedeemVoucher */,
 				BCF5F6A72064E9A1007CE003 /* AddVoucher */,
 				76DC8901205F70AE00AD87F3 /* PromotionDetail */,
 				76DC88ED205F5FFA00AD87F3 /* Achived */,
@@ -547,8 +557,8 @@
 		76DC88ED205F5FFA00AD87F3 /* Achived */ = {
 			isa = PBXGroup;
 			children = (
+				76A3D2A5206E159600D52966 /* AchivedPromotionViewController.xib */,
 				76DC88F7205F604D00AD87F3 /* AchivedPromotionViewController.swift */,
-				76DC88F8205F604D00AD87F3 /* AchivedPromotionViewController.xib */,
 			);
 			path = Achived;
 			sourceTree = "<group>";
@@ -736,6 +746,7 @@
 				B7AC7FD82057A7CD00C0BFCA /* BasePopUpView.swift */,
 				D9911861205BB0A600F701ED /* PopUpHelper.swift */,
 				B7AC7FDA2057B60500C0BFCA /* PopUpView.swift */,
+				BC3FB2DB206E39700070157A /* PopUpYesNo.swift */,
 				B7645EA5206A328E007EAE38 /* SortPopUpView.swift */,
 			);
 			path = PopUpView;
@@ -862,6 +873,25 @@
 				B7D54B022069EDC8000F4957 /* Dropdown.swift */,
 			);
 			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		BC3FB2D5206E13BC0070157A /* RedeemVoucher */ = {
+			isa = PBXGroup;
+			children = (
+				BC3FB2D1206E13060070157A /* RedeemVoucherViewController.swift */,
+				BC3FB2D2206E13060070157A /* RedeemVoucherViewController.xib */,
+				BC3FB2DA206E2A6D0070157A /* RedeemFooterCell */,
+			);
+			path = RedeemVoucher;
+			sourceTree = "<group>";
+		};
+		BC3FB2DA206E2A6D0070157A /* RedeemFooterCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC3FB2D6206E19C50070157A /* RedeemVoucherFooterCell.swift */,
+				BC3FB2D7206E19C50070157A /* RedeemVoucherFooterCell.xib */,
+			);
+			path = RedeemFooterCell;
 			sourceTree = "<group>";
 		};
 		BC409EBF2062BE3E00A3F044 /* MerchantBranch */ = {
@@ -1135,7 +1165,6 @@
 				76DC88E7205F5A4600AD87F3 /* Promotion */,
 				BC409EC02062BE5F00A3F044 /* Merchant */,
 				BCBC960D20563012004C1985 /* Membership */,
-				BCBC960420562D26004C1985 /* Redeem */,
 				BCBC95E020562BB8004C1985 /* Login */,
 				BCBC959920562488004C1985 /* Setting */,
 				BCBC95A6205625EB004C1985 /* Profile */,
@@ -1213,15 +1242,6 @@
 				BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */,
 			);
 			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		BCBC960420562D26004C1985 /* Redeem */ = {
-			isa = PBXGroup;
-			children = (
-				BCBC960520562D26004C1985 /* RedeemViewController.swift */,
-				BCBC960620562D26004C1985 /* RedeemViewController.xib */,
-			);
-			path = Redeem;
 			sourceTree = "<group>";
 		};
 		BCBC960C20562EB1004C1985 /* Resource */ = {
@@ -1380,8 +1400,8 @@
 				B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */,
 				760C1125205D164C009B9205 /* SettingViewController.xib in Resources */,
 				B7899EB32060A39800ADEC43 /* SearchView.xib in Resources */,
+				76A3D2A6206E159600D52966 /* AchivedPromotionViewController.xib in Resources */,
 				B7B1BC9A2058D7FA0042B3D4 /* seguisli.ttf in Resources */,
-				76DC88FA205F604D00AD87F3 /* AchivedPromotionViewController.xib in Resources */,
 				BC9A6157205F9BBE0071EF4F /* PromotionDetailCell.xib in Resources */,
 				B7B1BC9F2058D7FA0042B3D4 /* seguisb.ttf in Resources */,
 				BC9A614D205F77310071EF4F /* PromotionDetailHeaderCell.xib in Resources */,
@@ -1392,6 +1412,7 @@
 				76E3559F206BA506008079CA /* StarredPromotionViewController.xib in Resources */,
 				B7CD064B205F9ACA009951A4 /* HeaderMembershipDetailCell.xib in Resources */,
 				BCAA4A5920624B8A00B6D1D9 /* MerchantDetailHeaderCell.xib in Resources */,
+				BC3FB2D4206E13060070157A /* RedeemVoucherViewController.xib in Resources */,
 				B79AEE542060BA8C007F0BB3 /* ScanCodeViewController.xib in Resources */,
 				B738627A205913CD00C7004D /* MembershipDetailViewController.xib in Resources */,
 				B7B1BCA02058D7FA0042B3D4 /* OstrichSans-Black.otf in Resources */,
@@ -1407,6 +1428,7 @@
 				76DC890E205F768400AD87F3 /* PromotionCell.xib in Resources */,
 				76DC8905205F70C500AD87F3 /* PromotionDetailViewController.xib in Resources */,
 				B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */,
+				BC3FB2D9206E19C50070157A /* RedeemVoucherFooterCell.xib in Resources */,
 				B7B1BC962058D7FA0042B3D4 /* OstrichSans-Bold.otf in Resources */,
 				BC409EBE2062BE2C00A3F044 /* MerchantBranchViewController.xib in Resources */,
 				B7CD0650205F9AF6009951A4 /* FooterMembershipDetailCell.xib in Resources */,
@@ -1437,7 +1459,6 @@
 				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
-				BCBC960820562D26004C1985 /* RedeemViewController.xib in Resources */,
 				B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */,
 				B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */,
 				BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */,
@@ -1570,7 +1591,6 @@
 				B7899EB82060A76100ADEC43 /* AddMerchantViewController.swift in Sources */,
 				D9911859205B7AC100F701ED /* ApiError.swift in Sources */,
 				760B45A020653F0800DDD7B0 /* SelectDataPopUpView.swift in Sources */,
-				BCBC960720562D26004C1985 /* RedeemViewController.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
 				7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
@@ -1592,6 +1612,7 @@
 				BC6EF85C2060F6D000A156B9 /* CommonExtension.swift in Sources */,
 				D9911857205B7AC100F701ED /* APIURL.swift in Sources */,
 				76440AD5206A35E400F6F167 /* LocalNotification.swift in Sources */,
+				BC3FB2D3206E13060070157A /* RedeemVoucherViewController.swift in Sources */,
 				76BA686720689A860006E226 /* PRSwitch.swift in Sources */,
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
 				760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */,
@@ -1613,6 +1634,7 @@
 				B7886655205A1BDB00096F27 /* Member.swift in Sources */,
 				760EC3AE2060A682001390B8 /* Promotion.swift in Sources */,
 				BC3F1AD7204D19B10006A6F5 /* PRButtonTabbar.swift in Sources */,
+				76A3D2A4206E127F00D52966 /* AchivedPromotionViewModel.swift in Sources */,
 				B7CD0644205F71E9009951A4 /* MerchantDetailCell.swift in Sources */,
 				BC4F84742064947600B330B9 /* MerchantBranchCell.swift in Sources */,
 				76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */,
@@ -1628,6 +1650,7 @@
 				BCAA4A5420623A8900B6D1D9 /* MerchantDetailViewModel.swift in Sources */,
 				BC387EC020681B29009E29A7 /* PromotionDetail.swift in Sources */,
 				B738627420590CE700C7004D /* MembershipFooterCell.swift in Sources */,
+				BC3FB2D8206E19C50070157A /* RedeemVoucherFooterCell.swift in Sources */,
 				BC6E9DBF205A529800C5DF01 /* PRTabbarCustom.swift in Sources */,
 				BCFC256F204E9F26001988BB /* QRCode.swift in Sources */,
 				B7886659205A1C3800096F27 /* Logo.swift in Sources */,
@@ -1636,6 +1659,7 @@
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
 				BC9A6156205F9BBE0071EF4F /* PromotionDetailCell.swift in Sources */,
+				BC3FB2DC206E39700070157A /* PopUpYesNo.swift in Sources */,
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,
 				B7CD063D205F6E80009951A4 /* MerchantDetailViewController.swift in Sources */,
 				BC9A614C205F77310071EF4F /* PromotionDetailHeaderCell.swift in Sources */,

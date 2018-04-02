@@ -12,7 +12,7 @@ import RxCocoa
 
 class PRSignInViewController: UIViewController {
     var parentNavigationController: UINavigationController?
-    var vm: SignInViewModel             = SignInViewModel()
+    var vm: SignInViewModel = SignInViewModel()
 
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -37,7 +37,7 @@ class PRSignInViewController: UIViewController {
     }
 
     private func setupView() {
-        tapHideKeyboard()
+        hideKeyboard()
         passIsSecurity = true
         tfPassword.isSecureTextEntry = true
         btnSignIn.layer.cornerRadius = 2.5

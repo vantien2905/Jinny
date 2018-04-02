@@ -84,13 +84,19 @@ class PREditProfileViewController: BaseViewController {
         viewModel.dob.value     = _dob
         lbDate.text             =  _dob
         
-        guard let _residential = user.residentialRegion?.name else { return lbResidentialRegion.text = " Select" }
-        viewModel.regionID.value = user.residentialRegion?.id
-        lbResidentialRegion.text = _residential
+        if let _residential = user.residentialRegion?.name {
+            viewModel.regionID.value = user.residentialRegion?.id
+            lbResidentialRegion.text = _residential
+        } else {
+            lbResidentialRegion.text = " Select"
+        }
         
-        guard let _gender = user.gender else { return lbGender.text = " Select"}
-        viewModel.gender.value = _gender
-        lbGender.text   =  _gender
+        if let _gender = user.gender {
+            viewModel.gender.value = _gender
+            lbGender.text   =  _gender
+        } else {
+            lbGender.text = " Select"
+        }
     }
     
     func bindViewModel(){
@@ -132,7 +138,7 @@ class PREditProfileViewController: BaseViewController {
                 self.tfEmail.endEditing(true)
                 choose.showPopUp(minDate: nil, maxDate: Date(), currentDate: nil)
             }).disposed(by: disposeBag)
-        
+    
         btnSelectRegion.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in

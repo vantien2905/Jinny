@@ -10,33 +10,37 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol AllPromotionDelegate: class {
+    func isHiddenBtnAll(isHidden: Bool)
+}
+
 class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
-    
     @IBOutlet weak var cvAllPromotion: UICollectionView!
-    @IBOutlet weak var btnAddVoucher: UIButton!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var vShadow: UIView!
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     var refresher: UIRefreshControl?
     var viewModel: AllPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
-
+    var listSearch = [Promotion]()
+    static var merchantName: String?
+    var refreshControl: UIRefreshControl!
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
         }
     }
-    var listSearch = [Promotion]()
     
-    static var merchantName: String?
+    weak var buttonHidden: AllPromotionDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
         vSearch.tfSearch.text = ""
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         bindData()
-        viewModel.getListAllPromotion()
+        viewModel.getListAllPromotion(order: "desc")
         hideKeyboard()
     }
     
@@ -44,6 +48,8 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
         configColecttionView()
         setUpView()
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
         vSearch.backgroundColor = .clear
     }
     
@@ -69,7 +75,7 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         self.refresher?.endRefreshing()
     }
     
-    class func configureViewController() -> UIViewController {
+    class func configureViewController() -> AllPromotionViewController {
         let allPromotionVC = AllPromotionViewController.initControllerFromNib() as! AllPromotionViewController
         var viewModel: AllPromotionViewModel {
             return AllPromotionViewModel()
@@ -79,6 +85,14 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
     }
     
     @objc func bindData() {
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.refresh()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
+        
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.textSearch.value = text
         }).disposed(by: disposeBag)
@@ -104,19 +118,12 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
-        //        print(actualPosition)
         if actualPosition.y > 0 {
-            btnAddVoucher.isHidden = true
+            buttonHidden?.isHiddenBtnAll(isHidden: true)
         } else if actualPosition.y < 0 {
-            btnAddVoucher.isHidden = false
+            buttonHidden?.isHiddenBtnAll(isHidden: false)
         }
     }
-    
-    @IBAction func goToAddVoucher() {
-        let scanQRVC = AddVoucherViewController.instantiateFromNib()
-        push(controller: scanQRVC, animated: true)
-    }
-    
 }
 extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {

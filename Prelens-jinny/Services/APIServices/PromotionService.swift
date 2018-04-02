@@ -10,11 +10,14 @@ import Alamofire
 
 protocol PromotionServiceProtocol {
     
-    func getListAllPromotion() -> Observable<[Promotion]>
+    func getListAllPromotion(order: String) -> Observable<[Promotion]>
     func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?>
     func getPromotionDetail(id: String) -> Observable<PromotionDetail?>
     func getListStarredPromotion()  -> Observable<[Promotion]>
     func addVoucher(code: String) -> Observable<PromotionDetail?>
+    func removeVoucher(idVoucher: String) -> Observable<PromotionDetail?>
+    func getListAchivedPromotion() -> Observable<[Promotion]>
+    
 }
 
 class PromotionService: PromotionServiceProtocol {
@@ -24,10 +27,10 @@ class PromotionService: PromotionServiceProtocol {
         self.network = network
     }
     
-    func getListAllPromotion() -> Observable<[Promotion]> {
-        return network.rx_Array(url: APIEndpoint.Promotion.getListAllPromotion, method: .get, parameters: [:])
+    func getListAllPromotion(order: String) -> Observable<[Promotion]> {
+        let param = ["order" : order]  as [String : AnyObject]
+        return network.rx_Array(url: APIEndpoint.Promotion.getListAllPromotion, method: .get, parameters: param)
     }
-    
     
     func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?> {
         var _url = APIEndpoint.Promotion.addBookmarkVoucher
@@ -50,5 +53,16 @@ class PromotionService: PromotionServiceProtocol {
         let param = ["key" : code]  as [String : AnyObject]
         return network.rx_Object(url: APIEndpoint.Promotion.addVoucher, method: .post, parameters: param)
     }
+    
+    func removeVoucher(idVoucher: String) -> Observable<PromotionDetail?> {
+        var _url = APIEndpoint.Promotion.removeVoucher
+        _url = String(format: _url, "\(idVoucher)")
+        let param = ["id" : idVoucher]  as [String : AnyObject]
+        return network.rx_Object(url: _url, method: .delete, parameters: param)
+    }
+    
+    func getListAchivedPromotion() -> Observable<[Promotion]> {
+        return network.rx_Array(url: APIEndpoint.Promotion.getListAchivedPromotion, method: .get, parameters: [:])
+        
+    }
 }
-

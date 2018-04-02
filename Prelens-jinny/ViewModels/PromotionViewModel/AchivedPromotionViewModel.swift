@@ -1,28 +1,29 @@
 //
-//  PromotionViewModel.swift
+//  AchivedPromotionViewModel.swift
 //  Prelens-jinny
 //
-//  Created by vinova on 3/20/18.
+//  Created by vinova on 3/30/18.
 //  Copyright © 2018 Lamp. All rights reserved.
 //
+
 import UIKit
 import RxSwift
 import RxCocoa
 
-protocol AllPromotionViewModelProtocol {
+protocol AchivedPromotionViewModelProtocol {
     var textSearch: Variable<String?> {get set}
-    var listAllPromotion: Variable<[Promotion]?> {get}
+    var listAchivedPromotion: Variable<[Promotion]?> {get}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var isLatest: Variable<Bool>{get set}
-    func getListAllPromotion(order: String)
-    func refresh()
+    func getListAchivedPromotion()
+    //func getListAllPromotion()
 }
 
-class AllPromotionViewModel: AllPromotionViewModelProtocol {
+class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
     var isLatest: Variable<Bool>
     var textSearch: Variable<String?> = Variable<String?>(nil)
     var listSearchVoucher: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
-    var listAllPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
+    var listAchivedPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
     var listTemp = [Promotion]()
     let disposeBag = DisposeBag()
     
@@ -35,7 +36,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                     return true
                 } else {
                     if let _merchant = promotion.merchant, let _name = _merchant.name {
-                            return _name.containsIgnoringCase(_textSearch)
+                        return _name.containsIgnoringCase(_textSearch)
                     }
                     return false
                 }
@@ -45,48 +46,41 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 self?.listTemp = _list
             }
             
-            self?.listAllPromotion.value = self?.listTemp
+            self?.listAchivedPromotion.value = self?.listTemp
         }).disposed(by: disposeBag)
-        sortAllPromotion()
+        sortAchivedPromotion()
     }
     
-    func getListAllPromotion(order: String) {
-        Provider.shared.promotionService.getListAllPromotion(order: order)
+    func getListAchivedPromotion() {
+        Provider.shared.promotionService.getListAchivedPromotion()
             //.showProgressIndicator()
             .subscribe(onNext: { [weak self] (listPromotion) in
                 guard let strongSelf = self else { return }
-                strongSelf.listAllPromotion.value = listPromotion
+                
+                strongSelf.listAchivedPromotion.value = listPromotion
                 strongSelf.listSearchVoucher.value = listPromotion
             }).disposed(by: disposeBag)
     }
     
-    func sortAllPromotion() {
+    func sortAchivedPromotion() {
         isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
             guard let strongSelf = self else { return }
-            let other = strongSelf.listAllPromotion.value
+            let other = strongSelf.listAchivedPromotion.value
             if isLatest {
                 if let _other = other {
-                    strongSelf.listAllPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
+                    strongSelf.listAchivedPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
                         return other1 > other2
                     })
                 }
             } else {
                 if let _other = other {
-                    strongSelf.listAllPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
+                    strongSelf.listAchivedPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
                         return other1 < other2
                     })
                 }
                 
             }
-            strongSelf.listAllPromotion.value = strongSelf.listAllPromotion.value
+            strongSelf.listAchivedPromotion.value = strongSelf.listAchivedPromotion.value
         }).disposed(by: disposeBag)
-    }
-    func refresh() {
-        Provider.shared.promotionService.getListAllPromotion(order: "desc")
-            .subscribe(onNext: { [weak self] (listPromotion) in
-                guard let strongSelf = self else { return }
-                strongSelf.listAllPromotion.value = listPromotion
-                strongSelf.listSearchVoucher.value = listPromotion
-            }).disposed(by: disposeBag)
     }
 }
