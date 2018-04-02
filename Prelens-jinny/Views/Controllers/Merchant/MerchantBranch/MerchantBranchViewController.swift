@@ -77,7 +77,7 @@ extension MerchantBranchViewController: UITableViewDelegate, UITableViewDataSour
             cell.lbDays.isHidden = true
             cell.lbTime.isHidden = true
             cell.vBottomLine.isHidden = true
-            cell.lbOpeningHours.text = "Opening Hours"
+            cell.lbOpeningHours.text = "Opening hours"
             
             return cell
         }
@@ -85,9 +85,16 @@ extension MerchantBranchViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            guard let description = merchantBrancht.address else { return 120 }
-            let height = description.height(withConstrainedWidth: UIScreen.main.bounds.width - 70, font: UIFont.systemFont(ofSize: 14))
-            return 200 + height + 20
+            var cellHeight: CGFloat = 160
+            if let description = merchantBrancht.address {
+                let heightAdd = description.height(withConstrainedWidth: UIScreen.main.bounds.width - 70, font: UIFont.systemFont(ofSize: 14))
+                cellHeight += heightAdd
+            }
+            if let name = merchantBrancht.name {
+                 let heightName = name.height(withConstrainedWidth: UIScreen.main.bounds.width - 70, font: UIFont.systemFont(ofSize: 14))
+                cellHeight += heightName
+            }
+            return cellHeight
         } else if indexPath.section == 1 {
             return 70
         } else {
