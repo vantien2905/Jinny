@@ -39,7 +39,7 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         vSearch.tfSearch.text = ""
         bindData()
-        viewModel.getListStarredPromotion()
+        viewModel.getListStarredPromotion(order:"desc")
         hideKeyboard()
     }
 
@@ -72,13 +72,19 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
         }).disposed(by: disposeBag)
     }
     
-    func setUpView() {
-        scrollView.alwaysBounceVertical = true
-        scrollView.delegate = self
+    override func viewWillLayoutSubviews() {
+        self.view.layoutIfNeeded()
         vHeader.backgroundColor = PRColor.backgroundColor
         vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
         vShadow.backgroundColor = .clear
         vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
+    }
+    
+    func setUpView() {
+        self.view.backgroundColor = PRColor.backgroundColor
+        scrollView.alwaysBounceVertical = true
+        scrollView.delegate = self
+        
     }
     
     class func configureViewController() -> StarredPromotionViewController {

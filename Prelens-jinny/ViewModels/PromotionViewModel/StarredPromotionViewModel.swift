@@ -15,7 +15,7 @@ protocol StarredPromotionViewModelProtocol {
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var listStarredPromotion: Variable<[Promotion]?>{get}
     var isLatest: Variable<Bool>{get}
-    func getListStarredPromotion()
+    func getListStarredPromotion(order:String)
 }
 
 class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
@@ -49,28 +49,20 @@ class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
         }).disposed(by: disposeBag)
         sortStarredPromotion()
     }
+    
     func sortStarredPromotion() {
         isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
             guard let strongSelf = self else { return }
-            let other = strongSelf.listStarredPromotion.value
             if isLatest {
-                if let _other = other {
-                    strongSelf.listStarredPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
-                        return other1 > other2
-                    })
-                }
+               strongSelf.getListStarredPromotion(order: "desc")
             } else {
-                if let _other = other {
-                    strongSelf.listStarredPromotion.value = _other.sorted(by: { (other1, other2) -> Bool in
-                        return other1 < other2
-                    })
-                }
+               strongSelf.getListStarredPromotion(order: "asc")
             }
-            strongSelf.listStarredPromotion.value = strongSelf.listStarredPromotion.value
         }).disposed(by: disposeBag)
     }
-    func getListStarredPromotion() {
-        Provider.shared.promotionService.getListStarredPromotion().subscribe(onNext: { (listPromotion) in
+    
+    func getListStarredPromotion(order:String) {
+        Provider.shared.promotionService.getListStarredPromotion(order:order).subscribe(onNext: { (listPromotion) in
             self.listStarredPromotion.value = listPromotion
             self.listSearchVoucher.value = listPromotion
         }).disposed(by: disposeBag)

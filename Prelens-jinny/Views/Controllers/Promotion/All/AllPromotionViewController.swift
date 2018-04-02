@@ -14,7 +14,7 @@ protocol AllPromotionDelegate: class {
     func isHiddenBtnAll(isHidden: Bool)
 }
 
-class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
+class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvAllPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -31,8 +31,11 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         didSet {
             self.cvAllPromotion.reloadData()
             UIApplication.shared.cancelAllLocalNotifications()
-            for item in listPromotion {
-//                LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
+
+            if listPromotion.count != 0 {
+//                for item in listPromotion {
+//                    LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
+                
             }
         }
     }
@@ -56,14 +59,24 @@ class AllPromotionViewController: UIViewController,UIScrollViewDelegate {
         vSearch.backgroundColor = .clear
     }
     
-    func setUpView() {
-        vSearch.tfSearch.returnKeyType = .search
-        scrollView.alwaysBounceVertical = true
-        scrollView.delegate = self
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.refreshControl.removeFromSuperview()
+//    }
+    
+    override func viewWillLayoutSubviews() {
+        self.view.layoutIfNeeded()
         vHeader.backgroundColor = PRColor.backgroundColor
         vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
         vShadow.backgroundColor = .clear
         vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
+    }
+    
+    func setUpView() {
+        self.view.backgroundColor = PRColor.backgroundColor
+        vSearch.tfSearch.returnKeyType = .search
+        scrollView.alwaysBounceVertical = true
+        scrollView.delegate = self
+       
     }
     
     class func configureViewController() -> AllPromotionViewController {

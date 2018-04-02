@@ -37,7 +37,7 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
         vSearch.tfSearch.text = ""
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         bindData()
-        viewModel.getListAchivedPromotion()
+        viewModel.getListAchivedPromotion(order: "desc")
         hideKeyboard()
     }
     
@@ -59,14 +59,20 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
         return achivedPromotionVC
     }
     
-    func setUpView() {
-        vSearch.tfSearch.returnKeyType = .search
-        scrollView.alwaysBounceVertical = true
-        scrollView.delegate = self
+    override func viewWillLayoutSubviews() {
+        self.view.layoutIfNeeded()
         vHeader.backgroundColor = PRColor.backgroundColor
         vShadow.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: false)
         vShadow.backgroundColor = .clear
         vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
+    }
+    
+    func setUpView() {
+        self.view.backgroundColor = PRColor.backgroundColor
+        vSearch.tfSearch.returnKeyType = .search
+        scrollView.alwaysBounceVertical = true
+        scrollView.delegate = self
+        
     }
     
     @objc func bindData() {
