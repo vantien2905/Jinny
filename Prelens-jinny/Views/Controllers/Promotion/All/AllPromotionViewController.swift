@@ -70,7 +70,7 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
        
     }
     
-    func setupNotification(listData: [Promotion]){
+    func setupNotification(listData: [Promotion]) {
         guard let _leftDay = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind) else {return}
         guard let _voucherNotiStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus)else {return}
         if _voucherNotiStatus {
@@ -113,7 +113,7 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func configColecttionView() {
-        cvAllPromotion.register(UINib(nibName: Cell.promotionHeader, bundle: nil), forCellWithReuseIdentifier: Cell.promotionHeader)
+        cvAllPromotion.register(UINib(nibName: Cell.otherHeader, bundle: nil), forCellWithReuseIdentifier: Cell.otherHeader)
         cvAllPromotion.register(UINib(nibName: Cell.promotionCell, bundle: nil), forCellWithReuseIdentifier: Cell.promotionCell )
         cvAllPromotion.register(UINib(nibName: Cell.emptyPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.emptyPromotion)
         cvAllPromotion.isScrollEnabled = false
@@ -155,17 +155,17 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
         switch indexPath.section {
         case 0:
             
-            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader,
-                                                          for: indexPath) as! PromotionHeaderCell
-            
+            let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.otherHeader,
+                                                          for: indexPath) as! OtherHeaderCell
+            cell.lbOther.text = "All vouchers"
             if self.listPromotion.count == 0 {
                 cell.vSort.isHidden = true
             } else {
                 cell.vSort.isHidden = false
                 if self.viewModel.isLatest.value {
-                    cell.lbSort.text = "Latest"
+                    cell.lbLatest.text = "Latest"
                 } else {
-                    cell.lbSort.text = "Earliest"
+                    cell.lbLatest.text = "Earliest"
                 }
                 cell.delegate = self
             }
@@ -223,7 +223,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
     }
 }
 
-extension AllPromotionViewController: PromotionSortDelegate {
+extension AllPromotionViewController: OtherHeaderCellDelegate {
     func sortTapped() {
         PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
             self.viewModel.isLatest.value = true
