@@ -14,7 +14,7 @@ protocol ArchivedPromotionDelegate: class {
     func isHidden(isHidden: Bool)
 }
 
-class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
+class AchivedPromotionViewController: UIViewController {
     @IBOutlet weak var cvAchivedPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -71,7 +71,6 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
         self.view.backgroundColor = PRColor.backgroundColor
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
-        scrollView.delegate = self
         
     }
     
@@ -104,17 +103,6 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
         cvAchivedPromotion.delegate = self
         cvAchivedPromotion.dataSource = self
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        self.view.layoutIfNeeded()
-        if actualPosition.y > 0 {
-            buttonHidden?.isHidden(isHidden: true)
-        } else if actualPosition.y < 0 {
-            buttonHidden?.isHidden(isHidden: false)
-        }
-    }
-
 }
 extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

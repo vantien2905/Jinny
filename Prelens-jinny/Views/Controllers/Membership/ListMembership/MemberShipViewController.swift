@@ -82,7 +82,6 @@ class MemberShipViewController: BaseViewController {
     func setUpView() {
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
-        scrollView.delegate = self
     }
     
     func bindData() {
