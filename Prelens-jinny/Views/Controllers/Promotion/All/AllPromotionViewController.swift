@@ -31,12 +31,7 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         didSet {
             self.cvAllPromotion.reloadData()
             UIApplication.shared.cancelAllLocalNotifications()
-
-            if listPromotion.count != 0 {
-//                for item in listPromotion {
-//                    LocalNotification.dispatchlocalNotification(with: (item.merchant?.name)!, body: "Test", day: item.expiresAt!, dayBeforeExprise: Int(KeychainManager.shared.getString(key:KeychainItem.leftDayToRemind)!)!)
-                
-            }
+            setupNotification(listData: listPromotion)
         }
     }
     
@@ -73,6 +68,19 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         scrollView.alwaysBounceVertical = true
         scrollView.delegate = self
        
+    }
+    
+    func setupNotification(listData: [Promotion]){
+        guard let _leftDay = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind) else {return}
+        guard let _voucherNotiStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus)else {return}
+        if _voucherNotiStatus {
+            if listData.count != 0 {
+                for item in listData {
+                    guard let _name = item.merchant?.name , let _expireDate = item.expiresAt else { return  }
+                    LocalNotification.dispatchlocalNotification(with: _name, body: "", day: _expireDate, dayBeforeExprise:Int(_leftDay)!)
+                }
+            }
+        }
     }
     
     class func configureViewController() -> AllPromotionViewController {
