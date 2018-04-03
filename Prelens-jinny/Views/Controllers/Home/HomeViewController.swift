@@ -59,7 +59,7 @@ class HomeViewController: UIViewController {
         } else {
             self.heightTabbar.constant = 50
         }
-        
+        vSideMenu.backgroundColor = PRColor.backgroundColor
         vTabbar.vMemberships.setTitle(title: "Memberships")
         vTabbar.vPromotions.setTitle(title: "Vouchers")
         vTabbar.vMore.setTitle(title: "More...")

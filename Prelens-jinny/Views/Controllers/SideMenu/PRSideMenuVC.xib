@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSideMenuVC" customModule="Prelens_jinny" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRSideMenuVC" customModule="Jinny" customModuleProvider="target">
             <connections>
                 <outlet property="btnEditProfile" destination="f1z-AH-ftV" id="ds3-LT-BAu"/>
                 <outlet property="btnLogout" destination="L0m-lA-NiS" id="spX-Zk-Z5k"/>
@@ -39,7 +39,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkG-FW-Ul4">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                    <rect key="frame" x="0.0" y="-20" width="375" height="104"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sev-Va-H6p">
                             <rect key="frame" x="22" y="60" width="331" height="20"/>
@@ -66,7 +66,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZK2-Vv-2Fe">
-                    <rect key="frame" x="0.0" y="104" width="375" height="614"/>
+                    <rect key="frame" x="0.0" y="84" width="375" height="634"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmC-1L-Pqy">
                             <rect key="frame" x="0.0" y="21" width="375" height="45"/>
@@ -146,7 +146,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugh-5c-Wng">
-                            <rect key="frame" x="0.0" y="502" width="375" height="45"/>
+                            <rect key="frame" x="0.0" y="522" width="375" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0z-hE-7ZI">
                                     <rect key="frame" x="22" y="12.5" width="331" height="20"/>
@@ -281,7 +281,7 @@
                 <constraint firstItem="ZK2-Vv-2Fe" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="GT9-SV-tje"/>
                 <constraint firstItem="bkG-FW-Ul4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wb7-pU-ZMs"/>
                 <constraint firstItem="ZK2-Vv-2Fe" firstAttribute="top" secondItem="bkG-FW-Ul4" secondAttribute="bottom" id="Xr0-fM-Tbm"/>
-                <constraint firstItem="bkG-FW-Ul4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-20" id="jle-vE-hvk"/>
+                <constraint firstItem="bkG-FW-Ul4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-20" id="jle-vE-hvk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
