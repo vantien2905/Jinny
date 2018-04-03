@@ -30,8 +30,8 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
-            UIApplication.shared.cancelAllLocalNotifications()
-            setupNotification(listData: listPromotion)
+//            UIApplication.shared.cancelAllLocalNotifications()
+//            setupNotification(listData: listPromotion)
         }
     }
     

@@ -28,7 +28,9 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         guard let _day = dateFormatter.date(from: day) else { return }
         guard let dayBefore = Calendar.current.date(byAdding: .day, value: -dayBeforeExprise, to: _day) else {return}
+        print("12323")
         print(dayBefore)
+        print("123123123")
         
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
@@ -45,8 +47,8 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
             dateComponents.year  = calendar.component(.year, from: dayBefore)
             dateComponents.month = calendar.component(.month, from: dayBefore)
             dateComponents.day  = calendar.component(.day, from: dayBefore)
-            dateComponents.hour = 09
-            dateComponents.minute = 44
+            dateComponents.hour = 17
+            dateComponents.minute = 36
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
