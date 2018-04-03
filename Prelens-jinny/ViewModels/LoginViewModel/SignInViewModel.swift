@@ -78,7 +78,7 @@ final class SignInViewModel {
             .ignoreNil()
             .subscribe(onNext: {  [weak self] userLogin in
                 guard let strongSelf = self else { return }
-
+                let defaults = UserDefaults.standard
                 if let token = userLogin.token {
                       KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
                       KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
@@ -86,6 +86,7 @@ final class SignInViewModel {
                 }
 
                 strongSelf.isLoginSuccess.onCompleted()
+                defaults.set(true, forKey: KeychainItem.isFirstRunning.rawValue)
                 }, onError: { error in
                     print(error)
 

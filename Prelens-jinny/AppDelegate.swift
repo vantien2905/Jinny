@@ -41,17 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func handleFlow() {
         UITabBar.appearance().tintColor = UIColor.red
-        if KeychainManager.shared.getToken() != nil {
-
-//            KeychainManager.shared.deleteToken()
-
-            goToMainApp()
-        } else {
+        let defaults = UserDefaults.standard
+         if defaults.string(forKey: KeychainItem.isFirstRunning.rawValue) != nil {
+            if KeychainManager.shared.getToken() != nil {
+                goToMainApp()
+            } else {
+                goToLogin()
+            }
+         } else {
             goToLogin()
         }
     }
 
     func goToLogin() {
+        KeychainManager.shared.deleteAllSavedData()
         let vc  = UINavigationController(rootViewController: PRLoginViewController())
         window?.rootViewController = vc
     }
@@ -82,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        application.applicationIconBadgeNumber = 0
+        
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
@@ -109,6 +112,6 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     }
    
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        application.applicationIconBadgeNumber = badgeNumbers + 1
+         application.applicationIconBadgeNumber = badgeNumbers + 1
     }
 }

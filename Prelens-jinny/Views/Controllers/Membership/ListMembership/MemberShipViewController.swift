@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
+class MemberShipViewController: BaseViewController {
 
     @IBOutlet weak var cvMembership: UICollectionView!
     @IBOutlet weak var btnAddMembership: UIButton!
@@ -89,10 +89,13 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
-                self?.vSearch.tfSearch.text = ""
-                self?.vSearch.tfSearch.resignFirstResponder()
-                self?.viewModel.refresh()
-                self?.refreshControl.endRefreshing()
+
+                guard let strongSelf = self else { return }
+                strongSelf.viewModel.refresh()
+                strongSelf.vSearch.tfSearch.text = ""
+                strongSelf.vSearch.tfSearch.resignFirstResponder()
+                strongSelf.refreshControl.endRefreshing()
+
             })
             .disposed(by: disposeBag)
 
@@ -123,17 +126,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.delegate = self
         cvMembership.dataSource = self
 
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        self.view.layoutIfNeeded()
-        //        print(actualPosition)
-        if actualPosition.y > 0 {
-            btnAddMembership.isHidden = true
-        } else if actualPosition.y < 0 {
-            btnAddMembership.isHidden = false
-        }
     }
 }
 
