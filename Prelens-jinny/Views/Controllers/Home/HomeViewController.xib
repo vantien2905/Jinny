@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="bottomTitleNavi" destination="cti-84-5rQ" id="WFr-Ix-OOa"/>
                 <outlet property="btnLeft" destination="fGk-uo-ozt" id="KWK-Gg-GfH"/>
                 <outlet property="btnRight" destination="ugT-mb-A15" id="ahI-UP-PKr"/>
                 <outlet property="heightTabbar" destination="YIA-v5-UjG" id="Q7D-sz-m8v"/>
@@ -133,7 +134,7 @@
                 <constraint firstItem="Esz-5D-x9Q" firstAttribute="trailing" secondItem="nko-nP-oIm" secondAttribute="trailing" id="mCe-dN-Dgx"/>
                 <constraint firstItem="Tft-m1-gGq" firstAttribute="top" secondItem="V7h-4K-6kT" secondAttribute="bottom" id="mcw-lU-onq"/>
                 <constraint firstItem="V7h-4K-6kT" firstAttribute="leading" secondItem="Esz-5D-x9Q" secondAttribute="leading" id="uRZ-hv-ewy"/>
-                <constraint firstItem="d3u-Th-kyH" firstAttribute="bottom" secondItem="Esz-5D-x9Q" secondAttribute="bottom" id="v94-9q-nF7"/>
+                <constraint firstItem="d3u-Th-kyH" firstAttribute="bottom" secondItem="I4n-Am-CTh" secondAttribute="bottom" id="v94-9q-nF7"/>
                 <constraint firstItem="d3u-Th-kyH" firstAttribute="top" secondItem="I4n-Am-CTh" secondAttribute="top" id="z7D-Ej-05X"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Esz-5D-x9Q"/>

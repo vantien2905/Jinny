@@ -122,10 +122,9 @@ class PREditProfileViewController: BaseViewController {
                 self.selectGender = true
                 let choose = SelectDataPopUpView()
                 choose.delegate = self
-                //self.vmNewTask.inputs.isStartDate.value = false
                 self.tfName.endEditing(true)
                 self.tfEmail.endEditing(true)
-               choose.showPopUp()
+               choose.showPopUp(height: 145)
             }).disposed(by: disposeBag)
         
         btnChooseDate.rx.tap

@@ -73,6 +73,7 @@ class SelectDataPopUpView: BasePopUpView {
         tbvData.layoutMargins = .zero
         tbvData.dataSource = self
         tbvData.delegate = self
+        tbvData.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tbvData.frame.size.width, height: 1))
         tbvData.register(UINib(nibName: Cell.selectDataCell, bundle: nil), forCellReuseIdentifier: Cell.selectDataCell)
     }
 }
@@ -84,15 +85,14 @@ extension SelectDataPopUpView:UITableViewDelegate,UITableViewDataSource {
         guard let _num = delegate?.numberOfRows() else { return 0 }
         return _num
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tbvData.dequeueReusableCell(withIdentifier: Cell.selectDataCell, for: indexPath) as! SelectDataPopUpCell
-        cell.lbTitle.text = delegate?.titleForRow(index: indexPath.row)
+        cell.lbTitle.text = delegate?.titleForRow(index: indexPath.row).cutWhiteSpace()
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
         print(index)
     }
-    
 }

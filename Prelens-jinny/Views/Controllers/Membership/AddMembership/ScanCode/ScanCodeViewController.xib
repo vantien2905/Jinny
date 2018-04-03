@@ -87,10 +87,10 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0j-Gm-Tqo">
-                    <rect key="frame" x="-7" y="23" width="40" height="40"/>
+                    <rect key="frame" x="0.0" y="23" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="GEu-CU-RuF"/>
-                        <constraint firstAttribute="width" constant="40" id="zaE-ke-uy8"/>
+                        <constraint firstAttribute="height" constant="40" id="ZaE-7Q-7YE"/>
+                        <constraint firstAttribute="width" constant="40" id="pnw-fV-a6w"/>
                     </constraints>
                     <connections>
                         <action selector="btnBackClick" destination="-1" eventType="touchUpInside" id="hmz-6w-3MR"/>
@@ -107,7 +107,6 @@
                 <constraint firstItem="TYO-cO-KHH" firstAttribute="trailing" secondItem="9qy-5g-qJp" secondAttribute="trailing" constant="-15" id="70b-vr-ra0"/>
                 <constraint firstItem="TYO-cO-KHH" firstAttribute="bottom" secondItem="9qy-5g-qJp" secondAttribute="bottom" constant="-15" id="92M-QH-Z8M"/>
                 <constraint firstItem="GHe-f7-Af3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9IH-1y-6p3"/>
-                <constraint firstItem="z0j-Gm-Tqo" firstAttribute="centerY" secondItem="PMW-VQ-Bfm" secondAttribute="centerY" id="Ixm-JM-wPN"/>
                 <constraint firstItem="T8D-WZ-9bq" firstAttribute="top" secondItem="9qy-5g-qJp" secondAttribute="bottom" constant="29.5" id="Jqr-s7-9ws"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9qy-5g-qJp" secondAttribute="trailing" id="Mls-65-VD6"/>
                 <constraint firstItem="PMW-VQ-Bfm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16.5" id="Q7i-Sw-VyL"/>
@@ -115,9 +114,10 @@
                 <constraint firstItem="PMW-VQ-Bfm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8.5" id="amf-gF-7mM"/>
                 <constraint firstItem="9qy-5g-qJp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cVq-8a-lbc"/>
                 <constraint firstItem="9qy-5g-qJp" firstAttribute="top" secondItem="GHe-f7-Af3" secondAttribute="bottom" constant="18.5" id="h2g-UI-TBb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="z0j-Gm-Tqo" secondAttribute="leading" id="l5z-9m-spb"/>
                 <constraint firstItem="T8D-WZ-9bq" firstAttribute="centerX" secondItem="9qy-5g-qJp" secondAttribute="centerX" id="nSO-Te-Fhc"/>
                 <constraint firstItem="TYO-cO-KHH" firstAttribute="leading" secondItem="9qy-5g-qJp" secondAttribute="leading" constant="15" id="tcG-mC-wDz"/>
-                <constraint firstItem="z0j-Gm-Tqo" firstAttribute="centerX" secondItem="PMW-VQ-Bfm" secondAttribute="centerX" id="uqo-3i-otq"/>
+                <constraint firstItem="z0j-Gm-Tqo" firstAttribute="centerY" secondItem="PMW-VQ-Bfm" secondAttribute="centerY" id="vM2-WS-ttQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="53.5"/>
