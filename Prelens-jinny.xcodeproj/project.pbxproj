@@ -119,6 +119,7 @@
 		B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */; };
 		B7B1BCA52058D7FA0042B3D4 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */; };
 		B7C859FA206A3D2700033325 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C859F9206A3D2700033325 /* Date+Extension.swift */; };
+		B7C93A352072404900367097 /* AccessibilityDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C93A342072404900367097 /* AccessibilityDevice.swift */; };
 		B7CD063D205F6E80009951A4 /* MerchantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD063B205F6E80009951A4 /* MerchantDetailViewController.swift */; };
 		B7CD063E205F6E80009951A4 /* MerchantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD063C205F6E80009951A4 /* MerchantDetailViewController.xib */; };
 		B7CD0644205F71E9009951A4 /* MerchantDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD0642205F71E9009951A4 /* MerchantDetailCell.swift */; };
@@ -320,6 +321,7 @@
 		B7B1BC922058D7FA0042B3D4 /* seguisbi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisbi.ttf; sourceTree = "<group>"; };
 		B7B1BC932058D7FA0042B3D4 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
 		B7C859F9206A3D2700033325 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		B7C93A342072404900367097 /* AccessibilityDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityDevice.swift; sourceTree = "<group>"; };
 		B7CD063B205F6E80009951A4 /* MerchantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantDetailViewController.swift; sourceTree = "<group>"; };
 		B7CD063C205F6E80009951A4 /* MerchantDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchantDetailViewController.xib; sourceTree = "<group>"; };
 		B7CD0642205F71E9009951A4 /* MerchantDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantDetailCell.swift; sourceTree = "<group>"; };
@@ -1054,6 +1056,7 @@
 				BC6EF85B2060F6D000A156B9 /* CommonExtension.swift */,
 				B7C859F9206A3D2700033325 /* Date+Extension.swift */,
 				76440AD4206A35E300F6F167 /* LocalNotification.swift */,
+				B7C93A342072404900367097 /* AccessibilityDevice.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1592,6 +1595,7 @@
 				D9911859205B7AC100F701ED /* ApiError.swift in Sources */,
 				760B45A020653F0800DDD7B0 /* SelectDataPopUpView.swift in Sources */,
 				BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */,
+				B7C93A352072404900367097 /* AccessibilityDevice.swift in Sources */,
 				7640C09B205B6B9800F384B4 /* ChangePasswordViewModel.swift in Sources */,
 				7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */,
 				B7054003206383C80028D90E /* PRLoadingView.swift in Sources */,

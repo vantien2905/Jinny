@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var btnRight: UIButton!
     
     @IBOutlet weak var vTabbar: PRTabbarCustom!
+    @IBOutlet weak var heightTabbar: NSLayoutConstraint!
     
     @IBOutlet weak var lcsHeightSideMenu: NSLayoutConstraint!
     @IBOutlet weak var lcsSideMenu: NSLayoutConstraint!
@@ -53,6 +54,11 @@ class HomeViewController: UIViewController {
     func setUpView() {
         vNavigation.backgroundColor = PRColor.mainAppColor
         lcsNavigationHeight.constant = 64
+        if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
+            self.heightTabbar.constant = 83
+        } else {
+            self.heightTabbar.constant = 50
+        }
         
         vTabbar.vMemberships.setTitle(title: "Memberships")
         vTabbar.vPromotions.setTitle(title: "Vouchers")
