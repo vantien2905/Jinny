@@ -94,7 +94,7 @@ class SettingViewController: BaseViewController {
                 strongSelf.btnDayToRemind.isEnabled = true
                 strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                //LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test",day:"03/04/2018 +0000",dayBeforeExprise: 7)
+                LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test",day:"03/04/2018 +0000",dayBeforeExprise: 0)
             } else {
                 strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
                 strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
