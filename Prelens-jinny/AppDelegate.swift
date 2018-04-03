@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         application.applicationIconBadgeNumber = 0;
-        LocalNotification.registerForLocalNotification(on: <#T##UIApplication#>)
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
         } else {
