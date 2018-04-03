@@ -41,17 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func handleFlow() {
         UITabBar.appearance().tintColor = UIColor.red
-        if KeychainManager.shared.getToken() != nil {
-
-//            KeychainManager.shared.deleteToken()
-
-            goToMainApp()
-        } else {
+        let defaults = UserDefaults.standard
+         if defaults.string(forKey: KeychainItem.isFirstRunning.rawValue) != nil {
+            if KeychainManager.shared.getToken() != nil {
+                goToMainApp()
+            } else {
+                goToLogin()
+            }
+         } else {
             goToLogin()
         }
     }
 
     func goToLogin() {
+        KeychainManager.shared.deleteAllSavedData()
         let vc  = UINavigationController(rootViewController: PRLoginViewController())
         window?.rootViewController = vc
     }

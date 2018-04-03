@@ -10,15 +10,15 @@ import Foundation
 import KeychainSwift
 
 enum KeychainItem: String {
-    case token          = "Token"
-    case timeValid      = "TimeValid"
-    case email          = "Email"
-    case displayName    = "DisplayName"
-    case avatarUrl      = "AvatarUrl"
-    case loginId        = "LoginId"
-    case password       = "Password"
-    case userId         = "UserId"
-    case isShowTerm     = "IsShowTerm"
+    case token                  = "Token"
+    case timeValid              = "TimeValid"
+    case email                  = "Email"
+    case displayName            = "DisplayName"
+    case avatarUrl              = "AvatarUrl"
+    case loginId                = "LoginId"
+    case password               = "Password"
+    case userId                 = "UserId"
+    case isFirstRunning         = "IsFirstRunning"
     case pushNotificationStatus = "PushNotiStatus"
     case storeDiscountStatus    = "StoreDiscountStatus"
     case voucherExprireStatus   = "VoucherExprireStatus"
@@ -53,16 +53,7 @@ class KeychainManager {
         guard let validTimestamp    = valid else { return nil }
         return Double(validTimestamp)
     }
-
-//    func checkValid() -> Bool {
-//        guard let validTime = getValidTime() else {
-//            return false
-//        }
-//        let validTimeSecond     = validTime / 1000 //miliseconds to seconds
-//        let currentTimestamp    = NSDate().timeIntervalSince1970
-//        return validTimeSecond + bufferExpirationTime < currentTimestamp
-//    }
-
+    
     func deleteAllSavedData() {
         keychain.clear()
 
