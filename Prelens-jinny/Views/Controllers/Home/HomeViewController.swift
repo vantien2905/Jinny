@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var vTabbar: PRTabbarCustom!
     @IBOutlet weak var heightTabbar: NSLayoutConstraint!
+    @IBOutlet weak var bottomTitleNavi: NSLayoutConstraint!
     
     @IBOutlet weak var lcsHeightSideMenu: NSLayoutConstraint!
     @IBOutlet weak var lcsSideMenu: NSLayoutConstraint!
@@ -56,10 +57,12 @@ class HomeViewController: UIViewController {
         lcsNavigationHeight.constant = 64
         if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
             self.heightTabbar.constant = 83
+            self.bottomTitleNavi.constant = 2
         } else {
             self.heightTabbar.constant = 50
+            self.bottomTitleNavi.constant = 10
         }
-        vSideMenu.backgroundColor = PRColor.backgroundColor
+        vSideMenu.backgroundColor = .green
         vTabbar.vMemberships.setTitle(title: "Memberships")
         vTabbar.vPromotions.setTitle(title: "Vouchers")
         vTabbar.vMore.setTitle(title: "More...")
@@ -97,7 +100,7 @@ class HomeViewController: UIViewController {
         self.addChildViewController(sideMenuVC)
         sideMenuVC.view.frame = vSideMenu.bounds
         self.vSideMenu.addSubview(sideMenuVC.view)
-        sideMenuVC.view.fillSuperview()
+//        sideMenuVC.view.fillSuperview()
     }
     
     func switchScreen(from VC1: UIViewController, to VC2: UIViewController) {
