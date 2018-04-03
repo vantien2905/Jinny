@@ -21,7 +21,7 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var vShadow: UIView!
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
-    var viewModel: AchivedPromotionViewModelProtocol!
+    var viewModel: ArchivedPromotionViewModelProtocol!
     var refreshControl: UIRefreshControl!
     let disposeBag = DisposeBag()
     var listSearch = [Promotion]()
@@ -52,8 +52,8 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
     
     class func configureViewController() -> AchivedPromotionViewController {
         let achivedPromotionVC = AchivedPromotionViewController.initControllerFromNib() as! AchivedPromotionViewController
-        var viewModel: AchivedPromotionViewModel {
-            return AchivedPromotionViewModel()
+        var viewModel: ArchivedPromotionViewModel {
+            return ArchivedPromotionViewModel()
         }
         achivedPromotionVC.viewModel = viewModel
         return achivedPromotionVC

@@ -89,10 +89,13 @@ class MemberShipViewController: BaseViewController {
         
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
+
                 guard let strongSelf = self else { return }
                 strongSelf.viewModel.refresh()
                 strongSelf.vSearch.tfSearch.text = ""
+                strongSelf.vSearch.tfSearch.resignFirstResponder()
                 strongSelf.refreshControl.endRefreshing()
+
             })
             .disposed(by: disposeBag)
 

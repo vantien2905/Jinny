@@ -10,23 +10,23 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol AchivedPromotionViewModelProtocol {
+protocol ArchivedPromotionViewModelProtocol {
     var textSearch: Variable<String?> {get set}
     var listAchivedPromotion: Variable<[Promotion]?> {get}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
     var isLatest: Variable<Bool>{get set}
     func getListAchivedPromotion(order:String)
     func refresh()
+    
 }
 
-class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
+class ArchivedPromotionViewModel: ArchivedPromotionViewModelProtocol{
     var isLatest: Variable<Bool>
     var textSearch: Variable<String?> = Variable<String?>(nil)
     var listSearchVoucher: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
     var listAchivedPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
     var listTemp = [Promotion]()
     let disposeBag = DisposeBag()
-    
     init() {
         isLatest = Variable<Bool>(true)
         textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
@@ -71,10 +71,7 @@ class AchivedPromotionViewModel: AchivedPromotionViewModelProtocol {
         }).disposed(by: disposeBag)
     }
     func refresh() {
-        if isLatest.value {
-            getListAchivedPromotion(order: "desc")
-        } else {
-           getListAchivedPromotion(order: "asc")
-        }
+        isLatest.value = true
+        getListAchivedPromotion(order: "desc")
     }
 }

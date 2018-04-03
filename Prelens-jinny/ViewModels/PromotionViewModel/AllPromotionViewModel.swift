@@ -71,10 +71,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
         }).disposed(by: disposeBag)
     }
     func refresh() {
-        if isLatest.value {
-            getListAllPromotion(order: "desc")
-        } else {
-            getListAllPromotion(order: "asc")
-        }
+        isLatest.value = true
+        getListAllPromotion(order: "desc")
     }
 }
