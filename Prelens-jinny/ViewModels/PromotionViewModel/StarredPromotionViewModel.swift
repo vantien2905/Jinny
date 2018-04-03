@@ -16,6 +16,7 @@ protocol StarredPromotionViewModelProtocol {
     var listStarredPromotion: Variable<[Promotion]?>{get}
     var isLatest: Variable<Bool>{get}
     func getListStarredPromotion(order:String)
+    func refresh()
 }
 
 class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
@@ -67,6 +68,13 @@ class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
             self.listSearchVoucher.value = listPromotion
         }).disposed(by: disposeBag)
     }
-    
+    func refresh() {
+        if isLatest.value {
+            getListStarredPromotion(order: "desc")
+        } else {
+            getListStarredPromotion(order: "asc")
+        }
+    }
+
 }
 

@@ -19,6 +19,7 @@ class PRForgotPasswordViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        darkStatus()
         setupView()
         bindViewModel()
     }

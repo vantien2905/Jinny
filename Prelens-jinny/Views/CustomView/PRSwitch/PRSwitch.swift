@@ -48,14 +48,14 @@ class PRSwitch :PRBaseView {
     @objc func btnActionTapped() {
         if isCheck.value == false {
             vHorizontal.backgroundColor = UIColor.green
-            UIView.animate(withDuration: 0.25, animations: {
-                self.imgCircle.frame = CGRect(x: self.bounds.maxX - 26, y: self.bounds.minY + 0.5 , width: 22, height: 22)
+            UIView.animate(withDuration: 0.15, animations: {
+                self.imgCircle.frame = CGRect(x: self.bounds.maxX - 28, y: self.bounds.minY + 1.5, width: 22, height: 22)
                 self.isCheck.value = true
             })
         } else {
             vHorizontal.backgroundColor = UIColor.gray
-            UIView.animate(withDuration: 0.25, animations: {
-                self.imgCircle.frame = CGRect(x: self.bounds.minX + 4 , y: self.bounds.minY + 0.5, width: 22, height: 22)
+            UIView.animate(withDuration: 0.15, animations: {
+                self.imgCircle.frame = CGRect(x: self.bounds.minX + 6 , y: self.bounds.minY + 1.5, width: 22, height: 22)
                 self.isCheck.value = false
             })
         }
@@ -65,10 +65,11 @@ class PRSwitch :PRBaseView {
         super.layoutSubviews()
         if isCheck.value {
             vHorizontal.backgroundColor = UIColor.green
-            self.imgCircle.frame = CGRect(x: self.bounds.maxX - 26, y: self.bounds.minY + 0.5 , width: 22, height: 22)
+            self.imgCircle.frame = CGRect(x: self.bounds.maxX - 28, y: self.bounds.minY + 1.5 , width: 22, height: 22)
+            
         } else {
             vHorizontal.backgroundColor = UIColor.gray
-            imgCircle.frame = CGRect(x: self.bounds.minX + 4, y: self.bounds.minY + 0.5 , width: 22, height: 22)
+            imgCircle.frame = CGRect(x: self.bounds.minX + 6, y: self.bounds.minY + 1.5 , width: 22, height: 22)
         }
     }
 }

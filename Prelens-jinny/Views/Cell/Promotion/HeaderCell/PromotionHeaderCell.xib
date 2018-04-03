@@ -69,7 +69,6 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xe2-FO-bqc" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1/2" id="G7w-ic-fp4"/>
                 <constraint firstAttribute="bottom" secondItem="xe2-FO-bqc" secondAttribute="bottom" id="Uhl-IG-jN6"/>

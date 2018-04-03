@@ -78,7 +78,7 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
     @objc func bindData() {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
-                //self?.viewModel.refresh()
+                self?.viewModel.refresh()
                 self?.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
@@ -179,7 +179,7 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             }
         } else {
             if self.listAchivedPromotion.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 50)
+                return CGSize(width: collectionView.frame.width - 44, height: 30)
             } else {
                 return CGSize(width: (collectionView.frame.width - 49), height: 300)
             }
@@ -187,7 +187,7 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 17
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
