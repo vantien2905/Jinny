@@ -114,6 +114,7 @@ extension PromotionViewController: MenuBarDelegate, AllPromotionDelegate {
     func itemMenuSelected(index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
         cvMenuController.scrollToItem(at: indexPath, at: .left, animated: true)
+        cvMenuController.reloadData()
     }
     
     func isHiddenBtnAll(isHidden: Bool) {
