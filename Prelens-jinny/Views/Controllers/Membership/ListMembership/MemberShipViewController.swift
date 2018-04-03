@@ -89,6 +89,8 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
+                self?.vSearch.tfSearch.text = ""
+                self?.vSearch.tfSearch.resignFirstResponder()
                 self?.viewModel.refresh()
                 self?.refreshControl.endRefreshing()
             })

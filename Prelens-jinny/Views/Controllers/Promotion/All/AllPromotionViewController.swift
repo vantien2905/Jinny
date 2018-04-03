@@ -96,6 +96,8 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
                 self?.viewModel.refresh()
+                self?.vSearch.tfSearch.text = ""
+                self?.vSearch.tfSearch.resignFirstResponder()
                 self?.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
