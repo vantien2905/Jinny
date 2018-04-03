@@ -96,7 +96,7 @@ class AchivedPromotionViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func configColecttionView() {
-        cvAchivedPromotion.register(UINib(nibName: Cell.promotionHeader, bundle: nil), forCellWithReuseIdentifier: Cell.promotionHeader)
+        cvAchivedPromotion.register(UINib(nibName: Cell.otherHeader, bundle: nil), forCellWithReuseIdentifier: Cell.otherHeader)
         cvAchivedPromotion.register(UINib(nibName: Cell.promotionCell, bundle: nil), forCellWithReuseIdentifier: Cell.promotionCell )
         cvAchivedPromotion.register(UINib(nibName: Cell.emptyPromotion, bundle: nil), forCellWithReuseIdentifier: Cell.emptyPromotion)
         cvAchivedPromotion.isScrollEnabled = false
@@ -122,17 +122,17 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
         switch indexPath.section {
         case 0:
             
-            let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionHeader,
-                                                          for: indexPath) as! PromotionHeaderCell
-            
+            let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.otherHeader,
+                                                          for: indexPath) as! OtherHeaderCell
+            cell.lbOther.text = "All vouchers"
             if self.listAchivedPromotion.count == 0 {
                 cell.vSort.isHidden = true
             } else {
                 cell.vSort.isHidden = false
                 if self.viewModel.isLatest.value {
-                    cell.lbSort.text = "Latest"
+                    cell.lbLatest.text = "Latest"
                 } else {
-                    cell.lbSort.text = "Earliest"
+                    cell.lbLatest.text = "Earliest"
                 }
                 cell.delegate = self
             }
@@ -207,7 +207,7 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
         }
     }
 }
-extension AchivedPromotionViewController: PromotionSortDelegate {
+extension AchivedPromotionViewController: OtherHeaderCellDelegate {
     func sortTapped() {
         PopUpHelper.shared.showPopUpSort(message: "Sort by", actionLatest: {
             self.viewModel.isLatest.value = true

@@ -29,6 +29,8 @@ class OtherHeaderCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         print(lbLatest.frame)
+        lbLatest.font = PRFont.semiBold15
+        lbSortBy.font = PRFont.semiBold15
         vSort.backgroundColor = PRColor.backgroundColor
         lbOther.font = PRFont.semiBold15
         lbOther.textColor = PRColor.emptyMembership
