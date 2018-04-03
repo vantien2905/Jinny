@@ -35,7 +35,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                     return true
                 } else {
                     if let _merchant = promotion.merchant, let _name = _merchant.name {
-                            return _name.containsIgnoringCase(_textSearch)
+                        return _name.containsIgnoringCase(_textSearch)
                     }
                     return false
                 }

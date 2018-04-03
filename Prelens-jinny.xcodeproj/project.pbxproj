@@ -190,6 +190,10 @@
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
+		BCE65DC020737E790027C801 /* KPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DBE20737E790027C801 /* KPageViewController.swift */; };
+		BCE65DC120737E790027C801 /* KPageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DBF20737E790027C801 /* KPageMenuView.swift */; };
+		BCE65DC420737F770027C801 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DC320737F760027C801 /* Utils.swift */; };
+		BCE65DC620737FC40027C801 /* PromotionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DC520737FC40027C801 /* PromotionTestViewController.swift */; };
 		BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */; };
 		BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
@@ -395,6 +399,10 @@
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
+		BCE65DBE20737E790027C801 /* KPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPageViewController.swift; sourceTree = "<group>"; };
+		BCE65DBF20737E790027C801 /* KPageMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPageMenuView.swift; sourceTree = "<group>"; };
+		BCE65DC320737F760027C801 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BCE65DC520737FC40027C801 /* PromotionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTestViewController.swift; sourceTree = "<group>"; };
 		BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewController.swift; sourceTree = "<group>"; };
 		BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVoucherViewController.xib; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
@@ -543,6 +551,7 @@
 				76DC88EE205F5FFA00AD87F3 /* All */,
 				76DC88E8205F5A6700AD87F3 /* PromotionViewController.swift */,
 				76DC88E9205F5A6700AD87F3 /* PromotionViewController.xib */,
+				BCE65DC520737FC40027C801 /* PromotionTestViewController.swift */,
 			);
 			path = Promotion;
 			sourceTree = "<group>";
@@ -1064,6 +1073,7 @@
 		BCBC958920562206004C1985 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BCE65DC220737F660027C801 /* Helpers */,
 				B7B1BC6B2058CB590042B3D4 /* Constants */,
 				BCBC9588205621BB004C1985 /* Extension */,
 			);
@@ -1100,6 +1110,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				BCE65DBD20737E790027C801 /* KPageView */,
 				BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */,
 				B7D54B012069ED9C000F4957 /* Dropdown */,
 				76BA6865206899FA0006E226 /* PRSwitch */,
@@ -1284,6 +1295,23 @@
 				BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */,
 			);
 			path = AddSuccess;
+			sourceTree = "<group>";
+		};
+		BCE65DBD20737E790027C801 /* KPageView */ = {
+			isa = PBXGroup;
+			children = (
+				BCE65DBE20737E790027C801 /* KPageViewController.swift */,
+				BCE65DBF20737E790027C801 /* KPageMenuView.swift */,
+			);
+			path = KPageView;
+			sourceTree = "<group>";
+		};
+		BCE65DC220737F660027C801 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BCE65DC320737F760027C801 /* Utils.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		BCF5F6A12064D7CB007CE003 /* MerchantDetailHeaderCell */ = {
@@ -1675,6 +1703,8 @@
 				BC78F4912058D3FC003904E0 /* PRSideMenuVC.swift in Sources */,
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				B7C859FA206A3D2700033325 /* Date+Extension.swift in Sources */,
+				BCE65DC420737F770027C801 /* Utils.swift in Sources */,
+				BCE65DC120737E790027C801 /* KPageMenuView.swift in Sources */,
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
 				B7886657205A1C1600096F27 /* Merchant.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
@@ -1687,6 +1717,7 @@
 				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
 				D991185E205B82D900F701ED /* MembershipService.swift in Sources */,
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
+				BCE65DC620737FC40027C801 /* PromotionTestViewController.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
 				B7D54B032069EDC8000F4957 /* Dropdown.swift in Sources */,
@@ -1700,6 +1731,7 @@
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
 				B7CD064A205F9ACA009951A4 /* HeaderMembershipDetailCell.swift in Sources */,
 				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,
+				BCE65DC020737E790027C801 /* KPageViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */,
 				7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */,
