@@ -19,6 +19,7 @@
             <connections>
                 <outlet property="btnLeft" destination="fGk-uo-ozt" id="KWK-Gg-GfH"/>
                 <outlet property="btnRight" destination="ugT-mb-A15" id="ahI-UP-PKr"/>
+                <outlet property="heightTabbar" destination="YIA-v5-UjG" id="Q7D-sz-m8v"/>
                 <outlet property="lbTitle" destination="l2z-L0-Tlz" id="Yyf-9t-EOp"/>
                 <outlet property="lcsHeightSideMenu" destination="Mr9-zY-eS9" id="FW3-Uo-cI9"/>
                 <outlet property="lcsNavigationHeight" destination="Aux-Mn-OVQ" id="mQ5-lB-k9R"/>
@@ -120,7 +121,7 @@
             <constraints>
                 <constraint firstItem="Tft-m1-gGq" firstAttribute="trailing" secondItem="Esz-5D-x9Q" secondAttribute="trailing" id="220-sw-lCx"/>
                 <constraint firstItem="bOu-iF-q59" firstAttribute="top" secondItem="I4n-Am-CTh" secondAttribute="top" id="46u-9G-esC"/>
-                <constraint firstItem="nko-nP-oIm" firstAttribute="bottom" secondItem="Esz-5D-x9Q" secondAttribute="bottom" id="8HI-Ih-BZm"/>
+                <constraint firstItem="nko-nP-oIm" firstAttribute="bottom" secondItem="I4n-Am-CTh" secondAttribute="bottom" id="8HI-Ih-BZm"/>
                 <constraint firstItem="d3u-Th-kyH" firstAttribute="leading" secondItem="Esz-5D-x9Q" secondAttribute="leading" id="9Y1-Gt-mvS"/>
                 <constraint firstItem="Esz-5D-x9Q" firstAttribute="trailing" secondItem="V7h-4K-6kT" secondAttribute="trailing" id="Cqs-Gy-5uu"/>
                 <constraint firstItem="bOu-iF-q59" firstAttribute="bottom" secondItem="I4n-Am-CTh" secondAttribute="bottom" id="M2X-8Y-sNM"/>
