@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func goToLogin() {
+        KeychainManager.shared.deleteAllSavedData()
         let vc  = UINavigationController(rootViewController: PRLoginViewController())
         window?.rootViewController = vc
     }
