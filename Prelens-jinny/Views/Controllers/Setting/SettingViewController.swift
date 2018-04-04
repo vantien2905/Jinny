@@ -22,9 +22,8 @@ class SettingViewController: BaseViewController {
     @IBOutlet weak var lbVersion: UILabel!
     @IBOutlet weak var btnDayToRemind: UIButton!
     var listDay = ["1","2","3","4","5","6","7"]
-    
     let disposeBag = DisposeBag()
-    
+    let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         darkStatus()
@@ -34,6 +33,7 @@ class SettingViewController: BaseViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         setupView()
         bindData()
@@ -47,7 +47,7 @@ class SettingViewController: BaseViewController {
              lbNumberDay.text = "7 days"
             KeychainManager.shared.saveString(value: "7" , forkey: KeychainItem.leftDayToRemind)
         }
-        let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
+       
         if notificationType?.rawValue != 0 {
             if let _pushNotificationStatus = KeychainManager.shared.getBool(key: KeychainItem.pushNotificationStatus),
                 let _voucherExprireStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus),
@@ -94,17 +94,18 @@ class SettingViewController: BaseViewController {
         
         vVoucherNotiSwitch.isCheck.asObservable().subscribe(onNext: { [weak self ]value in
             guard let strongSelf = self else {return}
-            if value {
-                strongSelf.btnDayToRemind.isEnabled = true
-                strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                if value {
+                    strongSelf.btnDayToRemind.isEnabled = true
+                    strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                    strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                    strongSelf.vPushNotiSwitch.isCheck.value = true
                // LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test",day:"03/04/2018 +0000",dayBeforeExprise: 0)
-            } else {
-                strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
-                strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
-                strongSelf.btnDayToRemind.isEnabled = false
-                UIApplication.shared.cancelAllLocalNotifications()
-            }
+                } else {
+                    strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
+                    strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
+                    strongSelf.btnDayToRemind.isEnabled = false
+                    UIApplication.shared.cancelAllLocalNotifications()
+                }
             KeychainManager.shared.saveBool(value: value, forkey: KeychainItem.voucherExprireStatus)
         }).disposed(by: disposeBag)
         

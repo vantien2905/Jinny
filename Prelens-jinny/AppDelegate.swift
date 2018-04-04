@@ -44,12 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 goToLogin()
             }
          } else {
+            KeychainManager.shared.deleteAllSavedData()
             goToLogin()
         }
     }
 
     func goToLogin() {
-        KeychainManager.shared.deleteAllSavedData()
         let vc  = UINavigationController(rootViewController: PRLoginViewController())
         window?.rootViewController = vc
     }
@@ -108,10 +108,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
          //application.applicationIconBadgeNumber = badgeNumbers + 1
         //7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a
-        
+        let voucherID = String(describing: notification.userInfo)
         let route = Route(tabbar: .vouchers)
-        Navigator.shared.handle(route: route)
+        Navigator.shared.handle(route: route, id: voucherID)
     }
-    
-
 }
