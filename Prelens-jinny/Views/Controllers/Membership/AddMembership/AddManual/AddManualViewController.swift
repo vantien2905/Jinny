@@ -33,7 +33,7 @@ class AddManualViewController: BaseViewController {
         darkStatus()
     }
     
-    //MARK: Action
+    // MARK: Action
     @IBAction func btnDoneTapped() {
         if let _code = tfSerial.text, let _merchant = viewModel.merchant.value {
             viewModel.addMembership(code: _code, merchantId: _merchant.id)
@@ -48,6 +48,7 @@ class AddManualViewController: BaseViewController {
         
         if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
             heightHeader.constant = 142.5
+            
         } else {
             heightHeader.constant = 120.5
         }
@@ -85,7 +86,6 @@ class AddManualViewController: BaseViewController {
         
         viewModel.merchant.asObservable().subscribe(onNext: {[weak self] (merchant) in
             guard let strongSelf = self else { return }
-            
             if let _logo = merchant?.logo, let _url = _logo.url, let _urlThumb = _url.thumb {
                 let urlThumb = URL(string: _urlThumb)
                 strongSelf.imgLogo.sd_setImage(with: urlThumb, placeholderImage: nil)

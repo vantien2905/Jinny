@@ -42,11 +42,19 @@
                         <constraint firstItem="FgP-On-UDh" firstAttribute="centerX" secondItem="312-3C-L64" secondAttribute="centerX" id="lqR-ZN-EgN"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3h-IU-UDN" customClass="OverlayCamera" customModule="Jinny" customModuleProvider="target">
+                    <rect key="frame" x="-0.5" y="80" width="375" height="217"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="z3h-IU-UDN" firstAttribute="height" secondItem="312-3C-L64" secondAttribute="height" id="1cf-SX-r8K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="312-3C-L64" secondAttribute="trailing" id="8Xv-Bm-Q18"/>
                 <constraint firstItem="312-3C-L64" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Hzt-Ox-tKa"/>
+                <constraint firstItem="z3h-IU-UDN" firstAttribute="width" secondItem="312-3C-L64" secondAttribute="width" id="KJz-9n-lC7"/>
+                <constraint firstItem="z3h-IU-UDN" firstAttribute="centerY" secondItem="312-3C-L64" secondAttribute="centerY" id="RXX-dG-Irg"/>
+                <constraint firstItem="z3h-IU-UDN" firstAttribute="centerX" secondItem="312-3C-L64" secondAttribute="centerX" id="Zfv-QO-PIo"/>
                 <constraint firstItem="312-3C-L64" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="tPb-ul-jCg"/>
                 <constraint firstItem="312-3C-L64" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xXC-zf-rTF"/>
             </constraints>
