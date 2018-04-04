@@ -15,10 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var badgeNumbers = 0
     var window: UIWindow?
     
-    fileprivate var tabbarVC = HomeViewController()
-    var tabbarController: HomeViewController {
-        return tabbarVC
-    }
+    var tabbarController: HomeViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         application.applicationIconBadgeNumber = 0
@@ -55,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func goToMainApp() {
+        tabbarController = HomeViewController()
+        guard let tabbarVC = tabbarController else { return }
         let vc  = UINavigationController(rootViewController: tabbarVC)
         window?.rootViewController = vc
 
