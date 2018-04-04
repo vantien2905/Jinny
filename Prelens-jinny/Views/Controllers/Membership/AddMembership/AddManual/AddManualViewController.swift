@@ -16,16 +16,8 @@ class AddManualViewController: BaseViewController {
     @IBOutlet weak var btnDone: UIButton!
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var vTextField: UIView!
+    @IBOutlet weak var heightHeader: NSLayoutConstraint!
     var serial: String?
-    @IBAction func btnDoneTapped() {
-        if let _code = tfSerial.text, let _merchant = viewModel.merchant.value {
-            viewModel.addMembership(code: _code, merchantId: _merchant.id)
-        }
-    }
-    
-    @IBAction func btnBackClick() {
-        self.pop()
-    }
     
     let viewModel = AddManualViewModel()
     let disposeBag = DisposeBag()
@@ -40,8 +32,26 @@ class AddManualViewController: BaseViewController {
         hideNavigation()
         darkStatus()
     }
+    
+    //MARK: Action
+    @IBAction func btnDoneTapped() {
+        if let _code = tfSerial.text, let _merchant = viewModel.merchant.value {
+            viewModel.addMembership(code: _code, merchantId: _merchant.id)
+        }
+    }
+    
+    @IBAction func btnBackClick() {
+        self.pop()
+    }
 
     func setUpView() {
+        
+        if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
+            heightHeader.constant = 142.5
+        } else {
+            heightHeader.constant = 120.5
+        }
+        
         vHeader.setShadow()
         tfSerial.attributedPlaceholder = "Serial number".toAttributedString(color: PRColor.searchColor.withAlphaComponent(0.5), font: PRFont.semiBold15, isUnderLine: false)
         vTextField.layer.cornerRadius = 2.5
@@ -68,10 +78,6 @@ class AddManualViewController: BaseViewController {
                             let vcMembershipDetail = MembershipDetailViewController.configureViewController(idMembership: id)
                             strongSelf.push(controller: vcMembershipDetail, animated: true)
                         }
-                        
-//                        let viewControllers: [UIViewController] = strongSelf.navigationController!.viewControllers as [UIViewController]
-//                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 4], animated: true)
-//                        print("test run")
                     }
                 })
             }
