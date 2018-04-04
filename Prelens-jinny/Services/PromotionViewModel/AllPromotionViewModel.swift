@@ -35,7 +35,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                     return true
                 } else {
                     if let _merchant = promotion.merchant, let _name = _merchant.name {
-                            return _name.containsIgnoringCase(_textSearch)
+                        return _name.containsIgnoringCase(_textSearch)
                     }
                     return false
                 }
@@ -57,9 +57,23 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 guard let strongSelf = self else { return }
                 strongSelf.listAllPromotion.value = listPromotion
                 strongSelf.listSearchVoucher.value = listPromotion
+                 UIApplication.shared.cancelAllLocalNotifications()
+                strongSelf.setupNotification(listData: listPromotion)
             }).disposed(by: disposeBag)
     }
-    
+    func setupNotification(listData: [Promotion]) {
+        guard let _leftDay = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind) else {return}
+        guard let _voucherNotiStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus)else {return}
+        if _voucherNotiStatus {
+            if listData.count != 0 {
+                for item in listData {
+                    guard let _name = item.merchant?.name , let _expireDate = item.expiresAt else { return  }
+                    //LocalNotification.dispatchlocalNotification(with: _name, body: "", day: _expireDate, dayBeforeExprise:Int(_leftDay)!)
+                    LocalNotification.dispatchlocalNotification(with: _name, body: "", userInfo: ["id" : item.id ?? ""], day: _expireDate, dayBeforeExprise: Int(_leftDay)!)
+                }
+            }
+        }
+    }
     func sortAllPromotion() {
         isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
             guard let strongSelf = self else { return }
@@ -71,10 +85,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
         }).disposed(by: disposeBag)
     }
     func refresh() {
-        if isLatest.value {
-            getListAllPromotion(order: "desc")
-        } else {
-            getListAllPromotion(order: "asc")
-        }
+        isLatest.value = true
+        getListAllPromotion(order: "desc")
     }
 }

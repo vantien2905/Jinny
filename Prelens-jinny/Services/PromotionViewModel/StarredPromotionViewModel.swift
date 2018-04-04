@@ -26,7 +26,6 @@ class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
     var listStarredPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
     var listTemp = [Promotion]()
     let disposeBag = DisposeBag()
-    
     init() {
         isLatest = Variable<Bool>(true)
         textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
@@ -40,7 +39,6 @@ class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
                     }
                     return false
                 }
-                
             }
             if let _list = listVoucher {
                 self?.listTemp = _list
@@ -69,12 +67,8 @@ class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
         }).disposed(by: disposeBag)
     }
     func refresh() {
-        if isLatest.value {
-            getListStarredPromotion(order: "desc")
-        } else {
-            getListStarredPromotion(order: "asc")
-        }
+        isLatest.value = true
+        getListStarredPromotion(order: "desc")
     }
-
 }
 

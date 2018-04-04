@@ -30,8 +30,6 @@ class AllPromotionViewController: UIViewController {
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
-            UIApplication.shared.cancelAllLocalNotifications()
-            setupNotification(listData: listPromotion)
         }
     }
     
@@ -93,8 +91,11 @@ class AllPromotionViewController: UIViewController {
     @objc func bindData() {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
-                self?.viewModel.refresh()
-                self?.refreshControl.endRefreshing()
+                guard let strongSelf = self else {return}
+                strongSelf.viewModel.refresh()
+                strongSelf.vSearch.tfSearch.text = ""
+                strongSelf.vSearch.tfSearch.resignFirstResponder()
+                strongSelf.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
         

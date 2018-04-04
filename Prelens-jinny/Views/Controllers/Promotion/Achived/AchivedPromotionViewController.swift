@@ -21,7 +21,7 @@ class AchivedPromotionViewController: UIViewController {
     @IBOutlet weak var vShadow: UIView!
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
-    var viewModel: AchivedPromotionViewModelProtocol!
+    var viewModel: ArchivedPromotionViewModelProtocol!
     var refreshControl: UIRefreshControl!
     let disposeBag = DisposeBag()
     var listSearch = [Promotion]()
@@ -52,8 +52,8 @@ class AchivedPromotionViewController: UIViewController {
     
     class func configureViewController() -> AchivedPromotionViewController {
         let achivedPromotionVC = AchivedPromotionViewController.initControllerFromNib() as! AchivedPromotionViewController
-        var viewModel: AchivedPromotionViewModel {
-            return AchivedPromotionViewModel()
+        var viewModel: ArchivedPromotionViewModel {
+            return ArchivedPromotionViewModel()
         }
         achivedPromotionVC.viewModel = viewModel
         return achivedPromotionVC
@@ -77,8 +77,11 @@ class AchivedPromotionViewController: UIViewController {
     @objc func bindData() {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
-                self?.viewModel.refresh()
-                self?.refreshControl.endRefreshing()
+                guard let strongSelf = self else {return}
+                strongSelf.viewModel.refresh()
+                strongSelf.vSearch.tfSearch.text = ""
+                strongSelf.vSearch.tfSearch.resignFirstResponder()
+                strongSelf.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
         

@@ -33,18 +33,20 @@ class PromotionCell: UICollectionViewCell {
     }
     
     func setData() {
-        if  let _expiresAt = promotion.expiresString, let _merchantName = promotion.merchant?.name,  let _url = promotion.image?.url?.original {
+        if  let _expiresAt = promotion.expiresString, let _merchantName = promotion.merchant?.name {
             if promotion.isReaded {
                 imgReadPromotion.isHidden = true
             } else {
                 imgReadPromotion.isHidden = false
             }
-            let url = URL(string: _url)
             lbExpiresAt.text    = _expiresAt
             lbMerchantName.text = _merchantName
-            
+        }
+        
+        if let _url = promotion.image?.url?.original {
+            let url = URL(string: _url)
             imgPromotion.contentMode = .scaleAspectFill
-            imgPromotion.sd_setImage(with: url, placeholderImage: nil)
+            imgPromotion.sd_setImage(with: url, placeholderImage:nil)
         }
     }
 }
