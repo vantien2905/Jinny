@@ -11,7 +11,7 @@ import ObjectMapper
 class Promotion: NSObject, Mappable {
     var id              : String?
     var promotionDescription: String?
-    var expiresAt       : String?
+    var expiresAt       : Date?
     var expiresString   : String?
     var isReaded        : Bool = false
     var isBookMarked    : Bool = false
@@ -28,7 +28,7 @@ class Promotion: NSObject, Mappable {
      func mapping(map: Map) {
         self.id                     <- map["id"]
         self.promotionDescription   <- map["description"]
-        self.expiresAt              <- map["expires_at"]
+        self.expiresAt              <- (map["expires_at"],DateTransform())
         self.expiresString          <- map["expires_at_in_words"]
         self.merchant               <- map["merchant"]
         self.isReaded               <- map["is_read"]

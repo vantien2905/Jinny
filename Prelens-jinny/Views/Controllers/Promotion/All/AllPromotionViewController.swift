@@ -73,7 +73,7 @@ class AllPromotionViewController: UIViewController {
             if listData.count != 0 {
                 for item in listData {
                     guard let _name = item.merchant?.name , let _expireDate = item.expiresAt else { return  }
-                    LocalNotification.dispatchlocalNotification(with: _name, body: "", day: _expireDate, dayBeforeExprise:Int(_leftDay)!)
+                    //LocalNotification.dispatchlocalNotification(with: _name, body: "", day: _expireDate, dayBeforeExprise:Int(_leftDay)!)
                 }
             }
         }
