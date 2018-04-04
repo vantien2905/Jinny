@@ -110,7 +110,7 @@ extension RedeemVoucherViewController: RedeemVoucherFooterCellButtonDelegate {
         PopUpHelper.shared.showPopUpYesNo(message: "Do you want to redeem this Voucher?", actionYes: {
             guard let idVoucher = self.promotionDetail?.id else { return }
             self.viewModel.redeemVoucher(idVoucher: idVoucher)
-            PopUpHelper.shared.showPopUp(message: "Redeemed", height: 120, action: {
+            PopUpHelper.shared.showPopUp(message: "Redeemed!", height: 120, action: {
                 self.pop()
             })
         }, actionNo: {})
