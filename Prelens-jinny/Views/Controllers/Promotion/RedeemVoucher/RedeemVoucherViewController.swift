@@ -37,6 +37,8 @@ class RedeemVoucherViewController: BaseViewController {
                                  forCellWithReuseIdentifier: "headerCell")
         cvRedeemVoucher.register(UINib(nibName: Cell.voucherRedeemFooterCell, bundle: nil),
                                  forCellWithReuseIdentifier: "redeemFooterCell")
+        
+        cvRedeemVoucher.backgroundColor = PRColor.backgroundColor
     }
     
     func setNavigation(name: String) {
@@ -86,9 +88,8 @@ extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICol
             return CGSize(width: size, height: 125 - (57 - _height))
         } else if indexPath.section == 1 {
             let size = UIScreen.main.bounds.width - 40
-            return CGSize(width: size, height: 100)
+            return CGSize(width: size, height: 70)
         } else {
-            
             return CGSize(width: 0, height: 0)
         }
     }
