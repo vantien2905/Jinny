@@ -40,11 +40,11 @@ class SettingViewController: BaseViewController {
     }
     
     func setupView() {
-        print("%@",UIApplication.shared.scheduledLocalNotifications);
+        
         if let _lefDayToRemind = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind){
-             lbNumberDay.text                    = _lefDayToRemind + " days"
+             lbNumberDay.text = _lefDayToRemind + " days"
         } else {
-             lbNumberDay.text                    = "7 days"
+             lbNumberDay.text = "7 days"
             KeychainManager.shared.saveString(value: "7" , forkey: KeychainItem.leftDayToRemind)
         }
         

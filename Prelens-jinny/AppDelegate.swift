@@ -14,16 +14,11 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var badgeNumbers = 0
     var window: UIWindow?
-
-//    func printFonts() {
-//        let fontFamilyNames = UIFont.familyNames
-//        for familyName in fontFamilyNames {
-//            print("------------------------------")
-//            print("Font Family Name = [\(familyName)]")
-//            let names = UIFont.fontNames(forFamilyName: familyName )
-//            print("Font Names = [\(names)]")
-//        }
-//    }
+    
+    fileprivate var tabbarVC = HomeViewController()
+    var tabbarController: HomeViewController {
+        return tabbarVC
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         LocalNotification.registerForLocalNotification(on: application)
@@ -33,9 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // Fallback on earlier versions
         }
-//        UIApplication.shared.statusBarStyle = .lightContent
+        
         Fabric.with([Crashlytics.self])
-//        window?.rootViewController = TestViewController()
         handleFlow()
         return true
     }
@@ -62,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func goToMainApp() {
 //        window?.rootViewController = PRTabbarMainViewController()
-        let vc  = UINavigationController(rootViewController: HomeViewController())
+        let vc  = UINavigationController(rootViewController: tabbarVC)
         window?.rootViewController = vc
 
         //        apiNotification.asObservable().subscribe(onNext: { [weak self] unreadNotification in
@@ -113,6 +107,21 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     }
    
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-         application.applicationIconBadgeNumber = badgeNumbers + 1
+         //application.applicationIconBadgeNumber = badgeNumbers + 1
+        //7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a
+        
+        let route = Route(tabbar: .vouchers)
+        handle(route: route)
+    }
+    
+    func handle(route: Route) {
+        switch route {
+        case .tab(let tab):
+            tabbarVC.btnTapped(tag: tab)
+            let vc = PromotionDetailViewController.configureViewController(idVoucher: "7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a")
+            tabbarVC.push(controller: vc, animated: true)
+        case .signIn: break
+        case .signUp: break
+        }
     }
 }

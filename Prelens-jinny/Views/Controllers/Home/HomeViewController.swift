@@ -118,15 +118,15 @@ class HomeViewController: UIViewController {
 
 // MARK: Button Action
 extension HomeViewController: PRTabbarCustomDelegate {
-    func btnTapped(tag: Int) {
+    func btnTapped(tag: Route.Tabbar) {
         switch tag {
-        case 0:
+        case .membership:
             if self.childViewControllers.contains(promotionVC) {
                 switchScreen(from: promotionVC, to: membershipVC)
             }
             vTabbar.setIndexSelected(index: 0)
             
-        case 1:
+        case .vouchers:
             if self.childViewControllers.contains(promotionVC) {
             } else {
                 //Adding Promotion child view controller
@@ -138,7 +138,7 @@ extension HomeViewController: PRTabbarCustomDelegate {
             switchScreen(from: membershipVC, to: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             
-        case 2:
+        case .more:
             if sideMenuTrigger {
                 lcsSideMenu.constant = 0
                 UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded, completion: { (_) in

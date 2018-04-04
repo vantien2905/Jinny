@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PRTabbarCustomDelegate: class {
-    func btnTapped(tag: Int)
+    func btnTapped(tag: Route.Tabbar)
 }
 
 class PRTabbarCustom: PRBaseViewXib {
@@ -72,11 +72,11 @@ extension PRTabbarCustom: PRTabbarButtonDelegate {
     func btnTapped(name: String) {
         switch name {
         case "Memberships":
-            buttonTappedDelegate?.btnTapped(tag: 0)
+            buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.membership)
         case "Vouchers":
-            buttonTappedDelegate?.btnTapped(tag: 1)
+            buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.vouchers)
         case "More...":
-            buttonTappedDelegate?.btnTapped(tag: 2)
+            buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.more)
         default:
             break
         }
