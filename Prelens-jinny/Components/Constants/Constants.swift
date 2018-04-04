@@ -89,6 +89,10 @@ struct ContantMessages {
     struct User {
         static let successChangePassword = "Your password has been changed successfully"
     }
+    
+    struct Setting {
+        static let errorUnauthorized = "Unauthorized - Please allow notification for Jinny app in device's Settings"
+    }
 }
 
 struct ConstantString {
@@ -97,3 +101,4 @@ struct ConstantString {
         static let emptyOtherMembership = "Press the + button below to add new membership"
     }
 }
+
