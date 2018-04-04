@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Fabric.with([Crashlytics.self])
         handleFlow(application: application)
+        LocalNotification.registerForLocalNotification(on: application)
         return true
     }
 
@@ -44,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
          } else {
             KeychainManager.shared.deleteAllSavedData()
-            LocalNotification.registerForLocalNotification(on: application)
             goToLogin()
         }
     }
