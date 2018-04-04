@@ -31,7 +31,7 @@ class PRSwitch :PRBaseView {
     }()
     var isCheck = Variable<Bool>(false)
     var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
-    
+    let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
     override func setUpViews() {
         self.addSubview(vHorizontal)
         self.addSubview(imgCircle)
@@ -46,18 +46,22 @@ class PRSwitch :PRBaseView {
     }
     
     @objc func btnActionTapped() {
-        if isCheck.value == false {
-            vHorizontal.backgroundColor = UIColor.green
-            UIView.animate(withDuration: 0.15, animations: {
-                self.imgCircle.frame = CGRect(x: self.bounds.maxX - 28, y: self.bounds.minY + 1.5, width: 22, height: 22)
-                self.isCheck.value = true
-            })
-        } else {
-            vHorizontal.backgroundColor = UIColor.gray
-            UIView.animate(withDuration: 0.15, animations: {
+        if notificationType?.rawValue != 0 {
+            if isCheck.value == false {
+                vHorizontal.backgroundColor = UIColor.green
+                UIView.animate(withDuration: 0.15, animations: {
+                    self.imgCircle.frame = CGRect(x: self.bounds.maxX - 28, y: self.bounds.minY + 1.5, width: 22, height: 22)
+                    self.isCheck.value = true
+                })
+            } else {
+                vHorizontal.backgroundColor = UIColor.gray
+                UIView.animate(withDuration: 0.15, animations: {
                 self.imgCircle.frame = CGRect(x: self.bounds.minX + 6 , y: self.bounds.minY + 1.5, width: 22, height: 22)
                 self.isCheck.value = false
-            })
+                })
+            }
+        } else {
+            PopUpHelper.shared.showMessage(message: ContantMessages.Setting.errorUnauthorized)
         }
     }
 

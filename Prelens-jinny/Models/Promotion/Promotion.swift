@@ -26,7 +26,6 @@ class Promotion: NSObject, Mappable {
     }
     
      func mapping(map: Map) {
-
         self.id                     <- map["id"]
         self.promotionDescription   <- map["description"]
         self.expiresAt              <- map["expires_at"]
@@ -37,22 +36,4 @@ class Promotion: NSObject, Mappable {
         self.isBookMarked           <- map["is_bookmarked"]
      }
 }
-extension Promotion: Comparable {
-    public static func >(lhs: Promotion, rhs: Promotion) -> Bool {
-        guard let lhsDate = lhs.merchant?.createdDate else { return false }
-        guard let rhsDate = rhs.merchant?.createdDate else { return true }
-        return lhsDate > rhsDate
-    }
-    
-    public static func <(lhs: Promotion, rhs: Promotion) -> Bool {
-        guard let lhsDate = lhs.merchant?.createdDate else { return true }
-        guard let rhsDate = rhs.merchant?.createdDate else { return false }
-        return lhsDate < rhsDate
-    }
-    
-    public static func ==(lhs: Promotion, rhs: Promotion) -> Bool {
-        guard let lhsDate = lhs.merchant?.createdDate else { return false }
-        guard let rhsDate = rhs.merchant?.createdDate else { return false }
-        return lhsDate == rhsDate
-    }
-}
+

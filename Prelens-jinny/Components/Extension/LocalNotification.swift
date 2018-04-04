@@ -20,13 +20,12 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
         }
     }
 
-class func dispatchlocalNotification(with title: String, body: String, userInfo: [AnyHashable: Any]? = nil,day:String, dayBeforeExprise:Int) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy z"
-        dateFormatter.timeZone = .current
-        dateFormatter.locale   = .current
-        guard let _day = dateFormatter.date(from: day) else { return }
-        guard let dayBefore = Calendar.current.date(byAdding: .day, value: -dayBeforeExprise, to: _day) else {return}
+class func dispatchlocalNotification(with title: String, body: String, userInfo: [AnyHashable: Any]? = nil,day:Date, dayBeforeExprise:Int) {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd/MM/yyyy z"
+//        dateFormatter.timeZone = .current
+//        dateFormatter.locale   =  Locale(identifier: "en_SG")
+        guard let dayBefore = Calendar.current.date(byAdding: .day, value: -dayBeforeExprise, to: day) else {return}
         print(dayBefore)
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
