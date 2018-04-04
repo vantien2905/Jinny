@@ -55,7 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func goToMainApp() {
-//        window?.rootViewController = PRTabbarMainViewController()
         let vc  = UINavigationController(rootViewController: tabbarVC)
         window?.rootViewController = vc
 
@@ -111,17 +110,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
         //7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a
         
         let route = Route(tabbar: .vouchers)
-        handle(route: route)
+        Navigator.shared.handle(route: route)
     }
     
-    func handle(route: Route) {
-        switch route {
-        case .tab(let tab):
-            tabbarVC.btnTapped(tag: tab)
-            let vc = PromotionDetailViewController.configureViewController(idVoucher: "7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a")
-            tabbarVC.push(controller: vc, animated: true)
-        case .signIn: break
-        case .signUp: break
-        }
-    }
+
 }

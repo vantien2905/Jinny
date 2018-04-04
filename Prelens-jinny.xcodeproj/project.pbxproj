@@ -186,7 +186,6 @@
 		BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */; };
 		BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */; };
 		BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */; };
-		BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */; };
 		BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */; };
 		BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */; };
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
@@ -396,7 +395,6 @@
 		BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
 		BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
 		BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
-		BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTabbarMainViewController.swift; sourceTree = "<group>"; };
 		BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
 		BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -946,7 +944,6 @@
 			isa = PBXGroup;
 			children = (
 				BCBC95982056245C004C1985 /* PRBarButton */,
-				BCBC960020562CE9004C1985 /* Tabbar */,
 				BC6E9DBD205A529800C5DF01 /* PRTabbarCustom.swift */,
 				BC6E9DBE205A529800C5DF01 /* PRTabbarCustom.xib */,
 			);
@@ -1259,14 +1256,6 @@
 				BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		BCBC960020562CE9004C1985 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				BCBC960120562CE9004C1985 /* PRTabbarMainViewController.swift */,
-			);
-			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		BCBC960C20562EB1004C1985 /* Resource */ = {
@@ -1647,7 +1636,6 @@
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
 				760C1124205D164C009B9205 /* SettingViewController.swift in Sources */,
-				BCBC960220562CE9004C1985 /* PRTabbarMainViewController.swift in Sources */,
 				B7B1BC782058D45B0042B3D4 /* SearchMembershipCell.swift in Sources */,
 				760DD37B2065E3E70031DA90 /* SelectDataPopUpCell.swift in Sources */,
 				B7B1BC6D2058CBA20042B3D4 /* Constants.swift in Sources */,
