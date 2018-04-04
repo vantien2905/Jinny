@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol RedeemVoucherFooterCellButtonDelegate: class {
+    func btnRedeemedTapped()
+}
+
 class RedeemVoucherFooterCell: UICollectionViewCell {
     @IBOutlet weak var lbText: UILabel!
     @IBOutlet weak var btnRedeem: UIButton!
+    
+    weak var btnRedeemedDelegate: RedeemVoucherFooterCellButtonDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +38,6 @@ class RedeemVoucherFooterCell: UICollectionViewCell {
     }
     //Add delegate to show popup in the viewcontroller
     @IBAction func btnRedeemTapped() {
-        
+        btnRedeemedDelegate?.btnRedeemedTapped()
     }
 }

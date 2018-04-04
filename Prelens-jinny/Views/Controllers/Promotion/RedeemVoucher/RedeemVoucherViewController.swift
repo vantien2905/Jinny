@@ -12,6 +12,8 @@ class RedeemVoucherViewController: BaseViewController {
     
     @IBOutlet weak var cvRedeemVoucher: UICollectionView!
     
+    var viewModel = RedeemVoucherViewModel()
+    
     var promotionDetail: PromotionDetail? {
         didSet {
             //MARK: Setup the merchantName
@@ -26,6 +28,7 @@ class RedeemVoucherViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpComponents()
+        
     }
     
     func setUpComponents() {
@@ -73,6 +76,7 @@ extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICol
         } else {
             let footerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "redeemFooterCell",
                                                                 for: indexPath) as! RedeemVoucherFooterCell
+            footerCell.btnRedeemedDelegate = self
             return footerCell
         }
     }
@@ -99,9 +103,16 @@ extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICol
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 23, right: 0)
     }
-    
 }
 
-
-
-
+extension RedeemVoucherViewController: RedeemVoucherFooterCellButtonDelegate {
+    func btnRedeemedTapped() {
+        PopUpHelper.shared.showPopUpYesNo(message: "Do you want to redeem this Voucher?", actionYes: {
+            guard let idVoucher = self.promotionDetail?.id else { return }
+            self.viewModel.redeemVoucher(idVoucher: idVoucher)
+            PopUpHelper.shared.showPopUp(message: "Redeemed", height: 120, action: {
+                self.pop()
+            })
+        }, actionNo: {})
+    }
+}
