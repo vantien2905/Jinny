@@ -69,6 +69,12 @@ struct Cell {
     static let selectDataCell   = "SelectDataPopUpCell"
 }
 
+struct PRButtonTabbarTitle {
+    static let btnMemberships = "Memberships"
+    static let btnVouchers = "Vouchers"
+    static let btnMore = "  More ..."
+}
+
 struct PRFont {
     static let sideBarMenuFont = UIFont(name: "SegoeUI-Semibold", size: 15)
     static let semiBold15   = UIFont(name: "SegoeUI-Semibold", size: 15)

@@ -71,11 +71,11 @@ class PRTabbarCustom: PRBaseViewXib {
 extension PRTabbarCustom: PRTabbarButtonDelegate {
     func btnTapped(name: String) {
         switch name {
-        case "Memberships":
+        case PRButtonTabbarTitle.btnMemberships:
             buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.membership)
-        case "Vouchers":
+        case PRButtonTabbarTitle.btnVouchers:
             buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.vouchers)
-        case "  More ...":
+        case PRButtonTabbarTitle.btnMore:
             buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.more)
         default:
             break
