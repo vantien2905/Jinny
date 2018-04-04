@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
         vSideMenu.backgroundColor = .green
         vTabbar.vMemberships.setTitle(title: "Memberships")
         vTabbar.vPromotions.setTitle(title: "Vouchers")
-        vTabbar.vMore.setTitle(title: "More...")
+        vTabbar.vMore.setTitle(title: "  More ...")
         
         btnLeft.isHidden = true
         vCloseTap.isHidden = true

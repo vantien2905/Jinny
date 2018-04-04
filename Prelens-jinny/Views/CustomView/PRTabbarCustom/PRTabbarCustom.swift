@@ -75,7 +75,7 @@ extension PRTabbarCustom: PRTabbarButtonDelegate {
             buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.membership)
         case "Vouchers":
             buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.vouchers)
-        case "More...":
+        case "  More ...":
             buttonTappedDelegate?.btnTapped(tag: Route.Tabbar.more)
         default:
             break
