@@ -21,9 +21,9 @@ class Navigator {
                 navigationController.popToRootViewController(animated: true)
             }
             
-            appDelegate?.tabbarController.btnTapped(tag: tab)
+            appDelegate?.tabbarController?.btnTapped(tag: tab)
             let vc = PromotionDetailViewController.configureViewController(idVoucher: id)
-            appDelegate?.tabbarController.push(controller: vc, animated: true)
+            appDelegate?.tabbarController?.push(controller: vc, animated: true)
             
         case .signIn: break
         case .signUp: break

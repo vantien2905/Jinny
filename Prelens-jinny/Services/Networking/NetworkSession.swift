@@ -16,6 +16,7 @@ protocol NetworkSession {
 
 extension SessionManager: NetworkSession {
     func request(_ url: URLConvertible, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, headers: HTTPHeaders?) -> Observable<Response> {
+        print(url)
         return request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
             .rx
             .responseData()

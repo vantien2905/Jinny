@@ -501,6 +501,7 @@
 		76469D0220563D5500E2950E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				760EC3B32060ADA5001390B8 /* PromotionViewModel */,
 				760DC7FC20621249008A8EF1 /* ProfileViewModel */,
 				B7886650205A151100096F27 /* MembershipViewModel */,
 				765087812057703900199FBB /* LoginViewModel */,
@@ -1096,7 +1097,6 @@
 			isa = PBXGroup;
 			children = (
 				7609B00920746AA600227AAE /* Router */,
-				760EC3B32060ADA5001390B8 /* PromotionViewModel */,
 				B765ECB42057D81C0095B443 /* LocalPersistence */,
 				D991185A205B7AFE00F701ED /* APIServices */,
 				BCBC95B020562839004C1985 /* Networking */,

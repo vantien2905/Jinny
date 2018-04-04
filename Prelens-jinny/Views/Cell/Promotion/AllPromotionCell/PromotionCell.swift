@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import SDWebImage
 
 class PromotionCell: UICollectionViewCell {
     var promotion = Promotion() {
@@ -14,6 +15,8 @@ class PromotionCell: UICollectionViewCell {
             self.setData()
         }
     }
+    
+    var imvTemp: UIImageView?
     
     @IBOutlet weak var lbExpiresAt: UILabel!
     @IBOutlet weak var lbMerchantName: UILabel!
@@ -45,8 +48,19 @@ class PromotionCell: UICollectionViewCell {
         
         if let _url = promotion.image?.url?.original {
             let url = URL(string: _url)
-            imgPromotion.contentMode = .scaleAspectFill
-            imgPromotion.sd_setImage(with: url, placeholderImage:nil)
+            imgPromotion.sd_setImage(with: url, placeholderImage: nil) { (image, error, _, _) in
+                guard let _image = image, error == nil else {
+                    return
+                }
+                let point = CGPoint(x: 0, y: 0)
+                if _image.size.height > _image.size.width {
+                    let size = CGSize(width: _image.size.width, height: _image.size.width * 0.75)
+                    self.imgPromotion.image = _image.crop(rect: CGRect(origin: point, size: size))
+                } else {
+                    self.imgPromotion.image = _image
+                }
+            }
         }
+        self.imgPromotion.contentMode = .scaleAspectFill
     }
 }
