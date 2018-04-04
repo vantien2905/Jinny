@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        LocalNotification.registerForLocalNotification(on: application)
         application.applicationIconBadgeNumber = 0
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -30,11 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Fabric.with([Crashlytics.self])
-        handleFlow()
+        handleFlow(application: application)
+        LocalNotification.registerForLocalNotification(on: application)
         return true
     }
 
-    func handleFlow() {
+    func handleFlow(application:UIApplication ) {
         UITabBar.appearance().tintColor = UIColor.red
         let defaults = UserDefaults.standard
          if defaults.string(forKey: KeychainItem.isFirstRunning.rawValue) != nil {
@@ -44,12 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 goToLogin()
             }
          } else {
+            KeychainManager.shared.deleteAllSavedData()
             goToLogin()
         }
     }
 
     func goToLogin() {
-        KeychainManager.shared.deleteAllSavedData()
         let vc  = UINavigationController(rootViewController: PRLoginViewController())
         window?.rootViewController = vc
     }
@@ -108,10 +108,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
          //application.applicationIconBadgeNumber = badgeNumbers + 1
         //7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a
-        
+        let voucherID = String(describing: notification.userInfo)
         let route = Route(tabbar: .vouchers)
-        Navigator.shared.handle(route: route)
+        Navigator.shared.handle(route: route, id: voucherID)
     }
-    
-
 }
