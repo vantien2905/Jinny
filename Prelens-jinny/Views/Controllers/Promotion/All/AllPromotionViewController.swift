@@ -14,7 +14,7 @@ protocol AllPromotionDelegate: class {
     func isHiddenBtnAll(isHidden: Bool)
 }
 
-class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
+class AllPromotionViewController: UIViewController {
     @IBOutlet weak var cvAllPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -30,8 +30,6 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
-            UIApplication.shared.cancelAllLocalNotifications()
-            setupNotification(listData: listPromotion)
         }
     }
     
@@ -66,8 +64,6 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         self.view.backgroundColor = PRColor.backgroundColor
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
-        scrollView.delegate = self
-       
     }
     
     func setupNotification(listData: [Promotion]) {
@@ -95,10 +91,11 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     @objc func bindData() {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
-                self?.viewModel.refresh()
-                self?.vSearch.tfSearch.text = ""
-                self?.vSearch.tfSearch.resignFirstResponder()
-                self?.refreshControl.endRefreshing()
+                guard let strongSelf = self else {return}
+                strongSelf.viewModel.refresh()
+                strongSelf.vSearch.tfSearch.text = ""
+                strongSelf.vSearch.tfSearch.resignFirstResponder()
+                strongSelf.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
         
@@ -122,16 +119,6 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         cvAllPromotion.backgroundColor = PRColor.backgroundColor
         cvAllPromotion.delegate = self
         cvAllPromotion.dataSource = self
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        self.view.layoutIfNeeded()
-        if actualPosition.y > 0 {
-            buttonHidden?.isHiddenBtnAll(isHidden: true)
-        } else if actualPosition.y < 0 {
-            buttonHidden?.isHiddenBtnAll(isHidden: false)
-        }
     }
 }
 extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

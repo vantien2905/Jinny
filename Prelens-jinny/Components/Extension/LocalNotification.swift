@@ -15,13 +15,12 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
         if (UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))) {
             let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
             notificationCategory.identifier = "NOTIFICATION_CATEGORY"
-            
             //registerting for the notification.
             application.registerUserNotificationSettings(UIUserNotificationSettings(types:[.sound, .alert, .badge], categories: nil))
         }
     }
-    
-    class func dispatchlocalNotification(with title: String, body: String, userInfo: [AnyHashable: Any]? = nil,day:String, dayBeforeExprise:Int) {
+
+class func dispatchlocalNotification(with title: String, body: String, userInfo: [AnyHashable: Any]? = nil,day:String, dayBeforeExprise:Int) {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy z"
@@ -29,7 +28,6 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
         guard let _day = dateFormatter.date(from: day) else { return }
         guard let dayBefore = Calendar.current.date(byAdding: .day, value: -dayBeforeExprise, to: _day) else {return}
         print(dayBefore)
-        
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             let content = UNMutableNotificationContent()
@@ -45,8 +43,8 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
             dateComponents.year  = calendar.component(.year, from: dayBefore)
             dateComponents.month = calendar.component(.month, from: dayBefore)
             dateComponents.day  = calendar.component(.day, from: dayBefore)
-            dateComponents.hour = 09
-            dateComponents.minute = 44
+            dateComponents.hour = 10
+            dateComponents.minute = 18
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)

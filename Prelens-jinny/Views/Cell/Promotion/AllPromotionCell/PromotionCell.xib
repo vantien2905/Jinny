@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-k0-rnM">
                         <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-4z-JcZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-4z-JcZ">
                                 <rect key="frame" x="0.0" y="0.0" width="341" height="193"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-hk-gn6">
@@ -117,6 +117,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="no_image" width="225" height="156"/>
         <image name="unread_voucher" width="93" height="46"/>
     </resources>
 </document>

@@ -14,7 +14,7 @@ protocol StarredPromotionDelegate: class {
     func isHiddenBtnStar(isHidden: Bool)
 }
 
-class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
+class StarredPromotionViewController: UIViewController {
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -55,8 +55,11 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     @objc func bindData() {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
-                self?.viewModel.refresh()
-                self?.refreshControl.endRefreshing()
+                guard let strongSelf = self else {return}
+                strongSelf.viewModel.refresh()
+                strongSelf.vSearch.tfSearch.text = ""
+                strongSelf.vSearch.tfSearch.resignFirstResponder()
+                strongSelf.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
         
@@ -83,7 +86,6 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     func setUpView() {
         self.view.backgroundColor = PRColor.backgroundColor
         scrollView.alwaysBounceVertical = true
-        scrollView.delegate = self
         
     }
     
@@ -104,16 +106,6 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
         cvStarredPromotion.backgroundColor = PRColor.backgroundColor
         cvStarredPromotion.delegate = self
         cvStarredPromotion.dataSource = self
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        self.view.layoutIfNeeded()
-        if actualPosition.y > 0 {
-            buttonHidden?.isHiddenBtnStar(isHidden: true)
-        } else if actualPosition.y < 0 {
-            buttonHidden?.isHiddenBtnStar(isHidden: false)
-        }
     }
 }
 

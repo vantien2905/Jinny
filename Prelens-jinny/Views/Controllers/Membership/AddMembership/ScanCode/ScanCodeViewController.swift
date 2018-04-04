@@ -30,6 +30,18 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     var isReading: Bool = false
+    private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
+                                      AVMetadataObject.ObjectType.code39,
+                                      AVMetadataObject.ObjectType.code39Mod43,
+                                      AVMetadataObject.ObjectType.code93,
+                                      AVMetadataObject.ObjectType.code128,
+                                      AVMetadataObject.ObjectType.ean8,
+                                      AVMetadataObject.ObjectType.ean13,
+                                      AVMetadataObject.ObjectType.aztec,
+                                      AVMetadataObject.ObjectType.pdf417,
+                                      AVMetadataObject.ObjectType.itf14,
+                                      AVMetadataObject.ObjectType.dataMatrix,
+                                      AVMetadataObject.ObjectType.interleaved2of5]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +69,10 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
                 PopUpHelper.shared.showPopUp(message: "Membership added", action: {
                     guard let strongSelf = self else { return }
                     if isSuccess == true {
-                        let viewControllers: [UIViewController] = strongSelf.navigationController!.viewControllers as [UIViewController]
-                        strongSelf.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+                        if let id = strongSelf.viewModel.membership.value?.id {
+                            let vcMembershipDetail = MembershipDetailViewController.configureViewController(idMembership: id)
+                            strongSelf.push(controller: vcMembershipDetail, animated: true)
+                        }
                     }
                 })
             }
@@ -112,7 +126,8 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         /* Check for metadata */
         let captureMetadataOutput = AVCaptureMetadataOutput()
         captureSession?.addOutput(captureMetadataOutput)
-        captureMetadataOutput.metadataObjectTypes = captureMetadataOutput.availableMetadataObjectTypes
+//        captureMetadataOutput.metadataObjectTypes = captureMetadataOutput.availableMetadataObjectTypes
+        captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
         print(captureMetadataOutput.availableMetadataObjectTypes)
         captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         captureSession?.startRunning()
@@ -141,7 +156,6 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
                     viewModel.addMembership(code: _code, merchantId: _merchant.id)
                 }
             }
-            
         }
     }
 }
