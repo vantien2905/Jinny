@@ -43,8 +43,8 @@ class func dispatchlocalNotification(with title: String, body: String, userInfo:
             dateComponents.year  = calendar.component(.year, from: dayBefore)
             dateComponents.month = calendar.component(.month, from: dayBefore)
             dateComponents.day  = calendar.component(.day, from: dayBefore)
-            dateComponents.hour = 09
-            dateComponents.minute = 23
+            dateComponents.hour = 10
+            dateComponents.minute = 18
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
