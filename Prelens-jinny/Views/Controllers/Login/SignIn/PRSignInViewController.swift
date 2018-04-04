@@ -13,16 +13,15 @@ import RxCocoa
 class PRSignInViewController: UIViewController {
     var parentNavigationController: UINavigationController?
     var vm: SignInViewModel = SignInViewModel()
-
+    
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnShowHidePassword: UIButton!
     @IBOutlet weak var lbForgotPassword: UILabel!
-    
     let disposeBag                      = DisposeBag()
     var passIsSecurity: Bool?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
@@ -85,14 +84,10 @@ class PRSignInViewController: UIViewController {
             }).disposed(by: disposeBag)
 
         vm.isLoginSuccess.subscribe (onCompleted: {
+            LocalNotification.setupSettingStatus()
             DispatchQueue.main.async {
-                //if isGotoPassword {
-                //    isGotoPassword = false
-                //    self.dismiss(animated: true, completion: nil)
-                //} else {
-                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                    appDelegate.goToMainApp()
-                //}
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                appDelegate.goToMainApp()
             }
         }).disposed(by: disposeBag)
     }

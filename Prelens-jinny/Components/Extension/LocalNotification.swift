@@ -71,4 +71,17 @@ class func dispatchlocalNotification(with title: String, body: String, userInfo:
             }
         }
     }
+    
+    class func setupSettingStatus(){
+        let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
+        if notificationType?.rawValue != 0 {
+            KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.pushNotificationStatus)
+            KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.voucherExprireStatus)
+            KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.storeDiscountStatus)
+        } else {
+            KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.pushNotificationStatus)
+            KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.voucherExprireStatus)
+            KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.storeDiscountStatus)
+        }
+    }
 }

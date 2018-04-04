@@ -23,7 +23,7 @@ class SettingViewController: BaseViewController {
     @IBOutlet weak var btnDayToRemind: UIButton!
     var listDay = ["1","2","3","4","5","6","7"]
     let disposeBag = DisposeBag()
-    let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
+//    let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         darkStatus()
@@ -46,8 +46,6 @@ class SettingViewController: BaseViewController {
              lbNumberDay.text = "7 days"
             KeychainManager.shared.saveString(value: "7" , forkey: KeychainItem.leftDayToRemind)
         }
-       
-        if notificationType?.rawValue != 0 {
             if let _pushNotificationStatus = KeychainManager.shared.getBool(key: KeychainItem.pushNotificationStatus),
                 let _voucherExprireStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus),
                 let _storeDiscountStatus = KeychainManager.shared.getBool(key: KeychainItem.storeDiscountStatus) {
@@ -56,15 +54,10 @@ class SettingViewController: BaseViewController {
                 vVoucherNotiSwitch.isCheck.value    = _voucherExprireStatus
                 vStoreDiscountSwitch.isCheck.value  = _storeDiscountStatus
             } else {
-                vPushNotiSwitch.isCheck.value       = true
-                vVoucherNotiSwitch.isCheck.value    = true
-                vStoreDiscountSwitch.isCheck.value  = true
-            }
-        } else {
             vPushNotiSwitch.isCheck.value       = false
             vVoucherNotiSwitch.isCheck.value    = false
             vStoreDiscountSwitch.isCheck.value  = false
-            lbNumberDay.text                    = "7 days"
+            //lbNumberDay.text                    = "7 days"
         }
     }
     
