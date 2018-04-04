@@ -40,29 +40,33 @@ class SettingViewController: BaseViewController {
     }
     
     func setupView() {
-        
+        //detectAllowNotification()
         if let _lefDayToRemind = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind){
              lbNumberDay.text = _lefDayToRemind + " days"
         } else {
              lbNumberDay.text = "7 days"
             KeychainManager.shared.saveString(value: "7" , forkey: KeychainItem.leftDayToRemind)
         }
-        
-        if let _pushNotificationStatus = KeychainManager.shared.getBool(key: KeychainItem.pushNotificationStatus),
-           let _voucherExprireStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus),
-            let _storeDiscountStatus = KeychainManager.shared.getBool(key: KeychainItem.storeDiscountStatus) {
+        let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
+        if notificationType?.rawValue != 0 {
+            if let _pushNotificationStatus = KeychainManager.shared.getBool(key: KeychainItem.pushNotificationStatus),
+                let _voucherExprireStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus),
+                let _storeDiscountStatus = KeychainManager.shared.getBool(key: KeychainItem.storeDiscountStatus) {
             
-            vPushNotiSwitch.isCheck.value       = _pushNotificationStatus
-            vVoucherNotiSwitch.isCheck.value    = _voucherExprireStatus
-            vStoreDiscountSwitch.isCheck.value  = _storeDiscountStatus
-           
+                vPushNotiSwitch.isCheck.value       = _pushNotificationStatus
+                vVoucherNotiSwitch.isCheck.value    = _voucherExprireStatus
+                vStoreDiscountSwitch.isCheck.value  = _storeDiscountStatus
+            } else {
+                vPushNotiSwitch.isCheck.value       = true
+                vVoucherNotiSwitch.isCheck.value    = true
+                vStoreDiscountSwitch.isCheck.value  = true
+            }
         } else {
             vPushNotiSwitch.isCheck.value       = false
             vVoucherNotiSwitch.isCheck.value    = false
             vStoreDiscountSwitch.isCheck.value  = false
             lbNumberDay.text                    = "7 days"
         }
-        
     }
     
     func bindData() {
@@ -81,8 +85,8 @@ class SettingViewController: BaseViewController {
                     strongSelf.vStoreDiscountSwitch.btnActionTapped()
                     KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.storeDiscountStatus)
                 }
-                strongSelf.vVoucherNotiSwitch.btnAction.isEnabled = false
-                strongSelf.vStoreDiscountSwitch.btnAction.isEnabled = false
+                //strongSelf.vVoucherNotiSwitch.btnAction.isEnabled = false
+                //strongSelf.vStoreDiscountSwitch.btnAction.isEnabled = false
                 UIApplication.shared.cancelAllLocalNotifications()
             }
             KeychainManager.shared.saveBool(value: value, forkey: KeychainItem.pushNotificationStatus)
