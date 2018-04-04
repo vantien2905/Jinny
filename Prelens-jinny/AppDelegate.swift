@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        LocalNotification.registerForLocalNotification(on: application)
         application.applicationIconBadgeNumber = 0
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -30,11 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Fabric.with([Crashlytics.self])
-        handleFlow()
+        handleFlow(application: application)
         return true
     }
 
-    func handleFlow() {
+    func handleFlow(application:UIApplication ) {
         UITabBar.appearance().tintColor = UIColor.red
         let defaults = UserDefaults.standard
          if defaults.string(forKey: KeychainItem.isFirstRunning.rawValue) != nil {
@@ -45,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
          } else {
             KeychainManager.shared.deleteAllSavedData()
+            LocalNotification.registerForLocalNotification(on: application)
             goToLogin()
         }
     }
