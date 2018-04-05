@@ -87,6 +87,9 @@ class PRPhotoDetail: BaseViewController {
         if photoData?.count == 1 {
             btnBack.isHidden = true
             btnNext.isHidden = true
+        } else {
+            btnBack.isHidden = true
+            btnNext.isHidden = false
         }
     }
     
