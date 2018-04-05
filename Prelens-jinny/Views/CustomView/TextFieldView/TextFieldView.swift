@@ -24,6 +24,8 @@ class TextFieldView: PRBaseViewXib {
         vContent.layer.cornerRadius = 2.5
         vContent.layer.masksToBounds = true
         vContent.backgroundColor = .white
-        vContent.layer.borderColor = UIColor.black.withAlphaComponent(0.8).cgColor
+        vContent.layer.borderWidth = 0.4
+        vContent.layer.borderColor = PRColor.borderColor.cgColor
+        //vContent.layer.borderColor = UIColor.black as! CGColor
     }
 }

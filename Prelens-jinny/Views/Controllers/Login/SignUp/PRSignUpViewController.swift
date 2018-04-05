@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 class PRSignUpViewController: UIViewController {
-
-    @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var tfEmail: UITextField!
+    
+    @IBOutlet weak var vPassword: TextFieldView!
+    @IBOutlet weak var vEmail: TextFieldView!
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var btnShowHidePassword: UIButton!
     @IBOutlet weak var btnCheckConditions: UIButton!
@@ -40,18 +40,18 @@ class PRSignUpViewController: UIViewController {
     private func setupView() {
         passIsSecurity = true
         conditionsIsChecked = false
-        tfPassword.isSecureTextEntry = true
+        vPassword.tfInput.isSecureTextEntry = true
         btnSignUp.layer.cornerRadius = 2.5
         btnCheckConditions.setImage(UIImage(named: "check_box"), for: .normal)
         btnShowHidePassword.setImage(UIImage(named: "hidden"), for: .normal)
     }
 
     func bindViewModel() {
-        _ = tfEmail.rx.text.map { $0 ?? ""}.bind(to: vm.email)
-        _ = tfPassword.rx.text.map { $0 ?? ""}.bind(to: vm.password)
+        _ = vEmail.tfInput.rx.text.map { $0 ?? ""}.bind(to: vm.email)
+        _ = vPassword.tfInput.rx.text.map { $0 ?? ""}.bind(to: vm.password)
         //_ = isChecked.asObservable().bind(to: vm.isChecked)
-        vm.email.asObservable().bind(to: tfEmail.rx.text).disposed(by: disposeBag)
-        vm.password.asObservable().bind(to: tfPassword.rx.text).disposed(by: disposeBag)
+        vm.email.asObservable().bind(to: vEmail.tfInput.rx.text).disposed(by: disposeBag)
+        vm.password.asObservable().bind(to: vPassword.tfInput.rx.text).disposed(by: disposeBag)
         vm.isValid.subscribe(onNext: { _ in
            //TODO
         }).disposed(by: disposeBag)
@@ -64,7 +64,7 @@ class PRSignUpViewController: UIViewController {
                 } else {
                     strongSelf.btnShowHidePassword.setImage(UIImage(named: "hidden"), for: .normal)
                 }
-                strongSelf.tfPassword.isSecureTextEntry = !(_passIsSecurity)
+                strongSelf.vPassword.tfInput.isSecureTextEntry = !(_passIsSecurity)
                 strongSelf.passIsSecurity = !(_passIsSecurity)
             }).disposed(by: disposeBag)
 
@@ -90,8 +90,8 @@ class PRSignUpViewController: UIViewController {
         btnSignUp.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: {
-                self.tfEmail.endEditing(true)
-                self.tfPassword.endEditing(true)
+                self.vEmail.tfInput.endEditing(true)
+                self.vPassword.tfInput.endEditing(true)
             }).disposed(by: disposeBag)
         
         vm.isSignUpSuccess.subscribe (onCompleted: {
