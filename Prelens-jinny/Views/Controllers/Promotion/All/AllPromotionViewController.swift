@@ -187,7 +187,6 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             if self.listPromotion.count == 0 {
                 return CGSize(width: collectionView.frame.width - 44, height: 30)
             } else {
-//                  let cell = cvAllPromotion.dequeueReusableCell(withReuseIdentifier: Cell.promotionCell, for: indexPath) as! PromotionCell
                 return CGSize(width: (collectionView.frame.width - 49), height: 300)
             }
         }

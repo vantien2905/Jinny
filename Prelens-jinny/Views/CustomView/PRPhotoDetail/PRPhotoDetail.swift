@@ -84,14 +84,8 @@ class PRPhotoDetail: BaseViewController {
         addWhiteBackButton()
         
         // MARK: Setup the button hidden
-        guard let count = photoData?.count else { return }
         if photoData?.count == 1 {
             btnBack.isHidden = true
-            btnNext.isHidden = true
-        }
-        if currentPage == 0 {
-            btnBack.isHidden = true
-        } else if currentPage == count - 1 {
             btnNext.isHidden = true
         }
     }
