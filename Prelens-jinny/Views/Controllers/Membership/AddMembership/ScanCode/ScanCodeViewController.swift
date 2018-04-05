@@ -16,6 +16,8 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lbAddManual: UILabel!
     @IBOutlet weak var vScanCode: UIView!
+    @IBOutlet weak var topBackButton: NSLayoutConstraint!
+    @IBOutlet weak var leftBackButton: NSLayoutConstraint!
    
     var viewModel = ScanCodeViewModel()
     let disposeBag = DisposeBag()
@@ -62,7 +64,14 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     
     func setUpView() {
         lbAddManual.backgroundColor = PRColor.backgroundColor
-
+        switch Device() {
+        case .iPhone6Plus, .simulator(.iPhone6Plus), .iPhone7Plus, .simulator(.iPhone7Plus), .iPhone8Plus, .simulator(.iPhone8Plus):
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 19.5
+        default:
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 16
+        }
     }
     
     func bindData() {

@@ -19,6 +19,8 @@
             <connections>
                 <outlet property="imgLogo" destination="GHe-f7-Af3" id="pk9-u1-dlA"/>
                 <outlet property="lbAddManual" destination="hpQ-dP-pkJ" id="abH-qh-VBC"/>
+                <outlet property="leftBackButton" destination="amf-gF-7mM" id="Ldo-dh-jta"/>
+                <outlet property="topBackButton" destination="Q7i-Sw-VyL" id="MzP-It-o1h"/>
                 <outlet property="vScanCode" destination="9qy-5g-qJp" id="64h-2f-tXk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

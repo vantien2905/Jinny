@@ -17,6 +17,8 @@ class AddManualViewController: BaseViewController {
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var vTextField: UIView!
     @IBOutlet weak var heightHeader: NSLayoutConstraint!
+    @IBOutlet weak var topBackButton: NSLayoutConstraint!
+    @IBOutlet weak var leftBackButton: NSLayoutConstraint!
     var serial: String?
     
     let viewModel = AddManualViewModel()
@@ -51,6 +53,18 @@ class AddManualViewController: BaseViewController {
             
         } else {
             heightHeader.constant = 120.5
+        }
+        
+        switch Device() {
+        case .iPhone6Plus, .simulator(.iPhone6Plus),
+             .iPhone6sPlus, .simulator(.iPhone6sPlus),
+             .iPhone7Plus, .simulator(.iPhone7Plus),
+             .iPhone8Plus, .simulator(.iPhone8Plus):
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 19.5
+        default:
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 16
         }
         
         vHeader.setShadow()

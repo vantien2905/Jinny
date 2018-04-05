@@ -20,7 +20,9 @@
                 <outlet property="btnDone" destination="mDK-dY-6CU" id="pCg-s2-xJV"/>
                 <outlet property="heightHeader" destination="krr-kw-jPJ" id="Lh2-ip-1Yc"/>
                 <outlet property="imgLogo" destination="dpC-RK-Onl" id="WHb-Yw-AYY"/>
+                <outlet property="leftBackButton" destination="l8e-ha-q97" id="S9h-0W-kPF"/>
                 <outlet property="tfSerial" destination="gkr-OH-uJ6" id="X7u-VD-Nhf"/>
+                <outlet property="topBackButton" destination="bVc-OM-elT" id="NKJ-wW-ElD"/>
                 <outlet property="vHeader" destination="QdO-GG-wfA" id="wBz-uE-y1b"/>
                 <outlet property="vTextField" destination="kjk-jV-ouO" id="b6x-Fa-za9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -64,7 +66,6 @@
                         <constraint firstItem="dpC-RK-Onl" firstAttribute="centerX" secondItem="QdO-GG-wfA" secondAttribute="centerX" id="20C-pP-1ZI"/>
                         <constraint firstItem="UFr-ze-4aL" firstAttribute="centerY" secondItem="Hpx-HU-cro" secondAttribute="centerY" id="bOf-8u-PJm"/>
                         <constraint firstAttribute="height" constant="120.5" id="krr-kw-jPJ"/>
-                        <constraint firstItem="Hpx-HU-cro" firstAttribute="leading" secondItem="QdO-GG-wfA" secondAttribute="leading" constant="16" id="w3u-4g-c4e"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjk-jV-ouO">
@@ -120,6 +121,7 @@
                 <constraint firstItem="kjk-jV-ouO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="c7F-R2-zoZ"/>
                 <constraint firstItem="dpC-RK-Onl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="eQJ-Mx-ilH"/>
                 <constraint firstItem="QdO-GG-wfA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fZi-um-UZm"/>
+                <constraint firstItem="Hpx-HU-cro" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="l8e-ha-q97"/>
                 <constraint firstItem="mDK-dY-6CU" firstAttribute="centerX" secondItem="kjk-jV-ouO" secondAttribute="centerX" id="p4V-hL-txI"/>
                 <constraint firstItem="mDK-dY-6CU" firstAttribute="width" secondItem="kjk-jV-ouO" secondAttribute="width" id="z8y-2d-90R"/>
             </constraints>
