@@ -43,8 +43,6 @@ class MembershipDetailCell: UITableViewCell {
         if  let _expiresAt = promotion.expiresString, let _merchantName = promotion.merchant?.name {
             if let _url = promotion.image?.url?.original {
                 let url = URL(string: _url)
-                //                 imgPromotion.sd_setImage(with: url, placeholderImage: nil)
-                
                 imgPromotion.sd_setImage(with: url, placeholderImage: nil) { (image, error, _, _) in
                     guard let _image = image, error == nil else {
                         return
