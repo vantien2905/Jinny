@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MemberShipViewController: BaseViewController {
+class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var cvMembership: UICollectionView!
     @IBOutlet weak var btnAddMembership: UIButton!
@@ -22,7 +22,9 @@ class MemberShipViewController: BaseViewController {
     
     let viewModel = MembershipViewModel()
     let disposeBag = DisposeBag()
+    
     var refreshControl: UIRefreshControl!
+    
     var listMember = Membership() {
         didSet {
             UIView.transition(with: cvMembership,
@@ -47,25 +49,19 @@ class MemberShipViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.alwaysBounceVertical = true
-        scrollView.bounces  = true
-        refreshControl = UIRefreshControl()
-        self.scrollView.addSubview(refreshControl)
         setUpView()
-        setTitle(title: "Jinny")
-        confireCollectionView()
-        cvMembership.showsHorizontalScrollIndicator = false
-        hideKeyboard()
-        vSearch.backgroundColor = .clear
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        vSearch.tfSearch.text = ""
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
+        vSearch.tfSearch.text = ""
+        
         lightStatus()
-        bindData()
-        viewModel.getListMembership()
+        
         btnAddMembership.isHidden = false
+        viewModel.getListMembership()
+        bindData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,10 +81,23 @@ class MemberShipViewController: BaseViewController {
     func setUpView() {
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
+        
+        setTitle(title: "Jinny")
+        confireCollectionView()
+        
+        scrollView.alwaysBounceVertical = true
+        scrollView.bounces  = true
+        scrollView.delegate = self
+        
+        refreshControl = UIRefreshControl()
+        self.scrollView.addSubview(refreshControl)
+        
+        cvMembership.showsHorizontalScrollIndicator = false
+        hideKeyboard()
+        vSearch.backgroundColor = .clear
     }
     
     func bindData() {
-        
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
 
@@ -115,19 +124,30 @@ class MemberShipViewController: BaseViewController {
     }
 
     func confireCollectionView() {
-        
         cvMembership.register(UINib(nibName: Cell.memberShip, bundle: nil), forCellWithReuseIdentifier: Cell.memberShip)
         cvMembership.register(UINib(nibName: Cell.emptyMembership, bundle: nil), forCellWithReuseIdentifier: Cell.emptyMembership)
         cvMembership.register(UINib(nibName: Cell.starredheader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.starredheader)
         cvMembership.register(UINib(nibName: Cell.otherHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader)
         cvMembership.register(UINib(nibName: Cell.membershipFooter, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter)
-        cvMembership.isScrollEnabled = false
+
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.contentInset = UIEdgeInsets(top: 0, left: 23, bottom: 22, right: 23)
+        
+        cvMembership.isScrollEnabled = false
         cvMembership.delegate = self
         cvMembership.dataSource = self
-
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if actualPosition.y > 100 {
+            btnAddMembership.isHidden = false
+        } else if actualPosition.y < -100 {
+            btnAddMembership.isHidden = true
+        }
+    }
+    
 }
 
 extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
