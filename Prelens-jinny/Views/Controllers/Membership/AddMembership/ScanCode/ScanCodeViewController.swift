@@ -16,14 +16,9 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lbAddManual: UILabel!
     @IBOutlet weak var vScanCode: UIView!
-    @IBAction func btnAddManuallyTapped() {
-        let vcAddManual = AddManualViewController.configureViewController(merchant: viewModel.merchant.value)
-        self.push(controller: vcAddManual, animated: true)
-    }
-    
-    @IBAction func btnBackClick() {
-        self.pop()
-    }
+    @IBOutlet weak var topBackButton: NSLayoutConstraint!
+    @IBOutlet weak var leftBackButton: NSLayoutConstraint!
+   
     var viewModel = ScanCodeViewModel()
     let disposeBag = DisposeBag()
     //----
@@ -49,7 +44,16 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         bindData()
         captureSession = nil
         startReading()
-        print(vScanCode.layer.bounds)
+    }
+    
+    // MARK: Action
+    @IBAction func btnAddManuallyTapped() {
+        let vcAddManual = AddManualViewController.configureViewController(merchant: viewModel.merchant.value)
+        self.push(controller: vcAddManual, animated: true)
+    }
+    
+    @IBAction func btnBackClick() {
+        self.pop()
     }
     
     class func configureController(merchant: Merchant?) -> UIViewController {
@@ -60,7 +64,14 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
     
     func setUpView() {
         lbAddManual.backgroundColor = PRColor.backgroundColor
-
+        switch Device() {
+        case .iPhone6Plus, .simulator(.iPhone6Plus), .iPhone7Plus, .simulator(.iPhone7Plus), .iPhone8Plus, .simulator(.iPhone8Plus):
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 19.5
+        default:
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 16
+        }
     }
     
     func bindData() {
@@ -88,7 +99,6 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         
         viewModel.merchant.asObservable().subscribe(onNext: {[weak self] (merchant) in
             guard let strongSelf = self else { return }
-            
             if let _logo = merchant?.logo, let _url = _logo.url, let _urlThumb = _url.thumb {
                 let urlThumb = URL(string: _urlThumb)
                 strongSelf.imgLogo.sd_setImage(with: urlThumb, placeholderImage: nil)
@@ -101,26 +111,29 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         darkStatus()
     }
     
-    func startReading() -> Bool {
-          print(vScanCode.layer.bounds)
+    func startReading() {
+
         let captureDevice = AVCaptureDevice.default(for: .video)
-        guard let _captureDevice = captureDevice else { return false}
+        guard let _captureDevice = captureDevice else { return}
         do {
             let input = try AVCaptureDeviceInput(device: _captureDevice)
             captureSession = AVCaptureSession()
             captureSession?.addInput(input)
             // Do the rest of your work...
+            
         } catch let error as NSError {
             // Handle any errors
             print(error)
-            return false
+            return
         }
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         print(vScanCode.layer.bounds)
-        videoPreviewLayer.frame = CGRect(x: vScanCode.layer.bounds.minX, y: vScanCode.layer.bounds.minY, width: UIScreen.main.bounds.size.width, height: 250)
-        
+        videoPreviewLayer.frame = CGRect(x: vScanCode.layer.bounds.minX,
+                                         y: vScanCode.layer.bounds.minY,
+                                         width: UIScreen.main.bounds.size.width,
+                                         height: 250)
         vScanCode.layer.addSublayer(videoPreviewLayer)
         
         /* Check for metadata */
@@ -132,14 +145,8 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         captureSession?.startRunning()
         
-        return true
+        return
     }
-    
-//    func stopReading() {
-//        captureSession?.stopRunning()
-//        captureSession = nil
-//        videoPreviewLayer.removeFromSuperlayer()
-//    }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
 
@@ -147,8 +154,8 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
             let readableObject = metadata as? AVMetadataMachineReadableCodeObject
             guard let _readableObject = readableObject else { return }
             let code = _readableObject.stringValue
-        
             self.dismiss(animated: true, completion: nil)
+            
             if let _code = code {
                 print(_code)
                  captureSession?.stopRunning()

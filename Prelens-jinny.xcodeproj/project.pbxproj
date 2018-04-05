@@ -10,6 +10,8 @@
 		2C0D2E17DDB82F499EF887F2 /* Pods_Prelens_jinny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7505E835A98121FF2B0C3 /* Pods_Prelens_jinny.framework */; };
 		7609B00B20746ABC00227AAE /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609B00A20746ABC00227AAE /* Route.swift */; };
 		7609B00D20746B4500227AAE /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609B00C20746B4500227AAE /* Navigator.swift */; };
+		760A99EE2075CEFD00962000 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760A99ED2075CEFD00962000 /* TextFieldView.xib */; };
+		760A99F02075CF6600962000 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760A99EF2075CF6600962000 /* TextFieldView.swift */; };
 		760B45A020653F0800DDD7B0 /* SelectDataPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760B459F20653F0800DDD7B0 /* SelectDataPopUpView.swift */; };
 		760C1124205D164C009B9205 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C1122205D164C009B9205 /* SettingViewController.swift */; };
 		760C1125205D164C009B9205 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760C1123205D164C009B9205 /* SettingViewController.xib */; };
@@ -59,6 +61,7 @@
 		76E3559F206BA506008079CA /* StarredPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E3559E206BA506008079CA /* StarredPromotionViewController.xib */; };
 		76E355A1206BABAA008079CA /* StarredPromotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */; };
 		B7054003206383C80028D90E /* PRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7054002206383C80028D90E /* PRLoadingView.swift */; };
+		B72A10B22074A72200AC704F /* OverlayCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A10B12074A72200AC704F /* OverlayCamera.swift */; };
 		B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626A205907AC00C7004D /* StarredHeaderCell.swift */; };
 		B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626B205907AC00C7004D /* StarredHeaderCell.xib */; };
 		B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626E2059096700C7004D /* OtherHeaderCell.swift */; };
@@ -186,14 +189,10 @@
 		BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */; };
 		BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */; };
 		BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */; };
-		BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */; };
-		BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */; };
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
 		BCCB0AE520753214001BB647 /* RedeemVoucherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0AE420753214001BB647 /* RedeemVoucherViewModel.swift */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
-		BCE65DC020737E790027C801 /* KPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DBE20737E790027C801 /* KPageViewController.swift */; };
-		BCE65DC120737E790027C801 /* KPageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DBF20737E790027C801 /* KPageMenuView.swift */; };
 		BCE65DC420737F770027C801 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DC320737F760027C801 /* Utils.swift */; };
 		BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */; };
 		BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */; };
@@ -218,6 +217,8 @@
 		6AF27FE17FB7DA52D171D9B1 /* Pods-Prelens-jinnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7609B00A20746ABC00227AAE /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		7609B00C20746B4500227AAE /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		760A99ED2075CEFD00962000 /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
+		760A99EF2075CF6600962000 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		760B459F20653F0800DDD7B0 /* SelectDataPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataPopUpView.swift; sourceTree = "<group>"; };
 		760C1122205D164C009B9205 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		760C1123205D164C009B9205 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -267,6 +268,7 @@
 		76E3559E206BA506008079CA /* StarredPromotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarredPromotionViewController.xib; sourceTree = "<group>"; };
 		76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredPromotionViewModel.swift; sourceTree = "<group>"; };
 		B7054002206383C80028D90E /* PRLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoadingView.swift; sourceTree = "<group>"; };
+		B72A10B12074A72200AC704F /* OverlayCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCamera.swift; sourceTree = "<group>"; };
 		B738626A205907AC00C7004D /* StarredHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredHeaderCell.swift; sourceTree = "<group>"; };
 		B738626B205907AC00C7004D /* StarredHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredHeaderCell.xib; sourceTree = "<group>"; };
 		B738626E2059096700C7004D /* OtherHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHeaderCell.swift; sourceTree = "<group>"; };
@@ -396,14 +398,10 @@
 		BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
 		BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
 		BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
-		BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
-		BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BCCB0AE420753214001BB647 /* RedeemVoucherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemVoucherViewModel.swift; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
-		BCE65DBE20737E790027C801 /* KPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPageViewController.swift; sourceTree = "<group>"; };
-		BCE65DBF20737E790027C801 /* KPageMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPageMenuView.swift; sourceTree = "<group>"; };
 		BCE65DC320737F760027C801 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewController.swift; sourceTree = "<group>"; };
 		BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVoucherViewController.xib; sourceTree = "<group>"; };
@@ -457,6 +455,15 @@
 				7609B00C20746B4500227AAE /* Navigator.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		760A99EC2075CEE400962000 /* TextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				760A99ED2075CEFD00962000 /* TextFieldView.xib */,
+				760A99EF2075CF6600962000 /* TextFieldView.swift */,
+			);
+			path = TextFieldView;
 			sourceTree = "<group>";
 		};
 		760DC7FC20621249008A8EF1 /* ProfileViewModel */ = {
@@ -643,6 +650,14 @@
 				B7054002206383C80028D90E /* PRLoadingView.swift */,
 			);
 			path = PRLoadingView;
+			sourceTree = "<group>";
+		};
+		B72A10B02074A6FB00AC704F /* OverlayCamera */ = {
+			isa = PBXGroup;
+			children = (
+				B72A10B12074A72200AC704F /* OverlayCamera.swift */,
+			);
+			path = OverlayCamera;
 			sourceTree = "<group>";
 		};
 		B73862612058FF1600C7004D /* SubView */ = {
@@ -1121,7 +1136,9 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B72A10B02074A6FB00AC704F /* OverlayCamera */,
 				BCE65DBD20737E790027C801 /* KPageView */,
+				760A99EC2075CEE400962000 /* TextFieldView */,
 				BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */,
 				B7D54B012069ED9C000F4957 /* Dropdown */,
 				76BA6865206899FA0006E226 /* PRSwitch */,
@@ -1286,25 +1303,13 @@
 				B79AEE562060C0E5007F0BB3 /* AddManual */,
 				B79AEE502060BA4D007F0BB3 /* ScanCode */,
 				B7899EB020609F2600ADEC43 /* AddMerchant */,
-				BCBC960F20563012004C1985 /* AddSuccess */,
 			);
 			path = AddMembership;
-			sourceTree = "<group>";
-		};
-		BCBC960F20563012004C1985 /* AddSuccess */ = {
-			isa = PBXGroup;
-			children = (
-				BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */,
-				BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */,
-			);
-			path = AddSuccess;
 			sourceTree = "<group>";
 		};
 		BCE65DBD20737E790027C801 /* KPageView */ = {
 			isa = PBXGroup;
 			children = (
-				BCE65DBE20737E790027C801 /* KPageViewController.swift */,
-				BCE65DBF20737E790027C801 /* KPageMenuView.swift */,
 			);
 			path = KPageView;
 			sourceTree = "<group>";
@@ -1471,7 +1476,6 @@
 				B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */,
 				76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
-				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				BC9A6152205F77F00071EF4F /* PromotionDetailFooterCell.xib in Resources */,
 				B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
@@ -1485,6 +1489,7 @@
 				B7B1BC9E2058D7FA0042B3D4 /* OstrichSans-Medium.otf in Resources */,
 				767FF65F204D3ED600EA7DE9 /* PREditProfileViewController.xib in Resources */,
 				BC6EF8602061063200A156B9 /* PRPhotoDetail.xib in Resources */,
+				760A99EE2075CEFD00962000 /* TextFieldView.xib in Resources */,
 				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
 				BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
@@ -1636,6 +1641,7 @@
 				764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */,
 				BC6EF85A2060F57D00A156B9 /* UIApplication+Extension.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
+				760A99F02075CF6600962000 /* TextFieldView.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
 				760C1124205D164C009B9205 /* SettingViewController.swift in Sources */,
@@ -1651,6 +1657,7 @@
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
 				760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */,
 				BC6EF85F2061063200A156B9 /* PRPhotoDetail.swift in Sources */,
+				B72A10B22074A72200AC704F /* OverlayCamera.swift in Sources */,
 				BC48999E20621EBF00E7DE0D /* DateOpen.swift in Sources */,
 				B7645EA6206A328E007EAE38 /* SortPopUpView.swift in Sources */,
 				760EC3B52060ADBE001390B8 /* AllPromotionViewModel.swift in Sources */,
@@ -1708,7 +1715,6 @@
 				BCBC95F020562BB8004C1985 /* PRSignInViewController.swift in Sources */,
 				B7C859FA206A3D2700033325 /* Date+Extension.swift in Sources */,
 				BCE65DC420737F770027C801 /* Utils.swift in Sources */,
-				BCE65DC120737E790027C801 /* KPageMenuView.swift in Sources */,
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
 				B7886657205A1C1600096F27 /* Merchant.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
@@ -1716,7 +1722,6 @@
 				BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */,
 				BC6EF8582060F53400A156B9 /* PRHelper.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
-				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
 				760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */,
 				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
 				D991185E205B82D900F701ED /* MembershipService.swift in Sources */,
@@ -1735,7 +1740,6 @@
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
 				B7CD064A205F9ACA009951A4 /* HeaderMembershipDetailCell.swift in Sources */,
 				B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */,
-				BCE65DC020737E790027C801 /* KPageViewController.swift in Sources */,
 				BCBC95EF20562BB8004C1985 /* PRSignUpViewController.swift in Sources */,
 				B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */,
 				7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */,

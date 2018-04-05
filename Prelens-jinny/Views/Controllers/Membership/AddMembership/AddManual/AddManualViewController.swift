@@ -17,6 +17,8 @@ class AddManualViewController: BaseViewController {
     @IBOutlet weak var vHeader: UIView!
     @IBOutlet weak var vTextField: UIView!
     @IBOutlet weak var heightHeader: NSLayoutConstraint!
+    @IBOutlet weak var topBackButton: NSLayoutConstraint!
+    @IBOutlet weak var leftBackButton: NSLayoutConstraint!
     var serial: String?
     
     let viewModel = AddManualViewModel()
@@ -33,7 +35,7 @@ class AddManualViewController: BaseViewController {
         darkStatus()
     }
     
-    //MARK: Action
+    // MARK: Action
     @IBAction func btnDoneTapped() {
         if let _code = tfSerial.text, let _merchant = viewModel.merchant.value {
             viewModel.addMembership(code: _code, merchantId: _merchant.id)
@@ -48,8 +50,21 @@ class AddManualViewController: BaseViewController {
         
         if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
             heightHeader.constant = 142.5
+            
         } else {
             heightHeader.constant = 120.5
+        }
+        
+        switch Device() {
+        case .iPhone6Plus, .simulator(.iPhone6Plus),
+             .iPhone6sPlus, .simulator(.iPhone6sPlus),
+             .iPhone7Plus, .simulator(.iPhone7Plus),
+             .iPhone8Plus, .simulator(.iPhone8Plus):
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 19.5
+        default:
+            topBackButton.constant = 14.5
+            leftBackButton.constant = 16
         }
         
         vHeader.setShadow()
@@ -85,7 +100,6 @@ class AddManualViewController: BaseViewController {
         
         viewModel.merchant.asObservable().subscribe(onNext: {[weak self] (merchant) in
             guard let strongSelf = self else { return }
-            
             if let _logo = merchant?.logo, let _url = _logo.url, let _urlThumb = _url.thumb {
                 let urlThumb = URL(string: _urlThumb)
                 strongSelf.imgLogo.sd_setImage(with: urlThumb, placeholderImage: nil)

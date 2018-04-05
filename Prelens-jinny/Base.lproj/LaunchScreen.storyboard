@@ -18,17 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jinny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFS-qV-yjN">
-                                <rect key="frame" x="147.5" y="312.5" width="80.5" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dxT-JK-5zk">
+                                <rect key="frame" x="66.5" y="283" width="243.5" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243.5" id="a8N-SL-oMb"/>
+                                    <constraint firstAttribute="height" constant="121" id="ksn-cu-bQC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.70752501489999997" blue="0.68913733960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.8901960784313725" green="0.070588235294117646" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VFS-qV-yjN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dah-fZ-f1F"/>
-                            <constraint firstItem="VFS-qV-yjN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vaO-dY-Tjd"/>
+                            <constraint firstItem="dxT-JK-5zk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fHX-qE-ZqP"/>
+                            <constraint firstItem="dxT-JK-5zk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iw8-S9-ivv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +39,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash-logo" width="91" height="45"/>
+    </resources>
 </document>

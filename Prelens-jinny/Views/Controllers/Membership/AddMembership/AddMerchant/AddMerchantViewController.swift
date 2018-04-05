@@ -18,11 +18,9 @@ class AddMerchantViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
-//        setUpView()
         configureTableView()
         bindData()
         hideKeyboard()
-       
     }
     
     var viewModel = AddMerchantViewModel()
@@ -37,7 +35,6 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         hideNavigation()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,7 +44,9 @@ class AddMerchantViewController: BaseViewController {
     func setUpView() {
         vSearch.tfSearch.returnKeyType = .search
         vSearch.backgroundColor = .clear
-        vSearch.setShadow(color: PRColor.lineColor, opacity: 1, offSet: CGSize(width: 0, height: 0), radius: 5, scale: true)
+        vSearch.setShadow(color: PRColor.lineColor, opacity: 1,
+                          offSet: CGSize(width: 0, height: 0),
+                          radius: 5, scale: true)
         vSearch.tfSearch.attributedPlaceholder = "Search merchant".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
         
     }
@@ -59,17 +58,20 @@ class AddMerchantViewController: BaseViewController {
     }
     
     func configureTableView() {
-        tbMerchant.register(UINib(nibName: Cell.addMerchantCell, bundle: nil), forCellReuseIdentifier: Cell.addMerchantCell)
+        tbMerchant.register(UINib(nibName: Cell.addMerchantCell, bundle: nil),
+                            forCellReuseIdentifier: Cell.addMerchantCell)
         tbMerchant.delegate = self
         tbMerchant.backgroundColor = PRColor.backgroundColor
     }
     
     func bindData() {
-        vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
+        vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {
+            [weak self](text) in
             self?.viewModel.searchTextChange.value = text
         }).disposed(by: disposeBag)
         viewModel.loadData()
-        viewModel.listMerchant.asObservable().bind(to: tbMerchant.rx.items) { table, index, merchant in
+        viewModel.listMerchant.asObservable().bind(to: tbMerchant.rx.items) {
+            table, index, merchant in
             let cell = table.dequeueReusableCell(withIdentifier: Cell.addMerchantCell) as! AddMerchantCell
             cell.merchant = merchant
             if index == self.viewModel.listMerchant.value.count - 1 {
@@ -80,11 +82,10 @@ class AddMerchantViewController: BaseViewController {
             return cell
         }.disposed(by: disposeBag)
         
-        tbMerchant.rx.modelSelected(Merchant.self).subscribe(onNext: { [weak self](merchant) in
+        tbMerchant.rx.modelSelected(Merchant.self).subscribe(onNext: {
+            [weak self](merchant) in
             guard let strongSelf = self else { return }
-            
             let vcScancode = ScanCodeViewController.configureController(merchant: merchant)
-
             strongSelf.push(controller: vcScancode, animated: true)
         }).disposed(by: disposeBag)
     }
