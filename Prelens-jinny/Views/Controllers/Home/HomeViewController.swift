@@ -75,12 +75,12 @@ class HomeViewController: UIViewController {
         //Setup the size of SideMenu
         lcsSideMenu.constant = UIScreen.main.bounds.width * 2/3
         lcsHeightSideMenu.constant = UIScreen.main.bounds.width * 2/3
+        
+        vTabbar.vPromotions.setNotificationCounter(count: 6)
+        vTabbar.vMemberships.setNotificationCounter(count: 0)
+        vTabbar.vMore.setNotificationCounter(count: 0)
     }
-    
-//    func setTitle(title: String) {
-//        lbTitle.text = title
-//    }
-    
+ 
     func setBackButton(image: UIImage) {
         btnLeft.imageView?.image = image
     }
