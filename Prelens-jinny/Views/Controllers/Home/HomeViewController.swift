@@ -12,7 +12,6 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var vContainer: UIView!
     
-    @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var vNavigation: UIView!
     @IBOutlet weak var lcsNavigationHeight: NSLayoutConstraint!
     
@@ -57,7 +56,7 @@ class HomeViewController: UIViewController {
         lcsNavigationHeight.constant = 64
         if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
             self.heightTabbar.constant = 83
-            self.bottomTitleNavi.constant = 2
+            self.bottomTitleNavi.constant = 5
         } else {
             self.heightTabbar.constant = 50
             self.bottomTitleNavi.constant = 10
@@ -78,9 +77,9 @@ class HomeViewController: UIViewController {
         lcsHeightSideMenu.constant = UIScreen.main.bounds.width * 2/3
     }
     
-    func setTitle(title: String) {
-        lbTitle.text = title
-    }
+//    func setTitle(title: String) {
+//        lbTitle.text = title
+//    }
     
     func setBackButton(image: UIImage) {
         btnLeft.imageView?.image = image
