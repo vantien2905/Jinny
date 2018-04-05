@@ -23,16 +23,16 @@ class PRPhotoDetail: BaseViewController {
         didSet {
             guard let count = photoData?.count else { return }
             if currentPage > 0 && currentPage < count - 1 {
-                btnBack.isHidden    = false
+                btnBack.isHidden        = false
                 btnNext.isHidden        = false
             } else if currentPage > 0 && currentPage == count - 1 {
-                btnBack.isHidden    = false
+                btnBack.isHidden        = false
                 btnNext.isHidden        = true
             } else if currentPage == 0 && count > 1 {
-                btnBack.isHidden    = true
+                btnBack.isHidden        = true
                 btnNext.isHidden        = false
             } else {
-                btnBack.isHidden    = true
+                btnBack.isHidden        = true
                 btnNext.isHidden        = true
             }
         }
@@ -43,7 +43,7 @@ class PRPhotoDetail: BaseViewController {
         setUpView()
         configureCollectionView()
     }
-   
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -69,10 +69,10 @@ class PRPhotoDetail: BaseViewController {
         
         let index = round(offset.x / width)
         let newOffset = CGPoint(x: index * size.width, y: offset.y)
-
+        
         cvPhotoPreview.setContentOffset(newOffset, animated: false)
-       
-        coordinator.animate(alongsideTransition: { (context) in
+        
+        coordinator.animate(alongsideTransition: { (_) in
             self.cvPhotoPreview.reloadData()
             self.cvPhotoPreview.setContentOffset(newOffset, animated: false)
         }, completion: nil)
@@ -82,6 +82,18 @@ class PRPhotoDetail: BaseViewController {
         setTitle(title: "", textColor: .black, backgroundColor: .black)
         self.view.backgroundColor = UIColor.black
         addWhiteBackButton()
+        
+        // MARK: Setup the button hidden
+        guard let count = photoData?.count else { return }
+        if photoData?.count == 1 {
+            btnBack.isHidden = true
+            btnNext.isHidden = true
+        }
+        if currentPage == 0 {
+            btnBack.isHidden = true
+        } else if currentPage == count - 1 {
+            btnNext.isHidden = true
+        }
     }
     
     func configureCollectionView() {
@@ -121,16 +133,16 @@ extension PRPhotoDetail: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImagePreviewFullViewCell
         guard let data = photoData else { return UICollectionViewCell() }
-        //cell.imgView.image=imgArray[indexPath.row]
-        cell.imgView.sd_setImage(with: (data[indexPath.row].url?.original)!, placeholder: nil, failedImage: nil)
-        
+        if let url = data[indexPath.row].url?.original {
+            cell.imgView.sd_setImage(with: url, placeholder: nil, failedImage: nil)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width, height: self.view.frame.height)
     }
-
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentPage = scrollView.currentPage - 1
         didMoveTo(page: currentPage)
@@ -201,7 +213,7 @@ class ImagePreviewFullViewCell: UICollectionViewCell, UIScrollViewDelegate {
         super.layoutSubviews()
         scrollImg.frame = self.bounds
         imgView.frame = self.bounds
-    
+        
     }
     
     override func prepareForReuse() {
