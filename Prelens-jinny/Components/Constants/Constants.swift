@@ -23,6 +23,7 @@ struct PRColor {
     static let navigationBar        = UIColor.white
 
     static let backgroundPopUp      = UIColor.black.withAlphaComponent(0.6)
+    static let placeHolderProfile   = UIColor(red: 72/255, green: 72/255, blue: 72/255, alpha: 0.5)
 }
 
 struct PRImage {

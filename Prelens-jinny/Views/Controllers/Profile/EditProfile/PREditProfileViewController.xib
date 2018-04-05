@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="seguibli.ttf">
+            <string>SegoeUIBlack-Italic</string>
+        </array>
         <array key="seguisb.ttf">
             <string>SegoeUI-Semibold</string>
         </array>
@@ -195,11 +198,11 @@ customized for you!</string>
                                     <rect key="frame" x="39" y="306" width="294" height="47"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="center" text="mm/yyyy" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" translatesAutoresizingMaskIntoConstraints="NO" id="THr-Aw-KrF" userLabel="Select">
-                                            <rect key="frame" x="18" y="13.5" width="63.5" height="20"/>
+                                            <rect key="frame" x="18" y="13.5" width="70.5" height="20"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <accessibility key="accessibilityConfiguration" hint="" identifier="183" label=""/>
-                                            <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
-                                            <color key="textColor" red="0.28235019610000001" green="0.28235019610000001" blue="0.28235019610000001" alpha="1" colorSpace="deviceRGB"/>
+                                            <fontDescription key="fontDescription" name="SegoeUIBlack-Italic" family="Segoe UI" pointSize="15"/>
+                                            <color key="textColor" red="0.28235019610000001" green="0.28235019610000001" blue="0.28235019610000001" alpha="0.5" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgm-TM-8af">
