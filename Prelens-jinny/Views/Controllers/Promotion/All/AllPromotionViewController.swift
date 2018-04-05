@@ -60,7 +60,7 @@ class AllPromotionViewController: UIViewController {
         vShadow.backgroundColor = .clear
         vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
     }
-    @objc func getListNotification(){
+    @objc func getListNotification() {
         viewModel.getListAllPromotion(order: "desc")
     }
     func setUpView() {
@@ -122,6 +122,16 @@ class AllPromotionViewController: UIViewController {
         cvAllPromotion.backgroundColor = PRColor.backgroundColor
         cvAllPromotion.delegate = self
         cvAllPromotion.dataSource = self
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if actualPosition.y > 0 {
+            buttonHidden?.isHiddenBtnAll(isHidden: true)
+        } else if actualPosition.y < 0 {
+            buttonHidden?.isHiddenBtnAll(isHidden: false)
+        }
     }
 }
 extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

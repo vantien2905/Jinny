@@ -14,7 +14,7 @@ protocol StarredPromotionDelegate: class {
     func isHiddenBtnStar(isHidden: Bool)
 }
 
-class StarredPromotionViewController: UIViewController {
+class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -26,6 +26,7 @@ class StarredPromotionViewController: UIViewController {
     let disposeBag = DisposeBag()
     static var merchantName: String?
     var refreshControl: UIRefreshControl!
+    
     weak var buttonHidden: StarredPromotionDelegate?
     
     var listStarredPromotion = [Promotion]() {
@@ -107,6 +108,17 @@ class StarredPromotionViewController: UIViewController {
         cvStarredPromotion.delegate = self
         cvStarredPromotion.dataSource = self
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if actualPosition.y > 0 {
+            buttonHidden?.isHiddenBtnStar(isHidden: true)
+        } else if actualPosition.y < 0 {
+            buttonHidden?.isHiddenBtnStar(isHidden: false)
+        }
+    }
+    
 }
 
 extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

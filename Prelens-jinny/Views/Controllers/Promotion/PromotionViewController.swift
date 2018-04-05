@@ -111,26 +111,27 @@ extension PromotionViewController: UICollectionViewDataSource, UICollectionViewD
 }
 
 extension PromotionViewController: MenuBarDelegate, AllPromotionDelegate {
+    func isHiddenBtnAll(isHidden: Bool) {
+        btnAddVoucher.isHidden = isHidden
+    }
+    
     func itemMenuSelected(index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
         cvMenuController.scrollToItem(at: indexPath, at: .left, animated: true)
         cvMenuController.reloadData()
     }
-    
-    func isHiddenBtnAll(isHidden: Bool) {
-        self.btnAddVoucher.isHidden = isHidden
-    }
-}
 
-extension PromotionViewController: StarredPromotionDelegate {
+}
+extension PromotionViewController: StarredPromotionDelegate, ArchivedPromotionDelegate{
     func isHiddenBtnStar(isHidden: Bool) {
-        self.btnAddVoucher.isHidden = isHidden
+        btnAddVoucher.isHidden = isHidden
     }
-}
-extension PromotionViewController: ArchivedPromotionDelegate {
+    
+    
     func isHidden(isHidden: Bool) {
-        self.btnAddVoucher.isHidden = isHidden
+        btnAddVoucher.isHidden = isHidden
     }
+    
+    
 }
-
 

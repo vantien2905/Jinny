@@ -106,6 +106,17 @@ class AchivedPromotionViewController: UIViewController {
         cvAchivedPromotion.delegate = self
         cvAchivedPromotion.dataSource = self
     }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if actualPosition.y > 0 {
+            buttonHidden?.isHidden(isHidden: true)
+        } else if actualPosition.y < 0 {
+            buttonHidden?.isHidden(isHidden: false)
+        }
+    }
+    
 }
 extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
