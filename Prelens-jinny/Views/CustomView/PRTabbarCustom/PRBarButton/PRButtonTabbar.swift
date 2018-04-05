@@ -22,13 +22,16 @@ class PRButtonTabbar: PRBaseViewXib {
     override func awakeFromNib() {
         super.awakeFromNib()
         lbCounter.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 2.5)
-
+        
+        lbCounter.backgroundColor = PRColor.mainAppColor
+        lbCounter.textColor = .white
     }
 
     weak var tabbarButtonDelegate: PRTabbarButtonDelegate?
 
     func setNotificationCounter(count: Int) {
         if count == 0 {
+            
             self.lbCounter.isHidden = true
         } else {
             self.lbCounter.isHidden = false

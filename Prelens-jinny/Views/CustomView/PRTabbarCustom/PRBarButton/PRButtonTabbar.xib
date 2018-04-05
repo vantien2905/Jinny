@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PRButtonTabbar" customModule="Jinny" customModuleProvider="target">
             <connections>
@@ -46,13 +51,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-S7-c2f">
-                    <rect key="frame" x="96.5" y="0.0" width="12" height="12"/>
+                    <rect key="frame" x="97" y="3" width="17" height="17"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="12" id="DHr-tw-1os"/>
-                        <constraint firstAttribute="height" constant="12" id="wVq-aL-ewm"/>
+                        <constraint firstAttribute="width" constant="17" id="DHr-tw-1os"/>
+                        <constraint firstAttribute="height" constant="17" id="wVq-aL-ewm"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                    <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="10"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -70,7 +75,7 @@
                 <constraint firstItem="TMu-QQ-5rJ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-2" id="f7a-6b-TSB"/>
                 <constraint firstItem="q9z-kD-bJq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hW8-E6-BU5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TMu-QQ-5rJ" secondAttribute="trailing" id="qZx-wM-cOR"/>
-                <constraint firstItem="hGb-S7-c2f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uag-Ng-oqg"/>
+                <constraint firstItem="hGb-S7-c2f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="3" id="uag-Ng-oqg"/>
                 <constraint firstItem="q9z-kD-bJq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-5" id="xpH-Z0-9ZG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
