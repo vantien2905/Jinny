@@ -114,7 +114,7 @@ extension PromotionViewController: MenuBarDelegate, AllPromotionDelegate {
     func isHiddenBtnAll(isHidden: Bool) {
         btnAddVoucher.isHidden = isHidden
     }
-    
+
     func itemMenuSelected(index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
         cvMenuController.scrollToItem(at: indexPath, at: .left, animated: true)
@@ -126,12 +126,8 @@ extension PromotionViewController: StarredPromotionDelegate, ArchivedPromotionDe
     func isHiddenBtnStar(isHidden: Bool) {
         btnAddVoucher.isHidden = isHidden
     }
-    
-    
     func isHidden(isHidden: Bool) {
         btnAddVoucher.isHidden = isHidden
     }
-    
-    
 }
 

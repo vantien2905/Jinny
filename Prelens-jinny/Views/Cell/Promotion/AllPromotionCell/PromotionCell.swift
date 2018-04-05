@@ -56,11 +56,12 @@ class PromotionCell: UICollectionViewCell {
                 if _image.size.height > _image.size.width {
                     let size = CGSize(width: _image.size.width, height: _image.size.width * 0.75)
                     self.imgPromotion.image = _image.crop(rect: CGRect(origin: point, size: size))
+                    self.imgPromotion.contentMode = .scaleToFill
                 } else {
                     self.imgPromotion.image = _image
+                    self.imgPromotion.contentMode = .scaleAspectFill
                 }
             }
         }
-        self.imgPromotion.contentMode = .scaleAspectFill
     }
 }

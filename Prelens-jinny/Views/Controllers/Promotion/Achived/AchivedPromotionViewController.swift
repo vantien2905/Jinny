@@ -45,9 +45,8 @@ class AchivedPromotionViewController: UIViewController {
         super.viewDidLoad()
         configColecttionView()
         setUpView()
-        refreshControl = UIRefreshControl()
-        self.scrollView.addSubview(refreshControl)
-        vSearch.backgroundColor = .clear
+
+     
     }
     
     class func configureViewController() -> AchivedPromotionViewController {
@@ -68,10 +67,15 @@ class AchivedPromotionViewController: UIViewController {
     }
     
     func setUpView() {
+        refreshControl = UIRefreshControl()
         self.view.backgroundColor = PRColor.backgroundColor
-        vSearch.tfSearch.returnKeyType = .search
-        scrollView.alwaysBounceVertical = true
         
+        vSearch.tfSearch.returnKeyType = .search
+        vSearch.backgroundColor = .clear
+        
+        scrollView.alwaysBounceVertical = true
+        scrollView.delegate = self
+        scrollView.addSubview(refreshControl)
     }
     
     @objc func bindData() {
@@ -110,10 +114,10 @@ class AchivedPromotionViewController: UIViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
-        if actualPosition.y > 0 {
-            buttonHidden?.isHidden(isHidden: true)
-        } else if actualPosition.y < 0 {
+        if actualPosition.y > 100 {
             buttonHidden?.isHidden(isHidden: false)
+        } else if actualPosition.y < -100 {
+            buttonHidden?.isHidden(isHidden: true)
         }
     }
     

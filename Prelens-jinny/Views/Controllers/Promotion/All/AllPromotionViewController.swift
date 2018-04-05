@@ -14,7 +14,7 @@ protocol AllPromotionDelegate: class {
     func isHiddenBtnAll(isHidden: Bool)
 }
 
-class AllPromotionViewController: UIViewController {
+class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvAllPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -22,11 +22,13 @@ class AllPromotionViewController: UIViewController {
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    static var merchantName: String?
+    
     var viewModel: AllPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
     var listSearch = [Promotion]()
-    static var merchantName: String?
     var refreshControl: UIRefreshControl!
+    
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
@@ -36,21 +38,22 @@ class AllPromotionViewController: UIViewController {
     weak var buttonHidden: AllPromotionDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
+        hideKeyboard()
         vSearch.tfSearch.text = ""
+        viewModel.getListAllPromotion(order: "desc")
+        
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         bindData()
-        viewModel.getListAllPromotion(order: "desc")
-        hideKeyboard()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //NotificationCenter.default.addObserver(self, selector: #selector(self.getListNotification), name: NSNotification.Name(rawValue: "VoucherNotification"), object: nil)
-        configColecttionView()
         setUpView()
+        configColecttionView()
+        
         refreshControl = UIRefreshControl()
-        self.scrollView.addSubview(refreshControl)
-        vSearch.backgroundColor = .clear
+        scrollView.addSubview(refreshControl)
+        scrollView.delegate = self
     }
         
     override func viewWillLayoutSubviews() {
@@ -64,13 +67,15 @@ class AllPromotionViewController: UIViewController {
         viewModel.getListAllPromotion(order: "desc")
     }
     func setUpView() {
+        vSearch.backgroundColor = .clear
         self.view.backgroundColor = PRColor.backgroundColor
+        
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
     }
     
     func setupNotification(listData: [Promotion]) {
-        guard let _leftDay = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind) else {return}
+        guard let _leftDay = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind) else { return }
         guard let _voucherNotiStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus)else {return}
         if _voucherNotiStatus {
             if listData.count != 0 {
@@ -127,10 +132,10 @@ class AllPromotionViewController: UIViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
-        if actualPosition.y > 0 {
-            buttonHidden?.isHiddenBtnAll(isHidden: true)
-        } else if actualPosition.y < 0 {
+        if actualPosition.y > 100 {
             buttonHidden?.isHiddenBtnAll(isHidden: false)
+        } else if actualPosition.y < -100 {
+            buttonHidden?.isHiddenBtnAll(isHidden: true)
         }
     }
 }

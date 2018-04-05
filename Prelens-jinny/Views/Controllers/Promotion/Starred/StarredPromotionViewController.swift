@@ -22,9 +22,11 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    static var merchantName: String?
+    
     var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
-    static var merchantName: String?
+
     var refreshControl: UIRefreshControl!
     
     weak var buttonHidden: StarredPromotionDelegate?
@@ -46,11 +48,14 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        vSearch.tfSearch.returnKeyType = .search
-        setUpView()
-        refreshControl = UIRefreshControl()
-        self.scrollView.addSubview(refreshControl)
         configColecttionView()
+        setUpView()
+        
+        vSearch.tfSearch.returnKeyType = .search
+        refreshControl = UIRefreshControl()
+        
+        self.scrollView.addSubview(refreshControl)
+        scrollView.delegate = self
     }
     
     @objc func bindData() {
@@ -112,13 +117,12 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
-        if actualPosition.y > 0 {
-            buttonHidden?.isHiddenBtnStar(isHidden: true)
-        } else if actualPosition.y < 0 {
+        if actualPosition.y > 100 {
             buttonHidden?.isHiddenBtnStar(isHidden: false)
+        } else if actualPosition.y < -100 {
+            buttonHidden?.isHiddenBtnStar(isHidden: true)
         }
     }
-    
 }
 
 extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
