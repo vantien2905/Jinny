@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="257" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep you frequently used membership here by starring it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5j-Wg-enR">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star and keep your frequently used membership here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5j-Wg-enR">
                         <rect key="frame" x="0.0" y="0.0" width="257" height="50"/>
                         <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="12.5"/>
                         <nil key="textColor"/>

@@ -79,7 +79,7 @@ struct PRButtonTabbarTitle {
 struct PRFont {
     static let sideBarMenuFont = UIFont(name: "SegoeUI-Semibold", size: 15)
     static let semiBold15   = UIFont(name: "SegoeUI-Semibold", size: 15)
-    static let semiItatic15 = UIFont(name: "SegoeUI-Italic",size: 15)
+    static let semiItatic15 = UIFont(name: "SegoeUI-Italic", size: 15)
     static let regular15    = UIFont(name: "SegoeUI", size: 15)
 }
 
@@ -105,8 +105,7 @@ struct ContantMessages {
 
 struct ConstantString {
     struct Membership {
-        static let emptyStarMembership = "Keep you frequently used membership here by starring it"
+        static let emptyStarMembership = "Star and keep your frequently used membership here"
         static let emptyOtherMembership = "Press the + button below to add new membership"
     }
 }
-

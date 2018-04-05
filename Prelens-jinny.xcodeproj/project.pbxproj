@@ -1137,7 +1137,6 @@
 			isa = PBXGroup;
 			children = (
 				B72A10B02074A6FB00AC704F /* OverlayCamera */,
-				BCE65DBD20737E790027C801 /* KPageView */,
 				760A99EC2075CEE400962000 /* TextFieldView */,
 				BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */,
 				B7D54B012069ED9C000F4957 /* Dropdown */,
@@ -1305,13 +1304,6 @@
 				B7899EB020609F2600ADEC43 /* AddMerchant */,
 			);
 			path = AddMembership;
-			sourceTree = "<group>";
-		};
-		BCE65DBD20737E790027C801 /* KPageView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = KPageView;
 			sourceTree = "<group>";
 		};
 		BCE65DC220737F660027C801 /* Helpers */ = {
