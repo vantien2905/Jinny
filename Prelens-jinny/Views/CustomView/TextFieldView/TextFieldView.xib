@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="Jinny" customModuleProvider="target">
+            <connections>
+                <outlet property="tfInput" destination="VcV-TK-yYc" id="s45-WA-0GP"/>
+                <outlet property="vContent" destination="RZc-3q-vzL" id="ang-AY-fTF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZc-3q-vzL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VcV-TK-yYc">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="VcV-TK-yYc" secondAttribute="trailing" id="3co-U1-Nwp"/>
+                        <constraint firstItem="VcV-TK-yYc" firstAttribute="leading" secondItem="RZc-3q-vzL" secondAttribute="leading" id="DfQ-PK-rbV"/>
+                        <constraint firstAttribute="bottom" secondItem="VcV-TK-yYc" secondAttribute="bottom" id="YSV-ME-cX6"/>
+                        <constraint firstItem="VcV-TK-yYc" firstAttribute="top" secondItem="RZc-3q-vzL" secondAttribute="top" id="ZGq-37-Aqm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RZc-3q-vzL" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="8Gx-4n-4NW"/>
+                <constraint firstItem="RZc-3q-vzL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="SGm-yb-EUV"/>
+                <constraint firstItem="RZc-3q-vzL" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="dCM-f8-Wlv"/>
+                <constraint firstItem="RZc-3q-vzL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pM0-ad-eYE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="32.5" y="-220.5"/>
+        </view>
+        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="bEI-sw-fkL">
+            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </activityIndicatorView>
+    </objects>
+</document>

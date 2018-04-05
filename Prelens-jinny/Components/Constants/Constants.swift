@@ -78,6 +78,7 @@ struct PRButtonTabbarTitle {
 struct PRFont {
     static let sideBarMenuFont = UIFont(name: "SegoeUI-Semibold", size: 15)
     static let semiBold15   = UIFont(name: "SegoeUI-Semibold", size: 15)
+    static let semiItatic15 = UIFont(name: "SegoeUI-Italic",size: 15)
     static let regular15    = UIFont(name: "SegoeUI", size: 15)
 }
 
