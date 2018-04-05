@@ -36,11 +36,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuO-T5-7Gs">
-                                            <rect key="frame" x="-0.5" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="21.5" y="10" width="331" height="44"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fco-CQ-01a" customClass="SearchView" customModule="Jinny" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="22" y="10" width="331" height="44"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="LtF-SU-N6I"/>
@@ -50,13 +50,13 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="YuO-T5-7Gs" firstAttribute="centerX" secondItem="fco-CQ-01a" secondAttribute="centerX" id="1yF-NP-U9y"/>
-                                        <constraint firstAttribute="trailing" secondItem="fco-CQ-01a" secondAttribute="trailing" id="O8j-Kf-RAC"/>
+                                        <constraint firstAttribute="trailing" secondItem="fco-CQ-01a" secondAttribute="trailing" constant="22" id="O8j-Kf-RAC"/>
                                         <constraint firstItem="YuO-T5-7Gs" firstAttribute="height" secondItem="fco-CQ-01a" secondAttribute="height" id="Rg4-4e-y6q"/>
                                         <constraint firstAttribute="height" constant="60" id="VYa-gX-6Z1"/>
-                                        <constraint firstItem="fco-CQ-01a" firstAttribute="top" secondItem="0av-hO-Zbt" secondAttribute="top" id="a4f-a8-IJA"/>
+                                        <constraint firstItem="fco-CQ-01a" firstAttribute="top" secondItem="0av-hO-Zbt" secondAttribute="top" constant="10" id="a4f-a8-IJA"/>
                                         <constraint firstItem="YuO-T5-7Gs" firstAttribute="centerY" secondItem="fco-CQ-01a" secondAttribute="centerY" id="jj3-AK-HwV"/>
                                         <constraint firstItem="YuO-T5-7Gs" firstAttribute="width" secondItem="fco-CQ-01a" secondAttribute="width" id="q5Z-CD-evt"/>
-                                        <constraint firstItem="fco-CQ-01a" firstAttribute="leading" secondItem="0av-hO-Zbt" secondAttribute="leading" id="w6Q-Yc-PTz"/>
+                                        <constraint firstItem="fco-CQ-01a" firstAttribute="leading" secondItem="0av-hO-Zbt" secondAttribute="leading" constant="22" id="w6Q-Yc-PTz"/>
                                     </constraints>
                                 </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uym-RN-mHO">
