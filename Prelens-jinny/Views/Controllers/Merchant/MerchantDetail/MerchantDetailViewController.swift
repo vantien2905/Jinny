@@ -54,6 +54,7 @@ class MerchantDetailViewController: BaseViewController {
     func setUpNavigation() {
         self.setTitle(title: MembershipDetailViewController.merchantName!, textColor: .black, backgroundColor: .white)
         addBackButton()
+        tbMerchantDetail.backgroundColor = PRColor.backgroundColor
         darkStatus()
     }
     
