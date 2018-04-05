@@ -154,8 +154,8 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
         if indexPath.section == 0 {
             let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20, font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
             let size = UIScreen.main.bounds.width
-            guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
             
+            guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
             return CGSize(width: size, height: 125 - (57 - _height))
         } else if indexPath.section == 1 {
             let size = UIScreen.main.bounds.width - 40

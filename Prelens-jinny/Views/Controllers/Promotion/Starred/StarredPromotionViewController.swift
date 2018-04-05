@@ -14,7 +14,7 @@ protocol StarredPromotionDelegate: class {
     func isHiddenBtnStar(isHidden: Bool)
 }
 
-class StarredPromotionViewController: UIViewController {
+class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -22,10 +22,13 @@ class StarredPromotionViewController: UIViewController {
     @IBOutlet weak var heightViewScroll: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    static var merchantName: String?
+    
     var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
-    static var merchantName: String?
+
     var refreshControl: UIRefreshControl!
+    
     weak var buttonHidden: StarredPromotionDelegate?
     
     var listStarredPromotion = [Promotion]() {
@@ -45,11 +48,14 @@ class StarredPromotionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        vSearch.tfSearch.returnKeyType = .search
-        setUpView()
-        refreshControl = UIRefreshControl()
-        self.scrollView.addSubview(refreshControl)
         configColecttionView()
+        setUpView()
+        
+        vSearch.tfSearch.returnKeyType = .search
+        refreshControl = UIRefreshControl()
+        
+        self.scrollView.addSubview(refreshControl)
+        scrollView.delegate = self
     }
     
     @objc func bindData() {
@@ -106,6 +112,16 @@ class StarredPromotionViewController: UIViewController {
         cvStarredPromotion.backgroundColor = PRColor.backgroundColor
         cvStarredPromotion.delegate = self
         cvStarredPromotion.dataSource = self
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if actualPosition.y > 100 {
+            buttonHidden?.isHiddenBtnStar(isHidden: false)
+        } else if actualPosition.y < -100 {
+            buttonHidden?.isHiddenBtnStar(isHidden: true)
+        }
     }
 }
 

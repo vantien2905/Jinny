@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 
 class MembershipDetailCell: UITableViewCell {
+    
     var promotion = Promotion() {
         didSet {
             self.setData()
@@ -21,11 +22,16 @@ class MembershipDetailCell: UITableViewCell {
     @IBOutlet weak var vLine: UIView!
     @IBOutlet weak var imgPromotion: UIImageView!
     @IBOutlet weak var vContent: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
         setData()
-        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.selectionStyle = .none
     }
     
     func setupView() {
@@ -34,17 +40,28 @@ class MembershipDetailCell: UITableViewCell {
     }
     
     func setData() {
-        if  let _expiresAt = promotion.expiresString, let _merchantName = promotion.merchant?.name, let _url = promotion.image?.url?.original {
-            let url = URL(string: _url)
+        if  let _expiresAt = promotion.expiresString, let _merchantName = promotion.merchant?.name {
+            if let _url = promotion.image?.url?.original {
+                let url = URL(string: _url)
+                //                 imgPromotion.sd_setImage(with: url, placeholderImage: nil)
+                
+                imgPromotion.sd_setImage(with: url, placeholderImage: nil) { (image, error, _, _) in
+                    guard let _image = image, error == nil else {
+                        return
+                    }
+                    let point = CGPoint(x: 0, y: 0)
+                    if _image.size.height > _image.size.width {
+                        let size = CGSize(width: _image.size.width, height: _image.size.width * (163/313))
+                        self.imgPromotion.image = _image.crop(rect: CGRect(origin: point, size: size))
+                        
+                    } else {
+                        self.imgPromotion.image = _image
+                    }
+                }
+                self.imgPromotion.contentMode = .scaleToFill
+            }
             lbExpiresAt.text    = "Expiry date: \(_expiresAt)"
             lbMerchantName.text = _merchantName
-            imgPromotion.sd_setImage(with: url, placeholderImage: nil)
         }
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        self.selectionStyle = .none
-    }
-
 }
