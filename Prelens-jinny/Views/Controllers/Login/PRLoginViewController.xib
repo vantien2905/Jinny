@@ -24,6 +24,7 @@
                 <outlet property="cvMenuController" destination="X45-0A-sJ2" id="BXY-Ug-ITc"/>
                 <outlet property="scrollView" destination="tFL-yt-Tcf" id="Wvj-gu-9EK"/>
                 <outlet property="vContainMenu" destination="9I9-SA-Mcu" id="at9-cO-OSN"/>
+                <outlet property="vShadow" destination="NeO-4q-nax" id="oxB-Js-21L"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,7 +47,7 @@
                                     </constraints>
                                 </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="X45-0A-sJ2">
-                                    <rect key="frame" x="0.0" y="135" width="375" height="532"/>
+                                    <rect key="frame" x="0.0" y="136" width="375" height="531"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QZb-DU-MLR">
                                         <size key="itemSize" width="50" height="50"/>
@@ -81,21 +82,31 @@
                                         <constraint firstAttribute="bottom" secondItem="nZ1-BK-5uu" secondAttribute="bottom" constant="17" id="pY2-oL-Zh3"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeO-4q-nax" userLabel="shadow">
+                                    <rect key="frame" x="0.0" y="135" width="375" height="1"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="IGc-HV-Rtu"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="X45-0A-sJ2" firstAttribute="leading" secondItem="fzo-hv-EfH" secondAttribute="leading" id="01i-hn-0H7"/>
                                 <constraint firstItem="X45-0A-sJ2" firstAttribute="bottom" secondItem="fzo-hv-EfH" secondAttribute="bottom" id="1jN-T2-7rp"/>
+                                <constraint firstItem="NeO-4q-nax" firstAttribute="top" secondItem="9I9-SA-Mcu" secondAttribute="bottom" id="5oE-IC-fXn"/>
                                 <constraint firstItem="9I9-SA-Mcu" firstAttribute="top" secondItem="65I-m8-Kiu" secondAttribute="bottom" id="7R6-3W-MZX"/>
                                 <constraint firstItem="65I-m8-Kiu" firstAttribute="top" secondItem="fzo-hv-EfH" secondAttribute="top" id="EDD-UM-5af"/>
+                                <constraint firstItem="NeO-4q-nax" firstAttribute="leading" secondItem="fzo-hv-EfH" secondAttribute="leading" id="FcJ-Z6-EyP"/>
                                 <constraint firstItem="9I9-SA-Mcu" firstAttribute="leading" secondItem="fzo-hv-EfH" secondAttribute="leading" constant="20" id="Jfk-7L-fvk"/>
                                 <constraint firstItem="65I-m8-Kiu" firstAttribute="height" secondItem="77f-fm-9XE" secondAttribute="height" multiplier="0.115" constant="-1.5" id="KXS-Dk-TNN"/>
                                 <constraint firstAttribute="height" constant="667" id="Pid-k8-uOe"/>
                                 <constraint firstItem="fzo-hv-EfH" firstAttribute="trailing" secondItem="9I9-SA-Mcu" secondAttribute="trailing" constant="20" id="QBJ-4N-gbX"/>
                                 <constraint firstItem="65I-m8-Kiu" firstAttribute="leading" secondItem="fzo-hv-EfH" secondAttribute="leading" id="WkD-UH-TDO"/>
-                                <constraint firstItem="X45-0A-sJ2" firstAttribute="top" secondItem="9I9-SA-Mcu" secondAttribute="bottom" id="aex-Up-n4k"/>
+                                <constraint firstItem="X45-0A-sJ2" firstAttribute="top" secondItem="NeO-4q-nax" secondAttribute="bottom" id="brm-gr-SXG"/>
                                 <constraint firstItem="X45-0A-sJ2" firstAttribute="trailing" secondItem="fzo-hv-EfH" secondAttribute="trailing" id="kZf-XZ-LbK"/>
                                 <constraint firstItem="65I-m8-Kiu" firstAttribute="trailing" secondItem="fzo-hv-EfH" secondAttribute="trailing" id="yhU-fB-X2U"/>
+                                <constraint firstItem="fzo-hv-EfH" firstAttribute="trailing" secondItem="NeO-4q-nax" secondAttribute="trailing" id="zZu-gy-bz6"/>
                             </constraints>
                             <viewLayoutGuide key="safeArea" id="fzo-hv-EfH"/>
                         </view>

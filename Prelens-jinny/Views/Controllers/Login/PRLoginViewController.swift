@@ -13,7 +13,8 @@ class PRLoginViewController: BaseViewController {
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
-
+    @IBOutlet weak var vShadow: UIView!
+    
     var currentIndex = 0
 
     var controllers = [UIViewController]()
@@ -54,6 +55,8 @@ class PRLoginViewController: BaseViewController {
     private func setupView() {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         configMenuView()
+        
+    vShadow.setShadow()
     }
 
     private func configMenuView() {
