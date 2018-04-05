@@ -45,6 +45,7 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>segoeuii.ttf</string>
 		<string>OstrichSans-Heavy.tff</string>
 		<string>seguibl.tff</string>
 		<string>seguisb.ttf</string>
