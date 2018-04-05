@@ -61,6 +61,7 @@
 		76E3559F206BA506008079CA /* StarredPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E3559E206BA506008079CA /* StarredPromotionViewController.xib */; };
 		76E355A1206BABAA008079CA /* StarredPromotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */; };
 		B7054003206383C80028D90E /* PRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7054002206383C80028D90E /* PRLoadingView.swift */; };
+		B71F407B20760DF100DCA268 /* OverleyQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71F407A20760DF100DCA268 /* OverleyQRCode.swift */; };
 		B72A10B22074A72200AC704F /* OverlayCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A10B12074A72200AC704F /* OverlayCamera.swift */; };
 		B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626A205907AC00C7004D /* StarredHeaderCell.swift */; };
 		B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626B205907AC00C7004D /* StarredHeaderCell.xib */; };
@@ -268,6 +269,7 @@
 		76E3559E206BA506008079CA /* StarredPromotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarredPromotionViewController.xib; sourceTree = "<group>"; };
 		76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredPromotionViewModel.swift; sourceTree = "<group>"; };
 		B7054002206383C80028D90E /* PRLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoadingView.swift; sourceTree = "<group>"; };
+		B71F407A20760DF100DCA268 /* OverleyQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverleyQRCode.swift; sourceTree = "<group>"; };
 		B72A10B12074A72200AC704F /* OverlayCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCamera.swift; sourceTree = "<group>"; };
 		B738626A205907AC00C7004D /* StarredHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredHeaderCell.swift; sourceTree = "<group>"; };
 		B738626B205907AC00C7004D /* StarredHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredHeaderCell.xib; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 			isa = PBXGroup;
 			children = (
 				B72A10B12074A72200AC704F /* OverlayCamera.swift */,
+				B71F407A20760DF100DCA268 /* OverleyQRCode.swift */,
 			);
 			path = OverlayCamera;
 			sourceTree = "<group>";
@@ -1630,6 +1633,7 @@
 				D9911862205BB0A600F701ED /* PopUpHelper.swift in Sources */,
 				D991185C205B7B1800F701ED /* AuthenticationService.swift in Sources */,
 				7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */,
+				B71F407B20760DF100DCA268 /* OverleyQRCode.swift in Sources */,
 				764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */,
 				BC6EF85A2060F57D00A156B9 /* UIApplication+Extension.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,

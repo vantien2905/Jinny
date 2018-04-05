@@ -13,7 +13,7 @@ import PKHUD
 class AddVoucherViewController: BaseViewController {
     
     @IBOutlet weak var vScanQR: UIView!
-    @IBOutlet weak var lcsVScanQRHeight: NSLayoutConstraint!
+//    @IBOutlet weak var lcsVScanQRHeight: NSLayoutConstraint!
     @IBOutlet weak var btnRefreshScanner: UIButton!
     
     var viewModel: AddVoucherViewModelProtocol!
@@ -71,7 +71,7 @@ class AddVoucherViewController: BaseViewController {
     
     func setUpScan() {
         scanner?.removeAllLayers()
-        lcsVScanQRHeight.constant = UIScreen.main.bounds.width * (3/4)
+//        lcsVScanQRHeight.constant = UIScreen.main.bounds.width * (3/4)
         scanner?.setupLayers(vScanQR)
     }
     
