@@ -107,8 +107,9 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
          //application.applicationIconBadgeNumber = badgeNumbers + 1
         //7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a
-        let voucherID = String(describing: notification.userInfo)
-        let route = Route(tabbar: .vouchers)
-        Navigator.shared.handle(route: route, id: voucherID)
+        guard let voucherID =  notification.userInfo?["id"] else {return}
+            print(voucherID)
+            let route = Route(tabbar: .vouchers)
+        Navigator.shared.handle(route: route, id: voucherID as! String)
     }
 }

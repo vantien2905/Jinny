@@ -23,7 +23,7 @@ class SettingViewController: BaseViewController {
     @IBOutlet weak var btnDayToRemind: UIButton!
     var listDay = ["1","2","3","4","5","6","7"]
     let disposeBag = DisposeBag()
-//    let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
+    let promotionVM = AllPromotionViewModel()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         darkStatus()
@@ -83,12 +83,13 @@ class SettingViewController: BaseViewController {
         vVoucherNotiSwitch.isCheck.asObservable().subscribe(onNext: { [weak self ]value in
             guard let strongSelf = self else {return}
                 if value {
+                    //NotificationCenter.default.post(name: Notification.Name("VoucherNotification"), object: nil)
                     strongSelf.btnDayToRemind.isEnabled = true
                     strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                     strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                     strongSelf.vPushNotiSwitch.isCheck.value = true
                     KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.pushNotificationStatus)
-                //LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test",day:"04/04/2018 +0000)",dayBeforeExprise: 0)
+                    strongSelf.promotionVM.getListAllPromotion(order: "desc")
                 } else {
                     strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
                     strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
@@ -104,6 +105,7 @@ class SettingViewController: BaseViewController {
             if value {
                 strongSelf.vPushNotiSwitch.isCheck.value = true
                  KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.pushNotificationStatus)
+               
             }
             strongSelf.vPushNotiSwitch.layoutSubviews()
             KeychainManager.shared.saveBool(value: value, forkey: KeychainItem.storeDiscountStatus)
