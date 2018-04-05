@@ -24,7 +24,6 @@ class MerchantBranchViewController: BaseViewController {
     func configureTableView() {
         tbMerchantBranch.register(UINib(nibName: Cell.merchantDetailHeaderCell, bundle: nil), forCellReuseIdentifier: "headerCell")
         tbMerchantBranch.register(UINib(nibName: Cell.merchantBranchCell, bundle: nil), forCellReuseIdentifier: "merchantBranchCell")
-        
         tbMerchantBranch.dataSource = self
         tbMerchantBranch.delegate = self
         
@@ -33,6 +32,7 @@ class MerchantBranchViewController: BaseViewController {
     func setUpView() {
         self.setTitle(title: MembershipDetailViewController.merchantName!, textColor: .black, backgroundColor: .white)
         addBackButton()
+        tbMerchantBranch.backgroundColor = PRColor.backgroundColor
         darkStatus()
     }
 }

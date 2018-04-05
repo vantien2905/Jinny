@@ -29,7 +29,7 @@ class PromotionDetailViewController: BaseViewController {
         didSet {
             cvVoucherDetail.reloadData()
             
-            //MARK: Setup the merchantName
+            // MARK: Setup the merchantName
             if let merchantName = promotionDetail?.merchantName {
                 setNavigation(name: merchantName)
             } else {
@@ -60,6 +60,7 @@ class PromotionDetailViewController: BaseViewController {
     
     func setUpComponents() {
         darkStatus()
+        cvVoucherDetail.backgroundColor = PRColor.backgroundColor
         cvVoucherDetail.delegate = self
         cvVoucherDetail.dataSource = self
         
@@ -164,7 +165,6 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             
             return CGSize(width: size, height: 100)
         } else {
-            
             return CGSize(width: 0, height: 0)
         }
     }
