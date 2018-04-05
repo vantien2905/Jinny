@@ -23,7 +23,7 @@ class SettingViewController: BaseViewController {
     @IBOutlet weak var btnDayToRemind: UIButton!
     var listDay = ["1","2","3","4","5","6","7"]
     let disposeBag = DisposeBag()
-    let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
+    let promotionVM = AllPromotionViewModel()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         darkStatus()
@@ -33,7 +33,6 @@ class SettingViewController: BaseViewController {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         setupView()
         bindData()
@@ -47,8 +46,6 @@ class SettingViewController: BaseViewController {
              lbNumberDay.text = "7 days"
             KeychainManager.shared.saveString(value: "7" , forkey: KeychainItem.leftDayToRemind)
         }
-       
-        if notificationType?.rawValue != 0 {
             if let _pushNotificationStatus = KeychainManager.shared.getBool(key: KeychainItem.pushNotificationStatus),
                 let _voucherExprireStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus),
                 let _storeDiscountStatus = KeychainManager.shared.getBool(key: KeychainItem.storeDiscountStatus) {
@@ -57,15 +54,10 @@ class SettingViewController: BaseViewController {
                 vVoucherNotiSwitch.isCheck.value    = _voucherExprireStatus
                 vStoreDiscountSwitch.isCheck.value  = _storeDiscountStatus
             } else {
-                vPushNotiSwitch.isCheck.value       = true
-                vVoucherNotiSwitch.isCheck.value    = true
-                vStoreDiscountSwitch.isCheck.value  = true
-            }
-        } else {
             vPushNotiSwitch.isCheck.value       = false
             vVoucherNotiSwitch.isCheck.value    = false
             vStoreDiscountSwitch.isCheck.value  = false
-            lbNumberDay.text                    = "7 days"
+            //lbNumberDay.text                    = "7 days"
         }
     }
     
@@ -74,8 +66,6 @@ class SettingViewController: BaseViewController {
             guard let strongSelf = self else {return}
             if value {
                 LocalNotification.registerForLocalNotification(on: UIApplication.shared)
-                strongSelf.vVoucherNotiSwitch.btnAction.isEnabled = true
-                strongSelf.vStoreDiscountSwitch.btnAction.isEnabled = true
             } else {
                 if strongSelf.vVoucherNotiSwitch.isCheck.value {
                     strongSelf.vVoucherNotiSwitch.btnActionTapped()
@@ -85,8 +75,6 @@ class SettingViewController: BaseViewController {
                     strongSelf.vStoreDiscountSwitch.btnActionTapped()
                     KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.storeDiscountStatus)
                 }
-                //strongSelf.vVoucherNotiSwitch.btnAction.isEnabled = false
-                //strongSelf.vStoreDiscountSwitch.btnAction.isEnabled = false
                 UIApplication.shared.cancelAllLocalNotifications()
             }
             KeychainManager.shared.saveBool(value: value, forkey: KeychainItem.pushNotificationStatus)
@@ -95,21 +83,31 @@ class SettingViewController: BaseViewController {
         vVoucherNotiSwitch.isCheck.asObservable().subscribe(onNext: { [weak self ]value in
             guard let strongSelf = self else {return}
                 if value {
+                    //NotificationCenter.default.post(name: Notification.Name("VoucherNotification"), object: nil)
                     strongSelf.btnDayToRemind.isEnabled = true
                     strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                     strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                     strongSelf.vPushNotiSwitch.isCheck.value = true
-                //LocalNotification.dispatchlocalNotification(with: "aaaa", body: "Test",day:"04/04/2018 +0000)",dayBeforeExprise: 0)
+                    KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.pushNotificationStatus)
+                    strongSelf.promotionVM.getListAllPromotion(order: "desc")
                 } else {
                     strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
                     strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0.6745098039, green: 0.6745098039, blue: 0.6745098039, alpha: 1)
                     strongSelf.btnDayToRemind.isEnabled = false
                     UIApplication.shared.cancelAllLocalNotifications()
                 }
+             strongSelf.vPushNotiSwitch.layoutSubviews()
             KeychainManager.shared.saveBool(value: value, forkey: KeychainItem.voucherExprireStatus)
         }).disposed(by: disposeBag)
         
-        vStoreDiscountSwitch.isCheck.asObservable().subscribe(onNext: { value in
+        vStoreDiscountSwitch.isCheck.asObservable().subscribe(onNext: { [weak self] value in
+            guard let strongSelf = self else {return}
+            if value {
+                strongSelf.vPushNotiSwitch.isCheck.value = true
+                 KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.pushNotificationStatus)
+               
+            }
+            strongSelf.vPushNotiSwitch.layoutSubviews()
             KeychainManager.shared.saveBool(value: value, forkey: KeychainItem.storeDiscountStatus)
         }).disposed(by: disposeBag)
         

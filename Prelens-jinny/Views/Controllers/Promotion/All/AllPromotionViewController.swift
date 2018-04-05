@@ -45,6 +45,7 @@ class AllPromotionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //NotificationCenter.default.addObserver(self, selector: #selector(self.getListNotification), name: NSNotification.Name(rawValue: "VoucherNotification"), object: nil)
         configColecttionView()
         setUpView()
         refreshControl = UIRefreshControl()
@@ -59,7 +60,9 @@ class AllPromotionViewController: UIViewController {
         vShadow.backgroundColor = .clear
         vSearch.tfSearch.attributedPlaceholder = "Search voucher".toAttributedString(color: UIColor.black.withAlphaComponent(0.5), font: PRFont.regular15, isUnderLine: false)
     }
-    
+    @objc func getListNotification(){
+        viewModel.getListAllPromotion(order: "desc")
+    }
     func setUpView() {
         self.view.backgroundColor = PRColor.backgroundColor
         vSearch.tfSearch.returnKeyType = .search

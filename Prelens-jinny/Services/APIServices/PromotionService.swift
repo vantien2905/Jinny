@@ -11,12 +11,14 @@ import Alamofire
 protocol PromotionServiceProtocol {
     
     func getListAllPromotion(order: String) -> Observable<[Promotion]>
-    func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?>
     func getPromotionDetail(id: String) -> Observable<PromotionDetail?>
     func getListStarredPromotion(order: String)  -> Observable<[Promotion]>
+    func getListAchivedPromotion(order:String) -> Observable<[Promotion]>
+    
+    func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?>
     func addVoucher(code: String) -> Observable<PromotionDetail?>
     func removeVoucher(idVoucher: String) -> Observable<PromotionDetail?>
-    func getListAchivedPromotion(order:String) -> Observable<[Promotion]>
+    func redeemVoucher(idVoucher: String) -> Observable<PromotionDetail?>
     
 }
 
@@ -32,12 +34,6 @@ class PromotionService: PromotionServiceProtocol {
         return network.rx_Array(url: APIEndpoint.Promotion.getListAllPromotion, method: .get, parameters: param)
     }
     
-    func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?> {
-        var _url = APIEndpoint.Promotion.addBookmarkVoucher
-        _url = String(format: _url, "\(idBookmark)")
-        return network.rx_Object(url: _url, method: .put, parameters: [:])
-    }
-    
     func getPromotionDetail(id: String) -> Observable<PromotionDetail?> {
         var _url = APIEndpoint.Promotion.getPromotionDetail
         _url = String(format: _url, "\(id)")
@@ -48,6 +44,17 @@ class PromotionService: PromotionServiceProtocol {
         let param = ["order" : order]  as [String : AnyObject]
         return network.rx_Array(url: APIEndpoint.Promotion.getListStarredPromotion,
                                 method: .get, parameters: param)
+    }
+    
+    func getListAchivedPromotion(order:String) -> Observable<[Promotion]> {
+        let param = ["order" : order]  as [String : AnyObject]
+        return network.rx_Array(url: APIEndpoint.Promotion.getListAchivedPromotion, method: .get, parameters: param)
+    }
+    
+    func addBookmarkVoucher(idBookmark: String) -> Observable<Promotion?> {
+        var _url = APIEndpoint.Promotion.addBookmarkVoucher
+        _url = String(format: _url, "\(idBookmark)")
+        return network.rx_Object(url: _url, method: .put, parameters: [:])
     }
     
     func addVoucher(code: String) -> Observable<PromotionDetail?> {
@@ -62,9 +69,37 @@ class PromotionService: PromotionServiceProtocol {
         return network.rx_Object(url: _url, method: .delete, parameters: param)
     }
     
-    func getListAchivedPromotion(order:String) -> Observable<[Promotion]> {
-        let param = ["order" : order]  as [String : AnyObject]
-        return network.rx_Array(url: APIEndpoint.Promotion.getListAchivedPromotion, method: .get, parameters: param)
-        
+    func redeemVoucher(idVoucher: String) -> Observable<PromotionDetail?> {
+        var _url = APIEndpoint.Promotion.redeemVoucher
+        _url = String(format: _url, "\(idVoucher)")
+        let param = ["id" : idVoucher] as [String: AnyObject]
+        return network.rx_Object(url: _url, method: .post, parameters: param)
     }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

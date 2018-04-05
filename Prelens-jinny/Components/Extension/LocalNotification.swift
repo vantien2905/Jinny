@@ -42,8 +42,8 @@ class func dispatchlocalNotification(with title: String, body: String, userInfo:
             dateComponents.year  = calendar.component(.year, from: dayBefore)
             dateComponents.month = calendar.component(.month, from: dayBefore)
             dateComponents.day  = calendar.component(.day, from: dayBefore)
-            dateComponents.hour = 10
-            dateComponents.minute = 54
+            dateComponents.hour = 09
+            dateComponents.minute = 21
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
@@ -69,6 +69,19 @@ class func dispatchlocalNotification(with title: String, body: String, userInfo:
             if notification.userInfo!["id"] as? Int == item.merchant?.id {
                 UIApplication.shared.cancelLocalNotification(notification)
             }
+        }
+    }
+    
+    class func setupSettingStatus(){
+        let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
+        if notificationType?.rawValue != 0 {
+            KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.pushNotificationStatus)
+            KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.voucherExprireStatus)
+            KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.storeDiscountStatus)
+        } else {
+            KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.pushNotificationStatus)
+            KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.voucherExprireStatus)
+            KeychainManager.shared.saveBool(value: false, forkey: KeychainItem.storeDiscountStatus)
         }
     }
 }

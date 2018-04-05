@@ -25,7 +25,6 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
     var listAllPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
     var listTemp = [Promotion]()
     let disposeBag = DisposeBag()
-    
     init() {
         isLatest = Variable<Bool>(true)
         textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
@@ -61,14 +60,14 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 strongSelf.setupNotification(listData: listPromotion)
             }).disposed(by: disposeBag)
     }
+    
     func setupNotification(listData: [Promotion]) {
         guard let _leftDay = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind) else {return}
-        guard let _voucherNotiStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus)else {return}
+        guard let _voucherNotiStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus) else {return}
         if _voucherNotiStatus {
             if listData.count != 0 {
                 for item in listData {
                     guard let _name = item.merchant?.name , let _expireDate = item.expiresAt else { return  }
-                    //LocalNotification.dispatchlocalNotification(with: _name, body: "", day: _expireDate, dayBeforeExprise:Int(_leftDay)!)
                     LocalNotification.dispatchlocalNotification(with: _name, body: "", userInfo: ["id" : item.id ?? ""], day: _expireDate, dayBeforeExprise: Int(_leftDay)!)
                 }
             }

@@ -95,6 +95,7 @@ class PRSignUpViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         vm.isSignUpSuccess.subscribe (onCompleted: {
+            LocalNotification.setupSettingStatus()
             DispatchQueue.main.async {
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                 appDelegate.goToMainApp()

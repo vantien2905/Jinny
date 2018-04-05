@@ -188,6 +188,7 @@
 		BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */; };
 		BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */; };
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
+		BCCB0AE520753214001BB647 /* RedeemVoucherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0AE420753214001BB647 /* RedeemVoucherViewModel.swift */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
 		BCE65DC020737E790027C801 /* KPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DBE20737E790027C801 /* KPageViewController.swift */; };
@@ -396,6 +397,7 @@
 		BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
 		BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BCCB0AE420753214001BB647 /* RedeemVoucherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemVoucherViewModel.swift; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
 		BCE65DBE20737E790027C801 /* KPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPageViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				760EC3B42060ADBE001390B8 /* AllPromotionViewModel.swift */,
 				BC446B0D2060B18E00ED4117 /* PromotionDetailViewModel.swift */,
 				BC47636E206C95B20096BACB /* AddVoucherViewModel.swift */,
+				BCCB0AE420753214001BB647 /* RedeemVoucherViewModel.swift */,
 				76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */,
 				76A3D2A3206E127F00D52966 /* AchivedPromotionViewModel.swift */,
 			);
@@ -1686,6 +1689,7 @@
 				B7CD064F205F9AF6009951A4 /* FooterMembershipDetailCell.swift in Sources */,
 				76A3F0CF2057C5ED007BC21A /* Observable+Operators.swift in Sources */,
 				BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */,
+				BCCB0AE520753214001BB647 /* RedeemVoucherViewModel.swift in Sources */,
 				BC9A6156205F9BBE0071EF4F /* PromotionDetailCell.swift in Sources */,
 				BC3FB2DC206E39700070157A /* PopUpYesNo.swift in Sources */,
 				B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */,

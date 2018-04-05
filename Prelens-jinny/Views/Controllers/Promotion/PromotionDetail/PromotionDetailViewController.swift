@@ -84,6 +84,14 @@ class PromotionDetailViewController: BaseViewController {
             guard let strongSelf = self else { return }
             strongSelf.promotionDetail = voucher
             strongSelf.starTapped = voucher?.isBookmarked
+            
+            if voucher?.archived == true {
+                strongSelf.btnRedeem.backgroundColor = .gray
+                strongSelf.btnRedeem.isEnabled = false
+            } else {
+                strongSelf.btnRedeem.backgroundColor =  PRColor.mainAppColor
+                strongSelf.btnRedeem.isEnabled = true
+            }
         }).disposed(by: disposeBag)
         
         viewModel.isBookmarked.asObservable().subscribe(onNext: { [weak self] value in
@@ -196,5 +204,4 @@ extension PromotionDetailViewController: PromotionDetailFooterCellDelegate {
             })
         }, actionNo: {})
     }
-    
 }

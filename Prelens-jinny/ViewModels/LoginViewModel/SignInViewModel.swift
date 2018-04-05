@@ -23,9 +23,6 @@ final class SignInViewModel {
         return Observable.combineLatest(email.asObservable(), password.asObservable()) { email, password in email!.count > 0 && password!.count > 0
         }
     }
-
-//    var apiSignIn                   : APIAuthenticationService = APIAuthenticationService()
-
     init() {
         self.email = Variable<String?>(nil)
         self.password = Variable<String?>(nil)
@@ -80,11 +77,10 @@ final class SignInViewModel {
                 guard let strongSelf = self else { return }
                 let defaults = UserDefaults.standard
                 if let token = userLogin.token {
-                      KeychainManager.shared.saveString(value: strongSelf.password.value&, forkey: .password)
                       KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
                       KeychainManager.shared.setToken(token)
+                      KeychainManager.shared.saveString(value: "7", forkey: KeychainItem.leftDayToRemind)
                 }
-
                 strongSelf.isLoginSuccess.onCompleted()
                 defaults.set(true, forKey: KeychainItem.isFirstRunning.rawValue)
                 }, onError: { error in
@@ -110,4 +106,6 @@ final class SignInViewModel {
             self?.userLogin.value = user
         }).disposed(by: disposeBag)
     }
+    
+    
 }
