@@ -103,7 +103,6 @@ class PREditProfileViewController: BaseViewController {
          _ = tfEmail.rx.text.map { $0?.cutWhiteSpace() ?? ""}.bind(to: viewModel.email).disposed(by: disposeBag)
         _ = tfName.rx.text.map { $0?.cutWhiteSpace() ?? ""}.bind(to: viewModel.name).disposed(by: disposeBag)
        
-        
         btnSave.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
             .bind(to: viewModel.btnSaveTapped)
@@ -162,7 +161,6 @@ class PREditProfileViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = false
         setTitle(title: "Edit Profile", textColor: .black, backgroundColor: .white)
         
-        
         vResidentialRegion.layer.borderWidth = 0.4
         vResidentialRegion.layer.borderColor = PRColor.borderColor.cgColor
         vResidentialRegion.layer.cornerRadius = 2.5
@@ -184,6 +182,9 @@ class PREditProfileViewController: BaseViewController {
         vContainDate.layer.borderColor = PRColor.borderColor.cgColor
         vContainDate.layer.cornerRadius = 2.5
         btnSave.layer.cornerRadius = 2.5
+        
+        lbDate.font = PRFont.semiItatic15
+        lbDate.textColor = PRColor.placeHolderProfile
         
     }
 }

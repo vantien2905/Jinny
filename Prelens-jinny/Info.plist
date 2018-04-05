@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>21</string>
+	<string>22</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -45,6 +45,7 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>segoeuii.ttf</string>
 		<string>OstrichSans-Heavy.tff</string>
 		<string>seguibl.tff</string>
 		<string>seguisb.ttf</string>

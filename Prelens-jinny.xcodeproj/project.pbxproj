@@ -61,6 +61,7 @@
 		76E3559F206BA506008079CA /* StarredPromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E3559E206BA506008079CA /* StarredPromotionViewController.xib */; };
 		76E355A1206BABAA008079CA /* StarredPromotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */; };
 		B7054003206383C80028D90E /* PRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7054002206383C80028D90E /* PRLoadingView.swift */; };
+		B72A10B22074A72200AC704F /* OverlayCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A10B12074A72200AC704F /* OverlayCamera.swift */; };
 		B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626A205907AC00C7004D /* StarredHeaderCell.swift */; };
 		B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738626B205907AC00C7004D /* StarredHeaderCell.xib */; };
 		B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B738626E2059096700C7004D /* OtherHeaderCell.swift */; };
@@ -188,8 +189,6 @@
 		BCBC95F120562BB8004C1985 /* PRSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */; };
 		BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */; };
 		BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */; };
-		BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */; };
-		BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */; };
 		BCBC961A205631ED004C1985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBC9619205631ED004C1985 /* Main.storyboard */; };
 		BCCB0AE520753214001BB647 /* RedeemVoucherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0AE420753214001BB647 /* RedeemVoucherViewModel.swift */; };
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
@@ -269,6 +268,7 @@
 		76E3559E206BA506008079CA /* StarredPromotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarredPromotionViewController.xib; sourceTree = "<group>"; };
 		76E355A0206BABAA008079CA /* StarredPromotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredPromotionViewModel.swift; sourceTree = "<group>"; };
 		B7054002206383C80028D90E /* PRLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLoadingView.swift; sourceTree = "<group>"; };
+		B72A10B12074A72200AC704F /* OverlayCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCamera.swift; sourceTree = "<group>"; };
 		B738626A205907AC00C7004D /* StarredHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredHeaderCell.swift; sourceTree = "<group>"; };
 		B738626B205907AC00C7004D /* StarredHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarredHeaderCell.xib; sourceTree = "<group>"; };
 		B738626E2059096700C7004D /* OtherHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHeaderCell.swift; sourceTree = "<group>"; };
@@ -398,8 +398,6 @@
 		BCBC95E920562BB8004C1985 /* PRSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRSignInViewController.xib; sourceTree = "<group>"; };
 		BCBC95EA20562BB8004C1985 /* PRLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRLoginViewController.xib; sourceTree = "<group>"; };
 		BCBC95EB20562BB8004C1985 /* PRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRLoginViewController.swift; sourceTree = "<group>"; };
-		BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRAddSuccessViewController.xib; sourceTree = "<group>"; };
-		BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRAddSuccessViewController.swift; sourceTree = "<group>"; };
 		BCBC9619205631ED004C1985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BCCB0AE420753214001BB647 /* RedeemVoucherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemVoucherViewModel.swift; sourceTree = "<group>"; };
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -652,6 +650,14 @@
 				B7054002206383C80028D90E /* PRLoadingView.swift */,
 			);
 			path = PRLoadingView;
+			sourceTree = "<group>";
+		};
+		B72A10B02074A6FB00AC704F /* OverlayCamera */ = {
+			isa = PBXGroup;
+			children = (
+				B72A10B12074A72200AC704F /* OverlayCamera.swift */,
+			);
+			path = OverlayCamera;
 			sourceTree = "<group>";
 		};
 		B73862612058FF1600C7004D /* SubView */ = {
@@ -1130,6 +1136,7 @@
 		BCBC959720562411004C1985 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B72A10B02074A6FB00AC704F /* OverlayCamera */,
 				760A99EC2075CEE400962000 /* TextFieldView */,
 				BC6E9DC3205A52AD00C5DF01 /* PRTabbarCustom */,
 				B7D54B012069ED9C000F4957 /* Dropdown */,
@@ -1295,18 +1302,8 @@
 				B79AEE562060C0E5007F0BB3 /* AddManual */,
 				B79AEE502060BA4D007F0BB3 /* ScanCode */,
 				B7899EB020609F2600ADEC43 /* AddMerchant */,
-				BCBC960F20563012004C1985 /* AddSuccess */,
 			);
 			path = AddMembership;
-			sourceTree = "<group>";
-		};
-		BCBC960F20563012004C1985 /* AddSuccess */ = {
-			isa = PBXGroup;
-			children = (
-				BCBC961020563012004C1985 /* PRAddSuccessViewController.xib */,
-				BCBC961120563012004C1985 /* PRAddSuccessViewController.swift */,
-			);
-			path = AddSuccess;
 			sourceTree = "<group>";
 		};
 		BCE65DC220737F660027C801 /* Helpers */ = {
@@ -1471,7 +1468,6 @@
 				B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */,
 				76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
-				BCBC961520563012004C1985 /* PRAddSuccessViewController.xib in Resources */,
 				BC9A6152205F77F00071EF4F /* PromotionDetailFooterCell.xib in Resources */,
 				B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
@@ -1653,6 +1649,7 @@
 				B7899EBD2060B31900ADEC43 /* AddMerchantCell.swift in Sources */,
 				760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */,
 				BC6EF85F2061063200A156B9 /* PRPhotoDetail.swift in Sources */,
+				B72A10B22074A72200AC704F /* OverlayCamera.swift in Sources */,
 				BC48999E20621EBF00E7DE0D /* DateOpen.swift in Sources */,
 				B7645EA6206A328E007EAE38 /* SortPopUpView.swift in Sources */,
 				760EC3B52060ADBE001390B8 /* AllPromotionViewModel.swift in Sources */,
@@ -1717,7 +1714,6 @@
 				BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */,
 				BC6EF8582060F53400A156B9 /* PRHelper.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
-				BCBC961620563012004C1985 /* PRAddSuccessViewController.swift in Sources */,
 				760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */,
 				B738626C205907AC00C7004D /* StarredHeaderCell.swift in Sources */,
 				D991185E205B82D900F701ED /* MembershipService.swift in Sources */,
