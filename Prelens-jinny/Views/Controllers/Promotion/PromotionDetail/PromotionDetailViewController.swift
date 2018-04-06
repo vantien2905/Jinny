@@ -158,10 +158,10 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
             return CGSize(width: size, height: 125 - (57 - _height))
         } else if indexPath.section == 1 {
-            let size = UIScreen.main.bounds.width - 40
+            let size = UIScreen.main.bounds.width - 12
             return CGSize(width: size, height: size*0.75)
         } else if indexPath.section == 2 {
-            let size = UIScreen.main.bounds.width - 40
+            let size = UIScreen.main.bounds.width - 12
             
             return CGSize(width: size, height: 100)
         } else {
