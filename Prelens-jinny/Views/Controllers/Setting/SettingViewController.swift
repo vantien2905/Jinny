@@ -28,7 +28,7 @@ class SettingViewController: BaseViewController {
         super.viewWillAppear(true)
         darkStatus()
         self.navigationController?.navigationBar.isHidden = false
-        setTitle(title: "Setting", textColor: .black, backgroundColor: .white)
+        setTitle(title: "SETTINGS", textColor: .black, backgroundColor: .white)
         addBackButton()
     }
     

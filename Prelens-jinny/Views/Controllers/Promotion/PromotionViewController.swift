@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PromotionViewController: UIViewController {
+class PromotionViewController: BaseViewController {
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!
     @IBOutlet weak var btnAddVoucher: UIButton!
@@ -29,6 +29,7 @@ class PromotionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupView()
+        lightStatus()
         vcAllPromotion.buttonHidden = self
         vcStarredPromotion.buttonHidden = self
         vcAchivedPromotion.buttonHidden = self
