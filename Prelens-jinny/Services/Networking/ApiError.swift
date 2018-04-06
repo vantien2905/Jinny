@@ -10,13 +10,14 @@ import Foundation
 import SwiftyJSON
 import ObjectMapper
 import RxSwift
+
 var errorQROut: Variable<Bool> = Variable<Bool>(false)
 var errorNotExit: Variable<Bool> = Variable<Bool>(false)
-
+var errordidAcquired: Variable<Bool> = Variable<Bool>(false)
 class ApiError: Error {
-
+    
     let statusCode: Int
-//    let responseError: ResponseError?
+    //    let responseError: ResponseError?
     init?(response: Response) {
         switch response.statusCode {
         case 200...299:
@@ -32,9 +33,15 @@ class ApiError: Error {
                 } else if (_responseError.code == ErrorCode.errorQROut.rawValue) {
                     errorQROut.value = true
                     errorNotExit.value = false
+                    errordidAcquired.value = false
                 } else if (_responseError.code == ErrorCode.errorNotExist.rawValue) {
                     errorNotExit.value = true
                     errorQROut.value = false
+                    errordidAcquired.value = false
+                } else if (_responseError.code == ErrorCode.didAcquired.rawValue){
+                    errorNotExit.value = false
+                    errorQROut.value = false
+                    errordidAcquired.value = true
                 } else if (_responseError.code == ErrorCode.errorTokenInvalid.rawValue) {
                     PopUpHelper.shared.showPopUp(message: _responseError.message& , action: {
                         KeychainManager.shared.deleteAllSavedData()
@@ -49,7 +56,7 @@ class ApiError: Error {
                 }
                 self.statusCode = 0
             }
-
+            
         default: self.statusCode = response.statusCode
         }
     }
