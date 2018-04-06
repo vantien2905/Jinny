@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="312-3C-L64">
-                    <rect key="frame" x="0.0" y="80" width="375" height="533.5"/>
+                    <rect key="frame" x="0.0" y="80" width="375" height="389.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgP-On-UDh">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="533.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="389.5"/>
                             <connections>
                                 <action selector="refreshScanner" destination="-1" eventType="touchUpInside" id="wAE-x6-CoG"/>
                             </connections>
@@ -36,17 +35,18 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="height" secondItem="312-3C-L64" secondAttribute="height" id="Del-7X-dog"/>
+                        <constraint firstAttribute="height" constant="389.5" id="j38-fh-TsY"/>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="centerY" secondItem="312-3C-L64" secondAttribute="centerY" id="jFc-GP-LWC"/>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="width" secondItem="312-3C-L64" secondAttribute="width" id="jSm-Zg-0cQ"/>
                         <constraint firstItem="FgP-On-UDh" firstAttribute="centerX" secondItem="312-3C-L64" secondAttribute="centerX" id="lqR-ZN-EgN"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3h-IU-UDN" customClass="OverlayQRCode" customModule="Jinny" customModuleProvider="target">
-                    <rect key="frame" x="62" y="222.5" width="250" height="250"/>
+                    <rect key="frame" x="107" y="194.5" width="160.5" height="160.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="DJc-qx-4gd"/>
-                        <constraint firstAttribute="width" constant="250" id="P3T-8U-eSM"/>
+                        <constraint firstAttribute="height" constant="160.5" id="DJc-qx-4gd"/>
+                        <constraint firstAttribute="width" constant="160.5" id="P3T-8U-eSM"/>
                     </constraints>
                 </view>
             </subviews>
@@ -56,7 +56,6 @@
                 <constraint firstItem="z3h-IU-UDN" firstAttribute="centerY" secondItem="312-3C-L64" secondAttribute="centerY" id="Fgo-cb-EfW"/>
                 <constraint firstItem="312-3C-L64" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Hzt-Ox-tKa"/>
                 <constraint firstItem="z3h-IU-UDN" firstAttribute="centerX" secondItem="312-3C-L64" secondAttribute="centerX" id="bk2-j7-gCN"/>
-                <constraint firstItem="312-3C-L64" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.8" id="f7K-SS-693"/>
                 <constraint firstItem="312-3C-L64" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="tPb-ul-jCg"/>
                 <constraint firstItem="312-3C-L64" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xXC-zf-rTF"/>
             </constraints>

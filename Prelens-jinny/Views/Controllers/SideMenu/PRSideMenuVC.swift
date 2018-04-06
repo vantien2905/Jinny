@@ -72,11 +72,13 @@ extension PRSideMenuVC {
     }
 
     @IBAction func termsAndConditionsTapped() {
-
+        let termVC = TermsViewController.initControllerFromNib()
+        self.push(controller: termVC)
     }
 
     @IBAction func privacyTapped() {
-
+        let privacyVC = PrivacyViewController.initControllerFromNib()
+        self.push(controller: privacyVC)
     }
 
     @IBAction func logoutTapped() {

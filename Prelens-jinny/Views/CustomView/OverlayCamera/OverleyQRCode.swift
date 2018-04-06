@@ -11,8 +11,8 @@ import UIKit
 class OverlayQRCode: PRBaseView {
     
     var path = UIBezierPath()
-    var lineWidth = CGFloat(10)
-    var space = CGFloat(20)
+    var lineWidth = CGFloat(6)
+    var space = CGFloat(3)
     var lenghtLine = CGFloat(40)
     
     override func draw(_ rect: CGRect) {
@@ -35,7 +35,10 @@ class OverlayQRCode: PRBaseView {
         path.addLine(to: CGPoint(x: space, y: height - space))
         path.addLine(to: CGPoint(x: space, y: height - space - lenghtLine))
         
-        UIColor.black.withAlphaComponent(0.5).setStroke()
+        path.move(to: CGPoint(x: lenghtLine/2, y: height/2))
+        path.addLine(to: CGPoint(x: width - lenghtLine/2, y: height/2))
+        
+        UIColor.white.setStroke()
         path.stroke()
         
     }

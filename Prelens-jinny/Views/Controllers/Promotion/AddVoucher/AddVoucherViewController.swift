@@ -44,6 +44,7 @@ class AddVoucherViewController: BaseViewController {
             self.reloadScanner()
         }
         setUpBinding()
+        self.navigationController?.navigationBar.barTintColor = PRColor.backgroundColor
     }
     
     override func viewDidDisappear(_ animated: Bool) {
