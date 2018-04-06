@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hn5-64-t73">
-                        <rect key="frame" x="23" y="0.0" width="330" height="83.5"/>
+                        <rect key="frame" x="6" y="0.0" width="364" height="83.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-n0-Ugr">
                                 <rect key="frame" x="0.0" y="26" width="50" height="32"/>
@@ -36,13 +36,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Singapore Airlines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9n-fl-e9h">
-                                <rect key="frame" x="61.5" y="31" width="268.5" height="23"/>
+                                <rect key="frame" x="61.5" y="31" width="302.5" height="23"/>
                                 <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="17.5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXd-bs-o8J">
-                                <rect key="frame" x="0.0" y="82.5" width="330" height="1"/>
+                                <rect key="frame" x="0.0" y="82.5" width="364" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="MCp-sx-bSI"/>
@@ -65,8 +65,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Hn5-64-t73" secondAttribute="bottom" id="721-VG-cod"/>
                     <constraint firstItem="Hn5-64-t73" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9OU-ih-Oio"/>
-                    <constraint firstAttribute="trailing" secondItem="Hn5-64-t73" secondAttribute="trailing" constant="23" id="TS5-Of-dpO"/>
-                    <constraint firstItem="Hn5-64-t73" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="nYU-un-C7J"/>
+                    <constraint firstAttribute="trailing" secondItem="Hn5-64-t73" secondAttribute="trailing" constant="6" id="TS5-Of-dpO"/>
+                    <constraint firstItem="Hn5-64-t73" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="nYU-un-C7J"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
