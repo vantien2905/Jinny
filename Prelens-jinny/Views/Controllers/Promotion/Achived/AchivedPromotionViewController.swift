@@ -111,12 +111,10 @@ class AchivedPromotionViewController: UIViewController {
         cvAchivedPromotion.dataSource = self
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        self.view.layoutIfNeeded()
-        if actualPosition.y > 100 {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHidden(isHidden: false)
-        } else if actualPosition.y < -100 {
+        } else {
             buttonHidden?.isHidden(isHidden: true)
         }
     }
