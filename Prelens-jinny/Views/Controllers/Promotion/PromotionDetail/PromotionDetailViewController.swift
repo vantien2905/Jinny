@@ -15,6 +15,7 @@ class PromotionDetailViewController: BaseViewController {
     @IBOutlet weak var btnRedeem: UIButton!
     
     let disposeBag = DisposeBag()
+    var voucherArchived: Bool? = false
     
     var starTapped: Bool? {
         didSet {
@@ -41,6 +42,15 @@ class PromotionDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpComponents()
+        
+        guard let isArchived = voucherArchived  else { return }
+        if isArchived {
+            btnRedeem.backgroundColor = .gray
+            btnRedeem.isEnabled = false
+        } else {
+            btnRedeem.backgroundColor =  PRColor.mainAppColor
+            btnRedeem.isEnabled = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +59,7 @@ class PromotionDetailViewController: BaseViewController {
         bindData()
     }
     
-    class func configureViewController(idVoucher: String) -> UIViewController {
+    class func configureViewController(idVoucher: String) -> PromotionDetailViewController {
         let vcVoucherDetail = PromotionDetailViewController.initControllerFromNib() as! PromotionDetailViewController
         var viewModel: PromotionDetailViewModelProtocol {
             return PromotionDetailViewModel(id: idVoucher)
@@ -86,13 +96,6 @@ class PromotionDetailViewController: BaseViewController {
             strongSelf.promotionDetail = voucher
             strongSelf.starTapped = voucher?.isBookmarked
             
-            if voucher?.archived == true {
-                strongSelf.btnRedeem.backgroundColor = .gray
-                strongSelf.btnRedeem.isEnabled = false
-            } else {
-                strongSelf.btnRedeem.backgroundColor =  PRColor.mainAppColor
-                strongSelf.btnRedeem.isEnabled = true
-            }
         }).disposed(by: disposeBag)
         
         viewModel.isBookmarked.asObservable().subscribe(onNext: { [weak self] value in
@@ -186,11 +189,18 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
 
 extension PromotionDetailViewController: BaseViewControllerDelegate {
     func starBookmarkTapped() {
-        if let _starTapped = starTapped {
-            starTapped = !_starTapped
+        if let isArchived = voucherArchived {
+            if !isArchived {
+                if let _starTapped = starTapped {
+                    starTapped = !_starTapped
+                }
+                guard let id = promotionDetail?.id else { return }
+                viewModel.addBookmarkVoucher(idBookmark: id)
+            } else {
+                starTapped = false
+            }
         }
-        guard let id = promotionDetail?.id else { return }
-        viewModel.addBookmarkVoucher(idBookmark: id)
+
     }
 }
 

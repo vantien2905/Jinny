@@ -29,6 +29,9 @@ class AddVoucherViewModel: AddVoucherViewModelProtocol {
                 if errorQROut.value == true {
                     self.resultString.value = "Out Of Stock"
                 }
+                if errordidAcquired.value == true {
+                    self.resultString.value = "You're already acquire this voucher"
+                }
         }).disposed(by: disposeBag)
     }
 }
