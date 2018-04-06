@@ -24,6 +24,10 @@
 		760EC3B22060AC5E001390B8 /* PromotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3B12060AC5E001390B8 /* PromotionService.swift */; };
 		760EC3B52060ADBE001390B8 /* AllPromotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EC3B42060ADBE001390B8 /* AllPromotionViewModel.swift */; };
 		7610ADE920597208006AF99B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */; };
+		761201B520770CF8003D3CFA /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761201B320770CF8003D3CFA /* TermsViewController.swift */; };
+		761201B620770CF8003D3CFA /* TermsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 761201B420770CF8003D3CFA /* TermsViewController.xib */; };
+		761201BA2077128D003D3CFA /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761201B82077128D003D3CFA /* PrivacyViewController.swift */; };
+		761201BB2077128D003D3CFA /* PrivacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 761201B92077128D003D3CFA /* PrivacyViewController.xib */; };
 		7638FA1B205FB73A00D33011 /* EmptyPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */; };
 		7638FA1C205FB73A00D33011 /* EmptyPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */; };
 		7640C098205A167100F384B4 /* PRForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640C097205A167100F384B4 /* PRForgotPassword.swift */; };
@@ -232,6 +236,10 @@
 		760EC3B12060AC5E001390B8 /* PromotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionService.swift; sourceTree = "<group>"; };
 		760EC3B42060ADBE001390B8 /* AllPromotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPromotionViewModel.swift; sourceTree = "<group>"; };
 		7610ADE820597208006AF99B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		761201B320770CF8003D3CFA /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		761201B420770CF8003D3CFA /* TermsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsViewController.xib; sourceTree = "<group>"; };
+		761201B82077128D003D3CFA /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		761201B92077128D003D3CFA /* PrivacyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyViewController.xib; sourceTree = "<group>"; };
 		7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPromotionCell.swift; sourceTree = "<group>"; };
 		7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPromotionCell.xib; sourceTree = "<group>"; };
 		7640C097205A167100F384B4 /* PRForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRForgotPassword.swift; sourceTree = "<group>"; };
@@ -497,6 +505,24 @@
 				76A3D2A3206E127F00D52966 /* AchivedPromotionViewModel.swift */,
 			);
 			path = PromotionViewModel;
+			sourceTree = "<group>";
+		};
+		761201B220770CDA003D3CFA /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				761201B320770CF8003D3CFA /* TermsViewController.swift */,
+				761201B420770CF8003D3CFA /* TermsViewController.xib */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		761201B72077124F003D3CFA /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				761201B82077128D003D3CFA /* PrivacyViewController.swift */,
+				761201B92077128D003D3CFA /* PrivacyViewController.xib */,
+			);
+			path = Privacy;
 			sourceTree = "<group>";
 		};
 		76469D0120563D4400E2950E /* Models */ = {
@@ -1204,6 +1230,8 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				761201B72077124F003D3CFA /* Privacy */,
+				761201B220770CDA003D3CFA /* Terms */,
 				B7B1BC712058CFD60042B3D4 /* Base */,
 				BC6F3368205BC6DB00CDAD85 /* Home */,
 				76DC88E7205F5A4600AD87F3 /* Promotion */,
@@ -1432,6 +1460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7B1BCA32058D7FA0042B3D4 /* seguibli.ttf in Resources */,
+				761201BB2077128D003D3CFA /* PrivacyViewController.xib in Resources */,
 				760C1125205D164C009B9205 /* SettingViewController.xib in Resources */,
 				B7899EB32060A39800ADEC43 /* SearchView.xib in Resources */,
 				76A3D2A6206E159600D52966 /* AchivedPromotionViewController.xib in Resources */,
@@ -1441,6 +1470,7 @@
 				BC9A614D205F77310071EF4F /* PromotionDetailHeaderCell.xib in Resources */,
 				B7B1BC9B2058D7FA0042B3D4 /* segoeuisl.ttf in Resources */,
 				BCBC961A205631ED004C1985 /* Main.storyboard in Resources */,
+				761201B620770CF8003D3CFA /* TermsViewController.xib in Resources */,
 				B7B1BCA22058D7FA0042B3D4 /* seguibl.ttf in Resources */,
 				76E3559D206B8C44008079CA /* AllPromotionViewController.xib in Resources */,
 				76E3559F206BA506008079CA /* StarredPromotionViewController.xib in Resources */,
@@ -1712,6 +1742,7 @@
 				B7C859FA206A3D2700033325 /* Date+Extension.swift in Sources */,
 				BCE65DC420737F770027C801 /* Utils.swift in Sources */,
 				B7B1BC7D2058D6F40042B3D4 /* MembershipCell.swift in Sources */,
+				761201B520770CF8003D3CFA /* TermsViewController.swift in Sources */,
 				B7886657205A1C1600096F27 /* Merchant.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
 				D9911855205B7AC100F701ED /* NetworkSession.swift in Sources */,
@@ -1724,6 +1755,7 @@
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
+				761201BA2077128D003D3CFA /* PrivacyViewController.swift in Sources */,
 				7609B00B20746ABC00227AAE /* Route.swift in Sources */,
 				B7D54B032069EDC8000F4957 /* Dropdown.swift in Sources */,
 				BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */,

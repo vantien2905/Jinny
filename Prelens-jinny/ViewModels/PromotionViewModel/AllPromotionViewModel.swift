@@ -25,6 +25,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
     var listAllPromotion: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)
     var listTemp = [Promotion]()
     let disposeBag = DisposeBag()
+    
     init() {
         isLatest = Variable<Bool>(true)
         textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
@@ -38,7 +39,6 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                     }
                     return false
                 }
-                
             }
             if let _list = listVoucher {
                 self?.listTemp = _list
@@ -54,11 +54,39 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
             //.showProgressIndicator()
             .subscribe(onNext: { [weak self] (listPromotion) in
                 guard let strongSelf = self else { return }
-                strongSelf.listAllPromotion.value = listPromotion
-                strongSelf.listSearchVoucher.value = listPromotion
-                 UIApplication.shared.cancelAllLocalNotifications()
+
+                var listNew = [Promotion]()
+                var listOld = [Promotion]()
+                
+                for element in listPromotion {
+                    if element.isReaded == true {
+                        listNew.append(element)
+                    } else {
+                        listOld.append(element)
+                    }
+                }
+                strongSelf.listAllPromotion.value = listOld + listNew
+                strongSelf.listSearchVoucher.value = listOld + listNew
+                
+                // MARK: Setup notification
+                UIApplication.shared.cancelAllLocalNotifications()
                 strongSelf.setupNotification(listData: listPromotion)
             }).disposed(by: disposeBag)
+    }
+    
+    func sortAllPromotion() {
+        isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
+            guard let strongSelf = self else { return }
+            if isLatest {
+                strongSelf.getListAllPromotion(order: "desc")
+            } else {
+                strongSelf.getListAllPromotion(order: "asc")
+            }
+        }).disposed(by: disposeBag)
+    }
+    func refresh() {
+        isLatest.value = true
+        getListAllPromotion(order: "desc")
     }
     
     func setupNotification(listData: [Promotion]) {
@@ -68,23 +96,10 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
             if listData.count != 0 {
                 for item in listData {
                     guard let _name = item.merchant?.name , let _expireDate = item.expiresAt else { return  }
-                    LocalNotification.dispatchlocalNotification(with: _name, body: "", userInfo: ["id" : item.id ?? ""], day: _expireDate, dayBeforeExprise: Int(_leftDay)!)
+                    LocalNotification.dispatchlocalNotification(with: _name, body: "The vouchers will expire after \(_leftDay) days", userInfo: ["id" : item.id ?? ""], day: _expireDate, dayBeforeExprise: Int(_leftDay)!)
+
                 }
             }
         }
-    }
-    func sortAllPromotion() {
-        isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
-            guard let strongSelf = self else { return }
-            if isLatest {
-                strongSelf.getListAllPromotion(order: "desc")
-           } else {
-                 strongSelf.getListAllPromotion(order: "asc")
-            }
-        }).disposed(by: disposeBag)
-    }
-    func refresh() {
-        isLatest.value = true
-        getListAllPromotion(order: "desc")
     }
 }
