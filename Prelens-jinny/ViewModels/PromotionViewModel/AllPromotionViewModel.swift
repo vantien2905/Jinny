@@ -54,8 +54,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
             //.showProgressIndicator()
             .subscribe(onNext: { [weak self] (listPromotion) in
                 guard let strongSelf = self else { return }
-                //                strongSelf.listAllPromotion.value = listPromotion
-                //                strongSelf.listSearchVoucher.value = listPromotion
+
                 var listNew = [Promotion]()
                 var listOld = [Promotion]()
                 
@@ -69,7 +68,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 strongSelf.listAllPromotion.value = listOld + listNew
                 strongSelf.listSearchVoucher.value = listOld + listNew
                 
-                //MARK: Setup notification
+                // MARK: Setup notification
                 UIApplication.shared.cancelAllLocalNotifications()
                 strongSelf.setupNotification(listData: listPromotion)
             }).disposed(by: disposeBag)

@@ -83,7 +83,6 @@ class SettingViewController: BaseViewController {
         vVoucherNotiSwitch.isCheck.asObservable().subscribe(onNext: { [weak self ]value in
             guard let strongSelf = self else {return}
                 if value {
-                    //NotificationCenter.default.post(name: Notification.Name("VoucherNotification"), object: nil)
                     strongSelf.btnDayToRemind.isEnabled = true
                     strongSelf.lbNumberDay.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                     strongSelf.lbDaysToRemind.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -150,7 +149,7 @@ extension SettingViewController:SelectDataPopUpViewDelegate {
         } else {
             lbNumberDay.text = listDay[index] + " days"
         }
-        print(listDay[index])
         KeychainManager.shared.saveString(value: listDay[index] , forkey: KeychainItem.leftDayToRemind)
+        promotionVM.getListAllPromotion(order: "desc")
     }
 }
