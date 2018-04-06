@@ -30,6 +30,7 @@ class PromotionViewController: BaseViewController {
         super.viewWillAppear(true)
         setupView()
         lightStatus()
+        self.navigationController?.navigationBar.isHidden = true
         vcAllPromotion.buttonHidden = self
         vcStarredPromotion.buttonHidden = self
         vcAchivedPromotion.buttonHidden = self
