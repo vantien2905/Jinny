@@ -131,7 +131,6 @@ class PREditProfileViewController: BaseViewController {
             .subscribe(onNext: { [unowned self] in
                 let choose = ChooseDatePopupView()
                 choose.delegate = self
-                //self.vmNewTask.inputs.isStartDate.value = false
                 self.tfName.endEditing(true)
                 self.tfEmail.endEditing(true)
                 choose.showPopUp(minDate: nil, maxDate: Date(), currentDate: nil)
@@ -227,6 +226,5 @@ extension PREditProfileViewController: ChooseDatePopUpViewDelegate {
         let _date = dateFormatter.string(from: date)
         lbDate.text = _date
         viewModel.dob.value = lbDate.text
-        //vmNewTask.inputs.dateSelected.value = date
     }
 }
