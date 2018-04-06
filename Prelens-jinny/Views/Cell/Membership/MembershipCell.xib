@@ -23,10 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="227" height="178"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-xA-N6x">
-                                <rect key="frame" x="0.0" y="0.0" width="227" height="178"/>
+                                <rect key="frame" x="0.0" y="25" width="227" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starred_highlight" translatesAutoresizingMaskIntoConstraints="NO" id="MxZ-CO-UJB">
-                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="0.0" y="0.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="QUI-DZ-7K8"/>
                                     <constraint firstAttribute="width" constant="20" id="mxC-iQ-Xfl"/>
@@ -35,12 +35,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MxZ-CO-UJB" firstAttribute="top" secondItem="eJg-xA-N6x" secondAttribute="top" id="0za-3n-dJU"/>
-                            <constraint firstItem="eJg-xA-N6x" firstAttribute="top" secondItem="iwN-Gd-jyk" secondAttribute="top" constant="0.5" id="7da-VH-T4U"/>
+                            <constraint firstItem="eJg-xA-N6x" firstAttribute="top" secondItem="iwN-Gd-jyk" secondAttribute="top" constant="25" id="7da-VH-T4U"/>
+                            <constraint firstItem="MxZ-CO-UJB" firstAttribute="top" secondItem="iwN-Gd-jyk" secondAttribute="top" constant="0.5" id="HIK-SF-FJS"/>
                             <constraint firstAttribute="trailing" secondItem="eJg-xA-N6x" secondAttribute="trailing" constant="0.5" id="MIt-UW-l4y"/>
-                            <constraint firstItem="MxZ-CO-UJB" firstAttribute="leading" secondItem="eJg-xA-N6x" secondAttribute="leading" id="Ny8-ZG-6xr"/>
+                            <constraint firstItem="MxZ-CO-UJB" firstAttribute="leading" secondItem="iwN-Gd-jyk" secondAttribute="leading" constant="0.5" id="Ncz-lD-5Yp"/>
                             <constraint firstItem="eJg-xA-N6x" firstAttribute="leading" secondItem="iwN-Gd-jyk" secondAttribute="leading" constant="0.5" id="YAs-Jw-Pqv"/>
-                            <constraint firstAttribute="bottom" secondItem="eJg-xA-N6x" secondAttribute="bottom" constant="0.5" id="bxj-Qd-ldM"/>
+                            <constraint firstAttribute="bottom" secondItem="eJg-xA-N6x" secondAttribute="bottom" constant="25" id="bxj-Qd-ldM"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -62,6 +62,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="starred_highlight" width="16" height="15"/>
+        <image name="starred_highlight" width="15" height="15"/>
     </resources>
 </document>
