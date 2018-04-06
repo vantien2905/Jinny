@@ -25,29 +25,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tyl-Q6-Eyu">
-                        <rect key="frame" x="20" y="0.0" width="313" height="274.5"/>
+                        <rect key="frame" x="6" y="0.0" width="341" height="274.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H00-UH-nyu">
-                                <rect key="frame" x="0.0" y="0.0" width="313" height="163"/>
+                                <rect key="frame" x="0.0" y="0.0" width="341" height="163"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="163" id="s2G-T6-oHr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ja-OL-118">
-                                <rect key="frame" x="0.0" y="174.5" width="313" height="20"/>
+                                <rect key="frame" x="0.0" y="174.5" width="341" height="20"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6io-xQ-Pby">
-                                <rect key="frame" x="0.0" y="273.5" width="313" height="1"/>
+                                <rect key="frame" x="0.0" y="273.5" width="341" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="e5F-XT-MRe"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="26th March 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-88-NfN">
-                                <rect key="frame" x="0.0" y="201" width="313" height="61"/>
+                                <rect key="frame" x="0.0" y="201" width="341" height="61"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                 <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -74,8 +74,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Tyl-Q6-Eyu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AGe-3y-7Cn"/>
-                    <constraint firstAttribute="trailing" secondItem="Tyl-Q6-Eyu" secondAttribute="trailing" constant="20" id="Nkh-XX-Qer"/>
-                    <constraint firstItem="Tyl-Q6-Eyu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="OWm-HV-e9m"/>
+                    <constraint firstAttribute="trailing" secondItem="Tyl-Q6-Eyu" secondAttribute="trailing" constant="6" id="Nkh-XX-Qer"/>
+                    <constraint firstItem="Tyl-Q6-Eyu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="OWm-HV-e9m"/>
                     <constraint firstAttribute="bottom" secondItem="Tyl-Q6-Eyu" secondAttribute="bottom" id="vTr-BS-8bj"/>
                 </constraints>
             </tableViewCellContentView>
