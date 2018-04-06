@@ -44,13 +44,13 @@
                             <rect key="frame" x="0.0" y="15" width="375" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfI-Iq-Z38">
-                                    <rect key="frame" x="20" y="13" width="117.5" height="20"/>
+                                    <rect key="frame" x="6" y="13" width="117.5" height="20"/>
                                     <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BC-ze-1Bp" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
-                                    <rect key="frame" x="301.5" y="10" width="65.5" height="25"/>
+                                    <rect key="frame" x="303.5" y="10" width="65.5" height="25"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="12X-q3-Cat"/>
@@ -61,8 +61,8 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="6BC-ze-1Bp" firstAttribute="centerY" secondItem="mfI-Iq-Z38" secondAttribute="centerY" id="9cY-Tr-F1m"/>
-                                <constraint firstItem="mfI-Iq-Z38" firstAttribute="leading" secondItem="xVp-Qz-fxX" secondAttribute="leading" constant="20" id="ARN-oE-gmM"/>
-                                <constraint firstAttribute="trailing" secondItem="6BC-ze-1Bp" secondAttribute="trailing" constant="7.5" id="NoH-Jl-Hud"/>
+                                <constraint firstItem="mfI-Iq-Z38" firstAttribute="leading" secondItem="xVp-Qz-fxX" secondAttribute="leading" constant="6" id="ARN-oE-gmM"/>
+                                <constraint firstAttribute="trailing" secondItem="6BC-ze-1Bp" secondAttribute="trailing" constant="6" id="NoH-Jl-Hud"/>
                                 <constraint firstItem="mfI-Iq-Z38" firstAttribute="centerY" secondItem="xVp-Qz-fxX" secondAttribute="centerY" id="uhC-Mg-NR3"/>
                             </constraints>
                         </view>
@@ -70,13 +70,13 @@
                             <rect key="frame" x="0.0" y="66" width="375" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store discount alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tf4-hK-GGe">
-                                    <rect key="frame" x="20" y="13" width="129" height="20"/>
+                                    <rect key="frame" x="6" y="13" width="129" height="20"/>
                                     <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhd-S5-fYz" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
-                                    <rect key="frame" x="301.5" y="10" width="65.5" height="25"/>
+                                    <rect key="frame" x="303.5" y="10" width="65.5" height="25"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="54U-yf-gXq"/>
@@ -86,7 +86,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="jhd-S5-fYz" secondAttribute="trailing" constant="7.5" id="GDO-V0-aku"/>
+                                <constraint firstAttribute="trailing" secondItem="jhd-S5-fYz" secondAttribute="trailing" constant="6" id="GDO-V0-aku"/>
                                 <constraint firstItem="jhd-S5-fYz" firstAttribute="centerY" secondItem="tf4-hK-GGe" secondAttribute="centerY" id="NG1-Iy-hlI"/>
                                 <constraint firstItem="tf4-hK-GGe" firstAttribute="centerY" secondItem="DfL-wV-iZH" secondAttribute="centerY" id="mmS-hN-sSe"/>
                             </constraints>
@@ -95,13 +95,13 @@
                             <rect key="frame" x="0.0" y="117" width="375" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voucher expiry notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-4R-LQT">
-                                    <rect key="frame" x="20" y="13" width="177" height="20"/>
+                                    <rect key="frame" x="6" y="13" width="177" height="20"/>
                                     <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3b-cx-vLH" customClass="PRSwitch" customModule="Jinny" customModuleProvider="target">
-                                    <rect key="frame" x="301.5" y="10" width="65.5" height="25"/>
+                                    <rect key="frame" x="303.5" y="10" width="65.5" height="25"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="65.5" id="ARY-Ha-PvL"/>
@@ -113,20 +113,20 @@
                             <constraints>
                                 <constraint firstItem="x3b-cx-vLH" firstAttribute="centerY" secondItem="Raa-4R-LQT" secondAttribute="centerY" id="IWN-qO-loO"/>
                                 <constraint firstItem="Raa-4R-LQT" firstAttribute="centerY" secondItem="3DE-zC-TUA" secondAttribute="centerY" id="a9v-Qk-Okd"/>
-                                <constraint firstAttribute="trailing" secondItem="x3b-cx-vLH" secondAttribute="trailing" constant="7.5" id="h99-9i-xiq"/>
+                                <constraint firstAttribute="trailing" secondItem="x3b-cx-vLH" secondAttribute="trailing" constant="6" id="h99-9i-xiq"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-7F-qQN">
                             <rect key="frame" x="0.0" y="168" width="375" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days to remind before expiring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnx-dl-QJP">
-                                    <rect key="frame" x="20" y="13" width="206" height="20"/>
+                                    <rect key="frame" x="6" y="13" width="206" height="20"/>
                                     <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-zE-y6l">
-                                    <rect key="frame" x="319.5" y="12.5" width="42.5" height="20"/>
+                                    <rect key="frame" x="326.5" y="12.5" width="42.5" height="20"/>
                                     <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -140,7 +140,7 @@
                                 <constraint firstItem="fbq-zE-y6l" firstAttribute="centerY" secondItem="vnx-dl-QJP" secondAttribute="centerY" id="BRu-DG-aaG"/>
                                 <constraint firstAttribute="bottom" secondItem="kbQ-Mz-VtP" secondAttribute="bottom" id="Gzu-rZ-8Ce"/>
                                 <constraint firstItem="vnx-dl-QJP" firstAttribute="centerY" secondItem="eo3-7F-qQN" secondAttribute="centerY" id="Kdy-SG-jpd"/>
-                                <constraint firstAttribute="trailing" secondItem="fbq-zE-y6l" secondAttribute="trailing" constant="13" id="SC6-vM-xBm"/>
+                                <constraint firstAttribute="trailing" secondItem="fbq-zE-y6l" secondAttribute="trailing" constant="6" id="SC6-vM-xBm"/>
                                 <constraint firstAttribute="trailing" secondItem="kbQ-Mz-VtP" secondAttribute="trailing" id="dTq-Jx-hcc"/>
                                 <constraint firstItem="kbQ-Mz-VtP" firstAttribute="top" secondItem="eo3-7F-qQN" secondAttribute="top" id="fIH-P3-zeD"/>
                                 <constraint firstItem="kbQ-Mz-VtP" firstAttribute="leading" secondItem="eo3-7F-qQN" secondAttribute="leading" id="igG-kl-Alf"/>
@@ -150,13 +150,13 @@
                             <rect key="frame" x="0.0" y="266" width="375" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V89-RP-kun">
-                                    <rect key="frame" x="20" y="13" width="118" height="20"/>
+                                    <rect key="frame" x="6" y="13" width="118" height="20"/>
                                     <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_black" translatesAutoresizingMaskIntoConstraints="NO" id="VSN-Wk-0RA">
-                                    <rect key="frame" x="353" y="15" width="9" height="15"/>
+                                    <rect key="frame" x="360" y="15" width="9" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="9" id="62G-ZA-gwS"/>
                                         <constraint firstAttribute="height" constant="15" id="nB4-Ll-NMf"/>
@@ -174,7 +174,7 @@
                                 <constraint firstItem="VSN-Wk-0RA" firstAttribute="centerY" secondItem="V89-RP-kun" secondAttribute="centerY" id="0bm-XY-YQd"/>
                                 <constraint firstItem="yny-8Q-hho" firstAttribute="leading" secondItem="BNK-oX-3Wf" secondAttribute="leading" id="DiB-95-OHz"/>
                                 <constraint firstAttribute="trailing" secondItem="yny-8Q-hho" secondAttribute="trailing" id="E2Q-Jr-23n"/>
-                                <constraint firstAttribute="trailing" secondItem="VSN-Wk-0RA" secondAttribute="trailing" constant="13" id="QZE-ZS-LZz"/>
+                                <constraint firstAttribute="trailing" secondItem="VSN-Wk-0RA" secondAttribute="trailing" constant="6" id="QZE-ZS-LZz"/>
                                 <constraint firstItem="V89-RP-kun" firstAttribute="centerY" secondItem="BNK-oX-3Wf" secondAttribute="centerY" id="ZAB-9O-Tzm"/>
                                 <constraint firstAttribute="bottom" secondItem="yny-8Q-hho" secondAttribute="bottom" id="c3N-kP-DWP"/>
                                 <constraint firstItem="yny-8Q-hho" firstAttribute="top" secondItem="BNK-oX-3Wf" secondAttribute="top" id="cGd-4K-Wj4"/>
