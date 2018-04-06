@@ -24,9 +24,12 @@ class AuthenticationService: AuthenticationServiceProtocol {
     }
 
     func login(email: String, password: String) -> Observable<PRUser?> {
+        let fcmTocken = KeychainManager.shared.getString(key: KeychainItem.fcmToken)
+        
         let parameters = [
             "email": email,
-            "password": password
+            "password": password,
+            "fcmTocken": fcmTocken
         ]
 
         return network.rx_Object(url: APIEndpoint.Authentication.login, method: .post, parameters: parameters as [String: AnyObject])
