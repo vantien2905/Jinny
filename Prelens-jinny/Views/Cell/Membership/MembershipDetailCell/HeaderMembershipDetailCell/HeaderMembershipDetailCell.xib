@@ -17,38 +17,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="294" id="KGk-i7-Jjw" customClass="HeaderMembershipDetailCell" customModule="Jinny" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="346" height="294"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="466" id="KGk-i7-Jjw" customClass="HeaderMembershipDetailCell" customModule="Jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="466"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="346" height="293.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="360" height="465.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNx-Hd-54W">
-                        <rect key="frame" x="0.0" y="0.0" width="346" height="291.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="463.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HEc-dc-fTK">
-                                <rect key="frame" x="126.5" y="25" width="93" height="94"/>
+                                <rect key="frame" x="133.5" y="25" width="93" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="HyU-0o-Wre"/>
                                     <constraint firstAttribute="height" constant="94" id="UVU-Gs-Tuh"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-sO-8Si">
-                                <rect key="frame" x="89.5" y="138" width="167.5" height="76"/>
+                                <rect key="frame" x="30" y="138" width="300" height="202.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="167.5" id="5ee-04-6I4"/>
-                                    <constraint firstAttribute="height" constant="76" id="vQh-SN-jPy"/>
+                                    <constraint firstAttribute="height" constant="202.5" id="vQh-SN-jPy"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="896123412345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO1-QT-uLb">
-                                <rect key="frame" x="101" y="214" width="144.5" height="30"/>
+                                <rect key="frame" x="108" y="340.5" width="144.5" height="88"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="22.5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6s-VJ-Mun">
-                                <rect key="frame" x="222" y="25" width="14" height="14.5"/>
+                                <rect key="frame" x="229" y="25" width="14" height="14.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="14.5" id="ZJu-7Z-NL8"/>
                                     <constraint firstAttribute="height" constant="14.5" id="jXg-0K-sdg"/>
@@ -56,7 +55,7 @@
                                 <state key="normal" image="merch_info"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HW-8l-UbZ">
-                                <rect key="frame" x="126.5" y="25" width="113" height="94"/>
+                                <rect key="frame" x="133.5" y="25" width="113" height="94"/>
                                 <connections>
                                     <action selector="btnLogoTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eIt-5m-VLD"/>
                                 </connections>
@@ -71,16 +70,18 @@
                             <constraint firstItem="pO1-QT-uLb" firstAttribute="centerX" secondItem="HOb-sO-8Si" secondAttribute="centerX" id="TiT-in-8rq"/>
                             <constraint firstItem="HEc-dc-fTK" firstAttribute="top" secondItem="pNx-Hd-54W" secondAttribute="top" constant="25" id="Wfn-fS-0xo"/>
                             <constraint firstItem="HEc-dc-fTK" firstAttribute="centerX" secondItem="pNx-Hd-54W" secondAttribute="centerX" id="ZQL-Nt-AFr"/>
-                            <constraint firstItem="HOb-sO-8Si" firstAttribute="centerX" secondItem="HEc-dc-fTK" secondAttribute="centerX" id="d3I-cP-2Bd"/>
                             <constraint firstItem="6HW-8l-UbZ" firstAttribute="bottom" secondItem="HEc-dc-fTK" secondAttribute="bottom" id="eJG-Fb-FPq"/>
                             <constraint firstItem="HOb-sO-8Si" firstAttribute="top" secondItem="HEc-dc-fTK" secondAttribute="bottom" constant="19" id="nk3-Df-k1q"/>
                             <constraint firstItem="6HW-8l-UbZ" firstAttribute="trailing" secondItem="HEc-dc-fTK" secondAttribute="trailing" constant="20" id="tLZ-nK-OrT"/>
+                            <constraint firstItem="HOb-sO-8Si" firstAttribute="leading" secondItem="pNx-Hd-54W" secondAttribute="leading" constant="30" id="uZH-cl-ynH"/>
                             <constraint firstItem="m6s-VJ-Mun" firstAttribute="leading" secondItem="HEc-dc-fTK" secondAttribute="trailing" constant="2.5" id="uvV-Td-sv2"/>
+                            <constraint firstAttribute="trailing" secondItem="HOb-sO-8Si" secondAttribute="trailing" constant="30" id="w7e-Kx-fQj"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="pNx-Hd-54W" secondAttribute="trailing" id="Agt-3G-kUh"/>
+                    <constraint firstAttribute="bottom" secondItem="pO1-QT-uLb" secondAttribute="bottom" constant="37" id="QYA-ve-p7Y"/>
                     <constraint firstItem="pNx-Hd-54W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yza-6s-44J"/>
                     <constraint firstAttribute="bottom" secondItem="pNx-Hd-54W" secondAttribute="bottom" constant="2" id="eqQ-sN-1ZJ"/>
                     <constraint firstItem="pNx-Hd-54W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pJY-im-clH"/>
@@ -93,7 +94,7 @@
                 <outlet property="lbCodeNumber" destination="pO1-QT-uLb" id="oN1-cG-JTd"/>
                 <outlet property="vContent" destination="pNx-Hd-54W" id="ZRV-EM-quX"/>
             </connections>
-            <point key="canvasLocation" x="62" y="38"/>
+            <point key="canvasLocation" x="69" y="124"/>
         </tableViewCell>
     </objects>
     <resources>

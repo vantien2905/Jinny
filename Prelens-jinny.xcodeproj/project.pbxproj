@@ -141,6 +141,7 @@
 		B7CD0653205FA765009951A4 /* MembershipDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */; };
 		B7CD0654205FA765009951A4 /* MembershipDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */; };
 		B7D54B032069EDC8000F4957 /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D54B022069EDC8000F4957 /* Dropdown.swift */; };
+		B7D6BA83207724AC00361841 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D6BA82207724AC00361841 /* GoogleService-Info.plist */; };
 		BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC36E973205846B1006A90A0 /* SignUpViewModel.swift */; };
 		BC387EC020681B29009E29A7 /* PromotionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC387EBF20681B29009E29A7 /* PromotionDetail.swift */; };
 		BC3F1AD4204D19480006A6F5 /* PRBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */; };
@@ -352,6 +353,8 @@
 		B7CD0651205FA765009951A4 /* MembershipDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailCell.swift; sourceTree = "<group>"; };
 		B7CD0652205FA765009951A4 /* MembershipDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailCell.xib; sourceTree = "<group>"; };
 		B7D54B022069EDC8000F4957 /* Dropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
+		B7D6BA82207724AC00361841 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7D6BA8420772EFF00361841 /* Jinny.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jinny.entitlements; sourceTree = "<group>"; };
 		BC36E973205846B1006A90A0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		BC387EBF20681B29009E29A7 /* PromotionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetail.swift; sourceTree = "<group>"; };
 		BC3F1AD3204D19480006A6F5 /* PRBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRBaseView.swift; sourceTree = "<group>"; };
@@ -1037,6 +1040,7 @@
 		BC770A65204CEE5D0052A285 /* Prelens-jinny */ = {
 			isa = PBXGroup;
 			children = (
+				B7D6BA8420772EFF00361841 /* Jinny.entitlements */,
 				BCBC958920562206004C1985 /* Components */,
 				BCBC958D20562254004C1985 /* Services */,
 				76469D0220563D5500E2950E /* ViewModels */,
@@ -1311,6 +1315,7 @@
 		BCBC960C20562EB1004C1985 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B7D6BA82207724AC00361841 /* GoogleService-Info.plist */,
 				B7B1BC812058D7FA0042B3D4 /* Fonts */,
 				BC770A6D204CEE5D0052A285 /* Assets.xcassets */,
 			);
@@ -1433,6 +1438,14 @@
 					BC770A62204CEE5D0052A285 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1502,6 +1515,7 @@
 				76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BC9A6152205F77F00071EF4F /* PromotionDetailFooterCell.xib in Resources */,
+				B7D6BA83207724AC00361841 /* GoogleService-Info.plist in Resources */,
 				B73862712059096700C7004D /* OtherHeaderCell.xib in Resources */,
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
 				B7CD0645205F71E9009951A4 /* MerchantDetailCell.xib in Resources */,
@@ -1607,34 +1621,40 @@
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1908,6 +1928,7 @@
 			baseConfigurationReference = C1AE769FDA25B9C573BB58A3 /* Pods-Prelens-jinny.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Prelens-jinny/Jinny.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GU9U74T6LC;
@@ -1932,6 +1953,7 @@
 			baseConfigurationReference = BE2E5107BAEEE593CE0357A9 /* Pods-Prelens-jinny.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Prelens-jinny/Jinny.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GU9U74T6LC;

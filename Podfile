@@ -18,5 +18,7 @@ target 'Prelens-jinny' do
   pod 'PKHUD'
   pod 'AlamofireObjectMapper'
   pod 'RxAlamofire'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
 end
