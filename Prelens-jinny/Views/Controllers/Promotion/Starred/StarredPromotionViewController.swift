@@ -181,15 +181,15 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             if self.listStarredPromotion.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 50)
+                return CGSize(width: collectionView.frame.width - 12, height: 50)
             } else {
-                return CGSize(width: (collectionView.frame.width - 49), height: 50)
+                return CGSize(width: (collectionView.frame.width - 12), height: 50)
             }
         } else {
             if self.listStarredPromotion.count == 0 {
-                return CGSize(width: collectionView.frame.width - 44, height: 30)
+                return CGSize(width: collectionView.frame.width - 12, height: 30)
             } else {
-                return CGSize(width: (collectionView.frame.width - 49), height: 300)
+                return CGSize(width: (collectionView.frame.width - 12), height: 300)
             }
         }
     }
