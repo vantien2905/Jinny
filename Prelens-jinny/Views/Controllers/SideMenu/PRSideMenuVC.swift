@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PRSideMenuVC: UIViewController {
 
@@ -31,22 +33,30 @@ class PRSideMenuVC: UIViewController {
 
     @IBOutlet weak var lbLogout: UILabel!
     @IBOutlet weak var btnLogout: UIButton!
-    
+    let viewModel =  SignOutViewModel()
+    let disposeBag = DisposeBag()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         lbEmail.text = KeychainManager.shared.getString(key: .email)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bindViewModel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
         setUpView()
+        
     }
-
+    
+    func bindViewModel() {
+        btnLogout.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .bind(to: viewModel.btnSignOutTapped)
+            .disposed(by: disposeBag)
+    }
+    
     func setUpView() {
         self.view.backgroundColor = PRColor.backgroundColor
         vAccount.backgroundColor = .yellow
@@ -80,10 +90,10 @@ extension PRSideMenuVC {
         let privacyVC = PrivacyViewController.initControllerFromNib()
         self.push(controller: privacyVC)
     }
-
-    @IBAction func logoutTapped() {
-        KeychainManager.shared.deleteAllSavedData()
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        appDelegate.goToLogin()
-    }
+    
+//    @IBAction func logoutTapped() {
+//        KeychainManager.shared.deleteAllSavedData()
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+//        appDelegate.goToLogin()
+//    }
 }

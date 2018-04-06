@@ -14,15 +14,24 @@ protocol AuthenticationServiceProtocol {
     func signUp(email: String, password: String) -> Observable<PRUser?>
     func forgotPassword(email: String) -> Observable<PRForgotPassword?>
     func changePassword(currentPassword: String, newPassword: String) -> Observable<PRUser?>
+    func signOut() -> Observable<ResponseError?>
 }
 
 class AuthenticationService: AuthenticationServiceProtocol {
     private let network: NetworkProtocol
-
+   
     init(network: NetworkProtocol) {
         self.network = network
     }
-
+    
+    func signOut() -> Observable<ResponseError?> {
+        let _fcmToken = KeychainManager.shared.getString(key: KeychainItem.fcmToken)
+        let parameters = [
+            "fcm_token": _fcmToken
+        ]
+        return network.rx_Object(url: APIEndpoint.Authentication.signOut, method: .delete, parameters: parameters as [String : AnyObject])
+    }
+    
     func login(email: String, password: String) -> Observable<PRUser?> {
         let parameters = [
             "email": email,
@@ -40,7 +49,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
 
         return network.rx_Object(url: APIEndpoint.Authentication.signUp, method: .post, parameters: parameters as [String: AnyObject])
     }
-
+    
     func forgotPassword(email: String) -> Observable<PRForgotPassword?> {
         let parameters = [
             "email": email
