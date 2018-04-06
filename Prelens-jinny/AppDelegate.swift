@@ -10,6 +10,8 @@ import UIKit
 import Fabric
 import Crashlytics
 import UserNotifications
+import Firebase
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var badgeNumbers = 0
@@ -19,11 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         application.applicationIconBadgeNumber = 0
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().delegate = self
-        } else {
-            // Fallback on earlier versions
-        }
+        //remote notification
+        
+        configureFirebase(on: application)
         
         Fabric.with([Crashlytics.self])
         handleFlow(application: application)
@@ -96,20 +96,107 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("case App is inactive")
         }
     }
+    
+    private func backupNotification(on application: UIApplication) {
+        FirebaseApp.configure()
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
+    }
 }
 extension AppDelegate:UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        guard var voucherID =  notification.request.content.userInfo["id"] as? String else {return}
+        let voucherID = "70b43fc8-9e0d-4e53-af0e-fe2fe5a1f203" // Under testing
+        print(voucherID)
+        let route = Route(tabbar: .vouchers)
+        Navigator.shared.handle(route: route, id: voucherID)
+        
         completionHandler(.alert)
     }
-   
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-         //application.applicationIconBadgeNumber = badgeNumbers + 1
-        //7ba38e7a-b28e-4341-b0b6-76c4d9bfdd5a
-        guard let voucherID =  notification.userInfo?["id"] else {return}
-            print(voucherID)
-            let route = Route(tabbar: .vouchers)
-        Navigator.shared.handle(route: route, id: voucherID as! String)
+    
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        guard var voucherID =  userInfo["id"] as? String else { return }
+        let voucherID = "70b43fc8-9e0d-4e53-af0e-fe2fe5a1f203" // Under testing
+        print(voucherID)
+        let route = Route(tabbar: .vouchers)
+        Navigator.shared.handle(route: route, id: voucherID)
+        completionHandler(.newData)
+        
+    }
+}
+
+// MARK: Notification
+extension AppDelegate {
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        Messaging.messaging().apnsToken = deviceToken // Disabled swizzling in plist.info
+        let fcmToken = Messaging.messaging().fcmToken ?? ""
+        KeychainManager.shared.saveString(value: fcmToken, forkey: KeychainItem.fcmToken)
+        
+        print("=> FCM token: \(Messaging.messaging().fcmToken ?? "")")
+        print("Device Token: \(token)")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error.localizedDescription)
+    }
+}
+
+// MARK: Firebase messaging
+extension AppDelegate: MessagingDelegate {
+    func configureFirebase(on application: UIApplication) {
+        Messaging.messaging().shouldEstablishDirectChannel = true
+        if #available(iOS 10.0, *) {
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(options: authOptions,
+                                                                    completionHandler: {_, _ in })
+            UNUserNotificationCenter.current().delegate = self
+            Messaging.messaging().delegate = self
+            
+        } else {
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+        let googleServiceFile = "GoogleService-Info"
+        
+        let filePath = Bundle.main.path(forResource: googleServiceFile, ofType: "plist")!
+        guard let options = FirebaseOptions(contentsOfFile: filePath) else {
+            print("There are some problems with GoogleService-Info file")
+            return
+        }
+        
+        FirebaseApp.configure(options: options)
+    }
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print("=> didRefreshRegistrationToken: \(fcmToken)")
+        KeychainManager.shared.saveString(value: fcmToken, forkey: KeychainItem.fcmToken)
     }
 }

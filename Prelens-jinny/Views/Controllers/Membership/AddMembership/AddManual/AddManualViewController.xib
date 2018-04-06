@@ -69,16 +69,16 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjk-jV-ouO">
-                    <rect key="frame" x="25" y="143" width="325" height="47"/>
+                    <rect key="frame" x="6" y="143" width="363" height="47"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Serial number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gkr-OH-uJ6">
-                            <rect key="frame" x="20" y="0.0" width="267" height="47"/>
+                            <rect key="frame" x="20" y="0.0" width="305" height="47"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr" translatesAutoresizingMaskIntoConstraints="NO" id="rYL-vV-N6c">
-                            <rect key="frame" x="292" y="15.5" width="16" height="16"/>
+                            <rect key="frame" x="330" y="15.5" width="16" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="X9h-XO-Tmr"/>
                                 <constraint firstAttribute="width" constant="16" id="sNZ-Kn-uVI"/>
@@ -97,7 +97,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDK-dY-6CU">
-                    <rect key="frame" x="25" y="198.5" width="325" height="47"/>
+                    <rect key="frame" x="6" y="198.5" width="363" height="47"/>
                     <color key="backgroundColor" red="0.8901960784313725" green="0.070588235294117646" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                     <state key="normal" title="Done">
@@ -112,13 +112,13 @@
             <constraints>
                 <constraint firstItem="QdO-GG-wfA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5pq-fu-naH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="UFr-ze-4aL" secondAttribute="leading" id="8BO-0L-5fY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kjk-jV-ouO" secondAttribute="trailing" constant="25" id="D3o-7e-xOV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kjk-jV-ouO" secondAttribute="trailing" constant="6" id="D3o-7e-xOV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QdO-GG-wfA" secondAttribute="trailing" id="E6j-Mi-dIX"/>
                 <constraint firstItem="mDK-dY-6CU" firstAttribute="top" secondItem="kjk-jV-ouO" secondAttribute="bottom" constant="8.5" id="HkC-3o-Kmf"/>
                 <constraint firstItem="mDK-dY-6CU" firstAttribute="height" secondItem="kjk-jV-ouO" secondAttribute="height" id="Rmt-SU-hom"/>
                 <constraint firstItem="kjk-jV-ouO" firstAttribute="top" secondItem="QdO-GG-wfA" secondAttribute="bottom" constant="22.5" id="Vrm-7Q-iUg"/>
                 <constraint firstItem="Hpx-HU-cro" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14.5" id="bVc-OM-elT"/>
-                <constraint firstItem="kjk-jV-ouO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="c7F-R2-zoZ"/>
+                <constraint firstItem="kjk-jV-ouO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="6" id="c7F-R2-zoZ"/>
                 <constraint firstItem="dpC-RK-Onl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="eQJ-Mx-ilH"/>
                 <constraint firstItem="QdO-GG-wfA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fZi-um-UZm"/>
                 <constraint firstItem="Hpx-HU-cro" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="l8e-ha-q97"/>

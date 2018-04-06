@@ -40,6 +40,5 @@ class OverlayQRCode: PRBaseView {
         
         UIColor.white.setStroke()
         path.stroke()
-        
     }
 }
