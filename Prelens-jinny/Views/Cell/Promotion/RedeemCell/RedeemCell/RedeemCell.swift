@@ -21,7 +21,5 @@ class RedeemCell: UICollectionViewCell {
         imvQRCode.contentMode = .scaleAspectFit
         guard let imgString = data.qrCode?.url?.original, let url = URL(string: imgString) else { return }
         imvQRCode.sd_setImage(with: url, completed: nil)
-        
     }
-    
 }

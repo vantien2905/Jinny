@@ -540,9 +540,8 @@
 				BC48999A20621BFF00E7DE0D /* Merchant */,
 				760EC3A92060A54D001390B8 /* Promotion */,
 				B7795902205B75B2005404FC /* Membership */,
-				BCE3495820565A5000B8C440 /* PRUser.swift */,
-				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
-				764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */,
+				BCEA449B207B763A003581DA /* Authentication */,
+				BCEA449C207B764A003581DA /* Others */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -642,12 +641,12 @@
 		76DC88FB205F6AC100AD87F3 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
-				76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */,
-				76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */,
-				76DC8906205F763F00AD87F3 /* AllPromotionCell */,
 				76DC88FC205F6AC100AD87F3 /* HeaderCell */,
-				7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */,
-				7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */,
+				76DC8906205F763F00AD87F3 /* AllPromotionCell */,
+				BCEA449A207B75D8003581DA /* PromotionDetailCell */,
+				BCEA4499207B75B8003581DA /* RedeemCell */,
+				BCEA4498207B75A8003581DA /* SearchPromotionCell */,
+				BCEA4497207B7597003581DA /* EmptyPromotionCell */,
 			);
 			path = Promotion;
 			sourceTree = "<group>";
@@ -666,9 +665,6 @@
 			children = (
 				76DC8902205F70C500AD87F3 /* PromotionDetailViewController.swift */,
 				76DC8903205F70C500AD87F3 /* PromotionDetailViewController.xib */,
-				BC9A6158205F9BC50071EF4F /* PromotionDetailCell */,
-				BC9A614E205F77380071EF4F /* HeaderCell */,
-				BC9A6153205F78430071EF4F /* FooterCell */,
 			);
 			path = PromotionDetail;
 			sourceTree = "<group>";
@@ -954,8 +950,6 @@
 		BC3FB2D5206E13BC0070157A /* RedeemVoucher */ = {
 			isa = PBXGroup;
 			children = (
-				BC3FB2DA206E2A6D0070157A /* RedeemFooterCell */,
-				BCEA4496207B6E40003581DA /* RedeemCell */,
 				BC3FB2D1206E13060070157A /* RedeemVoucherViewController.swift */,
 				BC3FB2D2206E13060070157A /* RedeemVoucherViewController.xib */,
 			);
@@ -1242,17 +1236,17 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				761201B72077124F003D3CFA /* Privacy */,
-				761201B220770CDA003D3CFA /* Terms */,
 				B7B1BC712058CFD60042B3D4 /* Base */,
 				BC6F3368205BC6DB00CDAD85 /* Home */,
-				76DC88E7205F5A4600AD87F3 /* Promotion */,
-				BC409EC02062BE5F00A3F044 /* Merchant */,
+				BC78F4952058D406003904E0 /* SideMenu */,
 				BCBC960D20563012004C1985 /* Membership */,
+				BC409EC02062BE5F00A3F044 /* Merchant */,
+				BCBC95A6205625EB004C1985 /* Profile */,
+				76DC88E7205F5A4600AD87F3 /* Promotion */,
 				BCBC95E020562BB8004C1985 /* Login */,
 				BCBC959920562488004C1985 /* Setting */,
-				BCBC95A6205625EB004C1985 /* Profile */,
-				BC78F4952058D406003904E0 /* SideMenu */,
+				761201B220770CDA003D3CFA /* Terms */,
+				761201B72077124F003D3CFA /* Privacy */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1365,6 +1359,60 @@
 				BCEA4493207B6E38003581DA /* RedeemCell.xib */,
 			);
 			path = RedeemCell;
+			sourceTree = "<group>";
+		};
+		BCEA4497207B7597003581DA /* EmptyPromotionCell */ = {
+			isa = PBXGroup;
+			children = (
+				7638FA19205FB73A00D33011 /* EmptyPromotionCell.swift */,
+				7638FA1A205FB73A00D33011 /* EmptyPromotionCell.xib */,
+			);
+			path = EmptyPromotionCell;
+			sourceTree = "<group>";
+		};
+		BCEA4498207B75A8003581DA /* SearchPromotionCell */ = {
+			isa = PBXGroup;
+			children = (
+				76DC890F205F9ED600AD87F3 /* SearchPromotionCell.swift */,
+				76DC8910205F9ED600AD87F3 /* SearchPromotionCell.xib */,
+			);
+			path = SearchPromotionCell;
+			sourceTree = "<group>";
+		};
+		BCEA4499207B75B8003581DA /* RedeemCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC3FB2DA206E2A6D0070157A /* RedeemFooterCell */,
+				BCEA4496207B6E40003581DA /* RedeemCell */,
+			);
+			path = RedeemCell;
+			sourceTree = "<group>";
+		};
+		BCEA449A207B75D8003581DA /* PromotionDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC9A6158205F9BC50071EF4F /* PromotionDetailCell */,
+				BC9A614E205F77380071EF4F /* HeaderCell */,
+				BC9A6153205F78430071EF4F /* FooterCell */,
+			);
+			path = PromotionDetailCell;
+			sourceTree = "<group>";
+		};
+		BCEA449B207B763A003581DA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BCE3495820565A5000B8C440 /* PRUser.swift */,
+				7640C097205A167100F384B4 /* PRForgotPassword.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		BCEA449C207B764A003581DA /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		BCF5F6A12064D7CB007CE003 /* MerchantDetailHeaderCell */ = {
