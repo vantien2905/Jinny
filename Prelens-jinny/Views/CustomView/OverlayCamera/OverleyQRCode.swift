@@ -19,6 +19,7 @@ class OverlayQRCode: PRBaseView {
         let width = self.frame.width
         let height = self.frame.height
         path.lineWidth = lineWidth
+        
         path.move(to: CGPoint(x: space, y: space + lenghtLine))
         path.addLine(to: CGPoint(x: space, y: space))
         path.addLine(to: CGPoint(x: space + lenghtLine, y: space))
@@ -35,8 +36,8 @@ class OverlayQRCode: PRBaseView {
         path.addLine(to: CGPoint(x: space, y: height - space))
         path.addLine(to: CGPoint(x: space, y: height - space - lenghtLine))
         
-        path.move(to: CGPoint(x: lenghtLine/2, y: height/2))
-        path.addLine(to: CGPoint(x: width - lenghtLine/2, y: height/2))
+        path.move(to: CGPoint(x: lenghtLine/2 + 15, y: height/2))
+        path.addLine(to: CGPoint(x: width - lenghtLine/2 - 15, y: height/2))
         
         UIColor.white.setStroke()
         path.stroke()

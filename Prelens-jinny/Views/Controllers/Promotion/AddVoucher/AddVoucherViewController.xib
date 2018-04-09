@@ -27,6 +27,9 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgP-On-UDh">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="389.5"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="refreshScanner" destination="-1" eventType="touchUpInside" id="wAE-x6-CoG"/>
                             </connections>
