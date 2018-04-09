@@ -201,6 +201,8 @@
 		BCD2207D2053E92700EEC31A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD220712053E92600EEC31A /* UIImage+Extension.swift */; };
 		BCE3495920565A5000B8C440 /* PRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3495820565A5000B8C440 /* PRUser.swift */; };
 		BCE65DC420737F770027C801 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DC320737F760027C801 /* Utils.swift */; };
+		BCEA4494207B6E38003581DA /* RedeemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA4492207B6E38003581DA /* RedeemCell.swift */; };
+		BCEA4495207B6E38003581DA /* RedeemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEA4493207B6E38003581DA /* RedeemCell.xib */; };
 		BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */; };
 		BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
@@ -418,6 +420,8 @@
 		BCD220712053E92600EEC31A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCE3495820565A5000B8C440 /* PRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRUser.swift; sourceTree = "<group>"; };
 		BCE65DC320737F760027C801 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BCEA4492207B6E38003581DA /* RedeemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemCell.swift; sourceTree = "<group>"; };
+		BCEA4493207B6E38003581DA /* RedeemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemCell.xib; sourceTree = "<group>"; };
 		BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewController.swift; sourceTree = "<group>"; };
 		BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVoucherViewController.xib; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
@@ -950,9 +954,10 @@
 		BC3FB2D5206E13BC0070157A /* RedeemVoucher */ = {
 			isa = PBXGroup;
 			children = (
+				BC3FB2DA206E2A6D0070157A /* RedeemFooterCell */,
+				BCEA4496207B6E40003581DA /* RedeemCell */,
 				BC3FB2D1206E13060070157A /* RedeemVoucherViewController.swift */,
 				BC3FB2D2206E13060070157A /* RedeemVoucherViewController.xib */,
-				BC3FB2DA206E2A6D0070157A /* RedeemFooterCell */,
 			);
 			path = RedeemVoucher;
 			sourceTree = "<group>";
@@ -1353,6 +1358,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		BCEA4496207B6E40003581DA /* RedeemCell */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA4492207B6E38003581DA /* RedeemCell.swift */,
+				BCEA4493207B6E38003581DA /* RedeemCell.xib */,
+			);
+			path = RedeemCell;
+			sourceTree = "<group>";
+		};
 		BCF5F6A12064D7CB007CE003 /* MerchantDetailHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1515,6 +1529,7 @@
 				B7B1BC9C2058D7FA0042B3D4 /* OstrichSans-Heavy.otf in Resources */,
 				B7CD063E205F6E80009951A4 /* MerchantDetailViewController.xib in Resources */,
 				B7B1BC972058D7FA0042B3D4 /* segoeuil.ttf in Resources */,
+				BCEA4495207B6E38003581DA /* RedeemCell.xib in Resources */,
 				76DC88EB205F5A6700AD87F3 /* PromotionViewController.xib in Resources */,
 				B7B1BCA42058D7FA0042B3D4 /* seguisbi.ttf in Resources */,
 				BC9A6152205F77F00071EF4F /* PromotionDetailFooterCell.xib in Resources */,
@@ -1729,6 +1744,7 @@
 				BC4F84742064947600B330B9 /* MerchantBranchCell.swift in Sources */,
 				76DC8911205F9ED600AD87F3 /* SearchPromotionCell.swift in Sources */,
 				76DC88FF205F6B5600AD87F3 /* PromotionHeaderCell.swift in Sources */,
+				BCEA4494207B6E38003581DA /* RedeemCell.swift in Sources */,
 				767FE2FE2077741700E5BC1D /* SignOutViewModel.swift in Sources */,
 				BCBC95F320562BB8004C1985 /* PRLoginViewController.swift in Sources */,
 				B79AEE592060C107007F0BB3 /* AddManualViewController.swift in Sources */,

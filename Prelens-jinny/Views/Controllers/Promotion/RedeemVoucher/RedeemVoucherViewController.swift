@@ -40,6 +40,8 @@ class RedeemVoucherViewController: BaseViewController {
                                  forCellWithReuseIdentifier: "headerCell")
         cvRedeemVoucher.register(UINib(nibName: Cell.voucherRedeemFooterCell, bundle: nil),
                                  forCellWithReuseIdentifier: "redeemFooterCell")
+        cvRedeemVoucher.register(UINib(nibName: Cell.voucherRedeemCell, bundle: nil),
+                                 forCellWithReuseIdentifier: "redeemCell")
         
         cvRedeemVoucher.backgroundColor = PRColor.backgroundColor
     }
@@ -53,11 +55,13 @@ class RedeemVoucherViewController: BaseViewController {
 
 extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
+            return 1
+        } else if section == 1 {
             return 1
         } else {
             return 1
@@ -73,6 +77,14 @@ extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICol
             }
             
             return headerCell
+        } else if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "redeemCell",
+                                                                for: indexPath) as! RedeemCell
+            if let data = promotionDetail {
+                cell.setData(data: data)
+            }
+            
+            return cell
         } else {
             let footerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "redeemFooterCell",
                                                                 for: indexPath) as! RedeemVoucherFooterCell
@@ -90,11 +102,11 @@ extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICol
             let size = UIScreen.main.bounds.width
             guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
             return CGSize(width: size, height: 125 - (57 - _height))
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 2 {
             let size = UIScreen.main.bounds.width - 40
             return CGSize(width: size, height: 70)
         } else {
-            return CGSize(width: 0, height: 0)
+            return CGSize(width: 396, height: 264)
         }
     }
     
