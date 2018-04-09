@@ -197,10 +197,9 @@ extension PromotionDetailViewController: BaseViewControllerDelegate {
                 guard let id = promotionDetail?.id else { return }
                 viewModel.addBookmarkVoucher(idBookmark: id)
             } else {
-                starTapped = false
+                navigationItem.rightBarButtonItem?.isEnabled = false
             }
         }
-
     }
 }
 
