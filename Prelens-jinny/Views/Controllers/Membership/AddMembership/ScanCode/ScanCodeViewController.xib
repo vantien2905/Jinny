@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,17 +40,10 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GHe-f7-Af3">
                     <rect key="frame" x="159" y="45" width="56" height="56.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="56" id="Lyl-87-7tB"/>
-                        <constraint firstAttribute="height" constant="56.5" id="ob5-co-Gns"/>
-                    </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qy-5g-qJp">
                     <rect key="frame" x="0.0" y="130.5" width="375" height="389.5"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="389.5" id="Yzp-oC-rad"/>
-                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8D-WZ-9bq">
                     <rect key="frame" x="90.5" y="590.5" width="195.5" height="20"/>
@@ -57,11 +51,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No barcode? Add manually" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpQ-dP-pkJ">
                             <rect key="frame" x="0.0" y="0.5" width="185" height="20"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_red" translatesAutoresizingMaskIntoConstraints="NO" id="c2p-7H-YHc">
-                            <rect key="frame" x="190" y="5" width="5.5" height="9.5"/>
+                            <rect key="frame" x="190" y="8" width="5.5" height="9.5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="9.5" id="Ehr-Qx-RA3"/>
                                 <constraint firstAttribute="width" constant="5.5" id="o7U-2z-bCX"/>
@@ -77,7 +71,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="mAr-mh-kCk" firstAttribute="top" secondItem="T8D-WZ-9bq" secondAttribute="top" id="9kD-hb-V9E"/>
-                        <constraint firstItem="c2p-7H-YHc" firstAttribute="centerY" secondItem="hpQ-dP-pkJ" secondAttribute="centerY" id="FSB-sf-LRz"/>
+                        <constraint firstItem="c2p-7H-YHc" firstAttribute="centerY" secondItem="hpQ-dP-pkJ" secondAttribute="centerY" constant="2" id="FSB-sf-LRz"/>
                         <constraint firstItem="mAr-mh-kCk" firstAttribute="leading" secondItem="T8D-WZ-9bq" secondAttribute="leading" id="HRC-rB-OYp"/>
                         <constraint firstItem="c2p-7H-YHc" firstAttribute="leading" secondItem="hpQ-dP-pkJ" secondAttribute="trailing" constant="5" id="VHw-QC-W6s"/>
                         <constraint firstAttribute="height" constant="20" id="hce-ra-0Cp"/>
@@ -99,7 +93,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blh-nb-Nzp" customClass="OverlayQRCode" customModule="Jinny" customModuleProvider="target">
-                    <rect key="frame" x="107" y="245" width="160.5" height="160.5"/>
+                    <rect key="frame" x="107" y="245.5" width="160.5" height="160.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160.5" id="VeQ-dN-vwQ"/>
@@ -114,9 +108,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9qy-5g-qJp" secondAttribute="trailing" id="Mls-65-VD6"/>
                 <constraint firstItem="PMW-VQ-Bfm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14.5" id="Q7i-Sw-VyL"/>
                 <constraint firstItem="GHe-f7-Af3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="V5q-wZ-kKM"/>
+                <constraint firstItem="GHe-f7-Af3" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="56/375" id="VAp-iV-S2Z"/>
+                <constraint firstItem="GHe-f7-Af3" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="56.5/667" id="Zk7-TB-rFU"/>
                 <constraint firstItem="PMW-VQ-Bfm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="amf-gF-7mM"/>
                 <constraint firstItem="9qy-5g-qJp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cVq-8a-lbc"/>
                 <constraint firstItem="9qy-5g-qJp" firstAttribute="top" secondItem="GHe-f7-Af3" secondAttribute="bottom" constant="29" id="h2g-UI-TBb"/>
+                <constraint firstItem="9qy-5g-qJp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="389.5/667" id="iBR-Xb-gKD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="z0j-Gm-Tqo" secondAttribute="leading" id="l5z-9m-spb"/>
                 <constraint firstItem="T8D-WZ-9bq" firstAttribute="centerX" secondItem="9qy-5g-qJp" secondAttribute="centerX" id="nSO-Te-Fhc"/>
                 <constraint firstItem="Blh-nb-Nzp" firstAttribute="centerY" secondItem="9qy-5g-qJp" secondAttribute="centerY" id="qrm-Kj-aBv"/>
