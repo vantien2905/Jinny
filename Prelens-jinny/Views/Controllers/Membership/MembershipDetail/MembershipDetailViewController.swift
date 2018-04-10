@@ -65,7 +65,7 @@ class MembershipDetailViewController: BaseViewController {
         
     }
     
-    class func configureViewController(idMembership: Int) -> UIViewController {
+    class func configureViewController(idMembership: Int) -> MembershipDetailViewController {
         let vc = MembershipDetailViewController.initControllerFromNib() as! MembershipDetailViewController
         var viewModel: MembershipDetailViewModelProtocol {
             return MembershipDetailViewModel(idMember: idMembership)

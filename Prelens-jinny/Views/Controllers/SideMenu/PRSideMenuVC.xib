@@ -39,16 +39,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkG-FW-Ul4">
-                    <rect key="frame" x="0.0" y="-20" width="375" height="104"/>
+                    <rect key="frame" x="0.0" y="-20" width="375" height="132"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sev-Va-H6p">
-                            <rect key="frame" x="22" y="60" width="331" height="20"/>
+                            <rect key="frame" x="22" y="84" width="331" height="20"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="email@vinova.sg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLi-JM-wQQ">
-                            <rect key="frame" x="22" y="80" width="331" height="20"/>
+                            <rect key="frame" x="22" y="104" width="331" height="20"/>
                             <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -57,16 +57,16 @@
                     <color key="backgroundColor" red="0.8884773850440979" green="0.076193876564502716" blue="0.047553502023220062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="eLi-JM-wQQ" firstAttribute="top" secondItem="Sev-Va-H6p" secondAttribute="bottom" id="0bg-XU-SLI"/>
-                        <constraint firstItem="Sev-Va-H6p" firstAttribute="top" secondItem="bkG-FW-Ul4" secondAttribute="top" constant="60" id="3pz-S6-BCh"/>
+                        <constraint firstItem="Sev-Va-H6p" firstAttribute="top" secondItem="bkG-FW-Ul4" secondAttribute="top" constant="84" id="3pz-S6-BCh"/>
                         <constraint firstAttribute="trailing" secondItem="Sev-Va-H6p" secondAttribute="trailing" constant="22" id="5z7-Yd-YnF"/>
                         <constraint firstAttribute="trailing" secondItem="eLi-JM-wQQ" secondAttribute="trailing" constant="22" id="J3l-w0-bVA"/>
                         <constraint firstItem="eLi-JM-wQQ" firstAttribute="leading" secondItem="bkG-FW-Ul4" secondAttribute="leading" constant="22" id="RK2-r9-pbK"/>
-                        <constraint firstAttribute="bottom" secondItem="eLi-JM-wQQ" secondAttribute="bottom" constant="4" id="hqh-9Y-CGs"/>
+                        <constraint firstAttribute="bottom" secondItem="eLi-JM-wQQ" secondAttribute="bottom" constant="8" id="hqh-9Y-CGs"/>
                         <constraint firstItem="Sev-Va-H6p" firstAttribute="leading" secondItem="bkG-FW-Ul4" secondAttribute="leading" constant="22" id="mYk-pl-EQL"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZK2-Vv-2Fe">
-                    <rect key="frame" x="0.0" y="84" width="375" height="634"/>
+                    <rect key="frame" x="0.0" y="112" width="375" height="606"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmC-1L-Pqy">
                             <rect key="frame" x="0.0" y="21" width="375" height="45"/>
@@ -146,7 +146,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugh-5c-Wng">
-                            <rect key="frame" x="0.0" y="522" width="375" height="45"/>
+                            <rect key="frame" x="0.0" y="433" width="375" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0z-hE-7ZI">
                                     <rect key="frame" x="22" y="12.5" width="331" height="20"/>
@@ -259,7 +259,7 @@
                         <constraint firstAttribute="trailing" secondItem="ugh-5c-Wng" secondAttribute="trailing" id="7bR-Oe-YYV"/>
                         <constraint firstItem="xqy-xv-PKV" firstAttribute="top" secondItem="Igy-KM-Xh6" secondAttribute="bottom" constant="7" id="8AP-p2-udj"/>
                         <constraint firstItem="Igy-KM-Xh6" firstAttribute="leading" secondItem="ZK2-Vv-2Fe" secondAttribute="leading" id="AG1-7a-DgU"/>
-                        <constraint firstAttribute="bottom" secondItem="ugh-5c-Wng" secondAttribute="bottom" constant="67" id="Cec-Fs-GrW"/>
+                        <constraint firstAttribute="bottom" secondItem="ugh-5c-Wng" secondAttribute="bottom" constant="128" id="Cec-Fs-GrW"/>
                         <constraint firstItem="ugh-5c-Wng" firstAttribute="leading" secondItem="ZK2-Vv-2Fe" secondAttribute="leading" id="PA4-Nz-7p5"/>
                         <constraint firstAttribute="trailing" secondItem="Igy-KM-Xh6" secondAttribute="trailing" id="Ze5-rU-So7"/>
                         <constraint firstItem="3m8-Ek-kCl" firstAttribute="leading" secondItem="ZK2-Vv-2Fe" secondAttribute="leading" id="aUY-3W-ldK"/>
