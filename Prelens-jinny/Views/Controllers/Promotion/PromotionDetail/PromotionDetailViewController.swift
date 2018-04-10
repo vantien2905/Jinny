@@ -34,9 +34,9 @@ class PromotionDetailViewController: BaseViewController {
             
             // MARK: Setup the merchantName
             if let merchantName = promotionDetail?.merchantName {
-              //  setNavigation(name: merchantName)
+                setNavigation(name: merchantName)
             } else {
-               // setNavigation(name: "")
+                setNavigation(name: "")
             }
         }
     }
@@ -59,8 +59,7 @@ class PromotionDetailViewController: BaseViewController {
         super.viewDidAppear(true)
         darkStatus()
         bindData()
-        guard let _merchantName = merchantName else { return }
-        setNavigation(name: _merchantName)
+        
     }
     
     class func configureViewController(idVoucher: String) -> PromotionDetailViewController {

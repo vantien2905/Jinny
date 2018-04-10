@@ -22,7 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         application.applicationIconBadgeNumber = 0
         //remote notification
-        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
+
         configureFirebase(on: application)
         
         Fabric.with([Crashlytics.self])
