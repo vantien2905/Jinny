@@ -160,7 +160,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20, font: UIFont(name: "SegoeUI-Semibold", size: 16)!)
+            let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*19, font: UIFont(name: "SegoeUI-Semibold", size: 16)!)
             let size = UIScreen.main.bounds.width
             
             guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
