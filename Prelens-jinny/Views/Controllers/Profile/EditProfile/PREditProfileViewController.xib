@@ -233,6 +233,7 @@ customized for you!</string>
                                 <constraint firstItem="FGS-k9-7RF" firstAttribute="leading" secondItem="pRb-F4-4wq" secondAttribute="leading" id="Fha-er-55i"/>
                                 <constraint firstItem="SWe-sQ-jbd" firstAttribute="leading" secondItem="cNu-5K-FUn" secondAttribute="leading" id="G8s-vf-Kwy"/>
                                 <constraint firstItem="nAQ-Ze-AEV" firstAttribute="trailing" secondItem="iQD-HH-1Ee" secondAttribute="trailing" id="Gkd-Nu-jA7"/>
+                                <constraint firstItem="VdZ-8o-WNa" firstAttribute="height" secondItem="cNu-5K-FUn" secondAttribute="height" constant="-1.5" id="Jzl-nc-gWO"/>
                                 <constraint firstItem="Rms-cy-q5U" firstAttribute="leading" secondItem="0Gb-sq-a32" secondAttribute="leading" id="KcZ-t1-qmR"/>
                                 <constraint firstItem="pR6-uJ-Juj" firstAttribute="leading" secondItem="DU3-MK-OBe" secondAttribute="leading" id="KsO-MG-uo4"/>
                                 <constraint firstAttribute="trailing" secondItem="VdZ-8o-WNa" secondAttribute="trailing" constant="41.5" id="Lrz-aw-LDC"/>
@@ -275,7 +276,6 @@ customized for you!</string>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mLy-RK-qWm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6NS-EO-fsW"/>
-                <constraint firstItem="VdZ-8o-WNa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="45.5:800" id="7fe-97-cm6"/>
                 <constraint firstItem="mLy-RK-qWm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bux-ay-nLY"/>
                 <constraint firstItem="mLy-RK-qWm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="bzb-Mj-zTq"/>
                 <constraint firstItem="mLy-RK-qWm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pXw-5Z-iRg"/>
