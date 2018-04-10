@@ -28,7 +28,6 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     let disposeBag = DisposeBag()
     var listSearch = [Promotion]()
     var refreshControl: UIRefreshControl!
-    
     var listPromotion = [Promotion]() {
         didSet {
             self.cvAllPromotion.reloadData()
@@ -94,6 +93,17 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         }
         allPromotionVC.viewModel = viewModel
         return allPromotionVC
+    }
+    
+    func updateBadgeTabbar(list: [Promotion]) {
+        var number = 0
+        if list.count != 0 {
+            for item in list {
+                if item.isReaded == false {
+                    number += 1
+                }
+            }
+        }
     }
     
     @objc func bindData() {
@@ -238,3 +248,4 @@ extension AllPromotionViewController: OtherHeaderCellDelegate {
         }
     }
 }
+

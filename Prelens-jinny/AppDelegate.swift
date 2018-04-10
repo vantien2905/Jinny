@@ -138,8 +138,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        guard var voucherID =  userInfo["id"] as? String else { return }
-        let voucherID = "70b43fc8-9e0d-4e53-af0e-fe2fe5a1f203" // Under testing
+        guard var voucherID =  userInfo["id"] as? String else { return }
         print(voucherID)
         let route = Route(tabbar: .vouchers)
         Navigator.shared.handle(route: route, id: voucherID)

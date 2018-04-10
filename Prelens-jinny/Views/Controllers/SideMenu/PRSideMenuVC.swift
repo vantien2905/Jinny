@@ -90,10 +90,4 @@ extension PRSideMenuVC {
         let privacyVC = PrivacyViewController.initControllerFromNib()
         self.push(controller: privacyVC)
     }
-    
-//    @IBAction func logoutTapped() {
-//        KeychainManager.shared.deleteAllSavedData()
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-//        appDelegate.goToLogin()
-//    }
 }

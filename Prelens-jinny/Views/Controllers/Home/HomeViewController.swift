@@ -1,3 +1,4 @@
+
 //
 //  PRNewBaseVC.swift
 //  Prelens-jinny
@@ -26,12 +27,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lcsSideMenu: NSLayoutConstraint!
     @IBOutlet weak var vSideMenu: UIView!
     @IBOutlet weak var vCloseTap: UIView!
-    
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
     var sideMenuTrigger: Bool = true
     
     let membershipVC = MemberShipViewController.initControllerFromNib()
     let promotionVC  = PromotionViewController.initControllerFromNib()
+    
+    var numbers = 0 {
+        didSet {
+           vTabbar.vPromotions.setNotificationCounter(count: numbers)
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -46,12 +52,21 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        let notificationName = Notification.Name("UpdateBadgeTabbar")
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateBadgeTabbar), name: notificationName, object: nil)
         addSubView()
         setUpView()
+        
+    }
+    
+    @objc func updateBadgeTabbar(){
+        let defaults = UserDefaults.standard
+        numbers = defaults.integer(forKey: KeychainItem.badgeNumber.rawValue)
     }
     
     func setUpView() {
+        let defaults = UserDefaults.standard
         vNavigation.backgroundColor = PRColor.mainAppColor
         lcsNavigationHeight.constant = 64
         if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
@@ -76,7 +91,7 @@ class HomeViewController: UIViewController {
         lcsSideMenu.constant = UIScreen.main.bounds.width * 2/3
         lcsHeightSideMenu.constant = UIScreen.main.bounds.width * 2/3
         
-        vTabbar.vPromotions.setNotificationCounter(count: 6)
+        vTabbar.vPromotions.setNotificationCounter(count: numbers)
         vTabbar.vMemberships.setNotificationCounter(count: 0)
         vTabbar.vMore.setNotificationCounter(count: 0)
     }

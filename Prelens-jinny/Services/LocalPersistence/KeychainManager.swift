@@ -24,6 +24,7 @@ enum KeychainItem: String {
     case voucherExprireStatus   = "VoucherExprireStatus"
     case leftDayToRemind        = "LeftDayToremind"
     case fcmToken               = "fcmToken"
+    case badgeNumber            = "BadgeNumber"
 }
 
 class KeychainManager {

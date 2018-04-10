@@ -27,6 +27,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
     let disposeBag = DisposeBag()
     
     init() {
+        
         isLatest = Variable<Bool>(true)
         textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
             let listVoucher = self?.listSearchVoucher.value?.filter { (promotion) -> Bool in
@@ -50,6 +51,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
     }
     
     func getListAllPromotion(order:String) {
+        let defaults = UserDefaults.standard
         Provider.shared.promotionService.getListAllPromotion(order: order)
             //.showProgressIndicator()
             .subscribe(onNext: { [weak self] (listPromotion) in
@@ -59,18 +61,21 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 var listOld = [Promotion]()
                 
                 for element in listPromotion {
-                    if element.isReaded == true {
+                    if element.isReaded == false {
                         listNew.append(element)
                     } else {
                         listOld.append(element)
                     }
                 }
-                strongSelf.listAllPromotion.value = listOld + listNew
-                strongSelf.listSearchVoucher.value = listOld + listNew
+               
+                strongSelf.listAllPromotion.value = listNew + listOld
+                strongSelf.listSearchVoucher.value = listNew + listOld
                 
                 // MARK: Setup notification
                 UIApplication.shared.cancelAllLocalNotifications()
                 strongSelf.setupNotification(listData: listPromotion)
+                defaults.set(listNew.count, forKey: KeychainItem.badgeNumber.rawValue)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateBadgeTabbar"), object: nil)
             }).disposed(by: disposeBag)
     }
     
@@ -97,7 +102,6 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 for item in listData {
                     guard let _name = item.merchant?.name , let _expireDate = item.expiresAt else { return  }
                     LocalNotification.dispatchlocalNotification(with: _name, body: "The vouchers will expire after \(_leftDay) days", userInfo: ["id" : item.id ?? ""], day: _expireDate, dayBeforeExprise: Int(_leftDay)!)
-
                 }
             }
         }
