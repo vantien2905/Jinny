@@ -32,6 +32,7 @@ class AchivedPromotionViewController: UIViewController {
     }
     
     weak var buttonHidden: ArchivedPromotionDelegate?
+    weak var delegateScroll: ScrollDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
         vSearch.tfSearch.text = ""
@@ -114,8 +115,10 @@ class AchivedPromotionViewController: UIViewController {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHidden(isHidden: false)
+            delegateScroll?.isScroll(direction: false)
         } else {
             buttonHidden?.isHidden(isHidden: true)
+            delegateScroll?.isScroll(direction: true)
         }
     }
     

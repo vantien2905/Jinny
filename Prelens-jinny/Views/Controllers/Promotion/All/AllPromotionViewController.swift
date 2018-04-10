@@ -23,6 +23,7 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     static var merchantName: String?
+    weak var delegateScroll: ScrollDelegate?
     
     var viewModel: AllPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
@@ -143,8 +144,10 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHiddenBtnAll(isHidden: false)
+            delegateScroll?.isScroll(direction: false)
         } else {
             buttonHidden?.isHiddenBtnAll(isHidden: true)
+            delegateScroll?.isScroll(direction: true)
         }
     }
 }

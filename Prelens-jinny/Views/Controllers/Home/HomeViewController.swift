@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     var sideMenuTrigger: Bool = true
     
     let membershipVC = MemberShipViewController.initControllerFromNib() as! MemberShipViewController
-    let promotionVC  = PromotionViewController.initControllerFromNib()
+    let promotionVC  = PromotionViewController.initControllerFromNib() as! PromotionViewController
     
     var numbers = 0 {
         didSet {
@@ -95,7 +95,10 @@ class HomeViewController: UIViewController {
         vTabbar.vMemberships.setNotificationCounter(count: 0)
         vTabbar.vMore.setNotificationCounter(count: 0)
         
-        membershipVC.delegateScroll = self
+//        membershipVC.delegateScroll = self
+//        promotionVC.vcAllPromotion.delegateScroll = self
+//        promotionVC.vcAchivedPromotion.delegateScroll = self
+//        promotionVC.vcStarredPromotion.delegateScroll = self
     }
  
     func setBackButton(image: UIImage) {
@@ -184,13 +187,13 @@ extension HomeViewController: ScrollDelegate {
         self.view.layoutIfNeeded()
         if direction {
             UIView.animate(withDuration: 0.5, animations: {
-                self.lcsHeightSideMenu.constant = 0
+                self.lcsNavigationHeight.constant = 0
                 self.view.layoutIfNeeded()
             })
             
         } else {
             UIView.animate(withDuration: 0.5, animations: {
-                self.lcsHeightSideMenu.constant = 64
+                self.lcsNavigationHeight.constant = 64
                 self.view.layoutIfNeeded()
             })
         }
