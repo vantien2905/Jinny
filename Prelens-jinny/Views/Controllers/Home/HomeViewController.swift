@@ -114,7 +114,7 @@ class HomeViewController: UIViewController {
         self.addChildViewController(sideMenuVC)
         sideMenuVC.view.frame = vSideMenu.bounds
         self.vSideMenu.addSubview(sideMenuVC.view)
-//        sideMenuVC.view.fillSuperview()
+
     }
     
     func switchScreen(from VC1: UIViewController, to VC2: UIViewController) {

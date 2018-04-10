@@ -232,6 +232,7 @@ extension AllPromotionViewController: UICollectionViewDelegateFlowLayout, UIColl
             if indexPath.section == 1 {
                 guard let idVoucher = listPromotion[indexPath.item].id else { return }
                 let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
+                detailVoucherVC.merchantName = self.listPromotion[indexPath.item].merchant?.name
                 self.push(controller: detailVoucherVC, animated: true)
                 AllPromotionViewController.merchantName = listPromotion[indexPath.item].merchant?.name
             }

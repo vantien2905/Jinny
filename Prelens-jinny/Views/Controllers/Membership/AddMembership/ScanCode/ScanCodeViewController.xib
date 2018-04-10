@@ -92,33 +92,31 @@
                         <action selector="btnBackClick" destination="-1" eventType="touchUpInside" id="hmz-6w-3MR"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blh-nb-Nzp" customClass="OverlayQRCode" customModule="Jinny" customModuleProvider="target">
-                    <rect key="frame" x="107" y="245.5" width="160.5" height="160.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blh-nb-Nzp" customClass="OverlayCamera" customModule="Jinny" customModuleProvider="target">
+                    <rect key="frame" x="-0.5" y="131" width="375.5" height="389.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="160.5" id="VeQ-dN-vwQ"/>
-                        <constraint firstAttribute="width" constant="160.5" id="c9l-zu-hn3"/>
-                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Blh-nb-Nzp" firstAttribute="width" secondItem="9qy-5g-qJp" secondAttribute="width" id="5In-zJ-ZJv"/>
                 <constraint firstItem="GHe-f7-Af3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9IH-1y-6p3"/>
                 <constraint firstItem="T8D-WZ-9bq" firstAttribute="top" secondItem="9qy-5g-qJp" secondAttribute="bottom" constant="70.5" id="Jqr-s7-9ws"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9qy-5g-qJp" secondAttribute="trailing" id="Mls-65-VD6"/>
                 <constraint firstItem="PMW-VQ-Bfm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14.5" id="Q7i-Sw-VyL"/>
+                <constraint firstItem="Blh-nb-Nzp" firstAttribute="centerX" secondItem="9qy-5g-qJp" secondAttribute="centerX" id="TKK-j8-2Nm"/>
                 <constraint firstItem="GHe-f7-Af3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="V5q-wZ-kKM"/>
                 <constraint firstItem="GHe-f7-Af3" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="56/375" id="VAp-iV-S2Z"/>
                 <constraint firstItem="GHe-f7-Af3" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="56.5/667" id="Zk7-TB-rFU"/>
                 <constraint firstItem="PMW-VQ-Bfm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="amf-gF-7mM"/>
                 <constraint firstItem="9qy-5g-qJp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cVq-8a-lbc"/>
+                <constraint firstItem="Blh-nb-Nzp" firstAttribute="height" secondItem="9qy-5g-qJp" secondAttribute="height" id="dV1-Ng-JIw"/>
+                <constraint firstItem="Blh-nb-Nzp" firstAttribute="centerY" secondItem="9qy-5g-qJp" secondAttribute="centerY" id="eDI-oA-W4q"/>
                 <constraint firstItem="9qy-5g-qJp" firstAttribute="top" secondItem="GHe-f7-Af3" secondAttribute="bottom" constant="29" id="h2g-UI-TBb"/>
                 <constraint firstItem="9qy-5g-qJp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="389.5/667" id="iBR-Xb-gKD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="z0j-Gm-Tqo" secondAttribute="leading" id="l5z-9m-spb"/>
                 <constraint firstItem="T8D-WZ-9bq" firstAttribute="centerX" secondItem="9qy-5g-qJp" secondAttribute="centerX" id="nSO-Te-Fhc"/>
-                <constraint firstItem="Blh-nb-Nzp" firstAttribute="centerY" secondItem="9qy-5g-qJp" secondAttribute="centerY" id="qrm-Kj-aBv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="z0j-Gm-Tqo" secondAttribute="top" id="szO-aI-pqg"/>
-                <constraint firstItem="Blh-nb-Nzp" firstAttribute="centerX" secondItem="9qy-5g-qJp" secondAttribute="centerX" id="xIe-rG-hb4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="53.5"/>
