@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
     var sideMenuTrigger: Bool = true
     
-    let membershipVC = MemberShipViewController.initControllerFromNib() as! MemberShipViewController
-    let promotionVC  = PromotionViewController.initControllerFromNib() as! PromotionViewController
+    let membershipVC = MemberShipViewController.initControllerFromNib()
+    let promotionVC  = PromotionViewController.initControllerFromNib()
     
     var numbers = 0 {
         didSet {
