@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         
     }
     
-    @objc func updateBadgeTabbar(){
+    @objc func updateBadgeTabbar() {
         let defaults = UserDefaults.standard
         numbers = defaults.integer(forKey: KeychainItem.badgeNumber.rawValue)
     }
