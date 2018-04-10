@@ -135,6 +135,14 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
         completionHandler(.alert)
     }
     
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        guard let voucherID =  notification.userInfo?["id"] else {return}
+        print(voucherID)
+        let route = Route(tabbar: .vouchers)
+        Navigator.shared.handle(route: route, id: voucherID as! String)
+
+    }
+    
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
