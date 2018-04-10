@@ -52,9 +52,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        let notificationName = Notification.Name("UpdateBadgeTabbar")
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateBadgeTabbar), name: notificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateBadgeTabbar), name: NSNotification.Name(rawValue: ConstantNotification.updateBadgeVoucherTabbar), object: nil)
         addSubView()
         setUpView()
         

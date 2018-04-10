@@ -75,7 +75,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
                 UIApplication.shared.cancelAllLocalNotifications()
                 strongSelf.setupNotification(listData: listPromotion)
                 defaults.set(listNew.count, forKey: KeychainItem.badgeNumber.rawValue)
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateBadgeTabbar"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: ConstantNotification.updateBadgeVoucherTabbar), object: nil)
             }).disposed(by: disposeBag)
     }
     
