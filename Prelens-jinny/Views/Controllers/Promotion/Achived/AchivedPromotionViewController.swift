@@ -46,8 +46,6 @@ class AchivedPromotionViewController: UIViewController {
         super.viewDidLoad()
         configColecttionView()
         setUpView()
-
-     
     }
     
     class func configureViewController() -> AchivedPromotionViewController {
