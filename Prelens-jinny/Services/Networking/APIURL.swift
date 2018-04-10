@@ -17,6 +17,7 @@ struct APIEndpoint {
         static let forgotPassword        = "users/forgot_password"
         static let changePassword        = "users/change_password"
         static let signOut               = "sessions/sign_out"
+        static let changeToken           = "/api/v1/users/change_token"
     }
 
     struct Membership {

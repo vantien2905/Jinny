@@ -15,6 +15,7 @@ protocol AuthenticationServiceProtocol {
     func forgotPassword(email: String) -> Observable<PRForgotPassword?>
     func changePassword(currentPassword: String, newPassword: String) -> Observable<PRUser?>
     func signOut() -> Observable<ResponseError?>
+    func refreshFCMToken(oldToken: String, newToken: String) -> Observable<PRForgotPassword?>
 }
 
 class AuthenticationService: AuthenticationServiceProtocol {
@@ -38,7 +39,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
         let parameters = [
             "email": email,
             "password": password,
-            "fcmTocken": fcmTocken
+            "fcm_token": fcmTocken
         ]
 
         return network.rx_Object(url: APIEndpoint.Authentication.login, method: .post, parameters: parameters as [String: AnyObject])
@@ -68,6 +69,15 @@ class AuthenticationService: AuthenticationServiceProtocol {
         ]
 
         return network.rx_Object(url: APIEndpoint.Authentication.changePassword, method: .put, parameters: parameters as [String: AnyObject])
+    }
+    
+    func refreshFCMToken(oldToken: String, newToken: String) -> Observable<PRForgotPassword?> {
+        let parameters = [
+            "old_fcm_token": oldToken,
+            "new_fcm_token": newToken
+        ]
+        
+         return network.rx_Object(url: APIEndpoint.Authentication.changeToken, method: .put, parameters: parameters as [String: AnyObject])
     }
 
 }

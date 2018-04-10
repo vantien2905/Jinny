@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
     var sideMenuTrigger: Bool = true
     
-    let membershipVC = MemberShipViewController.initControllerFromNib() as! MemberShipViewController
-    let promotionVC  = PromotionViewController.initControllerFromNib() as! PromotionViewController
+    let membershipVC = MemberShipViewController.initControllerFromNib()
+    let promotionVC  = PromotionViewController.initControllerFromNib()
     
     var numbers = 0 {
         didSet {
@@ -52,9 +52,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        let notificationName = Notification.Name("UpdateBadgeTabbar")
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateBadgeTabbar), name: notificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateBadgeTabbar), name: NSNotification.Name(rawValue: ConstantNotification.updateBadgeVoucherTabbar), object: nil)
         addSubView()
         setUpView()
         

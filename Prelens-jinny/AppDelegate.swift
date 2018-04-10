@@ -131,7 +131,10 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        guard let voucherID =  notification.request.content.userInfo["id"] as? String else {return}
+        guard let voucherID =  notification.request.content.userInfo["id"] as? String else {
+            completionHandler(.alert)
+            return
+        }
 //        let voucherID = "70b43fc8-9e0d-4e53-af0e-fe2fe5a1f203" // Under testing
         print(voucherID)
         let route = Route(tabbar: .vouchers)
@@ -151,7 +154,10 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        guard let voucherID =  userInfo["id"] as? String else { return }
+        guard let voucherID =  userInfo["id"] as? String else {
+            completionHandler(.newData)
+            return
+        }
         print(voucherID)
         let route = Route(tabbar: .vouchers)
         Navigator.shared.handle(route: route, id: voucherID)
@@ -209,6 +215,8 @@ extension AppDelegate: MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("=> didRefreshRegistrationToken: \(fcmToken)")
+        guard let _fcmToken = KeychainManager.shared.getString(key: KeychainItem.fcmToken) else {return}
+        Provider.shared.authenticationService.refreshFCMToken(oldToken: _fcmToken, newToken: fcmToken)
         KeychainManager.shared.saveString(value: fcmToken, forkey: KeychainItem.fcmToken)
     }
 }
