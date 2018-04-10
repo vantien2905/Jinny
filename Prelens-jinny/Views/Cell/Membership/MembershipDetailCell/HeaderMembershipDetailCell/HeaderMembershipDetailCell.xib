@@ -40,8 +40,8 @@
                                     <constraint firstAttribute="height" constant="202.5" id="DPv-9O-1K9"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="896123412345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO1-QT-uLb">
-                                <rect key="frame" x="101" y="340.5" width="144.5" height="117"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO1-QT-uLb">
+                                <rect key="frame" x="173.5" y="340.5" width="0.0" height="117"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="22.5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

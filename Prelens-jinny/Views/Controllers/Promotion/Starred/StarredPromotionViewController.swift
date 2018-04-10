@@ -208,6 +208,7 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             if indexPath.section == 1 {
                 guard let idVoucher = listStarredPromotion[indexPath.item].id else { return }
                 let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
+                detailVoucherVC.merchantName = listStarredPromotion[indexPath.item].merchant?.name
                 self.push(controller: detailVoucherVC, animated: true)
                 StarredPromotionViewController.merchantName = listStarredPromotion[indexPath.item].merchant?.name
             }

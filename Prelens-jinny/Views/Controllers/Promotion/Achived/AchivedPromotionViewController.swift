@@ -206,6 +206,7 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
                 guard let idVoucher = listAchivedPromotion[indexPath.item].id else { return }
                 let detailVoucherVC = PromotionDetailViewController.configureViewController(idVoucher: idVoucher)
                 detailVoucherVC.voucherArchived = true
+                detailVoucherVC.merchantName = listAchivedPromotion[indexPath.item].merchant?.name
                 self.push(controller: detailVoucherVC, animated: true)
                 AllPromotionViewController.merchantName = listAchivedPromotion[indexPath.item].merchant?.name
             }
