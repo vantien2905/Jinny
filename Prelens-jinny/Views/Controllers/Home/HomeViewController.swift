@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
     var sideMenuTrigger: Bool = true
     
-    let membershipVC = MemberShipViewController.initControllerFromNib()
-    let promotionVC  = PromotionViewController.initControllerFromNib()
+    let membershipVC = MemberShipViewController.initControllerFromNib() as! MemberShipViewController
+    let promotionVC  = PromotionViewController.initControllerFromNib() as! PromotionViewController
     
     var numbers = 0 {
         didSet {
@@ -94,6 +94,11 @@ class HomeViewController: UIViewController {
         vTabbar.vPromotions.setNotificationCounter(count: numbers)
         vTabbar.vMemberships.setNotificationCounter(count: 0)
         vTabbar.vMore.setNotificationCounter(count: 0)
+        
+//        membershipVC.delegateScroll = self
+//        promotionVC.vcAllPromotion.delegateScroll = self
+//        promotionVC.vcAchivedPromotion.delegateScroll = self
+//        promotionVC.vcStarredPromotion.delegateScroll = self
     }
  
     func setBackButton(image: UIImage) {
@@ -173,6 +178,25 @@ extension HomeViewController: PRTabbarCustomDelegate {
     }
     
     @IBAction func btnRightAction() {
+        
+    }
+}
+
+extension HomeViewController: ScrollDelegate {
+    func isScroll(direction: Bool) {
+        self.view.layoutIfNeeded()
+        if direction {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.lcsNavigationHeight.constant = 0
+                self.view.layoutIfNeeded()
+            })
+            
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.lcsNavigationHeight.constant = 64
+                self.view.layoutIfNeeded()
+            })
+        }
         
     }
 }

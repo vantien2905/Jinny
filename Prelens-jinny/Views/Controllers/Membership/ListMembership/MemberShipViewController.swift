@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol ScrollDelegate: class {
+    func isScroll(direction: Bool)
+}
+
 class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var cvMembership: UICollectionView!
@@ -22,6 +26,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     
     let viewModel = MembershipViewModel()
     let disposeBag = DisposeBag()
+    weak var delegateScroll: ScrollDelegate?
     
     var refreshControl: UIRefreshControl!
     
@@ -131,7 +136,7 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.register(UINib(nibName: Cell.membershipFooter, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter)
 
         cvMembership.backgroundColor = PRColor.backgroundColor
-        cvMembership.contentInset = UIEdgeInsets(top: 0, left: 6, bottom: 22, right: 6)
+        cvMembership.contentInset = UIEdgeInsets(top: 0, left: 7, bottom: 22, right: 7)
         
         cvMembership.isScrollEnabled = false
         cvMembership.delegate = self
@@ -143,8 +148,11 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         self.view.layoutIfNeeded()
         if actualPosition.y > 100 {
             btnAddMembership.isHidden = false
+            delegateScroll?.isScroll(direction: false)
+            
         } else if actualPosition.y < -100 {
             btnAddMembership.isHidden = true
+            delegateScroll?.isScroll(direction: true)
         }
     }
     
@@ -209,28 +217,28 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          if indexPath.section == 0 {
             if self.listMember.startedMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 12, height: 20)
+                return CGSize(width: collectionView.frame.width - 14, height: 20)
                 
             } else {
-                return CGSize(width: (collectionView.frame.width - 18)/2, height: (collectionView.frame.width - 18)/2*133/178)
+                return CGSize(width: (collectionView.frame.width - 21)/2, height: (collectionView.frame.width - 21)/2*133/178)
             }
             
         } else {
             if self.listMember.otherMemberships.count == 0 {
-                return CGSize(width: collectionView.frame.width - 12, height: 20)
+                return CGSize(width: collectionView.frame.width - 14, height: 20)
                 
             } else {
-                return CGSize(width: (collectionView.frame.width - 18)/2, height: (collectionView.frame.width - 18)/2*133/178)
+                return CGSize(width: (collectionView.frame.width - 21)/2, height: (collectionView.frame.width - 21)/2*133/178)
             }
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 6
+        return 7
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 6
+        return 7
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

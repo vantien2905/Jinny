@@ -23,6 +23,7 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     static var merchantName: String?
+    weak var delegateScroll: ScrollDelegate?
     
     var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
@@ -118,8 +119,10 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHiddenBtnStar(isHidden: false)
+            delegateScroll?.isScroll(direction: false)
         } else {
             buttonHidden?.isHiddenBtnStar(isHidden: true)
+            delegateScroll?.isScroll(direction: true)
         }
     }
 }

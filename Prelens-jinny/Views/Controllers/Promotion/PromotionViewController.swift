@@ -21,9 +21,9 @@ class PromotionViewController: BaseViewController {
     var currentIndex = 0
     var controllers = [UIViewController]()
     
-    let vcAllPromotion = AllPromotionViewController.configureViewController()
-    let vcStarredPromotion = StarredPromotionViewController.configureViewController()
-    let vcAchivedPromotion = AchivedPromotionViewController.configureViewController()
+    let vcAllPromotion = AllPromotionViewController.configureViewController() as! AllPromotionViewController
+    let vcStarredPromotion = StarredPromotionViewController.configureViewController() as! StarredPromotionViewController
+    let vcAchivedPromotion = AchivedPromotionViewController.configureViewController() as! AchivedPromotionViewController
     let cellId = "CellId"
     
     override func viewWillAppear(_ animated: Bool) {
