@@ -20,7 +20,7 @@ class PRSwitch :PRBaseView {
     
     let imgCircle: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "circle")
+        img.image = UIImage(named: "switch-1")
         img.contentMode = .scaleAspectFit
         return img
     }()
