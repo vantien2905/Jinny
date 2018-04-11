@@ -83,15 +83,15 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
         isLatest.asObservable().subscribe(onNext: {[weak self] (isLatest) in
             guard let strongSelf = self else { return }
             if isLatest {
-                strongSelf.getListAllPromotion(order: "desc")
+                strongSelf.getListAllPromotion(order: ContantVoucher.sortDescending)
             } else {
-                strongSelf.getListAllPromotion(order: "asc")
+                strongSelf.getListAllPromotion(order: ContantVoucher.sortAscending)
             }
         }).disposed(by: disposeBag)
     }
     func refresh() {
         isLatest.value = true
-        getListAllPromotion(order: "desc")
+        getListAllPromotion(order: ContantVoucher.sortDescending)
     }
     
     func setupNotification(listData: [Promotion]) {
