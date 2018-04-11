@@ -15,7 +15,7 @@ protocol ScrollDelegate: class {
 }
 
 class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
-
+    
     @IBOutlet weak var cvMembership: UICollectionView!
     @IBOutlet weak var btnAddMembership: UIButton!
     @IBOutlet weak var vSearch: SearchView!
@@ -51,11 +51,11 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     }()
     
     var listSearch = Membership()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,16 +103,16 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     func bindData() {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
-
+                
                 guard let strongSelf = self else { return }
                 strongSelf.viewModel.refresh()
                 strongSelf.vSearch.tfSearch.text = ""
                 strongSelf.vSearch.tfSearch.resignFirstResponder()
                 strongSelf.refreshControl.endRefreshing()
-
+                
             })
             .disposed(by: disposeBag)
-
+        
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](text) in
             self?.viewModel.inputs.textSearch.value = text
         }).disposed(by: disposeBag)
@@ -125,14 +125,14 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
             }
         }).disposed(by: disposeBag)
     }
-
+    
     func confireCollectionView() {
         cvMembership.register(UINib(nibName: Cell.memberShip, bundle: nil), forCellWithReuseIdentifier: Cell.memberShip)
         cvMembership.register(UINib(nibName: Cell.emptyMembership, bundle: nil), forCellWithReuseIdentifier: Cell.emptyMembership)
         cvMembership.register(UINib(nibName: Cell.starredheader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.starredheader)
         cvMembership.register(UINib(nibName: Cell.otherHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Cell.otherHeader)
         cvMembership.register(UINib(nibName: Cell.membershipFooter, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter)
-
+        
         cvMembership.backgroundColor = PRColor.backgroundColor
         cvMembership.contentInset = UIEdgeInsets(top: 0, left: 7, bottom: 22, right: 7)
         
@@ -141,18 +141,25 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.dataSource = self
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        self.view.layoutIfNeeded()
-        if actualPosition.y > 100 {
+    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+    //        self.view.layoutIfNeeded()
+    //        if actualPosition.y > 100 {
+    //            btnAddMembership.isHidden = false
+    //            delegateScroll?.isScroll(direction: false)
+    //            self.lightStatus()
+    //
+    //        } else if actualPosition.y < -800 {
+    //            btnAddMembership.isHidden = true
+    //            delegateScroll?.isScroll(direction: true)
+    //            self.darkStatus()
+    //        }
+    //    }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if targetContentOffset.pointee.y == 0 {
             btnAddMembership.isHidden = false
-            delegateScroll?.isScroll(direction: false)
-            self.lightStatus()
-            
-        } else if actualPosition.y < -100 {
+        } else {
             btnAddMembership.isHidden = true
-            delegateScroll?.isScroll(direction: true)
-            self.darkStatus()
         }
     }
     
@@ -190,11 +197,11 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
             }
         }
     }
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             if self.listMember.startedMemberships.count == 0 {
@@ -203,7 +210,7 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
             } else {
                 return self.listMember.startedMemberships.count
             }
-
+            
         } else {
             if self.listMember.otherMemberships.count == 0 {
                 return 1
@@ -213,9 +220,9 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
             }
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         if indexPath.section == 0 {
+        if indexPath.section == 0 {
             if self.listMember.startedMemberships.count == 0 {
                 return CGSize(width: collectionView.frame.width - 14, height: 20)
                 
@@ -232,15 +239,15 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
             }
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 7
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 7
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
             return CGSize(width: collectionView.frame.width, height: 42.5)
@@ -248,19 +255,19 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
             return CGSize(width: collectionView.frame.width, height: 42.5)
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         if section == 0 {
             return CGSize(width: collectionView.frame.width, height: 15)
         } else {
             return CGSize(width: 0, height: 0)
         }
-
+        
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var reusableView: UICollectionReusableView? = nil
-
+        
         if kind == UICollectionElementKindSectionHeader {
             // Create Header
             if indexPath.section == 0 {
@@ -285,15 +292,15 @@ extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollec
                 }
                 reusableView = headerView
             }
-
+            
         } else {
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: Cell.membershipFooter, for: indexPath as IndexPath) as! MembershipFooterCell
             reusableView = footerView
         }
-
+        
         return reusableView!
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if listMember.startedMemberships.count != 0 {
