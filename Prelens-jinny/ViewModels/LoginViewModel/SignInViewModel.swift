@@ -77,9 +77,12 @@ final class SignInViewModel {
                 guard let strongSelf = self else { return }
                 let defaults = UserDefaults.standard
                 if let token = userLogin.token {
-                      KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
-                      KeychainManager.shared.setToken(token)
-                      KeychainManager.shared.saveString(value: "7", forkey: KeychainItem.leftDayToRemind)
+                    if let _name = userLogin.fullName {
+                       KeychainManager.shared.saveString(value: _name , forkey: .displayName)
+                    }
+                    KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
+                    KeychainManager.shared.setToken(token)
+                    KeychainManager.shared.saveString(value: "7", forkey: KeychainItem.leftDayToRemind)
                 }
                 strongSelf.isLoginSuccess.onCompleted()
                 defaults.set(true, forKey: KeychainItem.isFirstRunning.rawValue)

@@ -37,7 +37,7 @@ class PRSideMenuVC: UIViewController {
     let disposeBag = DisposeBag()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        lbEmail.text = KeychainManager.shared.getString(key: .email)
+        setupData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,14 @@ class PRSideMenuVC: UIViewController {
         setUpView()
         
     }
-    
+    func setupData() {
+        if let _name = KeychainManager.shared.getString(key: .displayName) {
+            lbAccount.text = _name
+        } else {
+            lbAccount.text = "Account"
+        }
+        lbEmail.text = KeychainManager.shared.getString(key: .email)
+    }
     func bindViewModel() {
         btnLogout.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
