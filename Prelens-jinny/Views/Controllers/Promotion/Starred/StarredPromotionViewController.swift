@@ -14,7 +14,7 @@ protocol StarredPromotionDelegate: class {
     func isHiddenBtnStar(isHidden: Bool)
 }
 
-class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
+class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -119,10 +119,10 @@ class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHiddenBtnStar(isHidden: false)
-            delegateScroll?.isScroll(direction: false)
+            delegateScroll?.isScroll(direction: false, name: "StarredPromotionViewController")
         } else {
             buttonHidden?.isHiddenBtnStar(isHidden: true)
-            delegateScroll?.isScroll(direction: true)
+            delegateScroll?.isScroll(direction: true, name: "StarredPromotionViewController")
         }
     }
 }

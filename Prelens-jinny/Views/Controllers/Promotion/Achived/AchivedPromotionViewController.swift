@@ -14,7 +14,7 @@ protocol ArchivedPromotionDelegate: class {
     func isHidden(isHidden: Bool)
 }
 
-class AchivedPromotionViewController: UIViewController {
+class AchivedPromotionViewController: BaseViewController {
     @IBOutlet weak var cvAchivedPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -113,10 +113,10 @@ class AchivedPromotionViewController: UIViewController {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHidden(isHidden: false)
-            delegateScroll?.isScroll(direction: false)
+            delegateScroll?.isScroll(direction: false, name: "AchivePromotionViewController")
         } else {
             buttonHidden?.isHidden(isHidden: true)
-            delegateScroll?.isScroll(direction: true)
+            delegateScroll?.isScroll(direction: true, name: "AchivePromotionViewController")
         }
     }
     

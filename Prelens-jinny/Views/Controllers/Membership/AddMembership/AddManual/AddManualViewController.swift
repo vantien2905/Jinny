@@ -37,6 +37,11 @@ class AddManualViewController: BaseViewController {
     
     // MARK: Action
     @IBAction func btnDoneTapped() {
+        if tfSerial.text == nil || tfSerial.text == "" {
+            PopUpHelper.shared.showMessage(message: "You must enter serial number")
+            return
+        }
+        
         if let _code = tfSerial.text, let _merchant = viewModel.merchant.value {
             viewModel.addMembership(code: _code, merchantId: _merchant.id)
         }

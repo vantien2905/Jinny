@@ -146,7 +146,7 @@ extension HomeViewController: PRTabbarCustomDelegate {
     func addMainViewController(controller: UIViewController) {
         removeViewController(controller: controller)
         addChildViewController(controller)
-        
+        controller.view.frame = self.vContainer.bounds
         self.vContainer.addSubview(controller.view)
         controller.view.fillSuperview()
 
@@ -154,16 +154,22 @@ extension HomeViewController: PRTabbarCustomDelegate {
     }
     
     func btnTapped(tag: Route.Tabbar) {
+        self.lcsNavigationHeight.constant = 64
         switch tag {
         case .membership:
-//            if self.childViewControllers.contains(promotionVC) {
-//                switchScreen(from: promotionVC, to: membershipVC)
+            if self.childViewControllers.contains(promotionVC) {
+               removeViewController(controller: promotionVC)
+            }
+//            if self.lcsNavigationHeight.constant == 0 {
+//                self.lcsNavigationHeight.constant = 64
+//                self.view.layoutIfNeeded()
 //            }
-            self.lcsNavigationHeight.constant = 64
             addMainViewController(controller: membershipVC)
             vTabbar.setIndexSelected(index: 0)
         case .vouchers:
-            
+            if self.childViewControllers.contains(membershipVC) {
+                removeViewController(controller: membershipVC)
+            }
 //            if !self.childViewControllers.contains(promotionVC) {
 //                //Adding Promotion child view controller
 //                self.addChildViewController(promotionVC)
@@ -172,7 +178,11 @@ extension HomeViewController: PRTabbarCustomDelegate {
 //                promotionVC.view.fillSuperview()
 //            }
 //            switchScreen(from: membershipVC, to: promotionVC)
-            self.lcsNavigationHeight.constant = 64
+//            self.lcsNavigationHeight.constant = 64
+//            if self.lcsNavigationHeight.constant == 0 {
+//                self.lcsNavigationHeight.constant = 64
+//                self.view.layoutIfNeeded()
+//            }
             addMainViewController(controller: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             
@@ -199,14 +209,24 @@ extension HomeViewController: PRTabbarCustomDelegate {
     @IBAction func btnRightAction() {
         
     }
+    
+    func lightStatus() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    }
+    
+    func darkStatus() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
 }
 
 extension HomeViewController: ScrollDelegate {
-    func isScroll(direction: Bool) {
+    func isScroll(direction: Bool, name: String) {
+//        print("nameDelegate: \(name)")
         self.view.layoutIfNeeded()
         if direction {
             UIView.animate(withDuration: 0.3, animations: {
                 self.lcsNavigationHeight.constant = 0
+                self.darkStatus()
                 self.view.layoutIfNeeded()
             })
             
@@ -214,6 +234,7 @@ extension HomeViewController: ScrollDelegate {
             UIView.animate(withDuration: 0.3, animations: {
                 self.lcsNavigationHeight.constant = 64
                 self.view.layoutIfNeeded()
+                self.lightStatus()
             })
         }
         

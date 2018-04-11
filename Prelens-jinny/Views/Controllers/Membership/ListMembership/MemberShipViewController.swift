@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol ScrollDelegate: class {
-    func isScroll(direction: Bool)
+    func isScroll(direction: Bool, name: String)
 }
 
 class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
@@ -141,27 +141,31 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         cvMembership.dataSource = self
     }
     
-    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    //        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-    //        self.view.layoutIfNeeded()
-    //        if actualPosition.y > 100 {
-    //            btnAddMembership.isHidden = false
-    //            delegateScroll?.isScroll(direction: false)
-    //            self.lightStatus()
-    //
-    //        } else if actualPosition.y < -800 {
-    //            btnAddMembership.isHidden = true
-    //            delegateScroll?.isScroll(direction: true)
-    //            self.darkStatus()
-    //        }
-    //    }
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if targetContentOffset.pointee.y == 0 {
-            btnAddMembership.isHidden = false
-        } else {
-            btnAddMembership.isHidden = true
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+            self.view.layoutIfNeeded()
+            if actualPosition.y > 100 {
+                btnAddMembership.isHidden = false
+                delegateScroll?.isScroll(direction: false, name: "MembershipViewController")
+                self.lightStatus()
+            } else if actualPosition.y < -100 {
+                btnAddMembership.isHidden = true
+                delegateScroll?.isScroll(direction: true, name: "MembershipViewController")
+                self.darkStatus()
+            }
         }
-    }
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        if targetContentOffset.pointee.y == 0 {
+//            btnAddMembership.isHidden = false
+//            delegateScroll?.isScroll(direction: false, name: "MembershipViewController")
+//            self.lightStatus()
+//            
+//        } else if actualPosition.y < -100 {
+//            btnAddMembership.isHidden = true
+//           delegateScroll?.isScroll(direction: true, name: "MembershipViewController")
+//            self.darkStatus()
+//        }
+//    }
     
 }
 
