@@ -72,6 +72,7 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         
         vSearch.tfSearch.returnKeyType = .search
         scrollView.alwaysBounceVertical = true
+        scrollView.bounces  = true
     }
     
     class func configureViewController() -> AllPromotionViewController {
@@ -126,7 +127,6 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         cvAllPromotion.delegate = self
         cvAllPromotion.dataSource = self
     }
-    
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
