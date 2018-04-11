@@ -54,6 +54,7 @@ class PromotionViewController: BaseViewController {
 
     private func setupView() {
         configMenuView()
+//        vContainMenu.isHidden = true
     }
     
     private func configMenuView() {
@@ -124,7 +125,7 @@ extension PromotionViewController: MenuBarDelegate, AllPromotionDelegate {
     }
 
 }
-extension PromotionViewController: StarredPromotionDelegate, ArchivedPromotionDelegate{
+extension PromotionViewController: StarredPromotionDelegate, ArchivedPromotionDelegate {
     func isHiddenBtnStar(isHidden: Bool) {
         btnAddVoucher.isHidden = isHidden
     }
@@ -132,4 +133,3 @@ extension PromotionViewController: StarredPromotionDelegate, ArchivedPromotionDe
         btnAddVoucher.isHidden = isHidden
     }
 }
-

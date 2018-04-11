@@ -148,6 +148,7 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         } else {
             buttonHidden?.isHiddenBtnAll(isHidden: true)
             delegateScroll?.isScroll(direction: true)
+
         }
     }
 }
