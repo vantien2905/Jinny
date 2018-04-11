@@ -86,7 +86,7 @@ class MenuView: UIView {
         //get cell selected
         let indexPath = IndexPath(item: index, section: 0)
         guard let cellScroll = collectionView.cellForItem(at: indexPath) as? MenuItemCollectionViewCell else { return }
-
+        self.indexSelected = index
         UIView.animate(withDuration: 0.3) {
             //-- scroll view horizontal
             self.vScrollBar.frame = CGRect(x: self.vScrollBar.frame.minX, y: self.vScrollBar.frame.minY, width: cellScroll.frame.width, height: self.vScrollBar.frame.height)
