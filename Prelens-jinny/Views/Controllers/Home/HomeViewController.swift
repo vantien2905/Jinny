@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
     let sideMenuVC = PRSideMenuVC.initControllerFromNib()
     var sideMenuTrigger: Bool = true
     
-    let membershipVC = MemberShipViewController.initControllerFromNib()
-    let promotionVC  = PromotionViewController.initControllerFromNib()
+    let membershipVC = MemberShipViewController.initControllerFromNib() as! MemberShipViewController
+    let promotionVC  = PromotionViewController.initControllerFromNib() as! PromotionViewController
     
     var numbers = 0 {
         didSet {
@@ -95,10 +95,10 @@ class HomeViewController: UIViewController {
         vTabbar.vMemberships.setNotificationCounter(count: 0)
         vTabbar.vMore.setNotificationCounter(count: 0)
         
-//        membershipVC.delegateScroll = self
-//        promotionVC.vcAllPromotion.delegateScroll = self
-//        promotionVC.vcAchivedPromotion.delegateScroll = self
-//        promotionVC.vcStarredPromotion.delegateScroll = self
+        membershipVC.delegateScroll = self
+        promotionVC.vcAllPromotion.delegateScroll = self
+        promotionVC.vcAchivedPromotion.delegateScroll = self
+        promotionVC.vcStarredPromotion.delegateScroll = self
     }
  
     func setBackButton(image: UIImage) {

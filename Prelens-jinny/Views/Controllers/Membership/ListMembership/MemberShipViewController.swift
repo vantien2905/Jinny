@@ -89,8 +89,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         
         setTitle(title: "Jinny")
         confireCollectionView()
-        
-        scrollView.alwaysBounceVertical = true
         scrollView.bounces  = true
         scrollView.delegate = self
         
@@ -149,10 +147,12 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
         if actualPosition.y > 100 {
             btnAddMembership.isHidden = false
             delegateScroll?.isScroll(direction: false)
+            self.lightStatus()
             
         } else if actualPosition.y < -100 {
             btnAddMembership.isHidden = true
             delegateScroll?.isScroll(direction: true)
+            self.darkStatus()
         }
     }
     
