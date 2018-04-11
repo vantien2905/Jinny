@@ -131,11 +131,10 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHiddenBtnAll(isHidden: false)
-            delegateScroll?.isScroll(direction: false)
+            delegateScroll?.isScroll(direction: false, name: "AllPromotionViewController")
         } else {
             buttonHidden?.isHiddenBtnAll(isHidden: true)
-            delegateScroll?.isScroll(direction: true)
-
+            delegateScroll?.isScroll(direction: true, name: "AllPromotionViewController")
         }
     }
 }

@@ -31,6 +31,7 @@ class MenuView: UIView {
         return view
     }()
     var titleFont: UIFont?
+    var indexSelected: Int?
 
     var listItem = [AnyObject]() {
         didSet {
@@ -68,6 +69,16 @@ class MenuView: UIView {
         vScrollBar.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         vScrollBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/item).isActive = true
         vScrollBar.heightAnchor.constraint(equalToConstant: 4.0).isActive = true
+    }
+    
+    override func layoutSubviews() {
+        guard  let index = indexSelected else {
+            return
+        }
+        
+        let leftMenu = CGFloat(index) * self.collectionView.frame.width / CGFloat(self.listItem.count)
+        
+        horizontalBarLeftAnchorConstraint?.constant = leftMenu
     }
 
     func scrollToIndex(index: Int) {
@@ -130,6 +141,7 @@ UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexSelected = indexPath.item
         delegate?.itemMenuSelected(index: indexPath.item)
         scrollToIndex(index: indexPath.item)
     }
