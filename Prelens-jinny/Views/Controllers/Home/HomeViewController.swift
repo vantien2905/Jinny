@@ -136,24 +136,44 @@ class HomeViewController: UIViewController {
 
 // MARK: Button Action
 extension HomeViewController: PRTabbarCustomDelegate {
+    
+    func removeViewController(controller: UIViewController) {
+        controller.willMove(toParentViewController: nil)
+        controller.view.removeFromSuperview()
+        controller.removeFromParentViewController()
+    }
+    
+    func addMainViewController(controller: UIViewController) {
+        removeViewController(controller: controller)
+        addChildViewController(controller)
+        
+        self.vContainer.addSubview(controller.view)
+        controller.view.fillSuperview()
+
+        controller.didMove(toParentViewController: self)
+    }
+    
     func btnTapped(tag: Route.Tabbar) {
         switch tag {
         case .membership:
-            if self.childViewControllers.contains(promotionVC) {
-                switchScreen(from: promotionVC, to: membershipVC)
-            }
+//            if self.childViewControllers.contains(promotionVC) {
+//                switchScreen(from: promotionVC, to: membershipVC)
+//            }
+            self.lcsNavigationHeight.constant = 64
+            addMainViewController(controller: membershipVC)
             vTabbar.setIndexSelected(index: 0)
-            
         case .vouchers:
-            if self.childViewControllers.contains(promotionVC) {
-            } else {
-                //Adding Promotion child view controller
-                self.addChildViewController(promotionVC)
-                promotionVC.view.frame = vContainer.bounds
-                promotionVC.view.backgroundColor = .yellow
-                self.vContainer.addSubview(membershipVC.view)
-            }
-            switchScreen(from: membershipVC, to: promotionVC)
+            
+//            if !self.childViewControllers.contains(promotionVC) {
+//                //Adding Promotion child view controller
+//                self.addChildViewController(promotionVC)
+//                promotionVC.view.frame = vContainer.bounds
+//                self.vContainer.addSubview(promotionVC.view)
+//                promotionVC.view.fillSuperview()
+//            }
+//            switchScreen(from: membershipVC, to: promotionVC)
+            self.lcsNavigationHeight.constant = 64
+            addMainViewController(controller: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             
         case .more:
@@ -185,13 +205,13 @@ extension HomeViewController: ScrollDelegate {
     func isScroll(direction: Bool) {
         self.view.layoutIfNeeded()
         if direction {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.lcsNavigationHeight.constant = 0
                 self.view.layoutIfNeeded()
             })
             
         } else {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.lcsNavigationHeight.constant = 64
                 self.view.layoutIfNeeded()
             })
