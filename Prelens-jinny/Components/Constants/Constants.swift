@@ -114,3 +114,8 @@ struct ConstantString {
 struct ConstantNotification {
     static let updateBadgeVoucherTabbar = "UpdateBadgeVoucherTabbar"
 }
+
+struct ContantVoucher {
+    static let sortAscending    =  "asc"
+    static let sortDescending   =  "desc"
+}

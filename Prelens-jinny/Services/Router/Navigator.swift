@@ -14,7 +14,7 @@ class Navigator {
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
-    func handle(route: Route, id: String) {
+    func handle(route: Route, id: String?) {
         switch route {
         case .tab(let tab):
             if let navigationController = appDelegate?.window?.rootViewController as? UINavigationController {
@@ -22,9 +22,11 @@ class Navigator {
             }
             
             appDelegate?.tabbarController?.btnTapped(tag: tab)
-            let vc = PromotionDetailViewController.configureViewController(idVoucher: id)
-//            vc.navigationController?.navigationBar.isHidden = false
-            appDelegate?.tabbarController?.push(controller: vc, animated: true)
+            if let _id = id {
+                let vc = PromotionDetailViewController.configureViewController(idVoucher: _id)
+//              vc.navigationController?.navigationBar.isHidden = false
+                appDelegate?.tabbarController?.push(controller: vc, animated: true)
+            }
             
         case .signIn: break
         case .signUp: break
