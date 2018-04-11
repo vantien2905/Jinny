@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RedeemVoucherViewController: BaseViewController {
     
     @IBOutlet weak var cvRedeemVoucher: UICollectionView!
     
     var viewModel = RedeemVoucherViewModel()
-    
     var promotionDetail: PromotionDetail? {
         didSet {
             //MARK: Setup the merchantName
@@ -28,9 +29,8 @@ class RedeemVoucherViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpComponents()
-        
     }
-    
+   
     func setUpComponents() {
         darkStatus()
         cvRedeemVoucher.delegate = self
@@ -127,7 +127,8 @@ extension RedeemVoucherViewController: RedeemVoucherFooterCellButtonDelegate {
             guard let idVoucher = self.promotionDetail?.id else { return }
             self.viewModel.redeemVoucher(idVoucher: idVoucher)
             PopUpHelper.shared.showPopUp(message: "Redeemed!", height: 120, action: {
-                self.pop()
+                let route = Route(tabbar: .vouchers)
+                Navigator.shared.handle(route: route, id: nil)
             })
         }, actionNo: {})
     }
