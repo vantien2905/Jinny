@@ -14,7 +14,7 @@ protocol StarredPromotionDelegate: class {
     func isHiddenBtnStar(isHidden: Bool)
 }
 
-class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
+class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!

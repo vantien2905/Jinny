@@ -14,7 +14,7 @@ protocol ArchivedPromotionDelegate: class {
     func isHidden(isHidden: Bool)
 }
 
-class AchivedPromotionViewController: UIViewController {
+class AchivedPromotionViewController: BaseViewController {
     @IBOutlet weak var cvAchivedPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!

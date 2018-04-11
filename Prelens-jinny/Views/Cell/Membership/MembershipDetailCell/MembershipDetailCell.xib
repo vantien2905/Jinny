@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,13 +29,10 @@
                         <rect key="frame" x="7" y="0.0" width="339" height="274.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H00-UH-nyu">
-                                <rect key="frame" x="0.0" y="0.0" width="339" height="163"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="s2G-T6-oHr"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="339" height="206"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ja-OL-118">
-                                <rect key="frame" x="0.0" y="174.5" width="339" height="20"/>
+                                <rect key="frame" x="0.0" y="217.5" width="339" height="20"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,7 +45,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="26th March 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-88-NfN">
-                                <rect key="frame" x="0.0" y="201" width="339" height="61"/>
+                                <rect key="frame" x="0.0" y="244" width="339" height="20"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                 <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -57,7 +55,6 @@
                         <constraints>
                             <constraint firstItem="JYh-88-NfN" firstAttribute="top" secondItem="5ja-OL-118" secondAttribute="bottom" constant="6.5" id="5lI-8u-ivH"/>
                             <constraint firstItem="6io-xQ-Pby" firstAttribute="leading" secondItem="RTq-vb-wNU" secondAttribute="leading" id="7bJ-vS-9S3"/>
-                            <constraint firstItem="6io-xQ-Pby" firstAttribute="top" secondItem="JYh-88-NfN" secondAttribute="bottom" constant="11.5" id="9jm-5i-o5Y"/>
                             <constraint firstItem="RTq-vb-wNU" firstAttribute="trailing" secondItem="6io-xQ-Pby" secondAttribute="trailing" id="CpB-Qm-zqr"/>
                             <constraint firstItem="JYh-88-NfN" firstAttribute="trailing" secondItem="5ja-OL-118" secondAttribute="trailing" id="PNt-Ju-cQ2"/>
                             <constraint firstItem="H00-UH-nyu" firstAttribute="top" secondItem="RTq-vb-wNU" secondAttribute="top" id="XWK-1W-3cZ"/>
@@ -76,6 +73,7 @@
                     <constraint firstItem="Tyl-Q6-Eyu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AGe-3y-7Cn"/>
                     <constraint firstAttribute="trailing" secondItem="Tyl-Q6-Eyu" secondAttribute="trailing" constant="7" id="Nkh-XX-Qer"/>
                     <constraint firstItem="Tyl-Q6-Eyu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="OWm-HV-e9m"/>
+                    <constraint firstItem="H00-UH-nyu" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="3/4" id="sLi-mc-M55"/>
                     <constraint firstAttribute="bottom" secondItem="Tyl-Q6-Eyu" secondAttribute="bottom" id="vTr-BS-8bj"/>
                 </constraints>
             </tableViewCellContentView>

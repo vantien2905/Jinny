@@ -209,24 +209,32 @@ extension HomeViewController: PRTabbarCustomDelegate {
     @IBAction func btnRightAction() {
         
     }
+    
+    func lightStatus() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    }
+    
+    func darkStatus() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
 }
 
 extension HomeViewController: ScrollDelegate {
     func isScroll(direction: Bool, name: String) {
-        print("nameDelegate: \(name)")
+//        print("nameDelegate: \(name)")
         self.view.layoutIfNeeded()
         if direction {
             UIView.animate(withDuration: 0.3, animations: {
                 self.lcsNavigationHeight.constant = 0
+                self.darkStatus()
                 self.view.layoutIfNeeded()
-                return
             })
             
         } else {
             UIView.animate(withDuration: 0.3, animations: {
                 self.lcsNavigationHeight.constant = 64
                 self.view.layoutIfNeeded()
-                return
+                self.lightStatus()
             })
         }
         

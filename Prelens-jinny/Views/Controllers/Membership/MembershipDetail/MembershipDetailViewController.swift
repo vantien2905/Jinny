@@ -157,7 +157,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
         case 0:
             return UITableViewAutomaticDimension
         case 1:
-            return UITableViewAutomaticDimension
+            return 300
         default:
             return 50
         }

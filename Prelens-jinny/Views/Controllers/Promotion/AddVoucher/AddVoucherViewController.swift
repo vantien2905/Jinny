@@ -57,6 +57,9 @@ class AddVoucherViewController: BaseViewController {
             guard let _result = result else { return }
             PopUpHelper.shared.showPopUp(message: _result, action: {
                 self?.reloadScanner()
+                if _result == "Voucher Added!" {
+                    self?.pop()
+                }
             })
         }).disposed(by: disposeBag)
     }

@@ -14,7 +14,7 @@ protocol AllPromotionDelegate: class {
     func isHiddenBtnAll(isHidden: Bool)
 }
 
-class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
+class AllPromotionViewController: BaseViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvAllPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
