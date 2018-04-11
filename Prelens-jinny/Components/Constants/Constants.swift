@@ -110,3 +110,7 @@ struct ConstantString {
         static let emptyOtherMembership = "Press the + button below to add new membership"
     }
 }
+
+struct ConstantNotification {
+    static let updateBadgeVoucherTabbar = "UpdateBadgeVoucherTabbar"
+}

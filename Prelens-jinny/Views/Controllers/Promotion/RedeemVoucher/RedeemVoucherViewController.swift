@@ -106,7 +106,11 @@ extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICol
             let size = UIScreen.main.bounds.width - 40
             return CGSize(width: size, height: 70)
         } else {
+            if promotionDetail?.qrCode?.url?.medium == "http://jinny.vinova.sg:/images/medium/missing.jpg" {
+                return CGSize(width: 0, height: 0)
+            } else {
             return CGSize(width: 396, height: 264)
+            }
         }
     }
     

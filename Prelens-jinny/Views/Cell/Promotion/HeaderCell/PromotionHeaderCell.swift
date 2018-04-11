@@ -19,7 +19,6 @@ class PromotionHeaderCell: UICollectionViewCell {
     
     weak var delegate: PromotionSortDelegate?
     @IBAction func btnSortTapped(_ sender: Any) {
-        print("aaa")
         delegate?.sortTapped()
     }
     override func awakeFromNib() {

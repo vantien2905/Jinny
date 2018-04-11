@@ -49,6 +49,8 @@ class PromotionDetailViewController: BaseViewController {
         if isArchived {
             btnRedeem.backgroundColor = .gray
             btnRedeem.isEnabled = false
+            addStarButtonDisabled()
+            self.navigationController?.navigationItem.rightBarButtonItem?.isEnabled = false
         } else {
             btnRedeem.backgroundColor =  PRColor.mainAppColor
             btnRedeem.isEnabled = true
@@ -158,7 +160,7 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*20, font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
+            let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*19, font: UIFont(name: "SegoeUI-Semibold", size: 16)!)
             let size = UIScreen.main.bounds.width
             
             guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
@@ -200,7 +202,6 @@ extension PromotionDetailViewController: BaseViewControllerDelegate {
                 guard let id = promotionDetail?.id else { return }
                 viewModel.addBookmarkVoucher(idBookmark: id)
             } else {
-                navigationItem.rightBarButtonItem?.isEnabled = false
             }
         }
     }

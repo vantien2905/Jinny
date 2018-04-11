@@ -99,6 +99,10 @@ class BaseViewController: UIViewController {
         self.addButtonToNavigation(image: PRImage.imgStarOn, style: .right, action: #selector(btnStarTapped))
     }
 
+    func addStarButtonDisabled() {
+        self.addButtonToNavigation(image: PRImage.imgStarOff, style: .right, action: nil)
+    }
+    
     func addBackButton() {
         self.addButtonToNavigation(image: PRImage.imgBack, style: .left, action: #selector(btnBackTapped))
     }
