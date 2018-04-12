@@ -58,7 +58,8 @@ class MenuView: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
         addSubview(collectionView)
-        collectionView.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
+        collectionView.fillSuperview()
+//        collectionView.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
     }
 
     func setupScrollBar(item: CGFloat) {
@@ -79,6 +80,8 @@ class MenuView: UIView {
         let leftMenu = CGFloat(index) * self.collectionView.frame.width / CGFloat(self.listItem.count)
         
         horizontalBarLeftAnchorConstraint?.constant = leftMenu
+//        print("frame collection: \(collectionView.frame)")
+        
     }
 
     func scrollToIndex(index: Int) {

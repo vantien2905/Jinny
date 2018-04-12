@@ -146,7 +146,7 @@ extension HomeViewController: PRTabbarCustomDelegate {
     func addMainViewController(controller: UIViewController) {
         removeViewController(controller: controller)
         addChildViewController(controller)
-        controller.view.frame = self.vContainer.bounds
+//        controller.view.frame = self.vContainer.bounds
         self.vContainer.addSubview(controller.view)
         controller.view.fillSuperview()
 
@@ -154,16 +154,16 @@ extension HomeViewController: PRTabbarCustomDelegate {
     }
     
     func btnTapped(tag: Route.Tabbar) {
-        self.lcsNavigationHeight.constant = 64
+
+        if self.lcsNavigationHeight.constant == 0 {
+            self.lcsNavigationHeight.constant = 64
+            self.view.layoutIfNeeded()
+        }
         switch tag {
         case .membership:
             if self.childViewControllers.contains(promotionVC) {
                removeViewController(controller: promotionVC)
             }
-//            if self.lcsNavigationHeight.constant == 0 {
-//                self.lcsNavigationHeight.constant = 64
-//                self.view.layoutIfNeeded()
-//            }
             addMainViewController(controller: membershipVC)
             vTabbar.setIndexSelected(index: 0)
         case .vouchers:
@@ -178,11 +178,7 @@ extension HomeViewController: PRTabbarCustomDelegate {
 //                promotionVC.view.fillSuperview()
 //            }
 //            switchScreen(from: membershipVC, to: promotionVC)
-//            self.lcsNavigationHeight.constant = 64
-//            if self.lcsNavigationHeight.constant == 0 {
-//                self.lcsNavigationHeight.constant = 64
-//                self.view.layoutIfNeeded()
-//            }
+
             addMainViewController(controller: promotionVC)
             vTabbar.setIndexSelected(index: 1)
             

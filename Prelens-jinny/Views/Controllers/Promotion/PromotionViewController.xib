@@ -26,7 +26,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4g-Zy-CNL">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
-                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-ty-gD9">
                     <rect key="frame" x="0.0" y="43" width="375" height="624"/>
@@ -64,7 +64,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eDy-03-Iud" secondAttribute="bottom" constant="7" id="wTU-Bp-71d"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="34.5" y="92.5"/>
+            <point key="canvasLocation" x="-545" y="-123"/>
         </view>
     </objects>
     <resources>

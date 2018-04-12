@@ -154,19 +154,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
                 self.darkStatus()
             }
         }
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        if targetContentOffset.pointee.y == 0 {
-//            btnAddMembership.isHidden = false
-//            delegateScroll?.isScroll(direction: false, name: "MembershipViewController")
-//            self.lightStatus()
-//            
-//        } else if actualPosition.y < -100 {
-//            btnAddMembership.isHidden = true
-//           delegateScroll?.isScroll(direction: true, name: "MembershipViewController")
-//            self.darkStatus()
-//        }
-//    }
-    
 }
 
 extension MemberShipViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
