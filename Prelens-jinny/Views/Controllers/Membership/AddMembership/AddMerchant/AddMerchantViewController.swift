@@ -17,17 +17,16 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vSearch.tfSearch.becomeFirstResponder()
         setNavigation()
         configureTableView()
         bindData()
-        hideKeyboard()
     }
-    
+   
     var viewModel = AddMerchantViewModel()
     let disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
+        vSearch.tfSearch.becomeFirstResponder()
         showNavigation()
         darkStatus()
         setTitle(title: "ADD MEMBERSHIP", textColor: .black, backgroundColor: .white)
@@ -35,13 +34,14 @@ class AddMerchantViewController: BaseViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        vSearch.tfSearch.resignFirstResponder()
         hideNavigation()
     }
     
     override func viewDidLayoutSubviews() {
         setUpView()
     }
-
+    
     func setUpView() {
        
         vSearch.tfSearch.returnKeyType = .search
@@ -90,6 +90,7 @@ class AddMerchantViewController: BaseViewController {
             let vcScancode = ScanCodeViewController.configureController(merchant: merchant)
             strongSelf.push(controller: vcScancode, animated: true)
         }).disposed(by: disposeBag)
+        
     }
 }
 

@@ -23,6 +23,7 @@ class PRForgotPasswordViewController: BaseViewController {
         darkStatus()
         setupView()
         bindViewModel()
+        hideKeyboard()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +32,6 @@ class PRForgotPasswordViewController: BaseViewController {
     }
 
     private func setupView() {
-        tapHideKeyboard()
         vEmail.tfInput.placeholder = "Email"
         btnSubmit.layer.cornerRadius = 2.5
         super.setTitle(title: "FORGOT PASSWORD", textColor: .black, backgroundColor: .white)
