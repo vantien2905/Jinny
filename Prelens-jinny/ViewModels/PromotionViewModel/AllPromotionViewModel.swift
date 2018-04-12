@@ -27,7 +27,6 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
     let disposeBag = DisposeBag()
     
     init() {
-        
         isLatest = Variable<Bool>(true)
         textSearch.asObservable().subscribe(onNext: {[weak self] (textSearch) in
             let listVoucher = self?.listSearchVoucher.value?.filter { (promotion) -> Bool in

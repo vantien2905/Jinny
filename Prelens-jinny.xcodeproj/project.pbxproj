@@ -15,6 +15,7 @@
 		760B45A020653F0800DDD7B0 /* SelectDataPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760B459F20653F0800DDD7B0 /* SelectDataPopUpView.swift */; };
 		760C1124205D164C009B9205 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C1122205D164C009B9205 /* SettingViewController.swift */; };
 		760C1125205D164C009B9205 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760C1123205D164C009B9205 /* SettingViewController.xib */; };
+		760C8D1A207EFDB000900CB6 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C8D19207EFDB000900CB6 /* Connectivity.swift */; };
 		760DC7FE2062127B008A8EF1 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC7FD2062127B008A8EF1 /* EditProfileViewModel.swift */; };
 		760DC800206215DB008A8EF1 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DC7FF206215DB008A8EF1 /* ProfileService.swift */; };
 		760DD37B2065E3E70031DA90 /* SelectDataPopUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DD3792065E3E70031DA90 /* SelectDataPopUpCell.swift */; };
@@ -231,6 +232,7 @@
 		760B459F20653F0800DDD7B0 /* SelectDataPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataPopUpView.swift; sourceTree = "<group>"; };
 		760C1122205D164C009B9205 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		760C1123205D164C009B9205 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		760C8D19207EFDB000900CB6 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		760DC7FD2062127B008A8EF1 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		760DC7FF206215DB008A8EF1 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		760DD3792065E3E70031DA90 /* SelectDataPopUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataPopUpCell.swift; sourceTree = "<group>"; };
@@ -1126,6 +1128,7 @@
 				B7C859F9206A3D2700033325 /* Date+Extension.swift */,
 				76440AD4206A35E300F6F167 /* LocalNotification.swift */,
 				B7C93A342072404900367097 /* AccessibilityDevice.swift */,
+				760C8D19207EFDB000900CB6 /* Connectivity.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1738,6 +1741,7 @@
 				BC4899992062167200E7DE0D /* MerchantService.swift in Sources */,
 				BC3F1ADC204D1C1A0006A6F5 /* UIView+Extension.swift in Sources */,
 				BCE3495920565A5000B8C440 /* PRUser.swift in Sources */,
+				760C8D1A207EFDB000900CB6 /* Connectivity.swift in Sources */,
 				B7899EB82060A76100ADEC43 /* AddMerchantViewController.swift in Sources */,
 				D9911859205B7AC100F701ED /* ApiError.swift in Sources */,
 				760B45A020653F0800DDD7B0 /* SelectDataPopUpView.swift in Sources */,

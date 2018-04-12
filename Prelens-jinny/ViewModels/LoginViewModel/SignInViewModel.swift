@@ -105,10 +105,12 @@ final class SignInViewModel {
 
     func callAPISignIn() {
         guard let _email = self.email.value, let _password = self.password.value else {return}
-        Provider.shared.authenticationService.login(email: _email, password: _password).subscribe(onNext: { [weak self] (user) in
-            self?.userLogin.value = user
-        }).disposed(by: disposeBag)
+        if Connectivity.isConnectedToInternet {
+            Provider.shared.authenticationService.login(email: _email, password: _password).subscribe(onNext: { [weak self] (user) in
+                self?.userLogin.value = user
+            }).disposed(by: disposeBag)
+        } else {
+            PopUpHelper.shared.showMessage(message: ContantMessages.Connection.errorConnection)
+        }
     }
-    
-    
 }

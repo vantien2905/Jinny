@@ -28,7 +28,7 @@ class PRSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tapHideKeyboard()
+        hideKeyboard()
         setupView()
         bindViewModel()
     }
