@@ -65,6 +65,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="12.5"/>
                             <color key="textColor" red="0.28235019607843098" green="0.28235019607843098" blue="0.28235019607843098" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="highlightedColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="deviceRGB"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-7y-DMI">
                             <rect key="frame" x="240.5" y="234" width="6" height="12"/>
