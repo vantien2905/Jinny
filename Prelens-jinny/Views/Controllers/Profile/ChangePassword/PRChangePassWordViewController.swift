@@ -33,6 +33,7 @@ class PRChangePassWordViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         bindViewModel()
+        hideKeyboard()
         // Do any additional setup after loading the view.
     }
 
