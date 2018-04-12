@@ -109,6 +109,4 @@ final class SignInViewModel {
             self?.userLogin.value = user
         }).disposed(by: disposeBag)
     }
-    
-    
 }
