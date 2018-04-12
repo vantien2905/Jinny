@@ -102,6 +102,10 @@ struct ContantMessages {
     struct Setting {
         static let errorUnauthorized = "Unauthorized - Please allow notification for Jinny app in device's Settings"
     }
+    
+    struct Connection {
+        static let errorConnection = "Please check your internet connection or try again later"
+    }
 }
 
 struct ConstantString {

@@ -39,14 +39,18 @@ final class ForgotPasswordViewModel {
 
     func callAPIForgotPassword() {
         guard let email = self.email.value else { return }
-        Provider.shared.authenticationService.forgotPassword(email: email)
-        .subscribe(onNext: { [weak self] (_) in
-            guard let strongSelf = self else { return }
-            PopUpHelper.shared.showPopUp(message: ContantMessages.Login.successResetPassword, action: {
-                strongSelf.isSuccess.onCompleted()
-            })
-        }, onError: { (error) in
-            print(error)
-        }).disposed(by: disposeBag)
+        if Connectivity.isConnectedToInternet {
+            Provider.shared.authenticationService.forgotPassword(email: email)
+            .subscribe(onNext: { [weak self] (_) in
+                guard let strongSelf = self else { return }
+                PopUpHelper.shared.showPopUp(message: ContantMessages.Login.successResetPassword, action: {
+                    strongSelf.isSuccess.onCompleted()
+                })
+            }, onError: { (error) in
+                print(error)
+            }).disposed(by: disposeBag)
+        } else {
+            PopUpHelper.shared.showMessage(message: ContantMessages.Connection.errorConnection)
+        }
     }
 }
