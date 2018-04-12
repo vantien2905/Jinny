@@ -114,14 +114,18 @@ final class SignUpViewModel {
 
     func callAPISignUp() {
         guard let email = self.email.value, let pass = self.password.value else { return }
-        Provider.shared.authenticationService.signUp(email: email, password: pass)
-            .subscribe(onNext: { [weak self] (user) in
-                guard let strongSelf = self else { return }
-                PopUpHelper.shared.showPopUp(message: "Sign up success!", action: {
-                    strongSelf.userSignUp.value = user
-                })
-            }, onError: { (error) in
-                print(error)
-            }).disposed(by: disposeBag)
+        if Connectivity.isConnectedToInternet {
+            Provider.shared.authenticationService.signUp(email: email, password: pass)
+                .subscribe(onNext: { [weak self] (user) in
+                    guard let strongSelf = self else { return }
+                    PopUpHelper.shared.showPopUp(message: ContantMessages.Login.successSignUp, action: {
+                        strongSelf.userSignUp.value = user
+                    })
+                }, onError: { (error) in
+                    print(error)
+                }).disposed(by: disposeBag)
+        } else {
+            PopUpHelper.shared.showMessage(message: ContantMessages.Connection.errorConnection)
+        }
     }
 }
