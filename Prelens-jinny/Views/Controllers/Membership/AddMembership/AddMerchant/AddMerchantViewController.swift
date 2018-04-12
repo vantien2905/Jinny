@@ -17,6 +17,7 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        vSearch.tfSearch.becomeFirstResponder()
         setNavigation()
         configureTableView()
         bindData()
@@ -42,6 +43,7 @@ class AddMerchantViewController: BaseViewController {
     }
 
     func setUpView() {
+       
         vSearch.tfSearch.returnKeyType = .search
         vSearch.backgroundColor = .clear
         vSearch.setShadow(color: PRColor.lineColor, opacity: 1,
