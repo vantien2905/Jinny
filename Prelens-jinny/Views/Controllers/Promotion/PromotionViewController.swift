@@ -51,17 +51,6 @@ class PromotionViewController: BaseViewController {
                                  textFont: UIFont(name: "SegoeUI-Semibold", size: 15.0)!)
 
     }
-    
-//    override func viewWillLayoutSubviews() {
-//
-//    }
-    
-//    override func viewDidLayoutSubviews() {
-//        print("scroll")
-//        cvMenuController.cellForItem(at: IndexPath(item: 0, section: 0))?.fillSuperview()
-//        cvMenuController.cellForItem(at: IndexPath(item: 1, section: 0))?.fillSuperview()
-//        cvMenuController.cellForItem(at: IndexPath(item: 2, section: 0))?.fillSuperview()
-//    }
 
     private func setupView() {
         configMenuView()
@@ -82,12 +71,13 @@ class PromotionViewController: BaseViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        print("scroll")
-//        cvMenuController.cellForItem(at: IndexPath(item: 0, section: 0))?.sizeToFit()
-//        cvMenuController.cellForItem(at: IndexPath(item: 1, section: 0))?.fillSuperview()
-//        cvMenuController.cellForItem(at: IndexPath(item: 2, section: 0))?.fillSuperview()
-        cvMenuController.reloadData()
-//        cvMenuController.layoutIfNeeded()
+        self.view.layoutIfNeeded()
+//        self.cvMenuController.layoutIfNeeded()
+        let frame = cvMenuController.bounds
+        cvMenuController.cellForItem(at: IndexPath(item: 0, section: 0))?.frame = frame
+         cvMenuController.cellForItem(at: IndexPath(item: 1, section: 0))?.frame = frame
+         cvMenuController.cellForItem(at: IndexPath(item: 2, section: 0))?.frame = frame
+        
     }
     
     @IBAction func goToAddVoucher() {
@@ -106,7 +96,6 @@ extension PromotionViewController: UICollectionViewDataSource, UICollectionViewD
         let controler = controllers[indexPath.item]
         addChildViewController(controler)
         controler.view.frame = cell.contentView.bounds
-//        cell.backgroundColor = .red
         cell.addSubview(controler.view)
         controler.view.fillSuperview()
         
@@ -123,9 +112,7 @@ extension PromotionViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print("frame collection: \(collectionView.frame)")
         return CGSize(width: view.frame.width, height: cvMenuController.frame.height)
-    
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
