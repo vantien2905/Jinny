@@ -93,7 +93,7 @@ class PRSignInViewController: UIViewController {
     }
     
     @objc func gotoForgotPasswordVC() {
-        let vc = PRForgotPasswordViewController.initControllerFromNib()
+        let vc = PRForgotPasswordViewController.configureViewController()
         self.push(controller: vc, animated: true)
     }
     
