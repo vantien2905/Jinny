@@ -11,13 +11,12 @@ import RxSwift
 import RxCocoa
 
 class PRForgotPasswordViewController: BaseViewController {
-   
     @IBOutlet weak var vEmail: TextFieldView!
     @IBOutlet weak var btnSubmit: UIButton!
 
-    let disposeBag                          = DisposeBag()
-    var vm                                  = ForgotPasswordViewModel()
-
+    let disposeBag = DisposeBag()
+    var viewModel: ForgotPasswordViewModelProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         darkStatus()
@@ -37,14 +36,22 @@ class PRForgotPasswordViewController: BaseViewController {
         super.setTitle(title: "FORGOT PASSWORD", textColor: .black, backgroundColor: .white)
         super.addBackButton()
     }
-
+    class func configureViewController() -> PRForgotPasswordViewController {
+        let forgotPasswordVC = PRForgotPasswordViewController.initControllerFromNib() as! PRForgotPasswordViewController
+        var viewModel: ForgotPasswordViewModel {
+            return ForgotPasswordViewModel()
+        }
+        forgotPasswordVC.viewModel = viewModel
+        return forgotPasswordVC
+    }
+    
     func bindViewModel() {
-        _ = vEmail.tfInput.rx.text.map { $0 ?? ""}.bind(to: vm.email)
-        vm.email.asObservable().bind(to: vEmail.tfInput.rx.text).disposed(by: disposeBag)
+        _ = vEmail.tfInput.rx.text.map { $0 ?? ""}.bind(to: viewModel.email)
+        viewModel.email.asObservable().bind(to: vEmail.tfInput.rx.text).disposed(by: disposeBag)
 
         btnSubmit.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
-            .bind(to: vm.btnSubmitTapped)
+            .bind(to: viewModel.btnSubmitTapped)
             .disposed(by: disposeBag)
 
         btnSubmit.rx.tap
@@ -53,7 +60,7 @@ class PRForgotPasswordViewController: BaseViewController {
                 self.vEmail.tfInput.endEditing(true)
             }).disposed(by: disposeBag)
         
-        vm.isSuccess.subscribe (onCompleted: {
+        viewModel.isSuccess.subscribe (onCompleted: {
             DispatchQueue.main.async {
               self.navigationController?.popViewController(animated: true)
             }
