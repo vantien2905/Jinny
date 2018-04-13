@@ -107,6 +107,10 @@ struct ContantMessages {
     struct Connection {
         static let errorConnection = "Please check your internet connection or try again later"
     }
+    
+    struct RedeemVoucher {
+        static let redeemComfirmation = "Do you want to redeem this voucher?"
+    }
 }
 
 struct ConstantString {

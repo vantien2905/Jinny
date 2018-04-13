@@ -123,7 +123,7 @@ extension RedeemVoucherViewController: UICollectionViewDelegateFlowLayout, UICol
 
 extension RedeemVoucherViewController: RedeemVoucherFooterCellButtonDelegate {
     func btnRedeemedTapped() {
-        PopUpHelper.shared.showPopUpYesNo(message: "Do you want to redeem this Voucher?", actionYes: {
+        PopUpHelper.shared.showPopUpYesNo(message: ContantMessages.RedeemVoucher.redeemComfirmation, actionYes: {
             guard let idVoucher = self.promotionDetail?.id else { return }
             self.viewModel.redeemVoucher(idVoucher: idVoucher)
             PopUpHelper.shared.showPopUp(message: "Redeemed!", height: 120, action: {

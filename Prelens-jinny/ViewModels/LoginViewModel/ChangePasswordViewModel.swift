@@ -9,25 +9,23 @@
 import RxSwift
 import RxCocoa
 
-internal protocol ChangePasswordViewModelInputs {
-
+protocol ChangePasswordViewModelProtocol {
     var currentPassword: Variable<String?> {get}
     var newPassword: Variable<String?> {get}
-    var btnChangeTapped: PublishSubject<Void> { get }
-}
-internal protocol ChangePasswordViewModelType {
-    var inputs: ChangePasswordViewModelInputs { get }
+    var btnChangeTapped: PublishSubject<Void> {get}
+    var isChangePasswordSuccess: PublishSubject<Bool>{get}
+    func callAPIChangePassword()
 }
 
-final class ChangePasswordViewModel {
+final class ChangePasswordViewModel:ChangePasswordViewModelProtocol {
 
     private var disposeBag          = DisposeBag()
 
-    public var currentPassword: Variable<String?>
-    public var newPassword: Variable<String?>
-    public var isValidInput: Variable<Bool>
-    public var btnChangeTapped: PublishSubject<Void>
-    public var isChangePasswordSuccess: PublishSubject<Bool>
+    var currentPassword: Variable<String?>
+    var newPassword: Variable<String?>
+    var isValidInput: Variable<Bool>
+    var btnChangeTapped: PublishSubject<Void>
+    var isChangePasswordSuccess: PublishSubject<Bool>
     
     init() {
         self.currentPassword        = Variable<String?>(nil)

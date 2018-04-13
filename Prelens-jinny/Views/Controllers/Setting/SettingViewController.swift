@@ -127,7 +127,7 @@ class SettingViewController: BaseViewController {
     }
 
     @IBAction func btnChangePasswordTapped(_ sender: Any) {
-        let changePasswordVC = PRChangePassWordViewController.initControllerFromNib()
+        let changePasswordVC = ChangePassWordViewController.configureViewController()
         self.push(controller: changePasswordVC)
     }
 }
