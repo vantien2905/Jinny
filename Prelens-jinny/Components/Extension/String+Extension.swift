@@ -45,14 +45,14 @@ extension String {
         }
     }
 
-    func checkUrl () -> Bool {
-        // create NSURL instance
-        if let url = URL(string: self) {
-            // check if your application can open the NSURL instance
-            //return UIApplication.shared.canOpenURL(url)
-        }
-        return false
-    }
+//    func checkUrl () -> Bool {
+//        // create NSURL instance
+//        if let url = URL(string: self) {
+//            // check if your application can open the NSURL instance
+//            //return UIApplication.shared.canOpenURL(url)
+//        }
+//        return false
+//    }
 }
 
 extension String {

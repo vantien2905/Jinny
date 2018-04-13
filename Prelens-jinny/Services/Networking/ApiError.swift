@@ -30,19 +30,19 @@ class ApiError: Error {
                 guard let _responseError = responseError else { return nil }
                 if _responseError.code == ErrorCode.errorBarcode.rawValue {
                     print("error Barcode")
-                } else if (_responseError.code == ErrorCode.errorQROut.rawValue) {
+                } else if _responseError.code == ErrorCode.errorQROut.rawValue {
                     errorQROut.value = true
                     errorNotExit.value = false
                     errordidAcquired.value = false
-                } else if (_responseError.code == ErrorCode.errorNotExist.rawValue) {
+                } else if _responseError.code == ErrorCode.errorNotExist.rawValue {
                     errorNotExit.value = true
                     errorQROut.value = false
                     errordidAcquired.value = false
-                } else if (_responseError.code == ErrorCode.didAcquired.rawValue){
+                } else if _responseError.code == ErrorCode.didAcquired.rawValue {
                     errorNotExit.value = false
                     errorQROut.value = false
                     errordidAcquired.value = true
-                } else if (_responseError.code == ErrorCode.errorTokenInvalid.rawValue) {
+                } else if _responseError.code == ErrorCode.errorTokenInvalid.rawValue {
                     PopUpHelper.shared.showPopUp(message: _responseError.message& , action: {
                         KeychainManager.shared.deleteAllSavedData()
                         DispatchQueue.main.async {
@@ -50,8 +50,7 @@ class ApiError: Error {
                             appDelegate.goToLogin()
                         }
                     })
-                }
-                else {
+                } else {
                     PopUpHelper.shared.showMessage(message: _responseError.message&)
                 }
                 self.statusCode = 0

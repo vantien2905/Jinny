@@ -42,47 +42,8 @@ final class SignUpViewModel {
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
             self.isValidInput.value = value
         }).disposed(by: disposeBag)
-
-        self.btnSignUpTapped.subscribe(onNext: { [weak self]  in
-            guard let strongSelf = self else { return }
-            guard let pass = strongSelf.password.value, let email = strongSelf.email.value else {
-               print("error")
-               return
-            }
-            
-            if self?.isValidInput.value == true {
-                if email.isValidEmail() && pass.isValidPassword() && self?.isChecked.value == true {
-                     strongSelf.callAPISignUp()
-                } else {
-                    if email.isValidEmail() == false {
-                        PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorInvalidEmail)
-                        return
-                    }
-                    if pass.isValidPassword() == false {
-                            PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
-                        return
-                    }
-                    if self?.isChecked.value == false {
-                         PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorUncheckedCondition )
-                        return
-                    }
-                }
-            } else {
-                if email.isValidEmpty() && pass.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
-                    return
-                }
-                if email.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyEmail)
-                    return
-                }
-                if pass.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyPassword)
-                    return
-                }
-            }
-        }).disposed(by: disposeBag)
         
+        self.signUpTapped()
         userSignUp.asObservable()
             .ignoreNil()
             .subscribe(onNext: {  [weak self] userSignUp in
@@ -101,6 +62,48 @@ final class SignUpViewModel {
             }, onCompleted: {
                 print("Completion")
             }).disposed(by: disposeBag)
+    }
+    
+    func signUpTapped() {
+        self.btnSignUpTapped.subscribe(onNext: { [weak self]  in
+            guard let strongSelf = self else { return }
+            guard let pass = strongSelf.password.value, let email = strongSelf.email.value else {
+                print("error")
+                return
+            }
+            
+            if self?.isValidInput.value == true {
+                if email.isValidEmail() && pass.isValidPassword() && self?.isChecked.value == true {
+                    strongSelf.callAPISignUp()
+                } else {
+                    if email.isValidEmail() == false {
+                        PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorInvalidEmail)
+                        return
+                    }
+                    if pass.isValidPassword() == false {
+                        PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
+                        return
+                    }
+                    if self?.isChecked.value == false {
+                        PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorUncheckedCondition )
+                        return
+                    }
+                }
+            } else {
+                if email.isValidEmpty() && pass.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
+                    return
+                }
+                if email.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyEmail)
+                    return
+                }
+                if pass.isValidEmpty() {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyPassword)
+                    return
+                }
+            }
+        }).disposed(by: disposeBag)
     }
 
     func checkValid(emailText: Observable<String?>, passwordText: Observable<String?>) -> Observable<Bool> {

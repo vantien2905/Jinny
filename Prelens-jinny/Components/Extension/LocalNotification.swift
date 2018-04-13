@@ -12,7 +12,7 @@ import UserNotifications
 class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
     
     class func registerForLocalNotification(on application:UIApplication) {
-        if (UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:)))) {
+        if UIApplication.instancesRespond(to: #selector(UIApplication.registerUserNotificationSettings(_:))) {
             let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
             notificationCategory.identifier = "NOTIFICATION_CATEGORY"
             //registerting for the notification.
@@ -20,7 +20,7 @@ class LocalNotification: NSObject, UNUserNotificationCenterDelegate {
         }
     }
 
-class func dispatchlocalNotification(with title: String, body: String, userInfo: [AnyHashable: Any]? = nil,day:Date, dayBeforeExprise:Int) {
+class func dispatchlocalNotification(with title: String, body: String, userInfo: [AnyHashable: Any]? = nil, day:Date, dayBeforeExprise:Int) {
 //        let dateFormatter = DateFormatter()
 //        dateFormatter.dateFormat = "dd/MM/yyyy z"
 //        dateFormatter.timeZone = .current
@@ -66,14 +66,12 @@ class func dispatchlocalNotification(with title: String, body: String, userInfo:
     
     class func removeLocalNotification(_ item: Promotion) {
         guard let scheduledLocalNotifications = UIApplication.shared.scheduledLocalNotifications else { return }
-        for notification in scheduledLocalNotifications {
-            if notification.userInfo!["id"] as? Int == item.merchant?.id {
-                UIApplication.shared.cancelLocalNotification(notification)
-            }
+        for notification in scheduledLocalNotifications where notification.userInfo!["id"] as? Int == item.merchant?.id {
+            UIApplication.shared.cancelLocalNotification(notification)
         }
     }
     
-    class func setupSettingStatus(){
+    class func setupSettingStatus() {
         let notificationType = UIApplication.shared.currentUserNotificationSettings?.types
         if notificationType?.rawValue != 0 {
             KeychainManager.shared.saveBool(value: true, forkey: KeychainItem.pushNotificationStatus)

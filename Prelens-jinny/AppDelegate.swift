@@ -216,7 +216,7 @@ extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("=> didRefreshRegistrationToken: \(fcmToken)")
         guard let _fcmToken = KeychainManager.shared.getString(key: KeychainItem.fcmToken) else {return}
-        Provider.shared.authenticationService.refreshFCMToken(oldToken: _fcmToken, newToken: fcmToken)
+        _ = Provider.shared.authenticationService.refreshFCMToken(oldToken: _fcmToken, newToken: fcmToken)
         KeychainManager.shared.saveString(value: fcmToken, forkey: KeychainItem.fcmToken)
     }
 }

@@ -40,7 +40,7 @@ class EditProfileViewModel {
         
         self.btnSaveTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
-            guard let _email = strongSelf.email.value, let _name = strongSelf.name.value , let _dob = strongSelf.dob.value else {
+            guard let _email = strongSelf.email.value, let _name = strongSelf.name.value, let _dob = strongSelf.dob.value else {
                 print("error")
                 return
             }

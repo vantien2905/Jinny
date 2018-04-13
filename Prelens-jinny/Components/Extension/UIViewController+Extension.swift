@@ -45,7 +45,7 @@ extension UIViewController {
 
         UIView.animate(withDuration: 0.3, animations: {
             controller.view.frame = CGRect(x: beginX, y: 0, width: vContent.frame.width, height: vContent.frame.height)
-        }) {_ in
+        }) { _ in
             self.removeController(controller: controller)
         }
     }

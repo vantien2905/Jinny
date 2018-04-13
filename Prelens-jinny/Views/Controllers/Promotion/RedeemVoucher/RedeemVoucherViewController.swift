@@ -17,7 +17,7 @@ class RedeemVoucherViewController: BaseViewController {
     var viewModel = RedeemVoucherViewModel()
     var promotionDetail: PromotionDetail? {
         didSet {
-            //MARK: Setup the merchantName
+            // MARK: Setup the merchantName
             if let merchantName = promotionDetail?.merchantName {
                 setNavigation(name: merchantName)
             } else {

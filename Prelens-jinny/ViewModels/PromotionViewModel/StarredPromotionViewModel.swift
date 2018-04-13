@@ -13,8 +13,8 @@ import RxCocoa
 protocol StarredPromotionViewModelProtocol {
     var textSearch: Variable<String?> {get set}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
-    var listStarredPromotion: Variable<[Promotion]?>{get}
-    var isLatest: Variable<Bool>{get}
+    var listStarredPromotion: Variable<[Promotion]?> {get}
+    var isLatest: Variable<Bool> {get}
     func getListStarredPromotion(order:String)
     func refresh()
 }
@@ -71,4 +71,3 @@ class StarredPromotionViewModel: StarredPromotionViewModelProtocol {
         getListStarredPromotion(order: "desc")
     }
 }
-

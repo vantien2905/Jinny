@@ -34,7 +34,33 @@ final class SignInViewModel {
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
             self.isValidInput.value = value
         }).disposed(by: disposeBag)
-        
+
+        self.btnSignUpTapped()
+        userLogin.asObservable()
+            .ignoreNil()
+            .subscribe(onNext: {  [weak self] userLogin in
+                guard let strongSelf = self else { return }
+                let defaults = UserDefaults.standard
+                if let token = userLogin.token {
+                    if let _name = userLogin.fullName {
+                       KeychainManager.shared.saveString(value: _name, forkey: .displayName)
+                    }
+                    KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
+                    KeychainManager.shared.setToken(token)
+                    KeychainManager.shared.saveString(value: "7", forkey: KeychainItem.leftDayToRemind)
+                }
+                strongSelf.isLoginSuccess.onCompleted()
+                defaults.set(true, forKey: KeychainItem.isFirstRunning.rawValue)
+                }, onError: { error in
+                    print(error)
+
+            }, onCompleted: {
+                print("Completion")
+            }).disposed(by: disposeBag)
+
+    }
+    
+    func btnSignUpTapped() {
         self.btnSignInTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }
             guard let pass = strongSelf.password.value, let email = strongSelf.email.value else {
@@ -56,7 +82,7 @@ final class SignInViewModel {
                     }
                 }
             } else {
-                if email.isValidEmpty() && pass.isValidEmpty(){
+                if email.isValidEmpty() && pass.isValidEmpty() {
                     PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorEmptyInputValue)
                     return
                 }
@@ -70,30 +96,8 @@ final class SignInViewModel {
                 }
             }
         }).disposed(by: disposeBag)
-
-        userLogin.asObservable()
-            .ignoreNil()
-            .subscribe(onNext: {  [weak self] userLogin in
-                guard let strongSelf = self else { return }
-                let defaults = UserDefaults.standard
-                if let token = userLogin.token {
-                    if let _name = userLogin.fullName {
-                       KeychainManager.shared.saveString(value: _name , forkey: .displayName)
-                    }
-                    KeychainManager.shared.saveString(value: strongSelf.email.value&, forkey: .email)
-                    KeychainManager.shared.setToken(token)
-                    KeychainManager.shared.saveString(value: "7", forkey: KeychainItem.leftDayToRemind)
-                }
-                strongSelf.isLoginSuccess.onCompleted()
-                defaults.set(true, forKey: KeychainItem.isFirstRunning.rawValue)
-                }, onError: { error in
-                    print(error)
-
-            }, onCompleted: {
-                print("Completion")
-            }).disposed(by: disposeBag)
-
     }
+    
     func checkValid(emailText: Observable<String?>, passwordText: Observable<String?>) -> Observable<Bool> {
         return Observable.combineLatest(emailText, passwordText) {(email, password) -> Bool in
             guard let _email = email, let _password = password else {

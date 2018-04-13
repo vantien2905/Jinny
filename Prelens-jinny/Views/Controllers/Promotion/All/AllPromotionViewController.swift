@@ -87,10 +87,8 @@ class AllPromotionViewController: BaseViewController, UIScrollViewDelegate {
     func updateBadgeTabbar(list: [Promotion]) {
         var number = 0
         if list.count != 0 {
-            for item in list {
-                if item.isReaded == false {
-                    number += 1
-                }
+            for item in list where item.isReaded == false {
+                number += 1
             }
         }
     }
@@ -239,4 +237,3 @@ extension AllPromotionViewController: OtherHeaderCellDelegate {
         }
     }
 }
-

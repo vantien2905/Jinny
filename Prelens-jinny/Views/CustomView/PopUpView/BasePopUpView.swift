@@ -68,7 +68,6 @@ class BasePopUpView: UIView {
         }
     }
 
-    
     func hidePopUp(success: ((Bool) -> Void)? = nil) {
         self.vBackground.alpha = 1
         guard let window = UIApplication.shared.keyWindow else { return }

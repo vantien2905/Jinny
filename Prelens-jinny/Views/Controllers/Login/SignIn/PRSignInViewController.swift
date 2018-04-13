@@ -56,7 +56,7 @@ class PRSignInViewController: UIViewController {
         btnShowHidePassword.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let strongSelf = self, let _passIsSecurity = strongSelf.passIsSecurity else { return }
-                if(_passIsSecurity == true) {
+                if _passIsSecurity == true {
                     strongSelf.btnShowHidePassword.setImage(UIImage(named: "visible"), for: .normal)
                 } else {
                     strongSelf.btnShowHidePassword.setImage(UIImage(named: "hidden"), for: .normal)

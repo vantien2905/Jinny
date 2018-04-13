@@ -78,7 +78,7 @@ class AddMerchantViewController: BaseViewController {
     
     func bindData() {
         vSearch.tfSearch.rx.text.asObservable().subscribe( onNext: {
-            [weak self](text) in
+            [weak self] (text) in
             self?.viewModel.searchTextChange.value = text
         }).disposed(by: disposeBag)
         viewModel.loadData()
