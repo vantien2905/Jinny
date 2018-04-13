@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 class EditProfileViewModel {
-    
     let disposeBag = DisposeBag()
     public var email: Variable<String?>
     public var name : Variable<String?>
@@ -68,31 +67,39 @@ class EditProfileViewModel {
     }
     
     func getProfile() {
-        Provider.shared.profileService.getProfile().subscribe(onNext: { [weak self] (user) in
-            self?.user.value = user
-        }).disposed(by: disposeBag)
+        if Connectivity.isConnectedToInternet {
+            Provider.shared.profileService.getProfile().subscribe(onNext: { [weak self] (user) in
+                self?.user.value = user
+            }).disposed(by: disposeBag)
+        } else {
+             PopUpHelper.shared.showMessage(message: ContantMessages.Connection.errorConnection)
+        }
     }
     
     func getResidentialRegion() {
-        Provider.shared.profileService.getResidentialRegion().subscribe(onNext: { [weak self] (list) in
-            self?.regions.value = list
-        }).disposed(by: disposeBag)
+            Provider.shared.profileService.getResidentialRegion().subscribe(onNext: { [weak self] (list) in
+                self?.regions.value = list
+            }).disposed(by: disposeBag)
     }
     
     func updateProfile() {
         guard let email = self.email.value, let name = self.name.value, let dob = self.dob.value else { return }
-        Provider.shared.profileService.updateProfile(fullName: name, email: email, dateOfBirth: dob, regionID: self.regionID.value, gender: self.gender.value)
-            .subscribe(onNext: { [weak self] (user) in
-                guard let strongSelf = self else { return }
-                strongSelf.user.value = user
-                KeychainManager.shared.saveString(value: email, forkey: .email)
-                KeychainManager.shared.saveString(value: name, forkey: .displayName)
-                PopUpHelper.shared.showPopUp(message: "Update profile success", action: {
-                    strongSelf.isUpdateSuccess.onCompleted()
-                })
-            }, onError: { (error) in
-                    print(error)
-            }).disposed(by: disposeBag)
+        if Connectivity.isConnectedToInternet {
+            Provider.shared.profileService.updateProfile(fullName: name, email: email, dateOfBirth: dob, regionID: self.regionID.value, gender: self.gender.value)
+                .subscribe(onNext: { [weak self] (user) in
+                    guard let strongSelf = self else { return }
+                    strongSelf.user.value = user
+                    KeychainManager.shared.saveString(value: email, forkey: .email)
+                    KeychainManager.shared.saveString(value: name, forkey: .displayName)
+                    PopUpHelper.shared.showPopUp(message: "Update profile success", action: {
+                        strongSelf.isUpdateSuccess.onCompleted()
+                    })
+                }, onError: { (error) in
+                        print(error)
+                }).disposed(by: disposeBag)
+        } else {
+            PopUpHelper.shared.showMessage(message: ContantMessages.Connection.errorConnection)
+        }
     }
     
     func checkValid(emailText: Observable<String?>, nameText: Observable<String?>, dobText: Observable<String?>) -> Observable<Bool> {
