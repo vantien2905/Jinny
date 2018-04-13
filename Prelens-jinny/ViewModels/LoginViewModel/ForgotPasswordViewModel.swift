@@ -9,18 +9,23 @@
 import RxSwift
 import RxCocoa
 
-final class ForgotPasswordViewModel {
+protocol ForgotPasswordViewModelProtocol {
+    var email: Variable<String?> {get set}
+    var btnSubmitTapped:PublishSubject<Void>{get}
+    var isSuccess: PublishSubject<Bool>{get}
+    func callAPIForgotPassword()
+}
 
+final class ForgotPasswordViewModel: ForgotPasswordViewModelProtocol {
     private var disposeBag          = DisposeBag()
-
-    public var email: Variable<String?>
-    public var btnSubmitTapped: PublishSubject<Void>
-     public var isSuccess: PublishSubject<Bool>
+    var email: Variable<String?>
+    var btnSubmitTapped: PublishSubject<Void>
+    var isSuccess: PublishSubject<Bool>
     
     init() {
         self.email = Variable<String?>(nil)
         self.btnSubmitTapped = PublishSubject<Void>()
-         self.isSuccess = PublishSubject<Bool>()
+        self.isSuccess = PublishSubject<Bool>()
         
         self.btnSubmitTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }

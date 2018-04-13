@@ -199,12 +199,16 @@ extension PREditProfileViewController:SelectDataPopUpViewDelegate {
     }
     
     func titleForRow(index:Int) -> String {
-        guard let title = listRegion[index].name else { return ""}
-        switch selectGender {
-        case true:
-            return listGender[index]
-        default:
-            return title
+        if listRegion.count != 0 {
+            guard let title = listRegion[index].name else { return ""}
+            switch selectGender {
+            case true:
+                return listGender[index]
+            default:
+                return title
+            }
+        } else {
+            return ""
         }
     }
     func didSelectRow(index:Int) {
