@@ -115,7 +115,6 @@ class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
         cvStarredPromotion.dataSource = self
     }
     
-
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if targetContentOffset.pointee.y == 0 {
             buttonHidden?.isHiddenBtnStar(isHidden: false)

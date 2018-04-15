@@ -1,5 +1,5 @@
 //
-//  PRChangePassWordViewController.swift
+//  ChangePassWordViewController.swift
 //  Prelens-jinny
 //
 //  Created by vinova on 3/8/18.
@@ -10,8 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PRChangePassWordViewController: BaseViewController {
-
+class ChangePassWordViewController: BaseViewController {
     
     @IBOutlet weak var vCurrentPassword: TextFieldView!
     @IBOutlet weak var vNewPassword: TextFieldView!
@@ -19,7 +18,7 @@ class PRChangePassWordViewController: BaseViewController {
     @IBOutlet weak var btnShowHideCurPassword: UIButton!
 
     @IBOutlet weak var btnShowHideNewPassword: UIButton!
-    var viewModel: ChangePasswordViewModel      = ChangePasswordViewModel()
+    var viewModel: ChangePasswordViewModelProtocol!
     var curPassIsSecurity: Bool?
     var newPassIsSecurity: Bool?
     private let disposeBag = DisposeBag()
@@ -41,7 +40,14 @@ class PRChangePassWordViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    class func configureViewController() -> ChangePassWordViewController {
+        let changePasswordVC = ChangePassWordViewController.initControllerFromNib() as! ChangePassWordViewController
+        var viewModel: ChangePasswordViewModel {
+            return ChangePasswordViewModel()
+        }
+        changePasswordVC.viewModel = viewModel
+        return changePasswordVC
+    }
     private func setupView() {
         curPassIsSecurity = true
         newPassIsSecurity = true

@@ -23,6 +23,4 @@ class PRBaseView: UIView {
     func setUpViews() {
         
     }
-
-
 }

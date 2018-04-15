@@ -13,7 +13,7 @@ protocol AllPromotionViewModelProtocol {
     var textSearch: Variable<String?> {get set}
     var listAllPromotion: Variable<[Promotion]?> {get}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
-    var isLatest: Variable<Bool>{get set}
+    var isLatest: Variable<Bool> {get set}
     func getListAllPromotion(order: String)
     func refresh()
 }
@@ -99,7 +99,7 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
         if _voucherNotiStatus {
             if listData.count != 0 {
                 for item in listData {
-                    guard let _name = item.merchant?.name , let _expireDate = item.expiresAt else { return  }
+                    guard let _name = item.merchant?.name, let _expireDate = item.expiresAt else { return  }
                     LocalNotification.dispatchlocalNotification(with: _name, body: "The vouchers will expire after \(_leftDay) days", userInfo: ["id" : item.id ?? ""], day: _expireDate, dayBeforeExprise: Int(_leftDay)!)
                 }
             }

@@ -23,7 +23,6 @@ class SearchPromotionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setUpView()
     }
 
@@ -37,7 +36,7 @@ class SearchPromotionCell: UICollectionViewCell {
         tfSearch.rx.text.asObservable().subscribe( onNext: {[weak self](string: String?) in
             guard let _string = string else { return }
            // if _string != "" {
-                self?.delegate?.searchTextChange(textSearch: string)
+                self?.delegate?.searchTextChange(textSearch: _string)
             //}
         }).disposed(by: disposeBag)
     }

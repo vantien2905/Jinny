@@ -14,13 +14,13 @@ protocol ArchivedPromotionViewModelProtocol {
     var textSearch: Variable<String?> {get set}
     var listAchivedPromotion: Variable<[Promotion]?> {get}
     var listSearchVoucher:  Variable<[Promotion]?> {get}
-    var isLatest: Variable<Bool>{get set}
+    var isLatest: Variable<Bool> { get set }
     func getListAchivedPromotion(order:String)
     func refresh()
     
 }
 
-class ArchivedPromotionViewModel: ArchivedPromotionViewModelProtocol{
+class ArchivedPromotionViewModel: ArchivedPromotionViewModelProtocol {
     var isLatest: Variable<Bool>
     var textSearch: Variable<String?> = Variable<String?>(nil)
     var listSearchVoucher: Variable<[Promotion]?> = Variable<[Promotion]?>(nil)

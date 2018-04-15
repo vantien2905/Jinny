@@ -32,7 +32,7 @@ class Promotion: NSObject, Mappable {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         self.id                     <- map["id"]
         self.promotionDescription   <- map["description"]
-        self.expiresAt              <- (map["expires_at"],DateFormatterTransform(dateFormatter: dateFormatter))
+        self.expiresAt              <- (map["expires_at"], DateFormatterTransform(dateFormatter: dateFormatter))
         self.expiresString          <- map["expires_at_in_words"]
         self.merchant               <- map["merchant"]
         self.isReaded               <- map["is_read"]
@@ -40,4 +40,3 @@ class Promotion: NSObject, Mappable {
         self.isBookMarked           <- map["is_bookmarked"]
      }
 }
-

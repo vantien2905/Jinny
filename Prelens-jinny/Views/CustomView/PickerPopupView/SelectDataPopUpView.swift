@@ -77,7 +77,7 @@ class SelectDataPopUpView: BasePopUpView {
         tbvData.register(UINib(nibName: Cell.selectDataCell, bundle: nil), forCellReuseIdentifier: Cell.selectDataCell)
     }
 }
-extension SelectDataPopUpView:UITableViewDelegate,UITableViewDataSource {
+extension SelectDataPopUpView:UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -93,6 +93,5 @@ extension SelectDataPopUpView:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
-        print(index)
     }
 }

@@ -59,7 +59,7 @@ class PRSignUpViewController: UIViewController {
         btnShowHidePassword.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let strongSelf = self, let _passIsSecurity = strongSelf.passIsSecurity else { return }
-                if(_passIsSecurity == true) {
+                if _passIsSecurity == true {
                     strongSelf.btnShowHidePassword.setImage(UIImage(named: "visible"), for: .normal)
                 } else {
                     strongSelf.btnShowHidePassword.setImage(UIImage(named: "hidden"), for: .normal)
@@ -70,7 +70,7 @@ class PRSignUpViewController: UIViewController {
 
         btnCheckConditions.rx.tap
             .subscribe(onNext: {
-                if(self.conditionsIsChecked == true) {
+                if self.conditionsIsChecked == true {
                     self.btnCheckConditions.setImage(UIImage(named: "check_box"), for: .normal)
                     self.conditionsIsChecked = false
 

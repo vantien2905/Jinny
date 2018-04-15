@@ -28,7 +28,7 @@ class TermsViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupView(){
+    func setupView() {
         
     }
 }

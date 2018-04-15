@@ -40,7 +40,7 @@ class MembershipDetailViewModel: MembershipDetailViewModelProtocol {
             }
         }).disposed(by: disposeBag)
         
-        isRemoveMembership.asObservable().subscribe(onNext: { [weak self] idRemove in
+        isRemoveMembership.asObservable().subscribe(onNext: { [weak self] _ in
             if self?.isRemoveMembership.value == true {
                 self?.removeMembership(idMemBer: idMember)
             }

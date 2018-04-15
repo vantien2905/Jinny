@@ -36,19 +36,19 @@ class Member: NSObject, Mappable {
 }
 
 extension Member: Comparable {
-    public static func >(lhs: Member, rhs: Member) -> Bool {
+    public static func > (lhs: Member, rhs: Member) -> Bool {
         guard let lhsDate = lhs.merchant?.createdDate else { return false }
         guard let rhsDate = rhs.merchant?.createdDate else { return true }
         return lhsDate > rhsDate
     }
     
-    public static func <(lhs: Member, rhs: Member) -> Bool {
+    public static func < (lhs: Member, rhs: Member) -> Bool {
         guard let lhsDate = lhs.merchant?.createdDate else { return true }
         guard let rhsDate = rhs.merchant?.createdDate else { return false }
         return lhsDate < rhsDate
     }
     
-    public static func ==(lhs: Member, rhs: Member) -> Bool {
+    public static func == (lhs: Member, rhs: Member) -> Bool {
         guard let lhsDate = lhs.merchant?.createdDate else { return false }
         guard let rhsDate = rhs.merchant?.createdDate else { return false }
         return lhsDate == rhsDate

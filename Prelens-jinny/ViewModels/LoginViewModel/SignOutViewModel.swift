@@ -1,5 +1,4 @@
 
-//
 //  SignOutViewModel.swift
 //  Prelens-jinny
 //
@@ -15,7 +14,7 @@ final class SignOutViewModel {
     private var disposeBag = DisposeBag()
     public var btnSignOutTapped: PublishSubject<Void>
     
-    init(){
+    init() {
         self.btnSignOutTapped = PublishSubject<Void>()
         self.btnSignOutTapped.subscribe(onNext: { [weak self]  in
             guard let strongSelf = self else { return }

@@ -21,7 +21,7 @@ class SettingViewController: BaseViewController {
     @IBOutlet weak var vVoucherNotiSwitch: PRSwitch!
     @IBOutlet weak var lbVersion: UILabel!
     @IBOutlet weak var btnDayToRemind: UIButton!
-    var listDay = ["1","2","3","4","5","6","7"]
+    var listDay = ["1", "2", "3", "4", "5", "6", "7"]
     let disposeBag = DisposeBag()
     let promotionVM = AllPromotionViewModel()
     override func viewWillAppear(_ animated: Bool) {
@@ -40,16 +40,15 @@ class SettingViewController: BaseViewController {
     
     func setupView() {
         //detectAllowNotification()
-        if let _lefDayToRemind = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind){
+        if let _lefDayToRemind = KeychainManager.shared.getString(key: KeychainItem.leftDayToRemind) {
              lbNumberDay.text = _lefDayToRemind + " days"
         } else {
              lbNumberDay.text = "7 days"
-            KeychainManager.shared.saveString(value: "7" , forkey: KeychainItem.leftDayToRemind)
+            KeychainManager.shared.saveString(value: "7", forkey: KeychainItem.leftDayToRemind)
         }
             if let _pushNotificationStatus = KeychainManager.shared.getBool(key: KeychainItem.pushNotificationStatus),
                 let _voucherExprireStatus = KeychainManager.shared.getBool(key: KeychainItem.voucherExprireStatus),
                 let _storeDiscountStatus = KeychainManager.shared.getBool(key: KeychainItem.storeDiscountStatus) {
-            
                 vPushNotiSwitch.isCheck.value       = _pushNotificationStatus
                 vVoucherNotiSwitch.isCheck.value    = _voucherExprireStatus
                 vStoreDiscountSwitch.isCheck.value  = _storeDiscountStatus
@@ -79,7 +78,7 @@ class SettingViewController: BaseViewController {
             }
             KeychainManager.shared.saveBool(value: value, forkey: KeychainItem.pushNotificationStatus)
         }).disposed(by: disposeBag)
-        
+
         vVoucherNotiSwitch.isCheck.asObservable().subscribe(onNext: { [weak self ]value in
             guard let strongSelf = self else {return}
                 if value {
@@ -128,7 +127,7 @@ class SettingViewController: BaseViewController {
     }
 
     @IBAction func btnChangePasswordTapped(_ sender: Any) {
-        let changePasswordVC = PRChangePassWordViewController.initControllerFromNib()
+        let changePasswordVC = ChangePassWordViewController.configureViewController()
         self.push(controller: changePasswordVC)
     }
 }
@@ -149,7 +148,7 @@ extension SettingViewController:SelectDataPopUpViewDelegate {
         } else {
             lbNumberDay.text = listDay[index] + " days"
         }
-        KeychainManager.shared.saveString(value: listDay[index] , forkey: KeychainItem.leftDayToRemind)
+        KeychainManager.shared.saveString(value: listDay[index], forkey: KeychainItem.leftDayToRemind)
         promotionVM.getListAllPromotion(order: "desc")
     }
 }

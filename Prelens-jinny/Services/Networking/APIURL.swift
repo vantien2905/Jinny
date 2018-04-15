@@ -40,7 +40,6 @@ struct APIEndpoint {
         static let redeemVoucher                = "vouchers/%@/redeem"
     }
     
-
     struct Merchant {
         static let getMerchantDetail = "merchants/%@/branches"
     }

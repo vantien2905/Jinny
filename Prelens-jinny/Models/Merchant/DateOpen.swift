@@ -29,4 +29,3 @@ class DateOpen: NSObject, Mappable {
     }
     
 }
-

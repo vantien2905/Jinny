@@ -36,8 +36,8 @@
 		7642039F204E45DA00ECDD42 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */; };
 		76440AD5206A35E400F6F167 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76440AD4206A35E300F6F167 /* LocalNotification.swift */; };
 		764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */; };
-		765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */; };
-		765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */; };
+		765027DF2050D93500618C84 /* ChangePassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765027DD2050D93500618C84 /* ChangePassWordViewController.swift */; };
+		765027E12050D93500618C84 /* ChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765027DE2050D93500618C84 /* ChangePassWordViewController.xib */; };
 		765087862057716100199FBB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765087852057716100199FBB /* SignInViewModel.swift */; };
 		76508789205772D200199FBB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76508788205772D200199FBB /* String+Extension.swift */; };
 		765270F92062917500CD4038 /* ChooseDatePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765270F82062917400CD4038 /* ChooseDatePopupView.swift */; };
@@ -253,8 +253,8 @@
 		7642039E204E45DA00ECDD42 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		76440AD4206A35E300F6F167 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		764B6E98205BB9BF00F8896B /* ResidentialRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialRegion.swift; sourceTree = "<group>"; };
-		765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRChangePassWordViewController.swift; sourceTree = "<group>"; };
-		765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PRChangePassWordViewController.xib; sourceTree = "<group>"; };
+		765027DD2050D93500618C84 /* ChangePassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassWordViewController.swift; sourceTree = "<group>"; };
+		765027DE2050D93500618C84 /* ChangePassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePassWordViewController.xib; sourceTree = "<group>"; };
 		765087852057716100199FBB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		76508788205772D200199FBB /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		765270F82062917400CD4038 /* ChooseDatePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDatePopupView.swift; sourceTree = "<group>"; };
@@ -1230,8 +1230,8 @@
 		BCBC95A920562621004C1985 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
-				765027DD2050D93500618C84 /* PRChangePassWordViewController.swift */,
-				765027DE2050D93500618C84 /* PRChangePassWordViewController.xib */,
+				765027DD2050D93500618C84 /* ChangePassWordViewController.swift */,
+				765027DE2050D93500618C84 /* ChangePassWordViewController.xib */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -1612,7 +1612,7 @@
 				B7B1BC9D2058D7FA0042B3D4 /* ostrich-regular.ttf in Resources */,
 				76DC8900205F6B5600AD87F3 /* PromotionHeaderCell.xib in Resources */,
 				BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */,
-				765027E12050D93500618C84 /* PRChangePassWordViewController.xib in Resources */,
+				765027E12050D93500618C84 /* ChangePassWordViewController.xib in Resources */,
 				76DC8912205F9ED600AD87F3 /* SearchPromotionCell.xib in Resources */,
 				B7899EBE2060B31900ADEC43 /* AddMerchantCell.xib in Resources */,
 			);
@@ -1870,7 +1870,7 @@
 				767FF65D204D3ED600EA7DE9 /* PREditProfileViewController.swift in Sources */,
 				B7AC4AD6206201830028BDDD /* AddMerchantViewModel.swift in Sources */,
 				BC770A67204CEE5D0052A285 /* AppDelegate.swift in Sources */,
-				765027DF2050D93500618C84 /* PRChangePassWordViewController.swift in Sources */,
+				765027DF2050D93500618C84 /* ChangePassWordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

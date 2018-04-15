@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
     }
     
     func setUpView() {
-        let defaults = UserDefaults.standard
+//        let defaults = UserDefaults.standard
         vNavigation.backgroundColor = PRColor.mainAppColor
         lcsNavigationHeight.constant = 64
         if Device() == .iPhoneX || Device() == .simulator(.iPhoneX) {
@@ -192,9 +192,6 @@ extension HomeViewController: PRTabbarCustomDelegate {
                     self.vCloseTap.alpha = 0.3
                 })
             }
-            
-        default:
-            break
         }
     }
     
