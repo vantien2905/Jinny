@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SDWebImage
 
 class PromotionDetailViewController: BaseViewController {
     
@@ -18,6 +19,7 @@ class PromotionDetailViewController: BaseViewController {
     var voucherArchived: Bool? = false
     
     var merchantName: String?
+    var cellSize: [CGSize]? = [CGSize]()
     
     var starTapped: Bool? {
         didSet {
@@ -31,7 +33,7 @@ class PromotionDetailViewController: BaseViewController {
     var promotionDetail:  PromotionDetail? {
         didSet {
             cvVoucherDetail.reloadData()
-            
+            getCellSize()
             // MARK: Setup the merchantName
             if let merchantName = promotionDetail?.merchantName {
                 setNavigation(name: merchantName)
@@ -55,6 +57,7 @@ class PromotionDetailViewController: BaseViewController {
             btnRedeem.backgroundColor =  PRColor.mainAppColor
             btnRedeem.isEnabled = true
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +74,26 @@ class PromotionDetailViewController: BaseViewController {
         }
         vcVoucherDetail.viewModel = viewModel
         return vcVoucherDetail
+    }
+    
+    func getCellSize() {
+        guard let data = self.promotionDetail else { return }
+        guard let images = data.image else { return }
+        for img in images {
+            guard let _url = img.url?.original, let url = URL(string: _url) else { return }
+            if let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil) {
+                if let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary? {
+                    let pixelWidth = imageProperties[kCGImagePropertyPixelWidth] as! CGFloat
+                    let pixelHeight = imageProperties[kCGImagePropertyPixelHeight] as! CGFloat
+                    let imageWidth  = pixelWidth
+                    let imageHeight = pixelHeight
+                    let cellWidth   = UIScreen.main.bounds.width - 14
+                    let cellHeight  = (cellWidth*imageHeight)/imageWidth
+                    self.cellSize?.append(CGSize(width: cellWidth, height: cellHeight))
+                }
+            }
+            
+        }
     }
     
     func setUpComponents() {
@@ -145,7 +168,6 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
                                                           for: indexPath) as! PromotionDetailCell
             guard let data = promotionDetail, let listImage = data.image else { return UICollectionViewCell()}
             let image = listImage[indexPath.row]
-            cell.backgroundColor = .clear
             cell.setUpView(with: image)
             return cell
         } else {
@@ -167,7 +189,8 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
             return CGSize(width: size, height: 125 - (57 - _height))
         } else if indexPath.section == 1 {
             let size = UIScreen.main.bounds.width - 12
-            return CGSize(width: size, height: size*0.75)
+            guard let _cellSize = cellSize else { return CGSize(width: size, height: 0.75*size) }
+            return _cellSize[indexPath.row]
         } else if indexPath.section == 2 {
             let size = UIScreen.main.bounds.width - 12
             
