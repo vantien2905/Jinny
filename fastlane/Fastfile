@@ -146,7 +146,7 @@ private_lane :preprocess do | options |
   end
 
   sh("git pull origin #{GIT_BRANCH}")
-  sh("pod install")
+  #sh("pod install")
 
   if ENV["XCODE_VERSION"]
     xcversion(version: ENV["XCODE_VERSION"])
