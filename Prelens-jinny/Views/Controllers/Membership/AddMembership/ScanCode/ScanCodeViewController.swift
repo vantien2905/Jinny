@@ -130,10 +130,11 @@ class ScanCodeViewController: BaseViewController, AVCaptureMetadataOutputObjects
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         print(vScanCode.layer.bounds)
+        
         videoPreviewLayer.frame = CGRect(x: vScanCode.layer.bounds.minX,
                                          y: vScanCode.layer.bounds.minY,
                                          width: UIScreen.main.bounds.size.width,
-                                         height: 389.5)
+                                         height: 389.5 * UIScreen.main.bounds.size.height / 667)
         vScanCode.layer.addSublayer(videoPreviewLayer)
         
         /* Check for metadata */
