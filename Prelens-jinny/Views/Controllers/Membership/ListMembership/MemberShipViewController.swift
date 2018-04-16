@@ -59,7 +59,8 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
+        hideNavigation()
+//        self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         vSearch.tfSearch.text = ""
         
         lightStatus()

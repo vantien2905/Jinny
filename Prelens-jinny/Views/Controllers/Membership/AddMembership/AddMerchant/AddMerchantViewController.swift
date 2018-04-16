@@ -37,7 +37,7 @@ class AddMerchantViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         vSearch.tfSearch.resignFirstResponder()
-        hideNavigation()
+//        hideNavigation()
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,7 +66,12 @@ class AddMerchantViewController: BaseViewController {
     func setNavigation() {
         navigationController?.navigationBar.isHidden = false
         setTitle(title: "ADD MEMBERSHIP", textColor: .black, backgroundColor: .white)
-        addBackButton()
+//        addBackButton()
+         self.addButtonToNavigation(image: PRImage.imgBack, style: .left, action: #selector(btnBackRootTapped))
+    }
+    
+    @objc func btnBackRootTapped() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func configureTableView() {

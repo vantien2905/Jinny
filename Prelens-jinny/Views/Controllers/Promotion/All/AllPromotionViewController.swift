@@ -14,7 +14,7 @@ protocol AllPromotionDelegate: class {
     func isHiddenBtnAll(isHidden: Bool)
 }
 
-class AllPromotionViewController: BaseViewController, UIScrollViewDelegate {
+class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvAllPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -130,17 +130,14 @@ class AllPromotionViewController: BaseViewController, UIScrollViewDelegate {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
         if targetContentOffset.pointee.y == 0 && actualPosition.y > 1 {
-            self.lightStatus()
             buttonHidden?.isHiddenBtnAll(isHidden: false)
             delegateScroll?.isScroll(direction: false, name: "AllPromotionViewController")
         } else if  targetContentOffset.pointee.y == 0 && actualPosition.y < -1 {
             buttonHidden?.isHiddenBtnAll(isHidden: false)
             delegateScroll?.isScroll(direction: true, name: "AllPromotionViewController")
-            self.darkStatus()
         } else {
             buttonHidden?.isHiddenBtnAll(isHidden: true)
             delegateScroll?.isScroll(direction: true, name: "AllPromotionViewController")
-            self.darkStatus()
         }
     }
 }

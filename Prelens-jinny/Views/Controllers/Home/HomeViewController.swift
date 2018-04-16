@@ -154,7 +154,7 @@ extension HomeViewController: PRTabbarCustomDelegate {
     }
     
     func btnTapped(tag: Route.Tabbar) {
-
+        self.view.layoutIfNeeded()
         if self.lcsNavigationHeight.constant == 0 {
             self.lcsNavigationHeight.constant = 64
             self.view.layoutIfNeeded()

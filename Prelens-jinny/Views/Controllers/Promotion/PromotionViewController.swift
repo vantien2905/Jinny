@@ -28,9 +28,9 @@ class PromotionViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        hideNavigation()
         setupView()
         lightStatus()
-        self.navigationController?.navigationBar.isHidden = true
         vcAllPromotion.buttonHidden = self
         vcStarredPromotion.buttonHidden = self
         vcAchivedPromotion.buttonHidden = self

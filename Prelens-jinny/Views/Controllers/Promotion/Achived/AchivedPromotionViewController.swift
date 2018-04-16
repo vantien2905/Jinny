@@ -14,7 +14,7 @@ protocol ArchivedPromotionDelegate: class {
     func isHidden(isHidden: Bool)
 }
 
-class AchivedPromotionViewController: BaseViewController {
+class AchivedPromotionViewController: UIViewController {
     @IBOutlet weak var cvAchivedPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -114,15 +114,12 @@ class AchivedPromotionViewController: BaseViewController {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
         if targetContentOffset.pointee.y == 0 && actualPosition.y > 1 {
-            self.lightStatus()
             buttonHidden?.isHidden(isHidden: false)
             delegateScroll?.isScroll(direction: false, name: "AchivePromotionViewController")
         } else if  targetContentOffset.pointee.y == 0 && actualPosition.y < -1 {
             buttonHidden?.isHidden(isHidden: false)
             delegateScroll?.isScroll(direction: true, name: "AchivePromotionViewController")
-            self.darkStatus()
         } else {
-            self.darkStatus()
             buttonHidden?.isHidden(isHidden: true)
             delegateScroll?.isScroll(direction: true, name: "AchivePromotionViewController")
         }

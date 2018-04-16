@@ -14,7 +14,7 @@ protocol StarredPromotionDelegate: class {
     func isHiddenBtnStar(isHidden: Bool)
 }
 
-class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
+class StarredPromotionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var cvStarredPromotion: UICollectionView!
     @IBOutlet weak var vSearch: SearchView!
     @IBOutlet weak var vHeader: UIView!
@@ -119,17 +119,14 @@ class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
         if targetContentOffset.pointee.y == 0 && actualPosition.y > 1 {
-            self.lightStatus()
             buttonHidden?.isHiddenBtnStar(isHidden: false)
             delegateScroll?.isScroll(direction: false, name: "StarredPromotionViewController")
         } else if  targetContentOffset.pointee.y == 0 && actualPosition.y < -1 {
             buttonHidden?.isHiddenBtnStar(isHidden: false)
             delegateScroll?.isScroll(direction: true, name: "StarredPromotionViewController")
-            self.darkStatus()
         } else {
             buttonHidden?.isHiddenBtnStar(isHidden: true)
             delegateScroll?.isScroll(direction: true, name: "StarredPromotionViewController")
-            self.darkStatus()
         }
     }
 }
