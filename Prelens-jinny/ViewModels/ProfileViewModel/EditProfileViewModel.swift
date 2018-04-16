@@ -47,19 +47,19 @@ class EditProfileViewModel {
                  strongSelf.updateProfile()
             } else {
                 if _name.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message: "Name can't be blank")
+                    PopUpHelper.shared.showMessage(message: "Name is required")
                     return
                 }
                 if _email.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message: "Email can't be blank")
+                    PopUpHelper.shared.showMessage(message: "Email is required")
                     return
                 }
                 if _dob.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message: "Date of birth can't be blank")
+                    PopUpHelper.shared.showMessage(message: "Date of birth is required")
                     return
                 }
                 if _email.isValidEmail() == false {
-                    PopUpHelper.shared.showMessage(message: "Email is invalid")
+                    PopUpHelper.shared.showMessage(message: "Invalid email address, please try again")
                     return
                 }
             }

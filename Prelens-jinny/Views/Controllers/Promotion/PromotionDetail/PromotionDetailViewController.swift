@@ -233,9 +233,9 @@ extension PromotionDetailViewController: BaseViewControllerDelegate {
 extension PromotionDetailViewController: PromotionDetailFooterCellDelegate {
     func btnRemoveTapped() {
         guard let id = promotionDetail?.id else { return }
-        PopUpHelper.shared.showPopUpYesNo(message: "Do you want to delete this voucher?", actionYes: {
+        PopUpHelper.shared.showPopUpYesNo(message: "Remove this voucher?", actionYes: {
             self.viewModel.removeVoucher(idVoucher: id)
-            PopUpHelper.shared.showPopUp(message: "Deleted!", height: 120, action: {
+            PopUpHelper.shared.showPopUp(message: "Voucher removed", height: 120, action: {
                 self.pop()
             })
         }, actionNo: {})
