@@ -59,7 +59,7 @@ class EditProfileViewModel {
                     return
                 }
                 if _email.isValidEmail() == false {
-                    PopUpHelper.shared.showMessage(message: "Invalid email address, please try again")
+                    PopUpHelper.shared.showMessage(message: "Please enter a valid email address")
                     return
                 }
             }
