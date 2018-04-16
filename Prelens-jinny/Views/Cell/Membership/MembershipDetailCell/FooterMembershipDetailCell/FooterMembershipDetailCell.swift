@@ -29,5 +29,4 @@ class FooterMembershipDetailCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         self.selectionStyle = .none
     }
-
 }

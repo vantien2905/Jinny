@@ -109,12 +109,20 @@ class AchivedPromotionViewController: BaseViewController {
         cvAchivedPromotion.delegate = self
         cvAchivedPromotion.dataSource = self
     }
-
+    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if targetContentOffset.pointee.y == 0 {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if targetContentOffset.pointee.y == 0 && actualPosition.y > 1 {
+            self.lightStatus()
             buttonHidden?.isHidden(isHidden: false)
             delegateScroll?.isScroll(direction: false, name: "AchivePromotionViewController")
+        } else if  targetContentOffset.pointee.y == 0 && actualPosition.y < -1 {
+            buttonHidden?.isHidden(isHidden: false)
+            delegateScroll?.isScroll(direction: true, name: "AchivePromotionViewController")
+            self.darkStatus()
         } else {
+            self.darkStatus()
             buttonHidden?.isHidden(isHidden: true)
             delegateScroll?.isScroll(direction: true, name: "AchivePromotionViewController")
         }
@@ -128,7 +136,7 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
         case 0:
             
             let cell = cvAchivedPromotion.dequeueReusableCell(withReuseIdentifier: Cell.otherHeader,
-                                                          for: indexPath) as! OtherHeaderCell
+                                                              for: indexPath) as! OtherHeaderCell
             cell.lbOther.text = "All vouchers"
             if self.listAchivedPromotion.count == 0 {
                 cell.vSort.isHidden = true
@@ -157,11 +165,11 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             }
         }
     }
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 1:
@@ -174,7 +182,7 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             return 1
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             if self.listAchivedPromotion.count == 0 {
@@ -190,15 +198,15 @@ extension AchivedPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             }
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 17
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.listAchivedPromotion.count == 0 {
             return

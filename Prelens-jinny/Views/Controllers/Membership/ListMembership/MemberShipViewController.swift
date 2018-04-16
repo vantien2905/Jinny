@@ -142,7 +142,6 @@ class MemberShipViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         self.view.layoutIfNeeded()
         if targetContentOffset.pointee.y == 0 && actualPosition.y > 1 {

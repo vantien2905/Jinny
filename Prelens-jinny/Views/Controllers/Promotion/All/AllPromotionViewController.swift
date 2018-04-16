@@ -55,7 +55,7 @@ class AllPromotionViewController: BaseViewController, UIScrollViewDelegate {
         scrollView.addSubview(refreshControl)
         scrollView.delegate = self
     }
-        
+    
     override func viewWillLayoutSubviews() {
         self.view.layoutIfNeeded()
         vHeader.backgroundColor = PRColor.backgroundColor
@@ -125,14 +125,22 @@ class AllPromotionViewController: BaseViewController, UIScrollViewDelegate {
         cvAllPromotion.delegate = self
         cvAllPromotion.dataSource = self
     }
-
+    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if targetContentOffset.pointee.y == 0 {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if targetContentOffset.pointee.y == 0 && actualPosition.y > 1 {
+            self.lightStatus()
             buttonHidden?.isHiddenBtnAll(isHidden: false)
             delegateScroll?.isScroll(direction: false, name: "AllPromotionViewController")
+        } else if  targetContentOffset.pointee.y == 0 && actualPosition.y < -1 {
+            buttonHidden?.isHiddenBtnAll(isHidden: false)
+            delegateScroll?.isScroll(direction: true, name: "AllPromotionViewController")
+            self.darkStatus()
         } else {
             buttonHidden?.isHiddenBtnAll(isHidden: true)
             delegateScroll?.isScroll(direction: true, name: "AllPromotionViewController")
+            self.darkStatus()
         }
     }
 }

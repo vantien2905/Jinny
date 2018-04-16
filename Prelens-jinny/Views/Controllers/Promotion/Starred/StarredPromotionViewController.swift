@@ -27,7 +27,7 @@ class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
     
     var viewModel: StarredPromotionViewModelProtocol!
     let disposeBag = DisposeBag()
-
+    
     var refreshControl: UIRefreshControl!
     
     weak var buttonHidden: StarredPromotionDelegate?
@@ -38,7 +38,7 @@ class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
         }
     }
     var listSearch = [Promotion]()
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = PRColor.mainAppColor
         vSearch.tfSearch.text = ""
@@ -46,7 +46,7 @@ class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
         viewModel.getListStarredPromotion(order:"desc")
         hideKeyboard()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configColecttionView()
@@ -104,7 +104,7 @@ class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
         starredPromotionVC.viewModel = viewModel
         return starredPromotionVC
     }
-
+    
     func configColecttionView() {
         cvStarredPromotion.register(UINib(nibName: Cell.otherHeader, bundle: nil), forCellWithReuseIdentifier: Cell.otherHeader)
         cvStarredPromotion.register(UINib(nibName: Cell.promotionCell, bundle: nil), forCellWithReuseIdentifier: Cell.promotionCell )
@@ -116,12 +116,20 @@ class StarredPromotionViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if targetContentOffset.pointee.y == 0 {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        self.view.layoutIfNeeded()
+        if targetContentOffset.pointee.y == 0 && actualPosition.y > 1 {
+            self.lightStatus()
             buttonHidden?.isHiddenBtnStar(isHidden: false)
             delegateScroll?.isScroll(direction: false, name: "StarredPromotionViewController")
+        } else if  targetContentOffset.pointee.y == 0 && actualPosition.y < -1 {
+            buttonHidden?.isHiddenBtnStar(isHidden: false)
+            delegateScroll?.isScroll(direction: true, name: "StarredPromotionViewController")
+            self.darkStatus()
         } else {
             buttonHidden?.isHiddenBtnStar(isHidden: true)
             delegateScroll?.isScroll(direction: true, name: "StarredPromotionViewController")
+            self.darkStatus()
         }
     }
 }
@@ -162,11 +170,11 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             }
         }
     }
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 1:
@@ -179,7 +187,7 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             return 1
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             if self.listStarredPromotion.count == 0 {
@@ -195,15 +203,15 @@ extension StarredPromotionViewController: UICollectionViewDelegateFlowLayout, UI
             }
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 17
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.listStarredPromotion.count == 0 {
             return
