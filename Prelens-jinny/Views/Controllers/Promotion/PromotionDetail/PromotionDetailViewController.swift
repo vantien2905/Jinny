@@ -182,11 +182,11 @@ extension PromotionDetailViewController: UICollectionViewDelegateFlowLayout, UIC
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*19, font: UIFont(name: "SegoeUI-Semibold", size: 16)!)
+            let height = promotionDetail?.detailDescription?.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*7, font: UIFont(name: "SegoeUI-Semibold", size: 17)!)
             let size = UIScreen.main.bounds.width
             
-            guard let _height = height else { return CGSize(width: size, height: 125 - (57)) }
-            return CGSize(width: size, height: 125 - (57 - _height))
+            guard let _height = height else { return CGSize(width: size, height: 130 - (57)) }
+            return CGSize(width: size, height: 132 - (57 - _height))
         } else if indexPath.section == 1 {
             let size = UIScreen.main.bounds.width - 12
             guard let _cellSize = cellSize else { return CGSize(width: size, height: 0.75*size) }
@@ -233,9 +233,9 @@ extension PromotionDetailViewController: BaseViewControllerDelegate {
 extension PromotionDetailViewController: PromotionDetailFooterCellDelegate {
     func btnRemoveTapped() {
         guard let id = promotionDetail?.id else { return }
-        PopUpHelper.shared.showPopUpYesNo(message: "Do you want to delete this voucher?", actionYes: {
+        PopUpHelper.shared.showPopUpYesNo(message: "Remove this voucher?", actionYes: {
             self.viewModel.removeVoucher(idVoucher: id)
-            PopUpHelper.shared.showPopUp(message: "Deleted!", height: 120, action: {
+            PopUpHelper.shared.showPopUp(message: "Voucher removed", height: 120, action: {
                 self.pop()
             })
         }, actionNo: {})

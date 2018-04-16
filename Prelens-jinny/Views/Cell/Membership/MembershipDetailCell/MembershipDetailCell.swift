@@ -55,7 +55,7 @@ class MembershipDetailCell: UITableViewCell {
 //                    self.imgPromotion.contentMode = .scaleToFill
 //                }
             }
-            imgPromotion.contentMode = .scaleAspectFill
+            imgPromotion.contentMode = .scaleAspectFit
             lbExpiresAt.text    = "Expiry date: \(_expiresAt)"
             lbMerchantName.text = _merchantName
         }

@@ -25,17 +25,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ys0-hK-uNJ">
-                        <rect key="frame" x="110" y="26" width="166" height="30.5"/>
+                        <rect key="frame" x="110" y="11" width="166" height="37"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="671-5h-xus">
-                                <rect key="frame" x="0.0" y="6.5" width="16.5" height="17.5"/>
+                                <rect key="frame" x="0.0" y="5.5" width="16.5" height="17.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16.5" id="S9N-xe-cSN"/>
                                     <constraint firstAttribute="height" constant="17.5" id="nxF-i2-QDd"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove membership" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWG-Gn-q3L">
-                                <rect key="frame" x="21.5" y="6" width="144.5" height="20"/>
+                                <rect key="frame" x="21.5" y="5" width="144.5" height="20"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="15"/>
                                 <color key="textColor" red="0.8901960784313725" green="0.070588235294117646" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,24 +45,24 @@
                         <constraints>
                             <constraint firstItem="VWG-Gn-q3L" firstAttribute="leading" secondItem="671-5h-xus" secondAttribute="trailing" constant="5" id="CgT-Vx-v5x"/>
                             <constraint firstAttribute="trailing" secondItem="VWG-Gn-q3L" secondAttribute="trailing" id="UEB-7B-2wj"/>
-                            <constraint firstItem="671-5h-xus" firstAttribute="centerY" secondItem="ys0-hK-uNJ" secondAttribute="centerY" id="UEY-dn-N1j"/>
+                            <constraint firstItem="671-5h-xus" firstAttribute="centerY" secondItem="ys0-hK-uNJ" secondAttribute="centerY" constant="-4.25" id="UEY-dn-N1j"/>
                             <constraint firstItem="671-5h-xus" firstAttribute="leading" secondItem="ys0-hK-uNJ" secondAttribute="leading" id="cFv-EH-fL7"/>
                             <constraint firstItem="VWG-Gn-q3L" firstAttribute="centerY" secondItem="671-5h-xus" secondAttribute="centerY" id="dde-rQ-L4w"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-4y-G2h">
-                        <rect key="frame" x="110" y="26" width="166" height="30"/>
+                        <rect key="frame" x="110" y="6" width="166" height="30"/>
                         <connections>
                             <action selector="btnRemoveTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5F9-nc-vCi"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ys0-hK-uNJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2Et-nG-FsY"/>
+                    <constraint firstItem="ys0-hK-uNJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-11.25" id="2Et-nG-FsY"/>
                     <constraint firstItem="ys0-hK-uNJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="QEq-o3-qqd"/>
                     <constraint firstItem="nOd-4y-G2h" firstAttribute="leading" secondItem="ys0-hK-uNJ" secondAttribute="leading" id="UDS-kC-pYr"/>
-                    <constraint firstItem="nOd-4y-G2h" firstAttribute="top" secondItem="ys0-hK-uNJ" secondAttribute="top" id="WK5-ne-1ib"/>
-                    <constraint firstItem="nOd-4y-G2h" firstAttribute="bottom" secondItem="ys0-hK-uNJ" secondAttribute="bottom" id="aCt-Cq-7hX"/>
+                    <constraint firstItem="nOd-4y-G2h" firstAttribute="top" secondItem="ys0-hK-uNJ" secondAttribute="top" constant="-5" id="WK5-ne-1ib"/>
+                    <constraint firstItem="nOd-4y-G2h" firstAttribute="bottom" secondItem="ys0-hK-uNJ" secondAttribute="bottom" constant="-12" id="aCt-Cq-7hX"/>
                     <constraint firstItem="nOd-4y-G2h" firstAttribute="trailing" secondItem="ys0-hK-uNJ" secondAttribute="trailing" id="cpG-ad-Aax"/>
                 </constraints>
             </tableViewCellContentView>

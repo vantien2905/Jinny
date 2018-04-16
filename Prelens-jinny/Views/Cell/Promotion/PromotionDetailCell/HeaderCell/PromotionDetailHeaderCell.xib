@@ -28,13 +28,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhp-lu-4n8">
-                        <rect key="frame" x="6" y="10" width="340" height="111"/>
+                        <rect key="frame" x="6" y="10" width="340" height="104"/>
                         <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwa-yY-ay7">
-                        <rect key="frame" x="6" y="138" width="340" height="0.0"/>
+                        <rect key="frame" x="6" y="131" width="340" height="0.0"/>
                         <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15.5"/>
                         <color key="textColor" red="0.88847738499999995" green="0.076193876559999998" blue="0.047553502019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                 <constraint firstItem="nhp-lu-4n8" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="6" id="Yl6-88-HuU"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="nhp-lu-4n8" secondAttribute="trailing" constant="6" id="eZY-DU-8IZ"/>
                 <constraint firstItem="kwa-yY-ay7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="g80-pQ-4mW"/>
-                <constraint firstAttribute="bottom" secondItem="kwa-yY-ay7" secondAttribute="bottom" constant="20" id="qmM-gZ-Ivh"/>
+                <constraint firstAttribute="bottom" secondItem="kwa-yY-ay7" secondAttribute="bottom" constant="27" id="qmM-gZ-Ivh"/>
                 <constraint firstItem="kwa-yY-ay7" firstAttribute="top" secondItem="nhp-lu-4n8" secondAttribute="bottom" constant="17" id="vLG-fp-wdR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

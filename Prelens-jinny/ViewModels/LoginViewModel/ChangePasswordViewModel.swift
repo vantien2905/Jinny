@@ -46,11 +46,11 @@ final class ChangePasswordViewModel:ChangePasswordViewModelProtocol {
                 self?.callAPIChangePassword()
             } else {
                 if curPassword.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message:"Current password can't be blank")
+                    PopUpHelper.shared.showMessage(message:"Please enter current password")
                     return
                 }
                 if newPassword.isValidEmpty() {
-                    PopUpHelper.shared.showMessage(message:"New password can't be blank")
+                    PopUpHelper.shared.showMessage(message:"Please enter new password")
                     return
                 }
                 PopUpHelper.shared.showMessage(message: ContantMessages.Login.errorContentPassword)
