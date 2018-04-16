@@ -19,11 +19,14 @@ class MembershipDetailViewController: BaseViewController {
     static var urlThumb: String?
     static var merchantName: String?
     
+    var cellSize: [CGFloat]? = [CGFloat]()
+    
     var isStarTapped = false
     var viewModel: MembershipDetailViewModelProtocol!
     
     var membershipDetail = Member() {
         didSet {
+            getCellSize()
             guard let merchant = membershipDetail.merchant?.name else {return}
             setTitle(title: merchant, textColor: UIColor.black, backgroundColor: .white)
             guard let url = membershipDetail.merchant?.logo?.url?.thumb else { return }
@@ -49,6 +52,32 @@ class MembershipDetailViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         darkStatus()
+    }
+    
+    func getCellSize() {
+        let data = self.membershipDetail
+        var imgString = [String]()
+        guard let _vouchers = data.vouchers else { return }
+        
+        for voucher in _vouchers {
+            guard let _imgString = (voucher.image?.url?.original) else { return }
+            imgString.append(_imgString)
+        }
+        
+        for img in imgString {
+            guard let url = URL(string: img) else { return }
+            if let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil) {
+                if let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary? {
+                    let pixelWidth = imageProperties[kCGImagePropertyPixelWidth] as! CGFloat
+                    let pixelHeight = imageProperties[kCGImagePropertyPixelHeight] as! CGFloat
+                    let imageWidth  = pixelWidth
+                    let imageHeight = pixelHeight
+                    let cellWidth   = UIScreen.main.bounds.width - 14
+                    let cellHeight  = (cellWidth*imageHeight)/imageWidth
+                    self.cellSize?.append(cellHeight)
+                }
+            }
+        }
     }
     
     func configureTableView() {
@@ -125,7 +154,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
                 _voucher[indexPath.item].merchant = membershipDetail.merchant
                 cell.promotion = _voucher[indexPath.item]
             }
-            
+            cell.backgroundColor = .yellow
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.footerMembershipDetail, for: indexPath) as! FooterMembershipDetailCell
@@ -151,15 +180,16 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             return 1
         }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
             return UITableViewAutomaticDimension
         case 1:
-            return 300
+            guard let height = cellSize else { return 300 }
+            return 50 + height[indexPath.row]
         default:
-            return 50
+            return 100
         }
     }
     

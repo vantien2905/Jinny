@@ -67,11 +67,11 @@
                             <color key="textColor" red="0.28235019607843098" green="0.28235019607843098" blue="0.28235019607843098" alpha="1" colorSpace="deviceRGB"/>
                             <color key="highlightedColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="deviceRGB"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-7y-DMI">
-                            <rect key="frame" x="240.5" y="234" width="6" height="12"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-7y-DMI">
+                            <rect key="frame" x="240.5" y="235" width="6" height="11"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="12" id="3Uc-AK-WrH"/>
-                                <constraint firstAttribute="width" constant="6" id="BsQ-I4-FM7"/>
+                                <constraint firstAttribute="height" constant="11" id="3Uc-AK-WrH"/>
+                                <constraint firstAttribute="width" constant="5.5" id="BsQ-I4-FM7"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="12.5"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.5" maxX="0.0" maxY="1"/>
@@ -117,7 +117,7 @@
                         <constraint firstItem="tS5-Lq-mXm" firstAttribute="height" secondItem="LSr-LC-tu5" secondAttribute="height" multiplier="47/533.5" id="jco-43-I7K"/>
                         <constraint firstItem="PCR-AO-uMu" firstAttribute="leading" secondItem="tS5-Lq-mXm" secondAttribute="leading" id="jjq-fY-Jh6"/>
                         <constraint firstItem="tS5-Lq-mXm" firstAttribute="leading" secondItem="LSr-LC-tu5" secondAttribute="leading" constant="39" id="o1C-gN-CE7"/>
-                        <constraint firstItem="Uw5-7y-DMI" firstAttribute="centerY" secondItem="frS-GS-SC7" secondAttribute="centerY" id="oEw-bn-8Av"/>
+                        <constraint firstItem="Uw5-7y-DMI" firstAttribute="centerY" secondItem="frS-GS-SC7" secondAttribute="centerY" constant="1" id="oEw-bn-8Av"/>
                         <constraint firstItem="PCR-AO-uMu" firstAttribute="height" secondItem="tS5-Lq-mXm" secondAttribute="height" id="osg-2J-N9D"/>
                         <constraint firstItem="3Vh-U0-Ls9" firstAttribute="top" secondItem="frS-GS-SC7" secondAttribute="bottom" constant="29.5" id="qqX-VW-bFf"/>
                         <constraint firstItem="frS-GS-SC7" firstAttribute="centerX" secondItem="LSr-LC-tu5" secondAttribute="centerX" id="uMT-3Q-1Ps"/>
