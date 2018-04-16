@@ -180,7 +180,7 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             return 1
         }
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -189,7 +189,6 @@ extension MembershipDetailViewController: UITableViewDelegate, UITableViewDataSo
             guard let height = cellSize else { return 300 }
             guard let data = membershipDetail.merchant?.name else { return 300 }
             let _height = data.height(withConstrainedWidth: UIScreen.main.bounds.width - 2*7, font: UIFont(name: "SegoeUI-Semibold", size: 15)!)
-            
             return 46 + _height + height[indexPath.row]
         default:
             return 110
