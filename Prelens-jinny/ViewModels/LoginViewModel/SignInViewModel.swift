@@ -8,17 +8,26 @@
 
 import RxSwift
 import RxCocoa
-
-final class SignInViewModel {
+protocol SignInViewModelProtocol {
+    var email: Variable<String?>{get set}
+    var password: Variable<String?>{get set}
+    var isValidInput: Variable<Bool>{get}
+    var userLogin:Variable<PRUser?>{get}
+    var btnSignInTapped: PublishSubject<Void>{get}
+    var isLoginSuccess: PublishSubject<Bool>{get}
+    var isValid: Observable<Bool>{get}
+    func callAPISignIn()
+}
+final class SignInViewModel:SignInViewModelProtocol {
 
     private var disposeBag = DisposeBag()
 
-    public var email: Variable<String?>
-    public var password: Variable<String?>
-    public var isValidInput: Variable<Bool>
-    private var userLogin = Variable<PRUser?>(nil)
-    public var btnSignInTapped: PublishSubject<Void>
-    public var isLoginSuccess: PublishSubject<Bool>
+    var email: Variable<String?>
+    var password: Variable<String?>
+    var isValidInput: Variable<Bool>
+    var userLogin = Variable<PRUser?>(nil)
+    var btnSignInTapped: PublishSubject<Void>
+    var isLoginSuccess: PublishSubject<Bool>
     var isValid: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), password.asObservable()) { email, password in email!.count > 0 && password!.count > 0
         }
