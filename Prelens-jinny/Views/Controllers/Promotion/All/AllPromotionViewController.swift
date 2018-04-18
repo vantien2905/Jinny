@@ -97,7 +97,11 @@ class AllPromotionViewController: UIViewController, UIScrollViewDelegate {
         refreshControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext: { [weak self] _ in
                 guard let strongSelf = self else {return}
-                strongSelf.viewModel.refresh()
+                if Connectivity.isConnectedToInternet {
+                    strongSelf.viewModel.refresh()
+                } else {
+                    PopUpHelper.shared.showMessage(message: ContantMessages.Connection.errorConnection)
+                }
                 strongSelf.vSearch.tfSearch.text = ""
                 strongSelf.vSearch.tfSearch.resignFirstResponder()
                 strongSelf.refreshControl.endRefreshing()
