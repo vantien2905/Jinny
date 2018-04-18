@@ -110,7 +110,6 @@ class PRSignUpViewController: UIViewController {
             .disposed(by: disposeBag)
         
         btnGuestLogin.rx.tap
-            .throttle(2, scheduler: MainScheduler.instance)
             .subscribe(onNext: {
                 print(UIDevice.current.identifierForVendor!.uuidString)
             }).disposed(by: disposeBag)

@@ -90,13 +90,13 @@
                             <state key="normal" image="hidden"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9Q-ax-wDB">
-                            <rect key="frame" x="111.5" y="362" width="150" height="22"/>
+                            <rect key="frame" x="106.5" y="362" width="160" height="22"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="3cG-Li-5sf"/>
+                                <constraint firstAttribute="width" constant="160" id="3cG-Li-5sf"/>
                                 <constraint firstAttribute="height" constant="22" id="M96-rc-j6J"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="OstrichSans-Heavy" family="Ostrich Sans" pointSize="21"/>
-                            <inset key="imageEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="3"/>
+                            <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="4"/>
                             <state key="normal" title="SKIP SIGNUP FOR NOW" image="next_black">
                                 <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
