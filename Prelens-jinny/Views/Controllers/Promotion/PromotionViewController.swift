@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//
 class PromotionViewController: BaseViewController {
     @IBOutlet weak var vContainMenu: UIView!
     @IBOutlet weak var cvMenuController: UICollectionView!
