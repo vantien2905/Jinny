@@ -17,7 +17,8 @@ class PRSignUpViewController: UIViewController {
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var btnShowHidePassword: UIButton!
     @IBOutlet weak var btnCheckConditions: UIButton!
-
+    @IBOutlet weak var btnGuestLogin: UIButton!
+    
     let disposeBag                          = DisposeBag()
 
     var parentNavigationController: UINavigationController?
@@ -101,6 +102,17 @@ class PRSignUpViewController: UIViewController {
             .subscribe(onNext: {
                 self.vEmail.tfInput.endEditing(true)
                 self.vPassword.tfInput.endEditing(true)
+            }).disposed(by: disposeBag)
+        
+        btnGuestLogin.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .bind(to: viewModel.btnGuestLoginTapped)
+            .disposed(by: disposeBag)
+        
+        btnGuestLogin.rx.tap
+            .throttle(2, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                print(UIDevice.current.identifierForVendor!.uuidString)
             }).disposed(by: disposeBag)
         
         viewModel.isSignUpSuccess.subscribe (onCompleted: {

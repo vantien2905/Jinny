@@ -14,6 +14,7 @@ protocol SignUpViewModelProtocol{
     var isValidInput: Variable<Bool>{get}
     var userSignUp:Variable<PRUser?>{get}
     var btnSignUpTapped: PublishSubject<Void>{get}
+    var btnGuestLoginTapped: PublishSubject<Void>{get}
     var isChecked: Variable<Bool>{get}
     var isSignUpSuccess: PublishSubject<Bool>{get}
     var isValid: Observable<Bool>{get}
@@ -27,6 +28,7 @@ final class SignUpViewModel:SignUpViewModelProtocol {
     var isValidInput: Variable<Bool>
     var userSignUp = Variable<PRUser?>(nil)
     var btnSignUpTapped: PublishSubject<Void>
+    var btnGuestLoginTapped:PublishSubject<Void>
     var isChecked: Variable<Bool>
     var isSignUpSuccess: PublishSubject<Bool>
 
@@ -41,6 +43,7 @@ final class SignUpViewModel:SignUpViewModelProtocol {
         self.isValidInput = Variable<Bool>(false)
         self.isChecked = Variable<Bool>(false)
         self.btnSignUpTapped = PublishSubject<Void>()
+        self.btnGuestLoginTapped = PublishSubject<Void>()
         self.isSignUpSuccess = PublishSubject<Bool>()
         
         _ = isChecked.asObservable().subscribe(onNext: { _ in
@@ -52,7 +55,7 @@ final class SignUpViewModel:SignUpViewModelProtocol {
         isValid.asObservable().subscribe(onNext: { [unowned self] value in
             self.isValidInput.value = value
         }).disposed(by: disposeBag)
-        
+        self.guestLoginTapped()
         self.signUpTapped()
         userSignUp.asObservable()
             .ignoreNil()
@@ -115,7 +118,14 @@ final class SignUpViewModel:SignUpViewModelProtocol {
             }
         }).disposed(by: disposeBag)
     }
-
+    
+    func guestLoginTapped(){
+        self.btnSignUpTapped.subscribe(onNext: { [weak self]  in
+            guard let strongSelf = self else {return}
+           //TODO
+        }).disposed(by: disposeBag)
+    }
+    
     func checkValid(emailText: Observable<String?>, passwordText: Observable<String?>) -> Observable<Bool> {
         return Observable.combineLatest(emailText, passwordText) {(email, password) -> Bool in
             guard let _email = email, let _password = password else {
