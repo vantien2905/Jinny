@@ -12,7 +12,7 @@ import RxCocoa
 
 class PRSignInViewController: UIViewController {
     var parentNavigationController: UINavigationController?
-    var vm: SignInViewModel = SignInViewModel()
+    var viewModel: SignInViewModelProtocol!
     
     @IBOutlet weak var vEmail: TextFieldView!
     @IBOutlet weak var vPassword: TextFieldView!
@@ -34,7 +34,16 @@ class PRSignInViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    class func configureViewController() -> PRSignInViewController {
+        let signInVC = PRSignInViewController.initControllerFromNib() as! PRSignInViewController
+        var viewModel: SignInViewModel {
+            return SignInViewModel()
+        }
+        signInVC.viewModel = viewModel
+        return signInVC
+    }
+    
     private func setupView() {
         hideKeyboard()
         passIsSecurity = true
@@ -47,9 +56,9 @@ class PRSignInViewController: UIViewController {
     }
 
     func bindViewModel() {
-        _ = vEmail.tfInput.rx.text.map { $0 ?? ""}.bind(to: vm.email)
-        _ = vPassword.tfInput.rx.text.map { $0 ?? ""}.bind(to: vm.password)
-        vm.isValid.subscribe(onNext: { _ in
+        _ = vEmail.tfInput.rx.text.map { $0 ?? ""}.bind(to: viewModel.email)
+        _ = vPassword.tfInput.rx.text.map { $0 ?? ""}.bind(to: viewModel.password)
+        viewModel.isValid.subscribe(onNext: { _ in
             //TODO
         }).disposed(by: disposeBag)
 
@@ -67,7 +76,7 @@ class PRSignInViewController: UIViewController {
 
         btnSignIn.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
-            .bind(to: vm.btnSignInTapped)
+            .bind(to: viewModel.btnSignInTapped)
             .disposed(by: disposeBag)
 
         btnSignIn.rx.tap
@@ -83,7 +92,7 @@ class PRSignInViewController: UIViewController {
                 self.vPassword.tfInput.endEditing(true)
             }).disposed(by: disposeBag)
 
-        vm.isLoginSuccess.subscribe (onCompleted: {
+        viewModel.isLoginSuccess.subscribe (onCompleted: {
             LocalNotification.setupSettingStatus()
             DispatchQueue.main.async {
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

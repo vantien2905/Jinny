@@ -14,13 +14,11 @@ class PRLoginViewController: BaseViewController {
     @IBOutlet weak var cvMenuController: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var vShadow: UIView!
-    
     var currentIndex = 0
-
     var controllers = [UIViewController]()
     var parentNavigationController: UINavigationController?
 
-    let vcSignIn = PRSignInViewController.initControllerFromNib() as! PRSignInViewController
+    let vcSignIn = PRSignInViewController.configureViewController()
     let vcSignUp = PRSignUpViewController.configureViewController()
     let cellId = "CellId"
 
