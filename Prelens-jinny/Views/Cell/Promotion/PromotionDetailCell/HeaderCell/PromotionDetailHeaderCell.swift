@@ -12,6 +12,7 @@ class PromotionDetailHeaderCell: UICollectionViewCell {
 
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbExpireDate: UILabel!
+    @IBOutlet weak var btnGetCashback: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
