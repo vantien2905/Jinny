@@ -21,7 +21,7 @@ class PRSignUpViewController: UIViewController {
     let disposeBag                          = DisposeBag()
 
     var parentNavigationController: UINavigationController?
-    var vm: SignUpViewModel                 = SignUpViewModel()
+    var viewModel: SignUpViewModelProtocol!
     var passIsSecurity: Bool?
     var conditionsIsChecked: Bool?
     var isChecked                           = Variable<Bool>(false)
@@ -45,14 +45,22 @@ class PRSignUpViewController: UIViewController {
         btnCheckConditions.setImage(UIImage(named: "check_box"), for: .normal)
         btnShowHidePassword.setImage(UIImage(named: "hidden"), for: .normal)
     }
-
+    
+    class func configureViewController() -> PRSignUpViewController {
+        let signUpVC = PRSignUpViewController.initControllerFromNib() as! PRSignUpViewController
+        var viewModel: SignUpViewModel {
+            return SignUpViewModel()
+        }
+        signUpVC.viewModel = viewModel
+        return signUpVC
+    }
+    
     func bindViewModel() {
-        _ = vEmail.tfInput.rx.text.map { $0 ?? ""}.bind(to: vm.email)
-        _ = vPassword.tfInput.rx.text.map { $0 ?? ""}.bind(to: vm.password)
-        //_ = isChecked.asObservable().bind(to: vm.isChecked)
-        vm.email.asObservable().bind(to: vEmail.tfInput.rx.text).disposed(by: disposeBag)
-        vm.password.asObservable().bind(to: vPassword.tfInput.rx.text).disposed(by: disposeBag)
-        vm.isValid.subscribe(onNext: { _ in
+        _ = vEmail.tfInput.rx.text.map { $0 ?? ""}.bind(to: viewModel.email)
+        _ = vPassword.tfInput.rx.text.map { $0 ?? ""}.bind(to: viewModel.password)
+        viewModel.email.asObservable().bind(to: vEmail.tfInput.rx.text).disposed(by: disposeBag)
+        viewModel.password.asObservable().bind(to: vPassword.tfInput.rx.text).disposed(by: disposeBag)
+        viewModel.isValid.subscribe(onNext: { _ in
            //TODO
         }).disposed(by: disposeBag)
 
@@ -69,22 +77,23 @@ class PRSignUpViewController: UIViewController {
             }).disposed(by: disposeBag)
 
         btnCheckConditions.rx.tap
-            .subscribe(onNext: {
-                if self.conditionsIsChecked == true {
-                    self.btnCheckConditions.setImage(UIImage(named: "check_box"), for: .normal)
-                    self.conditionsIsChecked = false
+            .subscribe(onNext: { [weak self] in
+                guard let strongSelf = self else { return }
+                if strongSelf.conditionsIsChecked == true {
+                    strongSelf.btnCheckConditions.setImage(UIImage(named: "check_box"), for: .normal)
+                    strongSelf.conditionsIsChecked = false
 
                 } else {
-                    self.btnCheckConditions.setImage(UIImage(named: "check_box_on"), for: .normal)
-                    self.conditionsIsChecked = true
+                    strongSelf.btnCheckConditions.setImage(UIImage(named: "check_box_on"), for: .normal)
+                    strongSelf.conditionsIsChecked = true
                 }
-                self.isChecked.value = self.conditionsIsChecked!
-                _ = self.isChecked.asObservable().bind(to: self.vm.isChecked)
+                strongSelf.isChecked.value = strongSelf.conditionsIsChecked!
+                _ = strongSelf.isChecked.asObservable().bind(to: strongSelf.viewModel.isChecked)
             }).disposed(by: disposeBag)
 
         btnSignUp.rx.tap
             .throttle(2, scheduler: MainScheduler.instance)
-            .bind(to: vm.btnSignUpTapped)
+            .bind(to: viewModel.btnSignUpTapped)
             .disposed(by: disposeBag)
 
         btnSignUp.rx.tap
@@ -94,7 +103,7 @@ class PRSignUpViewController: UIViewController {
                 self.vPassword.tfInput.endEditing(true)
             }).disposed(by: disposeBag)
         
-        vm.isSignUpSuccess.subscribe (onCompleted: {
+        viewModel.isSignUpSuccess.subscribe (onCompleted: {
             LocalNotification.setupSettingStatus()
             DispatchQueue.main.async {
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

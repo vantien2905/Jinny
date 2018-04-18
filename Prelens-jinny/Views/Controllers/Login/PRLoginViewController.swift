@@ -21,7 +21,7 @@ class PRLoginViewController: BaseViewController {
     var parentNavigationController: UINavigationController?
 
     let vcSignIn = PRSignInViewController.initControllerFromNib() as! PRSignInViewController
-    let vcSignUp = PRSignUpViewController.initControllerFromNib() as! PRSignUpViewController
+    let vcSignUp = PRSignUpViewController.configureViewController()
     let cellId = "CellId"
 
     let vMenu: MenuView = {
