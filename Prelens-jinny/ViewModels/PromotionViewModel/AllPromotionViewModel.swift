@@ -51,31 +51,35 @@ class AllPromotionViewModel: AllPromotionViewModelProtocol {
     
     func getListAllPromotion(order:String) {
         let defaults = UserDefaults.standard
-        Provider.shared.promotionService.getListAllPromotion(order: order)
-            //.showProgressIndicator()
-            .subscribe(onNext: { [weak self] (listPromotion) in
-                guard let strongSelf = self else { return }
+        if Connectivity.isConnectedToInternet {
+            Provider.shared.promotionService.getListAllPromotion(order: order)
+                .showProgressIndicator()
+                .subscribe(onNext: { [weak self] (listPromotion) in
+                    guard let strongSelf = self else { return }
 
-                var listNew = [Promotion]()
-                var listOld = [Promotion]()
-                
-                for element in listPromotion {
-                    if element.isReaded == false {
-                        listNew.append(element)
-                    } else {
-                        listOld.append(element)
+                    var listNew = [Promotion]()
+                    var listOld = [Promotion]()
+                    
+                    for element in listPromotion {
+                        if element.isReaded == false {
+                            listNew.append(element)
+                        } else {
+                            listOld.append(element)
+                        }
                     }
-                }
-               
-                strongSelf.listAllPromotion.value = listNew + listOld
-                strongSelf.listSearchVoucher.value = listNew + listOld
-                
-                // MARK: Setup notification
-                UIApplication.shared.cancelAllLocalNotifications()
-                strongSelf.setupNotification(listData: listPromotion)
-                defaults.set(listNew.count, forKey: KeychainItem.badgeNumber.rawValue)
-                NotificationCenter.default.post(name: Notification.Name(rawValue: ConstantNotification.updateBadgeVoucherTabbar), object: nil)
-            }).disposed(by: disposeBag)
+                   
+                    strongSelf.listAllPromotion.value = listNew + listOld
+                    strongSelf.listSearchVoucher.value = listNew + listOld
+                    
+                    // MARK: Setup notification
+                    UIApplication.shared.cancelAllLocalNotifications()
+                    strongSelf.setupNotification(listData: listPromotion)
+                    defaults.set(listNew.count, forKey: KeychainItem.badgeNumber.rawValue)
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: ConstantNotification.updateBadgeVoucherTabbar), object: nil)
+                }).disposed(by: disposeBag)
+        } else {
+            PopUpHelper.shared.showMessage(message: ContantMessages.Connection.errorConnection)
+        }
     }
     
     func sortAllPromotion() {
