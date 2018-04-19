@@ -11,8 +11,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OstrichSans-Heavy.otf">
-            <string>OstrichSans-Heavy</string>
+        <array key="OstrichSans-Black.otf">
+            <string>OstrichSans-Black</string>
         </array>
         <array key="segoeui.ttf">
             <string>SegoeUI</string>
@@ -90,15 +90,15 @@
                             <state key="normal" image="hidden"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9Q-ax-wDB">
-                            <rect key="frame" x="106.5" y="362" width="160" height="22"/>
+                            <rect key="frame" x="107" y="364.5" width="160" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="160" id="3cG-Li-5sf"/>
-                                <constraint firstAttribute="height" constant="22" id="M96-rc-j6J"/>
+                                <constraint firstAttribute="height" constant="15" id="PnQ-h4-2Q7"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="OstrichSans-Heavy" family="Ostrich Sans" pointSize="21"/>
-                            <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="4"/>
+                            <fontDescription key="fontDescription" name="OstrichSans-Black" family="Ostrich Sans" pointSize="17.5"/>
+                            <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="1"/>
                             <state key="normal" title="SKIP SIGNUP FOR NOW" image="next_black">
-                                <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                     </subviews>
@@ -108,7 +108,7 @@
                         <constraint firstItem="GVt-GI-SH4" firstAttribute="trailing" secondItem="dol-cs-Ol0" secondAttribute="trailing" id="ARQ-Jk-h4W"/>
                         <constraint firstItem="GVt-GI-SH4" firstAttribute="height" secondItem="dol-cs-Ol0" secondAttribute="height" id="B24-3q-SrH"/>
                         <constraint firstItem="jZY-J5-bdZ" firstAttribute="top" secondItem="oX6-rp-3kg" secondAttribute="bottom" constant="29.5" id="BRz-SI-F64"/>
-                        <constraint firstItem="I9Q-ax-wDB" firstAttribute="top" secondItem="jZY-J5-bdZ" secondAttribute="bottom" constant="29.5" id="KZS-yD-IBQ"/>
+                        <constraint firstItem="I9Q-ax-wDB" firstAttribute="top" secondItem="jZY-J5-bdZ" secondAttribute="bottom" constant="32" id="KZS-yD-IBQ"/>
                         <constraint firstItem="slm-8m-Gai" firstAttribute="top" secondItem="dol-cs-Ol0" secondAttribute="bottom" constant="15" id="Pf4-Nd-U38"/>
                         <constraint firstItem="GVt-GI-SH4" firstAttribute="leading" secondItem="dol-cs-Ol0" secondAttribute="leading" id="Ri8-tk-zs3"/>
                         <constraint firstItem="slm-8m-Gai" firstAttribute="leading" secondItem="YJR-w8-Yr9" secondAttribute="leading" id="TB4-HK-jGp"/>
