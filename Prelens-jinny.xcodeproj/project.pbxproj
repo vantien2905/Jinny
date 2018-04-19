@@ -204,6 +204,8 @@
 		BCE65DC420737F770027C801 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DC320737F760027C801 /* Utils.swift */; };
 		BCEA4494207B6E38003581DA /* RedeemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA4492207B6E38003581DA /* RedeemCell.swift */; };
 		BCEA4495207B6E38003581DA /* RedeemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEA4493207B6E38003581DA /* RedeemCell.xib */; };
+		BCEAA11C2087534900A61E30 /* MyCashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA11A2087534900A61E30 /* MyCashback.swift */; };
+		BCEAA11D2087534900A61E30 /* MyCashback.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEAA11B2087534900A61E30 /* MyCashback.xib */; };
 		BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */; };
 		BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
@@ -424,6 +426,8 @@
 		BCE65DC320737F760027C801 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BCEA4492207B6E38003581DA /* RedeemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemCell.swift; sourceTree = "<group>"; };
 		BCEA4493207B6E38003581DA /* RedeemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemCell.xib; sourceTree = "<group>"; };
+		BCEAA11A2087534900A61E30 /* MyCashback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCashback.swift; sourceTree = "<group>"; };
+		BCEAA11B2087534900A61E30 /* MyCashback.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCashback.xib; sourceTree = "<group>"; };
 		BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewController.swift; sourceTree = "<group>"; };
 		BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVoucherViewController.xib; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
@@ -1095,6 +1099,23 @@
 			path = PromotionDetailCell;
 			sourceTree = "<group>";
 		};
+		BCA0A7FA2088925D00593B94 /* Cashback */ = {
+			isa = PBXGroup;
+			children = (
+				BCA0A7FB2088928C00593B94 /* MyCashback */,
+			);
+			path = Cashback;
+			sourceTree = "<group>";
+		};
+		BCA0A7FB2088928C00593B94 /* MyCashback */ = {
+			isa = PBXGroup;
+			children = (
+				BCEAA11A2087534900A61E30 /* MyCashback.swift */,
+				BCEAA11B2087534900A61E30 /* MyCashback.xib */,
+			);
+			path = MyCashback;
+			sourceTree = "<group>";
+		};
 		BCAA4A5520623A9100B6D1D9 /* MerchantViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1239,6 +1260,7 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCA0A7FA2088925D00593B94 /* Cashback */,
 				B7B1BC712058CFD60042B3D4 /* Base */,
 				BC6F3368205BC6DB00CDAD85 /* Home */,
 				BC78F4952058D406003904E0 /* SideMenu */,
@@ -1601,6 +1623,7 @@
 				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
 				BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
+				BCEAA11D2087534900A61E30 /* MyCashback.xib in Resources */,
 				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
 				B7CD0654205FA765009951A4 /* MembershipDetailCell.xib in Resources */,
 				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
@@ -1757,6 +1780,7 @@
 				764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */,
 				BC6EF85A2060F57D00A156B9 /* UIApplication+Extension.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
+				BCEAA11C2087534900A61E30 /* MyCashback.swift in Sources */,
 				760A99F02075CF6600962000 /* TextFieldView.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
