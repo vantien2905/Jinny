@@ -31,6 +31,10 @@ class PRSideMenuVC: UIViewController {
     @IBOutlet weak var lbPrivacy: UILabel!
     @IBOutlet weak var btnPrivacy: UIButton!
 
+    @IBOutlet weak var btnMyCashback: UIButton!
+    
+    @IBOutlet weak var btnSendFeedback: UIButton!
+    
     @IBOutlet weak var lbLogout: UILabel!
     @IBOutlet weak var btnLogout: UIButton!
     let viewModel =  SignOutViewModel()
@@ -96,5 +100,10 @@ extension PRSideMenuVC {
     @IBAction func privacyTapped() {
         let privacyVC = PrivacyViewController.initControllerFromNib()
         self.push(controller: privacyVC)
+    }
+    
+    @IBAction func btnMyCashbackTapped() {
+        let redeemCashbackVC = RedeemCashbackViewController.initControllerFromNib()
+        self.push(controller: redeemCashbackVC)
     }
 }

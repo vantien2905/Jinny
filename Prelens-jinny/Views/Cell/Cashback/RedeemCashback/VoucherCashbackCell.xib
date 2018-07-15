@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="VoucherCashbackCell" customModule="Jinny" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="260"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-xn-Cq6">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="260"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hei-4x-sRE">
+                                <rect key="frame" x="66" y="22" width="84.5" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84.5" id="I3b-K1-pfq"/>
+                                    <constraint firstAttribute="height" constant="85" id="wnv-pV-xxQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Starbucks 1 for 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeH-aV-Ahp">
+                                <rect key="frame" x="63" y="123.5" width="92" height="50.5"/>
+                                <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="12.5"/>
+                                <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJm-H0-GRf">
+                                <rect key="frame" x="100" y="181.5" width="19" height="17"/>
+                                <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="12.5"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuP-jf-5I3">
+                                <rect key="frame" x="20" y="221" width="176" height="31"/>
+                                <color key="backgroundColor" red="0.8901960784313725" green="0.070588235294117646" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="tUf-kK-GkW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="12.5"/>
+                                <state key="normal" title="Purchase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KJm-H0-GRf" firstAttribute="top" secondItem="zeH-aV-Ahp" secondAttribute="bottom" constant="7.5" id="2sp-Fv-hSZ"/>
+                            <constraint firstItem="KJm-H0-GRf" firstAttribute="centerX" secondItem="zeH-aV-Ahp" secondAttribute="centerX" id="7vm-7U-Uil"/>
+                            <constraint firstItem="hei-4x-sRE" firstAttribute="top" secondItem="9N1-xn-Cq6" secondAttribute="top" constant="22.5" id="9T8-DL-YlA"/>
+                            <constraint firstItem="hei-4x-sRE" firstAttribute="centerX" secondItem="9N1-xn-Cq6" secondAttribute="centerX" id="I91-ry-K3W"/>
+                            <constraint firstAttribute="bottom" secondItem="WuP-jf-5I3" secondAttribute="bottom" constant="8" id="ISs-h9-5M0"/>
+                            <constraint firstItem="WuP-jf-5I3" firstAttribute="leading" secondItem="9N1-xn-Cq6" secondAttribute="leading" constant="20" id="Lr7-Et-VXg"/>
+                            <constraint firstItem="zeH-aV-Ahp" firstAttribute="top" secondItem="hei-4x-sRE" secondAttribute="bottom" constant="16.5" id="P3v-o1-juT"/>
+                            <constraint firstAttribute="trailing" secondItem="WuP-jf-5I3" secondAttribute="trailing" constant="20" id="Uj3-Du-raK"/>
+                            <constraint firstItem="WuP-jf-5I3" firstAttribute="top" secondItem="KJm-H0-GRf" secondAttribute="bottom" constant="22.5" id="YDN-Gz-FWo"/>
+                            <constraint firstItem="zeH-aV-Ahp" firstAttribute="centerX" secondItem="hei-4x-sRE" secondAttribute="centerX" id="yPz-jW-BKF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="9N1-xn-Cq6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JnC-IP-iBm"/>
+                <constraint firstAttribute="trailing" secondItem="9N1-xn-Cq6" secondAttribute="trailing" id="LsD-04-eLG"/>
+                <constraint firstAttribute="bottom" secondItem="9N1-xn-Cq6" secondAttribute="bottom" id="wtI-pK-yVu"/>
+                <constraint firstItem="9N1-xn-Cq6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zi8-3E-R9H"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="216" height="260"/>
+            <point key="canvasLocation" x="217" y="133"/>
+        </collectionViewCell>
+    </objects>
+</document>

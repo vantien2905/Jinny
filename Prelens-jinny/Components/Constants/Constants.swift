@@ -69,6 +69,10 @@ struct Cell {
     
     //Custom View
     static let selectDataCell   = "SelectDataPopUpCell"
+    
+    //Cashback
+    static let bankCashbackCell = "BankCashbackCell"
+    static let voucherCashbackCell = "VoucherCashbackCell"
 }
 
 struct PRButtonTabbarTitle {

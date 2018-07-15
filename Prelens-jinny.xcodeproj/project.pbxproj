@@ -77,6 +77,12 @@
 		B738627520590CE700C7004D /* MembershipFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B738627320590CE700C7004D /* MembershipFooterCell.xib */; };
 		B7386279205913CD00C7004D /* MembershipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7386277205913CD00C7004D /* MembershipDetailViewController.swift */; };
 		B738627A205913CD00C7004D /* MembershipDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7386278205913CD00C7004D /* MembershipDetailViewController.xib */; };
+		B7511C70208893B80021C027 /* RedeemCashbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7511C6E208893B80021C027 /* RedeemCashbackViewController.swift */; };
+		B7511C71208893B80021C027 /* RedeemCashbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7511C6F208893B80021C027 /* RedeemCashbackViewController.xib */; };
+		B7511C7620889DBC0021C027 /* BankCashbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7511C7420889DBC0021C027 /* BankCashbackCell.swift */; };
+		B7511C7720889DBC0021C027 /* BankCashbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7511C7520889DBC0021C027 /* BankCashbackCell.xib */; };
+		B7511C7A20889DD70021C027 /* VoucherCashbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7511C7820889DD70021C027 /* VoucherCashbackCell.swift */; };
+		B7511C7B20889DD70021C027 /* VoucherCashbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7511C7920889DD70021C027 /* VoucherCashbackCell.xib */; };
 		B75C4173205A4C1200E4A77F /* EmptyMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */; };
 		B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */; };
 		B75C4176205A602300E4A77F /* MembershipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */; };
@@ -204,6 +210,8 @@
 		BCE65DC420737F770027C801 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE65DC320737F760027C801 /* Utils.swift */; };
 		BCEA4494207B6E38003581DA /* RedeemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA4492207B6E38003581DA /* RedeemCell.swift */; };
 		BCEA4495207B6E38003581DA /* RedeemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEA4493207B6E38003581DA /* RedeemCell.xib */; };
+		BCEAA11C2087534900A61E30 /* MyCashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA11A2087534900A61E30 /* MyCashback.swift */; };
+		BCEAA11D2087534900A61E30 /* MyCashback.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEAA11B2087534900A61E30 /* MyCashback.xib */; };
 		BCF5F6A52064E942007CE003 /* AddVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */; };
 		BCF5F6A62064E942007CE003 /* AddVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */; };
 		BCFC256F204E9F26001988BB /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFC256E204E9F26001988BB /* QRCode.swift */; };
@@ -219,6 +227,7 @@
 		D9911862205BB0A600F701ED /* PopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9911861205BB0A600F701ED /* PopUpHelper.swift */; };
 		D9911866205BC39400F701ED /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9911864205BC39400F701ED /* Fabric.framework */; };
 		D9911867205BC39400F701ED /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9911865205BC39400F701ED /* Crashlytics.framework */; };
+		FD10C7C82089010E00ECAB14 /* UICollectionViewDelegateFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10C7C72089010E00ECAB14 /* UICollectionViewDelegateFlowLayout+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +303,12 @@
 		B738627320590CE700C7004D /* MembershipFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipFooterCell.xib; sourceTree = "<group>"; };
 		B7386277205913CD00C7004D /* MembershipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailViewController.swift; sourceTree = "<group>"; };
 		B7386278205913CD00C7004D /* MembershipDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipDetailViewController.xib; sourceTree = "<group>"; };
+		B7511C6E208893B80021C027 /* RedeemCashbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemCashbackViewController.swift; sourceTree = "<group>"; };
+		B7511C6F208893B80021C027 /* RedeemCashbackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemCashbackViewController.xib; sourceTree = "<group>"; };
+		B7511C7420889DBC0021C027 /* BankCashbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCashbackCell.swift; sourceTree = "<group>"; };
+		B7511C7520889DBC0021C027 /* BankCashbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCashbackCell.xib; sourceTree = "<group>"; };
+		B7511C7820889DD70021C027 /* VoucherCashbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherCashbackCell.swift; sourceTree = "<group>"; };
+		B7511C7920889DD70021C027 /* VoucherCashbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoucherCashbackCell.xib; sourceTree = "<group>"; };
 		B75C4171205A4C1200E4A77F /* EmptyMembershipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMembershipCell.swift; sourceTree = "<group>"; };
 		B75C4172205A4C1200E4A77F /* EmptyMembershipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyMembershipCell.xib; sourceTree = "<group>"; };
 		B75C4175205A602300E4A77F /* MembershipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipDetailViewModel.swift; sourceTree = "<group>"; };
@@ -424,6 +439,8 @@
 		BCE65DC320737F760027C801 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BCEA4492207B6E38003581DA /* RedeemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemCell.swift; sourceTree = "<group>"; };
 		BCEA4493207B6E38003581DA /* RedeemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemCell.xib; sourceTree = "<group>"; };
+		BCEAA11A2087534900A61E30 /* MyCashback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCashback.swift; sourceTree = "<group>"; };
+		BCEAA11B2087534900A61E30 /* MyCashback.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCashback.xib; sourceTree = "<group>"; };
 		BCF5F6A32064E942007CE003 /* AddVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewController.swift; sourceTree = "<group>"; };
 		BCF5F6A42064E942007CE003 /* AddVoucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVoucherViewController.xib; sourceTree = "<group>"; };
 		BCFC256E204E9F26001988BB /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
@@ -442,6 +459,7 @@
 		D9911864205BC39400F701ED /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D9911865205BC39400F701ED /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DC5EF78B9758D472E6EB020D /* Pods-Prelens-jinnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelens-jinnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelens-jinnyTests/Pods-Prelens-jinnyTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD10C7C72089010E00ECAB14 /* UICollectionViewDelegateFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDelegateFlowLayout+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -730,6 +748,34 @@
 			path = MembershipDetailCell;
 			sourceTree = "<group>";
 		};
+		B7511C6D208893410021C027 /* CashbackAvailable */ = {
+			isa = PBXGroup;
+			children = (
+				B7511C6E208893B80021C027 /* RedeemCashbackViewController.swift */,
+				B7511C6F208893B80021C027 /* RedeemCashbackViewController.xib */,
+			);
+			path = CashbackAvailable;
+			sourceTree = "<group>";
+		};
+		B7511C7220889D6B0021C027 /* Cashback */ = {
+			isa = PBXGroup;
+			children = (
+				B7511C7320889D820021C027 /* RedeemCashback */,
+			);
+			path = Cashback;
+			sourceTree = "<group>";
+		};
+		B7511C7320889D820021C027 /* RedeemCashback */ = {
+			isa = PBXGroup;
+			children = (
+				B7511C7420889DBC0021C027 /* BankCashbackCell.swift */,
+				B7511C7520889DBC0021C027 /* BankCashbackCell.xib */,
+				B7511C7820889DD70021C027 /* VoucherCashbackCell.swift */,
+				B7511C7920889DD70021C027 /* VoucherCashbackCell.xib */,
+			);
+			path = RedeemCashback;
+			sourceTree = "<group>";
+		};
 		B765ECB42057D81C0095B443 /* LocalPersistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +893,7 @@
 		B7B1BC742058D37D0042B3D4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B7511C7220889D6B0021C027 /* Cashback */,
 				B7CD0640205F71A1009951A4 /* Merchant */,
 				76DC88FB205F6AC100AD87F3 /* Promotion */,
 				B7B1BC752058D38B0042B3D4 /* Membership */,
@@ -1095,6 +1142,24 @@
 			path = PromotionDetailCell;
 			sourceTree = "<group>";
 		};
+		BCA0A7FA2088925D00593B94 /* Cashback */ = {
+			isa = PBXGroup;
+			children = (
+				B7511C6D208893410021C027 /* CashbackAvailable */,
+				BCA0A7FB2088928C00593B94 /* MyCashback */,
+			);
+			path = Cashback;
+			sourceTree = "<group>";
+		};
+		BCA0A7FB2088928C00593B94 /* MyCashback */ = {
+			isa = PBXGroup;
+			children = (
+				BCEAA11A2087534900A61E30 /* MyCashback.swift */,
+				BCEAA11B2087534900A61E30 /* MyCashback.xib */,
+			);
+			path = MyCashback;
+			sourceTree = "<group>";
+		};
 		BCAA4A5520623A9100B6D1D9 /* MerchantViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1194,7 @@
 				76440AD4206A35E300F6F167 /* LocalNotification.swift */,
 				B7C93A342072404900367097 /* AccessibilityDevice.swift */,
 				760C8D19207EFDB000900CB6 /* Connectivity.swift */,
+				FD10C7C72089010E00ECAB14 /* UICollectionViewDelegateFlowLayout+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1239,6 +1305,7 @@
 		BCBC95AB2056267F004C1985 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCA0A7FA2088925D00593B94 /* Cashback */,
 				B7B1BC712058CFD60042B3D4 /* Base */,
 				BC6F3368205BC6DB00CDAD85 /* Home */,
 				BC78F4952058D406003904E0 /* SideMenu */,
@@ -1589,6 +1656,7 @@
 				BCBC95F220562BB8004C1985 /* PRLoginViewController.xib in Resources */,
 				B7CD0645205F71E9009951A4 /* MerchantDetailCell.xib in Resources */,
 				BC3F1AD8204D19B10006A6F5 /* PRButtonTabbar.xib in Resources */,
+				B7511C7B20889DD70021C027 /* VoucherCashbackCell.xib in Resources */,
 				BCBC95EE20562BB8004C1985 /* PRSignUpViewController.xib in Resources */,
 				7638FA1C205FB73A00D33011 /* EmptyPromotionCell.xib in Resources */,
 				B7B1BC7E2058D6F40042B3D4 /* MembershipCell.xib in Resources */,
@@ -1601,11 +1669,14 @@
 				B75C4174205A4C1200E4A77F /* EmptyMembershipCell.xib in Resources */,
 				BCB04FEB2057E6CC008F929F /* MemberShipViewController.xib in Resources */,
 				B7B1BC952058D7FA0042B3D4 /* seguili.ttf in Resources */,
+				B7511C7720889DBC0021C027 /* BankCashbackCell.xib in Resources */,
+				BCEAA11D2087534900A61E30 /* MyCashback.xib in Resources */,
 				B738626D205907AC00C7004D /* StarredHeaderCell.xib in Resources */,
 				B7CD0654205FA765009951A4 /* MembershipDetailCell.xib in Resources */,
 				B7B1BC942058D7FA0042B3D4 /* segoeuii.ttf in Resources */,
 				BC770A6E204CEE5D0052A285 /* Assets.xcassets in Resources */,
 				BC78F4932058D3FC003904E0 /* PRSideMenuVC.xib in Resources */,
+				B7511C71208893B80021C027 /* RedeemCashbackViewController.xib in Resources */,
 				B7B1BCA12058D7FA0042B3D4 /* segoeuib.ttf in Resources */,
 				B7B1BC792058D45B0042B3D4 /* SearchMembershipCell.xib in Resources */,
 				BCBC95ED20562BB8004C1985 /* PRForgotPasswordViewController.xib in Resources */,
@@ -1757,6 +1828,7 @@
 				764B6E99205BB9BF00F8896B /* ResidentialRegion.swift in Sources */,
 				BC6EF85A2060F57D00A156B9 /* UIApplication+Extension.swift in Sources */,
 				B73862702059096700C7004D /* OtherHeaderCell.swift in Sources */,
+				BCEAA11C2087534900A61E30 /* MyCashback.swift in Sources */,
 				760A99F02075CF6600962000 /* TextFieldView.swift in Sources */,
 				B7886652205A154700096F27 /* MembershipViewModel.swift in Sources */,
 				76508789205772D200199FBB /* String+Extension.swift in Sources */,
@@ -1838,6 +1910,7 @@
 				B7886657205A1C1600096F27 /* Merchant.swift in Sources */,
 				BCBC95EC20562BB8004C1985 /* PRForgotPasswordViewController.swift in Sources */,
 				D9911855205B7AC100F701ED /* NetworkSession.swift in Sources */,
+				B7511C70208893B80021C027 /* RedeemCashbackViewController.swift in Sources */,
 				BC6E9DB6205A4A4E00C5DF01 /* PRBaseViewXib.swift in Sources */,
 				BC6EF8582060F53400A156B9 /* PRHelper.swift in Sources */,
 				B7AC7FDB2057B60500C0BFCA /* PopUpView.swift in Sources */,
@@ -1847,6 +1920,7 @@
 				D9911854205B7AC100F701ED /* Response.swift in Sources */,
 				769A742B205023B700414DFE /* NSObject+Extension.swift in Sources */,
 				76E29B132052654A0039CA45 /* MenuView.swift in Sources */,
+				B7511C7A20889DD70021C027 /* VoucherCashbackCell.swift in Sources */,
 				761201BA2077128D003D3CFA /* PrivacyViewController.swift in Sources */,
 				7609B00B20746ABC00227AAE /* Route.swift in Sources */,
 				B7D54B032069EDC8000F4957 /* Dropdown.swift in Sources */,
@@ -1855,7 +1929,9 @@
 				BC9A6151205F77F00071EF4F /* PromotionDetailFooterCell.swift in Sources */,
 				765087862057716100199FBB /* SignInViewModel.swift in Sources */,
 				76DC890D205F768400AD87F3 /* PromotionCell.swift in Sources */,
+				FD10C7C82089010E00ECAB14 /* UICollectionViewDelegateFlowLayout+Extension.swift in Sources */,
 				BC36E974205846B1006A90A0 /* SignUpViewModel.swift in Sources */,
+				B7511C7620889DBC0021C027 /* BankCashbackCell.swift in Sources */,
 				BCAA4A5820624B8A00B6D1D9 /* MerchantDetailHeaderCell.swift in Sources */,
 				B788664D205A043800096F27 /* Membership.swift in Sources */,
 				B7CD064A205F9ACA009951A4 /* HeaderMembershipDetailCell.swift in Sources */,
